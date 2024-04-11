@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Gabarito';
+    src: url('/public/Gabarito/Gabarito-VariableFont_wght.ttf') format('tff'),
+         url('/public/Gabarito/Gabarito-VariableFont_wght.ttf') format('ttf');
+  }
+  @font-face {
+    font-family: 'Allura';
+    src: url('/public/Allura/Allura/Allura-Regular.ttf') format('tff'),
+  }
+
+  @font-face {
+    font-family: 'Russo One';
+    src: url('/public/Russo_One/RussoOne-Regular.ttf') format('tff'),
+  }
+  @font-face {
+    font-family: 'Lilita One';
+    src: url('/public/Lilita_One/LilitaOne-Regular.ttf') format('tff'),
+  }
+
+  * {
+   
+    font-family: "Lilita", sans-serif !important;
+  
+  }
+
+body{
+  background-color: #1F1F20 !important;
+}
+
+.banner-text {
+  font-family: "Russo One", sans-serif !important;
+}
+
+.banner {
+    background-image: url(/public/mapin2.png);
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .banner {
+        background-image: url(/public/mapin2.png);
+        height: 80vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+    }
+  
+  }
+  
