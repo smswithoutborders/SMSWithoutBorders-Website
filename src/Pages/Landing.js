@@ -1,13 +1,6 @@
-import { Grid, Typography, Box, Button, IconButton } from "@mui/material";
+import { Grid, Typography, Box, Button } from "@mui/material";
 import React from "react";
-import {
-  FaXTwitter,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaEnvelope,
-  FaArrowRight,
-} from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 import Faqs from "../Components/FAQS";
 import { motion } from "framer-motion";
 
@@ -58,7 +51,8 @@ export default function Landing() {
         align="center"
         sx={{
           p: { md: 8, xs: 2 },
-          bgcolor: "#635380",
+          bgcolor: "#A9BCD0",
+          color: "black",
         }}
       >
         <motion.div
@@ -82,19 +76,13 @@ export default function Landing() {
           >
             WHAT WE DO?
           </Typography>
-          <Box
-            component="img"
-            src="/voice.jpg"
-            sx={{ width: { md: "40%", xs: "80%" } }}
-            alt="RelaySMS"
-          />
+
           <Typography
-            variant="body1"
+            variant="h6"
             sx={{
               px: { md: 35, xs: 2 },
               py: { md: 10, xs: 4 },
               textAlign: "center",
-              color: "#F1E9DA",
             }}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -105,61 +93,6 @@ export default function Landing() {
         </motion.div>
       </Box>
 
-      {/* Project 1 */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ type: "spring", stiffness: 80, delay: 1 }}
-      >
-        <Box
-          align="center"
-          sx={{
-            p: { md: 8, xs: 2 },
-            bgcolor: "#3F4B3B",
-          }}
-        >
-          <Typography
-            variant="h6"
-            textAlign="center"
-            sx={{ py: 4, px: 2, fontWeight: 600 }}
-          >
-            Project 1
-          </Typography>
-          <Typography
-            variant="h2"
-            textAlign="center"
-            className="banner-text"
-            sx={{ py: 4, px: 2, fontWeight: 600 }}
-          >
-            RELAY SMS
-          </Typography>
-          <Typography sx={{ py: 2, textDecoration: "underline" }}>
-            About RelaySMS <FaArrowRight />
-          </Typography>
-          <Box
-            component="img"
-            src="/1.png"
-            sx={{ width: { md: "40%", xs: "80%" } }}
-            alt="RelaySMS"
-          />
-          <Typography
-            variant="body1"
-            sx={{
-              px: { md: 35, xs: 2 },
-              py: { md: 10, xs: 4 },
-              textAlign: "center",
-              color: "#F1E9DA",
-            }}
-          >
-            The platform enables users with a smartphone to communicate with
-            online third-party platforms using SMS messages. A typical use-case
-            of the platform is sending out emails from platforms such as Gmail
-            accounts. This becomes a useful tool in cases where access to the
-            internet is limited or completely unavailable.
-          </Typography>
-        </Box>
-      </motion.div>
       {/* Project 2 */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -324,71 +257,6 @@ export default function Landing() {
           </Typography>
           <Box sx={{ py: 4 }}>
             <Faqs />
-          </Box>
-        </Box>
-      </motion.div>
-      {/* Contact */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ type: "spring", stiffness: 80, delay: 1 }}
-      >
-        <Box
-          align="center"
-          sx={{
-            p: { md: 8, xs: 2 },
-            bgcolor: "#2B4162",
-          }}
-        >
-          <Typography
-            variant="h6"
-            textAlign="center"
-            sx={{ py: 4, px: 2, fontWeight: 600 }}
-          >
-            Contact
-          </Typography>
-
-          <Box sx={{ py: 3 }}>
-            <IconButton sx={{ fontSize: { md: "75px", xs: "30px" } }}>
-              <FaXTwitter />
-            </IconButton>
-            <IconButton
-              sx={{
-                fontSize: { md: "75px", xs: "30px" },
-                ml: { md: 8, xs: 1 },
-                p: 1,
-              }}
-            >
-              <FaFacebook />
-            </IconButton>
-            <IconButton
-              sx={{
-                fontSize: { md: "75px", xs: "30px" },
-                ml: { md: 8, xs: 1 },
-                p: 1,
-              }}
-            >
-              <FaInstagram />
-            </IconButton>
-            <IconButton
-              sx={{
-                fontSize: { md: "75px", xs: "30px" },
-                ml: { md: 8, xs: 1 },
-                p: 1,
-              }}
-            >
-              <FaLinkedin />
-            </IconButton>
-            <IconButton
-              sx={{
-                fontSize: { md: "75px", xs: "30px" },
-                ml: { md: 8, xs: 1 },
-                p: 1,
-              }}
-            >
-              <FaEnvelope />
-            </IconButton>
           </Box>
         </Box>
       </motion.div>

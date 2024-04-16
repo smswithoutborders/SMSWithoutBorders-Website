@@ -13,12 +13,6 @@ export default function Nav() {
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Box
-          component="img"
-          src="/logo.png"
-          sx={{ width: "40px" }}
-          alt="smswithoutborders logo"
-        />
         <Typography variant="h6" sx={{ marginLeft: "8px", fontWeight: 600 }}>
           SMSWithoutBorders
         </Typography>
