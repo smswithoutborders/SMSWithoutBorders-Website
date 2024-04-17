@@ -18,13 +18,15 @@
   }
 
   * {
-   
+    
     font-family: "Lilita", sans-serif !important;
-  
+   
   }
 
 body{
   background-color: #1F1F20 !important;
+  background-image: url(/public/mapin.png);
+  background-size: cover;
 }
 
 .banner-text {
@@ -32,12 +34,9 @@ body{
 }
 
 .banner {
-    background-image: url(/public/mapin2.png);
-    height: 100vh;
+    height: 90vh;
     width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  
     display: flex;
 }
 
@@ -52,7 +51,16 @@ body{
         background-position: center;
         background-repeat: no-repeat;
         display: flex;
-    }
-  
+    } 
   }
   
+  .messaging-text {
+    font-family: "Russo One", sans-serif !important;
+    color: #c9dff1;
+  }
+
+  .modal {
+    background-image: url(/public/modaldark.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }

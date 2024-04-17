@@ -18,7 +18,7 @@ export default function Footer() {
         <Box
           sx={{ display: "flex", px: { md: 4, xs: 2 }, py: { md: 1, xs: 1 } }}
         >
-          <Typography variant="body1" sx={{ pt: 1 }}>
+          <Typography variant="body1" sx={{ pt: 1, pr: 3 }}>
             Follow us
           </Typography>
           <IconButton>

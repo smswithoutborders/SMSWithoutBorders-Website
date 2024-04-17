@@ -1,5 +1,6 @@
-import { Typography, Box, Button } from "@mui/material";
+import { Typography, Box, Button, IconButton } from "@mui/material";
 import React from "react";
+import { FaGithub } from "react-icons/fa6";
 
 export default function Nav() {
   return (
@@ -36,7 +37,17 @@ export default function Nav() {
               fontSize: "18px",
             }}
           >
-            Technologies
+            RelaySMS
+          </Button>
+          <Button
+            sx={{
+              mx: 3,
+              textTransform: "none",
+              color: "whitesmoke",
+              fontSize: "18px",
+            }}
+          >
+            Deku SMS
           </Button>
           <Button
             sx={{
@@ -56,8 +67,11 @@ export default function Nav() {
               fontSize: "18px",
             }}
           >
-            Documentations
+            Developers
           </Button>
+          <IconButton>
+            <FaGithub />
+          </IconButton>
         </Box>
         <Button
           size="large"
