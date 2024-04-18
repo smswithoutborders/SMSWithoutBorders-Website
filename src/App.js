@@ -9,28 +9,28 @@ import About from "./Pages/About";
 import MobileNav from "./Components/MobileNav";
 
 const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-  },
+	palette: {
+		mode: "dark"
+	}
 });
 
 function App() {
-  return (
-    <>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
-        <Router>
-          <Nav />
-          <MobileNav />
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </ThemeProvider>
-    </>
-  );
+	return (
+		<>
+			<ThemeProvider theme={darkTheme}>
+				<CssBaseline />
+				<Router>
+					<Nav />
+					<MobileNav />
+					<Routes>
+						<Route path="/" element={<Landing />} />
+						<Route path="/about" element={<About />} />
+					</Routes>
+					<Footer />
+				</Router>
+			</ThemeProvider>
+		</>
+	);
 }
 
 export default App;
