@@ -1,6 +1,6 @@
-import { Grid, Typography, Box, IconButton } from "@mui/material";
+import { Grid, Typography, Box, IconButton, Button } from "@mui/material";
 import React from "react";
-import { FaCircleChevronRight } from "react-icons/fa6";
+import { FaCircleChevronRight, FaGithub, FaStar } from "react-icons/fa6";
 import Faqs from "../Components/FAQS";
 import { motion } from "framer-motion";
 import Events from "../Components/Events";
@@ -260,6 +260,83 @@ export default function Landing() {
           }}
         >
           <Events />
+        </Box>
+      </motion.div>
+      {/* Donate */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ type: "spring", stiffness: 80, delay: 1 }}
+      >
+        <Box
+          sx={{
+            py: { md: 12, xs: 6 },
+            bgcolor: "#496A81",
+            px: { md: 17, xs: 2 },
+          }}
+        >
+          <Typography variant="h6" sx={{ opacity: "70%" }}>
+            Support
+          </Typography>
+          <Typography variant="h5" sx={{ py: 5, fontWeight: 600 }}>
+            Pay for one or maybe two SMS's today
+          </Typography>
+          <Grid
+            container
+            columnSpacing={3}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid item md={5} xs={12}>
+              <Box sx={{ pt: 5 }}>
+                <Typography variant="body1">
+                  Your donations helps us send messages of those who really need
+                  to communicate using our platform.
+                </Typography>
+                <Button
+                  size="large"
+                  className="cards"
+                  variant="contained"
+                  sx={{
+                    borderRadius: "30px",
+                    px: 4,
+                    mt: 2,
+                    textTransform: "none",
+                    bgcolor: "whitesmoke",
+                  }}
+                >
+                  Donate
+                </Button>
+                <Typography variant="body1" sx={{ py: 5 }}>
+                  Don't have the ability to support financially? You can still
+                  help by staring our repos on github <FaStar />
+                </Typography>
+                <Button
+                  size="large"
+                  className="cards"
+                  variant="contained"
+                  sx={{
+                    borderRadius: "30px",
+                    px: 4,
+                    textTransform: "none",
+                    bgcolor: "whitesmoke",
+                  }}
+                >
+                  Github
+                  <FaGithub size="25px" style={{ marginLeft: "4px" }} />
+                </Button>
+              </Box>
+            </Grid>
+            <Grid item md={7} xs={12}>
+              <Box
+                component="img"
+                src="/gitstar.png"
+                sx={{ width: { md: "100%", xs: "100%" } }}
+                alt="RelaySMS"
+              />
+            </Grid>
+          </Grid>
         </Box>
       </motion.div>
       {/* Ask */}

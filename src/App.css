@@ -64,3 +64,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+  button:hover {
+    background-color: #2d2d2d !important;  
+  }
