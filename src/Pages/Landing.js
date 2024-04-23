@@ -65,7 +65,7 @@ export default function Landing() {
 					py: { md: 8, xs: 2 }
 				}}
 			>
-				<Box component="img" src="/luther.png" sx={{ width: { md: "60%", xs: "100%" } }} />
+				<Box component="img" src="/luther.png" sx={{ width: { md: "60%", xs: "100%" } }} /> <br/>Martin_Luther_King_Jr.(1929 – 1968)
 			</Box>
 			{/*  */}
 			<Box
@@ -268,7 +268,7 @@ export default function Landing() {
           >
             <Grid item md={5} xs={12}>
               <Box sx={{ pt: 5 }}>
-                <Typography variant="body1">
+                <Typography variant="body1" sx={{opacity: "75%"}}>
                   Your donations helps us send messages of those who really need
                   to communicate using our platform.
                 </Typography>
@@ -286,7 +286,7 @@ export default function Landing() {
                 >
                   Donate
                 </Button>
-                <Typography variant="body1" sx={{ py: 5 }}>
+                <Typography variant="body1" sx={{ pt: 5, opacity: "75%" }}>
                   Don't have the ability to support financially? You can still
                   help by staring our repos on github <FaStar />
                 </Typography>
@@ -297,6 +297,7 @@ export default function Landing() {
                   sx={{
                     borderRadius: "30px",
                     px: 4,
+                    mt: 2,
                     textTransform: "none",
                     bgcolor: "whitesmoke",
                   }}
