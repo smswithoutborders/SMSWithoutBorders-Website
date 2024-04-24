@@ -44,7 +44,7 @@ body {
 @media only screen and (max-width: 768px) {
 	.banner {
 		background-image: url(/public/mapin2.png);
-		height: 80vh;
+		height: 85vh;
 		width: 100%;
 		background-size: cover;
 		background-position: center;

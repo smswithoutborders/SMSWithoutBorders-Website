@@ -95,7 +95,7 @@ export default function Landing() {
 			{/*  */}
 			{/* Sponsors */}
 			<Box
-				sx={{ bgcolor: "whitesmoke", color: "black", p: { md: 8, xs: 2 }, px: { md: 18, xs: 2 } }}
+				sx={{ bgcolor: "whitesmoke", color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}
 			>
 				<Typography variant="h6" sx={{ opacity: "70%", pb: 2 }}>
 					PARTNERS
@@ -255,7 +255,7 @@ export default function Landing() {
 			>
 				<Box
 					sx={{
-						py: { md: 12, xs: 6 },
+						py: { md: 12, xs: 10 },
 						bgcolor: "#032B43",
 						px: { md: 17, xs: 2 }
 					}}
@@ -272,7 +272,7 @@ export default function Landing() {
 			>
 				<Box
 					sx={{
-						py: { md: 12, xs: 6 },
+						py: { md: 12, xs: 10 },
 						bgcolor: "#496A81",
 						px: { md: 17, xs: 2 }
 					}}
@@ -351,7 +351,7 @@ export default function Landing() {
 			>
 				<Box
 					sx={{
-						p: { md: 12, xs: 2 },
+						py: { md: 12, xs: 10 },
 						px: { md: 17, xs: 2 }
 					}}
 				>
