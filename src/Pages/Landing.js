@@ -1,4 +1,4 @@
-import { Grid, Typography, Box, IconButton, Button } from "@mui/material";
+import { Grid, Typography, Box, Button } from "@mui/material";
 import React from "react";
 import { FaCircleChevronRight, FaGithub, FaStar } from "react-icons/fa6";
 import Faqs from "../Components/FAQS";
@@ -27,7 +27,7 @@ export default function Landing() {
 								fontSize: { md: "80px", xs: "50px" }
 							}}
 						>
-							The Private Part of SMS{" "}
+							Beyond Messaging,{" "}
 							<Typography
 								variant="h2"
 								sx={{
@@ -37,7 +37,7 @@ export default function Landing() {
 								className="messaging-text"
 							>
 								{" "}
-								Messaging
+								Building Freedom.
 							</Typography>
 						</Typography>{" "}
 						<Typography
@@ -49,10 +49,9 @@ export default function Landing() {
 								opacity: "70%"
 							}}
 						>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-							ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-							bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla
-							facilisi.
+							We develop tools that advocate for internet freedom and free expression globally
+							because we believe communication should be secure, unrestricted, and empowering for
+							all.
 						</Typography>
 					</motion.div>
 				</Box>
@@ -62,43 +61,48 @@ export default function Landing() {
 			{/*  */}
 			<Box
 				sx={{
-					py: { md: 8, xs: 2 }
+					py: { md: 8, xs: 8 },
+					px: { md: 0, xs: 4 }
 				}}
 			>
-				<Box component="img" src="/luther.png" sx={{ width: { md: "60%", xs: "100%" } }} /> <br/>Martin_Luther_King_Jr.(1929 – 1968)
+				<Grid
+					container
+					justifyContent="center"
+					alignItems="center"
+					columnSpacing={4}
+					rowSpacing={4}
+				>
+					<Grid md={6} xs={12}>
+						<Box component="img" src="/luther.png" sx={{ width: { md: "100%", xs: "100%" } }} />
+					</Grid>
+					<Grid md={6} xs={12}>
+						<Typography
+							component="blockquote"
+							variant="h6"
+							sx={{ px: { md: 15, xs: 3 }, py: 3, fontWeight: 600 }}
+						>
+							<span className="quote first">&quot;</span> Our lives begin to end the day we become
+							silent about things that matter.<span className="quote">&quot;</span> - Martin Luther
+							King Jr.
+						</Typography>
+						<Typography variant="h6" sx={{ px: { md: 15, xs: 2 } }}>
+							SMSWithoutBorders keeps the conversation going with secure messaging tools that
+							empower your voice, anywhere.
+						</Typography>
+					</Grid>
+				</Grid>
 			</Box>
 			{/*  */}
+			{/* Sponsors */}
 			<Box
-				sx={{
-					p: { md: 8, xs: 2 }
-				}}
+				sx={{ bgcolor: "whitesmoke", color: "black", p: { md: 8, xs: 2 }, px: { md: 18, xs: 2 } }}
 			>
-				<motion.div
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					viewport={{ once: true }}
-					transition={{ type: "spring", stiffness: 60, delay: 1 }}
-				>
-					<Typography variant="h4" sx={{ py: 4, px: { xs: 2, md: 35 } }}>
-						We are nerds building solutions and creating a voice for everyone through SMS messaging
-						(with really cool tech).
-					</Typography>
-
-					<Typography
-						variant="h6"
-						sx={{
-							px: { md: 35, xs: 2 },
-							py: { md: 4, xs: 4 },
-							opacity: "70%"
-						}}
-					>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-						bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
-					</Typography>
-				</motion.div>
-			</Box>
-			<Box sx={{ bgcolor: "whitesmoke" }}>
+				<Typography variant="h6" sx={{ opacity: "70%", pb: 2 }}>
+					PARTNERS
+				</Typography>
+				<Typography variant="h5" sx={{ pb: 5, fontWeight: 600 }}>
+					Heros that help keep us afloat
+				</Typography>
 				<Grid
 					sx={{ px: { md: 35, xs: 1 } }}
 					container
@@ -106,7 +110,7 @@ export default function Landing() {
 					justifyContent="space-evenly"
 					alignItems="center"
 				>
-					<Grid md={3} xs={6}>
+					<Grid md={5} xs={6}>
 						<Box
 							component="img"
 							src="/OTF.png"
@@ -114,7 +118,7 @@ export default function Landing() {
 							alt="RelaySMS"
 						/>
 					</Grid>
-					<Grid md={3} xs={6}>
+					<Grid md={5} xs={6}>
 						<Box
 							component="img"
 							src="/Internews.png"
@@ -134,11 +138,25 @@ export default function Landing() {
 				<Box
 					sx={{
 						p: { md: 8, xs: 2 },
-						bgcolor: "#1B1E27",
-						py: { md: 12, xs: 8 }
+
+						pt: { md: 12, xs: 8 }
 					}}
 				>
-					<Grid container justifyContent="flex-end" alignItems="center" columnSpacing={3}>
+					<Box sx={{ px: { md: 10, xs: 0 }, py: 2 }}>
+						<Typography variant="h6" sx={{ opacity: "70%", pb: 2 }}>
+							OUR TOOLS
+						</Typography>
+						<Typography variant="h5" sx={{ pb: 5, fontWeight: 600 }}>
+							Our tools that aid offline communication
+						</Typography>
+					</Box>
+					<Grid
+						container
+						justifyContent="flex-end"
+						alignItems="center"
+						columnSpacing={3}
+						rowSpacing={3}
+					>
 						<Grid item md={4}>
 							<Box
 								component="img"
@@ -149,10 +167,10 @@ export default function Landing() {
 						</Grid>
 						<Grid item md={7} sx={{ pr: { md: 15, xs: 0 } }}>
 							<Typography variant="h6" sx={{ fontWeight: 600, opacity: "70%" }}>
-								RelaySMS
+								RelaySMS (formerly SMSWOB)
 							</Typography>
 							<Typography variant="h4" sx={{ py: 4, fontWeight: 600 }}>
-								SMS messaging app with end to end encyption and other mind blowing features
+								SMS messaging app with end to end encyption
 							</Typography>
 							<Typography
 								variant="body1"
@@ -161,15 +179,18 @@ export default function Landing() {
 									pb: 4
 								}}
 							>
-								The platform enables users with a smartphone to communicate with online third-party
-								platforms using SMS messages. A typical use-case of the platform is sending out
-								emails from platforms such as Gmail accounts. This becomes a useful tool in cases
-								where access to the internet is limited or completely unavailable.
+								RelaySMS is an open-source tool that enables you to communicate with various online
+								services (such as Gmail, Twitter, and Telegram) using regular SMS text messages.
+								This is particularly useful in situations where internet access is limited or
+								unavailable.
 							</Typography>
 
-							<IconButton>
-								<FaCircleChevronRight size="35px" />
-							</IconButton>
+							<Button sx={{ color: "whitesmoke" }}>
+								<Typography variant="body1" sx={{ opacity: "70%", pr: 2, textTransform: "none" }}>
+									Learn More
+								</Typography>
+								<FaCircleChevronRight size="30px" />
+							</Button>
 						</Grid>
 					</Grid>
 				</Box>
@@ -184,17 +205,17 @@ export default function Landing() {
 				<Box
 					sx={{
 						p: { md: 8, xs: 2 },
-
-						py: { md: 12, xs: 8 }
+						pt: { md: 0, xs: 7 },
+						pb: { md: 12, xs: 8 }
 					}}
 				>
-					<Grid container justifyContent="center" alignItems="center">
+					<Grid container justifyContent="center" alignItems="center" rowSpacing={3}>
 						<Grid item md={7} sx={{ pl: { md: 15, xs: 0 } }}>
 							<Typography variant="h6" sx={{ fontWeight: 600, opacity: "70%" }}>
 								Deku SMS
 							</Typography>
 							<Typography variant="h4" sx={{ py: 4, fontWeight: 600 }}>
-								SMS messaging app with end to end encyption and other mind blowing features
+								Feature-rich, open-source default SMS app
 							</Typography>
 							<Typography
 								variant="body1"
@@ -203,14 +224,16 @@ export default function Landing() {
 									pb: 4
 								}}
 							>
-								The platform enables users with a smartphone to communicate with online third-party
-								platforms using SMS messages. A typical use-case of the platform is sending out
-								emails from platforms such as Gmail accounts. This becomes a useful tool in cases
-								where access to the internet is limited or completely unavailable.
+								Deku SMS is designed to enhance your messaging experience while prioritizing your
+								privacy and security. With Deku SMS, you can seamlessly send and receive end-to-end
+								encrypted SMS messages, ensuring that your conversations remain confidential.
 							</Typography>
-							<IconButton>
-								<FaCircleChevronRight size="35px" />
-							</IconButton>
+							<Button sx={{ color: "whitesmoke" }}>
+								<Typography variant="body1" sx={{ opacity: "70%", pr: 2, textTransform: "none" }}>
+									Learn More
+								</Typography>
+								<FaCircleChevronRight size="30px" />
+							</Button>
 						</Grid>
 						<Grid item md={5} justifyContent="flex-end" alignItems="end" ml="auto">
 							<Box
@@ -240,84 +263,85 @@ export default function Landing() {
 					<Events />
 				</Box>
 			</motion.div>
-      {/* Donate */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ type: "spring", stiffness: 80, delay: 1 }}
-      >
-        <Box
-          sx={{
-            py: { md: 12, xs: 6 },
-            bgcolor: "#496A81",
-            px: { md: 17, xs: 2 },
-          }}
-        >
-          <Typography variant="h6" sx={{ opacity: "70%" }}>
-            Support
-          </Typography>
-          <Typography variant="h5" sx={{ py: 5, fontWeight: 600 }}>
-            Pay for one or maybe two SMS's today
-          </Typography>
-          <Grid
-            container
-            columnSpacing={3}
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Grid item md={5} xs={12}>
-              <Box sx={{ pt: 5 }}>
-                <Typography variant="body1" sx={{opacity: "75%"}}>
-                  Your donations helps us send messages of those who really need
-                  to communicate using our platform.
-                </Typography>
-                <Button
-                  size="large"
-                  className="cards"
-                  variant="contained"
-                  sx={{
-                    borderRadius: "30px",
-                    px: 4,
-                    mt: 2,
-                    textTransform: "none",
-                    bgcolor: "whitesmoke",
-                  }}
-                >
-                  Donate
-                </Button>
-                <Typography variant="body1" sx={{ pt: 5, opacity: "75%" }}>
-                  Don't have the ability to support financially? You can still
-                  help by staring our repos on github <FaStar />
-                </Typography>
-                <Button
-                  size="large"
-                  className="cards"
-                  variant="contained"
-                  sx={{
-                    borderRadius: "30px",
-                    px: 4,
-                    mt: 2,
-                    textTransform: "none",
-                    bgcolor: "whitesmoke",
-                  }}
-                >
-                  Github
-                  <FaGithub size="25px" style={{ marginLeft: "4px" }} />
-                </Button>
-              </Box>
-            </Grid>
-            <Grid item md={7} xs={12}>
-              <Box
-                component="img"
-                src="/gitstar.png"
-                sx={{ width: { md: "100%", xs: "100%" } }}
-                alt="RelaySMS"
-              />
-            </Grid>
-          </Grid>
-        </Box>
-      </motion.div>
+			{/* Donate */}
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true }}
+				transition={{ type: "spring", stiffness: 80, delay: 1 }}
+			>
+				<Box
+					sx={{
+						py: { md: 12, xs: 6 },
+						bgcolor: "#496A81",
+						px: { md: 17, xs: 2 }
+					}}
+				>
+					<Typography variant="h6" sx={{ opacity: "70%", pb: 2 }}>
+						SUPPORT
+					</Typography>
+					<Typography variant="h5" sx={{ pb: 5, fontWeight: 600 }}>
+						Join the heroes empowering people with a means of communication.
+					</Typography>
+					<Grid
+						container
+						columnSpacing={3}
+						rowSpacing={3}
+						justifyContent="center"
+						alignItems="center"
+					>
+						<Grid item md={5} xs={12}>
+							<Box sx={{ pt: 5 }}>
+								<Typography variant="body1" sx={{ opacity: "75%" }}>
+									Your donations directly support those in need by providing them with communication
+									access through our platform.
+								</Typography>
+								<Button
+									size="large"
+									className="cards"
+									variant="contained"
+									sx={{
+										borderRadius: "30px",
+										px: 4,
+										mt: 2,
+										textTransform: "none",
+										bgcolor: "whitesmoke"
+									}}
+								>
+									Donate
+								</Button>
+								<Typography variant="body1" sx={{ pt: 5, opacity: "75%" }}>
+									Unable to provide financial support? You can still make a difference by starring
+									our repositories on GitHub. <FaStar />
+								</Typography>
+								<Button
+									size="large"
+									className="cards"
+									variant="contained"
+									sx={{
+										borderRadius: "30px",
+										px: 4,
+										mt: 2,
+										textTransform: "none",
+										bgcolor: "whitesmoke"
+									}}
+								>
+									Github
+									<FaGithub size="25px" style={{ marginLeft: "4px" }} />
+								</Button>
+							</Box>
+						</Grid>
+						<Grid item md={7} xs={12}>
+							<Box
+								component="img"
+								src="/gitstar.png"
+								sx={{ width: { md: "100%", xs: "100%" } }}
+								alt="RelaySMS"
+							/>
+						</Grid>
+					</Grid>
+				</Box>
+			</motion.div>
 			{/* Ask */}
 			<motion.div
 				initial={{ opacity: 0 }}
@@ -331,10 +355,10 @@ export default function Landing() {
 						px: { md: 17, xs: 2 }
 					}}
 				>
-					<Typography variant="h6" sx={{ opacity: "70%" }}>
+					<Typography variant="h6" sx={{ opacity: "70%", pb: 2 }}>
 						FAQS
 					</Typography>
-					<Typography variant="h5" sx={{ py: 5, fontWeight: 600 }}>
+					<Typography variant="h5" sx={{ pb: 5, fontWeight: 600 }}>
 						Frequently asked questions
 					</Typography>
 
