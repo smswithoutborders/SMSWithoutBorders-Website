@@ -24,7 +24,7 @@ export default function Landing() {
 								px: { md: 25, xs: 2 },
 								textAlign: "center",
 								fontWeight: 700,
-								fontSize: { md: "80px", xs: "50px" }
+								fontSize: { md: "80px", xs: "55px" }
 							}}
 						>
 							Beyond Messaging,{" "}
@@ -32,7 +32,7 @@ export default function Landing() {
 								variant="h2"
 								sx={{
 									fontWeight: 700,
-									fontSize: { md: "80px", xs: "50px" }
+									fontSize: { md: "80px", xs: "55px" }
 								}}
 								className="messaging-text"
 							>
@@ -41,7 +41,7 @@ export default function Landing() {
 							</Typography>
 						</Typography>{" "}
 						<Typography
-							variant="h6"
+							variant="h5"
 							sx={{
 								px: { md: 35, xs: 2 },
 								py: { md: 10, xs: 2 },
@@ -85,7 +85,7 @@ export default function Landing() {
 							silent about things that matter.<span className="quote">&quot;</span> - Martin Luther
 							King Jr.
 						</Typography>
-						<Typography variant="h6" sx={{ px: { md: 15, xs: 2 } }}>
+						<Typography variant="h6" sx={{ px: { md: 15, xs: 2 }, opacity: "75%" }}>
 							SMSWithoutBorders keeps the conversation going with secure messaging tools that
 							empower your voice, anywhere.
 						</Typography>
