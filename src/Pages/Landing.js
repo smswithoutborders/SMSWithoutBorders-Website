@@ -170,7 +170,7 @@ export default function Landing() {
 								RelaySMS (formerly SMSWOB)
 							</Typography>
 							<Typography variant="h4" sx={{ py: 4, fontWeight: 600 }}>
-								SMS messaging app with end to end encyption
+								Stay connected even with limited or unavailable internet access
 							</Typography>
 							<Typography
 								variant="body1"
@@ -215,7 +215,8 @@ export default function Landing() {
 								Deku SMS
 							</Typography>
 							<Typography variant="h4" sx={{ py: 4, fontWeight: 600 }}>
-								Feature-rich, open-source default SMS app
+								Feature-rich, open-source default SMS app Safeguarding Your SMS Communications with
+								End-to-End Encryption
 							</Typography>
 							<Typography
 								variant="body1"
@@ -224,9 +225,10 @@ export default function Landing() {
 									pb: 4
 								}}
 							>
-								Deku SMS is designed to enhance your messaging experience while prioritizing your
-								privacy and security. With Deku SMS, you can seamlessly send and receive end-to-end
-								encrypted SMS messages, ensuring that your conversations remain confidential.
+								Deku SMS is a Feature-rich, open-source default SMS app designed to enhance your
+								messaging experience while prioritizing your privacy and security. With Deku SMS,
+								you can seamlessly send and receive end-to-end encrypted SMS messages, ensuring that
+								your conversations remain confidential.
 							</Typography>
 							<Button sx={{ color: "whitesmoke" }}>
 								<Typography variant="body1" sx={{ opacity: "70%", pr: 2, textTransform: "none" }}>
