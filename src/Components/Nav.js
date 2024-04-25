@@ -14,7 +14,12 @@ export default function Nav() {
 			}}
 		>
 			<Box sx={{ display: "flex", alignItems: "center" }}>
-				<Typography variant="h6" sx={{ marginLeft: "8px", fontWeight: 600 }}>
+				<Typography
+					component="a"
+					href="/"
+					variant="h6"
+					sx={{ marginLeft: "8px", fontWeight: 600, textDecoration: "none", color: "white" }}
+				>
 					SMSWithoutBorders
 				</Typography>
 			</Box>
@@ -50,6 +55,10 @@ export default function Nav() {
 						Deku SMS
 					</Button>
 					<Button
+						component="a"
+						href="https://blog.smswithoutborders.com/"
+						target="_blank"
+						rel="noopener noreferrer"
 						sx={{
 							mx: 3,
 							textTransform: "none",
@@ -59,17 +68,13 @@ export default function Nav() {
 					>
 						Blogs
 					</Button>
-					<Button
-						sx={{
-							mx: 3,
-							textTransform: "none",
-							color: "whitesmoke",
-							fontSize: "18px"
-						}}
+
+					<IconButton
+						component="a"
+						href="https://github.com/smswithoutborders"
+						target="_blank"
+						rel="noopener noreferrer"
 					>
-						Developers
-					</Button>
-					<IconButton>
 						<FaGithub />
 					</IconButton>
 				</Box>

@@ -24,10 +24,10 @@ export default function Events() {
 
 	return (
 		<Box>
-			<Typography variant="h6" sx={{ color: "whitesmoke", opacity: "70%" }}>
+			<Typography variant="h6" sx={{ color: "whitesmoke", opacity: "70%", pb: 2 }}>
 				JOIN US AT UPCOMING EVENTS
 			</Typography>
-			<Typography variant="h5" sx={{ py: 5, color: "whitesmoke", fontWeight: 600 }}>
+			<Typography variant="h5" sx={{ pb: 5, color: "whitesmoke", fontWeight: 600 }}>
 				Attend events hosted by SMSWithoutBorders, both online and onsite.
 			</Typography>
 
@@ -42,10 +42,10 @@ export default function Events() {
 						}}
 					>
 						<Typography variant="body1" sx={{ color: "black", px: 1 }}>
-							APR
+							JUNE
 						</Typography>
 						<Typography variant="h2" sx={{ color: "black", fontWeight: 400 }}>
-							17
+							18
 						</Typography>
 						{/*  */}
 						<Box
@@ -57,11 +57,11 @@ export default function Events() {
 								color: "white"
 							}}
 						>
-							<Typography variant="body1">YOUTUBE LIVE</Typography>
+							<Typography variant="body1">AFKANERD SONAC STREET</Typography>
 							<Typography variant="h6" sx={{ py: 2, fontWeight: 600 }}>
-								Intro to encryption in both RelaySMS and Deku SMS apps
+								Internal Infosession (Getting to know Deku SMS)
 							</Typography>
-							<Typography variant="body1">10:00 a.m. - 1: 00 p.m. </Typography>
+							<Typography variant="body1">11:00 a.m. - 2: 00 p.m. </Typography>
 						</Box>
 					</Card>
 				</Grid>
@@ -81,20 +81,19 @@ export default function Events() {
 						}}
 					>
 						<Typography variant="body1" sx={{ opacity: "70%", mt: 5 }}>
-							APRIL 17 10:00 a.m. - 1: 00 p.m.{" "}
+							JUNE 18 11:00 a.m. - 2: 00 p.m.{" "}
 						</Typography>
 						<Typography variant="h6" sx={{ py: 2, fontWeight: 600 }}>
-							Intro to encryption in both RelaySMS and Deku SMS apps
+							Internal Infosession (Getting to know Deku SMS)
 						</Typography>
 						<Typography variant="body1" sx={{ opacity: "70%" }}>
 							{" "}
-							<FaLocationDot /> YOUTUBE LIVE{" "}
+							<FaLocationDot /> AFKANERD SONAC STREET{" "}
 						</Typography>
 						<Typography variant="h6" sx={{ py: 2 }}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-							ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-							bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla
-							facilisi.
+							Eager to learn more about Deku SMS? Wondering how it diverges from standard SMS
+							messaging platforms and what functionalities it offer? Join our internal information
+							session to gain a deeper understanding.
 						</Typography>
 						<Button
 							variant="contained"
@@ -119,10 +118,10 @@ export default function Events() {
 						}}
 					>
 						<Typography variant="body1" sx={{ color: "whitesmoke", px: 1 }}>
-							AUG
+							JUNE
 						</Typography>
 						<Typography variant="h2" sx={{ color: "whitesmoke", fontWeight: 400 }}>
-							10
+							29
 						</Typography>
 						{/*  */}
 						<Box
@@ -134,11 +133,11 @@ export default function Events() {
 								color: "black"
 							}}
 						>
-							<Typography variant="body1">AFKANERD SONAC STREET</Typography>
+							<Typography variant="body1">GOOGLE MEET</Typography>
 							<Typography variant="h6" sx={{ py: 2, fontWeight: 600 }}>
 								Intro to encryption in both RelaySMS and Deku SMS apps
 							</Typography>
-							<Typography variant="body1">10:00 a.m. - 1: 00 p.m. </Typography>
+							<Typography variant="body1">4:00 p.m. - 6: 00 p.m. </Typography>
 						</Box>
 					</Card>
 				</Grid>
@@ -159,20 +158,20 @@ export default function Events() {
 						}}
 					>
 						<Typography variant="body1" sx={{ opacity: "70%", mt: 5 }}>
-							AUGUST 10 10:00 a.m. - 1: 00 p.m.{" "}
+							JUNE 10 4:00 p.m. - 6: 00 p.m.{" "}
 						</Typography>
 						<Typography variant="h6" sx={{ py: 2, fontWeight: 600 }}>
 							Intro to encryption in both RelaySMS and Deku SMS apps
 						</Typography>
 						<Typography variant="body1" sx={{ opacity: "70%" }}>
 							{" "}
-							<FaLocationDot /> AFKANERD INFOTECH, SONAC STREET, BAMENDA, CAMEROON.{" "}
+							<FaLocationDot /> GOOGLE MEET{" "}
 						</Typography>
 						<Typography variant="h6" sx={{ py: 2 }}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-							ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-							bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla
-							facilisi.
+							Passionate about understanding the nuances of encryption, including its workings,
+							implementation, and fundamentals? Then this online session is tailor-made for you.
+							Gain insights from industry experts, the developers behind SMSWithoutBorders, as they
+							unravel the intricacies of encryption tools within the platform.
 						</Typography>
 						<Button
 							variant="contained"

@@ -39,84 +39,8 @@ export default function Faqs() {
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-						bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
-			<Accordion>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel2-content"
-					id="panel2-header"
-				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						How many sub projects are in SMSWithoutBorders
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-						bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
-			{/*  */}
-			<Accordion>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel2-content"
-					id="panel2-header"
-				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-						bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
-			{/*  */}
-			<Accordion>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel2-content"
-					id="panel2-header"
-				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						SMSWithoutBorders apk
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-						bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
-			{/*  */}
-			<Accordion>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel2-content"
-					id="panel2-header"
-				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						SMSWithoutBorders Gateway clients
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-						bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
+						Yes SMSWithoutBorders is open source, we believe communication should be secure,
+						unrestricted, and empowering for all.
 					</Typography>
 				</AccordionDetails>
 			</Accordion>

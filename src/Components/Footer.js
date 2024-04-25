@@ -37,13 +37,23 @@ export default function Footer() {
 				<Box>
 					<Grid container sx={{ py: { md: 2, xs: 2 } }}>
 						<Grid item md={6} xs={6}>
-							<Typography variant="h6" sx={{ fontWeight: 600, px: { md: 3, xs: 2 } }}>
+							<Typography
+								variant="h6"
+								sx={{ fontWeight: 600, px: { md: 3, xs: 2 }, py: { md: 0, xs: 2 } }}
+							>
 								SMSWithoutBorders
 							</Typography>
 						</Grid>
 						<Grid item md={6} xs={12}>
 							<Box sx={{ display: { md: "flex", xs: "block" } }}>
-								<Typography variant="body1" sx={{ p: 2 }}>
+								<Typography
+									component="a"
+									href="https://blog.smswithoutborders.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									variant="body1"
+									sx={{ p: 2, textDecoration: "none", color: "white" }}
+								>
 									Blogs
 								</Typography>
 								<Typography variant="body1" sx={{ p: 2 }}>
@@ -52,7 +62,14 @@ export default function Footer() {
 								<Typography variant="body1" sx={{ p: 2 }}>
 									Deku SMS
 								</Typography>
-								<Typography variant="body1" sx={{ p: 2 }}>
+								<Typography
+									component="a"
+									href="https://github.com/smswithoutborders"
+									target="_blank"
+									rel="noopener noreferrer"
+									variant="body1"
+									sx={{ p: 2, textDecoration: "none", color: "white" }}
+								>
 									Developers
 								</Typography>
 								<Typography variant="body1" sx={{ p: 2 }}>

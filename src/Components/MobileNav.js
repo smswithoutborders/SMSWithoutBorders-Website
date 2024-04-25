@@ -7,6 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
+import { FaGithub } from "react-icons/fa6";
 
 function MobileNav() {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -20,7 +21,7 @@ function MobileNav() {
 	};
 
 	return (
-		<nav className="cards" style={{ backgroundColor: "black" }}>
+		<nav className="cards" style={{ backgroundColor: "transparent" }}>
 			<Container
 				maxWidth="sm"
 				sx={{
@@ -66,15 +67,32 @@ function MobileNav() {
 							}}
 						>
 							<MenuItem onClick={handleCloseNavMenu}>
-								<Typography textAlign="center">Technologies</Typography>
+								<Typography textAlign="center">RelaySMS</Typography>
 							</MenuItem>
 
 							<MenuItem onClick={handleCloseNavMenu}>
-								<Typography textAlign="center">Documentations</Typography>
+								<Typography textAlign="center">Deku SMS</Typography>
 							</MenuItem>
 
-							<MenuItem onClick={handleCloseNavMenu}>
+							<MenuItem
+								onClick={handleCloseNavMenu}
+								component="a"
+								href="https://blog.smswithoutborders.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<Typography textAlign="center">Blogs</Typography>
+							</MenuItem>
+
+							<MenuItem onClick={handleCloseNavMenu}>
+								<IconButton
+									component="a"
+									href="https://github.com/smswithoutborders"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<FaGithub />
+								</IconButton>
 							</MenuItem>
 
 							<MenuItem onClick={handleCloseNavMenu}>
