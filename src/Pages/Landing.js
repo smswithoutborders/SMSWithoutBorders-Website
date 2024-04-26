@@ -73,7 +73,9 @@ export default function Landing() {
 					rowSpacing={4}
 				>
 					<Grid md={6} xs={12}>
-						<Box component="img" src="/luther.png" sx={{ width: { md: "100%", xs: "100%" } }} />
+						<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+							<Box component="img" src="/luther.png" sx={{ width: { md: "100%", xs: "100%" } }} />
+						</motion.div>
 					</Grid>
 					<Grid md={6} xs={12}>
 						<Typography
@@ -110,21 +112,25 @@ export default function Landing() {
 					justifyContent="space-evenly"
 					alignItems="center"
 				>
-					<Grid md={5} xs={6}>
-						<Box
-							component="img"
-							src="/OTF.png"
-							sx={{ width: { md: "100%", xs: "100%" } }}
-							alt="RelaySMS"
-						/>
+					<Grid md={5} xs={6} component="a" href="https://www.opentech.fund/" target="_blank">
+						<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+							<Box
+								component="img"
+								src="/OTF.png"
+								sx={{ width: { md: "100%", xs: "100%" } }}
+								alt="RelaySMS"
+							/>
+						</motion.div>
 					</Grid>
-					<Grid md={5} xs={6}>
-						<Box
-							component="img"
-							src="/Internews.png"
-							sx={{ width: { md: "100%", xs: "100%" } }}
-							alt="RelaySMS"
-						/>
+					<Grid md={5} xs={6} component="a" href="https://internews.org/" target="_blank">
+						<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+							<Box
+								component="img"
+								src="/Internews.png"
+								sx={{ width: { md: "100%", xs: "100%" } }}
+								alt="RelaySMS"
+							/>
+						</motion.div>
 					</Grid>
 				</Grid>
 			</Box>
@@ -158,12 +164,14 @@ export default function Landing() {
 						rowSpacing={3}
 					>
 						<Grid item md={4}>
-							<Box
-								component="img"
-								src="/swobb.png"
-								sx={{ width: { md: "100%", xs: "100%" } }}
-								alt="RelaySMS"
-							/>
+							<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+								<Box
+									component="img"
+									src="/swobb.png"
+									sx={{ width: { md: "100%", xs: "100%" } }}
+									alt="RelaySMS"
+								/>
+							</motion.div>
 						</Grid>
 						<Grid item md={7} sx={{ pr: { md: 15, xs: 0 } }}>
 							<Typography variant="h6" sx={{ fontWeight: 600, opacity: "70%" }}>
@@ -238,12 +246,14 @@ export default function Landing() {
 							</Button>
 						</Grid>
 						<Grid item md={5} justifyContent="flex-end" alignItems="end" ml="auto">
-							<Box
-								component="img"
-								src="/dekuu.png"
-								sx={{ width: { md: "80%", xs: "100%" }, borderRadius: 5 }}
-								alt="RelaySMS"
-							/>
+							<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+								<Box
+									component="img"
+									src="/dekuu.png"
+									sx={{ width: { md: "80%", xs: "100%" }, borderRadius: 5 }}
+									alt="RelaySMS"
+								/>
+							</motion.div>
 						</Grid>
 					</Grid>
 				</Box>
@@ -334,12 +344,14 @@ export default function Landing() {
 							</Box>
 						</Grid>
 						<Grid item md={7} xs={12}>
-							<Box
-								component="img"
-								src="/gitstar.png"
-								sx={{ width: { md: "100%", xs: "100%" } }}
-								alt="RelaySMS"
-							/>
+							<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+								<Box
+									component="img"
+									src="/gitstar.png"
+									sx={{ width: { md: "100%", xs: "100%" } }}
+									alt="RelaySMS"
+								/>
+							</motion.div>
 						</Grid>
 					</Grid>
 				</Box>
