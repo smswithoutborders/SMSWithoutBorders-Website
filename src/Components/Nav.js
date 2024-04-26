@@ -35,6 +35,10 @@ export default function Nav() {
 					}}
 				>
 					<Button
+						component="a"
+						href="https://github.com/smswithoutborders"
+						target="_blank"
+						rel="noopener noreferrer"
 						sx={{
 							mx: 3,
 							textTransform: "none",
@@ -45,6 +49,10 @@ export default function Nav() {
 						RelaySMS
 					</Button>
 					<Button
+						component="a"
+						href="https://github.com/deku-messaging"
+						target="_blank"
+						rel="noopener noreferrer"
 						sx={{
 							mx: 3,
 							textTransform: "none",

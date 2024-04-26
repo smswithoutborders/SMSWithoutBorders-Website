@@ -66,11 +66,23 @@ function MobileNav() {
 								display: { xs: "block", md: "none" }
 							}}
 						>
-							<MenuItem onClick={handleCloseNavMenu}>
+							<MenuItem
+								onClick={handleCloseNavMenu}
+								component="a"
+								href="https://github.com/smswithoutborders"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<Typography textAlign="center">RelaySMS</Typography>
 							</MenuItem>
 
-							<MenuItem onClick={handleCloseNavMenu}>
+							<MenuItem
+								onClick={handleCloseNavMenu}
+								component="a"
+								href="https://github.com/deku-messaging"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<Typography textAlign="center">Deku SMS</Typography>
 							</MenuItem>
 
