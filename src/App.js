@@ -1,18 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./Components/Footer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; //
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./Pages/Landing";
-import "./App.css";
 import PageNotFound from "./Pages/PageNotFound";
+import Loader from "./Components/Loader";
+import "./App.css";
 
 function App() {
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoading(false);
+		}, 2000);
+
+		return () => clearTimeout(timer);
+	}, []);
+
 	return (
 		<Router>
-			<Routes>
-				<Route path="/" element={<Landing />} />
-				<Route path="*" element={<PageNotFound />} />
-			</Routes>
-			<Footer />
+			{loading ? (
+				<Loader />
+			) : (
+				<>
+					<Routes>
+						<Route path="/" element={<Landing />} />
+						<Route path="*" element={<PageNotFound />} />
+					</Routes>
+					<Footer />
+				</>
+			)}
 		</Router>
 	);
 }

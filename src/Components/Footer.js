@@ -1,3 +1,4 @@
+// Footer.js
 import React from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { FaEnvelope, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
@@ -6,19 +7,42 @@ import "../index.css";
 
 function Footer() {
 	return (
-		<Container fluid className="footer-container py-4 text-white bg-blue-900">
-			<Row className="justify-content-center text-white  align-items-center mb-4">
-				<Col xs={12} md={4} className="text-center text-md-left mb-3 mb-md-0">
-					<div className="footer-logo mb-2">
-						<img src="/logo.png" alt="smswithoutborders logo" className="img-fluid" />
-					</div>
+		<Container fluid className="footer-container py-4 text-white">
+			<Row className="footer-nav text-center text-md-left">
+				<Col xs={12} md={3} className="mb-3 d-flex justify-content-center">
+					<Nav className="flex-column">
+						<Nav.Link href="#" className="font-weight-bold mb-2 text-uppercase">
+							Quick Links
+						</Nav.Link>
+						<Nav.Link href="https://blog.smswithoutborders.com/">Blog</Nav.Link>
+						<Nav.Link href="/documentation">Documentation</Nav.Link>
+						<Nav.Link href="/privacy-policy">Privacy Policy</Nav.Link>
+					</Nav>
 				</Col>
-				<Col
-					xs={12}
-					md={4}
-					className="d-flex justify-content-center justify-content-md-center mb-3 mb-md-0"
-				>
-					<div className="social text-white  d-flex justify-content-center">
+				<Col xs={12} md={3} className="mb-3 d-flex justify-content-center">
+					<Nav className="flex-column">
+						<Nav.Link href="#" className="font-weight-bold mb-2 text-uppercase">
+							Community
+						</Nav.Link>
+						<Nav.Link href="https://github.com/smswithoutborders">GitHub</Nav.Link>
+						<Nav.Link href="https://www.facebook.com/SMSWithoutBorders">Facebook</Nav.Link>
+						<Nav.Link href="https://twitter.com/RelaySMS">Twitter</Nav.Link>
+						<Nav.Link href="mailto:support@smswithoutborders.com">Contact Us</Nav.Link>
+					</Nav>
+				</Col>
+				<Col xs={12} md={3} className="mb-3 d-flex justify-content-center">
+					<Nav className="flex-column">
+						<Nav.Link href="#" className="font-weight-bold mb-2 text-uppercase">
+							Downloads
+						</Nav.Link>
+						<Nav.Link href="/download/android">Android</Nav.Link>
+						<Nav.Link href="/download/ios">iOS</Nav.Link>
+						<Nav.Link href="/download/linux">Linux</Nav.Link>
+						<Nav.Link href="/download/windows">Windows</Nav.Link>
+					</Nav>
+				</Col>
+				<Col xs={12} md={3} className="mb-3 d-flex justify-content-center align-items-center">
+					<Nav className="d-flex justify-content-center">
 						<Nav.Link href="https://www.facebook.com/SMSWithoutBorders" className="mx-2">
 							<FaFacebook size={24} />
 						</Nav.Link>
@@ -31,46 +55,13 @@ function Footer() {
 						<Nav.Link href="mailto:support@smswithoutborders.com" className="mx-2">
 							<FaEnvelope size={24} />
 						</Nav.Link>
-					</div>
-				</Col>
-			</Row>
-			<Row className="footer-nav text-center text-md-left">
-				<Col xs={12} md={4} className="mb-3">
-					<Nav className="flex-column">
-						<Nav.Link href="#" className="font-weight-bold mb-2">
-							Quick Links
-						</Nav.Link>
-						<Nav.Link href="https://blog.smswithoutborders.com/">Blog</Nav.Link>
-						<Nav.Link href="/documentation">Documentation</Nav.Link>
-						<Nav.Link href="/privacy-policy">Privacy Policy</Nav.Link>
-					</Nav>
-				</Col>
-				<Col xs={12} md={4} className="mb-3">
-					<Nav className="flex-column">
-						<Nav.Link href="#" className="font-weight-bold mb-2">
-							Community
-						</Nav.Link>
-						<Nav.Link href="https://github.com/smswithoutborders">GitHub</Nav.Link>
-						<Nav.Link href="https://www.facebook.com/SMSWithoutBorders">Facebook</Nav.Link>
-						<Nav.Link href="https://twitter.com/RelaySMS">Twitter</Nav.Link>
-						<Nav.Link href="mailto:support@smswithoutborders.com">Contact Us</Nav.Link>
-					</Nav>
-				</Col>
-				<Col xs={12} md={4} className="mb-3">
-					<Nav className="flex-column">
-						<Nav.Link href="#" className="font-weight-bold mb-2">
-							Downloads
-						</Nav.Link>
-						<Nav.Link href="/download/android">Android</Nav.Link>
-						<Nav.Link href="/download/ios">iOS</Nav.Link>
-						<Nav.Link href="/download/linux">Linux</Nav.Link>
-						<Nav.Link href="/download/windows">Windows</Nav.Link>
 					</Nav>
 				</Col>
 			</Row>
+
 			<Row className="border-top border-light pt-3">
 				<Col className="text-center">
-					<small>© 2024 SMSWithoutBorders. All rights reserved.</small>
+					<small>© 2024 SMSWithoutBorders.</small>
 				</Col>
 			</Row>
 		</Container>

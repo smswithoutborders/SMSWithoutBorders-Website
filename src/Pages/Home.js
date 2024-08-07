@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Partner from "../Components/partner";
 import Blog from "../Components/Blog";
 import "../App.css";
-import Project from "./About";
+// import Project from "./About";
 
 const Home = () => {
 	const [showMore, setShowMore] = useState(false);
@@ -36,18 +36,27 @@ const Home = () => {
 								What is <span className="header-span text-indigo-700">SMSWithoutBorders</span> All
 								About
 							</h1>
-							<p className="mb-4">
-								SMSWithoutBorders is an overarching project dedicated to developing and promoting
-								secure, accessible communication tools that function even without an internet
-								connection. This initiative encompasses two primary applications:
-							</p>
-							<p className="mb-4">
-								SMSWithoutBorders began its journey as a single, innovative application focused on
-								empowering offline messaging. However, as the project matured and our vision
-								expanded, we recognized the potential to create a broader ecosystem for secure
-								communication. This led to the exciting transition from a standalone app to the
-								SMSWithoutBorders project, encompassing two distinct but complementary applications:
-							</p>
+							<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
+								<div className="md:w-1/2 md:mr-8 mt-8 md:mt-0">
+									<img src="logo.png" alt="DekuSMS" className="rounded-lg shadow-lg" />
+								</div>
+								<div className="md:w-1/2 mt-8 md:mt-0">
+									{" "}
+									<p className="mb-4">
+										SMSWithoutBorders is an overarching project dedicated to developing and
+										promoting secure, accessible communication tools that function even without an
+										internet connection. This initiative encompasses two primary applications:
+									</p>
+									<p className="mb-4">
+										SMSWithoutBorders began its journey as a single, innovative application focused
+										on empowering offline messaging. However, as the project matured and our vision
+										expanded, we recognized the potential to create a broader ecosystem for secure
+										communication. This led to the exciting transition from a standalone app to the
+										SMSWithoutBorders project, encompassing two distinct but complementary
+										applications:
+									</p>{" "}
+								</div>
+							</section>
 							<ul className="list-disc list-inside text-lg mb-4">
 								<li className="mb-2">
 									<strong>RelaySMS:</strong> This user-facing application acts as the cornerstone of
@@ -77,10 +86,7 @@ const Home = () => {
 			</Row>
 
 			{/* About DekuSMS */}
-			<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
-				<div className="md:w-1/2 md:mr-8 mt-8 md:mt-0">
-					<img src="o11.jpg" alt="DekuSMS" className="rounded-lg shadow-lg" />
-				</div>
+			<section className="container mx-auto py-24 flex flex-col md:flex-row items-center space-x-8">
 				<div className="md:w-1/2 mt-8 md:mt-0">
 					<h1 className="text-4xl md:text-6xl font-bold mb-4">
 						About <span className="header-span">DekuSMS</span>
@@ -119,6 +125,9 @@ const Home = () => {
 					>
 						{showMore ? "Read less" : "Read more"}
 					</button>
+				</div>
+				<div className="md:w-1/2 md:mr-8 mt-8 md:mt-0">
+					<img src="o11.jpg" alt="DekuSMS" className="rounded-lg shadow-lg" />
 				</div>
 			</section>
 
@@ -165,11 +174,11 @@ const Home = () => {
 				</Col>
 			</Row>
 			{/* Project */}
-			<Row className="my-4">
+			{/* <Row className="my-4">
 				<Col md={12} sm={8}>
 					<Project />
 				</Col>
-			</Row>
+			</Row> */}
 		</Container>
 	);
 };
