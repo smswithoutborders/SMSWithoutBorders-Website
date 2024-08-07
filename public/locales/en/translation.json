@@ -1,0 +1,93 @@
+{
+	"Landing": {
+		"span": "No Data? No Worries.",
+		"landingh1": "Stay Connected Anywhere with RelaySMS",
+		"landingh2": "Send emails, posts, and messages via SMS without an internet connection. Share important information even in areas with limited or no internet access",
+		"Android": "PlayStore",
+		"AndroidSub": "Download from",
+		"Desktop": "Desktop",
+		"DesktopSub": "Download on"
+	},
+	"Nav": {
+		"Home": "Home",
+		"help": "Help",
+		"github": "GitHub",
+		"Blog": "Blog"
+	},
+
+	"AboutRelaySMS": {
+		"About": "About RelaySMS",
+		"AboutQ": "What is RelaySMS?",
+		"Description": "RelaySMS, formerly known as SMSWithoutBorders (swob) app, is a user-friendly application that empowers you to send messages across your favorite messaging platforms, even when you're disconnected from the internet. Think of it as a secure bridge that connects your offline world to online communication channels. RelaySMS utilizes SMS technology as a reliable relay, allowing you to seamlessly transmit messages even in areas with limited or no internet access.",
+		"Description1": "The concept for SMSWithoutBorders, now RelaySMS, originated from a simple yet powerful vision: ensuring everyone has access to reliable communication, regardless of internet connectivity. Many regions around the world have limited or unreliable internet infrastructure, creating communication barriers that can be disruptive for individuals and communities. RelaySMS was born to bridge this gap, empowering users to stay connected with friends, family, and colleagues even when offline.",
+		"ReadMore": "Read More",
+		"ReadLess": "Read Less"
+	},
+	"Howitworks": {
+		"HowItWorks": "How it works",
+		"HowItWorksSubtitle": "Learn how our service functions seamlessly",
+		"HowItWorkstitleA": "Authorize RelaySMS",
+		"HowItWorksA": "Grant RelaySMS permission to send emails, posts, or messages on your behalf securely.",
+		"HowItWorkstitleB": "Compose and Send",
+		"HowItWorksB": "Craft your content effortlessly. With RelaySMS, your messages are automatically dispatched using your preferred SMS app.",
+		"HowItWorkstitleC": "Relay and Publish",
+		"HowItWorksC": "Your content swiftly reaches RelaySMS access points, ensuring it's distributed to your audience without delay.",
+		"HowItWorkstitleD": "Stay Informed",
+		"HowItWorksD": "Receive instant SMS notifications, keeping you informed of delivery status and ensuring peace of mind.",
+		"GettingStartedButton": "Get Started"
+	},
+	"Map": {
+		"RelaySMSMap": "RelaySMS is actively used in over 60 countries."
+	},
+	"Blog": {
+		"BlogHeader": "Whats New on RelaySMS?",
+		"BlogSubHeader": "Stay updated with the latest news, articles, and insights from RelaySMS.",
+		"Resilience": "Resilience Of Gateway Clients In Smswithoutborders",
+		"ResilienceD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
+		"ReliabilityD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
+		"Reliability": "Reliability Of Gateway Clients In Smswithoutborders",
+		"IDHeader": "RelaySMS Expands User Control with Device ID Registration",
+		"IDD": "RelaySMS (swob app) introduces a powerful new feature: Device ID Registration with RelaySMS Vault! This innovative approach gives you more control over your offline messaging experience.",
+		"RebrandHeader": "Rebranding",
+		"RebrandD": "SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS and other messaging tools. The core functionality remains the same, but users can expect a new name, enhanced security features, and a focus on future growth under the SMSWithoutBorders project.",
+		"ReadMore": "Read More",
+		"ReadOtherArticles": "Read Other Articles"
+	},
+	"FAQ": {
+		"FAQ": "Frequently Asked Questions",
+		"FAQSubheader": "Find answers to the most common questions.",
+		"FAQ1": "Is RelaySMS available on my device?",
+		"faq1": "RelaySMS is currently available for <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank'>Android</a>. We are working on expanding compatibility to other platforms.",
+		"FAQ2": "How much does RelaySMS cost?",
+		"faq2": "RelaySMS is free.",
+		"FAQ3": "How do I send an offline message?",
+		"faq3": "Choose the platform you want to send the message to and compose your message within the app. Or click the <a href='https://smswithoutborders.github.io/docs/tutorials/getting-started/' class='help-link'>Help</a> button to find full tutorials on how to send messages through the app.",
+		"FAQ4": "Are there any limitations on offline messages?",
+		"faq4": "There are no limits on the size and number of messages you can send with the app.",
+		"FAQ5": "I'm having trouble logging in to my account. What should I do?",
+		"faq5": "Click the <a href='https://smswithoutborders.github.io/docs/tutorials/getting-started/' class='help-link'>help</a> button to find full tutorials on logging in to your account and if you can't find a solution, you can reach out to our support team at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>.",
+		"FAQ6": "I'm experiencing technical difficulties with the app. How can I get help?",
+		"faq6": "You can reach out to our support team at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a> or on social media at <a href='https://x.com/RelaySMS' target='_blank'>https://x.com/RelaySMS</a> or by visiting our website.",
+		"FAQ7": "How do I update the RelaySMS app?",
+		"faq7": "The app will usually prompt you to update when a new version is available. You can also manually check for updates through your device's app store."
+	},
+
+	"Footer": {
+		"RelaySMS": "RelaySMS",
+		"footerbody2": "Send Messages seamlessly with RelaySMS.",
+		"footerHeader1": "Quick links",
+		"footerquick1": "Blog",
+		"footerquick3": "Documentation",
+		"footerquick4": "Privacy Policy",
+		"footerHeader2": "Socials",
+		"footersocial1": "Github",
+		"footersocial2": "FaceBook",
+		"footersocial3": " X",
+		"footersocial4": "Mail",
+		"footerHeader3": "Download",
+		"footerdownload1": "Andriod",
+		"footerdownload2": "iOS",
+		"footerdownload3": "Linux",
+		"footerdownload4": "Windows"
+	}
+}

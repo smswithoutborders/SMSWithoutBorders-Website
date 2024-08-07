@@ -1,97 +1,114 @@
-import { Box, Typography, Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import "../index.css";
 
-export default function About() {
+function Project() {
+	const [searchTerm, setSearchTerm] = useState("");
+	const [activeFilter, setActiveFilter] = useState("all");
+
+	const projects = [
+		{
+			location: "Blog",
+			category: "Blog",
+			title: "Resilience: The Key to Overcoming Challenges",
+			description:
+				"Learn how resilience can help you overcome personal and professional challenges.",
+			image: "/resilience.jpg",
+			link: "https://blog.smswithoutborders.com/posts/resilience"
+		},
+		{
+			location: "Blog",
+			category: "Blog",
+			title: "New Device ID Registration Feature",
+			description:
+				"Discover the new feature that expands user control with device ID registration.",
+			image: "/ID.jpg",
+			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
+		},
+		{
+			location: "Blog",
+			category: "Blog",
+			title: "Our Brand Rebranding",
+			description: "We are excited to unveil our new brand identity and vision for the future.",
+			image: "/rebrand.jpg",
+			link: "https://blog.smswithoutborders.com/posts/rebranding"
+		},
+		{
+			location: "Github, PlayStore",
+			category: "Project",
+			title: "RelaySMS",
+			description:
+				"Stay Connected Anywhere, Send emails, posts, and messages via SMS without an internet connection.",
+			image: "/rebrand.jpg",
+			link: "https://www.google.com/search?q=Athen"
+		},
+		{
+			location: "Github, PlayStore",
+			category: "Project",
+			title: "DEKU SMS",
+			description:
+				"An open-source, end-to-end encrypted offline messaging application specifically designed for Android devices.",
+			image: "/rebrand.jpg",
+			link: "https://www.google.com/search?q=Athen"
+		}
+	];
+
+	const categories = ["all", "blog", "project"];
+	const filteredProjects = projects.filter(
+		(project) =>
+			project.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+			(activeFilter === "all" || project.category.toLowerCase() === activeFilter)
+	);
+
 	return (
-		<Box sx={{ mx: 20, my: 4, p: 8 }}>
-			<Typography variant="h6" sx={{ mb: 10, fontWeight: 600 }}>
-				About the project
-			</Typography>
-			<Typography variant="body1">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-				ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique bibendum,
-				velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi. Phasellus quis
-				libero nec libero tristique dapibus. Cras nec lacus vel magna posuere ultricies.
-			</Typography>
-			<Box sx={{ py: 4 }}>
-				<Typography variant="body1">
-					Duis dapibus tristique vestibulum. Pellentesque habitant morbi tristique senectus et netus
-					et malesuada fames ac turpis egestas. Vivamus ut malesuada quam. Integer vel magna in
-					risus dictum lobortis. Etiam sed libero id libero fringilla finibus vitae sit amet odio.
-					Sed sit amet libero eros. Ut vel dui dapibus, maximus purus sed, ultrices odio. Maecenas
-					sit amet semper mauris, vitae varius neque.
-				</Typography>
-			</Box>
-			{/*  */}
-			<Box sx={{ p: 3 }} id="impact">
-				{/* <Typography variant="h6" sx={{ py: 3, px: 2, fontWeight: 600 }}>
-          Our Impact
-        </Typography> */}
+		<div className="App">
+			<h1>SMSWithoutBorders Projects</h1>
+			<div className="filter">
+				<div className="search">
+					<input
+						type="text"
+						className="search__input"
+						placeholder="Search"
+						value={searchTerm}
+						onChange={(e) => setSearchTerm(e.target.value)}
+					/>
+					<button className="search__button">
+						<i className="fa fa-search"></i>
+					</button>
+				</div>
 
-				<Grid container rowSpacing={12} columnSpacing={2}>
-					<Grid item md={6} xs={12}>
-						<Box
-							component="img"
-							src="/voice.jpg"
-							sx={{ width: "90%", borderRadius: 5 }}
-							alt="RelaySMS"
-						/>
-					</Grid>
-					<Grid item md={6} xs={12} my="auto">
-						<Typography variant="h6" sx={{ py: 2, fontWeight: 550 }}>
-							Our Impact
-						</Typography>
-						<Typography variant="body1">
-							The platform enables users with a smartphone to communicate with online third-party
-							platforms using SMS messages. A typical use-case of the platform is sending out emails
-							from platforms such as Gmail accounts. This becomes a useful tool in cases where
-							access to the internet is limited or completely unavailable.
-						</Typography>
-						<br />
-					</Grid>
-					{/*  */}
-				</Grid>
-			</Box>
-			{/*  */}
-			<Box
-				md={6}
-				xs={6}
-				sx={{
-					p: 3,
-					bgcolor: "white",
+				{categories.map((category) => (
+					<button
+						key={category}
+						className={`button ${activeFilter === category ? "--active" : ""}`}
+						onClick={() => setActiveFilter(category)}
+					>
+						{category.charAt(0).toUpperCase() + category.slice(1)}
+					</button>
+				))}
+			</div>
 
-					borderRadius: 5
-				}}
-			>
-				<Grid
-					container
-					mx="auto"
-					sx={{
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "space-between",
-						mx: 15
-					}}
-				>
-					<Grid item md={4} xs={12}>
-						<Typography variant="h6" sx={{ py: 3, px: 2, fontWeight: 600, color: "black" }}>
-							Our Partners:
-						</Typography>
-					</Grid>
-					<Grid item md={4} xs={12}>
-						<Box
-							component="img"
-							src="/OTF.png"
-							alt="Open Technology Fund Logo"
-							sx={{ width: "50%" }}
-						/>
-					</Grid>
-
-					<Grid item md={4} xs={12}>
-						<Box component="img" src="/Internews.png" alt="Internews Logo" sx={{ width: "50%" }} />
-					</Grid>
-				</Grid>
-			</Box>
-		</Box>
+			<section className="grid">
+				{filteredProjects.map((project) => (
+					<a
+						key={project.title}
+						className="card"
+						href={project.link}
+						target="_blank"
+						rel="nofollow noopener noreferrer"
+					>
+						<picture className="card__picture">
+							<img className="card__image" src={project.image} alt={project.title} />
+						</picture>
+						<div className="card__content">
+							<p className="card__location">{project.location}</p>
+							<h3 className="card__title">{project.title}</h3>
+							<p className="card__description">{project.description}</p>
+						</div>
+					</a>
+				))}
+			</section>
+		</div>
 	);
 }
+
+export default Project;
