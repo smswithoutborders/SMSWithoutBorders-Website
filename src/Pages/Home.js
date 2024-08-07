@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import Partner from "../Components/partner";
 import Blog from "../Components/Blog";
 import "../App.css";
-// import Project from "./About";
 
 const Home = () => {
 	const [showMore, setShowMore] = useState(false);
@@ -18,9 +17,9 @@ const Home = () => {
 			<Row className="header text-center">
 				<Col>
 					<section className="container mx-auto py-28 items-center">
-						<div className="md:w-2/2">
-							<h1 className="header1 font-bold mb-4">
-								SMSWithoutBorders <span className="header1-span">SW|OB</span>
+						<div className="md:w-full">
+							<h1 className="header1 text-3xl md:text-5xl font-bold mb-4">
+								SMSWithoutBorders <br /> <span className="header1-span space-y-4 ">SW|OB</span>
 							</h1>
 						</div>
 					</section>
@@ -31,17 +30,16 @@ const Home = () => {
 			<Row className="about bg-gray-100 py-24">
 				<Col md={12}>
 					<section className="container mx-auto md:flex-row items-center">
-						<div className="md:w-3/3">
-							<h1 className="text-4xl md:text-6xl font-bold mb-4">
-								What is <span className="header-span text-indigo-700">SMSWithoutBorders</span> All
-								About
-							</h1>
+						<div className="md:w-full">
 							<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
 								<div className="md:w-1/2 md:mr-8 mt-8 md:mt-0">
-									<img src="logo.png" alt="DekuSMS" className="rounded-lg shadow-lg" />
+									<img src="logo.png" alt="DekuSMS" className="rounded-lg shadow-lg img-fluid" />
 								</div>
 								<div className="md:w-1/2 mt-8 md:mt-0">
-									{" "}
+									<h1 className="text-2xl md:text-5xl font-bold mb-4">
+										What is <span className="header-span text-indigo-700">SMSWithoutBorders</span>{" "}
+										All About
+									</h1>
 									<p className="mb-4">
 										SMSWithoutBorders is an overarching project dedicated to developing and
 										promoting secure, accessible communication tools that function even without an
@@ -54,23 +52,30 @@ const Home = () => {
 										communication. This led to the exciting transition from a standalone app to the
 										SMSWithoutBorders project, encompassing two distinct but complementary
 										applications:
-									</p>{" "}
+									</p>
 								</div>
 							</section>
 							<ul className="list-disc list-inside text-lg mb-4">
 								<li className="mb-2">
-									<strong>RelaySMS:</strong> This user-facing application acts as the cornerstone of
-									the project. Formerly known as SMSWithoutBorders, RelaySMS allows users to
-									seamlessly connect their favorite messaging platforms and send messages even when
-									offline. It utilizes SMS technology as a secure relay to bridge the gap between
-									disconnected devices and online communication channels.
+									<b>
+										<strong>RelaySMS:</strong>
+									</b>{" "}
+									This user-facing application acts as the cornerstone of the project. Formerly
+									known as SMSWithoutBorders, RelaySMS allows users to seamlessly connect their
+									favorite messaging platforms and send messages even when offline. It utilizes SMS
+									technology as a secure relay to bridge the gap between disconnected devices and
+									online communication channels.
 								</li>
 								<li className="mb-2">
-									<strong>DekuSMS:</strong> This offline, open-source, end-to-end encrypted
-									messaging application for Android provides users with a secure and private
-									messaging experience. While DekuSMS focuses on offline communication security, it
-									complements the SMSWithoutBorders projects mission by offering a robust option for
-									secure messaging within an internet-disconnected environment.
+									<b>
+										{" "}
+										<strong>DekuSMS:</strong>
+									</b>{" "}
+									This offline, open-source, end-to-end encrypted messaging application for Android
+									provides users with a secure and private messaging experience. While DekuSMS
+									focuses on offline communication security, it complements the SMSWithoutBorders
+									projects mission by offering a robust option for secure messaging within an
+									internet-disconnected environment.
 								</li>
 							</ul>
 						</div>
@@ -79,8 +84,8 @@ const Home = () => {
 			</Row>
 
 			{/* Blog Section */}
-			<Row className="my-4">
-				<Col md={12} sm={8}>
+			<Row>
+				<Col md={12} sm={12}>
 					<Blog />
 				</Col>
 			</Row>
@@ -127,14 +132,14 @@ const Home = () => {
 					</button>
 				</div>
 				<div className="md:w-1/2 md:mr-8 mt-8 md:mt-0">
-					<img src="o11.jpg" alt="DekuSMS" className="rounded-lg shadow-lg" />
+					<img src="o11.jpg" alt="DekuSMS" className="rounded-lg shadow-lg img-fluid" />
 				</div>
 			</section>
 
 			{/* About RelaySMS */}
 			<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
 				<div className="md:w-1/2 md:mr-8 mt-8 md:mt-0">
-					<img src="o11.jpg" alt="DekuSMS" className="rounded-lg shadow-lg" />
+					<img src="o11.jpg" alt="DekuSMS" className="rounded-lg shadow-lg img-fluid" />
 				</div>
 				<div className="md:w-1/2 mt-8 md:mt-0">
 					<h1 className="text-4xl md:text-6xl font-bold mb-4">
@@ -169,13 +174,13 @@ const Home = () => {
 
 			{/* Our Partner Section */}
 			<Row className="my-4">
-				<Col md={12} sm={8}>
+				<Col md={12} sm={12}>
 					<Partner />
 				</Col>
 			</Row>
 			{/* Project */}
 			{/* <Row className="my-4">
-				<Col md={12} sm={8}>
+				<Col md={12} sm={12}>
 					<Project />
 				</Col>
 			</Row> */}

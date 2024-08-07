@@ -1,14 +1,13 @@
-import React from "react";
 import { Grid, Box } from "@mui/material";
 
-function partner() {
+function Partner() {
 	return (
 		<Box
 			sx={{ bgcolor: "whitesmoke", color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}
 		>
 			<section className="container items-center">
-				<h1 className="font-bold mb-4 text-center">PARTNERS</h1>
-				<h2 className="text text-center"> Heros that help keep us afloat</h2>
+				<h1 className="font-bold mb-4 text-2xl md:text-4xl text-center">PARTNERS</h1>
+				<h2 className="text text-center">Heros that help keep us afloat</h2>
 			</section>
 			<Grid
 				sx={{ px: { md: 35, xs: 1 } }}
@@ -38,4 +37,4 @@ function partner() {
 	);
 }
 
-export default partner;
+export default Partner;
