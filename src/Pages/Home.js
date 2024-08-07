@@ -11,38 +11,39 @@ const Home = () => {
 			{/* Header Section */}
 			<Row className="header text-center">
 				<Col>
-					<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
-						<div className="md:w-2/2 px-6">
-							<h1 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-4">
-								Smswithoutborders<span className="text-orange-500">SW|OB</span>
+					<section className="container mx-auto py-28 items-center">
+						<div className="md:w-2/2">
+							<h1 className="header1 font-bold mb-4">
+								SMSWithoutBorders <span className="header1-span">SW|OB</span>
 							</h1>
 						</div>
 					</section>
 				</Col>
 			</Row>
 
-			{/* About SMSWithoutBorders */}
+			{/*====================== About SMSWithoutBorders ========================*/}
 			<Row className="about">
 				<Col md={12}>
 					<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
 						<div className="md:w-2/2 px-6">
-							<h1 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-4">
-								Transform Your Business with{" "}
-								<span className="text-orange-500">SMSWithoutBorders</span>
-							</h1>
-							<p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 font-sans leading-relaxed">
+							<div className="md:w-2/2 px-6">
+								<h1 className="text-4xl md:text-6xl font-bold  mb-4">
+									What is <span className="header-span">SMSWithoutBorders </span> All About
+								</h1>
+							</div>
+							<p>
 								SMSWithoutBorders is an overarching project dedicated to developing and promoting
 								secure, accessible communication tools that function even without an internet
 								connection. This initiative encompasses two primary applications:
 							</p>
-							<p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 font-sans leading-relaxed">
+							<p>
 								SMSWithoutBorders began its journey as a single, innovative application focused on
 								empowering offline messaging. However, as the project matured and our vision
 								expanded, we recognized the potential to create a broader ecosystem for secure
 								communication. This led to the exciting transition from a standalone app to the
 								SMSWithoutBorders project, encompassing two distinct but complementary applications:
 							</p>
-							<ul className="list-disc list-inside mb-6">
+							<ul className="list-disc list-inside">
 								<li>
 									<strong>RelaySMS:</strong> This user-facing application acts as the cornerstone of
 									the project. Formerly known as SMSWithoutBorders, RelaySMS allows users to
@@ -74,28 +75,28 @@ const Home = () => {
 					{/* About DekuSMS */}
 					<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
 						<div className="md:w-1/2 px-6">
-							<h1 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-4">
-								About <span className="text-orange-500">DekuSMS</span>
+							<h1 className="text-4xl md:text-6xl font-bold mb-4">
+								About <span className="header-span">DekuSMS</span>
 							</h1>
-							<p className="text-lg text-gray-700 mb-6">
+							<p>
 								DekuSMS is an open-source, end-to-end encrypted offline messaging application
 								specifically designed for Android devices. Its primary focus is on providing a
 								secure and private platform for offline communication.
 							</p>
-							<p className="text-lg text-gray-700 mb-6">
+							<p>
 								What sets DekuSMS apart is its commitment to end-to-end encryption. This means that
 								your messages are encrypted on your device before being sent and can only be
 								decrypted by the intended recipients device. This robust encryption ensures that
 								only authorized parties can access your conversations, offering a higher level of
 								security compared to traditional messaging apps.
 							</p>
-							<p className="text-lg text-gray-700 mb-6">
+							<p>
 								DekuSMS embraces the open-source philosophy. The applications source code is freely
 								available on Github for public scrutiny, allowing security experts and developers to
 								examine and contribute to the project. This transparency fosters trust and ensures
 								the code is free from hidden vulnerabilities.
 							</p>
-							<p className="text-lg text-gray-700 mb-6">
+							<p>
 								While DekuSMS prioritizes offline security, it plays a valuable role within the
 								broader SMSWithoutBorders project. It acts as a gateway client for the RelaySMS
 								application, allowing users to securely relay SMS messages from RelaySMS to online
@@ -110,18 +111,18 @@ const Home = () => {
 			</Row>
 
 			{/* About DekuSMS */}
-			<Row className="about">
-				<Col md={6}>
-					<img src="o11.jpg" alt="DekuSMS" />
-				</Col>
-				<Col md={6}>
-					{/* About RelaySMS */}
+			<Row className="my-4">
+				<Col md={12}>
+					{/* About DekuSMS */}
 					<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
-						<div className="md:w-2/2 px-6">
-							<h1 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-4">
-								About <span className="text-orange-500">RelaySMS</span>
+						<div className="md:w-1/2 mt-8 md:mt-0">
+							<img src="o11.jpg" alt="DekuSMS" className="rounded-lg shadow-lg" />
+						</div>
+						<div className="md:w-1/2 px-6">
+							<h1 className="text-4xl md:text-6xl font-bold mb-4">
+								About <span className="header-span">RelaySMS</span>
 							</h1>
-							<p className="text-lg text-gray-700 mb-6">
+							<p>
 								RelaySMS, formerly known as SMSWithoutBorders (Swob), is a user-friendly application
 								that empowers you to send messages across your favorite messaging platforms, even
 								when you are disconnected from the internet. Think of it as a secure bridge that
@@ -129,7 +130,7 @@ const Home = () => {
 								technology as a reliable relay, allowing you to seamlessly transmit messages even in
 								areas with limited or no internet access.
 							</p>
-							<p className="text-lg text-gray-700 mb-6">
+							<p>
 								The concept for SMSWithoutBorders, now RelaySMS, originated from a simple yet
 								powerful vision: ensuring everyone has access to reliable communication, regardless
 								of internet connectivity. Many regions around the world have limited or unreliable
