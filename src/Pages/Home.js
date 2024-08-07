@@ -1,197 +1,162 @@
-import React, { useEffect } from "react";
-import About from "../Pages/About";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Partner from "../Components/partner";
-import { Link } from "react-router-dom";
+import Blog from "../Components/Blog";
 import "../App.css";
-import "tailwindcss/tailwind.css";
-import "aos/dist/aos.css";
-import AOS from "aos";
+import Project from "./About";
 
-function Home() {
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-	}, []);
-
+const Home = () => {
 	return (
-		<>
-			{/* ========= Header Caption ================ */}
-			<header className="py-16 bg-blue-600 text-white text-center">
-				<h1 className="text-4xl font-bold">
-					What Information is the Swob Website Putting Out There?
-				</h1>
-			</header>
+		<Container fluid>
+			{/* Header Section */}
+			<Row className="header text-center">
+				<Col>
+					<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
+						<div className="md:w-2/2 px-6">
+							<h1 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-4">
+								Smswithoutborders<span className="text-orange-500">SW|OB</span>
+							</h1>
+						</div>
+					</section>
+				</Col>
+			</Row>
 
-			<div className="w-full lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
-				{/*======================= About Swob ================================*/}
-				<h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4 text-center">
-					SWOB
-				</h1>
-				<section id="about-swob" className="flex flex-col lg:flex-row justify-between gap-8 py-12">
-					<div className="w-full lg:w-5/12 flex flex-col justify-center">
-						<h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">
-							About Swob
-						</h1>
-						<p className="font-normal text-base leading-6 text-gray-600">
-							SMSWithoutBorders is an overarching project dedicated to developing and promoting
-							secure, accessible communication tools that function even without an internet
-							connection. This initiative encompasses two primary applications:
-							<ul className="list-disc ml-5 mt-3">
+			{/* About SMSWithoutBorders */}
+			<Row className="about">
+				<Col md={12}>
+					<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
+						<div className="md:w-2/2 px-6">
+							<h1 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-4">
+								Transform Your Business with{" "}
+								<span className="text-orange-500">SMSWithoutBorders</span>
+							</h1>
+							<p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 font-sans leading-relaxed">
+								SMSWithoutBorders is an overarching project dedicated to developing and promoting
+								secure, accessible communication tools that function even without an internet
+								connection. This initiative encompasses two primary applications:
+							</p>
+							<p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 font-sans leading-relaxed">
+								SMSWithoutBorders began its journey as a single, innovative application focused on
+								empowering offline messaging. However, as the project matured and our vision
+								expanded, we recognized the potential to create a broader ecosystem for secure
+								communication. This led to the exciting transition from a standalone app to the
+								SMSWithoutBorders project, encompassing two distinct but complementary applications:
+							</p>
+							<ul className="list-disc list-inside mb-6">
 								<li>
-									<strong>RelaySMS</strong>: A user-friendly app that allows you to send messages
-									across your favorite platforms, even offline.
+									<strong>RelaySMS:</strong> This user-facing application acts as the cornerstone of
+									the project. Formerly known as SMSWithoutBorders, RelaySMS allows users to
+									seamlessly connect their favorite messaging platforms and send messages even when
+									offline. It utilizes SMS technology as a secure relay to bridge the gap between
+									disconnected devices and online communication channels.
 								</li>
 								<li>
-									<strong>DekuSMS</strong>: An open-source, end-to-end encrypted offline messaging
-									application for Android devices.
+									<strong>DekuSMS:</strong> This offline, open-source, end-to-end encrypted
+									messaging application for Android provides users with a secure and private
+									messaging experience. While DekuSMS focuses on offline communication security, it
+									complements the SMSWithoutBorders projects mission by offering a robust option for
+									secure messaging within an internet-disconnected environment.
 								</li>
 							</ul>
-						</p>
-						<div>
-							<Link to="/AboutSwob">
-								<button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
-									Read More
-								</button>
-							</Link>
 						</div>
-					</div>
-					<div className="w-full lg:w-8/12">
-						<img className="w-full h-full" src="assets/img/portfolio/about-us.jpg" alt="About Us" />
-					</div>
-				</section>
-				<Partner />
-
-				{/*======================= Our Journey ================================*/}
-				<h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4 text-center">
-					Our Journey: From an App to a Project
-				</h1>
-				<section id="our-journey" className="py-12 bg-gray-50">
-					<div className="text-center text-gray-600">
-						<p>
-							SMSWithoutBorders began as a single application focused on offline messaging. As our
-							vision expanded, it evolved into a comprehensive project. We now offer a suite of
-							tools, including RelaySMS and DekuSMS, to enhance communication accessibility and
-							security.
-						</p>
-					</div>
-				</section>
-				{/*======================= Features ================================*/}
-
-				<section id="features" className="py-12 bg-gray-100">
-					<div className="container mx-auto">
-						<div className="flex flex-wrap justify-center">
-							<div className="w-full md:w-1/3 px-4 mb-8">
-								<div className="p-8 bg-white shadow-md rounded-lg">
-									<i className="bi bi-shield-lock-fill text-blue-600 text-4xl mb-4"></i>
-									<h4 className="text-2xl font-bold mb-2">Secure Communication</h4>
-									<p className="text-gray-700">
-										Both RelaySMS and DekuSMS prioritize robust security measures to protect your
-										data and privacy.
-									</p>
-								</div>
-							</div>
-							<div className="w-full md:w-1/3 px-4 mb-8">
-								<div className="p-8 bg-white shadow-md rounded-lg">
-									<i className="bi bi-wifi-off text-blue-600 text-4xl mb-4"></i>
-									<h4 className="text-2xl font-bold mb-2">Offline Messaging</h4>
-									<p className="text-gray-700">
-										Our tools ensure you can communicate even in areas without internet access.
-									</p>
-								</div>
-							</div>
-							<div className="w-full md:w-1/3 px-4 mb-8">
-								<div className="p-8 bg-white shadow-md rounded-lg">
-									<i className="bi bi-lightbulb-fill text-blue-600 text-4xl mb-4"></i>
-									<h4 className="text-2xl font-bold mb-2">Open Source</h4>
-									<p className="text-gray-700">
-										Our commitment to open-source principles fosters innovation and transparency.
-									</p>
-								</div>
-							</div>
+					</section>
+				</Col>
+			</Row>
+			{/* Blog Section */}
+			<Row className="my-4">
+				<Col md={12} sm={8}>
+					<Blog />
+				</Col>
+			</Row>
+			{/* Deku Section */}
+			<Row className="my-4">
+				<Col md={12}>
+					{/* About DekuSMS */}
+					<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
+						<div className="md:w-1/2 px-6">
+							<h1 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-4">
+								About <span className="text-orange-500">DekuSMS</span>
+							</h1>
+							<p className="text-lg text-gray-700 mb-6">
+								DekuSMS is an open-source, end-to-end encrypted offline messaging application
+								specifically designed for Android devices. Its primary focus is on providing a
+								secure and private platform for offline communication.
+							</p>
+							<p className="text-lg text-gray-700 mb-6">
+								What sets DekuSMS apart is its commitment to end-to-end encryption. This means that
+								your messages are encrypted on your device before being sent and can only be
+								decrypted by the intended recipients device. This robust encryption ensures that
+								only authorized parties can access your conversations, offering a higher level of
+								security compared to traditional messaging apps.
+							</p>
+							<p className="text-lg text-gray-700 mb-6">
+								DekuSMS embraces the open-source philosophy. The applications source code is freely
+								available on Github for public scrutiny, allowing security experts and developers to
+								examine and contribute to the project. This transparency fosters trust and ensures
+								the code is free from hidden vulnerabilities.
+							</p>
+							<p className="text-lg text-gray-700 mb-6">
+								While DekuSMS prioritizes offline security, it plays a valuable role within the
+								broader SMSWithoutBorders project. It acts as a gateway client for the RelaySMS
+								application, allowing users to securely relay SMS messages from RelaySMS to online
+								messaging platforms.
+							</p>
 						</div>
-					</div>
-				</section>
-
-				{/*======================= About RelaySMS ================================*/}
-				<h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4 text-center">
-					RelaySMS
-				</h1>
-				<section
-					id="about-relaysms"
-					className="flex flex-col lg:flex-row justify-between gap-8 py-12"
-				>
-					<div className="w-full lg:w-5/12 flex flex-col justify-center">
-						<h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">
-							About RelaySMS
-						</h1>
-						<p className="font-normal text-base leading-6 text-gray-600">
-							RelaySMS is a versatile messaging app that lets you send messages across various
-							platforms, even when you are offline. Designed with user-friendliness in mind, it
-							provides a seamless experience for staying connected without relying on an internet
-							connection.
-						</p>
-						<div>
-							<Link to="/AboutRelaySMS">
-								<button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
-									Read More
-								</button>
-							</Link>
+						<div className="md:w-1/2 mt-8 md:mt-0">
+							<img src="o11.jpg" alt="DekuSMS" className="rounded-lg shadow-lg" />
 						</div>
-					</div>
-					<div className="w-full lg:w-8/12">
-						<img
-							className="w-full h-full"
-							src="assets/img/portfolio/relaysms.jpg"
-							alt="About RelaySMS"
-						/>
-					</div>
-				</section>
+					</section>
+				</Col>
+			</Row>
 
-				{/*======================= Projects Section ================================*/}
-				<h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4 text-center">
-					Swob Project
-				</h1>
-				<section id="Project" className=" py-12">
-					<About />
-				</section>
+			{/* About DekuSMS */}
+			<Row className="about">
+				<Col md={6}>
+					<img src="o11.jpg" alt="DekuSMS" />
+				</Col>
+				<Col md={6}>
+					{/* About RelaySMS */}
+					<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
+						<div className="md:w-2/2 px-6">
+							<h1 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-4">
+								About <span className="text-orange-500">RelaySMS</span>
+							</h1>
+							<p className="text-lg text-gray-700 mb-6">
+								RelaySMS, formerly known as SMSWithoutBorders (Swob), is a user-friendly application
+								that empowers you to send messages across your favorite messaging platforms, even
+								when you are disconnected from the internet. Think of it as a secure bridge that
+								connects your offline world to online communication channels. RelaySMS utilizes SMS
+								technology as a reliable relay, allowing you to seamlessly transmit messages even in
+								areas with limited or no internet access.
+							</p>
+							<p className="text-lg text-gray-700 mb-6">
+								The concept for SMSWithoutBorders, now RelaySMS, originated from a simple yet
+								powerful vision: ensuring everyone has access to reliable communication, regardless
+								of internet connectivity. Many regions around the world have limited or unreliable
+								internet infrastructure, creating communication barriers that can be disruptive for
+								individuals and communities. RelaySMS was born to bridge this gap, empowering users
+								to stay connected with friends, family, and colleagues even when offline.
+							</p>
+						</div>
+					</section>
+				</Col>
+			</Row>
 
-				{/*======================= About DekuSMS ================================*/}
-				<h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4 text-center">
-					About DekuSMS
-				</h1>
-				<section className="section about-section" id="about-dekusms" data-aos="fade-up">
-					<div className="thumbnail">
-						<img className="left" src="/Deku.png" alt="deku logo" />
-					</div>
-					<div className="right">
-						<h1>DEKU SMS</h1>
+			{/* Our Partner Section */}
+			<Row className="my-4">
+				<Col md={12} sm={8}>
+					<Partner />
+				</Col>
+			</Row>
 
-						<div className="separator"></div>
-						<p>
-							DekuSMS is an open-source, end-to-end encrypted offline messaging application for
-							Android devices. It offers secure communication by ensuring that your messages are
-							protected from unauthorized access, even without internet connectivity. This makes it
-							an ideal choice for areas with limited or no internet access....
-						</p>
-						<ul>
-							<li>
-								<i className="fa fa-eye fa-2x"></i>
-							</li>
-							<li>
-								<i className="fa fa-heart-o fa-2x"></i>
-							</li>
-							<li>
-								<i className="fa fa-envelope-o fa-2x"></i>
-							</li>
-							<li>
-								<i className="fa fa-share-alt fa-2x"></i>
-							</li>
-						</ul>
-					</div>
-				</section>
-				{/* ============================= */}
-			</div>
-		</>
+			{/* Project */}
+			<Row className="my-4">
+				<Col md={12} sm={8}>
+					<Project />
+				</Col>
+			</Row>
+		</Container>
 	);
-}
+};
 
 export default Home;

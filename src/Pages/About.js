@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-
 import "../index.css";
 
 function Project() {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [activeFilter, setActiveFilter] = useState("all");
 
-	const Project = [
+	const projects = [
 		{
 			location: "Blog",
 			category: "Blog",
@@ -14,8 +13,7 @@ function Project() {
 			description:
 				"Learn how resilience can help you overcome personal and professional challenges.",
 			image: "/resilience.jpg",
-			link: "https://blog.smswithoutborders.com/posts/resilience",
-			website: "https://blog.smswithoutborders.com/"
+			link: "https://blog.smswithoutborders.com/posts/resilience"
 		},
 		{
 			location: "Blog",
@@ -24,8 +22,7 @@ function Project() {
 			description:
 				"Discover the new feature that expands user control with device ID registration.",
 			image: "/ID.jpg",
-			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration",
-			website: "https://blog.smswithoutborders.com/"
+			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
 		},
 		{
 			location: "Blog",
@@ -33,34 +30,16 @@ function Project() {
 			title: "Our Brand Rebranding",
 			description: "We are excited to unveil our new brand identity and vision for the future.",
 			image: "/rebrand.jpg",
-			link: "https://blog.smswithoutborders.com/posts/rebranding",
-			website: "https://blog.smswithoutborders.com/"
+			link: "https://blog.smswithoutborders.com/posts/rebranding"
 		},
-		// =========== apps
 		{
 			location: "Github, PlayStore",
 			category: "Project",
 			title: "RelaySMS",
 			description:
-				"Stay Connected Anywhere, Send emails, posts, and messages via SMS without an internet connection. Share important information even in areas with limited or no internet access",
+				"Stay Connected Anywhere, Send emails, posts, and messages via SMS without an internet connection.",
 			image: "/rebrand.jpg",
-			link: "https://www.google.com/search?q=Athen",
-			github: "https://github.com/smswithoutborders/SMSWithoutBorders-App-Android",
-			playstore: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b",
-			website: "https://relay.smswithoutborders.com/"
-		},
-
-		{
-			location: "Github, PlayStore",
-			category: "Project",
-			title: "DEKU SMS",
-			description:
-				"An open-source, end-to-end encrypted offline messaging application specifically designed for Android devices.",
-			image: "/rebrand.jpg",
-			link: "https://www.google.com/search?q=Athen",
-			github: "https://github.com/smswithoutborders/SMSWithoutBorders-App-Android",
-			playstore: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b",
-			website: "https://relay.smswithoutborders.com/"
+			link: "https://www.google.com/search?q=Athen"
 		},
 		{
 			location: "Github, PlayStore",
@@ -69,24 +48,20 @@ function Project() {
 			description:
 				"An open-source, end-to-end encrypted offline messaging application specifically designed for Android devices.",
 			image: "/rebrand.jpg",
-			link: "https://www.google.com/search?q=Athen",
-			github: "https://github.com/smswithoutborders/SMSWithoutBorders-App-Android",
-			playstore: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b",
-			website: "https://relay.smswithoutborders.com/"
+			link: "https://www.google.com/search?q=Athen"
 		}
 	];
 
 	const categories = ["all", "blog", "project"];
-	const filteredProject = Project.filter(
+	const filteredProjects = projects.filter(
 		(project) =>
 			project.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-			(activeFilter === "all" || project.category?.toLowerCase() === activeFilter)
+			(activeFilter === "all" || project.category.toLowerCase() === activeFilter)
 	);
 
 	return (
 		<div className="App">
 			<h1>SMSWithoutBorders Projects</h1>
-
 			<div className="filter">
 				<div className="search">
 					<input
@@ -113,56 +88,23 @@ function Project() {
 			</div>
 
 			<section className="grid">
-				{filteredProject.map((project) => (
-					<div key={project.title} className="card">
-						<a
-							href={project.link}
-							target="_blank"
-							rel="nofollow noopener noreferrer"
-							className="card__image-link"
-						>
-							<picture className="card__picture">
-								<img className="card__image" src={project.image} alt={project.title} />
-							</picture>
-						</a>
+				{filteredProjects.map((project) => (
+					<a
+						key={project.title}
+						className="card"
+						href={project.link}
+						target="_blank"
+						rel="nofollow noopener noreferrer"
+					>
+						<picture className="card__picture">
+							<img className="card__image" src={project.image} alt={project.title} />
+						</picture>
 						<div className="card__content">
 							<p className="card__location">{project.location}</p>
 							<h3 className="card__title">{project.title}</h3>
 							<p className="card__description">{project.description}</p>
-							<div className="card__links">
-								{project.website && (
-									<a
-										href={project.website}
-										target="_blank"
-										rel="nofollow noopener noreferrer"
-										className="card__link"
-									>
-										<i className="fa fa-globe"></i> Website
-									</a>
-								)}
-								{project.github && (
-									<a
-										href={project.github}
-										target="_blank"
-										rel="nofollow noopener noreferrer"
-										className="card__link"
-									>
-										<i className="fab fa-github"></i> GitHub
-									</a>
-								)}
-								{project.playstore && (
-									<a
-										href={project.playstore}
-										target="_blank"
-										rel="nofollow noopener noreferrer"
-										className="card__link"
-									>
-										<i className="fab fa-google-play"></i> Play Store
-									</a>
-								)}
-							</div>
 						</div>
-					</div>
+					</a>
 				))}
 			</section>
 		</div>

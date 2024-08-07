@@ -1,110 +1,80 @@
-import { Box, Typography, Grid, Divider, IconButton } from "@mui/material";
 import React from "react";
-import { FaFacebook, FaGithub, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { Container, Row, Col, Nav } from "react-bootstrap";
+import { FaEnvelope, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../index.css";
 
-export default function Footer() {
+function Footer() {
 	return (
-		<>
-			<Box component="footer" sx={{ bgcolor: "black", color: "white", p: 3, px: { md: 8, xs: 2 } }}>
-				<Box sx={{ display: "flex", px: { md: 4, xs: 2 }, py: { md: 1, xs: 1 } }}>
-					<Typography variant="body1" sx={{ pt: 1, pr: 3 }}>
-						Follow us
-					</Typography>
-					<IconButton component="a" href="https://twitter.com/SwobOutreach" target="_blank">
-						<FaXTwitter size="20px" />
-					</IconButton>
-					<IconButton
-						component="a"
-						href="https://www.facebook.com/SMSWithoutBorders"
-						target="_blank"
-					>
-						{" "}
-						<FaFacebook size="20px" />{" "}
-					</IconButton>
-
-					<IconButton component="a" href="https://github.com/smswithoutborders" target="_blank">
-						{" "}
-						<FaGithub size="20px" />{" "}
-					</IconButton>
-
-					<IconButton
-						component="a"
-						href="https://www.youtube.com/@smswithoutborders9162"
-						target="_blank"
-					>
-						{" "}
-						<FaYoutube size="20px" />{" "}
-					</IconButton>
-				</Box>
-				<Divider />
-				<Box>
-					<Grid container sx={{ py: { md: 2, xs: 2 } }}>
-						<Grid item md={6} xs={6}>
-							<Typography
-								component="a"
-								href="/"
-								variant="h6"
-								sx={{
-									fontWeight: 600,
-									px: { md: 3, xs: 2 },
-									py: { md: 0, xs: 2 },
-									textDecoration: "none",
-									color: "white"
-								}}
-							>
-								SMSWithoutBorders
-							</Typography>
-						</Grid>
-						<Grid item md={6} xs={12}>
-							<Box sx={{ display: { md: "flex", xs: "block" } }}>
-								<Typography
-									component="a"
-									href="https://blog.smswithoutborders.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									variant="body1"
-									sx={{ p: 2, textDecoration: "none", color: "white" }}
-								>
-									Blogs
-								</Typography>
-								<Typography
-									component="a"
-									href="https://github.com/smswithoutborders"
-									target="_blank"
-									rel="noopener noreferrer"
-									variant="body1"
-									sx={{ p: 2, textDecoration: "none", color: "white" }}
-								>
-									RelaySMS
-								</Typography>
-								<Typography
-									component="a"
-									href="https://github.com/deku-messaging"
-									target="_blank"
-									rel="noopener noreferrer"
-									variant="body1"
-									sx={{ p: 2, textDecoration: "none", color: "white" }}
-								>
-									Deku SMS
-								</Typography>
-								<Typography
-									component="a"
-									href="https://github.com/smswithoutborders"
-									target="_blank"
-									rel="noopener noreferrer"
-									variant="body1"
-									sx={{ p: 2, textDecoration: "none", color: "white" }}
-								>
-									Developers
-								</Typography>
-								<Typography variant="body1" sx={{ p: 2 }}>
-									© 2024 SMSWithoutBorders
-								</Typography>
-							</Box>
-						</Grid>
-					</Grid>
-				</Box>
-			</Box>
-		</>
+		<Container fluid className="footer-container py-4 text-white bg-blue-900">
+			<Row className="justify-content-center text-white  align-items-center mb-4">
+				<Col xs={12} md={4} className="text-center text-md-left mb-3 mb-md-0">
+					<div className="footer-logo mb-2">
+						<img src="/logo.png" alt="smswithoutborders logo" className="img-fluid" />
+					</div>
+				</Col>
+				<Col
+					xs={12}
+					md={4}
+					className="d-flex justify-content-center justify-content-md-center mb-3 mb-md-0"
+				>
+					<div className="social text-white  d-flex justify-content-center">
+						<Nav.Link href="https://www.facebook.com/SMSWithoutBorders" className="mx-2">
+							<FaFacebook size={24} />
+						</Nav.Link>
+						<Nav.Link href="https://twitter.com/RelaySMS" className="mx-2">
+							<FaTwitter size={24} />
+						</Nav.Link>
+						<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
+							<FaGithub size={24} />
+						</Nav.Link>
+						<Nav.Link href="mailto:support@smswithoutborders.com" className="mx-2">
+							<FaEnvelope size={24} />
+						</Nav.Link>
+					</div>
+				</Col>
+			</Row>
+			<Row className="footer-nav text-center text-md-left">
+				<Col xs={12} md={4} className="mb-3">
+					<Nav className="flex-column">
+						<Nav.Link href="#" className="font-weight-bold mb-2">
+							Quick Links
+						</Nav.Link>
+						<Nav.Link href="https://blog.smswithoutborders.com/">Blog</Nav.Link>
+						<Nav.Link href="/documentation">Documentation</Nav.Link>
+						<Nav.Link href="/privacy-policy">Privacy Policy</Nav.Link>
+					</Nav>
+				</Col>
+				<Col xs={12} md={4} className="mb-3">
+					<Nav className="flex-column">
+						<Nav.Link href="#" className="font-weight-bold mb-2">
+							Community
+						</Nav.Link>
+						<Nav.Link href="https://github.com/smswithoutborders">GitHub</Nav.Link>
+						<Nav.Link href="https://www.facebook.com/SMSWithoutBorders">Facebook</Nav.Link>
+						<Nav.Link href="https://twitter.com/RelaySMS">Twitter</Nav.Link>
+						<Nav.Link href="mailto:support@smswithoutborders.com">Contact Us</Nav.Link>
+					</Nav>
+				</Col>
+				<Col xs={12} md={4} className="mb-3">
+					<Nav className="flex-column">
+						<Nav.Link href="#" className="font-weight-bold mb-2">
+							Downloads
+						</Nav.Link>
+						<Nav.Link href="/download/android">Android</Nav.Link>
+						<Nav.Link href="/download/ios">iOS</Nav.Link>
+						<Nav.Link href="/download/linux">Linux</Nav.Link>
+						<Nav.Link href="/download/windows">Windows</Nav.Link>
+					</Nav>
+				</Col>
+			</Row>
+			<Row className="border-top border-light pt-3">
+				<Col className="text-center">
+					<small>© 2024 SMSWithoutBorders. All rights reserved.</small>
+				</Col>
+			</Row>
+		</Container>
 	);
 }
+
+export default Footer;
