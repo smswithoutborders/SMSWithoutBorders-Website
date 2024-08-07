@@ -2,33 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-.container-fluid {
-	padding: 0;
-	margin: 0;
-}
-
 .header {
-	background-color: #04858f;
+	background-color: #02051b;
 	border-bottom: 1px solid #c1c4c8;
 	box-shadow: 10px 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.about {
-	padding: 40px 20px;
-	background-color: #ffffff;
+h1 {
+	color: #080354;
 }
 
-.about h2 {
+.header-span {
+	color: #3cc3f0;
+}
+
+.header1 {
+	color: #e3e2ee;
+}
+
+.header1-span {
+	color: #098af4;
+}
+h2 {
 	font-size: 2rem;
-	color: #007bff;
+	color: #dc9909;
 	margin-bottom: 1rem;
 }
 
-.about p {
-	font-size: 1rem;
-	color: #495057;
-	line-height: 1.6;
+p,
+li {
+	font-size: 1.5rem;
+	color: #0b2f52;
+	line-height: 1.8;
 	margin-bottom: 1rem;
+	gap: 10;
 }
 
 .about ul {
@@ -47,9 +53,86 @@
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Partner Section */
 .my-4 {
 	padding: 40px 20px;
 	background-color: #f8f9fa;
 }
-/* header css======================================== */
+
+body {
+	font-family: "Nunito", sans-serif;
+	font-size: clamp(1rem, 2vw, 1.125rem);
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+/* ======================== About us styles ======================================== */
+.section {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 20px;
+}
+
+.thumbnail {
+	flex: 1;
+	min-width: 300px;
+	margin: 20px;
+	position: relative;
+}
+
+.thumbnail img.left {
+	width: 60%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	border-radius: 10px;
+}
+
+.content {
+	flex: 2;
+	min-width: 300px;
+	margin: 20px;
+}
+
+/* ========================FOOTER==================================== */
+.footer-container {
+	background-color: #02051b;
+}
+
+.footer-nav .nav-link {
+	color: #fff;
+	font-size: 1.2rem;
+	text-align: center; /* Changed to center for mobile alignment */
+}
+
+.footer-nav .nav-link:hover {
+	color: #c08507;
+}
+
+.footer-container .text-white {
+	color: #cef6f6;
+}
+
+.footer-container .text-uppercase {
+	text-transform: uppercase;
+	font-weight: 800;
+	color: #dc9909;
+}
+
+.footer-container .d-flex {
+	display: flex;
+	justify-content: center; /* Centering flex items */
+}
+
+@media (max-width: 767px) {
+	.footer-nav .nav-link {
+		font-size: 1rem; /* Adjust font size for mobile */
+	}
+}
+
+@media (min-width: 768px) {
+	.footer-nav .nav-link {
+		font-size: 1.2rem; /* Adjust font size for larger screens */
+	}
+}
