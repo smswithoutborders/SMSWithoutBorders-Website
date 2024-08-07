@@ -1,4 +1,3 @@
-// Footer.js
 import React from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { FaEnvelope, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
@@ -8,9 +7,9 @@ import "../index.css";
 function Footer() {
 	return (
 		<Container fluid className="footer-container py-4 text-white">
-			<Row className="footer-nav text-center text-md-left">
-				<Col xs={12} md={3} className="mb-3 d-flex justify-content-center">
-					<Nav className="flex-column">
+			<Row className="footer-nav text-center">
+				<Col xs={12} md={3} className="mb-4">
+					<Nav className="flex-column text-center">
 						<Nav.Link href="#" className="font-weight-bold mb-2 text-uppercase">
 							Quick Links
 						</Nav.Link>
@@ -19,8 +18,8 @@ function Footer() {
 						<Nav.Link href="/privacy-policy">Privacy Policy</Nav.Link>
 					</Nav>
 				</Col>
-				<Col xs={12} md={3} className="mb-3 d-flex justify-content-center">
-					<Nav className="flex-column">
+				<Col xs={12} md={3} className="mb-4">
+					<Nav className="flex-column text-center">
 						<Nav.Link href="#" className="font-weight-bold mb-2 text-uppercase">
 							Community
 						</Nav.Link>
@@ -30,8 +29,8 @@ function Footer() {
 						<Nav.Link href="mailto:support@smswithoutborders.com">Contact Us</Nav.Link>
 					</Nav>
 				</Col>
-				<Col xs={12} md={3} className="mb-3 d-flex justify-content-center">
-					<Nav className="flex-column">
+				<Col xs={12} md={3} className="mb-4">
+					<Nav className="flex-column text-center">
 						<Nav.Link href="#" className="font-weight-bold mb-2 text-uppercase">
 							Downloads
 						</Nav.Link>
@@ -41,8 +40,8 @@ function Footer() {
 						<Nav.Link href="/download/windows">Windows</Nav.Link>
 					</Nav>
 				</Col>
-				<Col xs={12} md={3} className="mb-3 d-flex justify-content-center align-items-center">
-					<Nav className="d-flex justify-content-center">
+				<Col xs={12} md={3} className="mb-4 d-flex justify-content-center">
+					<Nav className="d-flex">
 						<Nav.Link href="https://www.facebook.com/SMSWithoutBorders" className="mx-2">
 							<FaFacebook size={24} />
 						</Nav.Link>

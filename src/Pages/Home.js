@@ -29,55 +29,45 @@ const Home = () => {
 			{/* About SMSWithoutBorders */}
 			<Row className="about bg-gray-100 py-24">
 				<Col md={12}>
-					<section className="container mx-auto md:flex-row items-center">
-						<div className="md:w-full">
-							<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
-								<div className="md:w-1/2 md:mr-8 mt-8 md:mt-0">
-									<img src="logo.png" alt="DekuSMS" className="rounded-lg shadow-lg img-fluid" />
-								</div>
-								<div className="md:w-1/2 mt-8 md:mt-0">
-									<h1 className="text-2xl md:text-5xl font-bold mb-4">
-										What is <span className="header-span text-indigo-700">SMSWithoutBorders</span>{" "}
-										All About
-									</h1>
-									<p className="mb-4">
-										SMSWithoutBorders is an overarching project dedicated to developing and
-										promoting secure, accessible communication tools that function even without an
-										internet connection. This initiative encompasses two primary applications:
-									</p>
-									<p className="mb-4">
-										SMSWithoutBorders began its journey as a single, innovative application focused
-										on empowering offline messaging. However, as the project matured and our vision
-										expanded, we recognized the potential to create a broader ecosystem for secure
-										communication. This led to the exciting transition from a standalone app to the
-										SMSWithoutBorders project, encompassing two distinct but complementary
-										applications:
-									</p>
-								</div>
-							</section>
-							<ul className="list-disc list-inside text-lg mb-4">
-								<li className="mb-2">
-									<b>
-										<strong>RelaySMS:</strong>
-									</b>{" "}
-									This user-facing application acts as the cornerstone of the project. Formerly
-									known as SMSWithoutBorders, RelaySMS allows users to seamlessly connect their
-									favorite messaging platforms and send messages even when offline. It utilizes SMS
-									technology as a secure relay to bridge the gap between disconnected devices and
-									online communication channels.
-								</li>
-								<li className="mb-2">
-									<b>
-										{" "}
-										<strong>DekuSMS:</strong>
-									</b>{" "}
-									This offline, open-source, end-to-end encrypted messaging application for Android
-									provides users with a secure and private messaging experience. While DekuSMS
-									focuses on offline communication security, it complements the SMSWithoutBorders
-									projects mission by offering a robust option for secure messaging within an
-									internet-disconnected environment.
-								</li>
-							</ul>
+					{/* About RelaySMS */}
+					<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
+						<div className="md:w-1/2 mr-2 mt-8 md:mt-0">
+							<img
+								src="Swob.jpeg"
+								alt="DekuSMS"
+								className="rounded-lg shadow-lg max-w-xs md:max-w-sm w-full h-auto"
+							/>
+						</div>
+
+						<div className="md:w-1/2 mt-8 md:mt-0">
+							<h1 className="text-4xl md:text-6xl font-bold mb-4">
+								About <span className="header-span text-indigo-700">RelaySMS</span>
+							</h1>
+							<p className="mb-4">
+								RelaySMS, formerly known as SMSWithoutBorders (Swob), is a user-friendly application
+								that empowers you to send messages across your favorite messaging platforms, even
+								when you are disconnected from the internet. Think of it as a secure bridge that
+								connects your offline world to online communication channels. RelaySMS utilizes SMS
+								technology as a reliable relay, allowing you to seamlessly transmit messages even in
+								areas with limited or no internet access.
+							</p>
+							{showMore && (
+								<p className="mb-4">
+									The concept for SMSWithoutBorders, now RelaySMS, originated from a simple yet
+									powerful vision: ensuring everyone has access to reliable communication,
+									regardless of internet connectivity. Many regions around the world have limited or
+									unreliable internet infrastructure, creating communication barriers that can be
+									disruptive for individuals and communities. RelaySMS was born to bridge this gap,
+									empowering users to stay connected with friends, family, and colleagues even when
+									offline.
+								</p>
+							)}
+							<button
+								onClick={toggleReadMore}
+								className="text-indigo-700 hover:underline focus:outline-none"
+							>
+								{showMore ? "Read less" : "Read more"}
+							</button>
 						</div>
 					</section>
 				</Col>
@@ -138,9 +128,14 @@ const Home = () => {
 
 			{/* About RelaySMS */}
 			<section className="container mx-auto py-24 flex flex-col md:flex-row items-center">
-				<div className="md:w-1/2 md:mr-8 mt-8 md:mt-0">
-					<img src="o11.jpg" alt="DekuSMS" className="rounded-lg shadow-lg img-fluid" />
+				<div className="md:w-1/2 mt-8 md:mt-0">
+					<img
+						src="Swob.jpeg"
+						alt="DekuSMS"
+						className="rounded-lg shadow-lg max-w-xs md:max-w-sm w-full h-auto"
+					/>
 				</div>
+
 				<div className="md:w-1/2 mt-8 md:mt-0">
 					<h1 className="text-4xl md:text-6xl font-bold mb-4">
 						About <span className="header-span text-indigo-700">RelaySMS</span>
@@ -178,12 +173,6 @@ const Home = () => {
 					<Partner />
 				</Col>
 			</Row>
-			{/* Project */}
-			{/* <Row className="my-4">
-				<Col md={12} sm={12}>
-					<Project />
-				</Col>
-			</Row> */}
 		</Container>
 	);
 };
