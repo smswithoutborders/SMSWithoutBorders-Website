@@ -1,17 +1,15 @@
 import React from "react";
-import { Grid, Typography, Box } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 
 function partner() {
 	return (
 		<Box
 			sx={{ bgcolor: "whitesmoke", color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}
 		>
-			<Typography variant="h6" sx={{ opacity: "70%", pb: 2 }}>
-				PARTNERS
-			</Typography>
-			<Typography variant="h5" sx={{ pb: 5, fontWeight: 600 }}>
-				Heros that help keep us afloat
-			</Typography>
+			<section className="container items-center">
+				<h1 className="font-bold mb-4 text-center">PARTNERS</h1>
+				<h2 className="text text-center"> Heros that help keep us afloat</h2>
+			</section>
 			<Grid
 				sx={{ px: { md: 35, xs: 1 } }}
 				container

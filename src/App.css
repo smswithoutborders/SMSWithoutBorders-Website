@@ -14,7 +14,7 @@
 }
 
 .about {
-	padding: 40px 20px;
+	padding: 100px 50px;
 	background-color: #faf9fc;
 	color: #636368;
 	font-size: 25px;
@@ -23,9 +23,6 @@
 h1 {
 	color: #080354;
 	font-size: 80px;
-}
-p {
-	font-size: 25px;
 }
 
 .header-span {
@@ -40,17 +37,19 @@ p {
 .header1-span {
 	color: #fcae06;
 }
-.about h2 {
+h2 {
 	font-size: 2rem;
-	color: #007bff;
+	color: #1f83ef;
 	margin-bottom: 1rem;
 }
 
-.about p {
-	font-size: 1rem;
-	color: #495057;
-	line-height: 1.6;
+p,
+li {
+	font-size: 1.5rem;
+	color: #0b2f52;
+	line-height: 1.8;
 	margin-bottom: 1rem;
+	gap: 10;
 }
 
 .about ul {
