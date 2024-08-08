@@ -5,52 +5,7 @@ function Project() {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [activeFilter, setActiveFilter] = useState("all");
 
-	const projects = [
-		{
-			location: "Blog",
-			category: "Blog",
-			title: "Resilience: The Key to Overcoming Challenges",
-			description:
-				"Learn how resilience can help you overcome personal and professional challenges.",
-			image: "/resilience.jpg",
-			link: "https://blog.smswithoutborders.com/posts/resilience"
-		},
-		{
-			location: "Blog",
-			category: "Blog",
-			title: "New Device ID Registration Feature",
-			description:
-				"Discover the new feature that expands user control with device ID registration.",
-			image: "/ID.jpg",
-			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
-		},
-		{
-			location: "Blog",
-			category: "Blog",
-			title: "Our Brand Rebranding",
-			description: "We are excited to unveil our new brand identity and vision for the future.",
-			image: "/rebrand.jpg",
-			link: "https://blog.smswithoutborders.com/posts/rebranding"
-		},
-		{
-			location: "Github, PlayStore",
-			category: "Project",
-			title: "RelaySMS",
-			description:
-				"Stay Connected Anywhere, Send emails, posts, and messages via SMS without an internet connection.",
-			image: "/rebrand.jpg",
-			link: "https://www.google.com/search?q=Athen"
-		},
-		{
-			location: "Github, PlayStore",
-			category: "Project",
-			title: "DEKU SMS",
-			description:
-				"An open-source, end-to-end encrypted offline messaging application specifically designed for Android devices.",
-			image: "/rebrand.jpg",
-			link: "https://www.google.com/search?q=Athen"
-		}
-	];
+	const projects = [];
 
 	const categories = ["all", "blog", "project"];
 	const filteredProjects = projects.filter(

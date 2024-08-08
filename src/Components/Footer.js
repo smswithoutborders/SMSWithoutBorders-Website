@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
-import { FaEnvelope, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
+// import { FaEnvelope, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../index.css";
 
@@ -41,20 +41,29 @@ function Footer() {
 					</Nav>
 				</Col>
 				<Col xs={12} md={3} className="mb-4 d-flex justify-content-center">
-					<Nav className="d-flex">
-						<Nav.Link href="https://www.facebook.com/SMSWithoutBorders" className="mx-2">
-							<FaFacebook size={24} />
-						</Nav.Link>
-						<Nav.Link href="https://twitter.com/RelaySMS" className="mx-2">
-							<FaTwitter size={24} />
-						</Nav.Link>
-						<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
-							<FaGithub size={24} />
-						</Nav.Link>
-						<Nav.Link href="mailto:support@smswithoutborders.com" className="mx-2">
-							<FaEnvelope size={24} />
-						</Nav.Link>
-					</Nav>
+					<section className="flex-content padding_2x">
+						<h3 className="title small">
+							Welcome to <em>{"{name}"}</em>
+						</h3>
+						<p>
+							When an unknown printer took a galley of type and scrambled it to make a type specimen
+							book.
+						</p>
+						<span className="social_icons">
+							<a href="#">
+								<i className="fa fa-facebook"></i>
+							</a>
+							<a href="#">
+								<i className="fa fa-instagram"></i>
+							</a>
+							<a href="#">
+								<i className="fa fa-twitter"></i>
+							</a>
+							<a href="#">
+								<i className="fa fa-youtube"></i>
+							</a>
+						</span>
+					</section>
 				</Col>
 			</Row>
 
