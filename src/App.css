@@ -9,10 +9,14 @@
 	overflow-x: hidden;
 }
 
-/* ====================== Base Styles ===================== */
 body {
 	background-color: #f4f1ea;
 	font-family: "Roboto", sans-serif;
+}
+
+p {
+	font-size: 1.25rem;
+	line-height: 1.8em;
 }
 
 /* ====================== Header Section ===================== */
@@ -66,8 +70,8 @@ body {
 	background-color: #fff;
 	border-radius: 12px;
 	height: auto;
-	color: #06214e;
-	font-size: 18px;
+	color: #242b37;
+	font-size: 1.25rem;
 	line-height: 1.8em;
 }
 
@@ -140,24 +144,9 @@ body {
 
 	.about-section .text,
 	.applications-section .application-card {
-		font-size: 1rem;
-		line-height: 1.5em;
-	}
-}
-
-.footer-container .d-flex {
-	display: flex;
-}
-
-@media (max-width: 767px) {
-	.footer-nav .nav-link {
-		font-size: 1rem;
-	}
-}
-
-@media (min-width: 768px) {
-	.footer-nav .nav-link {
-		font-size: 1.2rem;
+		font-size: 1.52rem;
+		line-height: 1.6em;
+		font-weight: 300;
 	}
 }
 
