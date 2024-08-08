@@ -2,159 +2,151 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ======================HEADER========================== */
-
-/* Global Styles */
-body {
-	font-family: "Roboto", sans-serif;
-	line-height: 1.6;
+* {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden; /* Prevent horizontal scrolling */
+	overflow-x: hidden;
 }
 
-/* ====================== HEADER ========================== */
+body {
+	background-color: #f4f1ea;
+	font-family: "Roboto", sans-serif;
+}
+
+p {
+	font-size: 1.25rem;
+	line-height: 1.8em;
+}
+
+/* ====================== Header Section ===================== */
 .header {
-	background-color: #f8f9fa;
+	background-color: #01062c;
 	padding: 50px 0;
 }
 
 .header1 {
 	font-size: 2.5rem;
 	font-weight: bold;
-	color: #2b2b2b;
-	text-align: center;
+	color: #fff;
 }
 
 .header1-span {
-	color: #6c63ff;
+	color: #b9cae6;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
-.padding_2x {
-	padding: 2rem;
+/* ===================== About Section ===================== */
+.about-section {
+	padding: 40px 0;
+	overflow-x: hidden;
 }
 
-/* ===================== IMAGE STYLES ===================== */
-/* ===================== IMAGE STYLES ===================== */
-/* .img-fluid {
-  max-width: 60%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  transition: transform 0.3s ease-in-out;
-} */
-
-.img-fluid:hover {
-	transform: scale(1.05);
+.about-section .sec-title .title {
+	color: #d7a449;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: capitalize;
 }
 
-.img-fluid {
-	max-width: 410px;
-	width: 100%;
-	padding-top: 7%;
-	margin: 0 auto;
-	height: 50%;
-	display: inline;
-}
-/* ======================= MEDIA QUERIES ====================== */
-@media (max-width: 768px) {
-	.img-fluid {
-		max-width: 90%;
-	}
+.about-section h2 {
+	color: #041c94;
 }
 
-/* ====================== ABOUT SECTIONS ========================== */
-.about {
-	padding: 2rem;
-	overflow-x: hidden; /* Prevent horizontal overflow */
+.about-section .text,
+.about-section li {
+	color: #06214e;
+	font-size: 1.25rem;
+	line-height: 1.8em;
 }
 
-.about img {
-	max-width: 100%;
+/* ============================ Applications Section =========================== */
+.applications-section {
+	overflow-x: hidden;
+}
+
+.applications-section .application-card {
+	background-color: #fff;
+	border-radius: 12px;
 	height: auto;
-	display: block;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Image shadow */
+	color: #242b37;
+	font-size: 1.25rem;
+	line-height: 1.8em;
 }
 
-.section1 {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.btn-custom {
+	background-color: #a5b3f8;
+	border-color: #8793d1;
+	color: #083077;
+	transition:
+		background-color 0.3s ease,
+		border-color 0.3s ease;
 }
 
-.flex-content {
-	max-width: 900px;
-	margin: auto;
-	text-align: left;
+.btn-custom:hover {
+	background-color: #001230;
+	border-color: #c08507;
 }
 
-.tag {
-	display: inline-block;
-	background-color: #6c63ff;
+.icon-link {
+	color: #041c94;
+	transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+	color: #c08507;
+}
+
+.icon-link + .icon-link {
+	margin-left: 15px;
+}
+
+/* ======================== Footer Styles ===================== */
+.footer-container {
+	background-color: #02051b;
+	padding: 20px 0;
+	overflow-x: hidden;
+}
+
+.footer-nav .nav-link {
 	color: #fff;
-	padding: 0.5rem 1rem;
-	border-radius: 0.25rem;
-	margin-bottom: 1rem;
-	font-size: 1rem;
-	font-weight: bold;
+	font-size: 1.2rem;
+	text-align: center;
 }
 
-.header-span {
-	color: #6c63ff;
+.footer-nav .nav-link:hover {
+	color: #c08507;
 }
 
-/* ===================== LIST STYLES ======================== */
-.list-disc {
-	padding-left: 1.5rem;
-	list-style-type: disc;
+.footer-container .text-white {
+	color: #cef6f6;
 }
 
-.list-inside {
-	list-style-position: inside;
+.footer-container .text-uppercase {
+	text-transform: uppercase;
+	font-weight: 800;
+	color: #dc9909;
 }
 
-/* =================== BUTTON STYLES ======================== */
-button {
-	background-color: transparent;
-	color: #6c63ff;
-	border: none;
-	cursor: pointer;
-	font-size: 1rem;
-	font-weight: bold;
-	text-decoration: none;
-	margin-top: 1rem;
-}
-
-button:hover {
-	text-decoration: underline;
-}
-
-/* ======================= MEDIA QUERIES ====================== */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	.header1 {
 		font-size: 2rem;
 	}
 
-	.about img {
-		margin-bottom: 1rem;
+	.header1-span {
+		font-size: 1.25rem;
 	}
 
-	.flex-content {
-		padding: 1rem;
+	.about-section .sec-title h2 {
+		font-size: 2rem;
 	}
 
-	.about {
-		padding: 1rem; /* Adjust padding on smaller screens */
-	}
-
-	.about-section {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.about img {
-		margin-bottom: 20px;
+	.about-section .text,
+	.applications-section .application-card {
+		font-size: 1.52rem;
+		line-height: 1.6em;
+		font-weight: 300;
 	}
 }
 
@@ -198,5 +190,14 @@ button:hover {
 		font-size: 1.2rem;
 	}
 }
+/* =================loader================ */
 
-/* Custom Styles */
+@keyframes fadeInOut {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
