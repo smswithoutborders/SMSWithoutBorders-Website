@@ -32,7 +32,7 @@ p {
 }
 
 .header1-span {
-	color: #9cbcf4;
+	color: #b9cae6;
 	font-size: 1.5rem;
 	font-weight: bold;
 }
@@ -188,5 +188,16 @@ p {
 @media (min-width: 768px) {
 	.footer-nav .nav-link {
 		font-size: 1.2rem;
+	}
+}
+/* =================loader================ */
+
+@keyframes fadeInOut {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
 	}
 }

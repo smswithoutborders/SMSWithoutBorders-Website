@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { FaGithub, FaTelegram, FaTwitter } from "react-icons/fa";
 import "aos/dist/aos.css";
+import AOS from "aos";
 import Partner from "../Components/partner";
 import "../App.css";
 
 const Swob = () => {
+	// Initialize AOS on component mount
+	useEffect(() => {
+		AOS.init({ duration: 1000, once: true });
+	}, []);
+
 	return (
 		<Container fluid className="p-0">
 			{/* =========================== Header Section ============================= */}
 			<Row className="header text-center justify-content-center align-items-center">
 				<Col xs={12}>
-					<section className="py-5">
+					<section className="py-5" data-aos="fade-down">
 						<h1 className="header1">SMSWithoutBorders</h1>
 						<span className="header1-span">opensource\Research</span>
 					</section>
@@ -19,26 +25,26 @@ const Swob = () => {
 			</Row>
 
 			{/* =========================== ABOUT SWOB ====================================== */}
-			<section className="about-section">
+			<section className="about-section" data-aos="fade-up">
 				<Container>
 					<Row className="align-items-center">
 						<Col md={6} className="mb-4">
-							<div className="sec-title">
+							<div className="sec-title" data-aos="fade-right">
 								<div className="title">About Us</div>
 								<h2 className="text-4xl md:text-6xl font-bold mb-4">
 									What is <span className="header-span">SMSWithoutBorders</span> All About
 								</h2>
 							</div>
-							<p className="md:text-1xl mb-4 p">
+							<p className="md:text-1xl mb-4 p" data-aos="fade-up">
 								SMSWithoutBorders is an overarching project dedicated to developing and promoting
 								secure, accessible communication tools that function even without an internet
 								connection.
 							</p>
-							<p className="md:text-1xl mb-4 p">
+							<p className="md:text-1xl mb-4 p" data-aos="fade-up" data-aos-delay="200">
 								The project encompasses two primary applications aimed at enhancing secure
 								communication: RelaySMS and DekuSMS.
 							</p>
-							<p className="md:text-1xl mb-4 p">
+							<p className="md:text-1xl mb-4 p" data-aos="fade-up" data-aos-delay="400">
 								SMSWithoutBorders began as a simple idea to ensure reliable communication in areas
 								with limited internet access. It has since grown into a robust platform that bridges
 								offline and online communication, empowering users to stay connected, no matter the
@@ -50,6 +56,7 @@ const Swob = () => {
 								src="communication.jpg"
 								alt="About SMSWithoutBorders"
 								className="about__img img-fluid rounded shadow-sm"
+								data-aos="zoom-in"
 							/>
 						</Col>
 					</Row>
@@ -57,13 +64,14 @@ const Swob = () => {
 			</section>
 
 			{/* ============================ Applications Section ================================== */}
-			<section className="applications-section">
+			<section className="applications-section" data-aos="fade-up">
 				<Container>
 					<div className="d-flex justify-content-center flex-wrap">
-						{/* RelaySMS Card */}
+						{/*=================== RelaySMS Card======================== */}
 						<Card
 							className="application-card shadow-lg m-3 flex-grow-1 py-10"
 							style={{ minWidth: "300px", maxWidth: "500px" }}
+							data-aos="flip-left"
 						>
 							<Card.Body>
 								<div className="sec-title">
@@ -102,10 +110,11 @@ const Swob = () => {
 							</Card.Body>
 						</Card>
 
-						{/* DekuSMS Card */}
+						{/* ================= DekuSMS Card ============================= */}
 						<Card
 							className="application-card shadow-lg m-3 flex-grow-1 py-5"
 							style={{ minWidth: "300px", maxWidth: "500px" }}
+							data-aos="flip-right"
 						>
 							<Card.Body>
 								<h2 className="text-4xl text-center font-bold mb-4 text-indigo-400">
@@ -138,7 +147,7 @@ const Swob = () => {
 			</section>
 
 			{/* ======================= Partner Section =========================*/}
-			<section className="partner-section py-4">
+			<section className="partner-section py-4" data-aos="fade-up">
 				<Partner />
 			</section>
 		</Container>
