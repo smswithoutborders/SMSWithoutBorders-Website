@@ -7,7 +7,6 @@ import Partner from "../Components/partner";
 import "../App.css";
 
 const Swob = () => {
-	// Initialize AOS on component mount
 	useEffect(() => {
 		AOS.init({ duration: 1000, once: true });
 	}, []);
