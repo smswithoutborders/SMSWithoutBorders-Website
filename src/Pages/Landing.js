@@ -68,7 +68,7 @@ const Swob = () => {
 					<div className="d-flex justify-content-center flex-wrap">
 						{/*=================== RelaySMS Card======================== */}
 						<Card
-							className="application-card shadow-lg m-4" // Add margin here
+							className="application-card shadow-lg m-4"
 							style={{ minWidth: "350px", maxWidth: "550px" }}
 							data-aos="flip-left"
 						>
@@ -111,7 +111,7 @@ const Swob = () => {
 
 						{/* ================= DekuSMS Card ============================= */}
 						<Card
-							className="application-card shadow-lg m-4" // Add margin here
+							className="application-card shadow-lg m-4"
 							style={{ minWidth: "350px", maxWidth: "550px" }}
 							data-aos="flip-right"
 						>
