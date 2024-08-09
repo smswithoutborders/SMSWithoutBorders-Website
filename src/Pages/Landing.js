@@ -1,26 +1,32 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { FaGithub, FaTelegram, FaTwitter } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import Partner from "../Components/partner";
 import "../App.css";
+import LanguageSwitcher from "../Components/LanguageSwitcher";
 
 const Swob = () => {
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa";
+
 	useEffect(() => {
 		AOS.init({ duration: 1000, once: true });
 	}, []);
 
 	return (
-		<Container fluid className="p-0">
+		<Container fluid className="p-0" dir={isRtl ? "rtl" : "ltr"}>
 			{/* =========================== Header Section ============================= */}
 			<Row className="header text-center justify-content-center align-items-center">
 				<Col xs={12}>
 					<section className="py-5" data-aos="fade-down">
-						<h1 className="header1">SMSWithoutBorders</h1>
-						<span className="header1-span">opensource | Research</span>
+						<h1 className="header1">{t("header.title")}</h1>
+						<span className="header1-span">{t("header.subtitle")}</span>
 					</section>
 				</Col>
+				<LanguageSwitcher />
 			</Row>
 
 			{/* =========================== ABOUT SWOB ====================================== */}
@@ -29,31 +35,25 @@ const Swob = () => {
 					<Row className="align-items-center">
 						<Col md={6} className="mb-4">
 							<div className="sec-title" data-aos="fade-right">
-								<div className="title">what is</div>
+								<div className="title">{t("about.what_is")}</div>
 								<h2 className="text-4xl md:text-6xl font-bold mb-4">
-									<span className="header-span">SMSWithoutBorders</span>
+									<span className="header-span">{t("header.title")}</span>
 								</h2>
 							</div>
 							<p className="md:text-1xl mb-4 p" data-aos="fade-up">
-								SMSWithoutBorders is an overarching project dedicated to developing and promoting
-								secure, accessible communication tools that function even without an internet
-								connection.
+								{t("about.description")}
 							</p>
 							<p className="md:text-1xl mb-4 p" data-aos="fade-up" data-aos-delay="200">
-								The project encompasses two primary applications aimed at enhancing secure
-								communication: RelaySMS and DekuSMS.
+								{t("about.additional_description")}
 							</p>
 							<p className="md:text-1xl mb-4 p" data-aos="fade-up" data-aos-delay="400">
-								SMSWithoutBorders began as a simple idea to ensure reliable communication in areas
-								with limited internet access. It has since grown into a robust platform that bridges
-								offline and online communication, empowering users to stay connected, no matter the
-								circumstances.
+								{t("about.history")}
 							</p>
 						</Col>
 						<Col md={6}>
 							<img
 								src="communication.jpg"
-								alt="About SMSWithoutBorders"
+								alt={t("header.title")}
 								className="about__img img-fluid rounded shadow-sm"
 								data-aos="zoom-in"
 							/>
@@ -75,24 +75,17 @@ const Swob = () => {
 							<Card.Body>
 								<div className="sec-title">
 									<h2 className="text-4xl text-center font-bold mb-4 text-indigo-800">
-										<span className="header-span">Relay</span>SMS
+										<span className="header-span">{t("applications.relay_sms_title")}</span>
 									</h2>
 								</div>
-								<p>
-									RelaySMS, formerly known as SMSWithoutBorders (Swob), is a user-friendly
-									application that empowers you to send messages across your favorite messaging
-									platforms, even when you are disconnected from the internet. Think of it as a
-									secure bridge that connects your offline world to online communication channels.
-									RelaySMS utilizes SMS technology as a reliable relay, allowing you to seamlessly
-									transmit messages even in areas with limited or no internet access.
-								</p>
+								<p>{t("applications.relay_sms_description")}</p>
 								<div className="text-center mt-4">
 									<Button
 										variant="primary"
 										href="https://relay.smswithoutborders.com/"
 										className="btn-custom mb-3"
 									>
-										Learn More
+										{t("buttons.learn_more")}
 									</Button>
 									<div>
 										<a
@@ -117,18 +110,9 @@ const Swob = () => {
 						>
 							<Card.Body>
 								<h2 className="text-4xl text-center font-bold mb-4 text-indigo-800">
-									<span className="header-span">Deku</span>SMS
+									<span className="header-span">{t("applications.deku_sms_title")}</span>
 								</h2>
-								<p>
-									DekuSMS is an open-source, end-to-end encrypted offline messaging application
-									specifically designed for Android devices. Its primary focus is on providing a
-									secure and private platform for offline communication. What sets DekuSMS apart is
-									its commitment to end-to-end encryption. This means that your messages are
-									encrypted on your device before being sent and can only be decrypted by the
-									intended recipients device. This robust encryption ensures that only authorized
-									parties can access your conversations, offering a higher level of security
-									compared to traditional messaging apps.
-								</p>
+								<p>{t("applications.deku_sms_description")}</p>
 								<div className="text-center mt-4">
 									<div>
 										<a href="https://github.com/deku-messaging" className="icon-link mr-3">

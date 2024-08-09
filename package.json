@@ -17,12 +17,17 @@
 		"aos": "^2.3.4",
 		"bootstrap": "^5.3.3",
 		"framer-motion": "^11.0.28",
+		"i18next": "^23.12.2",
+		"i18next-browser-languagedetector": "^8.0.0",
+		"i18next-http-backend": "^2.5.2",
 		"react": "^18.2.0",
 		"react-bootstrap": "^2.10.4",
 		"react-dom": "^18.2.0",
+		"react-i18next": "^15.0.1",
 		"react-icons": "^5.2.1",
 		"react-router-dom": "^6.22.3",
 		"react-scripts": "5.0.1",
+		"react-world-flags": "^1.6.0",
 		"web-vitals": "^2.1.0"
 	},
 	"scripts": {

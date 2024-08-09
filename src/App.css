@@ -19,7 +19,38 @@ p {
 	line-height: 1.8em;
 }
 
-/* ====================== Header Section ===================== */
+/* =============================== Add RTL styles====================================== */
+[dir="rtl"] {
+	text-align: right;
+}
+
+[dir="rtl"] .header {
+	text-align: right;
+}
+
+[dir="rtl"] .header1 {
+	text-align: right;
+}
+
+[dir="rtl"] .footer-nav .nav-link {
+	text-align: center;
+}
+
+[dir="rtl"] .footer-nav .nav-link {
+	text-align: right;
+}
+
+[dir="rtl"] .icon-link {
+	margin-right: 15px;
+	margin-left: 0;
+}
+
+[dir="rtl"] .icon-link + .icon-link {
+	margin-right: 0;
+	margin-left: 15px;
+}
+
+/* ================ Header Section ================ */
 .header {
 	background-color: #9cbcf4;
 	padding: 50px 0;
@@ -29,12 +60,14 @@ p {
 	font-size: 2.5rem;
 	font-weight: bold;
 	color: #041c94;
+	text-align: center;
 }
 
 .header1-span {
 	color: #02070e;
 	font-size: 1rem;
 	font-weight: bold;
+	text-align: center;
 }
 
 /* ===================== About Section ===================== */
@@ -48,10 +81,12 @@ p {
 	font-size: 18px;
 	font-weight: 700;
 	text-transform: capitalize;
+	text-align: center;
 }
 
 .about-section h2 {
 	color: #041c94;
+	text-align: center;
 }
 
 .about-section .text,
@@ -59,6 +94,7 @@ p {
 	color: #06214e;
 	font-size: 1.25rem;
 	line-height: 1.8em;
+	text-align: left;
 }
 
 /* ============================ Applications Section =========================== */
@@ -74,6 +110,7 @@ p {
 	font-size: 1.25rem;
 	line-height: 1.8em;
 	margin: 1rem;
+	text-align: left;
 }
 
 .btn-custom {
@@ -102,6 +139,7 @@ p {
 .icon-link + .icon-link {
 	margin-left: 15px;
 }
+
 /* ================================================== */
 
 @media (max-width: 767px) {
@@ -165,8 +203,8 @@ p {
 		font-size: 1.2rem;
 	}
 }
-/* =================loader================ */
 
+/* =================loader================ */
 @keyframes fadeInOut {
 	0%,
 	100% {
