@@ -21,19 +21,19 @@ p {
 
 /* ====================== Header Section ===================== */
 .header {
-	background-color: #01062c;
+	background-color: #9cbcf4;
 	padding: 50px 0;
 }
 
 .header1 {
 	font-size: 2.5rem;
 	font-weight: bold;
-	color: #fff;
+	color: #041c94;
 }
 
 .header1-span {
-	color: #b9cae6;
-	font-size: 1.5rem;
+	color: #02070e;
+	font-size: 1rem;
 	font-weight: bold;
 }
 
@@ -73,6 +73,7 @@ p {
 	color: #242b37;
 	font-size: 1.25rem;
 	line-height: 1.8em;
+	margin: 1rem;
 }
 
 .btn-custom {
@@ -101,33 +102,7 @@ p {
 .icon-link + .icon-link {
 	margin-left: 15px;
 }
-
-/* ======================== Footer Styles ===================== */
-.footer-container {
-	background-color: #02051b;
-	padding: 20px 0;
-	overflow-x: hidden;
-}
-
-.footer-nav .nav-link {
-	color: #fff;
-	font-size: 1.2rem;
-	text-align: center;
-}
-
-.footer-nav .nav-link:hover {
-	color: #c08507;
-}
-
-.footer-container .text-white {
-	color: #cef6f6;
-}
-
-.footer-container .text-uppercase {
-	text-transform: uppercase;
-	font-weight: 800;
-	color: #dc9909;
-}
+/* ================================================== */
 
 @media (max-width: 767px) {
 	.header1 {
@@ -152,7 +127,7 @@ p {
 
 /* ========================FOOTER==================================== */
 .footer-container {
-	background-color: #02051b;
+	background-color: #020732;
 }
 
 .footer-nav .nav-link {
