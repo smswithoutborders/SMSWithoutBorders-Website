@@ -2,9 +2,7 @@ import { Grid, Box } from "@mui/material";
 
 function Partner() {
 	return (
-		<Box
-			sx={{ bgcolor: "whitesmoke", color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}
-		>
+		<Box sx={{ color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}>
 			<section className="container items-center">
 				<h1 className="font-bold mb-4 text-2xl md:text-4xl text-center">OUR SPONSERS</h1>
 			</section>

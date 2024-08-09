@@ -18,7 +18,7 @@ const Swob = () => {
 				<Col xs={12}>
 					<section className="py-5" data-aos="fade-down">
 						<h1 className="header1">SMSWithoutBorders</h1>
-						<span className="header1-span">opensource\Research</span>
+						<span className="header1-span">opensource | Research</span>
 					</section>
 				</Col>
 			</Row>
@@ -29,9 +29,9 @@ const Swob = () => {
 					<Row className="align-items-center">
 						<Col md={6} className="mb-4">
 							<div className="sec-title" data-aos="fade-right">
-								<div className="title">About Us</div>
+								<div className="title">what is</div>
 								<h2 className="text-4xl md:text-6xl font-bold mb-4">
-									What is <span className="header-span">SMSWithoutBorders</span> All About
+									<span className="header-span">SMSWithoutBorders</span>
 								</h2>
 							</div>
 							<p className="md:text-1xl mb-4 p" data-aos="fade-up">
@@ -68,13 +68,13 @@ const Swob = () => {
 					<div className="d-flex justify-content-center flex-wrap">
 						{/*=================== RelaySMS Card======================== */}
 						<Card
-							className="application-card shadow-lg m-3 flex-grow-1 py-10"
-							style={{ minWidth: "300px", maxWidth: "500px" }}
+							className="application-card shadow-lg m-4"
+							style={{ minWidth: "350px", maxWidth: "550px" }}
 							data-aos="flip-left"
 						>
 							<Card.Body>
 								<div className="sec-title">
-									<h2 className="text-4xl text-center font-bold mb-4 text-indigo-400">
+									<h2 className="text-4xl text-center font-bold mb-4 text-indigo-800">
 										<span className="header-span">Relay</span>SMS
 									</h2>
 								</div>
@@ -111,12 +111,12 @@ const Swob = () => {
 
 						{/* ================= DekuSMS Card ============================= */}
 						<Card
-							className="application-card shadow-lg m-3 flex-grow-1 py-5"
-							style={{ minWidth: "300px", maxWidth: "500px" }}
+							className="application-card shadow-lg m-4"
+							style={{ minWidth: "350px", maxWidth: "550px" }}
 							data-aos="flip-right"
 						>
 							<Card.Body>
-								<h2 className="text-4xl text-center font-bold mb-4 text-indigo-400">
+								<h2 className="text-4xl text-center font-bold mb-4 text-indigo-800">
 									<span className="header-span">Deku</span>SMS
 								</h2>
 								<p>
