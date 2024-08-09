@@ -19,7 +19,7 @@ p {
 	line-height: 1.8em;
 }
 
-/* Add RTL styles */
+/* =============================== Add RTL styles====================================== */
 [dir="rtl"] {
 	text-align: right;
 }
@@ -60,13 +60,14 @@ p {
 	font-size: 2.5rem;
 	font-weight: bold;
 	color: #041c94;
-	text-align: center; /* Adjust if needed for RTL */
+	text-align: center;
 }
 
 .header1-span {
 	color: #02070e;
 	font-size: 1rem;
 	font-weight: bold;
+	text-align: center;
 }
 
 /* ===================== About Section ===================== */
@@ -80,12 +81,12 @@ p {
 	font-size: 18px;
 	font-weight: 700;
 	text-transform: capitalize;
-	text-align: center; /* Adjust if needed for RTL */
+	text-align: center;
 }
 
 .about-section h2 {
 	color: #041c94;
-	text-align: center; /* Adjust if needed for RTL */
+	text-align: center;
 }
 
 .about-section .text,
@@ -93,7 +94,7 @@ p {
 	color: #06214e;
 	font-size: 1.25rem;
 	line-height: 1.8em;
-	text-align: left; /* Adjust if needed for RTL */
+	text-align: left;
 }
 
 /* ============================ Applications Section =========================== */
@@ -109,7 +110,7 @@ p {
 	font-size: 1.25rem;
 	line-height: 1.8em;
 	margin: 1rem;
-	text-align: left; /* Adjust if needed for RTL */
+	text-align: left;
 }
 
 .btn-custom {
@@ -136,7 +137,7 @@ p {
 }
 
 .icon-link + .icon-link {
-	margin-left: 15px; /* Adjust for RTL */
+	margin-left: 15px;
 }
 
 /* ================================================== */
@@ -170,7 +171,7 @@ p {
 .footer-nav .nav-link {
 	color: #fff;
 	font-size: 1.2rem;
-	text-align: center; /* Adjust for RTL */
+	text-align: center;
 }
 
 .footer-nav .nav-link:hover {
