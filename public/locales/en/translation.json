@@ -1,0 +1,40 @@
+{
+	"languageSwitcher": {
+		"english": "English",
+		"french": "French",
+		"farsi": "Farsi"
+	},
+	"header": {
+		"title": "SMSWithoutBorders",
+		"subtitle": "opensource | Research"
+	},
+	"about": {
+		"what_is": "What is",
+		"description": "SMSWithoutBorders is an overarching project dedicated to developing and promoting secure, accessible communication tools that function even without an internet connection.",
+		"additional_description": "The project encompasses two primary applications aimed at enhancing secure communication: RelaySMS and DekuSMS.",
+		"history": "SMSWithoutBorders began as a simple idea to ensure reliable communication in areas with limited internet access. It has since grown into a robust platform that bridges offline and online communication, empowering users to stay connected, no matter the circumstances."
+	},
+	"applications": {
+		"relay_sms_title": "RelaySMS",
+		"relay_sms_description": "RelaySMS, formerly known as SMSWithoutBorders (Swob), is a user-friendly application that empowers you to send messages across your favorite messaging platforms, even when you are disconnected from the internet. Think of it as a secure bridge that connects your offline world to online communication channels. RelaySMS utilizes SMS technology as a reliable relay, allowing you to seamlessly transmit messages even in areas with limited or no internet access.",
+		"deku_sms_title": "DekuSMS",
+		"deku_sms_description": "DekuSMS is an open-source, end-to-end encrypted offline messaging application specifically designed for Android devices. Its primary focus is on providing a secure and private platform for offline communication. What sets DekuSMS apart is its commitment to end-to-end encryption. This means that your messages are encrypted on your device before being sent and can only be decrypted by the intended recipient's device. This robust encryption ensures that only authorized parties can access your conversations, offering a higher level of security compared to traditional messaging apps."
+	},
+	"buttons": {
+		"learn_more": "Learn More"
+	},
+	"footer": {
+		"quickLinks": "Quick Links",
+		"community": "Community",
+		"downloads": "Downloads",
+		"blog": "Blog",
+		"documentation": "Documentation",
+		"privacyPolicy": "Privacy Policy",
+		"github": "GitHub",
+		"twitter": "Twitter",
+		"telegram": "Telegram",
+		"relaySMS": "RelaySMS",
+		"dekuSMS": "DekuSMS",
+		"copyright": "© SMSWithoutBorders."
+	}
+}

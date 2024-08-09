@@ -1,0 +1,40 @@
+{
+	"languageSwitcher": {
+		"english": "Anglais",
+		"french": "Français",
+		"farsi": "Persan"
+	},
+	"header": {
+		"title": "SMSWithoutBorders",
+		"subtitle": "opensource | Recherche"
+	},
+	"about": {
+		"what_is": "Qu'est-ce que",
+		"description": "SMSWithoutBorders est un projet global dédié au développement et à la promotion d'outils de communication sécurisés et accessibles qui fonctionnent même sans connexion Internet.",
+		"additional_description": "Le projet comprend deux applications principales visant à améliorer la communication sécurisée : RelaySMS et DekuSMS.",
+		"history": "SMSWithoutBorders a commencé comme une idée simple pour assurer une communication fiable dans les zones avec un accès limité à Internet. Depuis, il est devenu une plateforme robuste qui relie la communication hors ligne et en ligne, permettant aux utilisateurs de rester connectés, quelles que soient les circonstances."
+	},
+	"applications": {
+		"relay_sms_title": "RelaySMS",
+		"relay_sms_description": "RelaySMS, anciennement connu sous le nom de SMSWithoutBorders (Swob), est une application conviviale qui vous permet d'envoyer des messages à travers vos plateformes de messagerie préférées, même lorsque vous êtes déconnecté d'Internet. Considérez-le comme un pont sécurisé qui relie votre monde hors ligne aux canaux de communication en ligne. RelaySMS utilise la technologie SMS comme un relais fiable, vous permettant de transmettre des messages de manière transparente même dans les zones avec un accès limité ou sans Internet.",
+		"deku_sms_title": "DekuSMS",
+		"deku_sms_description": "DekuSMS est une application de messagerie hors ligne open-source et cryptée de bout en bout, spécifiquement conçue pour les appareils Android. Son objectif principal est de fournir une plateforme sécurisée et privée pour la communication hors ligne. Ce qui distingue DekuSMS, c'est son engagement envers le cryptage de bout en bout. Cela signifie que vos messages sont cryptés sur votre appareil avant d'être envoyés et ne peuvent être décryptés que par l'appareil du destinataire prévu. Ce cryptage robuste garantit que seules les parties autorisées peuvent accéder à vos conversations, offrant un niveau de sécurité plus élevé par rapport aux applications de messagerie traditionnelles."
+	},
+	"buttons": {
+		"learn_more": "En savoir plus"
+	},
+	"footer": {
+		"quickLinks": "Liens rapides",
+		"community": "Communauté",
+		"downloads": "Téléchargements",
+		"blog": "Blog",
+		"documentation": "Documentation",
+		"privacyPolicy": "Politique de confidentialité",
+		"github": "GitHub",
+		"twitter": "Twitter",
+		"telegram": "Telegram",
+		"relaySMS": "RelaySMS",
+		"dekuSMS": "DekuSMS",
+		"copyright": "© SMSWithoutBorders."
+	}
+}

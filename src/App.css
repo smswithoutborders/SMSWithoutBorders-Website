@@ -19,7 +19,38 @@ p {
 	line-height: 1.8em;
 }
 
-/* ====================== Header Section ===================== */
+/* Add RTL styles */
+[dir="rtl"] {
+	text-align: right;
+}
+
+[dir="rtl"] .header {
+	text-align: right;
+}
+
+[dir="rtl"] .header1 {
+	text-align: right;
+}
+
+[dir="rtl"] .footer-nav .nav-link {
+	text-align: center;
+}
+
+[dir="rtl"] .footer-nav .nav-link {
+	text-align: right;
+}
+
+[dir="rtl"] .icon-link {
+	margin-right: 15px;
+	margin-left: 0;
+}
+
+[dir="rtl"] .icon-link + .icon-link {
+	margin-right: 0;
+	margin-left: 15px;
+}
+
+/* ================ Header Section ================ */
 .header {
 	background-color: #9cbcf4;
 	padding: 50px 0;
@@ -29,6 +60,7 @@ p {
 	font-size: 2.5rem;
 	font-weight: bold;
 	color: #041c94;
+	text-align: center; /* Adjust if needed for RTL */
 }
 
 .header1-span {
@@ -48,10 +80,12 @@ p {
 	font-size: 18px;
 	font-weight: 700;
 	text-transform: capitalize;
+	text-align: center; /* Adjust if needed for RTL */
 }
 
 .about-section h2 {
 	color: #041c94;
+	text-align: center; /* Adjust if needed for RTL */
 }
 
 .about-section .text,
@@ -59,6 +93,7 @@ p {
 	color: #06214e;
 	font-size: 1.25rem;
 	line-height: 1.8em;
+	text-align: left; /* Adjust if needed for RTL */
 }
 
 /* ============================ Applications Section =========================== */
@@ -74,6 +109,7 @@ p {
 	font-size: 1.25rem;
 	line-height: 1.8em;
 	margin: 1rem;
+	text-align: left; /* Adjust if needed for RTL */
 }
 
 .btn-custom {
@@ -100,8 +136,9 @@ p {
 }
 
 .icon-link + .icon-link {
-	margin-left: 15px;
+	margin-left: 15px; /* Adjust for RTL */
 }
+
 /* ================================================== */
 
 @media (max-width: 767px) {
@@ -133,7 +170,7 @@ p {
 .footer-nav .nav-link {
 	color: #fff;
 	font-size: 1.2rem;
-	text-align: center;
+	text-align: center; /* Adjust for RTL */
 }
 
 .footer-nav .nav-link:hover {
@@ -165,8 +202,8 @@ p {
 		font-size: 1.2rem;
 	}
 }
-/* =================loader================ */
 
+/* =================loader================ */
 @keyframes fadeInOut {
 	0%,
 	100% {
