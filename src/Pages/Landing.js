@@ -30,8 +30,9 @@ const Swob = () => {
 						<Col md={12} className="mb-4">
 							<section className="container items-center">
 								<h1 className="title font-bold mb-4 text-2xl md:text-4xl text-center">
-									{t("about.what_is")}
+									{t("about.title")}
 								</h1>
+								<h5 className="font-bold mb-4 text-1xl md:text-2xl">{t("about.what_is")}</h5>
 							</section>
 							<p className="mb-4">{t("about.description")}</p>
 							<p className="mb-4">{t("about.additional_description")}</p>
