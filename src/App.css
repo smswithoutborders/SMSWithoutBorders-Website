@@ -4,50 +4,20 @@
 
 * {
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
 	overflow-x: hidden;
 }
 
 body {
-	background-color: #f4f1ea;
+	background-color: white;
 	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 p {
 	font-size: 1.25rem;
 	line-height: 1.8em;
-}
-
-/* =============================== Add RTL styles====================================== */
-[dir="rtl"] {
-	text-align: right;
-}
-
-[dir="rtl"] .header {
-	text-align: right;
-}
-
-[dir="rtl"] .header1 {
-	text-align: right;
-}
-
-[dir="rtl"] .footer-nav .nav-link {
-	text-align: center;
-}
-
-[dir="rtl"] .footer-nav .nav-link {
-	text-align: right;
-}
-
-[dir="rtl"] .icon-link {
-	margin-right: 15px;
-	margin-left: 0;
-}
-
-[dir="rtl"] .icon-link + .icon-link {
-	margin-right: 0;
-	margin-left: 15px;
+	color: #010211;
 }
 
 /* ================ Header Section ================ */
@@ -72,34 +42,22 @@ p {
 
 /* ===================== About Section ===================== */
 .about-section {
-	padding: 40px 0;
-	overflow-x: hidden;
+	padding: 70px 0;
+	padding-top: 90px;
 }
 
-.about-section .sec-title .title {
-	color: #d7a449;
-	font-size: 18px;
-	font-weight: 700;
-	text-transform: capitalize;
+.about-section .sec-title {
 	text-align: center;
 }
 
-.about-section h2 {
-	color: #041c94;
-	text-align: center;
-}
-
-.about-section .text,
-.about-section li {
-	color: #06214e;
-	font-size: 1.25rem;
-	line-height: 1.8em;
-	text-align: left;
+.title {
+	padding-bottom: 60px;
+	color: #010e27;
 }
 
 /* ============================ Applications Section =========================== */
 .applications-section {
-	overflow-x: hidden;
+	padding: 60px 0;
 }
 
 .applications-section .application-card {
@@ -109,14 +67,18 @@ p {
 	color: #242b37;
 	font-size: 1.25rem;
 	line-height: 1.8em;
-	margin: 1rem;
+	margin: 2rem;
 	text-align: left;
 }
 
+.applications-section .application-card .text-center {
+	text-align: center;
+}
+
 .btn-custom {
-	background-color: #a5b3f8;
-	border-color: #8793d1;
+	background-color: #e9ebf5;
 	color: #083077;
+	font-weight: 400;
 	transition:
 		background-color 0.3s ease,
 		border-color 0.3s ease;
@@ -140,32 +102,25 @@ p {
 	margin-left: 15px;
 }
 
-/* ================================================== */
+.application-card .card-body {
+	padding: 2.5rem;
+	margin: 15px 15px;
+}
 
-@media (max-width: 767px) {
-	.header1 {
-		font-size: 2rem;
-	}
-
-	.header1-span {
-		font-size: 1.25rem;
-	}
-
-	.about-section .sec-title h2 {
-		font-size: 2rem;
-	}
-
-	.about-section .text,
-	.applications-section .application-card {
-		font-size: 1.52rem;
-		line-height: 1.6em;
-		font-weight: 300;
-	}
+.sec-title {
+	margin-bottom: 1.5rem;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 /* ========================FOOTER==================================== */
 .footer-container {
 	background-color: #020732;
+}
+
+.footer-title {
+	color: #c08507 !important;
+	font-weight: 600 !important;
 }
 
 .footer-nav .nav-link {
@@ -175,42 +130,32 @@ p {
 }
 
 .footer-nav .nav-link:hover {
-	color: #c08507;
+	color: #d0d5dd;
 }
 
-.footer-container .text-white {
-	color: #cef6f6;
-}
-
-.footer-container .text-uppercase {
-	text-transform: uppercase;
-	font-weight: 800;
-	color: #dc9909;
-}
-
-.footer-container .d-flex {
+.footer-nav {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-@media (max-width: 767px) {
-	.footer-nav .nav-link {
-		font-size: 1rem;
-	}
+.footer-content {
+	text-align: center;
+	padding: 2rem 0;
+	color: #fff;
 }
 
-@media (min-width: 768px) {
-	.footer-nav .nav-link {
-		font-size: 1.2rem;
-	}
+.footer-content p {
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
 }
 
-/* =================loader================ */
-@keyframes fadeInOut {
-	0%,
-	100% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
+/*==================== Adjustments for RTL Language =================*/
+[dir="rtl"] .application-card {
+	text-align: right;
+}
+
+[dir="rtl"] .btn-custom {
+	margin-left: auto;
+	margin-right: auto;
 }

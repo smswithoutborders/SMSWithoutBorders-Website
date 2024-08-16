@@ -7,26 +7,28 @@ import LanguageSwitcher from "../Components/LanguageSwitcher";
 
 function Footer() {
 	const { t, i18n } = useTranslation();
-	const isRtl = i18n.language === "fa"; // Adjust if your RTL language code is different
+	const isRtl = i18n.language === "fa";
 
 	return (
 		<Container fluid className="footer-container py-4 text-white" dir={isRtl ? "rtl" : "ltr"}>
 			<Row className="footer-nav text-center">
 				<Col xs={12} md={4} className="mb-4">
 					<Nav className="flex-column text-center">
-						<Nav.Link href="#" className="font-weight-bold mb-2 text-uppercase">
+						<Nav.Link href="#" className="footer-title font-weight-bold mb-2 text-uppercase">
 							{t("footer.quickLinks")}
 						</Nav.Link>
 						<Nav.Link href="https://blog.smswithoutborders.com/">{t("footer.blog")}</Nav.Link>
 						<Nav.Link href="https://docs.smswithoutborders.com/">
 							{t("footer.documentation")}
 						</Nav.Link>
-						<Nav.Link href="/privacy-policy">{t("footer.privacyPolicy")}</Nav.Link>
+						<Nav.Link href="https://smswithoutborders.com/privacy-policy">
+							{t("footer.privacyPolicy")}
+						</Nav.Link>
 					</Nav>
 				</Col>
 				<Col xs={12} md={4} className="mb-4">
 					<Nav className="flex-column text-center">
-						<Nav.Link href="#" className="font-weight-bold mb-2 text-uppercase">
+						<Nav.Link href="#" className="footer-title font-weight-bold mb-2 text-uppercase">
 							{t("footer.community")}
 						</Nav.Link>
 						<Nav.Link href="https://github.com/smswithoutborders">{t("footer.github")}</Nav.Link>
@@ -36,7 +38,7 @@ function Footer() {
 				</Col>
 				<Col xs={12} md={4} className="mb-4">
 					<Nav className="flex-column text-center">
-						<Nav.Link href="#" className="font-weight-bold mb-2 text-uppercase">
+						<Nav.Link href="#" className="footer-title font-weight-bold mb-2 text-uppercase">
 							{t("footer.downloads")}
 						</Nav.Link>
 						<Nav.Link href="/download/android">{t("footer.relaySMS")}</Nav.Link>

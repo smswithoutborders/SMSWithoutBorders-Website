@@ -41,7 +41,7 @@ const LanguageSwitcher = () => {
 							"&:hover": {
 								backgroundColor: "#303f9f"
 							},
-							borderRadius: "20%",
+							borderRadius: "10%",
 							padding: "8px",
 							display: "flex",
 							alignItems: "center",
