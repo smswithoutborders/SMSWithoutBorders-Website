@@ -40,7 +40,7 @@ p {
 	text-align: center;
 }
 
-/* ===================== About Section ===================== */
+/* =========================== ABOUT SWOB ====================================== */
 .about-section {
 	padding: 70px 0;
 	padding-top: 90px;
@@ -53,6 +53,20 @@ p {
 .title {
 	padding-bottom: 60px;
 	color: #010e27;
+}
+
+@media (max-width: 767px) {
+	.about-section {
+		padding: 40px 40px;
+	}
+
+	.title {
+		padding-bottom: 20px;
+	}
+
+	.about-section p {
+		margin-bottom: 30px;
+	}
 }
 
 /* ============================ Applications Section =========================== */
