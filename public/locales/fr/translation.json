@@ -15,6 +15,7 @@
 		"history": "SMSWithoutBorders a commencé comme une idée simple pour assurer une communication fiable dans les zones avec un accès limité à Internet. Depuis, il est devenu une plateforme robuste qui relie la communication hors ligne et en ligne, permettant aux utilisateurs de rester connectés, quelles que soient les circonstances."
 	},
 	"applications": {
+		"application_title": "Notre Application Mobile",
 		"relay_sms_title": "RelaySMS",
 		"relay_sms_description": "RelaySMS, anciennement connu sous le nom de SMSWithoutBorders (Swob), est une application conviviale qui vous permet d'envoyer des messages à travers vos plateformes de messagerie préférées, même lorsque vous êtes déconnecté d'Internet. Considérez-le comme un pont sécurisé qui relie votre monde hors ligne aux canaux de communication en ligne. RelaySMS utilise la technologie SMS comme un relais fiable, vous permettant de transmettre des messages de manière transparente même dans les zones avec un accès limité ou sans Internet.",
 		"deku_sms_title": "DekuSMS",
