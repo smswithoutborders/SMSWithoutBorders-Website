@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { FaGithub, FaTwitter, FaTelegram } from "react-icons/fa"; // Importing icons
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../index.css";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
@@ -31,9 +32,15 @@ function Footer() {
 						<Nav.Link href="#" className="footer-title font-weight-bold mb-2 text-uppercase">
 							{t("footer.community")}
 						</Nav.Link>
-						<Nav.Link href="https://github.com/smswithoutborders">{t("footer.github")}</Nav.Link>
-						<Nav.Link href="https://twitter.com/RelaySMS">{t("footer.twitter")}</Nav.Link>
-						<Nav.Link href="https://t.me/deku_sms">{t("footer.telegram")}</Nav.Link>
+						<Nav.Link href="https://github.com/smswithoutborders">
+							<FaGithub size={20} className="footer-icon" /> {t("footer.github")}
+						</Nav.Link>
+						<Nav.Link href="https://twitter.com/RelaySMS">
+							<FaTwitter size={20} className="footer-icon" /> {t("footer.twitter")}
+						</Nav.Link>
+						<Nav.Link href="https://t.me/deku_sms">
+							<FaTelegram size={20} className="footer-icon" /> {t("footer.telegram")}
+						</Nav.Link>
 					</Nav>
 				</Col>
 				<Col xs={12} md={4} className="mb-4">

@@ -1,10 +1,12 @@
 import { Grid, Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 function Partner() {
+	const { t } = useTranslation();
 	return (
 		<Box sx={{ color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}>
 			<section className="container items-center">
-				<h1 className="font-bold mb-4 text-2xl md:text-4xl text-center">OUR SPONSERS</h1>
+				<h1 className="font-bold mb-4 text-2xl md:text-4xl text-center">{t("Sponsor.SponsorT")}</h1>
 			</section>
 			<Grid
 				sx={{ px: { md: 35, xs: 1 } }}
