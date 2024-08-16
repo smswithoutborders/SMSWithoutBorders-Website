@@ -34,13 +34,13 @@ p {
 }
 
 .header1-span {
-	color: #02070e;
-	font-size: 1rem;
+	color: white;
+	font-size: 1.2rem;
 	font-weight: bold;
 	text-align: center;
 }
 
-/* ===================== About Section ===================== */
+/* =========================== ABOUT SWOB ====================================== */
 .about-section {
 	padding: 70px 0;
 	padding-top: 90px;
@@ -53,6 +53,20 @@ p {
 .title {
 	padding-bottom: 60px;
 	color: #010e27;
+}
+
+@media (max-width: 767px) {
+	.about-section {
+		padding: 40px 40px;
+	}
+
+	.title {
+		padding-bottom: 20px;
+	}
+
+	.about-section p {
+		margin-bottom: 30px;
+	}
 }
 
 /* ============================ Applications Section =========================== */
@@ -127,6 +141,13 @@ p {
 	color: #fff;
 	font-size: 1.2rem;
 	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-nav .nav-link .footer-icon {
+	margin-right: 8px;
 }
 
 .footer-nav .nav-link:hover {

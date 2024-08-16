@@ -25,6 +25,9 @@
 	"buttons": {
 		"learn_more": "Read More"
 	},
+	"Sponsor": {
+		"SponsorT": "Our Sponsers"
+	},
 	"footer": {
 		"quickLinks": "Quick Links",
 		"community": "Community",
