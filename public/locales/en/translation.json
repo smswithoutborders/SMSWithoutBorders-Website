@@ -19,6 +19,12 @@
 			"description": "DekuSMS is an Android SMS messaging app. It enables 2 users of the app to communicate using end-to-end encryption over SMS messages. The app also contains message forwarding abilities supporting protocols such as SMTP, FTP, and AMQP. The app is built to integrate with RabbitMQ allowing users with messaging queues to set up and make remote communication requests to their apps."
 		}
 	},
+	"buttons": {
+		"learn_more": "Read More"
+	},
+	"Sponsor": {
+		"SponsorT": "Our Sponsers"
+	},
 	"footer": {
 		"quickLinks": "Quick Links",
 		"community": "Community",

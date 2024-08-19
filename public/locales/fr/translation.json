@@ -19,6 +19,12 @@
 			"description": "DekuSMS est une application de messagerie SMS Android. Elle permet à 2 utilisateurs de l'application de communiquer en utilisant un chiffrement de bout en bout sur les messages SMS. L'application contient également des capacités de transfert de messages supportant des protocoles tels que SMTP, FTP et AMQP. L'application est conçue pour s'intégrer avec RabbitMQ permettant aux utilisateurs disposant de files d'attente de messages de configurer et de faire des demandes de communication à distance vers leurs applications."
 		}
 	},
+	"buttons": {
+		"learn_more": "En savoir plus"
+	},
+	"Sponsor": {
+		"SponsorT": "Nos Sponsors"
+	},
 	"footer": {
 		"quickLinks": "Liens rapides",
 		"community": "Communauté",
