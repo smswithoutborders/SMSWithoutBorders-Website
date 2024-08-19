@@ -1,136 +1,116 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+	background-color: #f5f5f5;
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+}
 
 * {
 	box-sizing: border-box;
 	overflow-x: hidden;
 }
 
-body {
-	background-color: white;
-	font-family: "Roboto", sans-serif;
-	margin: 0;
-	padding: 0;
+/* Navbar Styles */
+.appBar {
+	background-color: #041c94;
+	padding: 0 20px;
 }
 
-p {
-	font-size: 1.25rem;
+.appBar .MuiTypography-root {
+	color: white;
+}
+
+.appBar .MuiButton-root {
+	color: white;
+	margin-left: 20px;
+}
+
+/* Header Section */
+.headerSection {
+	background-color: #9cbcf4;
+	padding: 80px 20px;
+	text-align: center;
+	color: #041c94;
+}
+
+.headerSection .MuiTypography-h2 {
+	font-size: 3rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.headerSection .MuiTypography-h5 {
+	font-size: 1.5rem;
+	font-weight: normal;
+}
+
+/* About Section =================================================================*/
+.aboutSection {
+	padding: 80px 20px;
+}
+
+.aboutSection .MuiTypography-h4 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 40px;
+	color: #041c94;
+}
+
+.aboutContent {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+}
+
+@media (min-width: 600px) {
+	.aboutContent {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.aboutText {
+	padding: 20px;
+}
+
+.aboutText .MuiTypography-body1 {
+	font-size: 1.5rem;
 	line-height: 1.8em;
 	color: #010211;
 }
 
-/* ================ Header Section ================ */
-.header {
-	background-color: #9cbcf4;
-	padding: 50px 0;
+/*=============== Projects Section ============================*/
+.projectsSection {
+	background-color: white;
+	padding: 80px 20px;
 }
 
-.header1 {
-	font-size: 2.5rem;
+.projectsTitle {
+	font-size: 2rem;
 	font-weight: bold;
 	color: #041c94;
+	margin-bottom: 40px;
 	text-align: center;
 }
 
-.header1-span {
-	color: white;
-	font-size: 1.2rem;
-	font-weight: bold;
+.cardStyled {
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cardContentStyled {
 	text-align: center;
+	padding: 20px;
 }
 
-/* =========================== ABOUT SWOB ====================================== */
-.about-section {
-	padding: 70px 0;
-	padding-top: 90px;
+.cardActionsStyled {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
 }
 
-.about-section .sec-title {
-	text-align: center;
-}
-
-.title {
-	padding-bottom: 60px;
-	color: #010e27;
-	margin-bottom: 1.5rem;
-	padding-bottom: 20px;
-	padding-top: 20px;
-}
-
-@media (max-width: 767px) {
-	.about-section {
-		padding: 40px 40px;
-	}
-
-	.title {
-		padding-bottom: 10px;
-		font-size: 2rem;
-		font-weight: bold;
-		text-align: center;
-	}
-
-	.about-section p {
-		margin-bottom: 30px;
-	}
-}
-
-/* ============================ Applications Section =========================== */
-.applications-section {
-	padding: 60px 0;
-}
-
-.applications-section .application-card {
-	background-color: #fff;
-	border-radius: 12px;
-	height: auto;
-	color: #242b37;
-	font-size: 1.25rem;
-	line-height: 1.8em;
-	margin: 2rem;
-	text-align: left;
-}
-
-.applications-section .application-card .text-center {
-	text-align: center;
-}
-
-.btn-custom {
-	background-color: #e9ebf5;
-	color: #083077;
-	font-weight: 400;
-	transition:
-		background-color 0.3s ease,
-		border-color 0.3s ease;
-}
-
-.btn-custom:hover {
-	background-color: #001230;
-	border-color: #c08507;
-}
-
-.icon-link {
+.cardActionsStyled .MuiIconButton-root {
+	margin: 0 10px;
 	color: #041c94;
-	transition: color 0.3s ease;
-}
-
-.icon-link:hover {
-	color: #c08507;
-}
-
-.icon-link + .icon-link {
-	margin-left: 15px;
-}
-
-.application-card .card-body {
-	padding: 2.5rem;
-	margin: 15px 15px;
-}
-
-.sec-title {
-	margin-bottom: 1.5rem;
-	padding-bottom: 20px;
-	padding-top: 20px;
 }
 
 /* ========================FOOTER==================================== */
