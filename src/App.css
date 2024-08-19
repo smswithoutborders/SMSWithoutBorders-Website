@@ -1,116 +1,148 @@
+* {
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif !important;
+}
+
+html,
 body {
-	background-color: #f5f5f5;
-	font-family: "Roboto", sans-serif;
+	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
 }
 
-* {
-	box-sizing: border-box;
-	overflow-x: hidden;
-}
-
-/* Navbar Styles */
-.appBar {
-	background-color: #041c94;
-	padding: 0 20px;
-}
-
-.appBar .MuiTypography-root {
-	color: white;
-}
-
-.appBar .MuiButton-root {
-	color: white;
-	margin-left: 20px;
-}
-
-/* Header Section */
-.headerSection {
-	background-color: #9cbcf4;
-	padding: 80px 20px;
+.smswithoutborders-header {
+	width: 100%;
+	height: 70vh;
+	background-color: #020732;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
-	color: #041c94;
+	color: white;
 }
 
-.headerSection .MuiTypography-h2 {
-	font-size: 3rem;
-	font-weight: bold;
+.smswithoutborders-logo img {
+	height: 80px;
+}
+
+.smswithoutborders-heading h1 {
+	font-size: 4em;
+	font-weight: 400;
+	letter-spacing: 12px;
+	text-transform: uppercase;
+}
+
+.smswithoutborders-heading p {
+	margin-top: 5vh;
+	width: 70%;
+	max-width: 800px;
+}
+
+/*=========== About Section =============== */
+.smswithoutborders-section {
+	margin-top: 50px;
+	padding: 20px;
+	background-color: #f5f5f5;
+}
+
+.smswithoutborders-section-heading {
+	margin-bottom: 20px;
+}
+
+.smswithoutborders-content p {
+	color: #333;
+	line-height: 1.6;
+}
+
+/*=========== Project Section =============== */
+.project-section {
+	margin-top: 50px;
+	padding: 20px;
+	background-color: #f5f5f5;
+}
+
+.project-section-heading {
+	margin-bottom: 40px;
+}
+
+.project-cards {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: auto;
+	max-width: 1200px;
+}
+
+.project-card {
+	flex: 1;
+	max-width: 45%;
+	margin: 20px;
+	text-align: left;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+}
+
+.project-title {
+	color: #28302f;
+	font-weight: 600;
+	margin-top: 10px;
+}
+
+.project-photo {
+	width: 100%;
+	border-radius: 8px;
 	margin-bottom: 10px;
 }
 
-.headerSection .MuiTypography-h5 {
-	font-size: 1.5rem;
-	font-weight: normal;
+.project-card p {
+	color: gray;
 }
 
-/* About Section =================================================================*/
-.aboutSection {
-	padding: 80px 20px;
-}
+@media (max-width: 768px) {
+	.project-cards {
+		flex-direction: column;
+		align-items: center;
+	}
 
-.aboutSection .MuiTypography-h4 {
-	font-size: 2rem;
-	font-weight: bold;
-	margin-bottom: 40px;
-	color: #041c94;
-}
-
-.aboutContent {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 20px;
-}
-
-@media (min-width: 600px) {
-	.aboutContent {
-		grid-template-columns: repeat(2, 1fr);
+	.project-card {
+		width: 90%;
+		max-width: none;
+		margin: 10px auto;
 	}
 }
 
-.aboutText {
-	padding: 20px;
+@media (max-width: 840px) {
+	.project-cards {
+		flex-direction: column;
+	}
+	.project-card {
+		width: 90%;
+		margin: 0 auto 40px auto;
+	}
 }
 
-.aboutText .MuiTypography-body1 {
-	font-size: 1.5rem;
-	line-height: 1.8em;
-	color: #010211;
+@media (max-width: 768px) {
+	.smswithoutborders-heading p {
+		width: 90%;
+	}
 }
 
-/*=============== Projects Section ============================*/
-.projectsSection {
-	background-color: white;
-	padding: 80px 20px;
-}
+@media (max-width: 590px) {
+	.smswithoutborders-header {
+		height: 100vh;
+	}
 
-.projectsTitle {
-	font-size: 2rem;
-	font-weight: bold;
-	color: #041c94;
-	margin-bottom: 40px;
-	text-align: center;
-}
+	.smswithoutborders-section {
+		margin-top: 30px;
+		padding: 15px;
+	}
 
-.cardStyled {
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.cardContentStyled {
-	text-align: center;
-	padding: 20px;
-}
-
-.cardActionsStyled {
-	display: flex;
-	justify-content: center;
-	padding: 10px;
-}
-
-.cardActionsStyled .MuiIconButton-root {
-	margin: 0 10px;
-	color: #041c94;
+	.smswithoutborders-section-heading {
+		margin-bottom: 30px;
+	}
 }
 
 /* ========================FOOTER==================================== */

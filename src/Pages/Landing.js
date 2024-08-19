@@ -1,134 +1,65 @@
-// src/Pages/Landing.js
-import React from "react";
-import {
-	AppBar,
-	Toolbar,
-	Typography,
-	Container,
-	Button,
-	Grid,
-	Card,
-	CardContent,
-	CardActions,
-	IconButton
-} from "@mui/material";
-import { GitHub, Twitter, Telegram, Public } from "@mui/icons-material";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import "../App.css";
+import LanguageSwitcher from "../Components/LanguageSwitcher";
 
-const Landing = () => {
-	const { t } = useTranslation();
+function Swob() {
+	const { t, i18n } = useTranslation();
+
+	useEffect(() => {
+		if (i18n.language === "fa") {
+			document.documentElement.setAttribute("dir", "rtl");
+		} else {
+			document.documentElement.setAttribute("dir", "ltr");
+		}
+	}, [i18n.language]);
 
 	return (
-		<div>
-			{/* Navbar */}
-			<AppBar position="static" className="appBar">
-				<Toolbar>
-					<Typography variant="h6">{t("header.title")}</Typography>
-					<div style={{ flexGrow: 1 }} />
-					<Button color="inherit" href="#home">
-						{t("languageSwitcher.english")}
-					</Button>
-					<Button color="inherit" href="#about">
-						{t("about.title")}
-					</Button>
-					<Button color="inherit" href="#projects">
-						{t("applications.application_title")}
-					</Button>
-				</Toolbar>
-			</AppBar>
-
-			{/* Header Section */}
-			<header className="headerSection" id="home">
-				<Container>
-					<Typography variant="h2">{t("header.title")}</Typography>
-					<Typography variant="h5">{t("header.subtitle")}</Typography>
-				</Container>
+		<>
+			<header className="smswithoutborders-header">
+				<div className="smswithoutborders-logo">
+					<LanguageSwitcher />
+				</div>
+				<div className="smswithoutborders-heading">
+					<h1>{t("header.title")}</h1>
+					<p>{t("header.subtitle")}</p>
+				</div>
 			</header>
+			<main>
+				<section className="smswithoutborders-section">
+					<header className="smswithoutborders-section-heading">
+						<h2>{t("about.title")}</h2>
+					</header>
+					<div className="smswithoutborders-content">
+						<p>{t("about.content")}</p>
+					</div>
+				</section>
 
-			{/* About Section */}
-			<section className="aboutSection" id="about">
-				<Container maxWidth="md">
-					<Typography variant="h4" gutterBottom>
-						{t("about.title")}
-					</Typography>
-					<div className="aboutContent">
-						<div className="aboutText">
-							<Typography variant="body1" paragraph>
-								{t("about.description")}
-							</Typography>
+				<section className="project-section">
+					<header className="project-section-heading">
+						<h2>{t("projects.title")}</h2>
+						<p>{t("projects.subtitle")}</p>
+					</header>
+					<div className="project-cards">
+						<div className="project-card">
+							<div>
+								<img src="/logo.png" className="project-photo" alt="relaysms" />
+							</div>
+							<h4 className="project-title">{t("projects.relaySMS.title")}</h4>
+							<p>{t("projects.relaySMS.description")}</p>
 						</div>
-						<div className="aboutText">
-							<Typography variant="body1" paragraph>
-								{t("about.additional_description")}
-							</Typography>
+						<div className="project-card">
+							<div>
+								<img src="/Deku.png" className="project-photo" alt="dekusms" />
+							</div>
+							<h4 className="project-title">{t("projects.dekuSMS.title")}</h4>
+							<p>{t("projects.dekuSMS.description")}</p>
 						</div>
 					</div>
-				</Container>
-			</section>
-
-			{/* Projects Section */}
-			<section className="projectsSection" id="projects">
-				<Container maxWidth="lg">
-					<Typography variant="h4" className="projectsTitle">
-						{t("applications.application_title")}
-					</Typography>
-					<Grid container spacing={4}>
-						{/* Project Card 1 */}
-						<Grid item xs={12} sm={6} md={4}>
-							<Card className="cardStyled">
-								<CardContent className="cardContentStyled">
-									<Typography variant="h5">{t("applications.relay_sms_title")}</Typography>
-									<Typography variant="body2" color="textSecondary">
-										{t("applications.relay_sms_description")}
-									</Typography>
-								</CardContent>
-								<CardActions className="cardActionsStyled">
-									<IconButton color="primary" href="https://github.com/project-one">
-										<GitHub />
-									</IconButton>
-									<IconButton color="primary" href="https://twitter.com/project-one">
-										<Twitter />
-									</IconButton>
-									<IconButton color="primary" href="https://t.me/project-one">
-										<Telegram />
-									</IconButton>
-									<IconButton color="primary" href="https://project-one.com">
-										<Public />
-									</IconButton>
-								</CardActions>
-							</Card>
-						</Grid>
-						{/* Project Card 2 */}
-						<Grid item xs={12} sm={6} md={4}>
-							<Card className="cardStyled">
-								<CardContent className="cardContentStyled">
-									<Typography variant="h5">{t("applications.deku_sms_title")}</Typography>
-									<Typography variant="body2" color="textSecondary">
-										{t("applications.deku_sms_description")}
-									</Typography>
-								</CardContent>
-								<CardActions className="cardActionsStyled">
-									<IconButton color="primary" href="https://github.com/project-two">
-										<GitHub />
-									</IconButton>
-									<IconButton color="primary" href="https://twitter.com/project-two">
-										<Twitter />
-									</IconButton>
-									<IconButton color="primary" href="https://t.me/project-two">
-										<Telegram />
-									</IconButton>
-									<IconButton color="primary" href="https://project-two.com">
-										<Public />
-									</IconButton>
-								</CardActions>
-							</Card>
-						</Grid>
-					</Grid>
-				</Container>
-			</section>
-		</div>
+				</section>
+			</main>
+		</>
 	);
-};
+}
 
-export default Landing;
+export default Swob;

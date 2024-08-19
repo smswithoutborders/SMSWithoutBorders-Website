@@ -17,7 +17,7 @@
 		"aos": "^2.3.4",
 		"bootstrap": "^5.3.3",
 		"framer-motion": "^11.0.28",
-		"i18next": "^23.12.2",
+		"i18next": "^23.14.0",
 		"i18next-browser-languagedetector": "^8.0.0",
 		"i18next-http-backend": "^2.5.2",
 		"react": "^18.2.0",
