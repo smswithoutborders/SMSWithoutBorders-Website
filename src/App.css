@@ -31,6 +31,7 @@ body {
 	font-weight: 400;
 	letter-spacing: 12px;
 	text-transform: uppercase;
+	margin-bottom: 10px;
 }
 
 .smswithoutborders-heading p {
@@ -39,6 +40,66 @@ body {
 	font-size: 2rem;
 	text-align: center;
 	color: #c08507;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+	.smswithoutborders-heading h1 {
+		font-size: 3.5em;
+		letter-spacing: 10px;
+	}
+
+	.smswithoutborders-heading p {
+		font-size: 1.8rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.smswithoutborders-heading h1 {
+		font-size: 3em;
+		letter-spacing: 8px;
+	}
+
+	.smswithoutborders-heading p {
+		font-size: 1.6rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.smswithoutborders-header {
+		height: 60vh;
+	}
+
+	.smswithoutborders-heading h1 {
+		font-size: 2.5em;
+		letter-spacing: 6px;
+	}
+
+	.smswithoutborders-heading p {
+		font-size: 1.4rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.smswithoutborders-heading h1 {
+		font-size: 2em;
+		letter-spacing: 4px;
+	}
+
+	.smswithoutborders-heading p {
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.smswithoutborders-heading h1 {
+		font-size: 1.8em;
+		letter-spacing: 3px;
+	}
+
+	.smswithoutborders-heading p {
+		font-size: 1rem;
+	}
 }
 
 /*=========== About Section =============== */
