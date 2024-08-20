@@ -1,215 +1,10 @@
-* {
-	box-sizing: border-box;
-	font-family: "Roboto", sans-serif !important;
-}
-
-html,
-body {
-	overflow-x: hidden;
-	margin: 0;
-	padding: 0;
-}
-.smswithoutborders-header {
-	width: 100%;
-	height: 50vh;
-	background-color: #020732;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	color: white;
-}
-
-.smswithoutborders-logo img {
-	height: 80px;
-}
-
-.smswithoutborders-heading h1 {
-	font-size: 4em;
-	font-weight: 400;
-	letter-spacing: 12px;
-	text-transform: uppercase;
-}
-
-.smswithoutborders-heading p {
-	margin-top: 3vh;
-	max-width: 800px;
-	font-size: 2rem;
-	text-align: center;
-	color: #c08507;
-}
-/*=========== About Section =============== */
-.smswithoutborders-section {
-	margin-top: 50px;
-	padding: 40px 20px;
-	border-radius: 8px;
-}
-
-.smswithoutborders-section-heading {
-	margin-bottom: 30px;
-	text-align: center;
-}
-
-.smswithoutborders-section-heading h2 {
-	font-size: 2.5em;
-	color: #020732;
-	font-weight: 700;
-	letter-spacing: 1.5px;
-	text-transform: uppercase;
-	margin-bottom: 10px;
-}
-
-.smswithoutborders-content {
-	max-width: 800px;
-	margin: 0 auto;
-}
-
-.smswithoutborders-content p {
-	color: #333;
-	line-height: 1.8;
-	font-size: 1.2em;
-	text-align: justify;
-	margin-bottom: 20px;
-}
-
-/*=========== Project Section =============== */
-.project-section {
-	margin-top: 50px;
-	padding: 20px;
-}
-
-.project-section-heading {
-	margin-bottom: 40px;
-	font-size: 2.5em;
-	color: #020732;
-	font-weight: 700;
-	letter-spacing: 1.5px;
-	text-transform: uppercase;
-	margin-bottom: 10px;
-	text-align: center;
-}
-
-.project-cards {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin: auto;
-	max-width: 1200px;
-}
-
-.project-card {
-	flex: 1;
-	max-width: 45%;
-	margin: 20px;
-	text-align: left;
-	background-color: white;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	padding: 20px;
-}
-
-.project-title {
-	color: #28302f;
-	font-weight: 600;
-	margin-top: 10px;
-	text-align: center;
-}
-
-.project-photo {
-	width: 50%;
-	border-radius: 8px;
-	margin-bottom: 10px;
-}
-
-.project-card p {
-	color: gray;
-	font-size: 1.2rem;
-}
-.project-links {
-	display: flex;
-	justify-content: flex-start;
-	gap: 10px;
-	margin-top: 10px;
-}
-
-.project-links a {
-	color: #333;
-	font-size: 1.5rem;
-	transition: color 0.3s ease;
-}
-
-.project-links a:hover {
-	color: #007bff;
-}
-
-.read-more-button {
-	display: inline-block;
-	margin-top: 15px;
-	padding: 10px 20px;
-	background-color: #007bff;
-	color: #fff;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.read-more-button:hover {
-	background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-	.project-cards {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.project-card {
-		width: 90%;
-		max-width: none;
-		margin: 10px auto;
-	}
-}
-
-@media (max-width: 840px) {
-	.project-cards {
-		flex-direction: column;
-	}
-	.project-card {
-		width: 90%;
-		margin: 0 auto 40px auto;
-	}
-}
-
-@media (max-width: 768px) {
-	.smswithoutborders-heading p {
-		width: 90%;
-	}
-}
-
-@media (max-width: 590px) {
-	.smswithoutborders-header {
-		height: 100vh;
-	}
-
-	.smswithoutborders-section {
-		margin-top: 30px;
-		padding: 15px;
-	}
-
-	.smswithoutborders-section-heading {
-		margin-bottom: 30px;
-	}
-}
-
 /* ========================FOOTER==================================== */
 .footer-container {
-	background-color: #020732;
+	background-color: #02030f;
 }
 
 .footer-title {
-	color: #c08507 !important;
+	color: #c1cff4 !important;
 	font-weight: 600 !important;
 }
 
@@ -220,6 +15,8 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	gap: 20px;
+	line-height: 2;
 }
 
 .footer-nav .nav-link .footer-icon {
@@ -245,14 +42,4 @@ body {
 .footer-content p {
 	font-size: 1rem;
 	margin-bottom: 0.5rem;
-}
-
-/*==================== Adjustments for RTL Language =================*/
-[dir="rtl"] .application-card {
-	text-align: right;
-}
-
-[dir="rtl"] .btn-custom {
-	margin-left: auto;
-	margin-right: auto;
 }
