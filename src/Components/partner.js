@@ -1,13 +1,14 @@
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import "../App.css";
 
 function Partner() {
 	const { t } = useTranslation();
 	return (
 		<Box sx={{ color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}>
-			<header className="project-section-heading">
-				<p>{t("Sponsor.SponsorT")}</p>
-			</header>
+			<Typography variant="h4" sx={{ color: "#28302f", fontWeight: 600, fontSize: "30px" }}>
+				{t("Sponsor.SponsorT")}
+			</Typography>
 			<Grid
 				sx={{ px: { md: 35, xs: 1 } }}
 				container
