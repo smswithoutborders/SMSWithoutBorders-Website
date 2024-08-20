@@ -5,15 +5,16 @@ function Partner() {
 	const { t } = useTranslation();
 	return (
 		<Box sx={{ color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}>
-			<section className="container items-center">
-				<h1 className="font-bold mb-4 text-2xl md:text-4xl text-center">{t("Sponsor.SponsorT")}</h1>
-			</section>
+			<header className="project-section-heading">
+				<p>{t("Sponsor.SponsorT")}</p>
+			</header>
 			<Grid
 				sx={{ px: { md: 35, xs: 1 } }}
 				container
 				direction="row"
 				justifyContent="space-evenly"
 				alignItems="center"
+				paddingBottom={"100px"}
 			>
 				<Grid md={5} xs={6} component="a" href="https://www.opentech.fund/" target="_blank">
 					<Box

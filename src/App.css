@@ -1,6 +1,6 @@
 * {
 	box-sizing: border-box;
-	font-family: "Roboto", sans-serif !important;
+	font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -9,6 +9,7 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
 .smswithoutborders-header {
 	width: 100%;
 	height: 50vh;
@@ -21,73 +22,79 @@ body {
 	color: white;
 }
 
-.smswithoutborders-logo img {
-	height: 80px;
-}
-
 .smswithoutborders-heading h1 {
 	font-size: 4em;
-	font-weight: 400;
 	letter-spacing: 12px;
 	text-transform: uppercase;
+	font-weight: 900;
 }
 
-.smswithoutborders-heading p {
+.headertext {
 	margin-top: 3vh;
-	max-width: 800px;
 	font-size: 2rem;
 	text-align: center;
 	color: #c08507;
 }
+
 /*=========== About Section =============== */
 .smswithoutborders-section {
 	margin-top: 50px;
 	padding: 40px 20px;
 	border-radius: 8px;
+	height: 70vh;
 }
 
 .smswithoutborders-section-heading {
-	margin-bottom: 30px;
 	text-align: center;
+	margin-bottom: 100px;
 }
 
 .smswithoutborders-section-heading h2 {
-	font-size: 2.5em;
+	padding-top: 200px;
+	margin-bottom: 40px;
+	font-size: 3em;
 	color: #020732;
 	font-weight: 700;
 	letter-spacing: 1.5px;
 	text-transform: uppercase;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 .smswithoutborders-content {
-	max-width: 800px;
+	max-width: 70%;
+	margin-bottom: 50px;
 	margin: 0 auto;
+	font-size: 1rem;
+}
+.abouttext {
+	margin-top: 10px;
+	padding-top: 30px;
+	letter-spacing: 1.5px;
+	margin-bottom: 10px;
+	font-size: 1.5rem;
+	line-height: 2;
+	text-align: center;
 }
 
-.smswithoutborders-content p {
-	color: #333;
-	line-height: 1.8;
-	font-size: 1.2em;
-	text-align: justify;
-	margin-bottom: 20px;
-}
-
-/*=========== Project Section =============== */
+/*===================== Project Section ======================== */
 .project-section {
 	margin-top: 50px;
 	padding: 20px;
+	height: 90vh;
 }
 
 .project-section-heading {
 	margin-bottom: 40px;
-	font-size: 2.5em;
+	font-size: 3em;
 	color: #020732;
 	font-weight: 700;
 	letter-spacing: 1.5px;
 	text-transform: uppercase;
 	margin-bottom: 10px;
 	text-align: center;
+	text-align: center;
+	margin-bottom: 100px;
 }
 
 .project-cards {
@@ -95,36 +102,45 @@ body {
 	justify-content: center;
 	flex-wrap: wrap;
 	margin: auto;
-	max-width: 1200px;
+	max-width: 1700px;
+	gap: 100px;
 }
 
 .project-card {
 	flex: 1;
-	max-width: 45%;
+	width: 100%;
 	margin: 20px;
 	text-align: left;
 	background-color: white;
 	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	padding: 20px;
+	box-shadow: 5px 4px 8px 5px rgba(0, 0, 0, 0.1);
+}
+
+.relaysms {
+	background-image: url(../public/Relay.png);
+}
+.dekusms {
+	background-image: url(../public/Deku.png);
 }
 
 .project-title {
 	color: #28302f;
 	font-weight: 600;
 	margin-top: 10px;
-	text-align: center;
-}
-
-.project-photo {
-	width: 50%;
-	border-radius: 8px;
-	margin-bottom: 10px;
+	font-size: 30px;
+	text-align: start;
 }
 
 .project-card p {
-	color: gray;
-	font-size: 1.2rem;
+	margin-top: 10px;
+	padding-top: 30px;
+	letter-spacing: 1.5px;
+	margin-bottom: 10px;
+	font-size: 20px;
+	line-height: 2;
+	text-align: start;
+	margin-right: 250px;
+	padding-right: 80px;
 }
 .project-links {
 	display: flex;
@@ -143,20 +159,31 @@ body {
 	color: #007bff;
 }
 
-.read-more-button {
+.btn-custom {
 	display: inline-block;
 	margin-top: 15px;
 	padding: 10px 20px;
-	background-color: #007bff;
-	color: #fff;
+	color: #211b1b;
 	border: none;
+	text-decoration: none;
 	border-radius: 4px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 }
 
-.read-more-button:hover {
-	background-color: #0056b3;
+.card-icons {
+	display: flex;
+	gap: 20px;
+	padding: 10px;
+}
+
+.icon-link {
+	color: #333;
+	transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+	color: #007bff;
 }
 
 @media (max-width: 768px) {
@@ -205,11 +232,11 @@ body {
 
 /* ========================FOOTER==================================== */
 .footer-container {
-	background-color: #020732;
+	background-color: #02030f;
 }
 
 .footer-title {
-	color: #c08507 !important;
+	color: #c1cff4 !important;
 	font-weight: 600 !important;
 }
 
@@ -220,6 +247,8 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	gap: 20px;
+	line-height: 2;
 }
 
 .footer-nav .nav-link .footer-icon {
@@ -247,12 +276,161 @@ body {
 	margin-bottom: 0.5rem;
 }
 
-/*==================== Adjustments for RTL Language =================*/
-[dir="rtl"] .application-card {
-	text-align: right;
+/* ============ responsive view ============== */
+
+@media (max-width: 1200px) {
+	.project-card p {
+		margin-right: 0;
+		padding-right: 10px;
+	}
 }
 
-[dir="rtl"] .btn-custom {
-	margin-left: auto;
-	margin-right: auto;
+@media (max-width: 992px) {
+	.project-cards {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.project-card {
+		width: 90%;
+		margin: 20px auto;
+	}
+
+	.project-title {
+		font-size: 28px;
+	}
+
+	.project-card p {
+		font-size: 18px;
+		line-height: 1.8;
+	}
+}
+
+@media (max-width: 768px) {
+	.project-card {
+		width: 95%;
+		margin: 15px auto;
+	}
+
+	.project-title {
+		font-size: 26px;
+	}
+
+	.project-card p {
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+	.smswithoutborders-heading h1 {
+		font-size: 3rem;
+		letter-spacing: 8px;
+	}
+
+	.headertext {
+		font-size: 1.5rem;
+	}
+
+	.smswithoutborders-section-heading h2 {
+		font-size: 2.5em;
+		padding-top: 150px;
+	}
+
+	.abouttext {
+		font-size: 1.3rem;
+		line-height: 1.8;
+	}
+
+	.project-section-heading {
+		font-size: 2.5em;
+		margin-bottom: 80px;
+	}
+}
+
+@media (max-width: 576px) {
+	.smswithoutborders-header {
+		height: 60vh;
+	}
+
+	.smswithoutborders-logo img {
+		height: 60px;
+	}
+
+	.smswithoutborders-heading h1 {
+		font-size: 2.5rem;
+		letter-spacing: 5px;
+	}
+
+	.headertext {
+		font-size: 1.2rem;
+	}
+
+	.smswithoutborders-section {
+		padding: 20px;
+		height: auto;
+	}
+
+	.smswithoutborders-section-heading h2 {
+		padding-top: 100px;
+		font-size: 2em;
+	}
+
+	.abouttext {
+		font-size: 1.2rem;
+		line-height: 1.5;
+	}
+
+	.project-section-heading {
+		font-size: 2em;
+		margin-bottom: 60px;
+	}
+
+	.project-card p {
+		font-size: 14px;
+		line-height: 1.4;
+		margin-right: 0;
+		padding-right: 10px;
+	}
+
+	/* Adjusting Partner Section for laptop */
+	.partner-container {
+		padding: 25px 15px;
+	}
+
+	.partner-header {
+		font-size: 2.5rem;
+	}
+
+	.partner-grid {
+		flex-direction: row;
+		padding-bottom: 80px;
+	}
+
+	.partner-grid img {
+		width: 80%;
+		margin: 20px auto;
+	}
+}
+
+@media (max-width: 1024px) {
+	.smswithoutborders-heading h1 {
+		font-size: 2em;
+		letter-spacing: 4px;
+	}
+	.smswithoutborders-header {
+		height: 50vh;
+	}
+}
+
+@media (max-width: 768px) {
+	.smswithoutborders-heading h1 {
+		font-size: 2em;
+		letter-spacing: 4px;
+	}
+}
+
+@media (max-width: 480px) {
+	.smswithoutborders-heading h1 {
+		font-size: 1.25em;
+		letter-spacing: 4px;
+	}
 }
