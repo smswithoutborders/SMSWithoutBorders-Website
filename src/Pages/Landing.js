@@ -86,10 +86,11 @@ export default function FixedContainer() {
 							py: { xs: 6, sm: 8, md: 12 },
 							position: "relative",
 							overflow: "hidden",
-							textAlign: "center"
+							textAlign: "center",
+							px: { xs: 2, sm: 4, md: 6 } // Add horizontal padding
 						}}
 					>
-						<Box sx={{ mt: 6 }}>
+						<Box sx={{ mt: 6, px: { xs: 1, sm: 2, md: 3 } }}>
 							<Box
 								sx={{
 									fontSize: { xs: "1.5em", sm: "2.5em", md: "3em" },
@@ -97,32 +98,48 @@ export default function FixedContainer() {
 									color: "#020732",
 									letterSpacing: 1.5,
 									textTransform: "uppercase",
-									marginBottom: "80px",
-									marginTop: "40px"
+									marginBottom: { xs: "40px", sm: "60px", md: "80px" },
+									marginTop: { xs: "20px", sm: "30px", md: "40px" }
 								}}
 							>
 								{t("About.About-title")}
 							</Box>
 							<Box
 								component="p"
-								sx={{ fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" }, color: "#2b3343" }}
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
+									color: "#2b3343",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
 							>
 								{t("About.About_description")}
 							</Box>
 							<Box
 								component="p"
-								sx={{ fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" }, color: "#2b3343" }}
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
+									color: "#2b3343",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
 							>
 								{t("About.About_description1")}
 							</Box>
 							<Box
 								component="p"
-								sx={{ fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" }, color: "#2b3343" }}
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
+									color: "#2b3343",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
 							>
 								{t("About.About_description2")}
 							</Box>
 						</Box>
 					</Box>
+
 					{/* ================== Project Section ================== */}
 					<Box sx={{ width: "80%", py: 4, mx: "auto" }}>
 						<Typography
