@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -17,6 +17,9 @@ import Public from "@mui/icons-material/Public";
 import { FaArrowCircleRight } from "react-icons/fa";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import Partner from "../Components/partner";
+import "../App.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const theme = createTheme({
 	typography: {
@@ -26,6 +29,13 @@ const theme = createTheme({
 
 export default function FixedContainer() {
 	const { t } = useTranslation();
+
+	useEffect(() => {
+		AOS.init({
+			duration: 1200,
+			once: true
+		});
+	}, []);
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -43,8 +53,9 @@ export default function FixedContainer() {
 							justifyContent: "center",
 							alignItems: "center",
 							textAlign: "center",
-							backgroundColor: "#020732"
+							backgroundColor: "#041c94"
 						}}
+						data-aos="fade-up"
 					>
 						<Grid container>
 							<Grid item xs={12}>
@@ -52,9 +63,9 @@ export default function FixedContainer() {
 									sx={{
 										fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
 										fontWeight: "bold",
-										color: "white",
-										textTransform: "uppercase"
+										color: "white"
 									}}
+									data-aos="fade-in"
 								>
 									{t("header")}
 								</Box>
@@ -65,6 +76,7 @@ export default function FixedContainer() {
 										mt: 1,
 										color: "#c08507"
 									}}
+									data-aos="fade-up"
 								>
 									{t("subheader")}
 								</Box>
@@ -92,6 +104,7 @@ export default function FixedContainer() {
 							px: { xs: 4, sm: 6, md: 40 },
 							margin: { xs: 2, sm: 3, md: 4 }
 						}}
+						data-aos="fade-up"
 					>
 						<Box sx={{ mt: 6, px: { xs: 1, sm: 2, md: 3 } }}>
 							<Box
@@ -100,10 +113,10 @@ export default function FixedContainer() {
 									fontWeight: 600,
 									color: "#020732",
 									letterSpacing: 1.5,
-									textTransform: "uppercase",
 									marginBottom: { xs: "40px", sm: "60px", md: "80px" },
 									marginTop: { xs: "20px", sm: "30px", md: "40px" }
 								}}
+								data-aos="fade-left"
 							>
 								{t("About.About-title")}
 							</Box>
@@ -113,8 +126,10 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
 									fontWeight: 600,
 									color: "#2b3343",
+									textAlign: "justify",
 									px: { xs: 2, sm: 3 }
 								}}
+								data-aos="fade-right"
 							>
 								{t("About.description")}
 							</Box>
@@ -125,9 +140,11 @@ export default function FixedContainer() {
 									color: "#2b3343",
 									letterSpacing: 1.2,
 									lineHeight: 2,
+									textAlign: "justify",
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
+								data-aos="fade-up"
 							>
 								{t("About.description1")}
 							</Box>
@@ -135,7 +152,7 @@ export default function FixedContainer() {
 					</Box>
 
 					{/* ================== Project Section ================== */}
-					<Box sx={{ minHeight: "80vh", width: "80%", py: 4, mx: "auto" }}>
+					<Box sx={{ minHeight: "60vh", width: "80%", py: 4, mx: "auto" }}>
 						<Typography
 							variant="h4"
 							align="center"
@@ -144,24 +161,25 @@ export default function FixedContainer() {
 								fontWeight: 600,
 								color: "#020732",
 								letterSpacing: 1.5,
-								textTransform: "uppercase",
 								marginBottom: { xs: "40px", sm: "60px", md: "80px" },
-								marginTop: { xs: "20px", sm: "30px", md: "40px" }
+								marginTop: { xs: "20px", sm: "20px", md: "10px" }
 							}}
+							data-aos="fade-left"
 						>
 							{t("projects_title")}
 						</Typography>
-						<Grid container spacing={4}>
+						<Grid container spacing={4} className="cards">
 							{/* ---------------- RelaySMS ----------------------------- */}
-							<Grid item xs={12} sm={6}>
+							<Grid item xs={12} sm={12} md={6}>
 								<Card
+									className="cardself"
 									sx={{
 										position: "relative",
 										borderRadius: 2,
 										boxShadow: 3,
 										display: "flex",
 										flexDirection: "column",
-										height: { xs: "auto", sm: "500px" },
+										height: { xs: "auto" },
 										overflow: "hidden",
 										backgroundImage: { xs: "none", sm: "url('/Relay.png')" },
 										backgroundSize: "cover",
@@ -171,13 +189,14 @@ export default function FixedContainer() {
 											top: 0,
 											left: 0,
 											width: "100%",
-											height: "100%",
+											height: "fit-content",
 											background: "inherit",
 											filter: "blur(5px)",
 											zIndex: -1,
 											display: { xs: "block", sm: "none" }
 										}
 									}}
+									data-aos="fade-left"
 								>
 									<CardContent
 										sx={{
@@ -202,7 +221,6 @@ export default function FixedContainer() {
 												fontWeight: 750,
 												color: "#020732",
 												letterSpacing: 1.5,
-												textTransform: "uppercase",
 												marginBottom: "30px"
 											}}
 										>
@@ -224,14 +242,10 @@ export default function FixedContainer() {
 											target="_blank"
 											rel="noopener noreferrer"
 											sx={{
-												display: { xs: "none", md: "inline-flex" },
-												alignItems: "center",
-												marginTop: "5px",
-												color: "#211b1b",
-												padding: "10px 20px",
-												borderRadius: "4px",
+												color: "blue",
 												textDecoration: "none",
 												fontWeight: 300,
+												textAlign: "start",
 												"&:hover": {
 													color: "#a56905"
 												}
@@ -240,7 +254,10 @@ export default function FixedContainer() {
 											{t("project1.read_more")}
 											<FaArrowCircleRight style={{ marginLeft: "8px" }} />
 										</Box>
-										<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+										<CardActions
+											sx={{ justifyContent: "space-between", p: 2 }}
+											data-aos="fade-right"
+										>
 											<Box>
 												<IconButton
 													href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android"
@@ -260,7 +277,7 @@ export default function FixedContainer() {
 								</Card>
 							</Grid>
 							{/* ---------------- Deku-SMS ----------------------------- */}
-							<Grid item xs={12} sm={6}>
+							<Grid item xs={12} sm={12} md={6}>
 								<Card
 									sx={{
 										position: "relative",
@@ -268,7 +285,7 @@ export default function FixedContainer() {
 										boxShadow: 3,
 										display: "flex",
 										flexDirection: "column",
-										height: { xs: "auto", sm: "500px" },
+										height: { xs: "auto" },
 										overflow: "hidden",
 										backgroundImage: { xs: "none", sm: "url('/Deku.png')" },
 										backgroundSize: "cover",
@@ -285,6 +302,7 @@ export default function FixedContainer() {
 											display: { xs: "block", sm: "none" }
 										}
 									}}
+									data-aos="fade-right"
 								>
 									<CardContent
 										sx={{
@@ -309,7 +327,6 @@ export default function FixedContainer() {
 												fontWeight: 700,
 												color: "#020732",
 												letterSpacing: 1.5,
-												textTransform: "uppercase",
 												marginBottom: "30px"
 											}}
 										>
@@ -331,14 +348,10 @@ export default function FixedContainer() {
 											target="_blank"
 											rel="noopener noreferrer"
 											sx={{
-												display: { xs: "none", md: "inline-flex" },
-												alignItems: "center",
-												marginTop: "5px",
-												color: "#211b1b",
-												padding: "10px 20px",
-												borderRadius: "4px",
+												color: "blue",
 												textDecoration: "none",
 												fontWeight: 300,
+												textAlign: "start",
 												"&:hover": {
 													color: "#a56905"
 												}
@@ -347,7 +360,10 @@ export default function FixedContainer() {
 											{t("project2.read_more")}
 											<FaArrowCircleRight style={{ marginLeft: "8px" }} />
 										</Box>
-										<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+										<CardActions
+											sx={{ justifyContent: "space-between", p: 2 }}
+											data-aos="fade-right"
+										>
 											<Box>
 												<IconButton
 													href="https://github.com/smswithoutborders/SMSWithoutBorders-App-iOS"

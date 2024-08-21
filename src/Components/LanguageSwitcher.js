@@ -37,9 +37,9 @@ const LanguageSwitcher = () => {
 						onClick={handleLanguageMenuClick}
 						sx={{
 							color: "white",
-							backgroundColor: "#020732",
+							backgroundColor: "#041c94",
 							"&:hover": {
-								backgroundColor: "#303f9f"
+								backgroundColor: "#9cbcf4"
 							},
 							borderRadius: "10%",
 							padding: "8px",
