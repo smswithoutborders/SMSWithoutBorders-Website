@@ -17,6 +17,7 @@ import Public from "@mui/icons-material/Public";
 import { FaArrowCircleRight } from "react-icons/fa";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import Partner from "../Components/partner";
+import "../App.css";
 
 const theme = createTheme({
 	typography: {
@@ -52,8 +53,7 @@ export default function FixedContainer() {
 									sx={{
 										fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
 										fontWeight: "bold",
-										color: "white",
-										textTransform: "uppercase"
+										color: "white"
 									}}
 								>
 									{t("header")}
@@ -100,7 +100,6 @@ export default function FixedContainer() {
 									fontWeight: 600,
 									color: "#020732",
 									letterSpacing: 1.5,
-									textTransform: "uppercase",
 									marginBottom: { xs: "40px", sm: "60px", md: "80px" },
 									marginTop: { xs: "20px", sm: "30px", md: "40px" }
 								}}
@@ -113,6 +112,7 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
 									fontWeight: 600,
 									color: "#2b3343",
+									textAlign: "justify",
 									px: { xs: 2, sm: 3 }
 								}}
 							>
@@ -125,6 +125,7 @@ export default function FixedContainer() {
 									color: "#2b3343",
 									letterSpacing: 1.2,
 									lineHeight: 2,
+									textAlign: "justify",
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -144,17 +145,17 @@ export default function FixedContainer() {
 								fontWeight: 600,
 								color: "#020732",
 								letterSpacing: 1.5,
-								textTransform: "uppercase",
 								marginBottom: { xs: "40px", sm: "60px", md: "80px" },
 								marginTop: { xs: "20px", sm: "30px", md: "40px" }
 							}}
 						>
 							{t("projects_title")}
 						</Typography>
-						<Grid container spacing={4}>
+						<Grid container spacing={4} className="cards">
 							{/* ---------------- RelaySMS ----------------------------- */}
 							<Grid item xs={12} sm={6}>
 								<Card
+									className="cardself"
 									sx={{
 										position: "relative",
 										borderRadius: 2,
@@ -202,7 +203,6 @@ export default function FixedContainer() {
 												fontWeight: 750,
 												color: "#020732",
 												letterSpacing: 1.5,
-												textTransform: "uppercase",
 												marginBottom: "30px"
 											}}
 										>
@@ -227,7 +227,7 @@ export default function FixedContainer() {
 												display: { xs: "none", md: "inline-flex" },
 												alignItems: "center",
 												marginTop: "5px",
-												color: "#211b1b",
+												color: "blue",
 												padding: "10px 20px",
 												borderRadius: "4px",
 												textDecoration: "none",
@@ -309,7 +309,6 @@ export default function FixedContainer() {
 												fontWeight: 700,
 												color: "#020732",
 												letterSpacing: 1.5,
-												textTransform: "uppercase",
 												marginBottom: "30px"
 											}}
 										>
@@ -334,7 +333,7 @@ export default function FixedContainer() {
 												display: { xs: "none", md: "inline-flex" },
 												alignItems: "center",
 												marginTop: "5px",
-												color: "#211b1b",
+												color: "blue",
 												padding: "10px 20px",
 												borderRadius: "4px",
 												textDecoration: "none",

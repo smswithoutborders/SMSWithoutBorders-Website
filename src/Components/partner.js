@@ -11,7 +11,6 @@ function Partner() {
 					fontWeight: 700,
 					color: "#020732",
 					letterSpacing: 1.5,
-					textTransform: "uppercase",
 					marginBottom: "40px",
 					marginTop: "40px",
 					textAlign: "center",
