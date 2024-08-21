@@ -18,7 +18,6 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import Partner from "../Components/partner";
 
-// Create a theme with Roboto as the default font
 const theme = createTheme({
 	typography: {
 		fontFamily: "Roboto, sans-serif"
@@ -53,11 +52,13 @@ export default function FixedContainer() {
 									sx={{
 										fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
 										fontWeight: "bold",
-										color: "white"
+										color: "white",
+										textTransform: "uppercase"
 									}}
 								>
 									{t("header")}
 								</Box>
+
 								<Box
 									sx={{
 										fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
@@ -83,18 +84,20 @@ export default function FixedContainer() {
 					{/* =========== About Section =============== */}
 					<Box
 						sx={{
+							minHeight: "70vh",
 							py: { xs: 6, sm: 8, md: 12 },
 							position: "relative",
 							overflow: "hidden",
 							textAlign: "center",
-							px: { xs: 2, sm: 4, md: 6 } // Add horizontal padding
+							px: { xs: 4, sm: 6, md: 40 },
+							margin: { xs: 2, sm: 3, md: 4 }
 						}}
 					>
 						<Box sx={{ mt: 6, px: { xs: 1, sm: 2, md: 3 } }}>
 							<Box
 								sx={{
-									fontSize: { xs: "1.5em", sm: "2.5em", md: "3em" },
-									fontWeight: 500,
+									fontSize: { xs: "1.5em", sm: "2em", md: "2.5em" },
+									fontWeight: 600,
 									color: "#020732",
 									letterSpacing: 1.5,
 									textTransform: "uppercase",
@@ -107,52 +110,43 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
+									fontWeight: 600,
 									color: "#2b3343",
-									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
 							>
-								{t("About.About_description")}
+								{t("About.description")}
 							</Box>
 							<Box
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
 									color: "#2b3343",
+									letterSpacing: 1.2,
+									lineHeight: 2,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
 							>
-								{t("About.About_description1")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-									color: "#2b3343",
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("About.About_description2")}
+								{t("About.description1")}
 							</Box>
 						</Box>
 					</Box>
 
 					{/* ================== Project Section ================== */}
-					<Box sx={{ width: "80%", py: 4, mx: "auto" }}>
+					<Box sx={{ minHeight: "80vh", width: "80%", py: 4, mx: "auto" }}>
 						<Typography
 							variant="h4"
 							align="center"
 							sx={{
-								fontSize: { xs: "1.5em", sm: "2.5em", md: "3em" },
-								fontWeight: 500,
+								fontSize: { xs: "1.5em", sm: "2em", md: "2.5em" },
+								fontWeight: 600,
 								color: "#020732",
 								letterSpacing: 1.5,
 								textTransform: "uppercase",
-								textAlign: "center",
-								marginBottom: "90px"
+								marginBottom: { xs: "40px", sm: "60px", md: "80px" },
+								marginTop: { xs: "20px", sm: "30px", md: "40px" }
 							}}
 						>
 							{t("projects_title")}
@@ -169,7 +163,7 @@ export default function FixedContainer() {
 										flexDirection: "column",
 										height: { xs: "auto", sm: "500px" },
 										overflow: "hidden",
-										backgroundImage: "url('/Relay.png')",
+										backgroundImage: { xs: "none", sm: "url('/Relay.png')" },
 										backgroundSize: "cover",
 										backgroundPosition: "center",
 										"&::before": {
@@ -216,7 +210,11 @@ export default function FixedContainer() {
 										</Typography>
 										<Typography
 											variant="body1"
-											sx={{ color: "#848484", fontSize: { xs: "1rem", sm: "1rem", md: "1rem" } }}
+											sx={{
+												color: "#2b3343",
+												fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
+												margin: "10px"
+											}}
 										>
 											{t("project1.description")}
 										</Typography>
@@ -272,7 +270,7 @@ export default function FixedContainer() {
 										flexDirection: "column",
 										height: { xs: "auto", sm: "500px" },
 										overflow: "hidden",
-										backgroundImage: "url('/Deku.png')",
+										backgroundImage: { xs: "none", sm: "url('/Deku.png')" },
 										backgroundSize: "cover",
 										backgroundPosition: "center",
 										"&::before": {
@@ -281,6 +279,7 @@ export default function FixedContainer() {
 											left: 0,
 											width: "100%",
 											height: "100%",
+											background: "inherit",
 											filter: "blur(5px)",
 											zIndex: -1,
 											display: { xs: "block", sm: "none" }
@@ -318,13 +317,17 @@ export default function FixedContainer() {
 										</Typography>
 										<Typography
 											variant="body1"
-											sx={{ color: "#848484", fontSize: { xs: "1rem", sm: "1rem", md: "1rem" } }}
+											sx={{
+												color: "#2b3343",
+												fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
+												margin: "10px"
+											}}
 										>
 											{t("project2.description")}
 										</Typography>
 										<Box
 											component="a"
-											href="https://esms.smswithoutborders.com/"
+											href="https://relay.smswithoutborders.com/"
 											target="_blank"
 											rel="noopener noreferrer"
 											sx={{
@@ -355,7 +358,7 @@ export default function FixedContainer() {
 												<IconButton href="https://x.com/RelaySMS" aria-label="Twitter">
 													<Twitter sx={{ color: "#020732" }} />
 												</IconButton>
-												<IconButton href="https://x.com/RelaySMS" aria-label="Website">
+												<IconButton href="https://t.me/deku_sms" aria-label="Telegram">
 													<Telegram sx={{ color: "#020732" }} />
 												</IconButton>
 											</Box>

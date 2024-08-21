@@ -3,9 +3,8 @@
 	"subheader": "OpenSource | Research",
 	"About": {
 		"About-title": "About smswithoutborders",
-		"About_description": "Empowering Secure Communication, Everywhere",
-		"About_description1": "SMSWithoutBorders is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
-		"About_description2": "The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom."
+		"description": "Empowering Secure Communication, Everywhere",
+		"description1": "SMSWithoutBorders is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection. The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom."
 	},
 	"projects_title": "Our Opensource Projects",
 	"project1": {

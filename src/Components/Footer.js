@@ -28,7 +28,8 @@ const Footer = () => {
 								mb: 2,
 								textTransform: "uppercase",
 								fontWeight: "bold",
-								color: "#f0a500"
+								color: "#f0a500",
+								fontSize: "1rem"
 							}}
 						>
 							{t("footer.quickLinks")}
@@ -40,6 +41,7 @@ const Footer = () => {
 							sx={{
 								display: "block",
 								mb: 1,
+								fontSize: "0.875rem",
 								"&:hover": {
 									color: "#f0a500",
 									textDecoration: "underline"
@@ -55,6 +57,7 @@ const Footer = () => {
 							sx={{
 								display: "block",
 								mb: 1,
+								fontSize: "0.875rem",
 								"&:hover": {
 									color: "#f0a500",
 									textDecoration: "underline"
@@ -70,6 +73,7 @@ const Footer = () => {
 							sx={{
 								display: "block",
 								mb: 1,
+								fontSize: "0.875rem",
 								"&:hover": {
 									color: "#f0a500",
 									textDecoration: "underline"
@@ -87,7 +91,8 @@ const Footer = () => {
 								mb: 2,
 								textTransform: "uppercase",
 								fontWeight: "bold",
-								color: "#f0a500"
+								color: "#f0a500",
+								fontSize: "1rem"
 							}}
 						>
 							{t("footer.community")}
@@ -124,7 +129,8 @@ const Footer = () => {
 								mb: 2,
 								textTransform: "uppercase",
 								fontWeight: "bold",
-								color: "#f0a500"
+								color: "#f0a500",
+								fontSize: "1rem"
 							}}
 						>
 							{t("footer.downloads")}
@@ -136,6 +142,7 @@ const Footer = () => {
 							sx={{
 								display: "block",
 								mb: 1,
+								fontSize: "0.875rem",
 								"&:hover": {
 									color: "#f0a500",
 									textDecoration: "underline"
@@ -151,6 +158,7 @@ const Footer = () => {
 							sx={{
 								display: "block",
 								mb: 1,
+								fontSize: "0.875rem",
 								"&:hover": {
 									color: "#f0a500",
 									textDecoration: "underline"
@@ -166,7 +174,9 @@ const Footer = () => {
 
 				<Grid container spacing={4} justifyContent="space-between" alignItems="center">
 					<Grid item xs={12} sm={6} textAlign={{ xs: "center", sm: "left" }}>
-						<Typography variant="body2">{t("footer.copyright")}</Typography>
+						<Typography variant="body2" sx={{ fontSize: "0.75rem" }}>
+							{t("footer.copyright")}
+						</Typography>
 					</Grid>
 
 					<Grid item xs={12} sm={6} textAlign={{ xs: "center", sm: "right" }}>
