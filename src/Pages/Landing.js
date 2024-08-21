@@ -35,7 +35,8 @@ export default function FixedContainer() {
 						justifyContent: "center",
 						alignItems: "center",
 						textAlign: "center",
-						backgroundColor: "#020732"
+						backgroundColor: "#020732",
+						fontFamily: "Roboto"
 					}}
 				>
 					<Grid container>
@@ -77,10 +78,11 @@ export default function FixedContainer() {
 						py: { xs: 6, sm: 8, md: 12 },
 						position: "relative",
 						overflow: "hidden",
-						backgroundColor: "#f9f9f9"
+						backgroundColor: "#f9f9f9",
+						textAlign: "center"
 					}}
 				>
-					<Box sx={{ textAlign: "center", mt: 6 }}>
+					<Box sx={{ mt: 6 }}>
 						<Box
 							sx={{
 								fontSize: { xs: "1.5em", sm: "2.5em", md: "3em" },
@@ -89,8 +91,7 @@ export default function FixedContainer() {
 								letterSpacing: 1.5,
 								textTransform: "uppercase",
 								marginBottom: "40px",
-								marginTop: "40px",
-								mb: 2
+								marginTop: "40px"
 							}}
 						>
 							{t("goal_title")}
