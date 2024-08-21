@@ -1,26 +1,25 @@
 {
-	"header": {
-		"title": "smswithoutborders",
-		"subtitle": "Opensource | Research"
+	"header": "smswithoutborders",
+	"subheader": "Open Source | Research",
+	"goal_title": "Our Future Goal",
+	"goal_description": [
+		"We work on UI/UX and functionality as well so that a plugin comes with proper structure & stunning looks which suits your web app & website.",
+		"We take a small toolkit here and ride it well so that it is fit for your use. One who performs well and looks even better.",
+		"Here we are trying to give you all kinds of technical content, whether it is related to designing or functionality.",
+		"We are creating content on a lot of languages and will continue to make it free of cost even if you use it without any problem.",
+		"Here you can also share the content you create; if our technical team likes it, we will also share it on our blog.",
+		"In the end, I would say keep visiting our website and enjoy the quality content."
+	],
+	"projects_title": "Our Opensource Projects",
+	"project1": {
+		"title": "RelaySMS",
+		"description": "RelaySMS uses SMS messaging to communicate with online platforms without needing an internet connection. The users can grant access to their online platforms which would be used to act on their behalf using SMS messaging. The access granted, messages being sent from the app, and how they get published online are secured with strong up-to-date cryptographic and security practices.",
+		"read_more": "Read More"
 	},
-	"about": {
-		"title": "About smswithoutborders",
-		"content": "Empowering Secure Communication, Everywhere SMSWithoutBorders is dedicated to researching, developing, and promoting secure and accessible communication tools that function even without an internet connection. The development includes mobile apps for various platforms such as Android, iOS, and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications, and internet freedom."
-	},
-	"projects": {
-		"title": "Our Opensource Projects",
-		"subtitle": "Ongoing open-source work",
-		"relaySMS": {
-			"title": "RelaySMS",
-			"description": "RelaySMS uses SMS messaging to communicate with online platforms without needing an internet connection. The users can grant access to their online platforms which would be used to act on their behalf using SMS messaging. The access granted, messages being sent from the app, and how they get published online are secured with strong up-to-date cryptographic and security practices."
-		},
-		"dekuSMS": {
-			"title": "DekuSMS",
-			"description": "DekuSMS is an Android SMS messaging app. It enables 2 users of the app to communicate using end-to-end encryption over SMS messages. The app also contains message forwarding abilities supporting protocols such as SMTP, FTP, and AMQP. The app is built to integrate with RabbitMQ allowing users with messaging queues to set up and make remote communication requests to their apps."
-		}
-	},
-	"buttons": {
-		"learn_more": "Read More"
+	"project2": {
+		"title": "DekuSMS",
+		"description": "DekuSMS is an Android SMS messaging app. It enables 2 users of the app to communicate using end-to-end encryption over SMS messages. The app also contains message forwarding abilities supporting protocols such as SMTP, FTP, and AMQP. The app is built to integrate with RabbitMQ allowing users with messaging queues to set up and make remote communication requests to their apps.",
+		"read_more": "Read More"
 	},
 	"Sponsor": {
 		"SponsorT": "Our Sponsers"

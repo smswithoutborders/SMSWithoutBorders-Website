@@ -1,118 +1,121 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { Container, Typography, Box, Grid, IconButton } from "@mui/material";
-import { FaGithub, FaTelegram, FaTwitter, FaGlobe, FaArrowCircleRight } from "react-icons/fa";
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import IconButton from "@mui/material/IconButton";
+import GitHub from "@mui/icons-material/GitHub";
+import Twitter from "@mui/icons-material/Twitter";
+import Telegram from "@mui/icons-material/Telegram";
+import Public from "@mui/icons-material/Public";
+import { FaArrowCircleRight } from "react-icons/fa";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import Partner from "../Components/partner";
-import backgroundRelay from "../assets/Relay.png";
-import backgroundDeku from "../assets/Deku.png";
 
-function Swob() {
-	const { t, i18n } = useTranslation();
-
-	useEffect(() => {
-		document.documentElement.setAttribute("dir", i18n.language === "fa" ? "rtl" : "ltr");
-	}, [i18n.language]);
+export default function FixedContainer() {
+	const { t } = useTranslation();
 
 	return (
-		<>
-			<Box
-				sx={{
-					width: "100%",
-					height: "50vh",
-					backgroundColor: "#020732",
-					display: "flex",
-					flexDirection: "column",
-					alignItems: "center",
-					justifyContent: "center",
-					textAlign: "center",
-					color: "white"
-				}}
-			>
-				<Box>
-					<Typography
-						variant="h1"
-						sx={{
-							fontSize: { xs: "1.2em", sm: "2em", md: "4em" },
-							letterSpacing: 12,
-							textTransform: "uppercase",
-							fontWeight: 900
-						}}
-					>
-						{t("header.title")}
-					</Typography>
-
-					<Typography
-						variant="h5"
-						sx={{
-							marginTop: "3vh",
-							fontSize: { xs: "1rem", sm: "1.5rem", md: "2rem" },
-							color: "#c08507"
-						}}
-					>
-						{t("header.subtitle")}
-					</Typography>
-				</Box>
-				<Box sx={{ marginTop: "20px" }}>
-					<LanguageSwitcher />
-				</Box>
-			</Box>
-
-			<Container
-				sx={{
-					maxWidth: { xs: "90%", sm: "80%", md: "70%", lg: "60%" },
-					marginTop: "50px",
-					marginBottom: "50px",
-					paddingBottom: "50px",
-					padding: "0 20px"
-				}}
-			>
+		<React.Fragment>
+			<CssBaseline />
+			<Container maxWidth={false} disableGutters>
+				{/* =========== Header Section =============== */}
 				<Box
 					sx={{
-						padding: "40px 20px",
-						borderRadius: "8px",
+						width: "100%",
+						height: { xs: "50vh", sm: "60vh", md: "70vh" },
+						py: 4,
+						display: "flex",
+						flexDirection: "column",
+						justifyContent: "center",
+						alignItems: "center",
 						textAlign: "center",
-						height: "60vh"
+						backgroundColor: "#020732",
+						fontFamily: "Roboto"
 					}}
 				>
-					<Typography
-						variant="h2"
-						sx={{
-							fontSize: { xs: "1.5em", sm: "2.5em", md: "3em" },
-							fontWeight: 700,
-							color: "#020732",
-							letterSpacing: 1.5,
-							textTransform: "uppercase",
-							marginBottom: "40px",
-							marginTop: "40px"
-						}}
-					>
-						{t("about.title")}
-					</Typography>
-					<Typography
-						sx={{
-							width: { xs: "100%", sm: "90%", md: "80%" },
-							maxWidth: "70%",
-							margin: "0 auto",
-							fontSize: { xs: "1rem", md: "1.5rem" },
-							lineHeight: 2
-						}}
-					>
-						{t("about.content")}
-					</Typography>
+					<Grid container>
+						<Grid item xs={12}>
+							<Box
+								sx={{
+									fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+									fontWeight: "bold",
+									color: "white"
+								}}
+							>
+								{t("header")}
+							</Box>
+							<Box
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+									mt: 1,
+									color: "#c08507"
+								}}
+							>
+								{t("subheader")}
+							</Box>
+							<Box
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+									mt: 1,
+									color: "#004d40"
+								}}
+							>
+								<LanguageSwitcher />
+							</Box>
+						</Grid>
+					</Grid>
 				</Box>
 
-				{/* Projects */}
+				{/* =========== About Section =============== */}
 				<Box
 					sx={{
-						marginTop: "70px",
-						padding: "20px",
-						backgroundColor: "#f4f4f4",
-						borderRadius: "8px"
+						py: { xs: 6, sm: 8, md: 12 },
+						position: "relative",
+						overflow: "hidden",
+						backgroundColor: "#f9f9f9",
+						textAlign: "center"
 					}}
 				>
+					<Box sx={{ mt: 6 }}>
+						<Box
+							sx={{
+								fontSize: { xs: "1.5em", sm: "2.5em", md: "3em" },
+								fontWeight: 700,
+								color: "#020732",
+								letterSpacing: 1.5,
+								textTransform: "uppercase",
+								marginBottom: "40px",
+								marginTop: "40px"
+							}}
+						>
+							{t("goal_title")}
+						</Box>
+						{t("goal_description", { returnObjects: true }).map((desc, index) => (
+							<Box
+								key={index}
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.125rem", md: "1.25rem" },
+									color: "#848484",
+									mb: 2
+								}}
+							>
+								{desc}
+							</Box>
+						))}
+					</Box>
+				</Box>
+
+				{/* ================== Project Section ================== */}
+				<Box sx={{ width: "80%", py: 4, mx: "auto" }}>
 					<Typography
-						variant="h2"
+						variant="h4"
+						align="center"
 						sx={{
 							fontSize: { xs: "1.5em", sm: "2.5em", md: "3em" },
 							fontWeight: 700,
@@ -123,172 +126,213 @@ function Swob() {
 							textAlign: "center"
 						}}
 					>
-						{t("projects.title")}
+						{t("projects_title")}
 					</Typography>
-					<Grid container spacing={6} justifyContent="center">
-						<Grid item xs={12} md={8} lg={6}>
-							<Box
+					<Grid container spacing={4}>
+						{/* ---------------- RelaySMS ----------------------------- */}
+						<Grid item xs={12} sm={6}>
+							<Card
 								sx={{
+									position: "relative",
+									borderRadius: 2,
+									boxShadow: 3,
 									display: "flex",
 									flexDirection: "column",
-									width: "100%",
-									backgroundImage: `url(${backgroundRelay})`,
+									height: { xs: "auto", sm: "500px" },
+									overflow: "hidden",
+									backgroundImage: "url('/Relay.png')",
 									backgroundSize: "cover",
 									backgroundPosition: "center",
-									padding: "20px",
-									borderRadius: "8px",
-									boxShadow: "5px 4px 8px 5px rgba(0, 0, 0, 0.1)",
-									textAlign: "left",
-									color: "black",
-									gap: "20px",
-									marginRight: { xs: 0, md: "20px" },
-									paddingRight: { xs: 0, md: "20px" }
+									"&::before": {
+										position: "absolute",
+										top: 0,
+										left: 0,
+										width: "100%",
+										height: "100%",
+										background: "inherit",
+										filter: "blur(5px)",
+										zIndex: -1,
+										display: { xs: "block", sm: "none" }
+									}
 								}}
 							>
-								<Typography
-									variant="h4"
+								<CardContent
 									sx={{
-										color: "#28302f",
-										fontWeight: 600,
-										fontSize: { xs: "1.5em", sm: "2em", md: "2.5em" }
+										display: "flex",
+										flexDirection: "column",
+										justifyContent: "center",
+										textAlign: { xs: "center", sm: "left" },
+										width: { xs: "100%", sm: "60%" },
+										px: { xs: 1, sm: 2 },
+										py: 1,
+										marginRight: { sm: 3 },
+										paddingRight: { sm: 3 },
+										margin: "10px"
 									}}
 								>
-									{t("projects.relaySMS.title")}
-								</Typography>
-								<Typography
-									sx={{
-										marginTop: "10px",
-										letterSpacing: "1.5px",
-										fontSize: { xs: "0.9em", sm: "1.2em", md: "1.5em" },
-										lineHeight: 2
-									}}
-								>
-									{t("projects.relaySMS.description")}
-								</Typography>
-								<Box
-									component="a"
-									href="https://relay.smswithoutborders.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-									sx={{
-										display: { xs: "none", md: "inline-flex" },
-										alignItems: "center",
-										marginTop: "15px",
-										color: "#211b1b",
-										padding: "10px 20px",
-										borderRadius: "4px",
-										textDecoration: "none",
-										fontWeight: 600,
-										fontSize: { xs: "0.9em", sm: "1em", md: "1.1em" },
-										"&:hover": {
-											color: "#a56905"
-										}
-									}}
-								>
-									{t("buttons.learn_more")} <FaArrowCircleRight style={{ marginLeft: "8px" }} />
-								</Box>
-
-								<Box sx={{ display: "flex", gap: "20px", marginTop: "10px" }}>
-									<IconButton
+									<Typography
+										variant="h4"
+										sx={{
+											mb: 2,
+											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+											mt: 1
+										}}
+									>
+										{t("project1.title")}
+									</Typography>
+									<Typography
+										variant="body1"
+										sx={{ color: "#848484", fontSize: { xs: "1rem", sm: "1rem", md: "1.25rem" } }}
+									>
+										{t("project1.description")}
+									</Typography>
+									<Box
+										component="a"
 										href="https://relay.smswithoutborders.com/"
 										target="_blank"
-										aria-label="Visit RelaySMS website"
+										rel="noopener noreferrer"
+										sx={{
+											display: { xs: "none", md: "inline-flex" },
+											alignItems: "center",
+											marginTop: "15px",
+											color: "#211b1b",
+											padding: "10px 20px",
+											borderRadius: "4px",
+											textDecoration: "none",
+											fontWeight: 600,
+											"&:hover": {
+												color: "#a56905"
+											}
+										}}
 									>
-										<FaGlobe size={30} />
-									</IconButton>
-									<IconButton
-										href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android"
-										aria-label="GitHub repository"
-									>
-										<FaGithub size={30} />
-									</IconButton>
-									<IconButton href="https://x.com/RelaySMS" aria-label="Twitter profile">
-										<FaTwitter size={30} />
-									</IconButton>
-								</Box>
-							</Box>
+										{t("project1.read_more")}
+										<FaArrowCircleRight style={{ marginLeft: "8px" }} />
+									</Box>
+									<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+										<Box>
+											<IconButton
+												href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android"
+												aria-label="GitHub"
+											>
+												<GitHub sx={{ color: "#020732" }} />
+											</IconButton>
+											<IconButton href="https://x.com/RelaySMS" aria-label="Twitter">
+												<Twitter sx={{ color: "#020732" }} />
+											</IconButton>
+											<IconButton href="https://x.com/RelaySMS" aria-label="Website">
+												<Public sx={{ color: "#020732" }} />
+											</IconButton>
+										</Box>
+									</CardActions>
+								</CardContent>
+							</Card>
 						</Grid>
-						<Grid item xs={12} md={8} lg={6}>
-							<Box
+
+						{/* ---------------- DekuSMS ----------------------------- */}
+						<Grid item xs={12} sm={6}>
+							<Card
 								sx={{
+									position: "relative",
+									borderRadius: 2,
+									boxShadow: 3,
 									display: "flex",
 									flexDirection: "column",
-									width: "100%",
-									backgroundImage: `url(${backgroundDeku})`,
+									height: { xs: "auto", sm: "500px" },
+									overflow: "hidden",
+									backgroundImage: "url('/Deku.png')",
 									backgroundSize: "cover",
 									backgroundPosition: "center",
-									padding: "20px",
-									borderRadius: "8px",
-									boxShadow: "5px 4px 8px 5px rgba(0, 0, 0, 0.1)",
-									textAlign: "left",
-									color: "black",
-									gap: "20px",
-									marginRight: { xs: 0, md: "20px" },
-									paddingRight: { xs: 0, md: "20px" }
+									"&::before": {
+										position: "absolute",
+										top: 0,
+										left: 0,
+										width: "100%",
+										height: "100%",
+										background: "inherit",
+										filter: "blur(5px)",
+										zIndex: -1,
+										display: { xs: "block", sm: "none" }
+									}
 								}}
 							>
-								<Typography
-									variant="h4"
+								<CardContent
 									sx={{
-										color: "#28302f",
-										fontWeight: 600,
-										fontSize: { xs: "1.5em", sm: "2em", md: "2.5em" }
+										display: "flex",
+										flexDirection: "column",
+										justifyContent: "center",
+										textAlign: { xs: "center", sm: "left" },
+										width: { xs: "100%", sm: "60%" },
+										px: { xs: 1, sm: 2 },
+										py: 1,
+										marginRight: { sm: 3 },
+										paddingRight: { sm: 3 },
+										margin: "10px"
 									}}
 								>
-									{t("projects.dekuSMS.title")}
-								</Typography>
-								<Typography
-									sx={{
-										marginTop: "10px",
-										letterSpacing: "1.5px",
-										fontSize: { xs: "0.9em", sm: "1.2em", md: "1.5em" },
-										lineHeight: 2
-									}}
-								>
-									{t("projects.dekuSMS.description")}
-								</Typography>
-								<Box
-									component="a"
-									href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
-									target="_blank"
-									rel="noopener noreferrer"
-									sx={{
-										display: { xs: "none", md: "inline-flex" },
-										alignItems: "center",
-										marginTop: "15px",
-										color: "#211b1b",
-										padding: "10px 20px",
-										borderRadius: "4px",
-										textDecoration: "none",
-										fontWeight: 600,
-										fontSize: { xs: "0.9em", sm: "1em", md: "1.1em" },
-										"&:hover": {
-											color: "#a56905"
-										}
-									}}
-								>
-									{t("buttons.learn_more")} <FaArrowCircleRight style={{ marginLeft: "8px" }} />
-								</Box>
-								<Box sx={{ display: "flex", gap: "20px", marginTop: "10px" }}>
-									<IconButton
-										href="https://github.com/deku-messaging/Deku-SMS-Android"
-										aria-label="GitHub repository"
+									<Typography
+										variant="h4"
+										sx={{
+											mb: 2,
+											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+											mt: 1
+										}}
 									>
-										<FaGithub size={30} />
-									</IconButton>
-									<IconButton href="https://t.me/deku_sms" aria-label="Telegram channel">
-										<FaTelegram size={30} />
-									</IconButton>
-								</Box>
-							</Box>
+										{t("project2.title")}
+									</Typography>
+									<Typography
+										variant="body1"
+										sx={{
+											color: "#848484",
+											fontSize: { xs: "1rem", sm: "1rem", md: "1.25rem" }
+										}}
+									>
+										{t("project2.description")}
+									</Typography>
+									<Box
+										component="a"
+										href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
+										target="_blank"
+										rel="noopener noreferrer"
+										sx={{
+											display: { xs: "none", md: "inline-flex" },
+											alignItems: "center",
+											marginTop: "15px",
+											color: "#211b1b",
+											padding: "10px 20px",
+											borderRadius: "4px",
+											textDecoration: "none",
+											fontWeight: 600,
+											"&:hover": {
+												color: "#a56905"
+											}
+										}}
+									>
+										{t("project1.read_more")}
+										<FaArrowCircleRight style={{ marginLeft: "8px" }} />
+									</Box>
+									<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+										<Box>
+											<IconButton
+												href="https://github.com/deku-messaging/Deku-SMS-Android"
+												aria-label="GitHub"
+											>
+												<GitHub sx={{ color: "#020732" }} />
+											</IconButton>
+
+											<IconButton href="https://t.me/deku_sms" aria-label="Telegram channel">
+												<Telegram sx={{ color: "#020732" }} />
+											</IconButton>
+										</Box>
+									</CardActions>
+								</CardContent>
+							</Card>
 						</Grid>
 					</Grid>
 				</Box>
-
-				<Partner />
+				<Box sx={{ width: "80%", py: 4, mx: "auto" }}>
+					<Partner />
+				</Box>
 			</Container>
-		</>
+		</React.Fragment>
 	);
 }
-
-export default Swob;

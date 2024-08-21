@@ -1,21 +1,31 @@
-import { Grid, Box, Typography } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import "../App.css";
 
 function Partner() {
 	const { t } = useTranslation();
 	return (
 		<Box sx={{ color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}>
-			<Typography variant="h4" sx={{ color: "#28302f", fontWeight: 600, fontSize: "30px" }}>
+			<Box
+				sx={{
+					fontSize: { xs: "1.5em", sm: "2.5em", md: "3em" },
+					fontWeight: 700,
+					color: "#020732",
+					letterSpacing: 1.5,
+					textTransform: "uppercase",
+					marginBottom: "40px",
+					marginTop: "40px",
+					textAlign: "center",
+					mb: 2
+				}}
+			>
 				{t("Sponsor.SponsorT")}
-			</Typography>
+			</Box>
 			<Grid
 				sx={{ px: { md: 35, xs: 1 } }}
 				container
 				direction="row"
 				justifyContent="space-evenly"
 				alignItems="center"
-				paddingBottom={"100px"}
 			>
 				<Grid md={5} xs={6} component="a" href="https://www.opentech.fund/" target="_blank">
 					<Box
