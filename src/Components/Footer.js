@@ -26,6 +26,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
+								textTransform: "uppercase",
 								fontWeight: "bold",
 								color: "#f0a500",
 								fontSize: "1rem"
@@ -88,6 +89,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
+								textTransform: "uppercase",
 								fontWeight: "bold",
 								color: "#f0a500",
 								fontSize: "1rem"
@@ -125,6 +127,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
+								textTransform: "uppercase",
 								fontWeight: "bold",
 								color: "#f0a500",
 								fontSize: "1rem"
