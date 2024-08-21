@@ -1,36 +1,29 @@
 {
 	"header": "smswithoutborders",
-	"subheader": "Source Ouverte | Recherche",
+	"subheader": "OpenSource | Recherche",
 	"goal_title": "Notre Objectif Futur",
-	"goal_description": [
-		"Nous travaillons sur l'UI/UX et la fonctionnalité pour qu'un plugin soit bien structuré et ait un aspect époustouflant qui convient à votre application web et site web.",
-		"Nous prenons un petit kit d'outils ici et l'utilisons bien pour qu'il soit adapté à votre utilisation. Celui qui fonctionne bien et a l'air encore mieux.",
-		"Ici, nous essayons de vous donner tous les types de contenu technique, qu'il soit lié à la conception ou à la fonctionnalité.",
-		" Nous créons du contenu dans de nombreuses langues et continuerons à le rendre gratuit même si vous l'utilisez sans problème.",
-		"Ici, vous pouvez également partager le contenu que vous créez ; si notre équipe technique l'aime, nous le partagerons également sur notre blog.",
-		"Enfin, je dirais de continuer à visiter notre site web et de profiter du contenu de qualité."
-	],
+	"goal_description": "<p> Permettre une communication sécurisée, partout </p><p> SMSWithoutBorders est dédié à la recherche, au développement et à la promotion d'outils de communication sécurisés et accessibles qui fonctionnent même sans connexion Internet. </p><p> Le développement inclut des applications mobiles pour diverses plateformes telles qu'Android, iOS et les systèmes Linux. Une partie du travail comprend également des documents techniques sur des sujets tels que la cryptographie, les communications et la liberté sur Internet. </p>",
 	"projects_title": "Nos Projets Open Source",
 	"project1": {
 		"title": "RelaySMS",
-		"description": "RelaySMS utilise la messagerie SMS pour communiquer avec des plateformes en ligne sans avoir besoin d'une connexion Internet. Les utilisateurs peuvent accorder l'accès à leurs plateformes en ligne qui seront utilisées pour agir en leur nom en utilisant la messagerie SMS. L'accès accordé, les messages envoyés depuis l'application et la façon dont ils sont publiés en ligne sont sécurisés avec des pratiques cryptographiques et de sécurité à jour.",
-		"read_more": "En Savoir Plus"
+		"description": "RelaySMS utilise la messagerie SMS pour communiquer avec des plateformes en ligne sans nécessiter de connexion Internet. Les utilisateurs peuvent accorder l'accès à leurs plateformes en ligne qui seront utilisées pour agir en leur nom en utilisant la messagerie SMS. L'accès accordé, les messages envoyés depuis l'application, et la manière dont ils sont publiés en ligne sont sécurisés avec des pratiques cryptographiques et de sécurité à jour.",
+		"read_more": "En savoir plus"
 	},
 	"project2": {
 		"title": "DekuSMS",
-		"description": "DekuSMS est une application Android de messagerie SMS. Elle permet à 2 utilisateurs de l'application de communiquer en utilisant un chiffrement de bout en bout via des messages SMS. L'application contient également des capacités de transfert de messages prenant en charge des protocoles tels que SMTP, FTP et AMQP. L'application est conçue pour s'intégrer avec RabbitMQ, permettant aux utilisateurs avec des files d'attente de messages de configurer et de faire des demandes de communication à distance à leurs applications.",
-		"read_more": "En Savoir Plus"
+		"description": "DekuSMS est une application de messagerie SMS pour Android. Elle permet à 2 utilisateurs de l'application de communiquer en utilisant un chiffrement de bout en bout via les messages SMS. L'application contient également des capacités de transfert de messages prenant en charge des protocoles tels que SMTP, FTP et AMQP. L'application est conçue pour s'intégrer à RabbitMQ permettant aux utilisateurs avec des files d'attente de messages de configurer et de faire des demandes de communication à distance avec leurs applications.",
+		"read_more": "En savoir plus"
 	},
 	"Sponsor": {
 		"SponsorT": "Nos Sponsors"
 	},
 	"footer": {
-		"quickLinks": "Liens rapides",
+		"quickLinks": "Liens Rapides",
 		"community": "Communauté",
 		"downloads": "Téléchargements",
 		"blog": "Blog",
 		"documentation": "Documentation",
-		"privacyPolicy": "Politique de confidentialité",
+		"privacyPolicy": "Politique de Confidentialité",
 		"github": "GitHub",
 		"twitter": "Twitter",
 		"telegram": "Telegram",
