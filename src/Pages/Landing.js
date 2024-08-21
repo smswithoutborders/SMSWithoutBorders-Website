@@ -15,6 +15,7 @@ import Telegram from "@mui/icons-material/Telegram";
 import Public from "@mui/icons-material/Public";
 import { FaArrowCircleRight } from "react-icons/fa";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
+import Partner from "../Components/partner";
 
 export default function FixedContainer() {
 	const { t } = useTranslation();
@@ -326,6 +327,9 @@ export default function FixedContainer() {
 							</Card>
 						</Grid>
 					</Grid>
+				</Box>
+				<Box sx={{ width: "80%", py: 4, mx: "auto" }}>
+					<Partner />
 				</Box>
 			</Container>
 		</React.Fragment>
