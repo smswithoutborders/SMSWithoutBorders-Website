@@ -63,7 +63,12 @@ export default function FixedContainer() {
 
 				{/* ============== Navbar ================= */}
 				<AppBar position="fixed" sx={{ backgroundColor: "#041c94" }}>
-					<Toolbar sx={{ justifyContent: "space-between" }}>
+					<Toolbar
+						sx={{
+							justifyContent: isMobile ? "center" : "space-between",
+							minHeight: { xs: 80, sm: 90 }
+						}}
+					>
 						<Typography variant="h6" sx={{ flexGrow: 1 }}></Typography>
 						{isMobile ? (
 							<>
@@ -82,28 +87,104 @@ export default function FixedContainer() {
 									onClose={handleClose}
 									PaperProps={{
 										style: {
-											width: "100%",
+											width: "80%",
 											maxWidth: "none"
 										}
 									}}
 									MenuListProps={{
-										sx: { p: 0 }
+										sx: {
+											p: 0,
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center"
+										}
 									}}
 								>
-									<MenuItem onClick={handleClose}>{t("navbar.link1")}</MenuItem>
-									<MenuItem onClick={handleClose}>{t("navbar.link2")}</MenuItem>
-									<MenuItem onClick={handleClose}>{t("navbar.link3")}</MenuItem>
-									<MenuItem onClick={handleClose}>
+									<MenuItem
+										onClick={handleClose}
+										sx={{
+											fontSize: "1.2rem",
+											"&:hover": {
+												color: "#c08507"
+											}
+										}}
+									>
+										{t("navbar.link1")}
+									</MenuItem>
+									<MenuItem
+										onClick={handleClose}
+										sx={{
+											fontSize: "1.2rem",
+											"&:hover": {
+												color: "#c08507"
+											}
+										}}
+									>
+										{t("navbar.link2")}
+									</MenuItem>
+									<MenuItem
+										onClick={handleClose}
+										sx={{
+											fontSize: "1.2rem",
+											"&:hover": {
+												color: "#c08507"
+											}
+										}}
+									>
+										{t("navbar.link3")}
+									</MenuItem>
+									<MenuItem
+										sx={{
+											fontSize: "1.2rem",
+											"&:hover": {
+												color: "#c08507"
+											}
+										}}
+									>
 										<LanguageSwitcher />
 									</MenuItem>
 								</Menu>
 							</>
 						) : (
 							<>
-								<MenuItem onClick={handleClose}>{t("navbar.link1")}</MenuItem>
-								<MenuItem onClick={handleClose}>{t("navbar.link2")}</MenuItem>
-								<MenuItem onClick={handleClose}>{t("navbar.link3")}</MenuItem>
-								<MenuItem onClick={handleClose}>
+								<MenuItem
+									onClick={handleClose}
+									sx={{
+										fontSize: "1.2rem",
+										"&:hover": {
+											color: "#c08507"
+										}
+									}}
+								>
+									{t("navbar.link1")}
+								</MenuItem>
+								<MenuItem
+									onClick={handleClose}
+									sx={{
+										fontSize: "1.2rem",
+										"&:hover": {
+											color: "#c08507"
+										}
+									}}
+								>
+									{t("navbar.link2")}
+								</MenuItem>
+								<MenuItem
+									onClick={handleClose}
+									sx={{
+										fontSize: "1.2rem",
+										"&:hover": {
+											color: "#c08507"
+										}
+									}}
+								>
+									{t("navbar.link3")}
+								</MenuItem>
+								<MenuItem
+									sx={{
+										fontSize: "1.2rem"
+									}}
+								>
 									<LanguageSwitcher />
 								</MenuItem>
 							</>
@@ -199,7 +280,6 @@ export default function FixedContainer() {
 									sx={{
 										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
 										color: "#2b3343",
-										letterSpacing: 1.2,
 										lineHeight: 2,
 										textAlign: "justify",
 										mb: 3,
@@ -214,7 +294,6 @@ export default function FixedContainer() {
 									sx={{
 										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
 										color: "#2b3343",
-										letterSpacing: 1.2,
 										lineHeight: 2,
 										textAlign: "justify",
 										mb: 3,
@@ -229,7 +308,6 @@ export default function FixedContainer() {
 									sx={{
 										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
 										color: "#2b3343",
-										letterSpacing: 1.2,
 										lineHeight: 2,
 										textAlign: "justify",
 										mb: 3,
@@ -244,7 +322,6 @@ export default function FixedContainer() {
 									sx={{
 										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
 										color: "#2b3343",
-										letterSpacing: 1.2,
 										lineHeight: 2,
 										textAlign: "justify",
 										mb: 3,
@@ -309,7 +386,7 @@ export default function FixedContainer() {
 												display: "flex",
 												flexDirection: "column",
 												justifyContent: "center",
-												textAlign: { xs: "center", sm: "left" },
+												textAlign: { xs: "justify", sm: "left" },
 												width: { xs: "100%", sm: "60%" },
 												px: { xs: 1, sm: 2 },
 												py: 1,
@@ -414,7 +491,7 @@ export default function FixedContainer() {
 												display: "flex",
 												flexDirection: "column",
 												justifyContent: "center",
-												textAlign: { xs: "center", sm: "left" },
+												textAlign: { xs: "justify", sm: "left" },
 												width: { xs: "100%", sm: "60%" },
 												px: { xs: 1, sm: 2 },
 												py: 1,
