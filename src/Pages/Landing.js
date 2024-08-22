@@ -124,7 +124,11 @@ export default function FixedContainer() {
 								justifyContent: "center",
 								alignItems: "center",
 								textAlign: "center",
-								backgroundColor: "#041c94"
+								backgroundImage: "url('/codee.jpg')",
+								backgroundSize: "cover",
+								backgroundPosition: "center",
+								backgroundColor: "#041c94",
+								backgroundBlendMode: "overlay"
 							}}
 							data-aos="fade-up"
 						>
@@ -132,7 +136,7 @@ export default function FixedContainer() {
 								<Grid item xs={12}>
 									<Box
 										sx={{
-											fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+											fontSize: { xs: "1.5rem", sm: "2rem", md: "6.5rem" },
 											fontWeight: "bold",
 											color: "white"
 										}}
@@ -143,9 +147,10 @@ export default function FixedContainer() {
 
 									<Box
 										sx={{
-											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+											fontSize: { xs: "1rem", sm: "1.25rem", md: "2.5rem" },
 											mt: 1,
-											color: "#c08507"
+											color: "white",
+											fontWeight: "bold"
 										}}
 										data-aos="fade-up"
 									>
@@ -157,12 +162,11 @@ export default function FixedContainer() {
 											mt: 1,
 											color: "#004d40"
 										}}
-									>
-										<LanguageSwitcher />
-									</Box>
+									></Box>
 								</Grid>
 							</Grid>
 						</Box>
+
 						{/* =========== About Section =============== */}
 						<Box
 							sx={{
@@ -253,8 +257,6 @@ export default function FixedContainer() {
 							</Box>
 						</Box>
 
-						{/* ======================================================================================================= */}
-
 						{/* ================== Project Section ================== */}
 						<Box sx={{ minHeight: "60vh", width: "80%", py: 4, mx: "auto" }}>
 							<Typography
@@ -335,7 +337,9 @@ export default function FixedContainer() {
 												sx={{
 													color: "#2b3343",
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "10px"
+													margin: "10px",
+													letterSpacing: 1,
+													lineHeight: 2
 												}}
 											>
 												{t("project1.description")}
@@ -438,7 +442,9 @@ export default function FixedContainer() {
 												sx={{
 													color: "#2b3343",
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "10px"
+													margin: "10px",
+													letterSpacing: 1,
+													lineHeight: 2
 												}}
 											>
 												{t("project2.description")}
