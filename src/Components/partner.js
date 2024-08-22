@@ -25,6 +25,7 @@ function Partner() {
 				direction="row"
 				justifyContent="space-evenly"
 				alignItems="center"
+				display={{ xs: "block", sm: "block", md: "flex" }}
 				lineHeight="10"
 			>
 				<Grid md={5} xs={6} component="a" href="https://www.opentech.fund/" target="_blank">
