@@ -458,7 +458,7 @@ export default function FixedContainer() {
 													textDecoration: "none",
 													fontWeight: 300,
 													textAlign: "start",
-													margin: "20px",
+													margin: "5px",
 													"&:hover": {
 														color: "#a56905"
 													}
@@ -567,7 +567,6 @@ export default function FixedContainer() {
 													textDecoration: "none",
 													fontWeight: 300,
 													margin: "20px",
-
 													textAlign: "start",
 													"&:hover": {
 														color: "#a56905"
