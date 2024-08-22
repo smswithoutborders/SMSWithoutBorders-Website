@@ -443,7 +443,7 @@ export default function FixedContainer() {
 												sx={{
 													color: "#2b3343",
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "10px",
+													margin: "25px",
 													letterSpacing: 1,
 													lineHeight: 2
 												}}
@@ -551,7 +551,7 @@ export default function FixedContainer() {
 												sx={{
 													color: "#2b3343",
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "10px",
+													margin: "25px",
 													letterSpacing: 1,
 													lineHeight: 2
 												}}
