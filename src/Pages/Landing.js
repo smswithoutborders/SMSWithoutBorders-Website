@@ -23,6 +23,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import parse from "html-react-parser";
 import "../App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -247,10 +248,12 @@ export default function FixedContainer() {
 									}}
 									data-aos="fade-up"
 								>
-									{t("About.description3")}
+									{parse(t("About.description3"))}
 								</Box>
 							</Box>
 						</Box>
+
+						{/* ======================================================================================================= */}
 
 						{/* ================== Project Section ================== */}
 						<Box sx={{ minHeight: "60vh", width: "80%", py: 4, mx: "auto" }}>
