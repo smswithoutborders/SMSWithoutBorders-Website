@@ -361,8 +361,6 @@ export default function FixedContainer() {
 								</Box>
 							</Box>
 						</Box>
-
-						{/* =========================================== Project Section ===================================================== */}
 						<Box sx={{ minHeight: "60vh", width: "80%", py: 4, mx: "auto" }}>
 							<Typography
 								variant="h4"
@@ -389,7 +387,8 @@ export default function FixedContainer() {
 											boxShadow: 3,
 											display: "flex",
 											flexDirection: "column",
-											height: { xs: "auto" },
+											justifyContent: "space-between", // Ensures that content is spaced within the card
+											height: "100%", // Ensures the card takes up full height
 											overflow: "hidden",
 											backgroundImage: { xs: "none", sm: "url('/Relay.png')" },
 											backgroundSize: "cover",
@@ -419,7 +418,8 @@ export default function FixedContainer() {
 												py: 1,
 												marginRight: { sm: 1 },
 												paddingRight: { sm: 1 },
-												margin: "10px"
+												margin: "10px",
+												flexGrow: 1 // Allows content to expand within the card
 											}}
 										>
 											<Typography
@@ -458,7 +458,6 @@ export default function FixedContainer() {
 													textDecoration: "none",
 													fontWeight: 300,
 													textAlign: "start",
-													margin: "5px",
 													"&:hover": {
 														color: "#a56905"
 													}
@@ -467,29 +466,31 @@ export default function FixedContainer() {
 												{t("project1.read_more")}
 												<FaArrowCircleRight style={{ marginLeft: "8px" }} />
 											</Box>
-											<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
-												<Box>
-													<IconButton
-														href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android"
-														aria-label="GitHub"
-													>
-														<GitHub sx={{ color: "#020732" }} />
-													</IconButton>
-													<IconButton href="https://x.com/RelaySMS" aria-label="Twitter">
-														<Twitter sx={{ color: "#020732" }} />
-													</IconButton>
-													<IconButton
-														href="https://relay.smswithoutborders.com/"
-														aria-label="Website"
-													>
-														<Public sx={{ color: "#020732" }} />
-													</IconButton>
-												</Box>
-											</CardActions>
 										</CardContent>
+										<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+											<Box>
+												<IconButton
+													href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android"
+													aria-label="GitHub"
+												>
+													<GitHub sx={{ color: "#020732" }} />
+												</IconButton>
+												<IconButton href="https://x.com/RelaySMS" aria-label="Twitter">
+													<Twitter sx={{ color: "#020732" }} />
+												</IconButton>
+												<IconButton
+													href="https://relay.smswithoutborders.com/"
+													aria-label="Website"
+												>
+													<Public sx={{ color: "#020732" }} />
+												</IconButton>
+											</Box>
+										</CardActions>
 									</Card>
 								</Grid>
+
 								{/* ---------------- Deku-SMS ----------------------------- */}
+
 								<Grid item xs={12} sm={12} md={6}>
 									<Card
 										sx={{
@@ -498,7 +499,8 @@ export default function FixedContainer() {
 											boxShadow: 3,
 											display: "flex",
 											flexDirection: "column",
-											height: { xs: "auto" },
+											justifyContent: "space-between", // Ensures that content is spaced within the card
+											height: "100%", // Ensures the card takes up full height
 											overflow: "hidden",
 											backgroundImage: { xs: "none", sm: "url('/Deku.png')" },
 											backgroundSize: "cover",
@@ -528,7 +530,8 @@ export default function FixedContainer() {
 												py: 1,
 												marginRight: { sm: 1 },
 												paddingRight: { sm: 1 },
-												margin: "10px"
+												margin: "10px",
+												flexGrow: 1 // Allows content to expand within the card
 											}}
 										>
 											<Typography
@@ -566,7 +569,6 @@ export default function FixedContainer() {
 													color: "blue",
 													textDecoration: "none",
 													fontWeight: 300,
-													margin: "20px",
 													textAlign: "start",
 													"&:hover": {
 														color: "#a56905"
@@ -576,23 +578,20 @@ export default function FixedContainer() {
 												{t("project2.read_more")}
 												<FaArrowCircleRight style={{ marginLeft: "8px" }} />
 											</Box>
-											<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
-												<Box>
-													<IconButton
-														href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
-														aria-label="GitHub"
-													>
-														<GitHub sx={{ color: "#020732" }} />
-													</IconButton>
-													{/* <IconButton href="https://x.com/RelaySMS" aria-label="Twitter">
-														<Twitter sx={{ color: "#020732" }} />
-													</IconButton> */}
-													<IconButton href="https://t.me/deku_sms" aria-label="Telegram">
-														<Telegram sx={{ color: "#020732" }} />
-													</IconButton>
-												</Box>
-											</CardActions>
 										</CardContent>
+										<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+											<Box>
+												<IconButton
+													href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
+													aria-label="GitHub"
+												>
+													<GitHub sx={{ color: "#020732" }} />
+												</IconButton>
+												<IconButton href="https://t.me/deku_sms" aria-label="Telegram">
+													<Telegram sx={{ color: "#020732" }} />
+												</IconButton>
+											</Box>
+										</CardActions>
 									</Card>
 								</Grid>
 							</Grid>
