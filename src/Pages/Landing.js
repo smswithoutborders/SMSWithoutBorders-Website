@@ -441,9 +441,8 @@ export default function FixedContainer() {
 												sx={{
 													color: "#2b3343",
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "15px",
+													margin: "20px",
 													letterSpacing: 0.5,
-													px: { xs: 1, sm: 4, md: 20 },
 													lineHeight: 2
 												}}
 											>
@@ -459,6 +458,7 @@ export default function FixedContainer() {
 													textDecoration: "none",
 													fontWeight: 300,
 													textAlign: "start",
+													margin: "20px",
 													"&:hover": {
 														color: "#a56905"
 													}
@@ -550,8 +550,7 @@ export default function FixedContainer() {
 												sx={{
 													color: "#2b3343",
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "15px",
-													px: { xs: 1, sm: 4, md: 20 },
+													margin: "20px",
 													letterSpacing: 0.5,
 													lineHeight: 2
 												}}
@@ -567,6 +566,8 @@ export default function FixedContainer() {
 													color: "blue",
 													textDecoration: "none",
 													fontWeight: 300,
+													margin: "20px",
+
 													textAlign: "start",
 													"&:hover": {
 														color: "#a56905"
