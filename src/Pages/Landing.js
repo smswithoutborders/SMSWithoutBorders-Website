@@ -224,7 +224,7 @@ export default function FixedContainer() {
 
 				<Box sx={{ pt: 8 }}>
 					<Container maxWidth={false} disableGutters>
-						{/* =========== Header Section =============== */}
+						{/* ============================================= Header Section =================================================== */}
 						<Box
 							sx={{
 								width: "100%",
@@ -277,16 +277,15 @@ export default function FixedContainer() {
 							</Grid>
 						</Box>
 
-						{/* =========== About Section =============== */}
+						{/* ============================================= About Section ===================================================== */}
 						<Box
 							sx={{
 								minHeight: "70vh",
 								py: { xs: 6, sm: 8, md: 12 },
-								position: "relative",
 								overflow: "hidden",
 								textAlign: "center",
-								px: { xs: 4, sm: 6, md: 40 },
-								margin: { xs: 2, sm: 3, md: 4 }
+								px: { xs: 1, sm: 4, md: 20 },
+								margin: { xs: 2, sm: 3, md: 2 }
 							}}
 							data-aos="fade-up"
 						>
@@ -372,7 +371,6 @@ export default function FixedContainer() {
 									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
 									fontWeight: 600,
 									color: "#020732",
-									letterSpacing: 1.5,
 									marginBottom: { xs: "40px", sm: "60px", md: "80px" },
 									marginTop: { xs: "20px", sm: "20px", md: "10px" }
 								}}
@@ -428,7 +426,7 @@ export default function FixedContainer() {
 												variant="h4"
 												sx={{
 													mb: 2,
-													fontSize: { xs: "1rem", sm: "1.25rem", md: "1.25rem" },
+													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.5rem" },
 													mt: 1,
 													fontWeight: 750,
 													color: "#020732",
@@ -443,8 +441,9 @@ export default function FixedContainer() {
 												sx={{
 													color: "#2b3343",
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "25px",
-													letterSpacing: 1,
+													margin: "15px",
+													letterSpacing: 0.5,
+													px: { xs: 1, sm: 4, md: 20 },
 													lineHeight: 2
 												}}
 											>
@@ -536,7 +535,7 @@ export default function FixedContainer() {
 												variant="h4"
 												sx={{
 													mb: 2,
-													fontSize: { xs: "1rem", sm: "1.25rem", md: "1.25rem" },
+													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.5rem" },
 													mt: 1,
 													fontWeight: 700,
 													color: "#020732",
@@ -551,8 +550,9 @@ export default function FixedContainer() {
 												sx={{
 													color: "#2b3343",
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "25px",
-													letterSpacing: 1,
+													margin: "15px",
+													px: { xs: 1, sm: 4, md: 20 },
+													letterSpacing: 0.5,
 													lineHeight: 2
 												}}
 											>
