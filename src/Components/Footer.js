@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid, Typography, Link, IconButton, Divider } from "@mui/material";
+import { Box, Grid, Typography, Link, IconButton, Divider } from "@mui/material";
 import { FaGithub, FaTwitter, FaTelegram } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
@@ -13,23 +13,21 @@ const Footer = () => {
 			sx={{
 				backgroundColor: "black",
 				color: "#ffffff",
-				py: 4,
-				mt: 4,
+				py: 6,
+				mt: 8,
 				width: "100%",
 				direction: isRtl ? "rtl" : "ltr"
 			}}
 		>
-			<Container maxWidth={false} sx={{ px: { xs: 2, sm: 4, lg: 12 } }}>
-				<Grid container spacing={4} justifyContent="space-between">
-					<Grid item xs={12} sm={4} textAlign={{ xs: "center", sm: "left" }}>
+			<Box sx={{ width: "100%", mx: "auto", px: 18 }}>
+				<Grid container spacing={6} justifyContent="space-between">
+					<Grid item xs={12} sm={3}>
 						<Typography
 							variant="h6"
 							sx={{
 								mb: 2,
-								textTransform: "uppercase",
 								fontWeight: "bold",
-								color: "#f0a500",
-								fontSize: "1rem"
+								color: "#f0a500"
 							}}
 						>
 							{t("footer.quickLinks")}
@@ -37,62 +35,36 @@ const Footer = () => {
 						<Link
 							href="https://blog.smswithoutborders.com/"
 							color="inherit"
-							underline="none"
-							sx={{
-								display: "block",
-								mb: 1,
-								fontSize: "0.875rem",
-								"&:hover": {
-									color: "#f0a500",
-									textDecoration: "underline"
-								}
-							}}
+							underline="hover"
+							sx={{ display: "block", mb: 1 }}
 						>
 							{t("footer.blog")}
 						</Link>
 						<Link
 							href="https://docs.smswithoutborders.com/"
 							color="inherit"
-							underline="none"
-							sx={{
-								display: "block",
-								mb: 1,
-								fontSize: "0.875rem",
-								"&:hover": {
-									color: "#f0a500",
-									textDecoration: "underline"
-								}
-							}}
+							underline="hover"
+							sx={{ display: "block", mb: 1 }}
 						>
 							{t("footer.documentation")}
 						</Link>
 						<Link
 							href="https://smswithoutborders.com/privacy-policy"
 							color="inherit"
-							underline="none"
-							sx={{
-								display: "block",
-								mb: 1,
-								fontSize: "0.875rem",
-								"&:hover": {
-									color: "#f0a500",
-									textDecoration: "underline"
-								}
-							}}
+							underline="hover"
+							sx={{ display: "block", mb: 1 }}
 						>
 							{t("footer.privacyPolicy")}
 						</Link>
 					</Grid>
 
-					<Grid item xs={12} sm={4} textAlign={{ xs: "center", sm: "left" }}>
+					<Grid item xs={12} sm={3}>
 						<Typography
 							variant="h6"
 							sx={{
 								mb: 2,
-								textTransform: "uppercase",
 								fontWeight: "bold",
-								color: "#f0a500",
-								fontSize: "1rem"
+								color: "#f0a500"
 							}}
 						>
 							{t("footer.community")}
@@ -101,36 +73,34 @@ const Footer = () => {
 							<IconButton
 								href="https://github.com/smswithoutborders"
 								aria-label="GitHub"
-								sx={{ color: "#ffffff" }}
+								sx={{ color: "#ffffff", mr: 1 }}
 							>
-								<FaGithub size={20} />
+								<FaGithub size={24} />
 							</IconButton>
 							<IconButton
 								href="https://twitter.com/RelaySMS"
 								aria-label="Twitter"
-								sx={{ color: "#ffffff" }}
+								sx={{ color: "#ffffff", mr: 1 }}
 							>
-								<FaTwitter size={20} />
+								<FaTwitter size={24} />
 							</IconButton>
 							<IconButton
 								href="https://t.me/deku_sms"
 								aria-label="Telegram"
 								sx={{ color: "#ffffff" }}
 							>
-								<FaTelegram size={20} />
+								<FaTelegram size={24} />
 							</IconButton>
 						</Box>
 					</Grid>
 
-					<Grid item xs={12} sm={4} textAlign={{ xs: "center", sm: "left" }}>
+					<Grid item xs={12} sm={3}>
 						<Typography
 							variant="h6"
 							sx={{
 								mb: 2,
-								textTransform: "uppercase",
 								fontWeight: "bold",
-								color: "#f0a500",
-								fontSize: "1rem"
+								color: "#f0a500"
 							}}
 						>
 							{t("footer.downloads")}
@@ -138,52 +108,36 @@ const Footer = () => {
 						<Link
 							href="/download/android"
 							color="inherit"
-							underline="none"
-							sx={{
-								display: "block",
-								mb: 1,
-								fontSize: "0.875rem",
-								"&:hover": {
-									color: "#f0a500",
-									textDecoration: "underline"
-								}
-							}}
+							underline="hover"
+							sx={{ display: "block", mb: 1 }}
 						>
 							{t("footer.relaySMS")}
 						</Link>
 						<Link
 							href="/download/ios"
 							color="inherit"
-							underline="none"
-							sx={{
-								display: "block",
-								mb: 1,
-								fontSize: "0.875rem",
-								"&:hover": {
-									color: "#f0a500",
-									textDecoration: "underline"
-								}
-							}}
+							underline="hover"
+							sx={{ display: "block", mb: 1 }}
 						>
 							{t("footer.dekuSMS")}
 						</Link>
 					</Grid>
-				</Grid>
 
-				<Divider sx={{ my: 3, borderColor: "#424242" }} />
-
-				<Grid container spacing={4} justifyContent="space-between" alignItems="center">
-					<Grid item xs={12} sm={6} textAlign={{ xs: "center", sm: "left" }}>
-						<Typography variant="body2" sx={{ fontSize: "0.75rem" }}>
-							{t("footer.copyright")}
-						</Typography>
-					</Grid>
-
-					<Grid item xs={12} sm={6} textAlign={{ xs: "center", sm: "right" }}>
+					<Grid item xs={12} sm={2} textAlign={{ xs: "center", sm: "right" }}>
 						<LanguageSwitcher />
 					</Grid>
 				</Grid>
-			</Container>
+
+				<Divider sx={{ my: 4, borderColor: "#424242" }} />
+
+				<Grid container spacing={4} justifyContent="space-between" alignItems="center">
+					<Grid item xs={12}>
+						<Typography variant="body2" sx={{ fontSize: "0.875rem", textAlign: "center" }}>
+							{t("footer.copyright")}
+						</Typography>
+					</Grid>
+				</Grid>
+			</Box>
 		</Box>
 	);
 };

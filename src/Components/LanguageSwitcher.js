@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FormControl, MenuItem, IconButton, Menu, Box, Tooltip, Typography } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
-import Flag from "react-world-flags"; // Optional, for flag icons
+import Flag from "react-world-flags";
 
 const LanguageSwitcher = () => {
 	const { i18n } = useTranslation();
