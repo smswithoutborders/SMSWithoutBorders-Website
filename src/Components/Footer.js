@@ -19,7 +19,7 @@ const Footer = () => {
 				direction: isRtl ? "rtl" : "ltr"
 			}}
 		>
-			<Box sx={{ width: "100%", mx: "auto", px: 18 }}>
+			<Box sx={{ width: "100%", mx: "auto", px: 2 }}>
 				<Grid container spacing={6} justifyContent="space-between">
 					<Grid item xs={12} sm={3}>
 						<Typography
