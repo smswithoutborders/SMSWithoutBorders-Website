@@ -7,7 +7,7 @@ function Partner() {
 		<Box sx={{ color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}>
 			<Box
 				sx={{
-					fontSize: { xs: "1.5em", sm: "2.5em", md: "3em" },
+					fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
 					fontWeight: 700,
 					color: "#020732",
 					letterSpacing: 1.5,

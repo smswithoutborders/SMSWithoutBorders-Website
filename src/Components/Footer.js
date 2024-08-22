@@ -11,7 +11,7 @@ const Footer = () => {
 	return (
 		<Box
 			sx={{
-				backgroundColor: "black",
+				backgroundColor: "#1c222c",
 				color: "#ffffff",
 				py: 6,
 				mt: 8,
@@ -103,7 +103,7 @@ const Footer = () => {
 							{t("footer.downloads")}
 						</Typography>
 						<Link
-							href="/download/android"
+							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 							color="inherit"
 							underline="hover"
 							sx={{ display: "block", mb: 1 }}
@@ -111,7 +111,7 @@ const Footer = () => {
 							{t("footer.relaySMS")}
 						</Link>
 						<Link
-							href="/download/ios"
+							href="https://apps.apple.com/us/app/relaysms/id6630382970"
 							color="inherit"
 							underline="hover"
 							sx={{ display: "block", mb: 1 }}

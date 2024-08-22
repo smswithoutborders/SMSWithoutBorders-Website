@@ -67,7 +67,7 @@ export default function FixedContainer() {
 					sx={{
 						backgroundSize: "cover",
 						backgroundPosition: "center",
-						backgroundColor: "black",
+						backgroundColor: "#1c222c",
 						backgroundBlendMode: "overlay"
 					}}
 				>
@@ -117,6 +117,10 @@ export default function FixedContainer() {
 												color: "#c08507"
 											}
 										}}
+										component="a"
+										href="https://blog.smswithoutborders.com/"
+										target="_blank"
+										rel="noopener noreferrer"
 									>
 										{t("navbar.link1")}
 									</MenuItem>
@@ -127,6 +131,10 @@ export default function FixedContainer() {
 												color: "#c08507"
 											}
 										}}
+										component="a"
+										href="https://relay.smswithoutborders.com/"
+										target="_blank"
+										rel="noopener noreferrer"
 									>
 										{t("navbar.link2")}
 									</MenuItem>
@@ -137,6 +145,10 @@ export default function FixedContainer() {
 												color: "#c08507"
 											}
 										}}
+										component="a"
+										href="https://github.com/deku-messaging/Deku-SMS-Android"
+										target="_blank"
+										rel="noopener noreferrer"
 									>
 										{t("navbar.link3")}
 									</MenuItem>
@@ -161,6 +173,10 @@ export default function FixedContainer() {
 											color: "#c08507"
 										}
 									}}
+									component="a"
+									href="https://blog.smswithoutborders.com/"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									{t("navbar.link1")}
 								</MenuItem>
@@ -172,6 +188,10 @@ export default function FixedContainer() {
 											color: "#c08507"
 										}
 									}}
+									component="a"
+									href="https://relay.smswithoutborders.com/"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									{t("navbar.link2")}
 								</MenuItem>
@@ -183,6 +203,10 @@ export default function FixedContainer() {
 											color: "#c08507"
 										}
 									}}
+									component="a"
+									href="https://github.com/deku-messaging/Deku-SMS-Android"
+									target="_blank"
+									rel="noopener noreferrer"
 								>
 									{t("navbar.link3")}
 								</MenuItem>
@@ -213,7 +237,7 @@ export default function FixedContainer() {
 								textAlign: "center",
 								backgroundSize: "cover",
 								backgroundPosition: "center",
-								backgroundColor: "black",
+								backgroundColor: "#1c222c",
 								backgroundBlendMode: "overlay"
 							}}
 							data-aos="fade-up"
@@ -269,7 +293,7 @@ export default function FixedContainer() {
 							<Box sx={{ mt: 6, px: { xs: 1, sm: 2, md: 3 } }}>
 								<Box
 									sx={{
-										fontSize: { xs: "1.5em", sm: "2em", md: "2.5em" },
+										fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
 										fontWeight: 600,
 										color: "#020732",
 										letterSpacing: 1.5,
@@ -339,13 +363,13 @@ export default function FixedContainer() {
 							</Box>
 						</Box>
 
-						{/* ================== Project Section ================== */}
+						{/* =========================================== Project Section ===================================================== */}
 						<Box sx={{ minHeight: "60vh", width: "80%", py: 4, mx: "auto" }}>
 							<Typography
 								variant="h4"
 								align="center"
 								sx={{
-									fontSize: { xs: "1.5em", sm: "2em", md: "2.5em" },
+									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
 									fontWeight: 600,
 									color: "#020732",
 									letterSpacing: 1.5,
@@ -455,7 +479,10 @@ export default function FixedContainer() {
 													<IconButton href="https://x.com/RelaySMS" aria-label="Twitter">
 														<Twitter sx={{ color: "#020732" }} />
 													</IconButton>
-													<IconButton href="https://x.com/RelaySMS" aria-label="Website">
+													<IconButton
+														href="https://relay.smswithoutborders.com/"
+														aria-label="Website"
+													>
 														<Public sx={{ color: "#020732" }} />
 													</IconButton>
 												</Box>
@@ -533,7 +560,7 @@ export default function FixedContainer() {
 											</Typography>
 											<Box
 												component="a"
-												href="https://relay.smswithoutborders.com/"
+												href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
 												target="_blank"
 												rel="noopener noreferrer"
 												sx={{
@@ -552,14 +579,14 @@ export default function FixedContainer() {
 											<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
 												<Box>
 													<IconButton
-														href="https://github.com/smswithoutborders/SMSWithoutBorders-App-iOS"
+														href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
 														aria-label="GitHub"
 													>
 														<GitHub sx={{ color: "#020732" }} />
 													</IconButton>
-													<IconButton href="https://x.com/RelaySMS" aria-label="Twitter">
+													{/* <IconButton href="https://x.com/RelaySMS" aria-label="Twitter">
 														<Twitter sx={{ color: "#020732" }} />
-													</IconButton>
+													</IconButton> */}
 													<IconButton href="https://t.me/deku_sms" aria-label="Telegram">
 														<Telegram sx={{ color: "#020732" }} />
 													</IconButton>
