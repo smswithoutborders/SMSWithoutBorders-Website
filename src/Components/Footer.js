@@ -11,7 +11,7 @@ const Footer = () => {
 	return (
 		<Box
 			sx={{
-				backgroundColor: "black",
+				backgroundColor: "#1c222c",
 				color: "#ffffff",
 				py: 6,
 				mt: 8,
@@ -26,8 +26,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
-								fontWeight: "bold",
-								color: "#f0a500"
+								fontWeight: "bold"
 							}}
 						>
 							{t("footer.quickLinks")}
@@ -63,8 +62,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
-								fontWeight: "bold",
-								color: "#f0a500"
+								fontWeight: "bold"
 							}}
 						>
 							{t("footer.community")}
@@ -99,14 +97,13 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
-								fontWeight: "bold",
-								color: "#f0a500"
+								fontWeight: "bold"
 							}}
 						>
 							{t("footer.downloads")}
 						</Typography>
 						<Link
-							href="/download/android"
+							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 							color="inherit"
 							underline="hover"
 							sx={{ display: "block", mb: 1 }}
@@ -114,7 +111,7 @@ const Footer = () => {
 							{t("footer.relaySMS")}
 						</Link>
 						<Link
-							href="/download/ios"
+							href="https://apps.apple.com/us/app/relaysms/id6630382970"
 							color="inherit"
 							underline="hover"
 							sx={{ display: "block", mb: 1 }}
