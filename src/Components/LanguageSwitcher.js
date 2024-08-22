@@ -36,7 +36,8 @@ const LanguageSwitcher = () => {
 					<IconButton
 						onClick={handleLanguageMenuClick}
 						sx={{
-							color: "white",
+							color: "black",
+							backgroundColor: "#1c222c",
 							"&:hover": {
 								backgroundColor: "#9cbcf4"
 							},
