@@ -19,7 +19,14 @@ const Footer = () => {
 				direction: isRtl ? "rtl" : "ltr"
 			}}
 		>
-			<Box sx={{ width: "100%", mx: "auto", px: 2 }}>
+			<Box
+				sx={{
+					width: "100%",
+					mx: "auto",
+					px: { xs: 5, md: 15 }
+				}}
+				textAlign={{ xs: "left" }}
+			>
 				<Grid container spacing={6} justifyContent="space-between">
 					<Grid item xs={12} sm={3}>
 						<Typography
@@ -120,13 +127,21 @@ const Footer = () => {
 						</Link>
 					</Grid>
 
-					<Grid item xs={12} sm={2} textAlign={{ xs: "center", sm: "right" }}>
+					<Grid
+						item
+						xs={12}
+						sm={2}
+						textAlign={{ sm: "right" }}
+						sx={{
+							width: "100%",
+							mx: "auto",
+							px: { xs: 5, md: 50 }
+						}}
+					>
 						<LanguageSwitcher />
 					</Grid>
 				</Grid>
-
 				<Divider sx={{ my: 4, borderColor: "#424242" }} />
-
 				<Grid container spacing={4} justifyContent="space-between" alignItems="center">
 					<Grid item xs={12}>
 						<Typography variant="body2" sx={{ fontSize: "0.875rem", textAlign: "center" }}>
