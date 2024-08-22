@@ -62,7 +62,15 @@ export default function FixedContainer() {
 				<CssBaseline />
 
 				{/* ============== Navbar ================= */}
-				<AppBar position="fixed" sx={{ backgroundColor: "#041c94" }}>
+				<AppBar
+					position="fixed"
+					sx={{
+						backgroundSize: "cover",
+						backgroundPosition: "center",
+						backgroundColor: "black",
+						backgroundBlendMode: "overlay"
+					}}
+				>
 					<Toolbar
 						sx={{
 							justifyContent: isMobile ? "center" : "space-between",
@@ -88,7 +96,9 @@ export default function FixedContainer() {
 									PaperProps={{
 										style: {
 											width: "80%",
-											maxWidth: "none"
+											maxWidth: "none",
+											fontSize: "18px",
+											fontWeight: "700"
 										}
 									}}
 									MenuListProps={{
@@ -103,7 +113,6 @@ export default function FixedContainer() {
 									<MenuItem
 										onClick={handleClose}
 										sx={{
-											fontSize: "1.2rem",
 											"&:hover": {
 												color: "#c08507"
 											}
@@ -114,7 +123,6 @@ export default function FixedContainer() {
 									<MenuItem
 										onClick={handleClose}
 										sx={{
-											fontSize: "1.2rem",
 											"&:hover": {
 												color: "#c08507"
 											}
@@ -125,7 +133,6 @@ export default function FixedContainer() {
 									<MenuItem
 										onClick={handleClose}
 										sx={{
-											fontSize: "1.2rem",
 											"&:hover": {
 												color: "#c08507"
 											}
@@ -135,7 +142,6 @@ export default function FixedContainer() {
 									</MenuItem>
 									<MenuItem
 										sx={{
-											fontSize: "1.2rem",
 											"&:hover": {
 												color: "#c08507"
 											}
@@ -198,17 +204,16 @@ export default function FixedContainer() {
 						<Box
 							sx={{
 								width: "100%",
-								height: { xs: "50vh", sm: "60vh", md: "70vh" },
+								height: { xs: "50vh", sm: "60vh", md: "40vh" },
 								py: 4,
 								display: "flex",
 								flexDirection: "column",
 								justifyContent: "center",
 								alignItems: "center",
 								textAlign: "center",
-								backgroundImage: "url('/codee.jpg')",
 								backgroundSize: "cover",
 								backgroundPosition: "center",
-								backgroundColor: "#041c94",
+								backgroundColor: "black",
 								backgroundBlendMode: "overlay"
 							}}
 							data-aos="fade-up"
@@ -217,7 +222,7 @@ export default function FixedContainer() {
 								<Grid item xs={12}>
 									<Box
 										sx={{
-											fontSize: { xs: "1.5rem", sm: "2rem", md: "6.5rem" },
+											fontSize: { xs: "1.5rem", sm: "2rem", md: "3.5rem" },
 											fontWeight: "bold",
 											color: "white"
 										}}
@@ -228,7 +233,7 @@ export default function FixedContainer() {
 
 									<Box
 										sx={{
-											fontSize: { xs: "1rem", sm: "1.25rem", md: "2.5rem" },
+											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
 											mt: 1,
 											color: "white",
 											fontWeight: "bold"

@@ -26,8 +26,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
-								fontWeight: "bold",
-								color: "#f0a500"
+								fontWeight: "bold"
 							}}
 						>
 							{t("footer.quickLinks")}
@@ -63,8 +62,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
-								fontWeight: "bold",
-								color: "#f0a500"
+								fontWeight: "bold"
 							}}
 						>
 							{t("footer.community")}
@@ -99,8 +97,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
-								fontWeight: "bold",
-								color: "#f0a500"
+								fontWeight: "bold"
 							}}
 						>
 							{t("footer.downloads")}
