@@ -1,66 +1,43 @@
-@font-face {
-    font-family: 'Gabarito';
-    src: url('/public/Gabarito/Gabarito-VariableFont_wght.ttf') format('tff'),
-         url('/public/Gabarito/Gabarito-VariableFont_wght.ttf') format('ttf');
-  }
-  @font-face {
-    font-family: 'Allura';
-    src: url('/public/Allura/Allura/Allura-Regular.ttf') format('tff'),
-  }
-
-  @font-face {
-    font-family: 'Russo One';
-    src: url('/public/Russo_One/RussoOne-Regular.ttf') format('tff'),
-  }
-  @font-face {
-    font-family: 'Lilita One';
-    src: url('/public/Lilita_One/LilitaOne-Regular.ttf') format('tff'),
-  }
-
-  * {
-    
-    font-family: "Lilita", sans-serif !important;
-   
-  }
-
-body{
-  background-color: #1F1F20 !important;
-  background-image: url(/public/mapin.png);
-  background-size: cover;
+html,
+body {
+	overflow-x: hidden;
 }
 
-.banner-text {
-  font-family: "Russo One", sans-serif !important;
+@media only screen and (max-width: 575.98px) {
+	.cards {
+		display: block;
+	}
 }
 
-.banner {
-    height: 90vh;
-    width: 100%;
-  
-    display: flex;
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+	.cards {
+		display: block;
+	}
 }
 
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+	.cards {
+		display: block;
+	}
+	.cards {
+		display: block;
+	}
+}
 
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+	.cards {
+		display: flex;
+	}
+}
 
-@media only screen and (max-width: 768px) {
-    .banner {
-        background-image: url(/public/mapin2.png);
-        height: 80vh;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-    } 
-  }
-  
-  .messaging-text {
-    font-family: "Russo One", sans-serif !important;
-    color: #c9dff1;
-  }
+@media only screen and (min-width: 1200px) and (max-width: 1399.98px) {
+	.cards {
+		display: flex;
+	}
+}
 
-  .modal {
-    background-image: url(/public/modaldark.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+@media only screen and (min-width: 1400px) {
+	.cards {
+		display: flex;
+	}
+}

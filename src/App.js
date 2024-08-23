@@ -1,36 +1,28 @@
-import Footer from "./Components/Footer";
-import Nav from "./Components/Nav";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; //
+// App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./Pages/Landing";
-import "./App.css";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import About from "./Pages/About";
-import MobileNav from "./Components/MobileNav";
+import PageNotFound from "./Pages/PageNotFound";
+import Footer from "./Components/Footer";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
+const theme = createTheme();
 
 function App() {
-  return (
-    <>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
-        <Router>
-          <Nav />
-          <MobileNav />
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </ThemeProvider>
-    </>
-  );
+	return (
+		<Router>
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				<div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+					<Routes>
+						<Route path="/" element={<Landing />} />
+						<Route path="*" element={<PageNotFound />} />
+					</Routes>
+					<Footer />
+				</div>
+			</ThemeProvider>
+		</Router>
+	);
 }
 
 export default App;
