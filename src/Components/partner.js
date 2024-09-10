@@ -8,13 +8,12 @@ function Partner() {
 			<Box
 				sx={{
 					fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-					fontWeight: 700,
-					color: "#020732",
+					fontWeight: 500,
+					color: "#041c94",
 					letterSpacing: 1.5,
-					marginBottom: "40px",
-					marginTop: "40px",
-					textAlign: "center",
-					mb: 2
+					marginBottom: { xs: "40px", sm: "60px", md: "60px" },
+					marginTop: { xs: "20px", sm: "30px", md: "30px" },
+					textAlign: "center"
 				}}
 			>
 				{t("Sponsor.SponsorT")}

@@ -1,7 +1,7 @@
 html,
 body {
 	overflow-x: hidden;
-	font-family: "Roboto";
+	font-family: "Roboto flex";
 }
 
 @media only screen and (max-width: 575.98px) {

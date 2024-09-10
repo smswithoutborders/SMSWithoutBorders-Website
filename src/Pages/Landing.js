@@ -74,7 +74,7 @@ export default function FixedContainer() {
 					<Toolbar
 						sx={{
 							justifyContent: isMobile ? "center" : "space-between",
-							minHeight: { xs: 80, sm: 90 }
+							minHeight: { xs: 60, sm: 70 }
 						}}
 					>
 						<Typography variant="h6" sx={{ flexGrow: 1 }}></Typography>
@@ -97,8 +97,8 @@ export default function FixedContainer() {
 										style: {
 											width: "80%",
 											maxWidth: "none",
-											fontSize: "18px",
-											fontWeight: "700"
+											fontSize: "14px",
+											fontWeight: "500"
 										}
 									}}
 									MenuListProps={{
@@ -168,7 +168,7 @@ export default function FixedContainer() {
 								<MenuItem
 									onClick={handleClose}
 									sx={{
-										fontSize: "1.2rem",
+										fontSize: "1rem",
 										"&:hover": {
 											color: "#c08507"
 										}
@@ -183,7 +183,7 @@ export default function FixedContainer() {
 								<MenuItem
 									onClick={handleClose}
 									sx={{
-										fontSize: "1.2rem",
+										fontSize: "1rem",
 										"&:hover": {
 											color: "#c08507"
 										}
@@ -198,7 +198,7 @@ export default function FixedContainer() {
 								<MenuItem
 									onClick={handleClose}
 									sx={{
-										fontSize: "1.2rem",
+										fontSize: "1rem",
 										"&:hover": {
 											color: "#c08507"
 										}
@@ -212,7 +212,7 @@ export default function FixedContainer() {
 								</MenuItem>
 								<MenuItem
 									sx={{
-										fontSize: "1.2rem"
+										fontSize: "1rem"
 									}}
 								>
 									<LanguageSwitcher />
@@ -228,7 +228,8 @@ export default function FixedContainer() {
 						<Box
 							sx={{
 								width: "100%",
-								height: { xs: "50vh", sm: "60vh", md: "40vh" },
+								height: { xs: "60vh", sm: "70vh", md: "50vh" },
+								paddingTop: "100px",
 								py: 4,
 								display: "flex",
 								flexDirection: "column",
@@ -246,8 +247,8 @@ export default function FixedContainer() {
 								<Grid item xs={12}>
 									<Box
 										sx={{
-											fontSize: { xs: "1.5rem", sm: "2rem", md: "3.5rem" },
-											fontWeight: "bold",
+											fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
+											fontWeight: "700",
 											color: "white"
 										}}
 										data-aos="fade-in"
@@ -257,22 +258,15 @@ export default function FixedContainer() {
 
 									<Box
 										sx={{
-											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
 											mt: 1,
 											color: "white",
-											fontWeight: "bold"
+											fontWeight: "semibold"
 										}}
 										data-aos="fade-up"
 									>
 										{t("subheader")}
 									</Box>
-									<Box
-										sx={{
-											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
-											mt: 1,
-											color: "#004d40"
-										}}
-									></Box>
 								</Grid>
 							</Grid>
 						</Box>
@@ -281,11 +275,11 @@ export default function FixedContainer() {
 						<Box
 							sx={{
 								minHeight: "70vh",
-								py: { xs: 6, sm: 8, md: 12 },
+								py: { xs: 2, sm: 4, md: 5 },
 								overflow: "hidden",
 								textAlign: "center",
-								px: { xs: 1, sm: 4, md: 20 },
-								margin: { xs: 2, sm: 3, md: 2 }
+								px: { xs: 0.1, sm: 1, md: 15 },
+								margin: { xs: 1, sm: 2, md: 1 }
 							}}
 							data-aos="fade-up"
 						>
@@ -293,11 +287,11 @@ export default function FixedContainer() {
 								<Box
 									sx={{
 										fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-										fontWeight: 600,
-										color: "#020732",
+										fontWeight: 500,
+										color: "#041c94",
 										letterSpacing: 1.5,
-										marginBottom: { xs: "40px", sm: "60px", md: "80px" },
-										marginTop: { xs: "20px", sm: "30px", md: "40px" }
+										marginBottom: { xs: "40px", sm: "60px", md: "60px" },
+										marginTop: { xs: "20px", sm: "30px", md: "30px" }
 									}}
 									data-aos="fade-left"
 								>
@@ -361,15 +355,16 @@ export default function FixedContainer() {
 								</Box>
 							</Box>
 						</Box>
+						{/* =========== project section ------------ */}
 						<Box sx={{ minHeight: "60vh", width: "80%", py: 4, mx: "auto" }}>
 							<Typography
 								variant="h4"
 								align="center"
 								sx={{
 									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-									fontWeight: 600,
-									color: "#020732",
-									marginBottom: { xs: "40px", sm: "60px", md: "80px" },
+									fontWeight: 500,
+									color: "#041c94",
+									marginBottom: { xs: "40px", sm: "60px", md: "70px" },
 									marginTop: { xs: "20px", sm: "20px", md: "10px" }
 								}}
 								data-aos="fade-left"
@@ -400,7 +395,7 @@ export default function FixedContainer() {
 												width: "100%",
 												height: "fit-content",
 												background: "inherit",
-												filter: "blur(5px)",
+												filter: "blur(20px)",
 												zIndex: -1,
 												display: { xs: "block", sm: "none" }
 											}
@@ -426,10 +421,10 @@ export default function FixedContainer() {
 												variant="h4"
 												sx={{
 													mb: 2,
-													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.5rem" },
+													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.2rem" },
 													mt: 1,
-													fontWeight: 750,
-													color: "#020732",
+													fontWeight: 600,
+													color: "#041c94",
 													letterSpacing: 1.5,
 													marginBottom: "30px"
 												}}
@@ -456,6 +451,8 @@ export default function FixedContainer() {
 												sx={{
 													color: "blue",
 													textDecoration: "none",
+													fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
+
 													fontWeight: 300,
 													textAlign: "start",
 													"&:hover": {
@@ -538,10 +535,10 @@ export default function FixedContainer() {
 												variant="h4"
 												sx={{
 													mb: 2,
-													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.5rem" },
+													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.2rem" },
 													mt: 1,
-													fontWeight: 700,
-													color: "#020732",
+													fontWeight: 600,
+													color: "#041c94",
 													letterSpacing: 1.5,
 													marginBottom: "30px"
 												}}

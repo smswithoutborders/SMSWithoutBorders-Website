@@ -9,7 +9,7 @@ const PrivacyPolicyMarkdown = () => {
 	const [content, setContent] = useState("");
 
 	useEffect(() => {
-		const language = i18n.language || "en"; // Default to English if no language is set
+		const language = i18n.language || "en";
 		const filePath = `/privacy-policy/${language}.md`;
 
 		fetch(filePath)
@@ -24,7 +24,7 @@ const PrivacyPolicyMarkdown = () => {
 	}, [i18n.language]);
 
 	return (
-		<div className="text-gray-900">
+		<div className="privacy-policy-container">
 			<ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
 		</div>
 	);
