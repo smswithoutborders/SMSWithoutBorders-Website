@@ -55,7 +55,7 @@ const Footer = () => {
 							{t("footer.documentation")}
 						</Link>
 						<Link
-							href="https://smswithoutborders.com/privacy-policy"
+							href="/privacy-policy"
 							color="inherit"
 							underline="hover"
 							sx={{ display: "block", mb: 1 }}

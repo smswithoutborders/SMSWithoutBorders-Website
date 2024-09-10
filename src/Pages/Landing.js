@@ -387,8 +387,8 @@ export default function FixedContainer() {
 											boxShadow: 3,
 											display: "flex",
 											flexDirection: "column",
-											justifyContent: "space-between", // Ensures that content is spaced within the card
-											height: "100%", // Ensures the card takes up full height
+											justifyContent: "space-between",
+											height: "100%",
 											overflow: "hidden",
 											backgroundImage: { xs: "none", sm: "url('/Relay.png')" },
 											backgroundSize: "cover",
@@ -419,7 +419,7 @@ export default function FixedContainer() {
 												marginRight: { sm: 1 },
 												paddingRight: { sm: 1 },
 												margin: "10px",
-												flexGrow: 1 // Allows content to expand within the card
+												flexGrow: 1
 											}}
 										>
 											<Typography
@@ -499,8 +499,8 @@ export default function FixedContainer() {
 											boxShadow: 3,
 											display: "flex",
 											flexDirection: "column",
-											justifyContent: "space-between", // Ensures that content is spaced within the card
-											height: "100%", // Ensures the card takes up full height
+											justifyContent: "space-between",
+											height: "100%",
 											overflow: "hidden",
 											backgroundImage: { xs: "none", sm: "url('/Deku.png')" },
 											backgroundSize: "cover",
@@ -531,7 +531,7 @@ export default function FixedContainer() {
 												marginRight: { sm: 1 },
 												paddingRight: { sm: 1 },
 												margin: "10px",
-												flexGrow: 1 // Allows content to expand within the card
+												flexGrow: 1
 											}}
 										>
 											<Typography
