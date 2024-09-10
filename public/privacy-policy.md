@@ -59,7 +59,7 @@ We prioritize the security of your personal data. However, no method of transmis
 
 ## Opting Out and Data Deletion
 
-You can opt out of our service at any time. This will trigger the immediate deletion of your personal data from our system. We will revoke all access you granted us to use the product. 
+You can opt out of our service at any time. This will trigger the immediate deletion of your personal data from our system. We will revoke all access you granted us to use the product.
 
 We only delete personal data stored in our database. Deleting data from third-party platforms (even if linked from our service) must be requested directly from those platforms. We provide instructions on how to do this for each third-party service.
 

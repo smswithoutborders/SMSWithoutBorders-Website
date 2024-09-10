@@ -1,13 +1,10 @@
 # Privacy Policy
 
-
 **Last updated:** July 14th, 2022
 
 This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of your information when you use our Service and explains your privacy rights and how the law protects you.
 
-
 We use your personal data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this Privacy Policy.
-
 
 ## Interpretation and Definitions
 
@@ -43,14 +40,9 @@ For the purposes of this Privacy Policy:
 
 - **You** means the individual accessing or using the Service, or the company or other legal entity on behalf of which the individual is accessing or using the Service.
 
-
-
-
 # Collecting and Using Your Personal Data
 
-
 ### Types of Data Collected
-
 
 #### Personal Data
 
@@ -58,32 +50,21 @@ For the purposes of registering for this service and sending/receiving SMS, we r
 
 To provide information on local gateways for sending SMS, we require the country of the phone number, though we do not collect data on the country of the user.
 
-
-
 #### Information from Third-Party Social Media Services
 
 For using third-party platforms, the website will request access to these platforms. The website stores the access you grant but does not collect further profile information.
 
 We store unique profile handles per platform to help you identify which account you're using. We do not use third-party identifiable information for tracking, identifying, or categorizing users.
 
-
-
-
 ### Security of Your Personal Data
 
 We prioritize the security of your personal data. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.
 
-
-
-
 ## Opting Out and Data Deletion
 
-You can opt out of our service at any time. This will trigger the immediate deletion of your personal data from our system. We will revoke all access you granted us to use the product. 
+You can opt out of our service at any time. This will trigger the immediate deletion of your personal data from our system. We will revoke all access you granted us to use the product.
 
 We only delete personal data stored in our database. Deleting data from third-party platforms (even if linked from our service) must be requested directly from those platforms. We provide instructions on how to do this for each third-party service.
-
-
-
 
 ## Children's Privacy
 
@@ -91,17 +72,11 @@ Our Service does not address anyone under the age of 13. We do not knowingly col
 
 If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
 
-
-
-
 ## Links to Other Websites
 
 Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
 
 We have no control over and assume no responsibility for the content, privacy policies or practice s of any third party sites or services.
-
-
-
 
 ## Changes to this Privacy Policy
 
@@ -110,9 +85,6 @@ We may update Our Privacy Policy from time to time. We will notify You of any ch
 We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.
 
 You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-
-
-
 
 ## Contact Us
 
