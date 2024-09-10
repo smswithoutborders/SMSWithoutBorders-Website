@@ -124,6 +124,7 @@ export default function FixedContainer() {
 									>
 										{t("navbar.link1")}
 									</MenuItem>
+
 									<MenuItem
 										onClick={handleClose}
 										sx={{
@@ -151,6 +152,20 @@ export default function FixedContainer() {
 										rel="noopener noreferrer"
 									>
 										{t("navbar.link3")}
+									</MenuItem>
+									<MenuItem
+										onClick={handleClose}
+										sx={{
+											"&:hover": {
+												color: "#c08507"
+											}
+										}}
+										component="a"
+										href="/privacy-policy"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{t("footer.privacyPolicy")}
 									</MenuItem>
 									<MenuItem
 										sx={{
@@ -209,6 +224,21 @@ export default function FixedContainer() {
 									rel="noopener noreferrer"
 								>
 									{t("navbar.link3")}
+								</MenuItem>
+								<MenuItem
+									onClick={handleClose}
+									sx={{
+										fontSize: "1rem",
+										"&:hover": {
+											color: "#c08507"
+										}
+									}}
+									component="a"
+									href="/privacy-policy"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									{t("footer.privacyPolicy")}
 								</MenuItem>
 								<MenuItem
 									sx={{
