@@ -256,6 +256,7 @@ export default function FixedContainer() {
 					<Container maxWidth={false} disableGutters>
 						{/* ============================================= Header Section =================================================== */}
 						<Box
+							id="home"
 							sx={{
 								width: "100%",
 								height: { xs: "60vh", sm: "70vh", md: "50vh" },
@@ -277,7 +278,7 @@ export default function FixedContainer() {
 								<Grid item xs={12}>
 									<Box
 										sx={{
-											fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
+											fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
 											fontWeight: "700",
 											color: "white"
 										}}

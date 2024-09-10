@@ -1,5 +1,7 @@
 {
 	"navbar": {
+		"link": "Home",
+
 		"link1": "وبلاگ",
 		"link2": "RelaySMS",
 		"link3": "DekuSMS"
