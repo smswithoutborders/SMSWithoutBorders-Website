@@ -119,7 +119,6 @@ export default function FixedContainer() {
 										}}
 										component="a"
 										href="https://blog.smswithoutborders.com/"
-										target="_blank"
 										rel="noopener noreferrer"
 									>
 										{t("navbar.link1")}
@@ -162,7 +161,6 @@ export default function FixedContainer() {
 										}}
 										component="a"
 										href="/privacy-policy"
-										target="_blank"
 										rel="noopener noreferrer"
 									>
 										{t("footer.privacyPolicy")}
@@ -190,7 +188,6 @@ export default function FixedContainer() {
 									}}
 									component="a"
 									href="https://blog.smswithoutborders.com/"
-									target="_blank"
 									rel="noopener noreferrer"
 								>
 									{t("navbar.link1")}
@@ -235,7 +232,6 @@ export default function FixedContainer() {
 									}}
 									component="a"
 									href="/privacy-policy"
-									target="_blank"
 									rel="noopener noreferrer"
 								>
 									{t("footer.privacyPolicy")}
