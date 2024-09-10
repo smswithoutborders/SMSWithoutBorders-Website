@@ -21,6 +21,7 @@
 		"i18next": "^23.14.0",
 		"i18next-browser-languagedetector": "^8.0.0",
 		"i18next-http-backend": "^2.5.2",
+		"micromark": "^4.0.0",
 		"react": "^18.2.0",
 		"react-bootstrap": "^2.10.4",
 		"react-dom": "^18.2.0",
@@ -70,7 +71,10 @@
 		"husky": "^9.0.11",
 		"lint-staged": "^15.2.2",
 		"prettier": "^3.2.5",
-		"source-map-explorer": "^2.5.3"
+		"source-map-explorer": "^2.5.3",
+		"source-map-loader": "^5.0.0",
+		"webpack": "^5.94.0",
+		"webpack-cli": "^5.1.4"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": "eslint --cache --fix",
