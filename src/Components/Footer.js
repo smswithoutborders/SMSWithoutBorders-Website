@@ -13,8 +13,8 @@ const Footer = () => {
 			sx={{
 				backgroundColor: "#1c222c",
 				color: "#ffffff",
-				py: 6,
-				mt: 8,
+				py: 4,
+				mt: 3,
 				width: "100%",
 				direction: isRtl ? "rtl" : "ltr"
 			}}
@@ -33,7 +33,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
-								fontWeight: "bold"
+								fontWeight: "500"
 							}}
 						>
 							{t("footer.quickLinks")}
@@ -55,7 +55,7 @@ const Footer = () => {
 							{t("footer.documentation")}
 						</Link>
 						<Link
-							href="https://smswithoutborders.com/privacy-policy"
+							href="/privacy-policy"
 							color="inherit"
 							underline="hover"
 							sx={{ display: "block", mb: 1 }}
@@ -69,7 +69,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
-								fontWeight: "bold"
+								fontWeight: "500"
 							}}
 						>
 							{t("footer.community")}
@@ -104,7 +104,7 @@ const Footer = () => {
 							variant="h6"
 							sx={{
 								mb: 2,
-								fontWeight: "bold"
+								fontWeight: "500"
 							}}
 						>
 							{t("footer.downloads")}
@@ -135,7 +135,7 @@ const Footer = () => {
 						sx={{
 							width: "100%",
 							mx: "auto",
-							px: { xs: 5, md: 50 }
+							px: { xs: 5, md: 30 }
 						}}
 					>
 						<LanguageSwitcher />
@@ -144,7 +144,7 @@ const Footer = () => {
 				<Divider sx={{ my: 4, borderColor: "#424242" }} />
 				<Grid container spacing={4} justifyContent="space-between" alignItems="center">
 					<Grid item xs={12}>
-						<Typography variant="body2" sx={{ fontSize: "0.875rem", textAlign: "center" }}>
+						<Typography variant="body2" sx={{ fontSize: "0.835rem", textAlign: "center" }}>
 							{t("footer.copyright")}
 						</Typography>
 					</Grid>
