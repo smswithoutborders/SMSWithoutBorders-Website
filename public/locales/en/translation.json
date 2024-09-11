@@ -47,7 +47,7 @@
 		"policyHeader": "Privacy Policy",
 		"policySubheader": "Last updated: July 14th, 2022",
 		"policyBody1": "This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of your information when you use our Service and explains your privacy rights and how the law protects you.",
-		"policyBody2": "We use your personal data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this Privacy Policy."
+		"policyBody2": " We use your personal data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this Privacy Policy."
 	},
 	"Privacy-Policy2": {
 		"policyHeader2": "Interpretation and Definitions",
@@ -73,12 +73,11 @@
 	},
 	"Privacy-Policy4": {
 		"policyHeader4": "Collecting and Using Your Personal Data",
-		"policySubheader4": "Types of Data Collected",
-		"policyBody4": "We collect the following types of data:"
+		"policySubheader4": "Types of Data Collected"
 	},
 	"Privacy-Policy5": {
 		"policyHeader5": "Personal Data",
-		"policyBody5": "For the purposes of registering for this service and sending/receiving SMS, we require a phone number. We will send an authentication message to confirm authority to use that number.",
+		"policyBody5": " For using third-party platforms, the website will request access to these platforms. The website stores the access you grant but does not collect further profile information.",
 		"policyBody6": "To provide information on local gateways for sending SMS, we require the country of the phone number, though we do not collect data on the country of the user."
 	},
 	"Privacy-Policy6": {
@@ -110,6 +109,6 @@
 	},
 	"Privacy-Policy12": {
 		"policyHeader12": "Contact Us",
-		"policyBody16": "If you have any questions about this Privacy Policy, you can contact us by visiting this page on our website."
+		"policyBody16": "If you have any questions about this Privacy Policy, you can contact us by visiting this page on our website <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>"
 	}
 }
