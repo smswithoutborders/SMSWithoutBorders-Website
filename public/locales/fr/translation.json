@@ -1,9 +1,10 @@
 {
 	"navbar": {
-		"link": "Home",
+		"link": "Accueil",
 		"link1": "Blog",
 		"link2": "RelaySMS",
-		"link3": "DekuSMS"
+		"link3": "DekuSMS",
+		"link4": "Politique de Confidentialité"
 	},
 	"header": "SMSWithoutBorders",
 	"subheader": "open source | recherche",
