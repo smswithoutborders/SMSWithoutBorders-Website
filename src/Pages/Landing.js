@@ -35,7 +35,7 @@ const theme = createTheme({
 });
 
 export default function FixedContainer() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -56,6 +56,8 @@ export default function FixedContainer() {
 		});
 	}, []);
 
+	const isFarsi = i18n.language === "fa";
+
 	return (
 		<ThemeProvider theme={theme}>
 			<React.Fragment>
@@ -68,7 +70,8 @@ export default function FixedContainer() {
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						backgroundColor: "#1c222c",
-						backgroundBlendMode: "overlay"
+						backgroundBlendMode: "overlay",
+						direction: isFarsi ? "rtl" : "ltr"
 					}}
 				>
 					<Toolbar
@@ -266,7 +269,8 @@ export default function FixedContainer() {
 								backgroundSize: "cover",
 								backgroundPosition: "center",
 								backgroundColor: "#1c222c",
-								backgroundBlendMode: "overlay"
+								backgroundBlendMode: "overlay",
+								direction: isFarsi ? "rtl" : "ltr"
 							}}
 							data-aos="fade-up"
 						>
@@ -306,7 +310,8 @@ export default function FixedContainer() {
 								overflow: "hidden",
 								textAlign: "center",
 								px: { xs: 0.1, sm: 1, md: 15 },
-								margin: { xs: 1, sm: 2, md: 1 }
+								margin: { xs: 1, sm: 2, md: 1 },
+								direction: isFarsi ? "rtl" : "ltr"
 							}}
 							data-aos="fade-up"
 						>
@@ -392,7 +397,8 @@ export default function FixedContainer() {
 									fontWeight: 500,
 									color: "#041c94",
 									marginBottom: { xs: "40px", sm: "60px", md: "70px" },
-									marginTop: { xs: "20px", sm: "20px", md: "10px" }
+									marginTop: { xs: "20px", sm: "20px", md: "10px" },
+									direction: isFarsi ? "rtl" : "ltr"
 								}}
 								data-aos="fade-left"
 							>
@@ -424,7 +430,8 @@ export default function FixedContainer() {
 												background: "inherit",
 												filter: "blur(20px)",
 												zIndex: -1,
-												display: { xs: "block", sm: "none" }
+												display: { xs: "block", sm: "none" },
+												direction: isFarsi ? "rtl" : "ltr"
 											}
 										}}
 										data-aos="fade-left"
@@ -465,7 +472,8 @@ export default function FixedContainer() {
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
 													margin: "20px",
 													letterSpacing: 0.5,
-													lineHeight: 2
+													lineHeight: 2,
+													direction: isFarsi ? "rtl" : "ltr"
 												}}
 											>
 												{t("project1.description")}
@@ -479,7 +487,7 @@ export default function FixedContainer() {
 													color: "blue",
 													textDecoration: "none",
 													fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-
+													direction: isFarsi ? "rtl" : "ltr",
 													fontWeight: 300,
 													textAlign: "start",
 													"&:hover": {
@@ -491,7 +499,13 @@ export default function FixedContainer() {
 												<FaArrowCircleRight style={{ marginLeft: "8px" }} />
 											</Box>
 										</CardContent>
-										<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+										<CardActions
+											sx={{
+												justifyContent: "space-between",
+												p: 2,
+												direction: isFarsi ? "rtl" : "ltr"
+											}}
+										>
 											<Box>
 												<IconButton
 													href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android"
@@ -538,7 +552,8 @@ export default function FixedContainer() {
 												background: "inherit",
 												filter: "blur(5px)",
 												zIndex: -1,
-												display: { xs: "block", sm: "none" }
+												display: { xs: "block", sm: "none" },
+												direction: isFarsi ? "rtl" : "ltr"
 											}
 										}}
 										data-aos="fade-left"
@@ -579,7 +594,8 @@ export default function FixedContainer() {
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
 													margin: "20px",
 													letterSpacing: 0.5,
-													lineHeight: 2
+													lineHeight: 2,
+													direction: isFarsi ? "rtl" : "ltr"
 												}}
 											>
 												{t("project2.description")}
@@ -593,6 +609,7 @@ export default function FixedContainer() {
 													color: "blue",
 													textDecoration: "none",
 													fontWeight: 300,
+													direction: isFarsi ? "rtl" : "ltr",
 													textAlign: "start",
 													"&:hover": {
 														color: "#a56905"
@@ -603,7 +620,13 @@ export default function FixedContainer() {
 												<FaArrowCircleRight style={{ marginLeft: "8px" }} />
 											</Box>
 										</CardContent>
-										<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+										<CardActions
+											sx={{
+												justifyContent: "space-between",
+												p: 2,
+												direction: isFarsi ? "rtl" : "ltr"
+											}}
+										>
 											<Box>
 												<IconButton
 													href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
