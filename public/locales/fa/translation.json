@@ -1,10 +1,12 @@
 {
 	"navbar": {
-		"link": "Home",
+		"link": "خانه",
 		"link1": "وبلاگ",
 		"link2": "RelaySMS",
-		"link3": "DekuSMS"
+		"link3": "DekuSMS",
+		"link4": "سیاست حفظ حریم خصوصی"
 	},
+
 	"header": "SMSWithoutBorders",
 	"subheader": "متن باز | پژوهش",
 	"About": {
