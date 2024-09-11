@@ -12,7 +12,7 @@ import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../index.css";
 
-const PrivacyPolicyMarkdown = () => {
+const PrivacyPolicy = () => {
 	const { i18n, t } = useTranslation();
 	const [content, setContent] = useState("");
 	const [anchorEl, setAnchorEl] = useState(null);
@@ -278,4 +278,4 @@ const PrivacyPolicyMarkdown = () => {
 	);
 };
 
-export default PrivacyPolicyMarkdown;
+export default PrivacyPolicy;
