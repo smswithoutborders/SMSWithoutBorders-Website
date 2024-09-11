@@ -14,7 +14,6 @@ import IconButton from "@mui/material/IconButton";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Typography from "@mui/material/Typography";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
-
 import "../App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -122,6 +121,19 @@ export default function FixedContainer() {
 										href="https://blog.smswithoutborders.com/"
 										rel="noopener noreferrer"
 									>
+										{t("navbar.link")}
+									</MenuItem>
+									<MenuItem
+										onClick={handleClose}
+										sx={{
+											"&:hover": {
+												color: "#c08507"
+											}
+										}}
+										component="a"
+										href="https://blog.smswithoutborders.com/"
+										rel="noopener noreferrer"
+									>
 										{t("navbar.link1")}
 									</MenuItem>
 
@@ -179,6 +191,20 @@ export default function FixedContainer() {
 							</>
 						) : (
 							<>
+								<MenuItem
+									onClick={handleClose}
+									sx={{
+										fontSize: "1rem",
+										"&:hover": {
+											color: "#c08507"
+										}
+									}}
+									component="a"
+									href="https://blog.smswithoutborders.com/"
+									rel="noopener noreferrer"
+								>
+									{t("navbar.link")}
+								</MenuItem>
 								<MenuItem
 									onClick={handleClose}
 									sx={{
