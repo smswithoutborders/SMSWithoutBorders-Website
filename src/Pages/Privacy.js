@@ -118,7 +118,7 @@ export default function FixedContainer() {
 											}
 										}}
 										component="a"
-										href="https://blog.smswithoutborders.com/"
+										href="/"
 										rel="noopener noreferrer"
 									>
 										{t("navbar.link")}
@@ -200,7 +200,7 @@ export default function FixedContainer() {
 										}
 									}}
 									component="a"
-									href="https://blog.smswithoutborders.com/"
+									href="/"
 									rel="noopener noreferrer"
 								>
 									{t("navbar.link")}
