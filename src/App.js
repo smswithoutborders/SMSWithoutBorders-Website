@@ -4,7 +4,7 @@ import Landing from "./Pages/Landing";
 import PageNotFound from "./Pages/PageNotFound";
 import Footer from "./Components/Footer";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import PrivacyPolicy from "./Components/PrivacyPolicy";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 
 const theme = createTheme();
 
