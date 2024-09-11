@@ -35,7 +35,7 @@ const theme = createTheme({
 });
 
 export default function FixedContainer() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -56,6 +56,8 @@ export default function FixedContainer() {
 		});
 	}, []);
 
+	const isFarsi = i18n.language === "fa";
+
 	return (
 		<ThemeProvider theme={theme}>
 			<React.Fragment>
@@ -68,13 +70,14 @@ export default function FixedContainer() {
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						backgroundColor: "#1c222c",
-						backgroundBlendMode: "overlay"
+						backgroundBlendMode: "overlay",
+						direction: isFarsi ? "rtl" : "ltr"
 					}}
 				>
 					<Toolbar
 						sx={{
 							justifyContent: isMobile ? "center" : "space-between",
-							minHeight: { xs: 80, sm: 90 }
+							minHeight: { xs: 60, sm: 70 }
 						}}
 					>
 						<Typography variant="h6" sx={{ flexGrow: 1 }}></Typography>
@@ -97,8 +100,8 @@ export default function FixedContainer() {
 										style: {
 											width: "80%",
 											maxWidth: "none",
-											fontSize: "18px",
-											fontWeight: "700"
+											fontSize: "14px",
+											fontWeight: "500"
 										}
 									}}
 									MenuListProps={{
@@ -119,11 +122,11 @@ export default function FixedContainer() {
 										}}
 										component="a"
 										href="https://blog.smswithoutborders.com/"
-										target="_blank"
 										rel="noopener noreferrer"
 									>
 										{t("navbar.link1")}
 									</MenuItem>
+
 									<MenuItem
 										onClick={handleClose}
 										sx={{
@@ -153,6 +156,19 @@ export default function FixedContainer() {
 										{t("navbar.link3")}
 									</MenuItem>
 									<MenuItem
+										onClick={handleClose}
+										sx={{
+											"&:hover": {
+												color: "#c08507"
+											}
+										}}
+										component="a"
+										href="/privacy-policy"
+										rel="noopener noreferrer"
+									>
+										{t("footer.privacyPolicy")}
+									</MenuItem>
+									<MenuItem
 										sx={{
 											"&:hover": {
 												color: "#c08507"
@@ -168,14 +184,13 @@ export default function FixedContainer() {
 								<MenuItem
 									onClick={handleClose}
 									sx={{
-										fontSize: "1.2rem",
+										fontSize: "1rem",
 										"&:hover": {
 											color: "#c08507"
 										}
 									}}
 									component="a"
 									href="https://blog.smswithoutborders.com/"
-									target="_blank"
 									rel="noopener noreferrer"
 								>
 									{t("navbar.link1")}
@@ -183,7 +198,7 @@ export default function FixedContainer() {
 								<MenuItem
 									onClick={handleClose}
 									sx={{
-										fontSize: "1.2rem",
+										fontSize: "1rem",
 										"&:hover": {
 											color: "#c08507"
 										}
@@ -198,7 +213,7 @@ export default function FixedContainer() {
 								<MenuItem
 									onClick={handleClose}
 									sx={{
-										fontSize: "1.2rem",
+										fontSize: "1rem",
 										"&:hover": {
 											color: "#c08507"
 										}
@@ -211,8 +226,22 @@ export default function FixedContainer() {
 									{t("navbar.link3")}
 								</MenuItem>
 								<MenuItem
+									onClick={handleClose}
 									sx={{
-										fontSize: "1.2rem"
+										fontSize: "1rem",
+										"&:hover": {
+											color: "#c08507"
+										}
+									}}
+									component="a"
+									href="/privacy-policy"
+									rel="noopener noreferrer"
+								>
+									{t("footer.privacyPolicy")}
+								</MenuItem>
+								<MenuItem
+									sx={{
+										fontSize: "1rem"
 									}}
 								>
 									<LanguageSwitcher />
@@ -226,9 +255,11 @@ export default function FixedContainer() {
 					<Container maxWidth={false} disableGutters>
 						{/* ============================================= Header Section =================================================== */}
 						<Box
+							id="home"
 							sx={{
 								width: "100%",
-								height: { xs: "50vh", sm: "60vh", md: "40vh" },
+								height: { xs: "60vh", sm: "70vh", md: "50vh" },
+								paddingTop: "100px",
 								py: 4,
 								display: "flex",
 								flexDirection: "column",
@@ -238,7 +269,8 @@ export default function FixedContainer() {
 								backgroundSize: "cover",
 								backgroundPosition: "center",
 								backgroundColor: "#1c222c",
-								backgroundBlendMode: "overlay"
+								backgroundBlendMode: "overlay",
+								direction: isFarsi ? "rtl" : "ltr"
 							}}
 							data-aos="fade-up"
 						>
@@ -246,8 +278,8 @@ export default function FixedContainer() {
 								<Grid item xs={12}>
 									<Box
 										sx={{
-											fontSize: { xs: "1.5rem", sm: "2rem", md: "3.5rem" },
-											fontWeight: "bold",
+											fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
+											fontWeight: "700",
 											color: "white"
 										}}
 										data-aos="fade-in"
@@ -257,22 +289,15 @@ export default function FixedContainer() {
 
 									<Box
 										sx={{
-											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
 											mt: 1,
 											color: "white",
-											fontWeight: "bold"
+											fontWeight: "semibold"
 										}}
 										data-aos="fade-up"
 									>
 										{t("subheader")}
 									</Box>
-									<Box
-										sx={{
-											fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
-											mt: 1,
-											color: "#004d40"
-										}}
-									></Box>
 								</Grid>
 							</Grid>
 						</Box>
@@ -281,11 +306,12 @@ export default function FixedContainer() {
 						<Box
 							sx={{
 								minHeight: "70vh",
-								py: { xs: 6, sm: 8, md: 12 },
+								py: { xs: 2, sm: 4, md: 5 },
 								overflow: "hidden",
 								textAlign: "center",
-								px: { xs: 1, sm: 4, md: 20 },
-								margin: { xs: 2, sm: 3, md: 2 }
+								px: { xs: 0.1, sm: 1, md: 15 },
+								margin: { xs: 1, sm: 2, md: 1 },
+								direction: isFarsi ? "rtl" : "ltr"
 							}}
 							data-aos="fade-up"
 						>
@@ -293,11 +319,11 @@ export default function FixedContainer() {
 								<Box
 									sx={{
 										fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-										fontWeight: 600,
-										color: "#020732",
+										fontWeight: 500,
+										color: "#041c94",
 										letterSpacing: 1.5,
-										marginBottom: { xs: "40px", sm: "60px", md: "80px" },
-										marginTop: { xs: "20px", sm: "30px", md: "40px" }
+										marginBottom: { xs: "40px", sm: "60px", md: "60px" },
+										marginTop: { xs: "20px", sm: "30px", md: "30px" }
 									}}
 									data-aos="fade-left"
 								>
@@ -361,16 +387,18 @@ export default function FixedContainer() {
 								</Box>
 							</Box>
 						</Box>
+						{/* =========== project section ------------ */}
 						<Box sx={{ minHeight: "60vh", width: "80%", py: 4, mx: "auto" }}>
 							<Typography
 								variant="h4"
 								align="center"
 								sx={{
 									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-									fontWeight: 600,
-									color: "#020732",
-									marginBottom: { xs: "40px", sm: "60px", md: "80px" },
-									marginTop: { xs: "20px", sm: "20px", md: "10px" }
+									fontWeight: 500,
+									color: "#041c94",
+									marginBottom: { xs: "40px", sm: "60px", md: "70px" },
+									marginTop: { xs: "20px", sm: "20px", md: "10px" },
+									direction: isFarsi ? "rtl" : "ltr"
 								}}
 								data-aos="fade-left"
 							>
@@ -387,8 +415,8 @@ export default function FixedContainer() {
 											boxShadow: 3,
 											display: "flex",
 											flexDirection: "column",
-											justifyContent: "space-between", // Ensures that content is spaced within the card
-											height: "100%", // Ensures the card takes up full height
+											justifyContent: "space-between",
+											height: "100%",
 											overflow: "hidden",
 											backgroundImage: { xs: "none", sm: "url('/Relay.png')" },
 											backgroundSize: "cover",
@@ -400,9 +428,10 @@ export default function FixedContainer() {
 												width: "100%",
 												height: "fit-content",
 												background: "inherit",
-												filter: "blur(5px)",
+												filter: "blur(20px)",
 												zIndex: -1,
-												display: { xs: "block", sm: "none" }
+												display: { xs: "block", sm: "none" },
+												direction: isFarsi ? "rtl" : "ltr"
 											}
 										}}
 										data-aos="fade-left"
@@ -419,17 +448,17 @@ export default function FixedContainer() {
 												marginRight: { sm: 1 },
 												paddingRight: { sm: 1 },
 												margin: "10px",
-												flexGrow: 1 // Allows content to expand within the card
+												flexGrow: 1
 											}}
 										>
 											<Typography
 												variant="h4"
 												sx={{
 													mb: 2,
-													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.5rem" },
+													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.2rem" },
 													mt: 1,
-													fontWeight: 750,
-													color: "#020732",
+													fontWeight: 600,
+													color: "#041c94",
 													letterSpacing: 1.5,
 													marginBottom: "30px"
 												}}
@@ -443,7 +472,8 @@ export default function FixedContainer() {
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
 													margin: "20px",
 													letterSpacing: 0.5,
-													lineHeight: 2
+													lineHeight: 2,
+													direction: isFarsi ? "rtl" : "ltr"
 												}}
 											>
 												{t("project1.description")}
@@ -456,6 +486,8 @@ export default function FixedContainer() {
 												sx={{
 													color: "blue",
 													textDecoration: "none",
+													fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
+													direction: isFarsi ? "rtl" : "ltr",
 													fontWeight: 300,
 													textAlign: "start",
 													"&:hover": {
@@ -467,7 +499,13 @@ export default function FixedContainer() {
 												<FaArrowCircleRight style={{ marginLeft: "8px" }} />
 											</Box>
 										</CardContent>
-										<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+										<CardActions
+											sx={{
+												justifyContent: "space-between",
+												p: 2,
+												direction: isFarsi ? "rtl" : "ltr"
+											}}
+										>
 											<Box>
 												<IconButton
 													href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android"
@@ -499,8 +537,8 @@ export default function FixedContainer() {
 											boxShadow: 3,
 											display: "flex",
 											flexDirection: "column",
-											justifyContent: "space-between", // Ensures that content is spaced within the card
-											height: "100%", // Ensures the card takes up full height
+											justifyContent: "space-between",
+											height: "100%",
 											overflow: "hidden",
 											backgroundImage: { xs: "none", sm: "url('/Deku.png')" },
 											backgroundSize: "cover",
@@ -514,7 +552,8 @@ export default function FixedContainer() {
 												background: "inherit",
 												filter: "blur(5px)",
 												zIndex: -1,
-												display: { xs: "block", sm: "none" }
+												display: { xs: "block", sm: "none" },
+												direction: isFarsi ? "rtl" : "ltr"
 											}
 										}}
 										data-aos="fade-left"
@@ -531,17 +570,17 @@ export default function FixedContainer() {
 												marginRight: { sm: 1 },
 												paddingRight: { sm: 1 },
 												margin: "10px",
-												flexGrow: 1 // Allows content to expand within the card
+												flexGrow: 1
 											}}
 										>
 											<Typography
 												variant="h4"
 												sx={{
 													mb: 2,
-													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.5rem" },
+													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.2rem" },
 													mt: 1,
-													fontWeight: 700,
-													color: "#020732",
+													fontWeight: 600,
+													color: "#041c94",
 													letterSpacing: 1.5,
 													marginBottom: "30px"
 												}}
@@ -555,7 +594,8 @@ export default function FixedContainer() {
 													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
 													margin: "20px",
 													letterSpacing: 0.5,
-													lineHeight: 2
+													lineHeight: 2,
+													direction: isFarsi ? "rtl" : "ltr"
 												}}
 											>
 												{t("project2.description")}
@@ -569,6 +609,7 @@ export default function FixedContainer() {
 													color: "blue",
 													textDecoration: "none",
 													fontWeight: 300,
+													direction: isFarsi ? "rtl" : "ltr",
 													textAlign: "start",
 													"&:hover": {
 														color: "#a56905"
@@ -579,7 +620,13 @@ export default function FixedContainer() {
 												<FaArrowCircleRight style={{ marginLeft: "8px" }} />
 											</Box>
 										</CardContent>
-										<CardActions sx={{ justifyContent: "space-between", p: 2 }}>
+										<CardActions
+											sx={{
+												justifyContent: "space-between",
+												p: 2,
+												direction: isFarsi ? "rtl" : "ltr"
+											}}
+										>
 											<Box>
 												<IconButton
 													href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"

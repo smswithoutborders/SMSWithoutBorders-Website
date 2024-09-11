@@ -2,19 +2,22 @@ import { Grid, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 function Partner() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+
+	const isFarsi = i18n.language === "fa";
+
 	return (
 		<Box sx={{ color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}>
 			<Box
 				sx={{
 					fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-					fontWeight: 700,
-					color: "#020732",
+					fontWeight: 500,
+					color: "#041c94",
 					letterSpacing: 1.5,
-					marginBottom: "40px",
-					marginTop: "40px",
+					marginBottom: { xs: "40px", sm: "60px", md: "60px" },
+					marginTop: { xs: "20px", sm: "30px", md: "30px" },
 					textAlign: "center",
-					mb: 2
+					direction: isFarsi ? "rtl" : "ltr"
 				}}
 			>
 				{t("Sponsor.SponsorT")}
