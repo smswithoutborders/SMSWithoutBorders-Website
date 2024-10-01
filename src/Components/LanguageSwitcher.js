@@ -25,6 +25,7 @@ const LanguageSwitcher = () => {
 
 	const languageLabels = {
 		en: { label: "English", flag: "US" },
+		es: { label: "Español", flag: "ES" },
 		fr: { label: "Français", flag: "FR" },
 		fa: { label: "فارسی", flag: "IR" }
 	};

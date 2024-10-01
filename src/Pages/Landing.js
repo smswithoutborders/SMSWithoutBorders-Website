@@ -166,7 +166,7 @@ export default function FixedContainer() {
 										href="/privacy-policy"
 										rel="noopener noreferrer"
 									>
-										{t("footer.privacyPolicy")}
+										{t("navbar.link4")}
 									</MenuItem>
 									<MenuItem
 										sx={{
@@ -237,7 +237,7 @@ export default function FixedContainer() {
 									href="/privacy-policy"
 									rel="noopener noreferrer"
 								>
-									{t("footer.privacyPolicy")}
+									{t("navbar.link4")}
 								</MenuItem>
 								<MenuItem
 									sx={{
