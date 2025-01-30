@@ -369,7 +369,7 @@ export default function FixedContainer() {
 								{t("projects_title")}
 							</Typography>
 
-							{/* ---------------- RelaySMS ----------------------------- */}
+							{/* ---================== RelaySMS ----===================- */}
 							<Box
 								sx={{
 									mb: 5,
