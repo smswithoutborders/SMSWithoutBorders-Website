@@ -241,7 +241,8 @@ export default function FixedContainer() {
 									width: { xs: "100%", sm: "70%", md: "40%" },
 									height: "auto",
 									marginBottom: { xs: "50px", sm: "10px", md: "10px" },
-									marginTop: { xs: "60px", sm: "20px", md: "50" }
+									marginTop: { xs: "60px", sm: "20px", md: "50px" },
+									marginY: "auto"
 								}}
 							/>
 						</Box>
