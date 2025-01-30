@@ -7,7 +7,9 @@ function Partner() {
 	const isFarsi = i18n.language === "fa";
 
 	return (
-		<Box sx={{ color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}>
+		<Box
+			sx={{ color: "black", background: "#EEF2FF", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}
+		>
 			<Box
 				sx={{
 					fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
