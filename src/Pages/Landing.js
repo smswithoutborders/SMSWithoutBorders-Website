@@ -6,14 +6,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
-import GitHub from "@mui/icons-material/GitHub";
-import Twitter from "@mui/icons-material/Twitter";
-import Telegram from "@mui/icons-material/Telegram";
-import Public from "@mui/icons-material/Public";
 import { FaArrowCircleRight } from "react-icons/fa";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import Partner from "../Components/partner";
@@ -387,7 +380,7 @@ export default function FixedContainer() {
 								</Box>
 							</Box>
 						</Box>
-						{/* =========== project section ------------ */}
+						{/* ================================================ project section ======================================== */}
 						<Box sx={{ minHeight: "60vh", width: "80%", py: 4, mx: "auto" }}>
 							<Typography
 								variant="h4"
@@ -404,250 +397,149 @@ export default function FixedContainer() {
 							>
 								{t("projects_title")}
 							</Typography>
-							<Grid container spacing={4} className="cards">
-								{/* ---------------- RelaySMS ----------------------------- */}
-								<Grid item xs={12} sm={12} md={6}>
-									<Card
-										className="cardself"
-										sx={{
-											position: "relative",
-											borderRadius: 2,
-											boxShadow: 3,
-											display: "flex",
-											flexDirection: "column",
-											justifyContent: "space-between",
-											height: "100%",
-											overflow: "hidden",
-											backgroundImage: { xs: "none", sm: "url('/Relay.png')" },
-											backgroundSize: "cover",
-											backgroundPosition: "center",
-											"&::before": {
-												position: "absolute",
-												top: 0,
-												left: 0,
-												width: "100%",
-												height: "fit-content",
-												background: "inherit",
-												filter: "blur(20px)",
-												zIndex: -1,
-												display: { xs: "block", sm: "none" },
-												direction: isFarsi ? "rtl" : "ltr"
-											}
-										}}
-										data-aos="fade-left"
-									>
-										<CardContent
-											sx={{
-												display: "flex",
-												flexDirection: "column",
-												justifyContent: "center",
-												textAlign: { xs: "justify", sm: "left" },
-												width: { xs: "100%", sm: "60%" },
-												px: { xs: 1, sm: 2 },
-												py: 1,
-												marginRight: { sm: 1 },
-												paddingRight: { sm: 1 },
-												margin: "10px",
-												flexGrow: 1
-											}}
-										>
-											<Typography
-												variant="h4"
-												sx={{
-													mb: 2,
-													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.2rem" },
-													mt: 1,
-													fontWeight: 600,
-													color: "#041c94",
-													letterSpacing: 1.5,
-													marginBottom: "30px"
-												}}
-											>
-												{t("project1.title")}
-											</Typography>
-											<Typography
-												variant="body1"
-												sx={{
-													color: "#2b3343",
-													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "20px",
-													letterSpacing: 0.5,
-													lineHeight: 2,
-													direction: isFarsi ? "rtl" : "ltr"
-												}}
-											>
-												{t("project1.description")}
-											</Typography>
-											<Box
-												component="a"
-												href="https://relay.smswithoutborders.com/"
-												target="_blank"
-												rel="noopener noreferrer"
-												sx={{
-													color: "blue",
-													textDecoration: "none",
-													fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-													direction: isFarsi ? "rtl" : "ltr",
-													fontWeight: 300,
-													textAlign: "start",
-													"&:hover": {
-														color: "#a56905"
-													}
-												}}
-											>
-												{t("project1.read_more")}
-												<FaArrowCircleRight style={{ marginLeft: "8px" }} />
-											</Box>
-										</CardContent>
-										<CardActions
-											sx={{
-												justifyContent: "space-between",
-												p: 2,
-												direction: isFarsi ? "rtl" : "ltr"
-											}}
-										>
-											<Box>
-												<IconButton
-													href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android"
-													aria-label="GitHub"
-												>
-													<GitHub sx={{ color: "#020732" }} />
-												</IconButton>
-												<IconButton href="https://x.com/RelaySMS" aria-label="Twitter">
-													<Twitter sx={{ color: "#020732" }} />
-												</IconButton>
-												<IconButton
-													href="https://relay.smswithoutborders.com/"
-													aria-label="Website"
-												>
-													<Public sx={{ color: "#020732" }} />
-												</IconButton>
-											</Box>
-										</CardActions>
-									</Card>
-								</Grid>
 
-								{/* ---------------- Deku-SMS ----------------------------- */}
-
-								<Grid item xs={12} sm={12} md={6}>
-									<Card
+							{/* ---------------- RelaySMS ----------------------------- */}
+							<Box
+								sx={{
+									mb: 5,
+									py: 3,
+									px: 2,
+									borderRadius: 2,
+									boxShadow: 3,
+									backgroundColor: "#f9f9f9",
+									direction: isFarsi ? "rtl" : "ltr"
+								}}
+								data-aos="fade-left"
+							>
+								<Box
+									sx={{
+										display: "flex",
+										alignItems: "center",
+										gap: 2,
+										mb: 2
+									}}
+								>
+									<Box
+										component="img"
+										src="/RelaySMS.png"
+										alt="Logo"
 										sx={{
-											position: "relative",
-											borderRadius: 2,
-											boxShadow: 3,
-											display: "flex",
-											flexDirection: "column",
-											justifyContent: "space-between",
-											height: "100%",
-											overflow: "hidden",
-											backgroundImage: { xs: "none", sm: "url('/Deku.png')" },
-											backgroundSize: "cover",
-											backgroundPosition: "center",
-											"&::before": {
-												position: "absolute",
-												top: 0,
-												left: 0,
-												width: "100%",
-												height: "100%",
-												background: "inherit",
-												filter: "blur(5px)",
-												zIndex: -1,
-												display: { xs: "block", sm: "none" },
-												direction: isFarsi ? "rtl" : "ltr"
-											}
+											width: { xs: "30px", sm: "40px", md: "50px" },
+											height: "auto"
 										}}
-										data-aos="fade-left"
+									/>
+									<Typography
+										variant="h4"
+										sx={{
+											fontWeight: 600,
+											color: "#041c94",
+											fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" }
+										}}
 									>
-										<CardContent
-											sx={{
-												display: "flex",
-												flexDirection: "column",
-												justifyContent: "center",
-												textAlign: { xs: "justify", sm: "left" },
-												width: { xs: "100%", sm: "60%" },
-												px: { xs: 1, sm: 2 },
-												py: 1,
-												marginRight: { sm: 1 },
-												paddingRight: { sm: 1 },
-												margin: "10px",
-												flexGrow: 1
-											}}
-										>
-											<Typography
-												variant="h4"
-												sx={{
-													mb: 2,
-													fontSize: { xs: "1.5rem", sm: "1.5rem", md: "1.2rem" },
-													mt: 1,
-													fontWeight: 600,
-													color: "#041c94",
-													letterSpacing: 1.5,
-													marginBottom: "30px"
-												}}
-											>
-												{t("project2.title")}
-											</Typography>
-											<Typography
-												variant="body1"
-												sx={{
-													color: "#2b3343",
-													fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
-													margin: "20px",
-													letterSpacing: 0.5,
-													lineHeight: 2,
-													direction: isFarsi ? "rtl" : "ltr"
-												}}
-											>
-												{t("project2.description")}
-											</Typography>
-											<Box
-												component="a"
-												href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
-												target="_blank"
-												rel="noopener noreferrer"
-												sx={{
-													color: "blue",
-													textDecoration: "none",
-													fontWeight: 300,
-													direction: isFarsi ? "rtl" : "ltr",
-													textAlign: "start",
-													"&:hover": {
-														color: "#a56905"
-													}
-												}}
-											>
-												{t("project2.read_more")}
-												<FaArrowCircleRight style={{ marginLeft: "8px" }} />
-											</Box>
-										</CardContent>
-										<CardActions
-											sx={{
-												justifyContent: "space-between",
-												p: 2,
-												direction: isFarsi ? "rtl" : "ltr"
-											}}
-										>
-											<Box>
-												<IconButton
-													href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
-													aria-label="GitHub"
-												>
-													<GitHub sx={{ color: "#020732" }} />
-												</IconButton>
-												<IconButton href="https://t.me/deku_sms" aria-label="Telegram">
-													<Telegram sx={{ color: "#020732" }} />
-												</IconButton>
-											</Box>
-										</CardActions>
-									</Card>
-								</Grid>
-							</Grid>
+										{t("project1.title")}
+									</Typography>
+								</Box>
+
+								<Typography
+									variant="body1"
+									sx={{
+										color: "#2b3343",
+										fontSize: "1rem",
+										lineHeight: 2,
+										mb: 3
+									}}
+								>
+									{t("project1.description")}
+								</Typography>
+								<Box
+									component="a"
+									href="https://relay.smswithoutborders.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									sx={{
+										color: "blue",
+										textDecoration: "none",
+										fontWeight: 300,
+										"&:hover": { color: "#a56905" }
+									}}
+								>
+									{t("project1.read_more")}
+									<FaArrowCircleRight style={{ marginLeft: "8px" }} />
+								</Box>
+							</Box>
+
+							{/* ---------------- Deku-SMS ----------------------------- */}
+							<Box
+								sx={{
+									py: 3,
+									px: 2,
+									borderRadius: 2,
+									boxShadow: 3,
+									backgroundColor: "#f9f9f9",
+									direction: isFarsi ? "rtl" : "ltr"
+								}}
+								data-aos="fade-left"
+							>
+								<Box
+									sx={{
+										display: "flex",
+										alignItems: "center",
+										gap: 2,
+										mb: 2
+									}}
+								>
+									<Box
+										component="img"
+										src="/DekuSMS.png"
+										alt="Logo"
+										sx={{
+											width: { xs: "30px", sm: "40px", md: "50px" },
+											height: "auto"
+										}}
+									/>
+									<Typography
+										variant="h4"
+										sx={{
+											fontWeight: 600,
+											color: "#041c94",
+											fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" }
+										}}
+									>
+										{t("project2.title")}
+									</Typography>
+								</Box>
+
+								<Typography
+									variant="body1"
+									sx={{
+										color: "#2b3343",
+										fontSize: "1rem",
+										lineHeight: 2,
+										mb: 3
+									}}
+								>
+									{t("project2.description")}
+								</Typography>
+								<Box
+									component="a"
+									href="https://github.com/deku-messaging/Deku-SMS-Android/blob/master/README.md"
+									target="_blank"
+									rel="noopener noreferrer"
+									sx={{
+										color: "blue",
+										textDecoration: "none",
+										fontWeight: 300,
+										"&:hover": { color: "#a56905" }
+									}}
+								>
+									{t("project2.read_more")}
+									<FaArrowCircleRight style={{ marginLeft: "8px" }} />
+								</Box>
+							</Box>
 						</Box>
 
 						{/* =========== Partner Section =============== */}
-						<Box sx={{ py: 5, color: "white" }}>
-							<Partner />
-						</Box>
+						<Partner />
 					</Container>
 				</Box>
 			</React.Fragment>

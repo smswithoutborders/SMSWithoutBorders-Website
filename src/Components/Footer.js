@@ -13,60 +13,87 @@ const Footer = () => {
 				backgroundColor: "#1c222c",
 				color: "#ffffff",
 				py: 4,
-				mt: 3,
 				width: "100%",
-				direction: isRtl ? "rtl" : "ltr"
+				direction: isRtl ? "rtl" : "ltr",
+				boxShadow: "0 -4px 10px rgba(0, 0, 0, 0.2)"
 			}}
 		>
+			{/* <Divider sx={{ my: 3, borderColor: "#424242" }} /> */}
+
 			<Box
 				sx={{
-					width: "100%",
-					mx: "auto",
-					px: { xs: 5, md: 15 }
+					display: "flex",
+					justifyContent: "space-between",
+					alignItems: "center",
+					flexWrap: "wrap",
+					textAlign: "center",
+					px: { xs: 2, sm: 4, md: 6 },
+					gap: 2
 				}}
 			>
-				<Box
+				{/* Start: Privacy Policy */}
+				<Link
+					href="/privacy-policy"
+					color="inherit"
+					underline="none"
 					sx={{
-						display: "flex",
-						justifyContent: "space-between",
-						alignItems: "center",
-						flexWrap: "wrap",
-						textAlign: "center"
+						fontSize: "0.875rem",
+						textAlign: { xs: "center", sm: "start" },
+						width: { xs: "100%", sm: "auto" },
+						px: { xs: 2, sm: 4 },
+						transition: "color 0.3s",
+						"&:hover": {
+							color: "#00bcd4"
+						}
 					}}
 				>
-					{/* Start: Privacy Policy */}
-					<Link
-						href="/privacy-policy"
-						color="inherit"
-						underline="hover"
-						sx={{ fontSize: "0.875rem" }}
+					{t("footer.privacyPolicy")}
+				</Link>
+
+				{/* Middle: Social Icons */}
+				<Box sx={{ display: "flex", justifyContent: "center", gap: 1 }}>
+					<IconButton
+						href="https://github.com/smswithoutborders"
+						aria-label="GitHub"
+						sx={{
+							color: "#ffffff",
+							transition: "transform 0.3s, color 0.3s",
+							"&:hover": {
+								transform: "scale(1.2)",
+								color: "#00bcd4"
+							}
+						}}
 					>
-						{t("footer.privacyPolicy")}
-					</Link>
-
-					{/* Middle: Social Icons */}
-					<Box>
-						<IconButton
-							href="https://github.com/smswithoutborders"
-							aria-label="GitHub"
-							sx={{ color: "#ffffff", mx: 1 }}
-						>
-							<FaGithub size={24} />
-						</IconButton>
-						<IconButton
-							href="https://twitter.com/RelaySMS"
-							aria-label="Twitter"
-							sx={{ color: "#ffffff", mx: 1 }}
-						>
-							<FaTwitter size={24} />
-						</IconButton>
-					</Box>
-
-					{/* End: Copyright */}
-					<Typography variant="body2" sx={{ fontSize: "0.835rem" }}>
-						© {new Date().getFullYear()} SMSWithoutBorders.
-					</Typography>
+						<FaGithub size={24} />
+					</IconButton>
+					<IconButton
+						href="https://twitter.com/RelaySMS"
+						aria-label="Twitter"
+						sx={{
+							color: "#ffffff",
+							transition: "transform 0.3s, color 0.3s",
+							"&:hover": {
+								transform: "scale(1.2)",
+								color: "#00bcd4"
+							}
+						}}
+					>
+						<FaTwitter size={24} />
+					</IconButton>
 				</Box>
+
+				{/* End: Copyright */}
+				<Typography
+					variant="body2"
+					sx={{
+						fontSize: "0.835rem",
+						textAlign: { xs: "center", sm: "end" },
+						width: { xs: "100%", sm: "auto" },
+						opacity: 0.8
+					}}
+				>
+					© {new Date().getFullYear()} SMSWithoutBorders.
+				</Typography>
 			</Box>
 		</Box>
 	);
