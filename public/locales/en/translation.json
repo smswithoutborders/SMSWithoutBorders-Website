@@ -4,18 +4,19 @@
 		"link1": "Blog",
 		"link2": "RelaySMS",
 		"link3": "DekuSMS",
-		"link4": "Privacy Policy"
+		"link4": "Privacy Policy",
+		"link5": "Documentation"
 	},
 	"header": "SMSWithoutBorders",
-	"subheader": "open source | research",
+	"subheader": "Explore SWOB",
 	"About": {
-		"About-title": "About",
+		"About-title": "open source | research",
 		"description": "SMSWithoutBorders is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
-		"description1": "The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom. Our journey toward achieving our mission began in 2021 with the development of the first Android version of RelaySMS. We have come far since then, with support for more platforms and many more apps.",
-		"description2": "We publish our research as frequently as possible on our blog and make announcements via our social media outlets.",
-		"description3": "SMSWithoutBorders is a project started by the team at <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
+		"description1": "The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom.",
+		"description2": " Our journey toward achieving our mission began in 2021 with the development of the first Android version of RelaySMS. We have come far since then, with support for more platforms and many more apps.",
+		"description3": "We publish our research as frequently as possible on our blog and make announcements via our social media outlets. SMSWithoutBorders is a project started by the team at <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
-	"projects_title": "SWOB Apps",
+	"projects_title": "Explore the Innovative Projects Under SWOB",
 	"project1": {
 		"title": "RelaySMS",
 		"description": "RelaySMS uses SMS messaging to communicate with online platforms without needing an internet connection. The users can grant access to their online platforms which would be used to act on their behalf using SMS messaging. The access granted, messages being sent from the app, and how they get published online are secured with strong up-to-date cryptographic and security practices.",
