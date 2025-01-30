@@ -46,8 +46,9 @@ export default function FixedContainer() {
 
 	useEffect(() => {
 		AOS.init({
-			duration: 1200,
-			once: true
+			duration: 1000,
+			easing: "ease-in-out",
+			once: false
 		});
 	}, []);
 
@@ -248,39 +249,37 @@ export default function FixedContainer() {
 						{/* ============================================= About Section ===================================================== */}
 						<Box
 							sx={{
+								fontFamily: "Unbounded, Ubuntu",
+								fontWeight: 400,
+								color: "#FF8614",
 								minHeight: "70vh",
-								color: "black",
-								background: "#000158",
-								py: { md: 8, xs: 6 },
-								px: { md: 18, xs: 2 },
-								direction: isFarsi ? "rtl" : "ltr",
+								backgroundColor: "#000158",
+								py: { xs: 6, md: 8 },
+								px: { xs: 2, md: 18 },
 								textAlign: "center",
-								overflow: "hidden"
+								direction: isFarsi ? "rtl" : "ltr"
 							}}
-							data-aos="fade-up"
+							data-aos="fade-right"
 						>
-							{/* Title */}
-							<Box
+							<Typography
+								variant="h4"
 								sx={{
-									fontSize: { xs: "2em", sm: "2.5em", md: "3em" },
+									mb: 4,
 									fontFamily: "Unbounded, Ubuntu",
 									fontWeight: 400,
-									color: "#FF8614",
-									letterSpacing: 1.5,
-									marginBottom: { xs: "30px", sm: "60px", md: "60px" },
-									marginTop: { xs: "10px", sm: "30px", md: "10px" },
-									textTransform: "uppercase"
+									textTransform: "uppercase",
+									letterSpacing: 1.5
 								}}
-								data-aos="fade-left"
+								data-aos="zoom-in"
 							>
 								{t("About.About-title")}
-							</Box>
+							</Typography>
 
 							{/* Subheader */}
 							<Typography
 								sx={{
 									fontSize: { xs: "1.5em", sm: "1.75em", md: "2em" },
-									fontWeight: 400,
+									fontWeight: 300,
 									fontFamily: "Unbounded, Ubuntu",
 									color: "#FFFFFF",
 									marginBottom: "20px",
@@ -291,70 +290,61 @@ export default function FixedContainer() {
 								{t("subheader")}
 							</Typography>
 
-							{/* Content */}
-							<Box sx={{ flexGrow: 1 }}>
-								<Grid container spacing={4} columns={16}>
-									{/* First Column */}
-									<Grid item xs={16} sm={8}>
-										<Box
-											sx={{
-												textAlign: "justify",
-												fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-												color: "#FFFFFF",
-												lineHeight: 2,
-												fontFamily: "Unbounded, Ubuntu",
-												fontWeight: 200
-											}}
-										>
-											{t("About.description")}
-										</Box>
-									</Grid>
-
-									{/* Second Column */}
-									<Grid item xs={16} sm={8}>
-										<Box
-											sx={{
-												textAlign: "justify",
-												fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-												color: "#FFFFFF",
-												lineHeight: 2,
-												fontFamily: "Unbounded, Ubuntu",
-												fontWeight: 200
-											}}
-										>
-											{t("About.description1")}
-										</Box>
-										<Box
-											sx={{
-												textAlign: "justify",
-												fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-												color: "#FFFFFF",
-												lineHeight: 2,
-												fontFamily: "Unbounded, Ubuntu",
-												fontWeight: 200
-											}}
-										>
-											{t("About.description2")}
-										</Box>
-									</Grid>
-
-									{/* Row Underneath the Two Columns */}
-									<Grid item xs={16}>
-										<Box
-											sx={{
-												textAlign: "justify",
-												fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-												color: "#FFFFFF",
-												lineHeight: 2,
-												fontFamily: "Unbounded, Ubuntu",
-												fontWeight: 200
-											}}
-										>
-											{parse(t("About.description3"))}
-										</Box>
-									</Grid>
+							<Grid container spacing={4}>
+								<Grid item xs={12} sm={6} data-aos="fade-left">
+									<Typography
+										sx={{
+											fontSize: { xs: "1rem", sm: "1.25rem" },
+											lineHeight: 1.8,
+											color: "#FFFFFF",
+											fontFamily: "Unbounded, Ubuntu",
+											fontWeight: 200
+										}}
+									>
+										{t("About.description")}
+									</Typography>
 								</Grid>
-							</Box>
+								<Grid item xs={12} sm={6} data-aos="fade-right">
+									<Typography
+										sx={{
+											fontSize: { xs: "1rem", sm: "1.25rem" },
+											lineHeight: 1.8,
+											color: "#FFFFFF",
+											fontFamily: "Unbounded, Ubuntu",
+											fontWeight: 200
+										}}
+									>
+										{t("About.description1")}
+									</Typography>
+									<Typography
+										sx={{
+											fontSize: { xs: "1rem", sm: "1.25rem" },
+											lineHeight: 1.8,
+											color: "#FFFFFF",
+											fontFamily: "Unbounded, Ubuntu",
+											fontWeight: 200
+										}}
+									>
+										{t("About.description2")}
+									</Typography>
+								</Grid>
+
+								{/* Row Underneath the Two Columns */}
+								<Grid item xs={16}>
+									<Box
+										sx={{
+											textAlign: "justify",
+											fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
+											lineHeight: 2,
+											color: "#FFFFFF",
+											fontFamily: "Unbounded, Ubuntu",
+											fontWeight: 200
+										}}
+									>
+										{parse(t("About.description3"))}
+									</Box>
+								</Grid>
+							</Grid>
 						</Box>
 
 						{/* ================================================ project section ======================================== */}

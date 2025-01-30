@@ -3,8 +3,35 @@ import { useTranslation } from "react-i18next";
 
 function Partner() {
 	const { t, i18n } = useTranslation();
-
 	const isFarsi = i18n.language === "fa";
+
+	const LogoItem = ({ href, imgSrc, altText }) => (
+		<Grid
+			item
+			md={5}
+			xs={6}
+			component="a"
+			href={href}
+			target="_blank"
+			aria-label={altText}
+			sx={{
+				textAlign: "center"
+			}}
+		>
+			<Box
+				component="img"
+				src={imgSrc}
+				alt={altText}
+				sx={{
+					width: { md: "80%", xs: "100%" },
+					transition: "transform 0.3s ease-in-out",
+					"&:hover": {
+						transform: "scale(1.05)"
+					}
+				}}
+			/>
+		</Grid>
+	);
 
 	return (
 		<Box
@@ -42,57 +69,8 @@ function Partner() {
 					px: { md: 20, sm: 5, xs: 2 }
 				}}
 			>
-				{/* Open Tech Fund Logo */}
-				<Grid
-					item
-					md={5}
-					xs={6}
-					component="a"
-					href="https://www.opentech.fund/"
-					target="_blank"
-					sx={{
-						textAlign: "center"
-					}}
-				>
-					<Box
-						component="img"
-						src="/OTF.png"
-						alt="Open Tech Fund"
-						sx={{
-							width: { md: "80%", xs: "100%" },
-							transition: "transform 0.3s ease-in-out",
-							"&:hover": {
-								transform: "scale(1.05)"
-							}
-						}}
-					/>
-				</Grid>
-
-				{/* Internews Logo */}
-				<Grid
-					item
-					md={5}
-					xs={6}
-					component="a"
-					href="https://internews.org/"
-					target="_blank"
-					sx={{
-						textAlign: "center"
-					}}
-				>
-					<Box
-						component="img"
-						src="/Internews.png"
-						alt="Internews"
-						sx={{
-							width: { md: "80%", xs: "100%" },
-							transition: "transform 0.3s ease-in-out",
-							"&:hover": {
-								transform: "scale(1.05)"
-							}
-						}}
-					/>
-				</Grid>
+				<LogoItem href="https://www.opentech.fund/" imgSrc="/OTF.png" altText="Open Tech Fund" />
+				<LogoItem href="https://internews.org/" imgSrc="/Internews.png" altText="Internews" />
 			</Grid>
 		</Box>
 	);
