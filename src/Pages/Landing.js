@@ -25,7 +25,7 @@ import "aos/dist/aos.css";
 
 const theme = createTheme({
 	typography: {
-		fontFamily: "Roboto, sans-serif"
+		fontFamily: "unbounded, ubuntu"
 	}
 });
 
