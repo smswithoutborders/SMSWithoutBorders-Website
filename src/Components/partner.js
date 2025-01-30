@@ -8,12 +8,19 @@ function Partner() {
 
 	return (
 		<Box
-			sx={{ color: "black", background: "#EEF2FF", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}
+			sx={{
+				color: "black",
+				background: "#EEF2FF",
+				py: { md: 8, xs: 10 },
+				px: { md: 18, xs: 2 }
+			}}
 		>
+			{/* Section Title */}
 			<Box
 				sx={{
-					fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-					fontWeight: 500,
+					fontSize: { xs: "2em", sm: "2.2em", md: "2.5em" },
+					fontFamily: "Unbounded, Ubuntu",
+					fontWeight: 400,
 					color: "#041c94",
 					letterSpacing: 1.5,
 					marginBottom: { xs: "40px", sm: "60px", md: "60px" },
@@ -24,29 +31,66 @@ function Partner() {
 			>
 				{t("Sponsor.SponsorT")}
 			</Box>
+
+			{/* Partner Logos */}
 			<Grid
-				sx={{ px: { md: 35, xs: 1 } }}
 				container
-				direction="row"
-				justifyContent="space-evenly"
+				spacing={4}
+				justifyContent="center"
 				alignItems="center"
-				display={{ xs: "block", sm: "block", md: "flex" }}
-				lineHeight="10"
+				sx={{
+					px: { md: 20, sm: 5, xs: 2 }
+				}}
 			>
-				<Grid md={5} xs={6} component="a" href="https://www.opentech.fund/" target="_blank">
+				{/* Open Tech Fund Logo */}
+				<Grid
+					item
+					md={5}
+					xs={6}
+					component="a"
+					href="https://www.opentech.fund/"
+					target="_blank"
+					sx={{
+						textAlign: "center"
+					}}
+				>
 					<Box
 						component="img"
 						src="/OTF.png"
-						sx={{ width: { md: "100%", xs: "100%" } }}
-						alt="RelaySMS"
+						alt="Open Tech Fund"
+						sx={{
+							width: { md: "80%", xs: "100%" },
+							transition: "transform 0.3s ease-in-out",
+							"&:hover": {
+								transform: "scale(1.05)"
+							}
+						}}
 					/>
 				</Grid>
-				<Grid md={5} xs={6} component="a" href="https://internews.org/" target="_blank">
+
+				{/* Internews Logo */}
+				<Grid
+					item
+					md={5}
+					xs={6}
+					component="a"
+					href="https://internews.org/"
+					target="_blank"
+					sx={{
+						textAlign: "center"
+					}}
+				>
 					<Box
 						component="img"
 						src="/Internews.png"
-						sx={{ width: { md: "100%", xs: "100%" } }}
-						alt="RelaySMS"
+						alt="Internews"
+						sx={{
+							width: { md: "80%", xs: "100%" },
+							transition: "transform 0.3s ease-in-out",
+							"&:hover": {
+								transform: "scale(1.05)"
+							}
+						}}
 					/>
 				</Grid>
 			</Grid>
