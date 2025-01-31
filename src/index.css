@@ -1,3 +1,48 @@
 html {
 	scroll-behavior: smooth;
 }
+
+.privacy-policy-container {
+	max-width: 4xl;
+	margin: 6rem auto;
+	padding: 4rem;
+}
+
+.prose {
+	font-family: "Roboto", sans-serif;
+}
+
+.privacy-policy-container .prose h1,
+.privacy-policy-container .prose h2,
+.privacy-policy-container .prose h3,
+.privacy-policy-container .prose h4 {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	color: #014a98 !important;
+}
+
+.prose p {
+	margin-bottom: 1rem;
+	color: #424040;
+}
+
+.prose ul,
+.prose ol {
+	margin-bottom: 1rem;
+	padding-left: 4rem;
+}
+
+.prose a {
+	color: #007bff;
+	text-decoration: underline;
+}
+
+.prose a:hover {
+	color: #5ba8f0;
+}
+
+@media (max-width: 600px) {
+	.privacy-policy-container {
+		padding: 1rem;
+	}
+}
