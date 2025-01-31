@@ -2,10 +2,8 @@ FROM node:20-slim AS build
 
 WORKDIR /app
 
-ENV NODE_ENV=production
-
 COPY package.json ./
-RUN yarn install --no-lockfile --production && yarn cache clean
+RUN yarn install --no-lockfile && yarn cache clean
 
 COPY . .
 RUN yarn build
@@ -13,6 +11,7 @@ RUN yarn build
 FROM nginx:stable-alpine
 
 COPY --from=build /app/build /usr/share/nginx/html
+
 COPY nginx/nginx.conf.template /etc/nginx/conf.d/default.template
 COPY scripts/docker-entrypoint.sh /docker-entrypoint.sh
 
