@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FormControl, MenuItem, IconButton, Menu, Box, Tooltip, Typography } from "@mui/material";
+import { IconButton, Menu, MenuItem, Box, Tooltip, Typography } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
 import Flag from "react-world-flags";
 
@@ -8,11 +8,11 @@ const LanguageSwitcher = () => {
 	const { i18n } = useTranslation();
 	const [anchorEl, setAnchorEl] = useState(null);
 
-	const handleLanguageMenuClick = (event) => {
+	const handleMenuOpen = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
 
-	const handleLanguageMenuClose = () => {
+	const handleMenuClose = () => {
 		setAnchorEl(null);
 	};
 
@@ -31,43 +31,66 @@ const LanguageSwitcher = () => {
 	};
 
 	return (
-		<FormControl variant="outlined" size="small">
-			<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
-				<Tooltip title="Change Language" arrow>
-					<IconButton
-						onClick={handleLanguageMenuClick}
+		<Box sx={{ display: "flex", alignItems: "center" }}>
+			<Tooltip title="Change Language" arrow>
+				<IconButton
+					onClick={handleMenuOpen}
+					sx={{
+						backgroundColor: "#000158",
+						color: "#FFFFFF",
+						padding: "8px 12px",
+						borderRadius: "8px",
+						display: "flex",
+						alignItems: "center",
+						gap: "8px"
+					}}
+				>
+					<LanguageIcon />
+					<Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
+						{languageLabels[currentLang]?.label || "Language"}
+					</Typography>
+				</IconButton>
+			</Tooltip>
+			<Menu
+				anchorEl={anchorEl}
+				open={Boolean(anchorEl)}
+				onClose={handleMenuClose}
+				PaperProps={{
+					elevation: 3,
+					sx: {
+						minWidth: "160px",
+						borderRadius: "8px",
+						padding: "4px 0",
+						backgroundColor: "#FFFFFF"
+					}
+				}}
+			>
+				{Object.keys(languageLabels).map((lang) => (
+					<MenuItem
+						key={lang}
+						onClick={() => handleLanguageChange(lang)}
 						sx={{
-							color: "black",
-							backgroundColor: "#1c222c",
-							"&:hover": {
-								backgroundColor: "#9cbcf4"
-							},
-							borderRadius: "10%",
-							padding: "8px",
 							display: "flex",
 							alignItems: "center",
-							gap: "8px"
+							gap: "12px",
+							padding: "8px 16px"
 						}}
 					>
-						<LanguageIcon sx={{ color: "white" }} />
-						<Typography sx={{ color: "white" }}>
-							{languageLabels[currentLang]?.label || "Language"}
-						</Typography>
-					</IconButton>
-				</Tooltip>
-				<Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleLanguageMenuClose}>
-					{Object.keys(languageLabels).map((lang) => (
-						<MenuItem key={lang} onClick={() => handleLanguageChange(lang)}>
-							<Flag
-								code={languageLabels[lang].flag}
-								style={{ width: 24, height: 24, marginRight: 8 }}
-							/>
+						<Flag
+							code={languageLabels[lang].flag}
+							style={{
+								width: 24,
+								height: 16,
+								borderRadius: "4px"
+							}}
+						/>
+						<Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
 							{languageLabels[lang].label}
-						</MenuItem>
-					))}
-				</Menu>
-			</Box>
-		</FormControl>
+						</Typography>
+					</MenuItem>
+				))}
+			</Menu>
+		</Box>
 	);
 };
 
