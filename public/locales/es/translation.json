@@ -8,7 +8,7 @@
 		"link5": "Documentación"
 	},
 	"header": "SMSSinFronteras",
-	"subheader": "Explora SWOB",
+	"subheader": "Explora SMSWithoutBorders(SWOB)",
 	"About": {
 		"About-title": "código abierto | investigación",
 		"description": "SMSSinFronteras está dedicado a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionen incluso sin conexión a Internet.",
@@ -16,7 +16,7 @@
 		"description2": "Nuestro viaje hacia el cumplimiento de nuestra misión comenzó en 2021 con el desarrollo de la primera versión de RelaySMS para Android. Hemos avanzado mucho desde entonces, con soporte para más plataformas y muchas más aplicaciones.",
 		"description3": "Publicamos nuestra investigación tan frecuentemente como es posible en nuestro blog y hacemos anuncios a través de nuestras redes sociales. SMSSinFronteras es un proyecto iniciado por el equipo de <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
-	"projects_title": "Explora los Proyectos Innovadores de SWOB",
+	"projects_title": "Explora los Proyectos Innovadores de SMSWithoutBorders(SWOB)",
 	"project1": {
 		"title": "RelaySMS",
 		"description": "RelaySMS utiliza mensajes SMS para comunicarse con plataformas en línea sin necesidad de una conexión a Internet. Los usuarios pueden otorgar acceso a sus plataformas en línea, que utilizarán mensajes SMS para actuar como mediador entre ellos. El acceso garantizado de los mensajes que se envían desde la aplicación y la forma en que se publican en línea están protegidos con actualizadas y sólidas prácticas criptográficas y de seguridad.",

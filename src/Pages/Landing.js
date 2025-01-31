@@ -216,7 +216,7 @@ export default function FixedContainer() {
 							id="home"
 							sx={{
 								width: "100%",
-								height: { xs: "40vh", sm: "70vh", md: "60vh" },
+								// height: { xs: "30vh", sm: "50vh", md: "40vh" },
 								paddingTop: "70px",
 								py: { xs: 6, sm: 15 },
 								display: "flex",
@@ -241,7 +241,7 @@ export default function FixedContainer() {
 									width: { xs: "100%", sm: "70%", md: "40%" },
 									height: "auto",
 									marginBottom: { xs: "50px", sm: "10px", md: "10px" },
-									marginTop: { xs: "60px", sm: "20px", md: "50px" },
+									marginTop: { xs: "40px", sm: "20px", md: "50px" },
 									marginY: "auto"
 								}}
 							/>
@@ -257,19 +257,19 @@ export default function FixedContainer() {
 								backgroundColor: "#000158",
 								py: { xs: 6, md: 8 },
 								px: { xs: 2, md: 18 },
-								textAlign: "center",
 								direction: isFarsi ? "rtl" : "ltr"
 							}}
 							data-aos="fade-right"
 						>
 							<Typography
-								variant="h4"
 								sx={{
+									fontSize: { xs: "1.5em", sm: "2em", md: "3em" },
 									mb: 4,
 									fontFamily: "Unbounded, Ubuntu",
 									fontWeight: 400,
 									textTransform: "uppercase",
-									letterSpacing: 1.5
+									letterSpacing: 1.5,
+									textAlign: "center"
 								}}
 								data-aos="zoom-in"
 							>
@@ -279,7 +279,7 @@ export default function FixedContainer() {
 							{/* Subheader */}
 							<Typography
 								sx={{
-									fontSize: { xs: "1.5em", sm: "1.75em", md: "2em" },
+									fontSize: { xs: "1.5em", sm: "1.25em", md: "2em" },
 									fontWeight: 300,
 									fontFamily: "Unbounded, Ubuntu",
 									color: "#FFFFFF",
@@ -335,7 +335,7 @@ export default function FixedContainer() {
 									<Box
 										sx={{
 											textAlign: "justify",
-											fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
+											fontSize: { xs: "1rem", sm: "1.25rem" },
 											lineHeight: 2,
 											color: "#FFFFFF",
 											fontFamily: "Unbounded, Ubuntu",
@@ -353,16 +353,19 @@ export default function FixedContainer() {
 							sx={{ minHeight: "60vh", width: "80%", py: 4, mx: "auto", backgroundColor: "white" }}
 						>
 							<Typography
-								variant="h4"
-								align="center"
+								variant="h3"
 								sx={{
-									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
+									fontSize: { xs: "2em", sm: "2.2em", md: "2.5em" },
+									mb: 4,
 									fontFamily: "Unbounded, Ubuntu",
 									fontWeight: 400,
-									color: "#041c94",
-									marginBottom: { xs: "40px", sm: "60px", md: "70px" },
-									marginTop: { xs: "20px", sm: "20px", md: "10px" },
-									direction: isFarsi ? "rtl" : "ltr"
+									textTransform: "camelcase",
+									letterSpacing: 1.5,
+									textAlign: "center",
+									direction: isFarsi ? "rtl" : "ltr",
+									color: "#FF8614",
+									py: { xs: 6, md: 8 },
+									px: { xs: 2, md: 18 }
 								}}
 								data-aos="fade-left"
 							>
@@ -416,11 +419,11 @@ export default function FixedContainer() {
 									variant="body1"
 									sx={{
 										color: "#2b3343",
-										fontSize: "1rem",
 										lineHeight: 2,
 										mb: 3,
 										fontFamily: "Unbounded, Ubuntu",
-										fontWeight: 200
+										fontWeight: 200,
+										fontSize: { xs: "1rem", sm: "1.25rem" }
 									}}
 								>
 									{t("project1.description")}
@@ -435,7 +438,8 @@ export default function FixedContainer() {
 										textDecoration: "none",
 										fontFamily: "Unbounded, Ubuntu",
 										fontWeight: 200,
-										"&:hover": { color: "#a56905" }
+										"&:hover": { color: "#a56905" },
+										fontSize: { xs: "1rem", sm: "1.25rem" }
 									}}
 								>
 									{t("project1.read_more")}
@@ -490,7 +494,7 @@ export default function FixedContainer() {
 									variant="body1"
 									sx={{
 										color: "#2b3343",
-										fontSize: "1rem",
+										fontSize: { xs: "1rem", sm: "1.25rem" },
 										lineHeight: 2,
 										mb: 3,
 										fontFamily: "Unbounded, Ubuntu",
@@ -509,7 +513,8 @@ export default function FixedContainer() {
 										textDecoration: "none",
 										fontFamily: "Unbounded, Ubuntu",
 										fontWeight: 200,
-										"&:hover": { color: "#a56905" }
+										"&:hover": { color: "#a56905" },
+										fontSize: { xs: "1rem", sm: "1.25rem" }
 									}}
 								>
 									{t("project2.read_more")}
