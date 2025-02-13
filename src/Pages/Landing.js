@@ -216,7 +216,6 @@ export default function FixedContainer() {
 							id="home"
 							sx={{
 								width: "100%",
-								// height: { xs: "30vh", sm: "50vh", md: "40vh" },
 								paddingTop: "70px",
 								py: { xs: 6, sm: 15 },
 								display: "flex",
@@ -263,7 +262,7 @@ export default function FixedContainer() {
 						>
 							<Typography
 								sx={{
-									fontSize: { xs: "1.5em", sm: "2em", md: "3em" },
+									fontSize: { xs: "1.5em", sm: "2em", md: "2.25em" },
 									mb: 4,
 									fontFamily: "Unbounded, Ubuntu",
 									fontWeight: 400,
@@ -295,7 +294,7 @@ export default function FixedContainer() {
 								<Grid item xs={12} sm={6} data-aos="fade-left">
 									<Typography
 										sx={{
-											fontSize: { xs: "1rem", sm: "1.25rem" },
+											fontSize: { xs: "1rem", sm: "18px" },
 											lineHeight: 1.8,
 											color: "#FFFFFF",
 											fontFamily: "Unbounded, Ubuntu",
@@ -308,7 +307,7 @@ export default function FixedContainer() {
 								<Grid item xs={12} sm={6} data-aos="fade-right">
 									<Typography
 										sx={{
-											fontSize: { xs: "1rem", sm: "1.25rem" },
+											fontSize: { xs: "1rem", sm: "18px" },
 											lineHeight: 1.8,
 											color: "#FFFFFF",
 											fontFamily: "Unbounded, Ubuntu",
@@ -319,7 +318,7 @@ export default function FixedContainer() {
 									</Typography>
 									<Typography
 										sx={{
-											fontSize: { xs: "1rem", sm: "1.25rem" },
+											fontSize: { xs: "1rem", sm: "18px" },
 											lineHeight: 1.8,
 											color: "#FFFFFF",
 											fontFamily: "Unbounded, Ubuntu",
