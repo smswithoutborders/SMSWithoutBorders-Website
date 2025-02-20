@@ -23,9 +23,9 @@
 		"i18next-browser-languagedetector": "^8.0.0",
 		"i18next-http-backend": "^2.5.2",
 		"micromark": "^4.0.0",
-		"react": "^18.2.0",
+		"react": "^19.0.0",
 		"react-bootstrap": "^2.10.4",
-		"react-dom": "^18.2.0",
+		"react-dom": "^19.0.0",
 		"react-html-parser": "^2.0.2",
 		"react-i18next": "^15.0.1",
 		"react-icons": "^5.2.1",
@@ -81,5 +81,6 @@
 	"lint-staged": {
 		"*.{js,jsx}": "eslint --cache --fix",
 		"*.{js,jsx,json,css,html}": "prettier --cache -w"
-	}
+	},
+	"packageManager": "yarn@4.6.0"
 }
