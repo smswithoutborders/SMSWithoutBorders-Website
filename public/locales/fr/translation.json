@@ -44,6 +44,11 @@
 		"dekuSMS": "DekuSMS",
 		"copyright": "© Afkanerd."
 	},
+	"social": {
+		"x": "Suivez-nous sur X",
+		"bluesky": "Découvrez-nous sur Bluesky",
+		"github": "Voir notre GitHub"
+	},
 	"Privacy-Policy": {
 		"policyHeader": "Politique de confidentialité",
 		"policySubheader": "Dernière mise à jour : 14 juillet 2022",
