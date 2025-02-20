@@ -55,6 +55,7 @@ const Footer = () => {
 					<IconButton
 						href="https://github.com/smswithoutborders"
 						aria-label="GitHub"
+						title={t("social.github")}
 						sx={{
 							color: "#ffffff",
 							transition: "transform 0.3s, color 0.3s",
@@ -69,6 +70,7 @@ const Footer = () => {
 					<IconButton
 						href="https://twitter.com/RelaySMS"
 						aria-label="Twitter"
+						title={t("social.x")}
 						sx={{
 							color: "#ffffff",
 							transition: "transform 0.3s, color 0.3s",
@@ -79,6 +81,21 @@ const Footer = () => {
 						}}
 					>
 						<FaTwitter size={24} />
+					</IconButton>
+					<IconButton
+						href="https://bsky.app/profile/relaysms.bsky.social"
+						aria-label="Bluesky"
+						title={t("social.bluesky")}
+						sx={{
+							color: "#ffffff",
+							transition: "transform 0.3s, color 0.3s",
+							"&:hover": {
+								transform: "scale(1.2)",
+								color: "#1DA1F2"
+							}
+						}}
+					>
+						<img src="./bluesky.svg" alt="Bluesky" style={{ width: 24, height: 24 }} />
 					</IconButton>
 				</Box>
 
@@ -100,3 +117,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+{
+	/* Social Icons */
+}

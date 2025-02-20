@@ -44,6 +44,11 @@
 		"dekuSMS": "DekuSMS",
 		"copyright": "© Afkanerd."
 	},
+	"social": {
+		"x": "ما را در X دنبال کنید",
+		"bluesky": "ما را در Bluesky ببینید",
+		"github": "مشاهده گیت‌هاب ما"
+	},
 	"Privacy-Policy": {
 		"policyHeader": "سیاست حفظ حریم خصوصی",
 		"policySubheader": "آخرین به‌روزرسانی: ۱۴ ژوئیه ۲۰۲۲",
