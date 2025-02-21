@@ -117,7 +117,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-{
-	/* Social Icons */
-}

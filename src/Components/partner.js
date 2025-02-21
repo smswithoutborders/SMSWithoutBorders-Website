@@ -44,12 +44,11 @@ function Partner() {
 		>
 			{/* Section Title */}
 			<Box
-				varient="h3"
 				sx={{
 					fontSize: { xs: "2em", sm: "2.2em", md: "2.5em" },
 					fontFamily: "Unbounded, Ubuntu",
 					fontWeight: 400,
-					color: "#FF8614",
+					color: "#041c94",
 					letterSpacing: 1.5,
 					marginBottom: { xs: "40px", sm: "60px", md: "60px" },
 					marginTop: { xs: "20px", sm: "30px", md: "30px" },

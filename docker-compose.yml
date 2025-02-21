@@ -1,6 +1,6 @@
 services:
-  smswithoutborders-website:
-    container_name: smswithoutborders-website
+  homepage:
+    container_name: homepage
     build:
       context: .
       dockerfile: Dockerfile
