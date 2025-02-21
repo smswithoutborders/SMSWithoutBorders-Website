@@ -99,7 +99,6 @@ const Footer = () => {
 					</IconButton>
 				</Box>
 
-				{/* End: Copyright */}
 				<Typography
 					variant="body2"
 					sx={{
@@ -109,7 +108,7 @@ const Footer = () => {
 						opacity: 0.8
 					}}
 				>
-					© {new Date().getFullYear()} SMSWithoutBorders.
+					© {new Date().getFullYear()} SMSWithoutBorders
 				</Typography>
 			</Box>
 		</Box>

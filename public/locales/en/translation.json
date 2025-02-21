@@ -8,10 +8,10 @@
 		"link5": "Documentation"
 	},
 	"header": "SMSWithoutBorders",
-	"subheader": "Explore SWOB",
+	"subheader": "Explore SMSWithoutBorders",
 	"About": {
-		"About-title": "open source | research",
-		"description": "SMSWithoutBorders is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
+		"About-title": "Open Source | Research",
+		"description": "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
 		"description1": "The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom.",
 		"description2": " Our journey toward achieving our mission began in 2021 with the development of the first Android version of RelaySMS. We have come far since then, with support for more platforms and many more apps.",
 		"description3": "We publish our research as frequently as possible on our blog and make announcements via our social media outlets. SMSWithoutBorders is a project started by the team at <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
@@ -44,7 +44,11 @@
 		"dekuSMS": "DekuSMS",
 		"copyright": "© Afkanerd."
 	},
-
+	"social": {
+		"x": "Follow us on X",
+		"bluesky": "Check us out on Bluesky",
+		"github": "View our GitHub"
+	},
 	"Privacy-Policy": {
 		"policyHeader": "Privacy Policy",
 		"policySubheader": "Last updated: July 14th, 2022",

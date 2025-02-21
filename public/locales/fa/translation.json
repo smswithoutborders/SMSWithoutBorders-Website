@@ -8,7 +8,7 @@
 		"link5": "مستندات"
 	},
 	"header": "اس‌ام‌اس بدون مرز",
-	"subheader": "SWOB را کشف کنید",
+	"subheader": "SMSWithoutBorders(SWOB) را کشف کنید",
 	"About": {
 		"About-title": "متن‌باز | تحقیق",
 		"description": "اس‌ام‌اس بدون مرز به تحقیق، توسعه و ترویج ابزارهای ارتباطی امن و قابل دسترس اختصاص دارد که حتی بدون اتصال به اینترنت کار می‌کنند.",
@@ -43,6 +43,11 @@
 		"relaySMS": "RelaySMS",
 		"dekuSMS": "DekuSMS",
 		"copyright": "© Afkanerd."
+	},
+	"social": {
+		"x": "ما را در X دنبال کنید",
+		"bluesky": "ما را در Bluesky ببینید",
+		"github": "مشاهده گیت‌هاب ما"
 	},
 	"Privacy-Policy": {
 		"policyHeader": "سیاست حفظ حریم خصوصی",
