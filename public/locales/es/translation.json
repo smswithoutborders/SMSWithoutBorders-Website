@@ -3,18 +3,20 @@
 		"link": "Inicio",
 		"link1": "Blog",
 		"link2": "RelaySMS",
-		"link3": "DekuSMS"
+		"link3": "DekuSMS",
+		"link4": "Política de Privacidad",
+		"link5": "Documentación"
 	},
-	"header": "SMSWithoutBorders",
-	"subheader": "codigo abierto | investigación",
+	"header": "SMSSinFronteras",
+	"subheader": "Explora SMSWithoutBorders(SWOB)",
 	"About": {
-		"About-title": "Acerca De Nosotros",
-		"description": "SMSWithoutBorders se dedica a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionen incluso sin conexión a Internet.",
-		"description1": "El desarrollo incluye aplicaciones móviles para varias plataformas, como sistemas Android, iOS y Linux. Parte del trabajo también incluye documentos técnicos sobre temas como criptografía, comunicaciones y libertad en Internet. Nuestro viaje para lorar nuestra misión comenzó en 2021 con el desarrollo de la primera versión de RelaySMS para Android. Desde entonces hemos avanzado mucho, con compatibilidad con más plataformas y muchas más aplicaciones.",
-		"description2": "Publicamos nuestras investigaciones con la mayor frecuencia posible en nuestro blog y hacemos anuncios en nuestras redes sociales.",
-		"description3": "SMSWithoutBorders es un proyecto iniciado por el equipo de <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
+		"About-title": "código abierto | investigación",
+		"description": "SMSSinFronteras está dedicado a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionen incluso sin conexión a Internet.",
+		"description1": "El desarrollo incluye aplicaciones móviles para varias plataformas como Android, iOS y sistemas Linux. Parte del trabajo también incluye documentos técnicos sobre temas como criptografía, comunicaciones y libertad en Internet.",
+		"description2": "Nuestro viaje hacia el cumplimiento de nuestra misión comenzó en 2021 con el desarrollo de la primera versión de RelaySMS para Android. Hemos avanzado mucho desde entonces, con soporte para más plataformas y muchas más aplicaciones.",
+		"description3": "Publicamos nuestra investigación tan frecuentemente como es posible en nuestro blog y hacemos anuncios a través de nuestras redes sociales. SMSSinFronteras es un proyecto iniciado por el equipo de <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
-	"projects_title": "Aplicaciones De SWOB",
+	"projects_title": "Explora los Proyectos Innovadores de SMSWithoutBorders(SWOB)",
 	"project1": {
 		"title": "RelaySMS",
 		"description": "RelaySMS utiliza mensajes SMS para comunicarse con plataformas en línea sin necesidad de una conexión a Internet. Los usuarios pueden otorgar acceso a sus plataformas en línea, que utilizarán mensajes SMS para actuar como mediador entre ellos. El acceso garantizado de los mensajes que se envían desde la aplicación y la forma en que se publican en línea están protegidos con actualizadas y sólidas prácticas criptográficas y de seguridad.",
@@ -42,7 +44,11 @@
 		"dekuSMS": "DekuSMS",
 		"copyright": "© Afkanerd."
 	},
-
+	"social": {
+		"x": "Síguenos en X",
+		"bluesky": "Échale un vistazo a Bluesky",
+		"github": "Ver nuestro GitHub"
+	},
 	"Privacy-Policy": {
 		"policyHeader": "Política de Privacidad",
 		"policySubheader": "Ultima Actualización: 14 de Julio de 2022",

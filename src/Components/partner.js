@@ -3,16 +3,53 @@ import { useTranslation } from "react-i18next";
 
 function Partner() {
 	const { t, i18n } = useTranslation();
-
 	const isFarsi = i18n.language === "fa";
 
-	return (
-		<Box sx={{ color: "black", py: { md: 8, xs: 10 }, px: { md: 18, xs: 2 } }}>
+	const LogoItem = ({ href, imgSrc, altText }) => (
+		<Grid
+			item
+			md={5}
+			xs={6}
+			component="a"
+			href={href}
+			target="_blank"
+			aria-label={altText}
+			sx={{
+				textAlign: "center"
+			}}
+		>
 			<Box
+				component="img"
+				src={imgSrc}
+				alt={altText}
 				sx={{
-					fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-					fontWeight: 500,
-					color: "#041c94",
+					width: { md: "80%", xs: "100%" },
+					transition: "transform 0.3s ease-in-out",
+					"&:hover": {
+						transform: "scale(1.05)"
+					}
+				}}
+			/>
+		</Grid>
+	);
+
+	return (
+		<Box
+			sx={{
+				color: "black",
+				background: "#EEF2FF",
+				py: { md: 8, xs: 10 },
+				px: { md: 18, xs: 2 }
+			}}
+		>
+			{/* Section Title */}
+			<Box
+				varient="h3"
+				sx={{
+					fontSize: { xs: "2em", sm: "2.2em", md: "2.5em" },
+					fontFamily: "Unbounded, Ubuntu",
+					fontWeight: 400,
+					color: "#FF8614",
 					letterSpacing: 1.5,
 					marginBottom: { xs: "40px", sm: "60px", md: "60px" },
 					marginTop: { xs: "20px", sm: "30px", md: "30px" },
@@ -22,31 +59,19 @@ function Partner() {
 			>
 				{t("Sponsor.SponsorT")}
 			</Box>
+
+			{/* Partner Logos */}
 			<Grid
-				sx={{ px: { md: 35, xs: 1 } }}
 				container
-				direction="row"
-				justifyContent="space-evenly"
+				spacing={4}
+				justifyContent="center"
 				alignItems="center"
-				display={{ xs: "block", sm: "block", md: "flex" }}
-				lineHeight="10"
+				sx={{
+					px: { md: 20, sm: 5, xs: 2 }
+				}}
 			>
-				<Grid md={5} xs={6} component="a" href="https://www.opentech.fund/" target="_blank">
-					<Box
-						component="img"
-						src="/OTF.png"
-						sx={{ width: { md: "100%", xs: "100%" } }}
-						alt="RelaySMS"
-					/>
-				</Grid>
-				<Grid md={5} xs={6} component="a" href="https://internews.org/" target="_blank">
-					<Box
-						component="img"
-						src="/Internews.png"
-						sx={{ width: { md: "100%", xs: "100%" } }}
-						alt="RelaySMS"
-					/>
-				</Grid>
+				<LogoItem href="https://www.opentech.fund/" imgSrc="/OTF.png" altText="Open Tech Fund" />
+				<LogoItem href="https://internews.org/" imgSrc="/Internews.png" altText="Internews" />
 			</Grid>
 		</Box>
 	);
