@@ -28,6 +28,7 @@ jobs:
       - name: Prepare build for deployment
         run: |
           mkdir -p build_output
+          mkdir -p build_output/build
 
           mv build/* build_output/build/
           mv nginx/ build_output/nginx/
