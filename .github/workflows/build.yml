@@ -29,10 +29,7 @@ jobs:
         run: |
           mkdir -p build
           rm -rf build/node_modules
-          
-          cp -r scripts ./
-          cp -r nginx ./
-          cp nginx/Dockerfile.nginx Dockerfile
+          mv Dockerfile.nginx Dockerfile
 
       - name: Set up Git for commit
         uses: qoomon/actions--setup-git@v1
