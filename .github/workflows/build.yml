@@ -27,9 +27,12 @@ jobs:
 
       - name: Prepare build for deployment
         run: |
-          mkdir -p build
           rm -rf build/node_modules
-          mv Dockerfile.nginx Dockerfile
+          mkdir -p build_output
+          mv build/* build_output/
+          mv nginx/* build_output/
+          mv scripts/* build_output/
+          mv Dockerfile.nginx build_output/Dockerfile
 
       - name: Set up Git for commit
         uses: qoomon/actions--setup-git@v1
@@ -40,6 +43,7 @@ jobs:
         run: |
           git checkout --orphan build
           git rm -rf .
+          mv build_output/* .
           
           commit_hash=$(git rev-parse --short HEAD)
           timestamp=$(date +"%Y-%m-%d %H:%M:%S")
