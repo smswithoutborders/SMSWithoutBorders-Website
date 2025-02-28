@@ -1,0 +1,48 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          yarn install --no-lockfile
+
+      - name: Build project
+        run: |
+          yarn build
+
+      - name: Prepare build for deployment
+        run: |
+          mkdir -p build_output
+          mv build/* build_output/
+
+      - name: Set up Git for commit
+        uses: qoomon/actions--setup-git@v1
+        with:
+          user: bot
+
+      - name: Commit and Push to Build Branch
+        run: |
+          git checkout --orphan build
+          git rm -rf .
+          mv build_output/* .
+          
+          timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+
+          git add .
+          git commit -m "🚀 Deploy build at ${timestamp} - Code now live and optimized!"
+          git push origin build --force
