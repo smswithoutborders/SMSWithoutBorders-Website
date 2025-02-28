@@ -45,9 +45,8 @@ jobs:
           git rm -rf .
           mv build_output/* .
           
-          commit_hash=$(git rev-parse --short HEAD)
           timestamp=$(date +"%Y-%m-%d %H:%M:%S")
           
           git add .
-          git commit -m "🚀 Build deployed at ${timestamp} | Commit: ${commit_hash}"
+          git commit -m "🚀 Build deployed at ${timestamp}"
           git push origin build --force
