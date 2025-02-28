@@ -40,10 +40,6 @@ jobs:
         run: |
           git checkout --orphan build
           git rm -rf .
-          mv build ./build
-          mv scripts ./scripts
-          mv nginx ./nginx
-          mv Dockerfile ./Dockerfile
           
           commit_hash=$(git rev-parse --short HEAD)
           timestamp=$(date +"%Y-%m-%d %H:%M:%S")
