@@ -46,7 +46,8 @@ jobs:
           git checkout --orphan build
           git rm -rf .
           mv build_output/* .
-          
+          mv build_output/.gitignore .gitignore
+
           timestamp=$(date +"%Y-%m-%d %H:%M:%S")
           
           git add .
