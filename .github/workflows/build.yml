@@ -29,12 +29,11 @@ jobs:
         run: |
           mkdir -p build_output
 
-          mv build/* build_output/
+          mv build/* build_output/build/
           mv nginx/ build_output/nginx/
           mv scripts/ build_output/scripts/
           mv Dockerfile.nginx build_output/Dockerfile
-
-          rm -rf build_output/node_modules/
+          mv .gitignore build_output/.gitignore
 
       - name: Set up Git for commit
         uses: qoomon/actions--setup-git@v1
