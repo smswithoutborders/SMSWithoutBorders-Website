@@ -27,12 +27,14 @@ jobs:
 
       - name: Prepare build for deployment
         run: |
-          rm -rf build/node_modules
           mkdir -p build_output
+
           mv build/* build_output/
-          mv nginx/* build_output/
-          mv scripts/* build_output/
+          mv nginx/ build_output/nginx/
+          mv scripts/ build_output/scripts/
           mv Dockerfile.nginx build_output/Dockerfile
+
+          rm -rf build_output/node_modules/
 
       - name: Set up Git for commit
         uses: qoomon/actions--setup-git@v1
