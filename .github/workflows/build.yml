@@ -28,7 +28,6 @@ jobs:
       - name: Prepare build for deployment
         run: |
           mkdir -p build
-          mv build/* build/
           rm -rf build/node_modules
           
           cp -r scripts ./
