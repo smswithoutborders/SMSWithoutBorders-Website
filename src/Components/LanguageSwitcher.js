@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IconButton, Menu, MenuItem, Box, Tooltip, Typography } from "@mui/material";
-import LanguageIcon from "@mui/icons-material/Language";
 import Flag from "react-world-flags";
 
 const LanguageSwitcher = () => {
 	const { i18n } = useTranslation();
 	const [anchorEl, setAnchorEl] = useState(null);
 
-	const handleMenuOpen = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleMenuClose = () => {
-		setAnchorEl(null);
-	};
+	const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
+	const handleMenuClose = () => setAnchorEl(null);
 
 	const handleLanguageChange = (lang) => {
 		i18n.changeLanguage(lang);
@@ -35,34 +29,36 @@ const LanguageSwitcher = () => {
 			<Tooltip title="Change Language" arrow>
 				<IconButton
 					onClick={handleMenuOpen}
+					disableRipple
 					sx={{
 						backgroundColor: "#000158",
 						color: "#FFFFFF",
-						padding: "8px 12px",
-						borderRadius: "8px",
+						px: 2,
+						py: 1,
+						borderRadius: 2,
 						display: "flex",
 						alignItems: "center",
-						gap: "8px"
+						gap: 1,
+						"&:hover": { backgroundColor: "#000158" }
 					}}
 				>
-					<LanguageIcon />
-					<Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
+					<Flag
+						code={languageLabels[currentLang]?.flag || "US"}
+						style={{ width: 24, height: 16, borderRadius: 2 }}
+					/>
+					<Typography sx={{ fontSize: { xs: "0.8rem", sm: "0.9rem" }, fontWeight: 500 }}>
 						{languageLabels[currentLang]?.label || "Language"}
 					</Typography>
 				</IconButton>
 			</Tooltip>
+
 			<Menu
 				anchorEl={anchorEl}
 				open={Boolean(anchorEl)}
 				onClose={handleMenuClose}
 				PaperProps={{
 					elevation: 3,
-					sx: {
-						minWidth: "160px",
-						borderRadius: "8px",
-						padding: "4px 0",
-						backgroundColor: "#FFFFFF"
-					}
+					sx: { minWidth: 180, borderRadius: 2, p: "4px 0", bgcolor: "#FFFFFF" }
 				}}
 			>
 				{Object.keys(languageLabels).map((lang) => (
@@ -72,17 +68,14 @@ const LanguageSwitcher = () => {
 						sx={{
 							display: "flex",
 							alignItems: "center",
-							gap: "12px",
-							padding: "8px 16px"
+							gap: 1.5,
+							px: 2,
+							py: 1
 						}}
 					>
 						<Flag
 							code={languageLabels[lang].flag}
-							style={{
-								width: 24,
-								height: 16,
-								borderRadius: "4px"
-							}}
+							style={{ width: 24, height: 16, borderRadius: 2 }}
 						/>
 						<Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
 							{languageLabels[lang].label}

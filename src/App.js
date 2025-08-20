@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./Pages/Landing";
 import PageNotFound from "./Pages/PageNotFound";
-import Footer from "./Components/Footer";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Privacy from "./Pages/Privacy";
 
@@ -19,7 +18,6 @@ function App() {
 						<Route path="*" element={<PageNotFound />} />
 						<Route path="/privacy-policy/" element={<Privacy />} />
 					</Routes>
-					<Footer />
 				</div>
 			</ThemeProvider>
 		</Router>
