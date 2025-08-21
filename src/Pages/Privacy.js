@@ -1,777 +1,736 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import CssBaseline from "@mui/material/CssBaseline";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import { createTheme } from "@mui/material/styles";
+import {
+	AppBar,
+	Toolbar,
+	Button,
+	Box,
+	IconButton,
+	Drawer,
+	List,
+	ListItem,
+	ListItemButton,
+	ListItemText,
+	Divider,
+	Container
+} from "@mui/material";
 import ReactHtmlParser from "react-html-parser";
-import AppBar from "@mui/material/AppBar";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
-import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Typography from "@mui/material/Typography";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
-import "../App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "../App.css";
 
 const theme = createTheme({
 	typography: {
-		fontFamily: "Roboto, sans-serif"
+		fontFamily: "'Mona Sans'"
 	}
 });
+
+const links = [
+	{ label: "Home", href: "/" },
+	{ label: "Blog", href: "https://blog.smswithoutborders.com/" },
+	{ label: "Documentation", href: "https://docs.smswithoutborders.com/" },
+	{ label: "RelaySMS", href: "https://relay.smswithoutborders.com/" },
+	{ label: "DekuSMS", href: "https://Dekusms.com/" },
+	{ label: "Privacy", href: "/privacy-policy" }
+];
 
 export default function FixedContainer() {
 	const { t, i18n } = useTranslation();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
-	useEffect(() => {
-		AOS.init({
-			duration: 1200,
-			once: true
-		});
-	}, []);
-
-	const [anchorEl, setAnchorEl] = React.useState(null);
-	const open = Boolean(anchorEl);
-
-	const handleMenu = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
-
-	useEffect(() => {
-		AOS.init({
-			duration: 1200,
-			once: true
-		});
-	}, []);
-
 	const isFarsi = i18n.language === "fa";
 
-	return (
-		<ThemeProvider theme={theme}>
-			<React.Fragment>
-				<CssBaseline />
+	const [scroll, setScroll] = useState(false);
+	const [drawerOpen, setDrawerOpen] = useState(false);
 
-				{/* ============== Navbar ================= */}
-				<AppBar
-					position="fixed"
+	useEffect(() => {
+		const handleScroll = () => setScroll(window.scrollY > 10);
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	useEffect(() => {
+		AOS.init({ duration: 1200, once: true });
+	}, []);
+
+	const toggleDrawer = () => setDrawerOpen(!drawerOpen);
+
+	const handleLinkClick = () => {
+		if (isMobile) setDrawerOpen(false);
+	};
+
+	return (
+		<Box
+			id="home"
+			sx={{
+				minHeight: "100vh",
+				fontFamily: "'Unbounded', 'Mona Sans'",
+				display: "flex",
+				flexDirection: "column",
+				justifyContent: "center",
+				alignItems: { xs: "center", md: "flex-start" },
+				px: { xs: 3, sm: 6, md: 12 },
+				pt: { xs: 4, sm: 6, md: 8 },
+				pb: { xs: 4, sm: 6, md: 8 },
+				background: "#f1f4f78a"
+			}}
+		>
+			{/* ================= Navbar ================= */}
+			<AppBar
+				position="fixed"
+				sx={{
+					bgcolor: scroll ? "#f1f4f7f5" : "transparent",
+					color: "#02397ce3",
+					boxShadow: scroll ? 4 : 0,
+					py: { xs: 0.2, sm: 0.5 },
+					direction: isFarsi ? "rtl" : "ltr",
+					transition: "background-color 0.3s ease, box-shadow 0.3s ease",
+					zIndex: 1400,
+					fontFamily: "'Mona Sans'"
+				}}
+			>
+				<Toolbar
 					sx={{
-						backgroundSize: "cover",
-						backgroundPosition: "center",
-						backgroundColor: "#1c222c",
-						backgroundBlendMode: "overlay",
-						direction: isFarsi ? "rtl" : "ltr"
+						display: "flex",
+						justifyContent: "space-between",
+						px: { xs: 2, sm: 4, md: 6 },
+						minHeight: { xs: 48, sm: 56, md: 66 }
 					}}
 				>
-					<Toolbar
+					<Box sx={{ width: { xs: "0", md: "100px" } }} />
+
+					<Box
 						sx={{
-							justifyContent: isMobile ? "center" : "space-between",
-							minHeight: { xs: 60, sm: 70 }
+							display: { xs: "none", md: "flex" },
+							alignItems: "center",
+							gap: { xs: 1, sm: 2, md: 3 }
 						}}
 					>
-						<Typography variant="h6" sx={{ flexGrow: 1 }}></Typography>
-						{isMobile ? (
-							<>
-								<IconButton
-									edge="start"
-									color="inherit"
-									aria-label="menu"
-									onClick={handleMenu}
-									sx={{ ml: "auto" }}
-								>
-									<MenuIcon />
-								</IconButton>
-								<Menu
-									anchorEl={anchorEl}
-									open={open}
-									onClose={handleClose}
-									PaperProps={{
-										style: {
-											width: "80%",
-											maxWidth: "none",
-											fontSize: "14px",
-											fontWeight: "500"
-										}
-									}}
-									MenuListProps={{
-										sx: {
-											p: 0,
-											display: "flex",
-											flexDirection: "column",
-											alignItems: "center"
-										}
-									}}
-								>
-									<MenuItem
-										onClick={handleClose}
-										sx={{
-											"&:hover": {
-												color: "#c08507"
-											}
-										}}
-										component="a"
-										href="/"
-										rel="noopener noreferrer"
-									>
-										{t("navbar.link")}
-									</MenuItem>
-									<MenuItem
-										onClick={handleClose}
-										sx={{
-											"&:hover": {
-												color: "#c08507"
-											}
-										}}
-										component="a"
-										href="https://blog.smswithoutborders.com/"
-										rel="noopener noreferrer"
-									>
-										{t("navbar.link1")}
-									</MenuItem>
+						{links.map((link, i) => (
+							<Button
+								key={i}
+								href={link.href}
+								color="inherit"
+								sx={{
+									fontFamily: "'Mona Sans'",
+									textTransform: "none",
+									fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.3rem" },
+									transition: "all 0.1s ease",
+									"&:hover": { borderBottom: "3px solid #FF8614" },
+									borderBottom: "none"
+								}}
+							>
+								{link.label}
+							</Button>
+						))}
 
-									<MenuItem
-										onClick={handleClose}
-										sx={{
-											"&:hover": {
-												color: "#c08507"
-											}
-										}}
-										component="a"
-										href="https://relay.smswithoutborders.com/"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										{t("navbar.link2")}
-									</MenuItem>
-									<MenuItem
-										onClick={handleClose}
-										sx={{
-											"&:hover": {
-												color: "#c08507"
-											}
-										}}
-										component="a"
-										href="https://github.com/deku-messaging/Deku-SMS-Android"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										{t("navbar.link3")}
-									</MenuItem>
-									<MenuItem
-										onClick={handleClose}
-										sx={{
-											"&:hover": {
-												color: "#c08507"
-											}
-										}}
-										component="a"
-										href="/privacy-policy"
-										rel="noopener noreferrer"
-									>
-										{t("navbar.link4")}
-									</MenuItem>
-									<MenuItem
-										sx={{
-											"&:hover": {
-												color: "#c08507"
-											}
-										}}
-									>
-										<LanguageSwitcher />
-									</MenuItem>
-								</Menu>
-							</>
-						) : (
-							<>
-								<MenuItem
-									onClick={handleClose}
-									sx={{
-										fontSize: "1rem",
-										"&:hover": {
-											color: "#c08507"
-										}
-									}}
-									component="a"
-									href="/"
-									rel="noopener noreferrer"
-								>
-									{t("navbar.link")}
-								</MenuItem>
-								<MenuItem
-									onClick={handleClose}
-									sx={{
-										fontSize: "1rem",
-										"&:hover": {
-											color: "#c08507"
-										}
-									}}
-									component="a"
-									href="https://blog.smswithoutborders.com/"
-									rel="noopener noreferrer"
-								>
-									{t("navbar.link1")}
-								</MenuItem>
-								<MenuItem
-									onClick={handleClose}
-									sx={{
-										fontSize: "1rem",
-										"&:hover": {
-											color: "#c08507"
-										}
-									}}
-									component="a"
-									href="https://relay.smswithoutborders.com/"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									{t("navbar.link2")}
-								</MenuItem>
-								<MenuItem
-									onClick={handleClose}
-									sx={{
-										fontSize: "1rem",
-										"&:hover": {
-											color: "#c08507"
-										}
-									}}
-									component="a"
-									href="https://github.com/deku-messaging/Deku-SMS-Android"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									{t("navbar.link3")}
-								</MenuItem>
-								<MenuItem
-									onClick={handleClose}
-									sx={{
-										fontSize: "1rem",
-										"&:hover": {
-											color: "#c08507"
-										}
-									}}
-									component="a"
-									href="/privacy-policy"
-									rel="noopener noreferrer"
-								>
-									{t("navbar.link4")}
-								</MenuItem>
-								<MenuItem
-									sx={{
-										fontSize: "1rem"
-									}}
-								>
-									<LanguageSwitcher />
-								</MenuItem>
-							</>
-						)}
-					</Toolbar>
-				</AppBar>
-
-				<Box sx={{ pt: 8 }}>
-					<Container maxWidth={false} disableGutters>
-						{/* ============================================= Privacy Policy Section ===================================================== */}
-						<Box
-							sx={{
-								minHeight: "70vh",
-								py: { xs: 2, sm: 4, md: 5 },
-								overflow: "hidden",
-								textAlign: "center",
-								px: { xs: 0.1, sm: 1, md: 15 },
-								margin: { xs: 1, sm: 2, md: 1 },
-								direction: isFarsi ? "rtl" : "ltr"
-							}}
-							data-aos="fade-up"
+						<Button
+							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							color="inherit"
+							sx={{ minWidth: "auto", p: 0 }}
+							aria-label="GitHub"
 						>
-							<Box sx={{ mt: 6, px: { xs: 1, sm: 2, md: 3 } }}>
-								<Box
-									sx={{
-										fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										marginBottom: { xs: "40px", sm: "60px", md: "60px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy.policyHeader")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy.policySubheader")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy.policyBody1")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy.policyBody2")}
-								</Box>
+							<GitHubIcon
+								sx={{ fontSize: { xs: 20, sm: 24, md: 26 }, "&:hover": { color: "#FF8614" } }}
+							/>
+						</Button>
 
-								{/* =========== policy body 2 ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy2.policyHeader2")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										textAlign: "justify",
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy2.policySubheader2")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy2.policyBody2")}
-								</Box>
+						<LanguageSwitcher />
+					</Box>
 
-								{/* =========== policy body 3 ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy3.policyHeader3")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy3.policyBody3")}
-								</Box>
+					<IconButton
+						color="inherit"
+						edge="end"
+						onClick={toggleDrawer}
+						sx={{ display: { md: "none" } }}
+					>
+						{drawerOpen ? <CloseIcon /> : <MenuIcon />}
+					</IconButton>
+				</Toolbar>
+			</AppBar>
 
-								<Box
-									component="ul"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										mb: 3,
-										listStyleType: "disc",
-										textAlign: "left"
-									}}
-									data-aos="fade-up"
-								>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionAccount"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionCompany"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionCookies"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionCountry"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionDevice"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionPersonalData"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionService"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionServiceProvider"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionThirdParty"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionUsageData"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionWebsite"))}
-									</Box>
-									<Box component="li" sx={{ mb: 2 }}>
-										{ReactHtmlParser(t("Privacy-Policy3.definitionYou"))}
-									</Box>
-								</Box>
+			{/* ================= Mobile Drawer ================= */}
+			<Drawer
+				anchor={isFarsi ? "left" : "right"}
+				open={drawerOpen}
+				onClose={toggleDrawer}
+				PaperProps={{
+					sx: {
+						width: 260,
+						backgroundColor: "#f9f9f9",
+						p: 2,
+						height: "60vh",
+						overflow: "auto",
+						top: "60px"
+					}
+				}}
+			>
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: "column",
+						justifyContent: "space-between",
+						height: "80%",
+						alignItems: "stretch"
+					}}
+				>
+					<Box sx={{ display: "flex", justifyContent: isFarsi ? "flex-end" : "flex-start", mb: 2 }}>
+						<img
+							src="/SWOB-Default.png"
+							alt="SMSWithoutBorders"
+							style={{ height: 30, width: "auto" }}
+						/>
+					</Box>
 
-								{/* =========== Policy Body 4 Section ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy4.policyHeader4")}
-								</Box>
+					<Divider sx={{ my: 1, borderColor: "#000158" }} />
 
-								{/* =========== Policy Body 5 Section ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
+					<List>
+						{links.map((link, i) => (
+							<ListItem key={i} disablePadding>
+								<ListItemButton
+									component="a"
+									href={link.href}
+									onClick={handleLinkClick}
+									sx={{ borderRadius: 1, mb: 1, "&:hover": { bgcolor: "#e6e6e6" }, px: 2 }}
 								>
-									{t("Privacy-Policy5.policyHeader5")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy5.policyBody5")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy5.policyBody6")}
-								</Box>
+									<ListItemText
+										primary={link.label}
+										primaryTypographyProps={{
+											fontFamily: "'Mona Sans'",
+											fontSize: "1rem",
+											fontWeight: 500,
+											textAlign: isFarsi ? "right" : "left",
+											color: "#000158"
+										}}
+									/>
+								</ListItemButton>
+							</ListItem>
+						))}
+					</List>
 
-								{/* =========== Policy Body 6 Section ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy6.policyHeader6")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy6.policyBody7")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy6.policyBody8")}
-								</Box>
+					<Divider sx={{ my: 1, borderColor: "#000158" }} />
 
-								{/* =========== Policy Body 7 Section ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy7.policyHeader7")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy7.policyBody9")}
-								</Box>
+					<Box
+						sx={{ display: "flex", flexDirection: "column", alignItems: "start", gap: 2, mb: 1 }}
+					>
+						<Button
+							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							sx={{
+								minWidth: "auto",
+								p: 1,
+								bgcolor: "#000158",
+								color: "#fff",
+								"&:hover": { bgcolor: "#FF8614" },
+								borderRadius: 1
+							}}
+						>
+							<GitHubIcon />
+						</Button>
+						<LanguageSwitcher />
+					</Box>
+				</Box>
+			</Drawer>
 
-								{/* =========== Policy Body 8 Section ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy8.policyHeader8")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy8.policyBody10")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy8.policyBody11")}
-								</Box>
+			{/* ================= Main Content ================= */}
+			<Box sx={{ pt: 8 }}>
+				<Container maxWidth={false} disableGutters>
+					<Box
+						sx={{
+							minHeight: "70vh",
+							py: { xs: 2, sm: 4, md: 5 },
+							overflow: "hidden",
+							textAlign: "center",
+							px: { xs: 0.1, sm: 1, md: 15 },
+							margin: { xs: 1, sm: 2, md: 1 },
+							direction: isFarsi ? "rtl" : "ltr"
+						}}
+						data-aos="fade-up"
+					>
+						<Box sx={{ mt: 6, px: { xs: 1, sm: 2, md: 3 } }}>
+							<Box
+								sx={{
+									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									marginBottom: { xs: "40px", sm: "60px", md: "60px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy.policyHeader")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy.policySubheader")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy.policyBody1")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy.policyBody2")}
+							</Box>
 
-								{/* =========== Policy Body 9 Section ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy9.policyHeader9")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy9.policyBody12")}
-								</Box>
+							{/* =========== policy body 2 ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy2.policyHeader2")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									textAlign: "justify",
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy2.policySubheader2")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy2.policyBody2")}
+							</Box>
 
-								{/* =========== Policy Body 10 Section ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy10.policyHeader10")}
-								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy10.policyBody14")}
-								</Box>
+							{/* =========== policy body 3 ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy3.policyHeader3")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy3.policyBody3")}
+							</Box>
 
-								{/* =========== Policy Body 11 Section ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy11.policyHeader11")}
+							<Box
+								component="ul"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									mb: 3,
+									listStyleType: "disc",
+									textAlign: "left"
+								}}
+								data-aos="fade-up"
+							>
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionAccount"))}
 								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{t("Privacy-Policy11.policyBody15")}
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionCompany"))}
 								</Box>
-
-								{/* =========== Policy Body 12 Section ======== */}
-								<Box
-									sx={{
-										fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-										fontWeight: 500,
-										color: "#041c94",
-										letterSpacing: 1.5,
-										textAlign: "justify",
-										marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-										marginTop: { xs: "20px", sm: "30px", md: "30px" }
-									}}
-									data-aos="fade-left"
-								>
-									{t("Privacy-Policy12.policyHeader12")}
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionCookies"))}
 								</Box>
-								<Box
-									component="p"
-									sx={{
-										fontSize: { xs: "1rem", sm: "1.25rem", md: "1rem" },
-										color: "#2b3343",
-										lineHeight: 2,
-										textAlign: "justify",
-										mb: 3,
-										px: { xs: 2, sm: 3 }
-									}}
-									data-aos="fade-up"
-								>
-									{ReactHtmlParser(t("Privacy-Policy12.policyBody16"))}
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionCountry"))}
+								</Box>
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionDevice"))}
+								</Box>
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionPersonalData"))}
+								</Box>
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionService"))}
+								</Box>
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionServiceProvider"))}
+								</Box>
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionThirdParty"))}
+								</Box>
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionUsageData"))}
+								</Box>
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionWebsite"))}
+								</Box>
+								<Box component="li" sx={{ mb: 2 }}>
+									{ReactHtmlParser(t("Privacy-Policy3.definitionYou"))}
 								</Box>
 							</Box>
+
+							{/* =========== Policy Body 4 Section ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy4.policyHeader4")}
+							</Box>
+
+							{/* =========== Policy Body 5 Section ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy5.policyHeader5")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy5.policyBody5")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy5.policyBody6")}
+							</Box>
+
+							{/* =========== Policy Body 6 Section ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy6.policyHeader6")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy6.policyBody7")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy6.policyBody8")}
+							</Box>
+
+							{/* =========== Policy Body 7 Section ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy7.policyHeader7")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy7.policyBody9")}
+							</Box>
+
+							{/* =========== Policy Body 8 Section ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy8.policyHeader8")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy8.policyBody10")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy8.policyBody11")}
+							</Box>
+
+							{/* =========== Policy Body 9 Section ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy9.policyHeader9")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy9.policyBody12")}
+							</Box>
+
+							{/* =========== Policy Body 10 Section ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy10.policyHeader10")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy10.policyBody14")}
+							</Box>
+
+							{/* =========== Policy Body 11 Section ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy11.policyHeader11")}
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+								data-aos="fade-up"
+							>
+								{t("Privacy-Policy11.policyBody15")}
+							</Box>
+
+							{/* =========== Policy Body 12 Section ======== */}
+							<Box
+								sx={{
+									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontWeight: 500,
+									color: "#041c94",
+									letterSpacing: 1.5,
+									textAlign: "justify",
+									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
+									marginTop: { xs: "20px", sm: "30px", md: "30px" }
+								}}
+								data-aos="fade-left"
+							>
+								{t("Privacy-Policy12.policyHeader12")}
+							</Box>
+							<Box
+								component="h6"
+								sx={{
+									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									color: "#2b3343",
+									lineHeight: 2,
+									textAlign: "justify",
+									mb: 3,
+									px: { xs: 2, sm: 3 }
+								}}
+							>
+								{ReactHtmlParser(t("Privacy-Policy12.policyBody16") || "")}
+							</Box>
 						</Box>
-					</Container>
-				</Box>
-			</React.Fragment>
-		</ThemeProvider>
+					</Box>
+				</Container>
+			</Box>
+		</Box>
 	);
 }
