@@ -31,7 +31,7 @@ const LanguageSwitcher = () => {
 					onClick={handleMenuOpen}
 					disableRipple
 					sx={{
-						backgroundColor: "#000158",
+						backgroundColor: "#071F74",
 						color: "#FFFFFF",
 						px: 2,
 						py: 1,

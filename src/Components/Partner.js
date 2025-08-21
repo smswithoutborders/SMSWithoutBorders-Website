@@ -40,7 +40,7 @@ function Partner() {
 		<Box
 			sx={{
 				color: "black",
-				background: "#EEF2FF",
+				background: "#f1f4f78a",
 				py: { md: 8, xs: 10 },
 				px: { md: 18, xs: 2 },
 				direction: isFarsi ? "rtl" : "ltr"

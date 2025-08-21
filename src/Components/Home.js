@@ -19,7 +19,7 @@ const Home = () => {
 				px: { xs: 3, sm: 6, md: 12 },
 				pt: { xs: 4, sm: 6, md: 8 },
 				pb: { xs: 4, sm: 6, md: 8 },
-				bgcolor: "#f9f9f9"
+				background: "#f1f4f78a"
 			}}
 		>
 			<Box
@@ -39,7 +39,7 @@ const Home = () => {
 			<Typography
 				sx={{
 					fontFamily: "'Mona Sans',",
-					color: "#081C74",
+					color: "#071F74",
 					maxWidth: { xs: "90%", sm: "80%", md: "70%" },
 					textAlign: isFarsi ? "right" : "left",
 					fontSize: { xs: "1.4rem", sm: "2rem", md: "2.3rem" },

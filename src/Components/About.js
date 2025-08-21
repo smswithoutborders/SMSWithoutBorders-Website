@@ -12,12 +12,13 @@ const About = () => {
 			id="about"
 			sx={{
 				fontFamily: "'Unbounded', 'Mona Sans'",
-				backgroundColor: "#000158",
-				color: "#FFFFFF",
-				py: { xs: 8, md: 12 },
-				px: { xs: 3, md: 12 },
+				backgroundColor: "#071F74",
+				color: "#d7e2eaff",
+				py: { xs: 10, md: 12 },
+				px: { xs: 6, md: 6, lg: 12 },
 				direction: isFarsi ? "rtl" : "ltr",
-				textAlign: "center"
+				textAlign: "center",
+				minHeight: "60vh"
 			}}
 		>
 			<Typography
@@ -44,8 +45,8 @@ const About = () => {
 					<Grid item xs={12} md={6}>
 						<Typography
 							sx={{
-								fontSize: { xs: "1rem", md: "1.1rem" },
-								lineHeight: 1.8,
+								fontSize: { xs: "1rem", md: "1.5rem" },
+								lineHeight: 2,
 								textAlign: isFarsi ? "right" : "justify"
 							}}
 						>
@@ -55,8 +56,8 @@ const About = () => {
 					<Grid item xs={12} md={6}>
 						<Typography
 							sx={{
-								fontSize: { xs: "1rem", md: "1.1rem" },
-								lineHeight: 1.8,
+								fontSize: { xs: "1rem", md: "1.5rem" },
+								lineHeight: 2,
 								textAlign: isFarsi ? "right" : "justify",
 								mb: 2
 							}}
@@ -66,8 +67,8 @@ const About = () => {
 
 						<Typography
 							sx={{
-								fontSize: { xs: "1rem", md: "1.1rem" },
-								lineHeight: 1.8,
+								fontSize: { xs: "1rem", md: "1.5rem" },
+								lineHeight: 2,
 								textAlign: isFarsi ? "right" : "justify"
 							}}
 						>
@@ -79,8 +80,8 @@ const About = () => {
 				<Box sx={{ mt: 6 }}>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", md: "1.15rem" },
-							lineHeight: 1.8,
+							fontSize: { xs: "1rem", md: "1.5rem" },
+							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify"
 						}}
 					>

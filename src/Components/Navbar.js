@@ -47,13 +47,13 @@ const Navbar = () => {
 			<AppBar
 				position="fixed"
 				sx={{
-					bgcolor: scroll ? "#f9f9f9" : "transparent",
-					color: "#000158",
-					boxShadow: scroll ? 1 : 0,
+					bgcolor: scroll ? "#f1f4f7f5" : "transparent",
+					color: "#02397ce3",
+					boxShadow: scroll ? 4 : 0,
 					py: { xs: 0.2, sm: 0.5 },
 					direction: isFarsi ? "rtl" : "ltr",
 					transition: "background-color 0.3s ease, box-shadow 0.3s ease",
-					zIndex: 1300,
+					zIndex: 1400,
 					fontFamily: "'Mona Sans'"
 				}}
 			>
@@ -62,7 +62,7 @@ const Navbar = () => {
 						display: "flex",
 						justifyContent: "space-between",
 						px: { xs: 2, sm: 4, md: 6 },
-						minHeight: { xs: 48, sm: 56 }
+						minHeight: { xs: 48, sm: 56, md: 66 }
 					}}
 				>
 					<Box sx={{ width: { xs: "0", md: "100px" } }} />
