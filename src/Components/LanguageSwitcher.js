@@ -25,13 +25,14 @@ const LanguageSwitcher = () => {
 	};
 
 	return (
-		<Box sx={{ display: "flex", alignItems: "center" }}>
+		<Box
+			sx={{ backgroundColor: "#04228eff", display: "flex", alignItems: "center", borderRadius: 2 }}
+		>
 			<Tooltip title="Change Language" arrow>
 				<IconButton
 					onClick={handleMenuOpen}
 					disableRipple
 					sx={{
-						backgroundColor: "#071F74",
 						color: "#FFFFFF",
 						px: 2,
 						py: 1,
@@ -39,7 +40,7 @@ const LanguageSwitcher = () => {
 						display: "flex",
 						alignItems: "center",
 						gap: 1,
-						"&:hover": { backgroundColor: "#000158" }
+						"&:hover": { backgroundColor: "#0430b5d6" }
 					}}
 				>
 					<Flag
