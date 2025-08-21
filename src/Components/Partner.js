@@ -43,7 +43,7 @@ function Partner() {
 				px: { xs: 4, sm: 8, md: 15 },
 				textAlign: "center",
 				direction: i18n.language === "fa" ? "rtl" : "ltr",
-				background: "#f1f4f78a",
+				background: "#e8edfec2",
 				minHeight: "60vh"
 			}}
 		>

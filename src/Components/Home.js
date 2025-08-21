@@ -10,16 +10,22 @@ const Home = () => {
 		<Box
 			id="home"
 			sx={{
+				direction: isFarsi ? "rtl" : "ltr",
+				justifyContent: isFarsi ? "left" : "center",
+				textAlign: isFarsi ? "right" : "justify",
 				minHeight: "70vh",
 				fontFamily: "'Unbounded', 'Mona Sans'",
 				display: "flex",
 				flexDirection: "column",
-				justifyContent: "center",
 				alignItems: { xs: "center", md: "flex-start" },
 				px: { xs: 3, sm: 6, md: 12 },
 				pt: { xs: 4, sm: 6, md: 8 },
 				pb: { xs: 4, sm: 6, md: 8 },
-				background: "#f1f4f78a"
+				background: "#f1f4f78a",
+				"@keyframes fadeInUp": {
+					"0%": { opacity: 0, transform: "translateY(20px)" },
+					"100%": { opacity: 1, transform: "translateY(0)" }
+				}
 			}}
 		>
 			<Box
@@ -32,7 +38,10 @@ const Home = () => {
 					height: "auto",
 					mt: { xs: 10, sm: 20, md: 33 },
 					mb: { xs: 3, sm: 4, md: 5 },
-					borderRadius: 2
+					borderRadius: 2,
+					opacity: 0,
+					animation: "fadeInUp 1s ease forwards",
+					animationDelay: "0.3s"
 				}}
 			/>
 
@@ -47,7 +56,11 @@ const Home = () => {
 					fontWeight: 600,
 					letterSpacing: 1,
 					textTransform: "uppercase",
-					lineHeight: 1.3
+					lineHeight: 1.3,
+					opacity: 0,
+					animation: "fadeInUp 1s ease forwards",
+					animationDelay: "0.6s",
+					justifyContent: isFarsi ? "left" : "center"
 				}}
 			>
 				{t("About.About-title")}

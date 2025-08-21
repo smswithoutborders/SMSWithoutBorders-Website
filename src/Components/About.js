@@ -18,7 +18,13 @@ const About = () => {
 				px: { xs: 6, md: 6, lg: 12 },
 				direction: isFarsi ? "rtl" : "ltr",
 				textAlign: "center",
-				minHeight: "60vh"
+				minHeight: "60vh",
+				"@keyframes fadeInSide": {
+					"0%": { opacity: 0, transform: "translateX(-50px)" },
+					"100%": { opacity: 1, transform: "translateX(0)" }
+				},
+				animation: "fadeInSide 1s ease forwards",
+				animationDelay: "0.3s"
 			}}
 		>
 			<Typography
@@ -45,7 +51,7 @@ const About = () => {
 					<Grid item xs={12} md={6}>
 						<Typography
 							sx={{
-								fontSize: { xs: "1rem", md: "1.5rem" },
+								fontSize: { xs: "1rem", md: "1.3rem" },
 								lineHeight: 2,
 								textAlign: isFarsi ? "right" : "justify"
 							}}
@@ -56,7 +62,7 @@ const About = () => {
 					<Grid item xs={12} md={6}>
 						<Typography
 							sx={{
-								fontSize: { xs: "1rem", md: "1.5rem" },
+								fontSize: { xs: "1rem", md: "1.3rem" },
 								lineHeight: 2,
 								textAlign: isFarsi ? "right" : "justify",
 								mb: 2
@@ -67,7 +73,7 @@ const About = () => {
 
 						<Typography
 							sx={{
-								fontSize: { xs: "1rem", md: "1.5rem" },
+								fontSize: { xs: "1rem", md: "1.3rem" },
 								lineHeight: 2,
 								textAlign: isFarsi ? "right" : "justify"
 							}}
@@ -80,7 +86,7 @@ const About = () => {
 				<Box sx={{ mt: 6 }}>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", md: "1.5rem" },
+							fontSize: { xs: "1rem", md: "1.3rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify"
 						}}

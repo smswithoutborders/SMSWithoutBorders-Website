@@ -31,22 +31,21 @@ const theme = createTheme({
 	}
 });
 
-const links = [
-	{ label: "Home", href: "/" },
-	{ label: "Blog", href: "https://blog.smswithoutborders.com/" },
-	{ label: "Documentation", href: "https://docs.smswithoutborders.com/" },
-	{ label: "RelaySMS", href: "https://relay.smswithoutborders.com/" },
-	{ label: "DekuSMS", href: "https://Dekusms.com/" },
-	{ label: "Privacy", href: "/privacy-policy" }
-];
-
 export default function FixedContainer() {
 	const { t, i18n } = useTranslation();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 	const isFarsi = i18n.language === "fa";
-
 	const [scroll, setScroll] = useState(false);
 	const [drawerOpen, setDrawerOpen] = useState(false);
+
+	const links = [
+		{ label: t("navbar.link1"), href: "/" },
+		{ label: t("navbar.link1"), href: "https://blog.smswithoutborders.com/" },
+		{ label: t("navbar.link2"), href: "https://docs.smswithoutborders.com/" },
+		{ label: t("navbar.link3"), href: "https://relay.smswithoutborders.com/" },
+		{ label: t("navbar.link4"), href: "https://Dekusms.com/" },
+		{ label: t("navbar.link5"), href: "/privacy-policy" }
+	];
 
 	useEffect(() => {
 		const handleScroll = () => setScroll(window.scrollY > 10);

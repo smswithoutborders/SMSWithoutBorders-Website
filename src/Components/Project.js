@@ -89,9 +89,7 @@ const Project = () => {
 									height: "100%",
 									display: "flex",
 									flexDirection: "column",
-									boxShadow: 3,
-									borderRadius: 3,
-									border: "1px solid #004ba174"
+									borderRadius: 1
 								}}
 							>
 								<Box
@@ -100,7 +98,8 @@ const Project = () => {
 										gap: 1,
 										p: 2,
 										flexWrap: "wrap",
-										justifyContent: isFarsi ? "flex-start" : "flex-end"
+										justifyContent: isFarsi ? "left" : "right",
+										textAlign: isFarsi ? "right" : "justify"
 									}}
 								>
 									{proj.keyPoints.map((point, idx) => (
@@ -120,10 +119,7 @@ const Project = () => {
 									sx={{
 										display: "flex",
 										justifyContent: "center",
-										alignItems: "center",
-										gap: 1,
-										p: 2,
-										flexWrap: "wrap"
+										alignItems: "center"
 									}}
 								>
 									<CardMedia
@@ -136,7 +132,7 @@ const Project = () => {
 
 								<CardContent
 									sx={{
-										borderTop: "1px solid #004ba174",
+										borderTop: "1px solid #00316943",
 										flexGrow: 1,
 										textAlign: isFarsi ? "right" : "justify",
 										px: { xs: 6, md: 8 }
@@ -161,12 +157,13 @@ const Project = () => {
 									</Typography>
 
 									<Typography
-										variant="h6"
 										sx={{
 											color: "#011832c8",
 											flexGrow: 1,
 											textAlign: isFarsi ? "right" : "justify",
-											px: { xs: 6, md: 2 }
+											px: { xs: 6, md: 2 },
+											fontSize: { xs: "1rem", md: "1.1rem" },
+											lineHeight: 2
 										}}
 									>
 										{proj.description}
