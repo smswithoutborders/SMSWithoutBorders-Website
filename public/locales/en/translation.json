@@ -40,17 +40,6 @@
 		"Sponsor-subheader": "This Organizations helps keep SMSWithoutBorders afloat"
 	},
 	"footer": {
-		"quickLinks": "Quick Links",
-		"community": "Community",
-		"downloads": "Downloads",
-		"blog": "Blog",
-		"documentation": "Documentation",
-		"privacyPolicy": "Privacy Policy",
-		"github": "GitHub",
-		"twitter": "Twitter",
-		"telegram": "Telegram",
-		"relaySMS": "RelaySMS",
-		"dekuSMS": "DekuSMS",
 		"copyright": "© Afkanerd."
 	},
 	"social": {

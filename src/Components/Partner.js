@@ -39,22 +39,25 @@ function Partner() {
 	return (
 		<Box
 			sx={{
-				color: "black",
+				py: 6,
+				px: { xs: 4, sm: 8, md: 15 },
+				textAlign: "center",
+				direction: i18n.language === "fa" ? "rtl" : "ltr",
 				background: "#f1f4f78a",
-				py: { md: 8, xs: 10 },
-				px: { md: 18, xs: 2 },
-				direction: isFarsi ? "rtl" : "ltr"
+				minHeight: "60vh"
 			}}
 		>
 			<Typography
 				sx={{
+					margin: "50px auto",
 					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.2rem" },
 					mb: 4,
 					fontWeight: 600,
 					letterSpacing: 1,
 					color: "#FF8614",
 					textTransform: "uppercase",
-					textAlign: "center"
+					textAlign: "center",
+					direction: isFarsi ? "rtl" : "ltr"
 				}}
 			>
 				{t("Sponsor.SponsorT")}
@@ -65,18 +68,29 @@ function Partner() {
 				sx={{
 					fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 					mb: 12,
-					color: "#034983",
+					color: "#01254ec8",
 					maxWidth: 700,
 					margin: "0 auto",
 					fontWeight: 300,
 					letterSpacing: 1,
-					textAlign: "center"
+					textAlign: "center",
+					direction: isFarsi ? "rtl" : "ltr"
 				}}
 			>
 				{t("Sponsor.Sponsor-subheader")}
 			</Typography>
 
-			<Grid container spacing={4} justifyContent="center" alignItems="center">
+			<Grid
+				container
+				spacing={4}
+				justifyContent="center"
+				alignItems="center"
+				sx={{
+					px: { xs: 2, sm: 4, md: 10 },
+					margin: "50px auto",
+					direction: isFarsi ? "rtl" : "ltr"
+				}}
+			>
 				<LogoItem href="https://www.opentech.fund/" imgSrc="/OTF.png" altText="Open Tech Fund" />
 				<LogoItem href="https://internews.org/" imgSrc="/Internews.png" altText="Internews" />
 			</Grid>

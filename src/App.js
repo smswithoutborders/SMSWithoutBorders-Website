@@ -4,6 +4,7 @@ import Landing from "./Pages/Landing";
 import PageNotFound from "./Pages/PageNotFound";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Privacy from "./Pages/Privacy";
+import Footer from "./Components/Footer";
 
 const theme = createTheme();
 
@@ -19,6 +20,7 @@ function App() {
 						<Route path="/privacy-policy/" element={<Privacy />} />
 					</Routes>
 				</div>
+				<Footer />
 			</ThemeProvider>
 		</Router>
 	);

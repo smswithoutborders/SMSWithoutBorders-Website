@@ -1,25 +1,50 @@
 import React from "react";
-import { Box, Card, CardContent, Typography, Button, Grid } from "@mui/material";
+import { Box, Typography, Grid, Card, CardMedia, CardContent, Chip } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
-const About = () => {
+const Project = () => {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
+	const projects = [
+		{
+			id: 1,
+			src: "/RelaySms.png",
+			subTitle: t("projects.one.subtitle"),
+			image: "/relaysms.png",
+			keyPoints: [t("project1.keyPoint1"), t("project1.keyPoint2")],
+			description: t("project1.description"),
+			website: t("project1.read_more"),
+			chipBg: "#FF8614",
+			chipColor: "#02334bff"
+		},
+		{
+			id: 2,
+			src: "/DekuSms.png",
+			image: "/dekusms.png",
+			keyPoints: [t("project2.keyPoint1"), t("project2.keyPoint2")],
+			description: t("project2.description"),
+			website: t("project2.read_more"),
+			chipBg: "#2CD4B4",
+			chipColor: "#02334bff"
+		}
+	];
+
 	return (
 		<Box
-			id="project"
 			sx={{
-				fontFamily: "'Unbounded', 'Mona Sans'",
-				py: { xs: 8, md: 12 },
-				px: { xs: 3, md: 12 },
-				direction: isFarsi ? "rtl" : "ltr",
+				py: 6,
+				px: { xs: 4, sm: 8, md: 15 },
 				textAlign: "center",
+				direction: i18n.language === "fa" ? "rtl" : "ltr",
 				background: "#f1f4f78a"
 			}}
 		>
 			<Typography
+				variant="h4"
+				fontWeight="bold"
+				gutterBottom
 				sx={{
 					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.5rem" },
 					mb: 6,
@@ -29,7 +54,24 @@ const About = () => {
 					textTransform: "uppercase"
 				}}
 			>
-				{t("subheader")}
+				{t("projects_title")}
+			</Typography>
+			<Typography
+				variant="subtitle1"
+				color="text.secondary"
+				mb={4}
+				sx={{
+					fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+					mb: 12,
+					color: "#01254ec8",
+					maxWidth: 700,
+					margin: "0 auto",
+					fontWeight: 300,
+					letterSpacing: 1,
+					textAlign: "center"
+				}}
+			>
+				{t("projects_subtitle")}
 			</Typography>
 
 			<Box
@@ -39,72 +81,39 @@ const About = () => {
 					direction: isFarsi ? "rtl" : "ltr"
 				}}
 			>
-				<Grid container spacing={18} justifyContent="center">
-					<Grid item xs={12} md={6}>
-						<Card
-							sx={{
-								borderRadius: 1,
-								overflow: "hidden",
-								boxShadow: 4,
-								width: "80%",
-								flexDirection: "column",
-								border: "1px solid #0345d454"
-							}}
-						>
-							<CardContent
+				<Grid container spacing={20} justifyContent="center">
+					{projects.map((proj) => (
+						<Grid item xs={12} md={6} key={proj.id}>
+							<Card
 								sx={{
-									flexGrow: 1,
-									width: "100%",
-									textAlign: "justify",
+									height: "100%",
 									display: "flex",
 									flexDirection: "column",
-									gap: 2,
-									p: 8
+									boxShadow: 3,
+									borderRadius: 3,
+									border: "1px solid #004ba174"
 								}}
 							>
 								<Box
 									sx={{
 										display: "flex",
-										justifyContent: "flex-end",
+										gap: 1,
+										p: 2,
 										flexWrap: "wrap",
-										gap: 1.5,
-										mb: 2
+										justifyContent: isFarsi ? "flex-start" : "flex-end"
 									}}
 								>
-									<Button
-										variant="outlined"
-										size="small"
-										sx={{
-											color: "#02397ce3",
-											bgcolor: "#FF8614",
-											fontWeight: 600,
-											borderRadius: "20px",
-											textTransform: "none",
-											px: 2,
-											"&:hover": {
-												opacity: 0.85
-											}
-										}}
-									>
-										{t("project1.keyPoint1")}
-									</Button>
-									<Button
-										variant="outlined"
-										size="small"
-										sx={{
-											color: "#02397ce3",
-											bgcolor: "#FF8614",
-											fontWeight: 600,
-											borderRadius: "20px",
-											textTransform: "none",
-											px: 2,
-											"&:hover": {
-												opacity: 0.85
-											}
-										}}
-									>
-										{t("project1.keyPoint2")}
-									</Button>
+									{proj.keyPoints.map((point, idx) => (
+										<Chip
+											key={idx}
+											label={point}
+											sx={{
+												backgroundColor: proj.chipBg,
+												color: proj.chipColor,
+												fontWeight: "bold"
+											}}
+										/>
+									))}
 								</Box>
 
 								<Box
@@ -112,220 +121,91 @@ const About = () => {
 										display: "flex",
 										justifyContent: "center",
 										alignItems: "center",
-										borderBottom: "1px solid #0345d454"
+										gap: 1,
+										p: 2,
+										flexWrap: "wrap"
 									}}
 								>
-									<Box
+									<CardMedia
 										component="img"
-										src="/relaysms.png"
-										alt="title"
+										image={proj.image}
+										alt={proj.title}
 										sx={{ width: { xs: "50%", md: "40%" }, height: "auto" }}
 									/>
 								</Box>
 
-								<Box
+								<CardContent
 									sx={{
-										pt: 2
+										borderTop: "1px solid #004ba174",
+										flexGrow: 1,
+										textAlign: isFarsi ? "right" : "justify",
+										px: { xs: 6, md: 8 }
 									}}
 								>
-									<Box
+									<Typography
+										variant="h6"
+										fontWeight="bold"
+										gutterBottom
 										sx={{
-											display: "flex",
-											justifyContent: {
-												xs: "center",
-												md: isFarsi ? "flex-end" : "flex-start"
-											}
+											color: "#01254ec8",
+											flexGrow: 1,
+											textAlign: isFarsi ? "right" : "justify",
+											px: { xs: 6, md: 2 }
 										}}
 									>
 										<Box
 											component="img"
-											src="/RelaySms.png"
+											src={proj.src}
 											sx={{ width: 180, height: "auto", mb: 3 }}
 										/>
-									</Box>
-
-									<Typography
-										variant="p"
-										sx={{
-											color: "#013057ff",
-											lineHeight: 1.9,
-											fontSize: "1.2rem"
-										}}
-									>
-										{t("project1.description")}
 									</Typography>
 
-									<Box
+									<Typography
+										variant="h6"
 										sx={{
-											display: "flex",
+											color: "#011832c8",
+											flexGrow: 1,
+											textAlign: isFarsi ? "right" : "justify",
+											px: { xs: 6, md: 2 }
+										}}
+									>
+										{proj.description}
+									</Typography>
+
+									<Typography
+										variant="h6"
+										sx={{
+											textTransform: "none",
+											color: "#011832c8",
+											flexGrow: 1,
+											textAlign: isFarsi ? "right" : "justify",
+											px: { xs: 6, md: 2 },
 											pt: 2,
-											justifyContent: { xs: "center", md: isFarsi ? "flex-end" : "flex-start" }
+											cursor: "pointer",
+											display: "inline-flex",
+											alignItems: "center",
+											"&:hover": {
+												color: "#FF8614"
+											}
 										}}
 									>
-										<Button
-											size="small"
+										{proj.website}{" "}
+										<ArrowOutwardIcon
+											fontSize="small"
 											sx={{
-												color: "#025ba3ff",
-												fontWeight: 700,
-												textTransform: "none"
+												ml: 0.5,
+												color: "#066a9bff"
 											}}
-											endIcon={<ArrowOutwardIcon />}
-											target="_blank"
-											href="https://example.com"
-										>
-											{t("Projects.visitWebsite")}
-										</Button>
-									</Box>
-								</Box>
-							</CardContent>
-						</Card>
-					</Grid>
-
-					{/* -----------==============================================----------Deku sms ------=========================================================--------------------- */}
-					<Grid item xs={12} md={6}>
-						<Card
-							sx={{
-								borderRadius: 1,
-								overflow: "hidden",
-								boxShadow: 4,
-								width: "80%",
-								flexDirection: "column",
-								border: "1px solid #0345d454"
-							}}
-						>
-							<CardContent
-								sx={{
-									flexGrow: 1,
-									width: "100%",
-									textAlign: "justify",
-									display: "flex",
-									flexDirection: "column",
-									gap: 2,
-									p: 8
-								}}
-							>
-								<Box
-									sx={{
-										display: "flex",
-										justifyContent: "flex-end",
-										flexWrap: "wrap",
-										gap: 1.5,
-										mb: 2
-									}}
-								>
-									<Button
-										variant="outlined"
-										size="small"
-										sx={{
-											color: "#02397ce3",
-											bgcolor: "#2CD4B4",
-											fontWeight: 600,
-											borderRadius: "20px",
-											textTransform: "none",
-											px: 2,
-											"&:hover": {
-												opacity: 0.85
-											}
-										}}
-									>
-										{t("project1.keyPoint1")}
-									</Button>
-									<Button
-										variant="outlined"
-										size="small"
-										sx={{
-											color: "#02397ce3",
-											bgcolor: "#2CD4B4",
-											fontWeight: 600,
-											borderRadius: "20px",
-											textTransform: "none",
-											px: 2,
-											"&:hover": {
-												opacity: 0.85
-											}
-										}}
-									>
-										{t("project1.keyPoint2")}
-									</Button>
-								</Box>
-
-								<Box
-									sx={{
-										display: "flex",
-										justifyContent: "center",
-										alignItems: "center",
-										borderBottom: "1px solid #0345d454"
-									}}
-								>
-									<Box
-										component="img"
-										src="/dekusms.png"
-										alt="title"
-										sx={{ width: { xs: "50%", md: "40%" }, height: "auto" }}
-									/>
-								</Box>
-
-								<Box
-									sx={{
-										pt: 2
-									}}
-								>
-									<Box
-										sx={{
-											display: "flex",
-											justifyContent: {
-												xs: "center",
-												md: isFarsi ? "flex-end" : "flex-start"
-											}
-										}}
-									>
-										<Box
-											component="img"
-											src="/DekuSms.png"
-											sx={{ width: 180, height: "auto", mb: 3 }}
 										/>
-									</Box>
-
-									<Typography
-										variant="p"
-										sx={{
-											color: "#013057ff",
-											lineHeight: 1.9,
-											fontSize: "1.2rem"
-										}}
-									>
-										{t("project2.description")}
 									</Typography>
-
-									<Box
-										sx={{
-											display: "flex",
-											pt: 2,
-											justifyContent: { xs: "center", md: isFarsi ? "flex-end" : "flex-start" }
-										}}
-									>
-										<Button
-											size="small"
-											sx={{
-												color: "#025ba3ff",
-												fontWeight: 700,
-												textTransform: "none"
-											}}
-											endIcon={<ArrowOutwardIcon />}
-											target="_blank"
-											href="https://example.com"
-										>
-											{t("Projects.visitWebsite")}
-										</Button>
-									</Box>
-								</Box>
-							</CardContent>
-						</Card>
-					</Grid>
+								</CardContent>
+							</Card>
+						</Grid>
+					))}
 				</Grid>
 			</Box>
 		</Box>
 	);
 };
 
-export default About;
+export default Project;
