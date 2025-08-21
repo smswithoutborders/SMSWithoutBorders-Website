@@ -50,7 +50,7 @@ const Navbar = () => {
 					bgcolor: scroll ? "#f9f9f9" : "transparent",
 					color: "#000158",
 					boxShadow: scroll ? 1 : 0,
-					py: { xs: 0.5, sm: 1 },
+					py: { xs: 0.2, sm: 0.5 },
 					direction: isFarsi ? "rtl" : "ltr",
 					transition: "background-color 0.3s ease, box-shadow 0.3s ease",
 					zIndex: 1300,
@@ -61,10 +61,11 @@ const Navbar = () => {
 					sx={{
 						display: "flex",
 						justifyContent: "space-between",
-						px: { xs: 2, sm: 4, md: 6 }
+						px: { xs: 2, sm: 4, md: 6 },
+						minHeight: { xs: 48, sm: 56 }
 					}}
 				>
-					<Box sx={{ width: { xs: "0", md: "150px" } }} />
+					<Box sx={{ width: { xs: "0", md: "100px" } }} />
 
 					<Box
 						sx={{
@@ -81,12 +82,10 @@ const Navbar = () => {
 								sx={{
 									fontFamily: "'Mona Sans'",
 									textTransform: "none",
-									fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-									transition: "all 0.3s ease",
+									fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.3rem" },
+									transition: "all 0.1s ease",
 									"&:hover": {
-										borderBottom: "3px solid #000158",
-										bgcolor: "#FF8614",
-										transform: "scale(1.05)"
+										borderBottom: "3px solid #FF8614"
 									},
 									borderBottom: "none"
 								}}
@@ -101,7 +100,12 @@ const Navbar = () => {
 							sx={{ minWidth: "auto", p: 0 }}
 							aria-label="GitHub"
 						>
-							<GitHubIcon sx={{ fontSize: { xs: 20, sm: 24, md: 28 } }} />
+							<GitHubIcon
+								sx={{
+									fontSize: { xs: 20, sm: 24, md: 26 },
+									"&:hover": { color: "#FF8614" }
+								}}
+							/>
 						</Button>
 
 						<LanguageSwitcher />

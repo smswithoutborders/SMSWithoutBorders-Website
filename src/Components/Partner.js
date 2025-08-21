@@ -1,4 +1,4 @@
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 function Partner() {
@@ -8,14 +8,17 @@ function Partner() {
 	const LogoItem = ({ href, imgSrc, altText }) => (
 		<Grid
 			item
-			md={5}
-			xs={6}
+			md={6}
+			xs={12}
 			component="a"
 			href={href}
 			target="_blank"
+			rel="noopener noreferrer"
 			aria-label={altText}
 			sx={{
-				textAlign: "center"
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center"
 			}}
 		>
 			<Box
@@ -23,7 +26,7 @@ function Partner() {
 				src={imgSrc}
 				alt={altText}
 				sx={{
-					width: { md: "80%", xs: "100%" },
+					width: { md: "70%", xs: "80%" },
 					transition: "transform 0.3s ease-in-out",
 					"&:hover": {
 						transform: "scale(1.05)"
@@ -39,37 +42,41 @@ function Partner() {
 				color: "black",
 				background: "#EEF2FF",
 				py: { md: 8, xs: 10 },
-				px: { md: 18, xs: 2 }
+				px: { md: 18, xs: 2 },
+				direction: isFarsi ? "rtl" : "ltr"
 			}}
 		>
-			{/* Section Title */}
-			<Box
-				varient="h3"
+			<Typography
 				sx={{
-					fontSize: { xs: "2em", sm: "2.2em", md: "2.5em" },
-					fontFamily: "Unbounded, Ubuntu",
-					fontWeight: 400,
+					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.2rem" },
+					mb: 4,
+					fontWeight: 600,
+					letterSpacing: 1,
 					color: "#FF8614",
-					letterSpacing: 1.5,
-					marginBottom: { xs: "40px", sm: "60px", md: "60px" },
-					marginTop: { xs: "20px", sm: "30px", md: "30px" },
-					textAlign: "center",
-					direction: isFarsi ? "rtl" : "ltr"
+					textTransform: "uppercase",
+					textAlign: "center"
 				}}
 			>
 				{t("Sponsor.SponsorT")}
-			</Box>
+			</Typography>
 
-			{/* Partner Logos */}
-			<Grid
-				container
-				spacing={4}
-				justifyContent="center"
-				alignItems="center"
+			<Typography
+				variant="h6"
 				sx={{
-					px: { md: 20, sm: 5, xs: 2 }
+					fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+					mb: 12,
+					color: "#034983",
+					maxWidth: 700,
+					margin: "0 auto",
+					fontWeight: 300,
+					letterSpacing: 1,
+					textAlign: "center"
 				}}
 			>
+				{t("Sponsor.Sponsor-subheader")}
+			</Typography>
+
+			<Grid container spacing={4} justifyContent="center" alignItems="center">
 				<LogoItem href="https://www.opentech.fund/" imgSrc="/OTF.png" altText="Open Tech Fund" />
 				<LogoItem href="https://internews.org/" imgSrc="/Internews.png" altText="Internews" />
 			</Grid>

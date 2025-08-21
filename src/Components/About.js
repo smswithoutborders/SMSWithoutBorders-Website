@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Typography, Box } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import parse from "html-react-parser";
 
@@ -20,44 +20,36 @@ const About = () => {
 				textAlign: "center"
 			}}
 		>
-			{/* Section Header */}
 			<Typography
 				sx={{
 					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.5rem" },
-					mb: 2,
+					mb: 6,
 					fontWeight: 600,
 					letterSpacing: 1,
 					color: "#FF8614",
 					textTransform: "uppercase"
 				}}
 			>
-				{t("About.About-title")}
+				{t("subheader")}
 			</Typography>
 
-			{/* Subheader */}
-			<Typography
-				variant="subtitle1"
+			<Box
 				sx={{
-					mb: 6,
-					color: "#ccc",
-					textAlign: "center"
+					pt: { xs: 6, md: 10 },
+					textAlign: "center",
+					direction: isFarsi ? "rtl" : "ltr"
 				}}
 			>
-				{t("About.description")}
-			</Typography>
-
-			<Container maxWidth="lg">
-				{/* Two Column Text */}
-				<Grid container spacing={4} justifyContent="center">
+				<Grid container spacing={18} justifyContent="center">
 					<Grid item xs={12} md={6}>
 						<Typography
 							sx={{
 								fontSize: { xs: "1rem", md: "1.1rem" },
 								lineHeight: 1.8,
-								textAlign: isFarsi ? "right" : "left"
+								textAlign: isFarsi ? "right" : "justify"
 							}}
 						>
-							{t("About.description1")}
+							{t("About.description")}
 						</Typography>
 					</Grid>
 					<Grid item xs={12} md={6}>
@@ -65,7 +57,18 @@ const About = () => {
 							sx={{
 								fontSize: { xs: "1rem", md: "1.1rem" },
 								lineHeight: 1.8,
-								textAlign: isFarsi ? "right" : "left"
+								textAlign: isFarsi ? "right" : "justify",
+								mb: 2
+							}}
+						>
+							{t("About.description1")}
+						</Typography>
+
+						<Typography
+							sx={{
+								fontSize: { xs: "1rem", md: "1.1rem" },
+								lineHeight: 1.8,
+								textAlign: isFarsi ? "right" : "justify"
 							}}
 						>
 							{t("About.description2")}
@@ -73,19 +76,18 @@ const About = () => {
 					</Grid>
 				</Grid>
 
-				{/* One Row Text Underneath */}
 				<Box sx={{ mt: 6 }}>
 					<Typography
 						sx={{
 							fontSize: { xs: "1rem", md: "1.15rem" },
 							lineHeight: 1.8,
-							textAlign: isFarsi ? "right" : "center"
+							textAlign: isFarsi ? "right" : "justify"
 						}}
 					>
 						{parse(t("About.description3"))}
 					</Typography>
 				</Box>
-			</Container>
+			</Box>
 		</Box>
 	);
 };

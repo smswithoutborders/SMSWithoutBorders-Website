@@ -27,8 +27,8 @@ const Home = () => {
 				src="/SWOB-Default.png"
 				alt="SMS Without Borders"
 				sx={{
-					width: { xs: "100%", sm: "100%", md: "100%" },
-					maxWidth: 900,
+					width: { xs: "60%", sm: "70%", md: "40%" },
+					maxWidth: 800,
 					height: "auto",
 					mt: { xs: 10, sm: 20, md: 33 },
 					mb: { xs: 3, sm: 4, md: 5 },
@@ -39,16 +39,15 @@ const Home = () => {
 			<Typography
 				sx={{
 					fontFamily: "'Mona Sans',",
-					color: "#000158",
-					maxWidth: 800,
-					width: "100%",
-					textAlign: isFarsi ? "right" : { xs: "center", md: "left" },
-					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.75rem" },
-					mb: 3,
-					fontWeight: 700,
+					color: "#081C74",
+					maxWidth: { xs: "90%", sm: "80%", md: "70%" },
+					textAlign: isFarsi ? "right" : "left",
+					fontSize: { xs: "1.4rem", sm: "2rem", md: "2.3rem" },
+					mb: { xs: 2, sm: 3, md: 4 },
+					fontWeight: 600,
 					letterSpacing: 1,
 					textTransform: "uppercase",
-					lineHeight: 1.2
+					lineHeight: 1.3
 				}}
 			>
 				{t("About.About-title")}
