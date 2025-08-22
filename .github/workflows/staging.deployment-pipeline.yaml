@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: staging
-      url: https://staging.smswithoutborders.com:18500
+      url: https://staging.smswithoutborders.com:18600
     steps:
       - name: Execute Remote SSH Commands
         uses: appleboy/ssh-action@master
