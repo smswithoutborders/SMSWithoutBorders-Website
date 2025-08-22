@@ -123,7 +123,6 @@ const Navbar = () => {
 				</Toolbar>
 			</AppBar>
 
-			{/* ================================= Mobile ========================= */}
 			<Drawer
 				anchor={isFarsi ? "left" : "right"}
 				open={drawerOpen}
