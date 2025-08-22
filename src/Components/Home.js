@@ -23,7 +23,8 @@ const Home = () => {
 				px: { xs: 2, sm: 3, md: 10 },
 				py: { xs: 4, sm: 6, md: 8 },
 				justifyContent: "flex-end",
-				alignItems: isFarsi ? "flex-end" : "flex-start"
+				alignItems: isFarsi ? "flex-end" : "flex-start",
+				borderBottom: "1px solid #035db84f,"
 			}}
 		>
 			<Box

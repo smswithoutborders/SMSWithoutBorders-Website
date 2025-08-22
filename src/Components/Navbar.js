@@ -47,14 +47,14 @@ const Navbar = () => {
 			<AppBar
 				position="fixed"
 				sx={{
-					bgcolor: scroll ? "#f1f4f7f5" : "transparent",
+					bgcolor: scroll ? "#f7fbfff5" : "transparent",
 					color: "#02397ce3",
-					boxShadow: scroll ? 4 : 0,
 					py: { xs: 0.2, sm: 0.5 },
 					direction: isFarsi ? "rtl" : "ltr",
-					transition: "background-color 0.3s ease, box-shadow 0.3s ease",
+					transition: "background-color 0.3s ease",
 					zIndex: 1400,
-					fontFamily: "'Mona Sans'"
+					fontFamily: "'Mona Sans'",
+					boxShadow: "none"
 				}}
 			>
 				<Toolbar
