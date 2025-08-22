@@ -5,7 +5,7 @@ function Partner() {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
-	const LogoItem = ({ href, imgSrc, altText }) => (
+	const LogoItem = ({ href, imgSrc, altText, delay }) => (
 		<Grid
 			item
 			md={6}
@@ -18,7 +18,14 @@ function Partner() {
 			sx={{
 				display: "flex",
 				justifyContent: "center",
-				alignItems: "center"
+				alignItems: "center",
+				opacity: 0,
+				animation: "fadeInUp 1s ease forwards",
+				animationDelay: `${delay}s`,
+				"@keyframes fadeInUp": {
+					"0%": { opacity: 0, transform: "translateY(20px)" },
+					"100%": { opacity: 1, transform: "translateY(0)" }
+				}
 			}}
 		>
 			<Box
@@ -39,25 +46,22 @@ function Partner() {
 	return (
 		<Box
 			sx={{
-				py: 6,
-				px: { xs: 4, sm: 8, md: 15 },
+				py: 10,
+				px: { xs: 3, sm: 6, md: 12 },
 				textAlign: "center",
-				direction: i18n.language === "fa" ? "rtl" : "ltr",
-				background: "#f1f4f78a",
-				minHeight: "60vh"
+				direction: isFarsi ? "rtl" : "ltr",
+				background: "linear-gradient(135deg, #f1f4f7aa 0%, #ffffff00 100%)"
 			}}
 		>
 			<Typography
 				sx={{
-					margin: "50px auto",
 					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.2rem" },
 					mb: 4,
 					fontWeight: 600,
 					letterSpacing: 1,
 					color: "#FF8614",
 					textTransform: "uppercase",
-					textAlign: "center",
-					direction: isFarsi ? "rtl" : "ltr"
+					textAlign: "center"
 				}}
 			>
 				{t("Sponsor.SponsorT")}
@@ -73,8 +77,7 @@ function Partner() {
 					margin: "0 auto",
 					fontWeight: 300,
 					letterSpacing: 1,
-					textAlign: "center",
-					direction: isFarsi ? "rtl" : "ltr"
+					textAlign: "center"
 				}}
 			>
 				{t("Sponsor.Sponsor-subheader")}
@@ -82,17 +85,23 @@ function Partner() {
 
 			<Grid
 				container
-				spacing={4}
+				spacing={6}
 				justifyContent="center"
 				alignItems="center"
-				sx={{
-					px: { xs: 2, sm: 4, md: 10 },
-					margin: "50px auto",
-					direction: isFarsi ? "rtl" : "ltr"
-				}}
+				sx={{ px: { xs: 2, sm: 4, md: 10 } }}
 			>
-				<LogoItem href="https://www.opentech.fund/" imgSrc="/OTF.png" altText="Open Tech Fund" />
-				<LogoItem href="https://internews.org/" imgSrc="/Internews.png" altText="Internews" />
+				<LogoItem
+					href="https://www.opentech.fund/"
+					imgSrc="/OTF.png"
+					altText="Open Tech Fund"
+					delay={0.2}
+				/>
+				<LogoItem
+					href="https://internews.org/"
+					imgSrc="/Internews.png"
+					altText="Internews"
+					delay={0.4}
+				/>
 			</Grid>
 		</Box>
 	);

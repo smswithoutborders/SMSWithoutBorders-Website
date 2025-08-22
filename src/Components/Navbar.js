@@ -19,15 +19,15 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
-	const { i18n } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
 	const links = [
-		{ label: "Blog", href: "https://blog.smswithoutborders.com/" },
-		{ label: "Documentation", href: "https://docs.smswithoutborders.com/" },
-		{ label: "RelaySMS", href: "https://relay.smswithoutborders.com/" },
-		{ label: "DekuSMS", href: "https://Dekusms.com/" },
-		{ label: "Privacy", href: "/privacy-policy" }
+		{ label: t("navbar.link1"), href: "https://blog.smswithoutborders.com/" },
+		{ label: t("navbar.link2"), href: "https://docs.smswithoutborders.com/" },
+		{ label: t("navbar.link3"), href: "https://relay.smswithoutborders.com/" },
+		{ label: t("navbar.link4"), href: "https://Dekusms.com/" },
+		{ label: t("navbar.link5"), href: "/privacy-policy" }
 	];
 
 	const [drawerOpen, setDrawerOpen] = useState(false);
@@ -82,7 +82,7 @@ const Navbar = () => {
 								sx={{
 									fontFamily: "'Mona Sans'",
 									textTransform: "none",
-									fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.3rem" },
+									fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
 									transition: "all 0.1s ease",
 									"&:hover": {
 										borderBottom: "3px solid #FF8614"
@@ -102,8 +102,9 @@ const Navbar = () => {
 						>
 							<GitHubIcon
 								sx={{
+									color: "#04228eff",
 									fontSize: { xs: 20, sm: 24, md: 26 },
-									"&:hover": { color: "#FF8614" }
+									"&:hover": { color: "#ff6a14e3" }
 								}}
 							/>
 						</Button>
