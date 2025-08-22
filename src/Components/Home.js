@@ -12,58 +12,47 @@ const Home = () => {
 			id="home"
 			sx={{
 				direction: isFarsi ? "rtl" : "ltr",
-				minHeight: { xs: "60vh", sm: "70vh", md: "100vh", lg: "80vh", xl: "80vh" },
+				height: { xs: "60vh", sm: "70vh", md: "80vh", lg: "80vh", xl: "80vh" },
 				fontFamily: "'Unbounded', 'Mona Sans'",
 				display: "flex",
 				flexDirection: "column",
-				px: { xs: 3, sm: 6, md: 12 },
-				py: { xs: 6, sm: 8, md: 10 },
 				background: "linear-gradient(135deg, #f9fafb, #ffffff)",
 				position: "relative",
 				overflow: "hidden",
-				justifyContent: "flex-end"
+				width: "100%",
+				px: { xs: 2, sm: 3, md: 10 },
+				py: { xs: 4, sm: 6, md: 8 },
+				justifyContent: "flex-end",
+				alignItems: isFarsi ? "flex-end" : "flex-start"
 			}}
 		>
 			<Box
+				component={motion.img}
+				src="/SWOB-Default.png"
+				alt="SMS Without Borders"
+				initial={{ y: -50, opacity: 0 }}
+				animate={{ y: 0, opacity: 1 }}
+				transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
 				sx={{
-					display: "flex",
-					flexDirection: "column",
-					alignItems: isFarsi ? "flex-end" : "flex-start",
-					gap: { xs: 4, sm: 6, md: 8 },
+					width: { xs: "70%", sm: "60%", md: "50%", lg: "45%", xl: "40%" },
+					height: "auto",
+					maxWidth: "100%",
+					objectFit: "contain",
+					mb: { xs: 2, sm: 3, md: 4 }
+				}}
+			/>
+
+			<Typography
+				sx={{
+					fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+					fontWeight: 600,
+					color: "#071f74ef",
 					width: "100%",
-					maxWidth: "900px",
-					mb: { xs: 6, sm: 8, md: 10 }
+					textAlign: isFarsi ? "right" : "left"
 				}}
 			>
-				<motion.img
-					src="/SWOB-Default.png"
-					alt="SMS Without Borders"
-					initial={{ y: -50, opacity: 0 }}
-					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-					style={{
-						width: "70%",
-						height: "auto"
-					}}
-				/>
-
-				<motion.div
-					initial={{ y: 50, opacity: 0 }}
-					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-					style={{ width: "100%", textAlign: isFarsi ? "right" : "left" }}
-				>
-					<Typography
-						sx={{
-							fontSize: { xs: "1.8rem", sm: "2rem", md: "2.3rem" },
-							fontWeight: 600,
-							color: "#071f74ef"
-						}}
-					>
-						{t("About.About-title", "Open Source | Research")}
-					</Typography>
-				</motion.div>
-			</Box>
+				{t("About.About-title", "Open Source | Research")}
+			</Typography>
 		</Box>
 	);
 };
