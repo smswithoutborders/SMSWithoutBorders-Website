@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 const Home = () => {
 	const { t, i18n } = useTranslation();
@@ -11,60 +12,58 @@ const Home = () => {
 			id="home"
 			sx={{
 				direction: isFarsi ? "rtl" : "ltr",
-				justifyContent: isFarsi ? "left" : "center",
-				textAlign: isFarsi ? "right" : "justify",
-				minHeight: "70vh",
+				minHeight: { xs: "60vh", sm: "70vh", md: "100vh", lg: "80vh", xl: "80vh" },
 				fontFamily: "'Unbounded', 'Mona Sans'",
 				display: "flex",
 				flexDirection: "column",
-				alignItems: { xs: "center", md: "flex-start" },
 				px: { xs: 3, sm: 6, md: 12 },
-				pt: { xs: 4, sm: 6, md: 8 },
-				pb: { xs: 4, sm: 6, md: 8 },
-				background: "#f1f4f78a",
-				"@keyframes fadeInUp": {
-					"0%": { opacity: 0, transform: "translateY(20px)" },
-					"100%": { opacity: 1, transform: "translateY(0)" }
-				}
+				py: { xs: 6, sm: 8, md: 10 },
+				background: "linear-gradient(135deg, #f9fafb, #ffffff)",
+				position: "relative",
+				overflow: "hidden",
+				justifyContent: "flex-end"
 			}}
 		>
 			<Box
-				component="img"
-				src="/SWOB-Default.png"
-				alt="SMS Without Borders"
 				sx={{
-					width: { xs: "60%", sm: "70%", md: "40%" },
-					maxWidth: 800,
-					height: "auto",
-					mt: { xs: 10, sm: 20, md: 33 },
-					mb: { xs: 3, sm: 4, md: 5 },
-					borderRadius: 2,
-					opacity: 0,
-					animation: "fadeInUp 1s ease forwards",
-					animationDelay: "0.3s"
-				}}
-			/>
-
-			<Typography
-				sx={{
-					fontFamily: "'Mona Sans',",
-					color: "#071F74",
-					maxWidth: { xs: "90%", sm: "80%", md: "70%" },
-					textAlign: isFarsi ? "right" : "left",
-					fontSize: { xs: "1.4rem", sm: "2rem", md: "2.3rem" },
-					mb: { xs: 2, sm: 3, md: 4 },
-					fontWeight: 600,
-					letterSpacing: 1,
-					textTransform: "uppercase",
-					lineHeight: 1.3,
-					opacity: 0,
-					animation: "fadeInUp 1s ease forwards",
-					animationDelay: "0.6s",
-					justifyContent: isFarsi ? "left" : "center"
+					display: "flex",
+					flexDirection: "column",
+					alignItems: isFarsi ? "flex-end" : "flex-start",
+					gap: { xs: 4, sm: 6, md: 8 },
+					width: "100%",
+					maxWidth: "900px",
+					mb: { xs: 6, sm: 8, md: 10 }
 				}}
 			>
-				{t("About.About-title")}
-			</Typography>
+				<motion.img
+					src="/SWOB-Default.png"
+					alt="SMS Without Borders"
+					initial={{ y: -50, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+					style={{
+						width: "70%",
+						height: "auto"
+					}}
+				/>
+
+				<motion.div
+					initial={{ y: 50, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+					style={{ width: "100%", textAlign: isFarsi ? "right" : "left" }}
+				>
+					<Typography
+						sx={{
+							fontSize: { xs: "1.8rem", sm: "2rem", md: "2.3rem" },
+							fontWeight: 600,
+							color: "#071f74ef"
+						}}
+					>
+						{t("About.About-title", "Open Source | Research")}
+					</Typography>
+				</motion.div>
+			</Box>
 		</Box>
 	);
 };

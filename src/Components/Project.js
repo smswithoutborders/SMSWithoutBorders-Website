@@ -34,32 +34,34 @@ const Project = () => {
 	return (
 		<Box
 			sx={{
-				py: 6,
-				px: { xs: 4, sm: 8, md: 15 },
+				py: 10,
+				px: { xs: 3, sm: 6, md: 12 },
 				textAlign: "center",
-				direction: i18n.language === "fa" ? "rtl" : "ltr",
-				background: "#f1f4f78a"
+				direction: isFarsi ? "rtl" : "ltr",
+				background: "linear-gradient(135deg, #f1f4f7aa 0%, #ffffff00 100%)"
 			}}
 		>
 			<Typography
 				variant="h4"
-				fontWeight="bold"
-				gutterBottom
 				sx={{
 					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.5rem" },
 					mb: 6,
 					fontWeight: 600,
 					letterSpacing: 1,
 					color: "#FF8614",
-					textTransform: "uppercase"
+					textTransform: "uppercase",
+					opacity: 0,
+					animation: "fadeInUp 1s ease forwards",
+					"@keyframes fadeInUp": {
+						"0%": { opacity: 0, transform: "translateY(30px)" },
+						"100%": { opacity: 1, transform: "translateY(0)" }
+					}
 				}}
 			>
 				{t("projects_title")}
 			</Typography>
+
 			<Typography
-				variant="subtitle1"
-				color="text.secondary"
-				mb={4}
 				sx={{
 					fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 					mb: 12,
@@ -68,139 +70,122 @@ const Project = () => {
 					margin: "0 auto",
 					fontWeight: 300,
 					letterSpacing: 1,
-					textAlign: "center"
+					textAlign: "center",
+					opacity: 0,
+					animation: "fadeInUp 1s ease forwards",
+					animationDelay: "0.3s"
 				}}
 			>
 				{t("projects_subtitle")}
 			</Typography>
 
-			<Box
-				sx={{
-					pt: { xs: 6, md: 10 },
-					textAlign: "center",
-					direction: isFarsi ? "rtl" : "ltr"
-				}}
+			<Grid
+				container
+				spacing={8}
+				justifyContent="center"
+				sx={{ mt: { xs: 2, sm: 2, md: 6, lg: 4, xl: 4 } }}
 			>
-				<Grid container spacing={20} justifyContent="center">
-					{projects.map((proj) => (
-						<Grid item xs={12} md={6} key={proj.id}>
-							<Card
+				{projects.map((proj, idx) => (
+					<Grid item xs={12} md={6} key={proj.id}>
+						<Card
+							sx={{
+								border: "1px solid #02295537",
+								height: "100%",
+								display: "flex",
+								flexDirection: "column",
+								borderRadius: 4,
+								backgroundColor: "rgba(255, 255, 255, 0.08)",
+								backdropFilter: "blur(12px)",
+								boxShadow: "0 15px 35px rgba(0,0,0,0.1)",
+								p: { xs: 2, md: 4 },
+								opacity: 0,
+								animation: "fadeInUp 1s ease forwards",
+								animationDelay: `${0.2 * idx}s`,
+								transition: "transform 0.3s ease",
+								"&:hover": { transform: "translateY(-10px)" },
+								overflow: "hidden"
+							}}
+						>
+							<Box
 								sx={{
-									height: "100%",
 									display: "flex",
-									flexDirection: "column",
-									borderRadius: 1
+									gap: 1,
+									pb: 2,
+									flexWrap: "wrap",
+									justifyContent: isFarsi ? "left" : "flex-end",
+									textAlign: isFarsi ? "left" : "right"
 								}}
 							>
-								<Box
-									sx={{
-										display: "flex",
-										gap: 1,
-										p: 2,
-										flexWrap: "wrap",
-										justifyContent: isFarsi ? "left" : "right",
-										textAlign: isFarsi ? "right" : "justify"
-									}}
-								>
-									{proj.keyPoints.map((point, idx) => (
-										<Chip
-											key={idx}
-											label={point}
-											sx={{
-												backgroundColor: proj.chipBg,
-												color: proj.chipColor,
-												fontWeight: "bold"
-											}}
-										/>
-									))}
-								</Box>
-
-								<Box
-									sx={{
-										display: "flex",
-										justifyContent: "center",
-										alignItems: "center"
-									}}
-								>
-									<CardMedia
-										component="img"
-										image={proj.image}
-										alt={proj.title}
-										sx={{ width: { xs: "50%", md: "40%" }, height: "auto" }}
+								{proj.keyPoints.map((point, idx) => (
+									<Chip
+										key={idx}
+										label={point}
+										sx={{
+											backgroundColor: proj.chipBg,
+											color: proj.chipColor,
+											fontWeight: "bold"
+										}}
 									/>
-								</Box>
+								))}
+							</Box>
 
-								<CardContent
+							<CardMedia
+								component="img"
+								image={proj.image}
+								alt={proj.title}
+								sx={{
+									width: { xs: "60%", md: "50%" },
+									height: "auto",
+									mx: "auto",
+									mb: -8,
+									position: "relative",
+									zIndex: 0
+								}}
+							/>
+
+							<CardContent
+								sx={{
+									flexGrow: 1,
+									textAlign: isFarsi ? "right" : "left",
+									borderTop: "1px solid #02295513",
+									position: "relative",
+									zIndex: 1,
+									pt: 6,
+									backgroundColor: "#f9fcffff"
+								}}
+							>
+								<Box component="img" src={proj.src} sx={{ width: 150, height: "auto", mb: 2 }} />
+
+								<Typography
 									sx={{
-										borderTop: "1px solid #00316943",
-										flexGrow: 1,
-										textAlign: isFarsi ? "right" : "justify",
-										px: { xs: 6, md: 8 }
+										color: "#011832c8",
+										fontSize: { xs: "1rem", md: "1.1rem" },
+										lineHeight: 1.8,
+										mb: 2
 									}}
 								>
-									<Typography
-										variant="h6"
-										fontWeight="bold"
-										gutterBottom
-										sx={{
-											color: "#01254ec8",
-											flexGrow: 1,
-											textAlign: isFarsi ? "right" : "justify",
-											px: { xs: 6, md: 2 }
-										}}
-									>
-										<Box
-											component="img"
-											src={proj.src}
-											sx={{ width: 180, height: "auto", mb: 3 }}
-										/>
-									</Typography>
+									{proj.description}
+								</Typography>
 
-									<Typography
-										sx={{
-											color: "#011832c8",
-											flexGrow: 1,
-											textAlign: isFarsi ? "right" : "justify",
-											px: { xs: 6, md: 2 },
-											fontSize: { xs: "1rem", md: "1.1rem" },
-											lineHeight: 2
-										}}
-									>
-										{proj.description}
-									</Typography>
-
-									<Typography
-										variant="h6"
-										sx={{
-											textTransform: "none",
-											color: "#011832c8",
-											flexGrow: 1,
-											textAlign: isFarsi ? "right" : "justify",
-											px: { xs: 6, md: 2 },
-											pt: 2,
-											cursor: "pointer",
-											display: "inline-flex",
-											alignItems: "center",
-											"&:hover": {
-												color: "#FF8614"
-											}
-										}}
-									>
-										{proj.website}{" "}
-										<ArrowOutwardIcon
-											fontSize="small"
-											sx={{
-												ml: 0.5,
-												color: "#066a9bff"
-											}}
-										/>
-									</Typography>
-								</CardContent>
-							</Card>
-						</Grid>
-					))}
-				</Grid>
-			</Box>
+								<Typography
+									sx={{
+										display: "inline-flex",
+										alignItems: "center",
+										cursor: "pointer",
+										color: "#011832c8",
+										"&:hover": { color: "#FF8614" }
+									}}
+									component="a"
+									href="#"
+								>
+									{proj.website}
+									<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
+								</Typography>
+							</CardContent>
+						</Card>
+					</Grid>
+				))}
+			</Grid>
 		</Box>
 	);
 };
