@@ -78,9 +78,5 @@
 		"source-map-loader": "^5.0.0",
 		"webpack": "^5.94.0",
 		"webpack-cli": "^5.1.4"
-	},
-	"lint-staged": {
-		"*.{js,jsx}": "eslint --cache --fix",
-		"*.{js,jsx,json,css,html}": "prettier --cache -w"
 	}
 }
