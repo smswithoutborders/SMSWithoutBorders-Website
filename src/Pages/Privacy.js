@@ -39,12 +39,12 @@ export default function FixedContainer() {
 	const [drawerOpen, setDrawerOpen] = useState(false);
 
 	const links = [
-		{ label: t("navbar.link1"), href: "/" },
+		{ label: t("navbar.link"), href: "/" },
 		{ label: t("navbar.link1"), href: "https://blog.smswithoutborders.com/" },
-		{ label: t("navbar.link2"), href: "https://docs.smswithoutborders.com/" },
-		{ label: t("navbar.link3"), href: "https://relay.smswithoutborders.com/" },
-		{ label: t("navbar.link4"), href: "https://Dekusms.com/" },
-		{ label: t("navbar.link5"), href: "/privacy-policy" }
+		{ label: t("navbar.link5"), href: "https://docs.smswithoutborders.com/" },
+		{ label: t("navbar.link2"), href: "https://relay.smswithoutborders.com/" },
+		{ label: t("navbar.link3"), href: "https://Dekusms.com/" },
+		{ label: t("navbar.link4"), href: "/privacy-policy" }
 	];
 
 	useEffect(() => {
@@ -236,16 +236,11 @@ export default function FixedContainer() {
 			</Drawer>
 
 			{/* ================= Main Content ================= */}
-			<Box sx={{ pt: 8 }}>
+			<Box>
 				<Container maxWidth={false} disableGutters>
 					<Box
 						sx={{
-							minHeight: "70vh",
-							py: { xs: 2, sm: 4, md: 5 },
-							overflow: "hidden",
-							textAlign: "center",
-							px: { xs: 0.1, sm: 1, md: 15 },
-							margin: { xs: 1, sm: 2, md: 1 },
+							minHeight: "100vh",
 							direction: isFarsi ? "rtl" : "ltr"
 						}}
 						data-aos="fade-up"
@@ -270,9 +265,7 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 									color: "#2b3343",
 									lineHeight: 2,
-									textAlign: "justify",
-									mb: 3,
-									px: { xs: 2, sm: 3 }
+									textAlign: "justify"
 								}}
 								data-aos="fade-up"
 							>
@@ -284,9 +277,7 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 									color: "#2b3343",
 									lineHeight: 2,
-									textAlign: "justify",
-									mb: 3,
-									px: { xs: 2, sm: 3 }
+									textAlign: "justify"
 								}}
 								data-aos="fade-up"
 							>
@@ -298,9 +289,7 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 									color: "#2b3343",
 									lineHeight: 2,
-									textAlign: "justify",
-									mb: 3,
-									px: { xs: 2, sm: 3 }
+									textAlign: "justify"
 								}}
 								data-aos="fade-up"
 							>
