@@ -68,7 +68,7 @@ export default function FixedContainer() {
 			id="home"
 			sx={{
 				minHeight: "100vh",
-				fontFamily: "'Unbounded', 'Mona Sans'",
+				fontFamily: "'Unbounded'",
 				display: "flex",
 				flexDirection: "column",
 				justifyContent: "center",
@@ -90,7 +90,7 @@ export default function FixedContainer() {
 					direction: isFarsi ? "rtl" : "ltr",
 					transition: "background-color 0.3s ease, box-shadow 0.3s ease",
 					zIndex: 1400,
-					fontFamily: "'Mona Sans'"
+					fontFamily: "'Unbounded'"
 				}}
 			>
 				<Toolbar
@@ -116,7 +116,7 @@ export default function FixedContainer() {
 								href={link.href}
 								color="inherit"
 								sx={{
-									fontFamily: "'Mona Sans'",
+									fontFamily: "'Unbounded'",
 									textTransform: "none",
 									fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1.3rem" },
 									transition: "all 0.1s ease",
@@ -200,7 +200,7 @@ export default function FixedContainer() {
 									<ListItemText
 										primary={link.label}
 										primaryTypographyProps={{
-											fontFamily: "'Mona Sans'",
+											fontFamily: "'Unbounded'",
 											fontSize: "1rem",
 											fontWeight: 500,
 											textAlign: isFarsi ? "right" : "left",

@@ -46,6 +46,7 @@ const Project = () => {
 				sx={{
 					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.5rem" },
 					mb: 6,
+					fontFamily: "'Unbounded'",
 					fontWeight: 600,
 					letterSpacing: 1,
 					color: "#FF8614",
@@ -72,6 +73,7 @@ const Project = () => {
 					letterSpacing: 1,
 					textAlign: "center",
 					opacity: 0,
+					fontFamily: "'Unbounded'",
 					animation: "fadeInUp 1s ease forwards",
 					animationDelay: "0.3s"
 				}}
@@ -151,6 +153,7 @@ const Project = () => {
 									position: "relative",
 									zIndex: 1,
 									pt: 6,
+									fontFamily: "'Unbounded'",
 									backgroundColor: "#f9fcffff"
 								}}
 							>

@@ -55,20 +55,25 @@ function Partner() {
 		>
 			<Typography
 				sx={{
-					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.2rem" },
-					mb: 4,
+					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.3rem" },
+					mb: 6,
 					fontWeight: 600,
+					fontFamily: "'Unbounded'",
 					letterSpacing: 1,
-					color: "#FF8614",
+					color: "rgba(255, 134, 20, 1)",
 					textTransform: "uppercase",
-					textAlign: "center"
+					animation: "fadeInUp 1s ease forwards",
+					opacity: 0,
+					"@keyframes fadeInUp": {
+						"0%": { opacity: 0, transform: "translateY(30px)" },
+						"100%": { opacity: 1, transform: "translateY(0)" }
+					}
 				}}
 			>
 				{t("Sponsor.SponsorT")}
 			</Typography>
 
 			<Typography
-				variant="h6"
 				sx={{
 					fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 					mb: 12,
@@ -77,7 +82,10 @@ function Partner() {
 					margin: "0 auto",
 					fontWeight: 300,
 					letterSpacing: 1,
-					textAlign: "center"
+					textAlign: "center",
+					opacity: 0,
+					animation: "fadeInUp 1s ease forwards",
+					animationDelay: "0.3s"
 				}}
 			>
 				{t("Sponsor.Sponsor-subheader")}
