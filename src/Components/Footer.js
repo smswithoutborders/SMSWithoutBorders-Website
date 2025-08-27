@@ -10,7 +10,7 @@ const Footer = () => {
 				bgcolor: "#071F74",
 				color: "#fff",
 				py: { xs: 3, sm: 4 },
-				fontFamily: "'Unbounded', 'Mona Sans', sans-serif"
+				fontFamily: "'Unbounded'"
 			}}
 		>
 			<Typography variant="body2" sx={{ fontSize: { xs: "0.8rem", sm: "1rem" } }}>

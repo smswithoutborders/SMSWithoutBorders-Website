@@ -11,7 +11,7 @@ const About = () => {
 		<Box
 			id="about"
 			sx={{
-				fontFamily: "'Unbounded', 'Mona Sans'",
+				fontFamily: "'Unbounded'",
 				background: "linear-gradient(135deg, #071f74f0 2%, #071f74ff 100%)",
 				backdropFilter: "blur(10px)",
 				boxShadow: "0 10px 25px rgba(34, 68, 117, 0.39)",

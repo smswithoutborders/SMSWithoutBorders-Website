@@ -53,7 +53,7 @@ const Navbar = () => {
 					direction: isFarsi ? "rtl" : "ltr",
 					transition: "background-color 0.3s ease",
 					zIndex: 1400,
-					fontFamily: "'Mona Sans'",
+					fontFamily: "'Unbounded'",
 					boxShadow: "none"
 				}}
 			>
@@ -80,7 +80,7 @@ const Navbar = () => {
 								href={link.href}
 								color="inherit"
 								sx={{
-									fontFamily: "'Mona Sans'",
+									fontFamily: "'Unbounded'",
 									textTransform: "none",
 									fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
 									transition: "all 0.1s ease",
@@ -180,7 +180,7 @@ const Navbar = () => {
 									<ListItemText
 										primary={link.label}
 										primaryTypographyProps={{
-											fontFamily: "'Mona Sans'",
+											fontFamily: "'Unbounded'",
 											fontSize: "1rem",
 											fontWeight: 500,
 											textAlign: isFarsi ? "right" : "left",

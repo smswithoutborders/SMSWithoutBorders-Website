@@ -13,7 +13,7 @@ const Home = () => {
 			sx={{
 				direction: isFarsi ? "rtl" : "ltr",
 				height: { xs: "60vh", sm: "70vh", md: "80vh", lg: "80vh", xl: "80vh" },
-				fontFamily: "'Unbounded', 'Mona Sans'",
+				fontFamily: "'Unbounded'",
 				display: "flex",
 				flexDirection: "column",
 				background: "linear-gradient(135deg, #f9fafb, #ffffff)",
