@@ -49,7 +49,8 @@ const Home = () => {
 					fontWeight: 600,
 					color: "#071f74ef",
 					width: "100%",
-					textAlign: isFarsi ? "right" : "left"
+					textAlign: isFarsi ? "right" : "left",
+					fontFamily: "'Unbounded'"
 				}}
 			>
 				{t("About.About-title", "Open Source | Research")}

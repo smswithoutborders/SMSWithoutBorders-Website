@@ -33,6 +33,7 @@ const About = () => {
 					textTransform: "uppercase",
 					animation: "fadeInUp 1s ease forwards",
 					opacity: 0,
+					fontFamily: "'Unbounded'",
 					"@keyframes fadeInUp": {
 						"0%": { opacity: 0, transform: "translateY(30px)" },
 						"100%": { opacity: 1, transform: "translateY(0)" }
@@ -63,7 +64,8 @@ const About = () => {
 							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
-							color: "#ffffff"
+							color: "#ffffff",
+							fontFamily: "'Unbounded'"
 						}}
 					>
 						{t("About.description")}
@@ -80,6 +82,7 @@ const About = () => {
 
 						animation: "fadeInSide 1s ease forwards",
 						opacity: 0,
+						fontFamily: "'Unbounded'",
 						animationDelay: "0.3s",
 						"@keyframes fadeInSide": {
 							"0%": { opacity: 0, transform: "translateX(50px)" },
@@ -93,7 +96,8 @@ const About = () => {
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
-							mb: 2
+							mb: 2,
+							fontFamily: "'Unbounded'"
 						}}
 					>
 						{t("About.description1")}
@@ -103,7 +107,8 @@ const About = () => {
 							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
-							color: "#ffffff"
+							color: "#ffffff",
+							fontFamily: "'Unbounded'"
 						}}
 					>
 						{t("About.description2")}
@@ -119,6 +124,7 @@ const About = () => {
 						p: { xs: 3, md: 5 },
 						animation: "fadeInUp 1s ease forwards",
 						opacity: 0,
+						fontFamily: "'Unbounded'",
 						animationDelay: "0.6s"
 					}}
 				>
@@ -127,7 +133,8 @@ const About = () => {
 							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
-							color: "#ffffff"
+							color: "#ffffff",
+							fontFamily: "'Unbounded'"
 						}}
 					>
 						{parse(t("About.description3"))}

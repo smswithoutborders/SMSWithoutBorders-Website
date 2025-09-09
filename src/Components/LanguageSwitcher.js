@@ -40,6 +40,7 @@ const LanguageSwitcher = () => {
 						display: "flex",
 						alignItems: "center",
 						gap: 1,
+						fontFamily: "'Unbounded'",
 						"&:hover": { backgroundColor: "#0430b5d6" }
 					}}
 				>
@@ -47,7 +48,13 @@ const LanguageSwitcher = () => {
 						code={languageLabels[currentLang]?.flag || "US"}
 						style={{ width: 24, height: 16, borderRadius: 2 }}
 					/>
-					<Typography sx={{ fontSize: { xs: "0.8rem", sm: "0.9rem" }, fontWeight: 500 }}>
+					<Typography
+						sx={{
+							fontSize: { xs: "0.8rem", sm: "0.9rem" },
+							fontFamily: "'Unbounded'",
+							fontWeight: 500
+						}}
+					>
 						{languageLabels[currentLang]?.label || "Language"}
 					</Typography>
 				</IconButton>
@@ -71,14 +78,15 @@ const LanguageSwitcher = () => {
 							alignItems: "center",
 							gap: 1.5,
 							px: 2,
-							py: 1
+							py: 1,
+							fontFamily: "'Unbounded'"
 						}}
 					>
 						<Flag
 							code={languageLabels[lang].flag}
 							style={{ width: 24, height: 16, borderRadius: 2 }}
 						/>
-						<Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
+						<Typography sx={{ fontSize: "0.9rem", fontFamily: "'Unbounded'", fontWeight: 500 }}>
 							{languageLabels[lang].label}
 						</Typography>
 					</MenuItem>

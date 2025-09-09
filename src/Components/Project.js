@@ -34,6 +34,7 @@ const Project = () => {
 	return (
 		<Box
 			sx={{
+				fontFamily: "'Unbounded'",
 				py: 10,
 				px: { xs: 3, sm: 6, md: 12 },
 				textAlign: "center",
@@ -91,6 +92,7 @@ const Project = () => {
 					<Grid item xs={12} md={6} key={proj.id}>
 						<Card
 							sx={{
+								fontFamily: "'Unbounded'",
 								border: "1px solid #02295537",
 								height: "100%",
 								display: "flex",
@@ -115,7 +117,8 @@ const Project = () => {
 									pb: 2,
 									flexWrap: "wrap",
 									justifyContent: isFarsi ? "left" : "flex-end",
-									textAlign: isFarsi ? "left" : "right"
+									textAlign: isFarsi ? "left" : "right",
+									fontFamily: "'Unbounded'"
 								}}
 							>
 								{proj.keyPoints.map((point, idx) => (
@@ -125,6 +128,7 @@ const Project = () => {
 										sx={{
 											backgroundColor: proj.chipBg,
 											color: proj.chipColor,
+											fontFamily: "'Unbounded'",
 											fontWeight: "bold"
 										}}
 									/>
@@ -141,7 +145,8 @@ const Project = () => {
 									mx: "auto",
 									mb: -8,
 									position: "relative",
-									zIndex: 0
+									zIndex: 0,
+									fontFamily: "'Unbounded'"
 								}}
 							/>
 
@@ -164,7 +169,8 @@ const Project = () => {
 										color: "#011832c8",
 										fontSize: { xs: "1rem", md: "1.1rem" },
 										lineHeight: 1.8,
-										mb: 2
+										mb: 2,
+										fontFamily: "'Unbounded'"
 									}}
 								>
 									{proj.description}
@@ -174,6 +180,7 @@ const Project = () => {
 									sx={{
 										display: "inline-flex",
 										alignItems: "center",
+										fontFamily: "'Unbounded'",
 										cursor: "pointer",
 										color: "#011832c8",
 										"&:hover": { color: "#FF8614" }

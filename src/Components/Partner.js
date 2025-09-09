@@ -21,6 +21,7 @@ function Partner() {
 				alignItems: "center",
 				opacity: 0,
 				animation: "fadeInUp 1s ease forwards",
+				fontFamily: "'Unbounded'",
 				animationDelay: `${delay}s`,
 				"@keyframes fadeInUp": {
 					"0%": { opacity: 0, transform: "translateY(20px)" },
@@ -50,7 +51,8 @@ function Partner() {
 				px: { xs: 3, sm: 6, md: 12 },
 				textAlign: "center",
 				direction: isFarsi ? "rtl" : "ltr",
-				background: "linear-gradient(135deg, #f1f4f7aa 0%, #ffffff00 100%)"
+				background: "linear-gradient(135deg, #f1f4f7aa 0%, #ffffff00 100%)",
+				fontFamily: "'Unbounded'"
 			}}
 		>
 			<Typography
@@ -85,7 +87,8 @@ function Partner() {
 					textAlign: "center",
 					opacity: 0,
 					animation: "fadeInUp 1s ease forwards",
-					animationDelay: "0.3s"
+					animationDelay: "0.3s",
+					fontFamily: "'Unbounded'"
 				}}
 			>
 				{t("Sponsor.Sponsor-subheader")}
