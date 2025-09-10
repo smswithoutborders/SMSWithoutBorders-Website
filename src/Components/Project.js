@@ -45,7 +45,7 @@ const Project = () => {
 			<Typography
 				variant="h4"
 				sx={{
-					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.5rem" },
+					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					mb: 6,
 					fontFamily: "'Unbounded'",
 					fontWeight: 600,
@@ -65,18 +65,18 @@ const Project = () => {
 
 			<Typography
 				sx={{
-					fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 					mb: 12,
 					color: "#01254ec8",
 					maxWidth: 700,
 					margin: "0 auto",
-					fontWeight: 300,
 					letterSpacing: 1,
 					textAlign: "center",
 					opacity: 0,
-					fontFamily: "'Unbounded'",
 					animation: "fadeInUp 1s ease forwards",
-					animationDelay: "0.3s"
+					animationDelay: "0.3s",
+					fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1.3rem" },
+					fontFamily: "'Montserrat', Ubuntu",
+					fontWeight: 400
 				}}
 			>
 				{t("projects_subtitle")}
@@ -118,7 +118,7 @@ const Project = () => {
 									flexWrap: "wrap",
 									justifyContent: isFarsi ? "left" : "flex-end",
 									textAlign: isFarsi ? "left" : "right",
-									fontFamily: "'Unbounded'"
+									fontFamily: "'Montserrat', Ubuntu"
 								}}
 							>
 								{proj.keyPoints.map((point, idx) => (
@@ -128,7 +128,7 @@ const Project = () => {
 										sx={{
 											backgroundColor: proj.chipBg,
 											color: proj.chipColor,
-											fontFamily: "'Unbounded'",
+											fontFamily: "'Montserrat', Ubuntu",
 											fontWeight: "bold"
 										}}
 									/>
@@ -167,7 +167,7 @@ const Project = () => {
 								<Typography
 									sx={{
 										color: "#011832c8",
-										fontSize: { xs: "1rem", md: "1.1rem" },
+										fontSize: { xs: "0.9rem", md: "1rem" },
 										lineHeight: 1.8,
 										mb: 2,
 										fontFamily: "'Unbounded'"

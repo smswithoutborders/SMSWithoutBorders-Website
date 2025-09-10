@@ -82,13 +82,13 @@ function Partner() {
 					color: "#01254ec8",
 					maxWidth: 700,
 					margin: "0 auto",
-					fontWeight: 300,
 					letterSpacing: 1,
 					textAlign: "center",
 					opacity: 0,
 					animation: "fadeInUp 1s ease forwards",
 					animationDelay: "0.3s",
-					fontFamily: "'Unbounded'"
+					fontFamily: "'Montserrat', Ubuntu",
+					fontWeight: 400
 				}}
 			>
 				{t("Sponsor.Sponsor-subheader")}
