@@ -15,7 +15,8 @@ const Project = () => {
 			image: "/relaysms.png",
 			keyPoints: [t("project1.keyPoint1"), t("project1.keyPoint2")],
 			description: t("project1.description"),
-			website: t("project1.read_more"),
+			website: "https://relay.smswithoutborders.com/",
+			websiteLabel: t("project1.read_more"),
 			chipBg: "#FF8614",
 			chipColor: "#02334bff"
 		},
@@ -25,7 +26,8 @@ const Project = () => {
 			image: "/dekusms.png",
 			keyPoints: [t("project2.keyPoint1"), t("project2.keyPoint2")],
 			description: t("project2.description"),
-			website: t("project2.read_more"),
+			website: "https://dekusms.com/",
+			websiteLabel: t("project1.read_more"),
 			chipBg: "#2CD4B4",
 			chipColor: "#02334bff"
 		}
@@ -48,7 +50,7 @@ const Project = () => {
 					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					mb: 6,
 					fontFamily: "'Unbounded'",
-					fontWeight: 600,
+					fontWeight: 500,
 					letterSpacing: 1,
 					color: "#FF8614",
 					textTransform: "uppercase",
@@ -170,27 +172,33 @@ const Project = () => {
 										fontSize: { xs: "0.9rem", md: "1rem" },
 										lineHeight: 1.8,
 										mb: 2,
+										fontWeight: 300,
 										fontFamily: "'Unbounded'"
 									}}
 								>
 									{proj.description}
 								</Typography>
 
-								<Typography
-									sx={{
-										display: "inline-flex",
-										alignItems: "center",
-										fontFamily: "'Unbounded'",
-										cursor: "pointer",
-										color: "#011832c8",
-										"&:hover": { color: "#FF8614" }
-									}}
-									component="a"
-									href="#"
-								>
-									{proj.website}
-									<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
-								</Typography>
+								{proj.website && (
+									<Typography
+										sx={{
+											display: "inline-flex",
+											alignItems: "center",
+											fontFamily: "'Unbounded'",
+											cursor: "pointer",
+											color: "#011832c8",
+											fontWeight: 350,
+											"&:hover": { color: "#FF8614" }
+										}}
+										component="a"
+										href={proj.website}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{proj.websiteLabel}
+										<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
+									</Typography>
+								)}
 							</CardContent>
 						</Card>
 					</Grid>

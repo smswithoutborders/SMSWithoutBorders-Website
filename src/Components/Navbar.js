@@ -52,7 +52,7 @@ const Navbar = () => {
 					py: { xs: 0.2, sm: 0.5 },
 					direction: isFarsi ? "rtl" : "ltr",
 					transition: "background-color 0.3s ease",
-					zIndex: 1400,
+					zIndex: 1200,
 					fontFamily: "'Unbounded'",
 					boxShadow: "none"
 				}}
@@ -62,7 +62,7 @@ const Navbar = () => {
 						display: "flex",
 						justifyContent: "space-between",
 						px: { xs: 2, sm: 4, md: 6 },
-						minHeight: { xs: 48, sm: 56, md: 66 }
+						minHeight: { xs: 46, sm: 54, md: 64 }
 					}}
 				>
 					<Box sx={{ width: { xs: "0", md: "100px" } }} />
@@ -82,6 +82,7 @@ const Navbar = () => {
 								sx={{
 									fontFamily: "'Unbounded'",
 									textTransform: "none",
+									fontWeight: 350,
 									fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
 									transition: "all 0.1s ease",
 									"&:hover": {

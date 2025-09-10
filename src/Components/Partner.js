@@ -57,9 +57,9 @@ function Partner() {
 		>
 			<Typography
 				sx={{
-					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.3rem" },
+					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					mb: 6,
-					fontWeight: 600,
+					fontWeight: 500,
 					fontFamily: "'Unbounded'",
 					letterSpacing: 1,
 					color: "rgba(255, 134, 20, 1)",

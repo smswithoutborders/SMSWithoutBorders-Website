@@ -39,13 +39,14 @@ const Home = () => {
 					height: "auto",
 					maxWidth: "100%",
 					objectFit: "contain",
-					mb: { xs: 2, sm: 3, md: 4 }
+					mb: { xs: 2, sm: 3, md: 4 },
+					transform: isFarsi ? "scaleX(-1) !important" : "scaleX(1) !important"
 				}}
 			/>
 
 			<Typography
 				sx={{
-					fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					fontWeight: 600,
 					color: "#071f74ef",
 					width: "100%",

@@ -25,9 +25,9 @@ const About = () => {
 		>
 			<Typography
 				sx={{
-					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.3rem" },
+					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					mb: 6,
-					fontWeight: 600,
+					fontWeight: 500,
 					letterSpacing: 1,
 					color: "rgba(255, 134, 20, 1)",
 					textTransform: "uppercase",
@@ -61,10 +61,11 @@ const About = () => {
 				>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
+							fontWeight: 300,
 							fontFamily: "'Unbounded'"
 						}}
 					>
@@ -79,7 +80,7 @@ const About = () => {
 					sx={{
 						borderRadius: 4,
 						p: { xs: 3, md: 5 },
-
+						fontWeight: 300,
 						animation: "fadeInSide 1s ease forwards",
 						opacity: 0,
 						fontFamily: "'Unbounded'",
@@ -92,11 +93,12 @@ const About = () => {
 				>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
+							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
 							mb: 2,
+							fontWeight: 300,
 							fontFamily: "'Unbounded'"
 						}}
 					>
@@ -104,10 +106,11 @@ const About = () => {
 					</Typography>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
+							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
+							fontWeight: 300,
 							fontFamily: "'Unbounded'"
 						}}
 					>
@@ -130,8 +133,9 @@ const About = () => {
 				>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
+							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
+							fontWeight: 300,
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
 							fontFamily: "'Unbounded'"

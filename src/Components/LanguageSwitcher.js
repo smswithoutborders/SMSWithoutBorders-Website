@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { IconButton, Menu, MenuItem, Box, Tooltip, Typography } from "@mui/material";
+import { IconButton, Menu, MenuItem, Box, Tooltip, Typography, Divider } from "@mui/material";
 import Flag from "react-world-flags";
 
 const LanguageSwitcher = () => {
-	const { i18n } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const [anchorEl, setAnchorEl] = useState(null);
 
 	const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
@@ -18,45 +18,51 @@ const LanguageSwitcher = () => {
 	const currentLang = i18n.language;
 
 	const languageLabels = {
-		en: { label: "English", flag: "US" },
-		es: { label: "Español", flag: "ES" },
-		fr: { label: "Français", flag: "FR" },
-		fa: { label: "فارسی", flag: "IR" }
+		en: { flag: "US", label: "English" },
+		es: { flag: "ES", label: "Español" },
+		fr: { flag: "FR", label: "Français" },
+		fa: { flag: "IR", label: "فارسی" }
 	};
 
 	return (
 		<Box
-			sx={{ backgroundColor: "#04228eff", display: "flex", alignItems: "center", borderRadius: 2 }}
+			sx={{
+				backgroundColor: "#04228e",
+				display: "flex",
+				alignItems: "center",
+				borderRadius: "0.5rem",
+				px: 1,
+				py: 0.5,
+				fontFamily: "'Unbounded', 'Montserrat', Ubuntu",
+				fontWeight: 300
+			}}
 		>
-			<Tooltip title="Change Language" arrow>
+			<Tooltip title={t("changeLanguage")} arrow>
 				<IconButton
 					onClick={handleMenuOpen}
 					disableRipple
 					sx={{
 						color: "#FFFFFF",
-						px: 2,
-						py: 1,
-						borderRadius: 2,
+						borderRadius: "1rem",
 						display: "flex",
 						alignItems: "center",
 						gap: 1,
-						fontFamily: "'Unbounded'",
-						"&:hover": { backgroundColor: "#0430b5d6" }
+						"&:hover": { backgroundColor: "rgba(255,255,255,0.08)" }
 					}}
 				>
-					<Flag
-						code={languageLabels[currentLang]?.flag || "US"}
-						style={{ width: 24, height: 16, borderRadius: 2 }}
-					/>
 					<Typography
 						sx={{
-							fontSize: { xs: "0.8rem", sm: "0.9rem" },
-							fontFamily: "'Unbounded'",
+							fontSize: { xs: "0.75rem", sm: "0.85rem" },
+							fontFamily: "'Montserrat', sans-serif",
 							fontWeight: 500
 						}}
 					>
 						{languageLabels[currentLang]?.label || "Language"}
 					</Typography>
+					<Flag
+						code={languageLabels[currentLang]?.flag || "US"}
+						style={{ width: 22, height: 16, borderRadius: 3 }}
+					/>
 				</IconButton>
 			</Tooltip>
 
@@ -65,31 +71,50 @@ const LanguageSwitcher = () => {
 				open={Boolean(anchorEl)}
 				onClose={handleMenuClose}
 				PaperProps={{
-					elevation: 3,
-					sx: { minWidth: 180, borderRadius: 2, p: "4px 0", bgcolor: "#FFFFFF" }
+					elevation: 4,
+					sx: {
+						minWidth: 180,
+						borderRadius: "1rem",
+						bgcolor: "#fff",
+						overflow: "hidden"
+					}
 				}}
 			>
-				{Object.keys(languageLabels).map((lang) => (
-					<MenuItem
-						key={lang}
-						onClick={() => handleLanguageChange(lang)}
-						sx={{
-							display: "flex",
-							alignItems: "center",
-							gap: 1.5,
-							px: 2,
-							py: 1,
-							fontFamily: "'Unbounded'"
-						}}
-					>
-						<Flag
-							code={languageLabels[lang].flag}
-							style={{ width: 24, height: 16, borderRadius: 2 }}
-						/>
-						<Typography sx={{ fontSize: "0.9rem", fontFamily: "'Unbounded'", fontWeight: 500 }}>
-							{languageLabels[lang].label}
-						</Typography>
-					</MenuItem>
+				{Object.keys(languageLabels).map((lang, index) => (
+					<Box key={lang}>
+						<MenuItem
+							onClick={() => handleLanguageChange(lang)}
+							sx={{
+								display: "flex",
+								alignItems: "center",
+								gap: 1.5,
+								px: 2,
+								py: 1,
+								fontFamily: "'Unbounded', 'Montserrat', Ubuntu",
+								transition: "all 0.2s ease",
+								"&:hover": {
+									backgroundColor: "#f5f5f5",
+									transform: "translateX(4px)"
+								}
+							}}
+						>
+							<Flag
+								code={languageLabels[lang].flag}
+								style={{ width: 22, height: 16, borderRadius: 3 }}
+							/>
+							<Typography
+								sx={{
+									fontSize: "0.85rem",
+									fontFamily: "'Unbounded', 'Montserrat', Ubuntu",
+									fontWeight: 350,
+									color: "#333"
+								}}
+							>
+								{languageLabels[lang].label}
+							</Typography>
+						</MenuItem>
+						{index < Object.keys(languageLabels).length - 1 && <Divider sx={{ my: 0.5 }} />}
+					</Box>
 				))}
 			</Menu>
 		</Box>
