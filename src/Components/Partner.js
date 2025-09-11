@@ -59,7 +59,7 @@ function Partner() {
 				sx={{
 					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					mb: 6,
-					fontWeight: 500,
+					fontWeight: 400,
 					fontFamily: "'Unbounded'",
 					letterSpacing: 1,
 					color: "rgba(255, 134, 20, 1)",

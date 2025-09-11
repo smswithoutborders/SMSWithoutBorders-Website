@@ -50,7 +50,7 @@ const Project = () => {
 					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					mb: 6,
 					fontFamily: "'Unbounded'",
-					fontWeight: 500,
+					fontWeight: 400,
 					letterSpacing: 1,
 					color: "#FF8614",
 					textTransform: "uppercase",

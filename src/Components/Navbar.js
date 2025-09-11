@@ -15,11 +15,14 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
-
+import { useTheme } from "../Context/ThemeContext";
 const Navbar = () => {
 	const { t, i18n } = useTranslation();
+	const { mode, toggleTheme } = useTheme();
 	const isFarsi = i18n.language === "fa";
 
 	const links = [
@@ -48,8 +51,8 @@ const Navbar = () => {
 			<AppBar
 				position="fixed"
 				sx={{
-					bgcolor: scroll ? "#f7fbfff5" : "transparent",
-					color: "#02397ce3",
+					bgcolor: scroll ? (mode === "light" ? "#f7fbfff5" : "#1e1e1e") : "transparent",
+					color: mode === "light" ? "#02397ce3" : "#ffffff",
 					py: { xs: 0.2, sm: 0.5 },
 					direction: isFarsi ? "rtl" : "ltr",
 					transition: "background-color 0.3s ease",
@@ -62,6 +65,7 @@ const Navbar = () => {
 					sx={{
 						display: "flex",
 						justifyContent: "space-between",
+						alignItems: "center",
 						px: { xs: 2, sm: 4, md: 6 },
 						minHeight: { xs: 46, sm: 54, md: 64 }
 					}}
@@ -86,9 +90,7 @@ const Navbar = () => {
 									fontWeight: 320,
 									fontSize: { xs: "0.9rem", sm: "0.75rem", md: "0.90rem" },
 									transition: "all 0.1s ease",
-									"&:hover": {
-										borderBottom: "3px solid #FF8614"
-									},
+									"&:hover": { borderBottom: "3px solid #FF8614" },
 									borderBottom: "none"
 								}}
 							>
@@ -104,7 +106,7 @@ const Navbar = () => {
 						>
 							<GitHubIcon
 								sx={{
-									color: "#04228eff",
+									color: mode === "light" ? "#04228eff" : "#ffffff",
 									fontSize: { xs: 20, sm: 24, md: 26 },
 									"&:hover": { color: "#ff6a14e3" }
 								}}
@@ -112,6 +114,10 @@ const Navbar = () => {
 						</Button>
 
 						<LanguageSwitcher />
+
+						<IconButton onClick={toggleTheme} color="inherit">
+							{mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+						</IconButton>
 					</Box>
 
 					<IconButton
@@ -132,7 +138,8 @@ const Navbar = () => {
 				PaperProps={{
 					sx: {
 						width: 260,
-						backgroundColor: "#f9f9f9",
+						backgroundColor: mode === "light" ? "#f9f9f9" : "#1e1e1e",
+						color: mode === "light" ? "#000" : "#fff",
 						p: 2,
 						height: "60vh",
 						overflow: "auto",
@@ -175,7 +182,7 @@ const Navbar = () => {
 									sx={{
 										borderRadius: 1,
 										mb: 1,
-										"&:hover": { bgcolor: "#e6e6e6" },
+										"&:hover": { bgcolor: mode === "light" ? "#e6e6e6" : "#333" },
 										px: 2
 									}}
 								>
@@ -186,7 +193,7 @@ const Navbar = () => {
 											fontSize: "1rem",
 											fontWeight: 500,
 											textAlign: isFarsi ? "right" : "left",
-											color: "#000158"
+											color: mode === "light" ? "#000158" : "#fff"
 										}}
 									/>
 								</ListItemButton>

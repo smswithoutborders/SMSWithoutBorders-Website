@@ -27,7 +27,7 @@ const About = () => {
 				sx={{
 					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					mb: 6,
-					fontWeight: 500,
+					fontWeight: 400,
 					letterSpacing: 1,
 					color: "rgba(255, 134, 20, 1)",
 					textTransform: "uppercase",
@@ -61,11 +61,11 @@ const About = () => {
 				>
 					<Typography
 						sx={{
+							fontWeight: 250,
 							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
-							fontWeight: 300,
 							fontFamily: "'Unbounded'"
 						}}
 					>
@@ -98,7 +98,7 @@ const About = () => {
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
 							mb: 2,
-							fontWeight: 300,
+							fontWeight: 250,
 							fontFamily: "'Unbounded'"
 						}}
 					>
@@ -110,7 +110,7 @@ const About = () => {
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
-							fontWeight: 300,
+							fontWeight: 250,
 							fontFamily: "'Unbounded'"
 						}}
 					>
@@ -135,7 +135,7 @@ const About = () => {
 						sx={{
 							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
-							fontWeight: 300,
+							fontWeight: 250,
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
 							fontFamily: "'Unbounded'"
