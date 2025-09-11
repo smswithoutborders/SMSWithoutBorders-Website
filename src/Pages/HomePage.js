@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-import Home from "../Components/Home";
+import Landing from "../Components/Landing";
 import Project from "../Components/Project";
 import Partner from "../Components/Partner";
 import About from "../Components/About";
 
-function Landing() {
+function HomePage() {
 	return (
 		<>
 			<Navbar />
-			<Home />
+			<Landing />
 			<About />
 			<Project />
 			<Partner />
@@ -17,4 +17,4 @@ function Landing() {
 	);
 }
 
-export default Landing;
+export default HomePage;

@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
-const Home = () => {
+const Landing = () => {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
@@ -29,7 +29,7 @@ const Home = () => {
 		>
 			<Box
 				component={motion.img}
-				src="/SWOB-Default.png"
+				src="/Images/SWOB-Default.png"
 				alt="SMS Without Borders"
 				initial={{ y: -50, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
@@ -60,4 +60,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Landing;

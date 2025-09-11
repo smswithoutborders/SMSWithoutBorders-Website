@@ -24,6 +24,7 @@ const Navbar = () => {
 
 	const links = [
 		{ label: t("navbar.link1"), href: "https://blog.smswithoutborders.com/" },
+		{ label: t("navbar.link6"), href: "/Features" },
 		{ label: t("navbar.link5"), href: "https://docs.smswithoutborders.com/" },
 		{ label: t("navbar.link2"), href: "https://relay.smswithoutborders.com/" },
 		{ label: t("navbar.link3"), href: "https://Dekusms.com/" },
@@ -82,8 +83,8 @@ const Navbar = () => {
 								sx={{
 									fontFamily: "'Unbounded'",
 									textTransform: "none",
-									fontWeight: 350,
-									fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+									fontWeight: 320,
+									fontSize: { xs: "0.9rem", sm: "0.75rem", md: "0.90rem" },
 									transition: "all 0.1s ease",
 									"&:hover": {
 										borderBottom: "3px solid #FF8614"

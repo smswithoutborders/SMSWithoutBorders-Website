@@ -10,9 +10,9 @@ const Project = () => {
 	const projects = [
 		{
 			id: 1,
-			src: "/RelaySms.png",
+			src: "/Images/RelaySms.png",
 			subTitle: t("projects.one.subtitle"),
-			image: "/relaysms.png",
+			image: "/Images/relaysms.png",
 			keyPoints: [t("project1.keyPoint1"), t("project1.keyPoint2")],
 			description: t("project1.description"),
 			website: "https://relay.smswithoutborders.com/",
@@ -22,8 +22,8 @@ const Project = () => {
 		},
 		{
 			id: 2,
-			src: "/DekuSms.png",
-			image: "/dekusms.png",
+			src: "/Images/DekuSms.png",
+			image: "/Images/dekusms.png",
 			keyPoints: [t("project2.keyPoint1"), t("project2.keyPoint2")],
 			description: t("project2.description"),
 			website: "https://dekusms.com/",

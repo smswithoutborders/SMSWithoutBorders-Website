@@ -103,13 +103,13 @@ function Partner() {
 			>
 				<LogoItem
 					href="https://www.opentech.fund/"
-					imgSrc="/OTF.png"
+					imgSrc="/Images/OTF.png"
 					altText="Open Tech Fund"
 					delay={0.2}
 				/>
 				<LogoItem
 					href="https://internews.org/"
-					imgSrc="/Internews.png"
+					imgSrc="/Images/Internews.png"
 					altText="Internews"
 					delay={0.4}
 				/>
