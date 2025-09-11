@@ -2,21 +2,28 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useTheme } from "../Context/ThemeContext";
 
 const Landing = () => {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
+	const { mode } = useTheme();
+
+	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
+	const textColor = mode === "light" ? "#0c0833" : "#ffffff";
+	const borderColor = mode === "light" ? "#ddd" : "#07265c";
 
 	return (
 		<Box
 			id="home"
 			sx={{
 				direction: isFarsi ? "rtl" : "ltr",
-				height: { xs: "60vh", sm: "70vh", md: "80vh", lg: "80vh", xl: "80vh" },
+				height: { xs: "60vh", sm: "70vh", md: "80vh" },
 				fontFamily: "'Unbounded'",
 				display: "flex",
 				flexDirection: "column",
-				background: "linear-gradient(135deg, #f9fafb, #ffffff)",
+				bgcolor: backgroundColor,
+				color: textColor,
 				position: "relative",
 				overflow: "hidden",
 				width: "100%",
@@ -24,12 +31,12 @@ const Landing = () => {
 				py: { xs: 4, sm: 6, md: 8 },
 				justifyContent: "flex-end",
 				alignItems: isFarsi ? "flex-end" : "flex-start",
-				borderBottom: "1px solid #035db84f,"
+				borderBottom: `1px solid ${borderColor}`
 			}}
 		>
 			<Box
 				component={motion.img}
-				src="/Images/SWOB-Default.png"
+				src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
 				alt="SMS Without Borders"
 				initial={{ y: -50, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
@@ -48,7 +55,7 @@ const Landing = () => {
 				sx={{
 					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					fontWeight: 600,
-					color: "#071f74ef",
+					color: textColor,
 					width: "100%",
 					textAlign: isFarsi ? "right" : "left",
 					fontFamily: "'Unbounded'"

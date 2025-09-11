@@ -51,8 +51,8 @@ const Navbar = () => {
 			<AppBar
 				position="fixed"
 				sx={{
-					bgcolor: scroll ? (mode === "light" ? "#f7fbfff5" : "#1e1e1e") : "transparent",
-					color: mode === "light" ? "#02397ce3" : "#ffffff",
+					bgcolor: scroll ? (mode === "light" ? "#f7fbfff5" : "#1b1a5aff") : "transparent",
+					color: mode === "light" ? "#02397ce3" : "#ffffffff",
 					py: { xs: 0.2, sm: 0.5 },
 					direction: isFarsi ? "rtl" : "ltr",
 					transition: "background-color 0.3s ease",
@@ -138,7 +138,7 @@ const Navbar = () => {
 				PaperProps={{
 					sx: {
 						width: 260,
-						backgroundColor: mode === "light" ? "#f9f9f9" : "#1e1e1e",
+						backgroundColor: mode === "light" ? "#f9f9f9" : "#10143bff",
 						color: mode === "light" ? "#000" : "#fff",
 						p: 2,
 						height: "60vh",

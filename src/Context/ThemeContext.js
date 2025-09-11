@@ -1,4 +1,3 @@
-// src/context/ThemeContext.js
 import React, { createContext, useState, useMemo, useContext, useEffect } from "react";
 import { createTheme, ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 
@@ -7,10 +6,8 @@ const ThemeContext = createContext();
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
-	// Load saved theme from localStorage or default to light
 	const [mode, setMode] = useState(() => localStorage.getItem("theme") || "light");
 
-	// Save theme to localStorage whenever it changes
 	useEffect(() => {
 		localStorage.setItem("theme", mode);
 	}, [mode]);
@@ -31,7 +28,7 @@ export const ThemeProvider = ({ children }) => {
 							}
 						: {
 								primary: { main: "#90caf9" },
-								background: { default: "#121212", paper: "#1e1e1e" }
+								background: { default: "#121238ff", paper: "#1e1e1e" }
 							})
 				},
 				typography: {
