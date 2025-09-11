@@ -20,6 +20,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../Context/ThemeContext";
+
 const Navbar = () => {
 	const { t, i18n } = useTranslation();
 	const { mode, toggleTheme } = useTheme();
