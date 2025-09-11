@@ -2,10 +2,15 @@ import React from "react";
 import { Box, Typography, Grid, Card, CardMedia, CardContent, Chip } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import { useTheme } from "../Context/ThemeContext";
 
 const Project = () => {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
+	const { mode } = useTheme();
+
+	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
+	const textColor = mode === "light" ? "#071f74ef" : "#ffffff";
 
 	const projects = [
 		{
@@ -41,7 +46,8 @@ const Project = () => {
 				px: { xs: 3, sm: 6, md: 12 },
 				textAlign: "center",
 				direction: isFarsi ? "rtl" : "ltr",
-				background: "linear-gradient(135deg, #f1f4f7aa 0%, #ffffff00 100%)"
+				bgcolor: backgroundColor,
+				color: textColor
 			}}
 		>
 			<Typography

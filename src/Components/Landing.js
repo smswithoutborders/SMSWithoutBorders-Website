@@ -10,7 +10,7 @@ const Landing = () => {
 	const { mode } = useTheme();
 
 	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
-	const textColor = mode === "light" ? "#0c0833" : "#ffffff";
+	const textColor = mode === "light" ? "#071f74ef" : "#ffffff";
 	const borderColor = mode === "light" ? "#ddd" : "#07265c";
 
 	return (

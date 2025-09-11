@@ -1,9 +1,14 @@
 import { Grid, Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../Context/ThemeContext";
 
 function Partner() {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
+	const { mode } = useTheme();
+
+	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
+	const textColor = mode === "light" ? "#071f74ef" : "#ffffff";
 
 	const LogoItem = ({ href, imgSrc, altText, delay }) => (
 		<Grid
@@ -51,7 +56,8 @@ function Partner() {
 				px: { xs: 3, sm: 6, md: 12 },
 				textAlign: "center",
 				direction: isFarsi ? "rtl" : "ltr",
-				background: "linear-gradient(135deg, #f1f4f7aa 0%, #ffffff00 100%)",
+				bgcolor: backgroundColor,
+				color: textColor,
 				fontFamily: "'Unbounded'"
 			}}
 		>
