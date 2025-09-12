@@ -29,7 +29,6 @@ const DocsNavbar = () => {
 					Setup
 				</Button>
 
-				{/* Dark/Light Mode Toggle */}
 				<IconButton onClick={toggleTheme} sx={{ ml: 2, color: textColor }}>
 					{mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
 				</IconButton>
