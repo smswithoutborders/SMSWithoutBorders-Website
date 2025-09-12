@@ -13,20 +13,19 @@ function Partner() {
 	const LogoItem = ({ href, imgSrc, altText, delay }) => (
 		<Grid
 			item
-			md={6}
 			xs={12}
+			md={6}
+			display="flex"
+			justifyContent="center"
+			alignItems="center"
 			component="a"
 			href={href}
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label={altText}
 			sx={{
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
 				opacity: 0,
 				animation: "fadeInUp 1s ease forwards",
-				fontFamily: "'Unbounded'",
 				animationDelay: `${delay}s`,
 				"@keyframes fadeInUp": {
 					"0%": { opacity: 0, transform: "translateY(20px)" },
@@ -39,11 +38,12 @@ function Partner() {
 				src={imgSrc}
 				alt={altText}
 				sx={{
-					width: { md: "70%", xs: "80%" },
+					width: "100%",
+					maxWidth: 300,
+					height: 200,
+					objectFit: "contain",
 					transition: "transform 0.3s ease-in-out",
-					"&:hover": {
-						transform: "scale(1.05)"
-					}
+					"&:hover": { transform: "scale(1.05)" }
 				}}
 			/>
 		</Grid>
@@ -58,68 +58,62 @@ function Partner() {
 				direction: isFarsi ? "rtl" : "ltr",
 				bgcolor: backgroundColor,
 				color: textColor,
-				fontFamily: "'Unbounded'"
+				display: "flex",
+				justifyContent: "center"
 			}}
 		>
-			<Typography
-				sx={{
-					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
-					mb: 6,
-					fontWeight: 400,
-					fontFamily: "'Unbounded'",
-					letterSpacing: 1,
-					color: "rgba(255, 134, 20, 1)",
-					textTransform: "uppercase",
-					animation: "fadeInUp 1s ease forwards",
-					opacity: 0,
-					"@keyframes fadeInUp": {
-						"0%": { opacity: 0, transform: "translateY(30px)" },
-						"100%": { opacity: 1, transform: "translateY(0)" }
-					}
-				}}
-			>
-				{t("Sponsor.SponsorT")}
-			</Typography>
+			<Box sx={{ width: "100%", maxWidth: 1200 }}>
+				<Typography
+					sx={{
+						fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
+						mb: 6,
+						fontWeight: 400,
+						letterSpacing: 1,
+						color: "rgba(255, 134, 20, 1)",
+						textTransform: "uppercase",
+						opacity: 0,
+						animation: "fadeInUp 1s ease forwards",
+						"@keyframes fadeInUp": {
+							"0%": { opacity: 0, transform: "translateY(30px)" },
+							"100%": { opacity: 1, transform: "translateY(0)" }
+						}
+					}}
+				>
+					{t("Sponsor.SponsorT")}
+				</Typography>
 
-			<Typography
-				sx={{
-					fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
-					mb: 12,
-					color: "#01254ec8",
-					maxWidth: 700,
-					margin: "0 auto",
-					letterSpacing: 1,
-					textAlign: "center",
-					opacity: 0,
-					animation: "fadeInUp 1s ease forwards",
-					animationDelay: "0.3s",
-					fontFamily: "'Montserrat', Ubuntu",
-					fontWeight: 400
-				}}
-			>
-				{t("Sponsor.Sponsor-subheader")}
-			</Typography>
+				<Typography
+					sx={{
+						fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+						mb: 12,
+						color: "#01254ec8",
+						maxWidth: 700,
+						margin: "0 auto",
+						letterSpacing: 1,
+						textAlign: "center",
+						opacity: 0,
+						animation: "fadeInUp 1s ease forwards",
+						animationDelay: "0.3s"
+					}}
+				>
+					{t("Sponsor.Sponsor-subheader")}
+				</Typography>
 
-			<Grid
-				container
-				spacing={6}
-				justifyContent="center"
-				alignItems="center"
-				sx={{ px: { xs: 2, sm: 4, md: 10 } }}
-			>
-				<LogoItem
-					href="https://www.opentech.fund/"
-					imgSrc="/Images/OTF.png"
-					altText="Open Tech Fund"
-					delay={0.2}
-				/>
-				<LogoItem
-					href="https://internews.org/"
-					imgSrc="/Images/Internews.png"
-					altText="Internews"
-					delay={0.4}
-				/>
-			</Grid>
+				<Grid container spacing={6} justifyContent="center" alignItems="stretch">
+					<LogoItem
+						href="https://www.opentech.fund/"
+						imgSrc="/Images/OTF.png"
+						altText="Open Tech Fund"
+						delay={0.2}
+					/>
+					<LogoItem
+						href="https://internews.org/"
+						imgSrc="/Images/Internews.png"
+						altText="Internews"
+						delay={0.4}
+					/>
+				</Grid>
+			</Box>
 		</Box>
 	);
 }

@@ -275,7 +275,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify"
@@ -299,7 +299,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify"
@@ -340,7 +340,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -451,7 +451,7 @@ export default function FixedContainer() {
 							{/* =========== Policy Body 5 Section ======== */}
 							<Box
 								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									fontWeight: 500,
 									color: "#041c94",
 									letterSpacing: 1.5,
@@ -466,7 +466,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -480,7 +480,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -510,7 +510,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -524,7 +524,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -554,7 +554,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -584,7 +584,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -598,7 +598,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -628,7 +628,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -658,7 +658,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -688,7 +688,7 @@ export default function FixedContainer() {
 							<Box
 								component="p"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
@@ -718,7 +718,7 @@ export default function FixedContainer() {
 							<Box
 								component="h6"
 								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: "#2b3343",
 									lineHeight: 2,
 									textAlign: "justify",
