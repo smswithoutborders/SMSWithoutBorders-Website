@@ -22,7 +22,6 @@ const Projects = () => {
 
 	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
 	const textColor = mode === "light" ? "#071f74ef" : "#ffffff";
-	const borderColor = mode === "light" ? "#ddd" : "#07265c";
 
 	return (
 		<Box sx={{ py: 8, display: "flex", justifyContent: "center", bgcolor: backgroundColor }}>

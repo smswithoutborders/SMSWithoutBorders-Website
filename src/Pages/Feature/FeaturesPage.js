@@ -4,6 +4,21 @@ import { Box, Typography } from "@mui/material";
 import DocsNavbar from "../../Components/DocsNavbar";
 import { useTheme } from "../../Context/ThemeContext";
 
+const headingIdMap = {
+	"History and use cases": "history-and-use-cases",
+	History: "history",
+	"Use cases": "use-cases",
+	"Technological breakdown": "technological-breakdown",
+	"Key software components": "key-software-components",
+	"Avenues to explore": "avenues-to-explore",
+	Platforms: "platforms",
+	Bridges: "bridges",
+	Clients: "clients",
+	"Gateway clients": "gateway-clients",
+	"Self hosting (to be written based on actual self-hosting)": "self-hosting",
+	"Lessons learned": "lessons-learned"
+};
+
 const FeaturesPage = () => {
 	const [content, setContent] = useState("Loading...");
 	const { mode } = useTheme();
@@ -30,87 +45,12 @@ const FeaturesPage = () => {
 					minHeight: "100vh",
 					px: { xs: 2, sm: 3, md: 6 },
 					pt: { xs: 10, sm: 12, md: 14 },
-					pb: 6
+					pb: 6,
+					scrollBehavior: "smooth"
 				}}
 			>
 				<Box sx={{ maxWidth: 800, mx: "auto" }}>
-					<Box sx={{ mb: 4 }}>
-						<Typography variant="h5" sx={{ mb: 2 }}>
-							Table of Contents
-						</Typography>
-						<Box component="ul" sx={{ pl: 2 }}>
-							<li>
-								<a href="#history-and-use-cases" style={{ color: linkColor }}>
-									History and use cases
-								</a>
-								<ul>
-									<li>
-										<a href="#history" style={{ color: linkColor }}>
-											History
-										</a>
-									</li>
-									<li>
-										<a href="#use-cases" style={{ color: linkColor }}>
-											Use cases
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#technological-breakdown" style={{ color: linkColor }}>
-									Technological breakdown
-								</a>
-								<ul>
-									<li>
-										<a href="#key-software-components" style={{ color: linkColor }}>
-											Key software components
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#avenues-to-explore" style={{ color: linkColor }}>
-									Avenues to explore
-								</a>
-							</li>
-							<li>
-								<a href="#platforms" style={{ color: linkColor }}>
-									Platforms
-								</a>
-							</li>
-							<li>
-								<a href="#bridges" style={{ color: linkColor }}>
-									Bridges
-								</a>
-							</li>
-							<li>
-								<a href="#clients" style={{ color: linkColor }}>
-									Clients
-								</a>
-							</li>
-							<li>
-								<a href="#gateway-clients" style={{ color: linkColor }}>
-									Gateway clients
-								</a>
-							</li>
-							<li>
-								<a
-									href="#self-hosting-to-be-written-based-on-actual-self-hosting"
-									style={{ color: linkColor }}
-								>
-									Self hosting
-								</a>
-							</li>
-							<li>
-								<a href="#lessons-learned" style={{ color: linkColor }}>
-									Lessons learned
-								</a>
-							</li>
-						</Box>
-					</Box>
-
-					<Typography
-						component="div"
+					<Box
 						sx={{
 							"& a": { color: linkColor, textDecoration: "underline" },
 							"& h1, & h2, & h3, & h4": {
@@ -120,8 +60,17 @@ const FeaturesPage = () => {
 							"& ul, & ol, & p": { color: textColor }
 						}}
 					>
-						<ReactMarkdown>{content}</ReactMarkdown>
-					</Typography>
+						<ReactMarkdown
+							components={{
+								h1: ({ node, ...props }) => <h1 id={headingIdMap[props.children]} {...props} />,
+								h2: ({ node, ...props }) => <h2 id={headingIdMap[props.children]} {...props} />,
+								h3: ({ node, ...props }) => <h3 id={headingIdMap[props.children]} {...props} />,
+								h4: ({ node, ...props }) => <h4 id={headingIdMap[props.children]} {...props} />
+							}}
+						>
+							{content}
+						</ReactMarkdown>
+					</Box>
 				</Box>
 			</Box>
 		</>
