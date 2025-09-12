@@ -1,0 +1,80 @@
+import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { Box, Typography } from "@mui/material";
+import DocsNavbar from "../../Components/DocsNavbar";
+import { useTheme } from "../../Context/ThemeContext";
+
+const headingIdMap = {
+	"History and use cases": "history-and-use-cases",
+	History: "history",
+	"Use cases": "use-cases",
+	"Technological breakdown": "technological-breakdown",
+	"Key software components": "key-software-components",
+	"Avenues to explore": "avenues-to-explore",
+	Platforms: "platforms",
+	Bridges: "bridges",
+	Clients: "clients",
+	"Gateway clients": "gateway-clients",
+	"Self hosting (to be written based on actual self-hosting)": "self-hosting",
+	"Lessons learned": "lessons-learned"
+};
+
+const FeaturesPage = () => {
+	const [content, setContent] = useState("Loading...");
+	const { mode } = useTheme();
+
+	useEffect(() => {
+		fetch("/features.md")
+			.then((res) => res.text())
+			.then((text) => setContent(text))
+			.catch(() => setContent("Failed to load features."));
+	}, []);
+
+	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
+	const textColor = mode === "light" ? "#0c0833" : "#ffffff";
+	const linkColor = mode === "light" ? "#1976d2" : "#90caf9";
+
+	return (
+		<>
+			<DocsNavbar />
+
+			<Box
+				sx={{
+					bgcolor: backgroundColor,
+					color: textColor,
+					minHeight: "100vh",
+					px: { xs: 2, sm: 3, md: 6 },
+					pt: { xs: 10, sm: 12, md: 14 },
+					pb: 6,
+					scrollBehavior: "smooth"
+				}}
+			>
+				<Box sx={{ maxWidth: 800, mx: "auto" }}>
+					<Box
+						sx={{
+							"& a": { color: linkColor, textDecoration: "underline" },
+							"& h1, & h2, & h3, & h4": {
+								color: textColor,
+								scrollMarginTop: "100px"
+							},
+							"& ul, & ol, & p": { color: textColor }
+						}}
+					>
+						<ReactMarkdown
+							components={{
+								h1: ({ node, ...props }) => <h1 id={headingIdMap[props.children]} {...props} />,
+								h2: ({ node, ...props }) => <h2 id={headingIdMap[props.children]} {...props} />,
+								h3: ({ node, ...props }) => <h3 id={headingIdMap[props.children]} {...props} />,
+								h4: ({ node, ...props }) => <h4 id={headingIdMap[props.children]} {...props} />
+							}}
+						>
+							{content}
+						</ReactMarkdown>
+					</Box>
+				</Box>
+			</Box>
+		</>
+	);
+};
+
+export default FeaturesPage;

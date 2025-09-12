@@ -1,150 +1,133 @@
 import React from "react";
-import { Box, Typography, Grid, Card, CardMedia, CardContent, Chip } from "@mui/material";
+import {
+	Box,
+	Typography,
+	Grid,
+	Card,
+	CardMedia,
+	CardContent,
+	CardActions,
+	Button,
+	Stack,
+	Chip
+} from "@mui/material";
+import { useTheme } from "../Context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
-const Project = () => {
+const Projects = () => {
+	const { mode } = useTheme();
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
-	const projects = [
-		{
-			id: 1,
-			src: "/RelaySms.png",
-			subTitle: t("projects.one.subtitle"),
-			image: "/relaysms.png",
-			keyPoints: [t("project1.keyPoint1"), t("project1.keyPoint2")],
-			description: t("project1.description"),
-			website: t("project1.read_more"),
-			chipBg: "#FF8614",
-			chipColor: "#02334bff"
-		},
-		{
-			id: 2,
-			src: "/DekuSms.png",
-			image: "/dekusms.png",
-			keyPoints: [t("project2.keyPoint1"), t("project2.keyPoint2")],
-			description: t("project2.description"),
-			website: t("project2.read_more"),
-			chipBg: "#2CD4B4",
-			chipColor: "#02334bff"
-		}
-	];
+	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
+	const textColor = mode === "light" ? "#071f74ef" : "#ffffff";
 
 	return (
-		<Box
-			sx={{
-				py: 10,
-				px: { xs: 3, sm: 6, md: 12 },
-				textAlign: "center",
-				direction: isFarsi ? "rtl" : "ltr",
-				background: "linear-gradient(135deg, #f1f4f7aa 0%, #ffffff00 100%)"
-			}}
-		>
-			<Typography
-				variant="h4"
-				sx={{
-					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.5rem" },
-					mb: 6,
-					fontFamily: "'Unbounded'",
-					fontWeight: 600,
-					letterSpacing: 1,
-					color: "#FF8614",
-					textTransform: "uppercase",
-					opacity: 0,
-					animation: "fadeInUp 1s ease forwards",
-					"@keyframes fadeInUp": {
-						"0%": { opacity: 0, transform: "translateY(30px)" },
-						"100%": { opacity: 1, transform: "translateY(0)" }
-					}
-				}}
-			>
-				{t("projects_title")}
-			</Typography>
+		<Box sx={{ py: 8, display: "flex", justifyContent: "center", bgcolor: backgroundColor }}>
+			<Box sx={{ width: "100%", maxWidth: "3000px", px: { xs: 2, md: 4 } }}>
+				<Typography
+					variant="h4"
+					component="h2"
+					align="center"
+					gutterBottom
+					sx={{
+						fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
+						mb: 6,
+						fontWeight: 400,
+						letterSpacing: 1,
+						color: "rgba(255, 134, 20, 1)",
+						textTransform: "uppercase",
+						opacity: 0,
+						animation: "fadeInUp 1s ease forwards",
+						"@keyframes fadeInUp": {
+							"0%": { opacity: 0, transform: "translateY(30px)" },
+							"100%": { opacity: 1, transform: "translateY(0)" }
+						}
+					}}
+				>
+					{t("projects_title")}
+				</Typography>
 
-			<Typography
-				sx={{
-					fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
-					mb: 12,
-					color: "#01254ec8",
-					maxWidth: 700,
-					margin: "0 auto",
-					fontWeight: 300,
-					letterSpacing: 1,
-					textAlign: "center",
-					opacity: 0,
-					fontFamily: "'Unbounded'",
-					animation: "fadeInUp 1s ease forwards",
-					animationDelay: "0.3s"
-				}}
-			>
-				{t("projects_subtitle")}
-			</Typography>
+				<Typography
+					variant="subtitle1"
+					align="center"
+					sx={{
+						mb: 12,
+						fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+						color: textColor,
+						maxWidth: 700,
+						margin: "0 auto",
+						letterSpacing: 1,
+						textAlign: "center",
+						opacity: 0,
+						animation: "fadeInUp 1s ease forwards",
+						animationDelay: "0.3s"
+					}}
+				>
+					{t("projects_subtitle")}
+				</Typography>
 
-			<Grid
-				container
-				spacing={8}
-				justifyContent="center"
-				sx={{ mt: { xs: 2, sm: 2, md: 6, lg: 4, xl: 4 } }}
-			>
-				{projects.map((proj, idx) => (
-					<Grid item xs={12} md={6} key={proj.id}>
+				<Grid container spacing={6} justifyContent="center">
+					{/* ===========================Relaysms ==========================*/}
+					<Grid item xs={12} md={6} display="flex">
 						<Card
 							sx={{
-								border: "1px solid #02295537",
+								bgcolor: backgroundColor,
+								color: textColor,
+								borderRadius: 1,
+								border: "1px solid #02387562",
 								height: "100%",
-								display: "flex",
 								flexDirection: "column",
-								borderRadius: 4,
-								backgroundColor: "rgba(255, 255, 255, 0.08)",
-								backdropFilter: "blur(12px)",
-								boxShadow: "0 15px 35px rgba(0,0,0,0.1)",
-								p: { xs: 2, md: 4 },
 								opacity: 0,
 								animation: "fadeInUp 1s ease forwards",
-								animationDelay: `${0.2 * idx}s`,
 								transition: "transform 0.3s ease",
 								"&:hover": { transform: "translateY(-10px)" },
 								overflow: "hidden"
 							}}
 						>
-							<Box
+							<Stack
+								direction="row"
+								spacing={1}
 								sx={{
-									display: "flex",
-									gap: 1,
-									pb: 2,
+									p: 2,
 									flexWrap: "wrap",
-									justifyContent: isFarsi ? "left" : "flex-end",
-									textAlign: isFarsi ? "left" : "right"
+									justifyContent: "flex-end"
 								}}
 							>
-								{proj.keyPoints.map((point, idx) => (
-									<Chip
-										key={idx}
-										label={point}
-										sx={{
-											backgroundColor: proj.chipBg,
-											color: proj.chipColor,
-											fontWeight: "bold"
-										}}
-									/>
-								))}
-							</Box>
+								<Chip
+									label={t("project1.keyPoint1")}
+									sx={{
+										backgroundColor: "#FF8614",
+										color: "#02334bff",
+										fontWeight: "bold"
+									}}
+								/>
+								<Chip
+									label={t("project1.keyPoint2")}
+									sx={{
+										backgroundColor: "#FF8614",
+										color: "#02334bff",
+										fontWeight: "bold"
+									}}
+								/>
+							</Stack>
 
 							<CardMedia
 								component="img"
-								image={proj.image}
-								alt={proj.title}
+								height="200"
+								image="/Images/relaysms.png"
+								alt="Relaysms"
 								sx={{
-									width: { xs: "60%", md: "50%" },
+									width: { xs: "80%", sm: "60%", md: "50%" },
+									maxWidth: 300,
 									height: "auto",
 									mx: "auto",
-									mb: -8,
+									mb: 2,
 									position: "relative",
 									zIndex: 0
 								}}
 							/>
-
 							<CardContent
 								sx={{
 									flexGrow: 1,
@@ -154,12 +137,19 @@ const Project = () => {
 									zIndex: 1,
 									pt: 6,
 									fontFamily: "'Unbounded'",
-									backgroundColor: "#f9fcffff"
+									bgcolor: backgroundColor,
+									maxWidth: 600
 								}}
 							>
-								<Box component="img" src={proj.src} sx={{ width: 150, height: "auto", mb: 2 }} />
+								<Box
+									component="img"
+									src="/Images/RelaySms.png"
+									sx={{ width: 150, height: "auto", mb: 2 }}
+								/>
 
 								<Typography
+									variant="body2"
+									color="text.secondary"
 									sx={{
 										color: "#011832c8",
 										fontSize: { xs: "1rem", md: "1.1rem" },
@@ -167,30 +157,121 @@ const Project = () => {
 										mb: 2
 									}}
 								>
-									{proj.description}
-								</Typography>
-
-								<Typography
-									sx={{
-										display: "inline-flex",
-										alignItems: "center",
-										cursor: "pointer",
-										color: "#011832c8",
-										"&:hover": { color: "#FF8614" }
-									}}
-									component="a"
-									href="#"
-								>
-									{proj.website}
-									<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
+									{t("project1.description")}
 								</Typography>
 							</CardContent>
+							<CardActions>
+								<Button size="small" href="https://relay.smswithoutborders.com" target="_blank">
+									{t("project1.read_more")}
+									<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
+								</Button>
+							</CardActions>
 						</Card>
 					</Grid>
-				))}
-			</Grid>
+
+					{/* =============================Dekusms========================== */}
+					<Grid item xs={12} md={6} display="flex">
+						<Card
+							sx={{
+								bgcolor: backgroundColor,
+								color: textColor,
+								borderRadius: 1,
+								border: "1px solid #02387562",
+								height: "100%",
+								flexDirection: "column",
+								opacity: 0,
+								animation: "fadeInUp 1s ease forwards",
+								transition: "transform 0.3s ease",
+								"&:hover": { transform: "translateY(-10px)" },
+								overflow: "hidden"
+							}}
+						>
+							<Stack
+								direction="row"
+								spacing={1}
+								sx={{
+									p: 2,
+									flexWrap: "wrap",
+									justifyContent: "flex-end"
+								}}
+							>
+								<Chip
+									label={t("project2.keyPoint1")}
+									sx={{
+										backgroundColor: "#2ED3B7",
+										color: "#02334bff",
+										fontWeight: "bold"
+									}}
+								/>
+								<Chip
+									label={t("project2.keyPoint2")}
+									sx={{
+										backgroundColor: "#2ED3B7",
+										color: "#02334bff",
+										fontWeight: "bold"
+									}}
+								/>
+							</Stack>
+
+							<CardMedia
+								component="img"
+								height="200"
+								image="/Images/dekusms.png"
+								alt="Dekusms"
+								sx={{
+									width: { xs: "80%", sm: "60%", md: "50%" },
+									maxWidth: 300,
+									height: "auto",
+									mx: "auto",
+									mb: 2,
+									position: "relative",
+									zIndex: 0
+								}}
+							/>
+							<CardContent
+								sx={{
+									flexGrow: 1,
+									textAlign: isFarsi ? "right" : "left",
+									borderTop: "1px solid #00357013",
+									position: "relative",
+									zIndex: 1,
+									pt: 6,
+									fontFamily: "'Unbounded'",
+									bgcolor: backgroundColor,
+									maxWidth: 600
+								}}
+							>
+								<Box
+									component="img"
+									src="/Images/DekuSms.png"
+									sx={{ width: 150, height: "auto", mb: 2 }}
+								/>
+
+								<Typography
+									variant="body2"
+									color="text.secondary"
+									sx={{
+										color: "#011832c8",
+										fontSize: { xs: "1rem", md: "1.1rem" },
+										lineHeight: 1.8,
+										mb: 2
+									}}
+								>
+									{t("project1.description")}
+								</Typography>
+							</CardContent>
+							<CardActions>
+								<Button size="small" href="https://dekusms.com" target="_blank">
+									{t("project2.read_more")}
+									<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
+								</Button>
+							</CardActions>
+						</Card>
+					</Grid>
+				</Grid>
+			</Box>
 		</Box>
 	);
 };
 
-export default Project;
+export default Projects;

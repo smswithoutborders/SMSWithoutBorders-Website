@@ -25,14 +25,15 @@ const About = () => {
 		>
 			<Typography
 				sx={{
-					fontSize: { xs: "1.8rem", sm: "2.25rem", md: "2.3rem" },
+					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
 					mb: 6,
-					fontWeight: 600,
+					fontWeight: 400,
 					letterSpacing: 1,
 					color: "rgba(255, 134, 20, 1)",
 					textTransform: "uppercase",
 					animation: "fadeInUp 1s ease forwards",
 					opacity: 0,
+					fontFamily: "'Unbounded'",
 					"@keyframes fadeInUp": {
 						"0%": { opacity: 0, transform: "translateY(30px)" },
 						"100%": { opacity: 1, transform: "translateY(0)" }
@@ -60,10 +61,12 @@ const About = () => {
 				>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+							fontWeight: 250,
+							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
-							color: "#ffffff"
+							color: "#ffffff",
+							fontFamily: "'Unbounded'"
 						}}
 					>
 						{t("About.description")}
@@ -77,9 +80,10 @@ const About = () => {
 					sx={{
 						borderRadius: 4,
 						p: { xs: 3, md: 5 },
-
+						fontWeight: 300,
 						animation: "fadeInSide 1s ease forwards",
 						opacity: 0,
+						fontFamily: "'Unbounded'",
 						animationDelay: "0.3s",
 						"@keyframes fadeInSide": {
 							"0%": { opacity: 0, transform: "translateX(50px)" },
@@ -89,21 +93,25 @@ const About = () => {
 				>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
+							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
 							color: "#ffffff",
-							mb: 2
+							mb: 2,
+							fontWeight: 250,
+							fontFamily: "'Unbounded'"
 						}}
 					>
 						{t("About.description1")}
 					</Typography>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
+							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
 							textAlign: isFarsi ? "right" : "justify",
-							color: "#ffffff"
+							color: "#ffffff",
+							fontWeight: 250,
+							fontFamily: "'Unbounded'"
 						}}
 					>
 						{t("About.description2")}
@@ -119,15 +127,18 @@ const About = () => {
 						p: { xs: 3, md: 5 },
 						animation: "fadeInUp 1s ease forwards",
 						opacity: 0,
+						fontFamily: "'Unbounded'",
 						animationDelay: "0.6s"
 					}}
 				>
 					<Typography
 						sx={{
-							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.2rem" },
+							fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 							lineHeight: 2,
+							fontWeight: 250,
 							textAlign: isFarsi ? "right" : "justify",
-							color: "#ffffff"
+							color: "#ffffff",
+							fontFamily: "'Unbounded'"
 						}}
 					>
 						{parse(t("About.description3"))}

@@ -19,7 +19,7 @@ const Footer = () => {
 					href="https://www.Afkanerd.com"
 					target="_blank"
 					rel="noopener"
-					sx={{ color: "#FF8614", textDecoration: "none" }}
+					sx={{ color: "#FF8614", textDecoration: "none", fontFamily: "'Unbounded'" }}
 				>
 					Afkanerd
 				</Link>
