@@ -26,18 +26,18 @@ export const ThemeProvider = ({ children }) => {
 								primary: { main: "#1976d2" },
 								background: { default: "#f5f5f5", paper: "#fff" },
 								text: {
-									primary: "#0c0833", // default text
-									secondary: "#555555", // secondary text
-									darkBlue: "#0d1b2a" // additional dark blue text
+									primary: "#0c0833",
+									secondary: "#555555",
+									darkBlue: "#0d1b2a"
 								}
 							}
 						: {
 								primary: { main: "#90caf9" },
 								background: { default: "#000824", paper: "#000a40" },
 								text: {
-									primary: "#ffffff", // default text
-									secondary: "#90caf9", // secondary text
-									darkBlue: "#0d1b2a" // additional dark blue text
+									primary: "#ffffff",
+									secondary: "#90caf9",
+									darkBlue: "#0d1b2a"
 								}
 							})
 				},
