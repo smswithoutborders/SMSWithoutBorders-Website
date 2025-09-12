@@ -25,7 +25,7 @@ const Projects = () => {
 
 	return (
 		<Box sx={{ py: 8, display: "flex", justifyContent: "center", bgcolor: backgroundColor }}>
-			<Box sx={{ width: "100%", maxWidth: "3000px", px: { xs: 2, md: 4 } }}>
+			<Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>
 				<Box sx={{ px: { xs: 2, md: 10 } }}>
 					<Typography
 						variant="h4"
@@ -135,10 +135,11 @@ const Projects = () => {
 									borderTop: "1px solid #02295513",
 									position: "relative",
 									zIndex: 1,
+									m: 2,
 									pt: 6,
 									fontFamily: "'Unbounded'",
 									bgcolor: backgroundColor,
-									maxWidth: 600
+									maxWidth: 450
 								}}
 							>
 								<Box
@@ -240,10 +241,11 @@ const Projects = () => {
 									borderTop: "1px solid #00357013",
 									position: "relative",
 									zIndex: 1,
+									m: 2,
 									pt: 6,
 									fontFamily: "'Unbounded'",
 									bgcolor: backgroundColor,
-									maxWidth: 600
+									maxWidth: 450
 								}}
 							>
 								<Box
