@@ -86,7 +86,7 @@ function Partner() {
 					sx={{
 						fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 						mb: 12,
-						color: "#01254ec8",
+						color: textColor,
 						maxWidth: 700,
 						margin: "0 auto",
 						letterSpacing: 1,

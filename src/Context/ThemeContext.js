@@ -24,15 +24,25 @@ export const ThemeProvider = ({ children }) => {
 					...(mode === "light"
 						? {
 								primary: { main: "#1976d2" },
-								background: { default: "#f5f5f5", paper: "#fff" }
+								background: { default: "#f5f5f5", paper: "#fff" },
+								text: {
+									primary: "#0c0833", // default text
+									secondary: "#555555", // secondary text
+									darkBlue: "#0d1b2a" // additional dark blue text
+								}
 							}
 						: {
 								primary: { main: "#90caf9" },
-								background: { default: "#000824", paper: "#000a40" }
+								background: { default: "#000824", paper: "#000a40" },
+								text: {
+									primary: "#ffffff", // default text
+									secondary: "#90caf9", // secondary text
+									darkBlue: "#0d1b2a" // additional dark blue text
+								}
 							})
 				},
 				typography: {
-					fontFamily: "Roboto, Arial, sans-serif"
+					fontFamily: "Unbounded, Ubuntu"
 				}
 			}),
 		[mode]
