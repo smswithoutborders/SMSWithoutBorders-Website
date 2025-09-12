@@ -36,7 +36,7 @@ export default function ColumnsGrid() {
 						}
 					}}
 				>
-					{t("projects_title")}
+					{t("subheader")}
 				</Typography>
 			</Box>
 			<Grid container spacing={3} alignItems="stretch">

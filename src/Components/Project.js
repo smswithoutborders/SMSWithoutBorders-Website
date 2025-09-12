@@ -26,7 +26,7 @@ const Projects = () => {
 	return (
 		<Box sx={{ py: 8, display: "flex", justifyContent: "center", bgcolor: backgroundColor }}>
 			<Box sx={{ width: "100%", maxWidth: "3000px", px: { xs: 2, md: 4 } }}>
-				<Box sx={{ px: { xs: 2, md: 4 }, mb: 10 }}>
+				<Box sx={{ px: { xs: 2, md: 10 } }}>
 					<Typography
 						variant="h4"
 						component="h2"
@@ -54,7 +54,6 @@ const Projects = () => {
 						variant="subtitle1"
 						align="center"
 						sx={{
-							mb: 16,
 							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 							color: textColor,
 							maxWidth: 700,
@@ -69,14 +68,7 @@ const Projects = () => {
 						{t("projects_subtitle")}
 					</Typography>
 				</Box>
-				<Grid
-					container
-					spacing={6}
-					justifyContent="center"
-					sx={{
-						mb: 16
-					}}
-				>
+				<Grid container spacing={6} justifyContent="center">
 					{/* ===========================Relaysms ==========================*/}
 					<Grid item xs={12} md={6} display="flex">
 						<Card

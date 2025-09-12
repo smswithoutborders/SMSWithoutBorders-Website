@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import DocsNavbar from "../../Components/DocsNavbar";
 import { useTheme } from "../../Context/ThemeContext";
 
@@ -17,6 +17,12 @@ const headingIdMap = {
 	"Gateway clients": "gateway-clients",
 	"Self hosting (to be written based on actual self-hosting)": "self-hosting",
 	"Lessons learned": "lessons-learned"
+};
+
+// Helper to safely get heading text
+const getHeadingText = (children) => {
+	if (Array.isArray(children)) return children.join("");
+	return children;
 };
 
 const FeaturesPage = () => {
@@ -62,10 +68,10 @@ const FeaturesPage = () => {
 					>
 						<ReactMarkdown
 							components={{
-								h1: ({ node, ...props }) => <h1 id={headingIdMap[props.children]} {...props} />,
-								h2: ({ node, ...props }) => <h2 id={headingIdMap[props.children]} {...props} />,
-								h3: ({ node, ...props }) => <h3 id={headingIdMap[props.children]} {...props} />,
-								h4: ({ node, ...props }) => <h4 id={headingIdMap[props.children]} {...props} />
+								h1: (props) => <h1 id={headingIdMap[getHeadingText(props.children)]} {...props} />,
+								h2: (props) => <h2 id={headingIdMap[getHeadingText(props.children)]} {...props} />,
+								h3: (props) => <h3 id={headingIdMap[getHeadingText(props.children)]} {...props} />,
+								h4: (props) => <h4 id={headingIdMap[getHeadingText(props.children)]} {...props} />
 							}}
 						>
 							{content}
