@@ -26,48 +26,48 @@ const Projects = () => {
 	return (
 		<Box sx={{ py: 8, display: "flex", justifyContent: "center", bgcolor: backgroundColor }}>
 			<Box sx={{ width: "100%", maxWidth: "3000px", px: { xs: 2, md: 4 } }}>
-				<Typography
-					variant="h4"
-					component="h2"
-					align="center"
-					gutterBottom
-					sx={{
-						fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
-						mb: 6,
-						fontWeight: 400,
-						letterSpacing: 1,
-						color: "rgba(255, 134, 20, 1)",
-						textTransform: "uppercase",
-						opacity: 0,
-						animation: "fadeInUp 1s ease forwards",
-						"@keyframes fadeInUp": {
-							"0%": { opacity: 0, transform: "translateY(30px)" },
-							"100%": { opacity: 1, transform: "translateY(0)" }
-						}
-					}}
-				>
-					{t("projects_title")}
-				</Typography>
+				<Box sx={{ px: { xs: 2, md: 10 } }}>
+					<Typography
+						variant="h4"
+						component="h2"
+						align="center"
+						gutterBottom
+						sx={{
+							fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
+							mb: 6,
+							fontWeight: 400,
+							letterSpacing: 1,
+							color: "rgba(255, 134, 20, 1)",
+							textTransform: "uppercase",
+							opacity: 0,
+							animation: "fadeInUp 1s ease forwards",
+							"@keyframes fadeInUp": {
+								"0%": { opacity: 0, transform: "translateY(30px)" },
+								"100%": { opacity: 1, transform: "translateY(0)" }
+							}
+						}}
+					>
+						{t("projects_title")}
+					</Typography>
 
-				<Typography
-					variant="subtitle1"
-					align="center"
-					sx={{
-						mb: 12,
-						fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
-						color: textColor,
-						maxWidth: 700,
-						margin: "0 auto",
-						letterSpacing: 1,
-						textAlign: "center",
-						opacity: 0,
-						animation: "fadeInUp 1s ease forwards",
-						animationDelay: "0.3s"
-					}}
-				>
-					{t("projects_subtitle")}
-				</Typography>
-
+					<Typography
+						variant="subtitle1"
+						align="center"
+						sx={{
+							fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
+							color: textColor,
+							maxWidth: 700,
+							margin: "0 auto",
+							letterSpacing: 1,
+							textAlign: "center",
+							opacity: 0,
+							animation: "fadeInUp 1s ease forwards",
+							animationDelay: "0.3s"
+						}}
+					>
+						{t("projects_subtitle")}
+					</Typography>
+				</Box>
 				<Grid container spacing={6} justifyContent="center">
 					{/* ===========================Relaysms ==========================*/}
 					<Grid item xs={12} md={6} display="flex">
@@ -143,7 +143,7 @@ const Projects = () => {
 							>
 								<Box
 									component="img"
-									src="/Images/RelaySms.png"
+									src={mode === "light" ? "/Images/RelaySms.png" : "/Images/RelaySMS-White.png"}
 									sx={{ width: 150, height: "auto", mb: 2 }}
 								/>
 
@@ -151,7 +151,7 @@ const Projects = () => {
 									variant="body2"
 									color="text.secondary"
 									sx={{
-										color: "#011832c8",
+										color: textColor,
 										fontSize: { xs: "1rem", md: "1.1rem" },
 										lineHeight: 1.8,
 										mb: 2
@@ -161,7 +161,12 @@ const Projects = () => {
 								</Typography>
 							</CardContent>
 							<CardActions>
-								<Button size="small" href="https://relay.smswithoutborders.com" target="_blank">
+								<Button
+									size="small"
+									href="https://relay.smswithoutborders.com"
+									target="_blank"
+									sx={{ color: textColor }}
+								>
 									{t("project1.read_more")}
 									<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
 								</Button>
@@ -243,7 +248,7 @@ const Projects = () => {
 							>
 								<Box
 									component="img"
-									src="/Images/DekuSms.png"
+									src={mode === "light" ? "/Images/DekuSms.png" : "/Images/DekuSMS-Dark Theme.png"}
 									sx={{ width: 150, height: "auto", mb: 2 }}
 								/>
 
@@ -251,7 +256,7 @@ const Projects = () => {
 									variant="body2"
 									color="text.secondary"
 									sx={{
-										color: "#011832c8",
+										color: textColor,
 										fontSize: { xs: "1rem", md: "1.1rem" },
 										lineHeight: 1.8,
 										mb: 2
@@ -261,7 +266,12 @@ const Projects = () => {
 								</Typography>
 							</CardContent>
 							<CardActions>
-								<Button size="small" href="https://dekusms.com" target="_blank">
+								<Button
+									size="small"
+									href="https://dekusms.com"
+									target="_blank"
+									sx={{ color: textColor }}
+								>
 									{t("project2.read_more")}
 									<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
 								</Button>

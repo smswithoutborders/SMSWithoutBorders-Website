@@ -7,7 +7,7 @@ const Footer = () => {
 			sx={{
 				textAlign: "center",
 				width: "100%",
-				bgcolor: "#071F74",
+				bgcolor: "#001871",
 				color: "#fff",
 				py: { xs: 3, sm: 4 },
 				fontFamily: "'Unbounded'"
