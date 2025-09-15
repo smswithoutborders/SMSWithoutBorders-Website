@@ -170,3 +170,7 @@ Since Gateway clients do not share keys with the clients (nor are aware of the c
 
 - Starting strong: Releasing the technical needs of the platform too early can lead to users forming a negative opinion about the software. This can be very difficult to bounce back from as the initial traction goes a long way in forming people’s opinions. Knowing when too early means is also very difficult and usually we will just go ahead with it “feels” ready.
 - Creating a community early and communicating the development as it’s happening to the members keeps everyone engaged and more forgiven of the issues they face. We experienced this with DekuSMS which created a Telegram channel early and began communicating with the members there about the development and features coming up. Users would share their issues and to find updates - but even if the software is not ready or buggy people would join the communities.
+
+
+
+# adding this for test to make sure this works as intented
