@@ -10,7 +10,8 @@ import {
 	ListItem,
 	ListItemButton,
 	ListItemText,
-	Divider
+	Divider,
+	Tooltip
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -145,20 +146,20 @@ const Navbar = () => {
 				</Toolbar>
 			</AppBar>
 
-
 			<Drawer
 				anchor={isFarsi ? "left" : "right"}
 				open={drawerOpen}
 				onClose={toggleDrawer}
 				PaperProps={{
 					sx: {
-						width: 260,
+						width: 240,
 						backgroundColor: mode === "light" ? "#f9f9f9" : "#10143bff",
 						color: mode === "light" ? "#000" : "#fff",
 						p: 2,
-						height: "60vh",
+						height: "50vh",
 						overflow: "auto",
-						top: "60px"
+						top: "60px",
+						borderRadius: 3
 					}
 				}}
 			>
@@ -188,7 +189,7 @@ const Navbar = () => {
 									href={link.href || link.path}
 									onClick={handleLinkClick}
 									sx={{
-										borderRadius: 1,
+										borderRadius: 2,
 										mb: 1,
 										"&:hover": { bgcolor: mode === "light" ? "#e6e6e6" : "#333" },
 										px: 2
@@ -212,25 +213,30 @@ const Navbar = () => {
 					<Divider sx={{ my: 2, borderColor: mode === "light" ? "#ccc" : "#555" }} />
 
 					<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-						<Button
-							href="https://github.com/smswithoutborders"
-							sx={{
-								minWidth: "auto",
-								p: 1,
-								bgcolor: "#000158",
-								color: "#fff",
-								"&:hover": { bgcolor: "#FF8614" },
-								borderRadius: 1
-							}}
-						>
-							<GitHubIcon />
-						</Button>
+						<Tooltip title="GitHub" arrow>
+							<Button
+								href="https://github.com/smswithoutborders"
+								sx={{
+									minWidth: "auto",
+									p: 1,
+									bgcolor: "#000158",
+									color: "#fff",
+									"&:hover": { bgcolor: "#FF8614" },
+									borderRadius: 1,
+								}}
+							>
+								<GitHubIcon />
+							</Button>
+						</Tooltip>
 
 						<LanguageSwitcher />
 
-						<IconButton onClick={toggleTheme} color="inherit">
-							{mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
-						</IconButton>
+
+						<Tooltip title="Toggle Theme" arrow>
+							<IconButton onClick={toggleTheme} color="inherit">
+								{mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+							</IconButton>
+						</Tooltip>
 					</Box>
 				</Box>
 			</Drawer>

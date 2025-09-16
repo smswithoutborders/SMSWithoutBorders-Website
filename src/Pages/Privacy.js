@@ -13,7 +13,8 @@ import {
 	ListItemButton,
 	ListItemText,
 	Divider,
-	Container
+	Container,
+	Tooltip
 } from "@mui/material";
 import ReactHtmlParser from "react-html-parser";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -115,6 +116,22 @@ export default function FixedContainer() {
 						minHeight: { xs: 48, sm: 56, md: 66 }
 					}}
 				>
+					<Box
+						sx={{
+							display: "flex",
+							alignItems: "center",
+							gap: 1,
+							cursor: "pointer"
+						}}
+						component="a"
+						href="/"
+					>
+						<img
+							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
+							alt="Logo"
+							style={{ height: 40, marginRight: 10 }}
+						/>
+					</Box>
 					<Box sx={{ width: { xs: "0", md: "100px" } }} />
 
 					<Box
@@ -178,45 +195,46 @@ export default function FixedContainer() {
 				onClose={toggleDrawer}
 				PaperProps={{
 					sx: {
-						width: 260,
-						backgroundColor: drawerBg,
+						width: 240,
+						backgroundColor: mode === "light" ? "#f9f9f9" : "#10143bff",
+						color: mode === "light" ? "#000" : "#fff",
 						p: 2,
-						height: "60vh",
+						height: "50vh",
 						overflow: "auto",
-						top: "60px"
+						top: "60px",
+						borderRadius: 3
 					}
 				}}
 			>
-				<Box
-					sx={{
-						display: "flex",
-						flexDirection: "column",
-						justifyContent: "space-between",
-						height: "80%",
-						alignItems: "stretch"
-					}}
-				>
-					<Box sx={{ display: "flex", justifyContent: isFarsi ? "flex-end" : "flex-start", mb: 2 }}>
+				<Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+					<Box
+						sx={{
+							display: "flex",
+							justifyContent: isFarsi ? "flex-end" : "flex-start",
+							mb: 2
+						}}
+					>
+
 						<img
 							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
 							alt="SMSWithoutBorders"
-							style={{ height: 30, width: "auto" }}
+							style={{ height: 30 }}
 						/>
 					</Box>
 
-					<Divider sx={{ my: 1, borderColor: mode === "light" ? "#000158" : "#ffffff" }} />
+					<Divider sx={{ mb: 2, borderColor: mode === "light" ? "#ccc" : "#555" }} />
 
 					<List>
 						{links.map((link, i) => (
 							<ListItem key={i} disablePadding>
 								<ListItemButton
 									component="a"
-									href={link.href}
+									href={link.href || link.path}
 									onClick={handleLinkClick}
 									sx={{
-										borderRadius: 1,
+										borderRadius: 2,
 										mb: 1,
-										"&:hover": { bgcolor: mode === "light" ? "#e6e6e6" : "#1b1a5a" },
+										"&:hover": { bgcolor: mode === "light" ? "#e6e6e6" : "#333" },
 										px: 2
 									}}
 								>
@@ -227,7 +245,7 @@ export default function FixedContainer() {
 											fontSize: "1rem",
 											fontWeight: 300,
 											textAlign: isFarsi ? "right" : "left",
-											color: drawerTextColor
+											color: mode === "light" ? "#000158" : "#fff"
 										}}
 									/>
 								</ListItemButton>
@@ -235,27 +253,36 @@ export default function FixedContainer() {
 						))}
 					</List>
 
-					<Divider sx={{ my: 1, borderColor: mode === "light" ? "#000158" : "#ffffff" }} />
+					<Divider sx={{ my: 2, borderColor: mode === "light" ? "#ccc" : "#555" }} />
 
-					<Box sx={{ display: "flex", flexDirection: "column", alignItems: "start", gap: 2, mb: 1 }}>
-						<Button
-							href="https://github.com/smswithoutborders"
-							sx={{
-								minWidth: "auto",
-								p: 1,
-								bgcolor: mode === "light" ? "#000158" : "#ffffff",
-								color: mode === "light" ? "#fff" : "#000158",
-								"&:hover": { bgcolor: "#FF8614" },
-								borderRadius: 1
-							}}
-						>
-							<GitHubIcon />
-						</Button>
+					<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+						<Tooltip title="GitHub" arrow>
+							<Button
+								href="https://github.com/smswithoutborders"
+								sx={{
+									minWidth: "auto",
+									p: 1,
+									bgcolor: "#000158",
+									color: "#fff",
+									"&:hover": { bgcolor: "#FF8614" },
+									borderRadius: 1,
+								}}
+							>
+								<GitHubIcon />
+							</Button>
+						</Tooltip>
+
 						<LanguageSwitcher />
+
+
+						<Tooltip title="Toggle Theme" arrow>
+							<IconButton onClick={toggleTheme} color="inherit">
+								{mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+							</IconButton>
+						</Tooltip>
 					</Box>
 				</Box>
 			</Drawer>
-
 			{/* ================= Main Content ================= */}
 			<Box>
 				<Container maxWidth={false} disableGutters>
