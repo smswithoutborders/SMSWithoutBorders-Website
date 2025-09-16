@@ -9,6 +9,8 @@ function Partner() {
 
 	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
 	const textColor = mode === "light" ? "#071f74ef" : "#ffffff";
+	const textSub = mode === "light" ? "#003a71ff" : "#cbd7e2ff"
+	const Sub = mode === "light" ? "#505e85ff" : "#D1D1D6"
 
 	const LogoItem = ({ href, imgSrc, altText, delay }) => (
 		<Grid
@@ -39,7 +41,7 @@ function Partner() {
 				alt={altText}
 				sx={{
 					width: "100%",
-					maxWidth: 300,
+					maxWidth: 500,
 					height: 200,
 					objectFit: "contain",
 					transition: "transform 0.3s ease-in-out",
@@ -63,41 +65,47 @@ function Partner() {
 			}}
 		>
 			<Box sx={{ width: "100%", maxWidth: 1200 }}>
-				<Typography
+				<Box
 					sx={{
-						fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
-						mb: 6,
-						fontWeight: 400,
-						letterSpacing: 1,
-						color: "rgba(255, 134, 20, 1)",
-						textTransform: "uppercase",
-						opacity: 0,
-						animation: "fadeInUp 1s ease forwards",
-						"@keyframes fadeInUp": {
-							"0%": { opacity: 0, transform: "translateY(30px)" },
-							"100%": { opacity: 1, transform: "translateY(0)" }
-						}
-					}}
-				>
-					{t("Sponsor.SponsorT")}
-				</Typography>
-
-				<Typography
-					sx={{
-						fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
-						mb: 12,
-						color: textColor,
-						maxWidth: 700,
-						margin: "0 auto",
-						letterSpacing: 1,
 						textAlign: "center",
-						opacity: 0,
-						animation: "fadeInUp 1s ease forwards",
-						animationDelay: "0.3s"
+						pb: 6,
+						px: { xs: 2, sm: 4, md: 6 },
+						fontFamily: "'Unbounded', 'Ubuntu', Roboto",
 					}}
 				>
-					{t("Sponsor.Sponsor-subheader")}
-				</Typography>
+					<Typography
+						variant="h2"
+						sx={{
+							fontWeight: 300,
+							fontFamily: "'Unbounded', 'Ubuntu', Roboto",
+							fontSize: { xs: "1.6rem", sm: "2rem", md: "2.6rem" },
+							lineHeight: 1.2,
+							color: textSub,
+							mb: 2,
+							position: "relative",
+						}}
+					>
+						{t("Sponsor.SponsorT")}
+					</Typography>
+
+					<Box
+						component="span"
+						sx={{
+							fontFamily: "'Unbounded'",
+							display: "inline-block",
+							fontWeight: 300,
+							fontSize: { xs: "1rem", sm: "1.1rem", md: "1.15rem" },
+							color: Sub,
+							position: "relative"
+						}}
+					>
+						{t("Sponsor.Sponsor-subheader")}
+					</Box>
+				</Box>
+
+
+
+
 
 				<Grid container spacing={6} justifyContent="center" alignItems="stretch">
 					<LogoItem
@@ -114,7 +122,7 @@ function Partner() {
 					/>
 				</Grid>
 			</Box>
-		</Box>
+		</Box >
 	);
 }
 

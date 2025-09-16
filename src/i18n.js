@@ -11,15 +11,16 @@ i18n
 		supportedLngs: ["en", "es", "fr", "fa"],
 		fallbackLng: "en",
 		detection: {
-			order: ["queryString", "cookie"],
-			caches: ["cookie"]
+			order: ["localStorage", "navigator", "cookie", "queryString"],
+			caches: ["localStorage", "cookie"],
+			lookupLocalStorage: "i18nextLng",
 		},
 		backend: {
-			loadPath: "/locales/{{lng}}/translation.json"
+			loadPath: "/locales/{{lng}}/translation.json",
 		},
 		react: {
-			useSuspense: false
-		}
+			useSuspense: true,
+		},
 	});
 
 export default i18n;

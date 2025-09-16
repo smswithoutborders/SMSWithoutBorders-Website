@@ -68,8 +68,17 @@ export default function FixedContainer() {
 		if (isMobile) setDrawerOpen(false);
 	};
 
+	const navbarColor = scroll
+		? mode === "light"
+			? "#f7fbfff5"
+			: "#1b1a5aff"
+		: "transparent";
+	const linkColor = mode === "light" ? "#02397ce3" : "#ffffff";
+	const drawerBg = mode === "light" ? "#f9f9f9" : "#1b1a5a";
+	const drawerTextColor = mode === "light" ? "#000158" : "#ffffff";
 	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
-	const textColor = mode === "light" ? "#071f74ef" : "#ffffff";
+	const textColor = mode === "light" ? "#0d3b66" : "#00d4ff";
+	const subTextColor = mode === "light" ? "#505e85" : "#D1D1D6";
 
 	return (
 		<Box
@@ -92,8 +101,8 @@ export default function FixedContainer() {
 			<AppBar
 				position="fixed"
 				sx={{
-					bgcolor: scroll ? (mode === "light" ? "#f7fbfff5" : "#1b1a5aff") : "transparent",
-					color: mode === "light" ? "#02397ce3" : "#ffffffff",
+					bgcolor: navbarColor,
+					color: linkColor,
 					boxShadow: scroll ? 4 : 0,
 					py: { xs: 0.2, sm: 0.5 },
 					direction: isFarsi ? "rtl" : "ltr",
@@ -174,7 +183,7 @@ export default function FixedContainer() {
 				PaperProps={{
 					sx: {
 						width: 260,
-						backgroundColor: "#f9f9f9",
+						backgroundColor: drawerBg,
 						p: 2,
 						height: "60vh",
 						overflow: "auto",
@@ -199,7 +208,7 @@ export default function FixedContainer() {
 						/>
 					</Box>
 
-					<Divider sx={{ my: 1, borderColor: "#000158" }} />
+					<Divider sx={{ my: 1, borderColor: mode === "light" ? "#000158" : "#ffffff" }} />
 
 					<List>
 						{links.map((link, i) => (
@@ -208,7 +217,12 @@ export default function FixedContainer() {
 									component="a"
 									href={link.href}
 									onClick={handleLinkClick}
-									sx={{ borderRadius: 1, mb: 1, "&:hover": { bgcolor: "#e6e6e6" }, px: 2 }}
+									sx={{
+										borderRadius: 1,
+										mb: 1,
+										"&:hover": { bgcolor: mode === "light" ? "#e6e6e6" : "#1b1a5a" },
+										px: 2
+									}}
 								>
 									<ListItemText
 										primary={link.label}
@@ -217,7 +231,7 @@ export default function FixedContainer() {
 											fontSize: "1rem",
 											fontWeight: 500,
 											textAlign: isFarsi ? "right" : "left",
-											color: "#000158"
+											color: drawerTextColor
 										}}
 									/>
 								</ListItemButton>
@@ -225,18 +239,16 @@ export default function FixedContainer() {
 						))}
 					</List>
 
-					<Divider sx={{ my: 1, borderColor: "#000158" }} />
+					<Divider sx={{ my: 1, borderColor: mode === "light" ? "#000158" : "#ffffff" }} />
 
-					<Box
-						sx={{ display: "flex", flexDirection: "column", alignItems: "start", gap: 2, mb: 1 }}
-					>
+					<Box sx={{ display: "flex", flexDirection: "column", alignItems: "start", gap: 2, mb: 1 }}>
 						<Button
 							href="https://github.com/deku-messaging/Deku-SMS-Android"
 							sx={{
 								minWidth: "auto",
 								p: 1,
-								bgcolor: "#000158",
-								color: "#fff",
+								bgcolor: mode === "light" ? "#000158" : "#ffffff",
+								color: mode === "light" ? "#fff" : "#000158",
 								"&:hover": { bgcolor: "#FF8614" },
 								borderRadius: 1
 							}}
@@ -256,19 +268,19 @@ export default function FixedContainer() {
 							minHeight: "100vh",
 							direction: isFarsi ? "rtl" : "ltr"
 						}}
-						data-aos="fade-up"
 					>
-						<Box sx={{ mt: 6, px: { xs: 1, sm: 2, md: 3 } }}>
+						<Box sx={{ mt: 6, px: { xs: 1, sm: 2, md: 3 }, color: textColor }}>
+
 							<Box
 								sx={{
 									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									marginBottom: { xs: "40px", sm: "60px", md: "60px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy.policyHeader")}
 							</Box>
@@ -276,11 +288,12 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
-									textAlign: "justify"
+									textAlign: "justify",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy.policySubheader")}
 							</Box>
@@ -288,11 +301,12 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
-									textAlign: "justify"
+									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy.policyBody1")}
 							</Box>
@@ -300,11 +314,12 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									textAlign: "justify"
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy.policyBody2")}
 							</Box>
@@ -314,13 +329,14 @@ export default function FixedContainer() {
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
 									fontWeight: 500,
-									color: "#041c94",
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy2.policyHeader2")}
 							</Box>
@@ -330,10 +346,11 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
 									textAlign: "justify",
 									fontWeight: 500,
-									color: "#041c94",
-									letterSpacing: 1.5
+									color: textColor,
+									letterSpacing: 1.5,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy2.policySubheader2")}
 							</Box>
@@ -341,13 +358,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
 									mb: 3,
+									fontFamily: " Ubuntu, Roboto",
+									fontWeight: 300,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy2.policyBody2")}
 							</Box>
@@ -356,14 +374,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy3.policyHeader3")}
 							</Box>
@@ -371,13 +389,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy3.policyBody3")}
 							</Box>
@@ -386,13 +405,14 @@ export default function FixedContainer() {
 								component="ul"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									mb: 3,
 									listStyleType: "disc",
-									textAlign: "left"
+									textAlign: "left",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 								}}
-								data-aos="fade-up"
 							>
 								<Box component="li" sx={{ mb: 2 }}>
 									{ReactHtmlParser(t("Privacy-Policy3.definitionAccount"))}
@@ -436,14 +456,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy4.policyHeader4")}
 							</Box>
@@ -452,14 +472,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy5.policyHeader5")}
 							</Box>
@@ -467,13 +487,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
 									mb: 3,
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy5.policyBody5")}
 							</Box>
@@ -481,13 +502,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy5.policyBody6")}
 							</Box>
@@ -496,14 +518,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy6.policyHeader6")}
 							</Box>
@@ -511,13 +533,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy6.policyBody7")}
 							</Box>
@@ -525,13 +548,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									textAlign: "justify",
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy6.policyBody8")}
 							</Box>
@@ -540,14 +564,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy7.policyHeader7")}
 							</Box>
@@ -555,13 +579,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy7.policyBody9")}
 							</Box>
@@ -570,14 +595,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy8.policyHeader8")}
 							</Box>
@@ -585,13 +610,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy8.policyBody10")}
 							</Box>
@@ -599,13 +625,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy8.policyBody11")}
 							</Box>
@@ -614,14 +641,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy9.policyHeader9")}
 							</Box>
@@ -629,13 +656,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy9.policyBody12")}
 							</Box>
@@ -644,14 +672,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy10.policyHeader10")}
 							</Box>
@@ -659,13 +687,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy10.policyBody14")}
 							</Box>
@@ -674,14 +703,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy11.policyHeader11")}
 							</Box>
@@ -689,13 +718,14 @@ export default function FixedContainer() {
 								component="p"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									textAlign: "justify",
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
-								data-aos="fade-up"
 							>
 								{t("Privacy-Policy11.policyBody15")}
 							</Box>
@@ -704,14 +734,14 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: "#041c94",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
+									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
-								data-aos="fade-left"
 							>
 								{t("Privacy-Policy12.policyHeader12")}
 							</Box>
@@ -719,9 +749,11 @@ export default function FixedContainer() {
 								component="h6"
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: "#2b3343",
+									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
