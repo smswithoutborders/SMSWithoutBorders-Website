@@ -112,7 +112,7 @@ const Projects = () => {
 									sx={{
 										backgroundColor: "#FF8614",
 										color: "#02334bff",
-										fontWeight: "bold",
+										fontWeight: 350,
 										fontFamily: "Ubuntu, Roboto"
 									}}
 								/>
@@ -121,7 +121,7 @@ const Projects = () => {
 									sx={{
 										backgroundColor: "#FF8614",
 										color: "#02334bff",
-										fontWeight: "bold",
+										fontWeight: 350,
 										fontFamily: "Ubuntu, Roboto"
 									}}
 								/>
@@ -163,14 +163,16 @@ const Projects = () => {
 								/>
 
 								<Typography
-									variant="body2"
-									color="text.secondary"
+									variant="body1"
+									component="p"
 									sx={{
+										fontFamily: "'Roboto', 'Ubuntu'",
+										display: "inline-block",
+										fontWeight: 350,
+										fontSize: { xs: "1rem", sm: "1rem", md: "1.1rem" },
 										color: Sub,
-										fontSize: { xs: "1rem", md: "1.1rem" },
-										lineHeight: 1.8,
-										fontFamily: "Ubuntu, Roboto",
-										mb: 2
+										position: "relative",
+										mt: 1,
 									}}
 								>
 									{t("project1.description")}
@@ -236,7 +238,7 @@ const Projects = () => {
 										backgroundColor: "#2ED3B7",
 										color: "#02334bff",
 										fontFamily: "Ubuntu, Roboto",
-										fontWeight: "bold"
+										fontWeight: 350
 									}}
 								/>
 								<Chip
@@ -244,7 +246,7 @@ const Projects = () => {
 									sx={{
 										backgroundColor: "#2ED3B7",
 										color: "#02334bff",
-										fontWeight: "bold",
+										fontWeight: 350,
 										fontFamily: "Ubuntu, Roboto"
 									}}
 								/>
@@ -287,14 +289,16 @@ const Projects = () => {
 								/>
 
 								<Typography
-									variant="body2"
-									color="text.secondary"
+									variant="body1"
+									component="p"
 									sx={{
+										fontFamily: "'Roboto', 'Ubuntu'",
+										display: "inline-block",
+										fontWeight: 350,
+										fontSize: { xs: "1rem", sm: "1rem", md: "1.1rem" },
 										color: Sub,
-										fontSize: { xs: "1rem", md: "1.1rem" },
-										lineHeight: 1.8,
-										fontFamily: "Ubuntu, Roboto",
-										mb: 2
+										position: "relative",
+										mt: 1,
 									}}
 								>
 									{t("project2.description")}

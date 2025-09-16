@@ -52,7 +52,7 @@ const Landing = () => {
 
 			<Typography
 				sx={{
-					fontSize: { xs: "1rem", sm: "1.25rem", md: "2rem" },
+					fontSize: { xs: "1rem", sm: "1.25rem", md: "2.2rem" },
 					fontWeight: 600,
 					color: textColor,
 					width: "100%",
