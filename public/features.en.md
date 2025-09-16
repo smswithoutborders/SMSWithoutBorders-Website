@@ -1,6 +1,8 @@
 # About RelaySMS
 
-## Table of Contents
+---
+
+### Table of Contents
 
 - [History and use cases](#history-and-use-cases)
   - [History](#history)
