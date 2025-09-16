@@ -170,8 +170,9 @@ const Navbar = () => {
 							mb: 2
 						}}
 					>
+
 						<img
-							src={mode === "light" ? "/SWOB-Default.png" : "/SWOB-White.png"}
+							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
 							alt="SMSWithoutBorders"
 							style={{ height: 30 }}
 						/>
@@ -198,7 +199,7 @@ const Navbar = () => {
 										primaryTypographyProps={{
 											fontFamily: "'Unbounded'",
 											fontSize: "1rem",
-											fontWeight: 400,
+											fontWeight: 300,
 											textAlign: isFarsi ? "right" : "left",
 											color: mode === "light" ? "#000158" : "#fff"
 										}}
