@@ -199,7 +199,7 @@ const Navbar = () => {
 										primaryTypographyProps={{
 											fontFamily: "'Unbounded'",
 											fontSize: "1rem",
-											fontWeight: 400,
+											fontWeight: 300,
 											textAlign: isFarsi ? "right" : "left",
 											color: mode === "light" ? "#000158" : "#fff"
 										}}
