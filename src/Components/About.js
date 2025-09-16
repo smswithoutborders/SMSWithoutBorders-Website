@@ -17,7 +17,7 @@ export default function FlexRowTwoColumns() {
 	return (
 		<Box
 			sx={{
-				fontFamily: "Ubuntu, Roboto, Unbounded",
+				fontFamily: "'Roboto', 'Ubuntu', 'Unbounded'",
 				p: { xs: 2, sm: 4 },
 				background: "linear-gradient(135deg, #071f74f0 2%, #071f74ff 100%)",
 			}}
@@ -27,7 +27,6 @@ export default function FlexRowTwoColumns() {
 					textAlign: "center",
 					pb: 6,
 					px: { xs: 2, sm: 4, md: 6 },
-					fontFamily: "'Unbounded'",
 				}}
 			>
 				<Typography
@@ -63,7 +62,7 @@ export default function FlexRowTwoColumns() {
 						textAlign: isFarsi ? "right" : "justify",
 					}}
 				>
-					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "Ubuntu, Roboto", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
+					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "'Ubuntu', 'Roboto', 'Unbounded'", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
 						<p>{t("About.description")}</p>
 					</Typography>
 				</Box>
@@ -75,7 +74,7 @@ export default function FlexRowTwoColumns() {
 						textAlign: isFarsi ? "right" : "justify",
 					}}
 				>
-					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "Ubuntu, Roboto", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
+					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "'Ubuntu', 'Roboto', 'Unbounded'", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
 						<p>{t("About.description1")}</p>
 						<p>{t("About.description2")}</p>
 					</Typography>
@@ -91,7 +90,7 @@ export default function FlexRowTwoColumns() {
 					sx={{
 						color: Sub,
 						lineHeight: 1.6,
-						fontFamily: "Ubuntu, Roboto",
+						fontFamily: "'Ubuntu', 'Roboto', 'Unbounded'",
 						fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
 						"& a": {
 							color: "inherit",
