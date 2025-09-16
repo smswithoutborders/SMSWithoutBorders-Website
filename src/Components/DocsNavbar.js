@@ -112,7 +112,7 @@ const Navbar = () => {
 						))}
 
 						<Button
-							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							href="https://github.com/smswithoutborders"
 							color="inherit"
 							sx={{ minWidth: "auto", p: 0 }}
 							aria-label="GitHub"
@@ -213,7 +213,7 @@ const Navbar = () => {
 
 					<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
 						<Button
-							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							href="https://github.com/smswithoutborders"
 							sx={{
 								minWidth: "auto",
 								p: 1,
