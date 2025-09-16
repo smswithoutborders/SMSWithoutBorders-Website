@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { Box } from "@mui/material";
 import DocsNavbar from "../../Components/DocsNavbar";
 import { useTheme } from "../../Context/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 const headingIdMap = {
 	"History and use cases": "history-and-use-cases",
@@ -19,7 +20,6 @@ const headingIdMap = {
 	"Lessons learned": "lessons-learned"
 };
 
-// Helper to safely get heading text
 const getHeadingText = (children) => {
 	if (Array.isArray(children)) return children.join("");
 	return children;
@@ -28,13 +28,20 @@ const getHeadingText = (children) => {
 const FeaturesPage = () => {
 	const [content, setContent] = useState("Loading...");
 	const { mode } = useTheme();
+	const { i18n } = useTranslation();
 
 	useEffect(() => {
-		fetch("/features.md")
-			.then((res) => res.text())
+		const lang = i18n.language;
+		const file = `/features.${lang}.md`;
+
+		fetch(file)
+			.then((res) => {
+				if (!res.ok) throw new Error("File not found");
+				return res.text();
+			})
 			.then((text) => setContent(text))
 			.catch(() => setContent("Failed to load features."));
-	}, []);
+	}, [i18n.language]);
 
 	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
 	const textColor = mode === "light" ? "#0c0833" : "#ffffff";
@@ -43,7 +50,6 @@ const FeaturesPage = () => {
 	return (
 		<>
 			<DocsNavbar />
-
 			<Box
 				sx={{
 					bgcolor: backgroundColor,

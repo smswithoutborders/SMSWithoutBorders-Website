@@ -9,8 +9,7 @@
 		"link5": "Documentation",
 		"link6": "Features"
 	},
-	"header": "SMSWithoutBorders",
-	"subheader": "Explore SMSWithoutBorders",
+	"header": "Explore SMSWithoutBorders",
 	"About": {
 		"About-title": "Open Source | Research",
 		"description": "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
@@ -20,7 +19,6 @@
 	},
 	"projects_title": "Innovative Projects Under SWOB",
 	"projects_subtitle": "SMSWithoutBorders Commits to buiding OpenSource Tools That Aid Free speech and Communication",
-
 	"project1": {
 		"title": "RelaySMS",
 		"description": "RelaySMS uses SMS messaging to communicate with online platforms without needing an internet connection. The users can grant access to their online platforms which would be used to act on their behalf using SMS messaging. The access granted, messages being sent from the app, and how they get published online are secured with strong up-to-date cryptographic and security practices.",

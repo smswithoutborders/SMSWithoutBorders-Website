@@ -52,7 +52,11 @@ const Navbar = () => {
 			<AppBar
 				position="fixed"
 				sx={{
-					bgcolor: scroll ? (mode === "light" ? "#f7fbfff5" : "#1b1a5aff") : "transparent",
+					background: scroll
+						? (mode === "light"
+							? "#f7fbfff5"
+							: "linear-gradient(135deg, #071f74f0 2%, #071f74ff 100%)")
+						: "transparent",
 					color: mode === "light" ? "#02397ce3" : "#ffffffff",
 					py: { xs: 0.2, sm: 0.5 },
 					direction: isFarsi ? "rtl" : "ltr",
