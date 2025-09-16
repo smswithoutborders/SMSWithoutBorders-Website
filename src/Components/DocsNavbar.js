@@ -1,169 +1,240 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	AppBar,
 	Toolbar,
 	Button,
-	IconButton,
 	Box,
+	IconButton,
 	Drawer,
 	List,
 	ListItem,
+	ListItemButton,
 	ListItemText,
-	Divider,
-	Typography
+	Divider
 } from "@mui/material";
-import { Link } from "react-router-dom";
-import { useTheme } from "../Context/ThemeContext";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { useTranslation } from "react-i18next";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LanguageSwitcher from "./LanguageSwitcher";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "../Context/ThemeContext";
 
-const DocsNavbar = () => {
+const Navbar = () => {
+	const { t, i18n } = useTranslation();
 	const { mode, toggleTheme } = useTheme();
-	const { t } = useTranslation();
-	const [mobileOpen, setMobileOpen] = useState(false);
+	const isFarsi = i18n.language === "fa";
 
-	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
-	const textColor = mode === "light" ? "#0c0833" : "#ffffff";
-	const isMobile = useMediaQuery("(max-width:768px)");
-
-	const handleDrawerToggle = () => {
-		setMobileOpen(!mobileOpen);
-	};
-
-	const navItems = [
+	const links = [
 		{ label: t("navbar.link"), path: "/" },
 		{ label: t("navbar.link4"), path: "/privacy-policy" },
-		{ label: "Setup", path: "/setup" }
+		{ label: t("navbar.link5"), href: "https://docs.smswithoutborders.com/" }
 	];
 
-	const drawer = (
-		<Box sx={{ width: 250, p: 2, color: textColor, fontFamily: "'Unbounded', Ubuntu" }}>
-			<Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-				<IconButton onClick={handleDrawerToggle} sx={{ color: textColor }}>
-					<CloseIcon />
-				</IconButton>
-			</Box>
-			<Divider sx={{ mb: 2, borderColor: textColor }} />
+	const [drawerOpen, setDrawerOpen] = useState(false);
+	const [scroll, setScroll] = useState(false);
 
-			{navItems.map((item) => (
-				<List key={item.path}>
-					<ListItem
-						button
-						component={Link}
-						to={item.path}
-						onClick={handleDrawerToggle}
-						sx={{
-							textAlign: "start",
-							fontFamily: "'Unbounded', Ubuntu",
-							"&:hover": {
-								backgroundColor: mode === "light" ? "#f5f5f5" : "#e66f005d",
-								borderRadius: 5
-							}
-						}}
-					>
-						<ListItemText
-							primary={
-								<Typography
-									sx={{
-										fontFamily: "'Unbounded', Ubuntu",
-										fontWeight: 300,
-										color: textColor
-									}}
-								>
-									{item.label}
-								</Typography>
-							}
-						/>
-					</ListItem>
-				</List>
-			))}
-			<Divider sx={{ my: 2, borderColor: textColor }} />
-			<LanguageSwitcher />
-			<IconButton onClick={toggleTheme} sx={{ mt: 2, color: textColor }}>
-				{mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
-			</IconButton>
-		</Box>
-	);
+	const toggleDrawer = () => setDrawerOpen((prev) => !prev);
+	const handleLinkClick = () => setDrawerOpen(false);
+
+	useEffect(() => {
+		const handleScroll = () => setScroll(window.scrollY > 50);
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	return (
-		<AppBar
-			position="fixed"
-			sx={{
-				backgroundColor,
-				color: textColor,
-				boxShadow: "0px 2px 8px rgba(0,0,0,0.2)",
-				fontFamily: "'Unbounded', Ubuntu"
-			}}
-		>
-			<Toolbar sx={{ justifyContent: "space-between" }}>
-				<Box
-					display="flex"
-					alignItems="center"
-					component={Link}
-					to="/"
-					sx={{ textDecoration: "none" }}
+		<>
+			<AppBar
+				position="fixed"
+				sx={{
+					background: scroll
+						? mode === "light"
+							? "#f7fbfff5"
+							: "linear-gradient(135deg, #01124df0 2%, #010b30ff 100%)"
+						: "transparent",
+					color: mode === "light" ? "#02397ce3" : "#fff",
+					boxShadow: "0px 1px 8px rgba(131, 169, 201, 0.88)",
+					py: { xs: 0.2, sm: 0.5 },
+					direction: isFarsi ? "rtl" : "ltr",
+					transition: "background-color 0.3s ease",
+					zIndex: 1200,
+					fontFamily: "'Unbounded'",
+					boxShadow: "none"
+				}}
+			>
+				<Toolbar
+					sx={{
+						display: "flex",
+						justifyContent: "space-between",
+						alignItems: "center",
+						px: { xs: 2, sm: 4, md: 6 },
+						minHeight: { xs: 46, sm: 54, md: 64 }
+					}}
 				>
-					<img
-						src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
-						alt="Logo"
-						style={{ height: 40, marginRight: 10 }}
-					/>
-				</Box>
+					<Box
+						sx={{
+							display: "flex",
+							alignItems: "center",
+							gap: 1,
+							cursor: "pointer"
+						}}
+						component="a"
+						href="/"
+					>
+						<img
+							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
+							alt="Logo"
+							style={{ height: 40, marginRight: 10 }}
+						/>
+					</Box>
 
-				{!isMobile ? (
-					<Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-						{navItems.map((item) => (
+
+					<Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", gap: 3 }}>
+						{links.map((link, i) => (
 							<Button
-								key={item.path}
-								component={Link}
-								to={item.path}
+								key={i}
+								component={link.path ? "a" : "a"}
+								href={link.href || link.path}
+								color="inherit"
 								sx={{
-									color: textColor,
-									fontFamily: "'Unbounded', Ubuntu",
-									fontWeight: 300,
+									fontFamily: "'Unbounded'",
 									textTransform: "none",
-									fontSize: "1rem",
-									"&:hover": {
-										backgroundColor: "transparent",
-										borderBottom: "2px solid #E66F00"
-									}
+									fontWeight: 300,
+									fontSize: "0.95rem",
+									"&:hover": { borderBottom: "2px solid #FF8614" },
+									borderBottom: "none"
 								}}
 							>
-								{item.label}
+								{link.label}
 							</Button>
 						))}
+
+						<Button
+							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							color="inherit"
+							sx={{ minWidth: "auto", p: 0 }}
+							aria-label="GitHub"
+						>
+							<GitHubIcon
+								sx={{
+									color: mode === "light" ? "#04228eff" : "#fff",
+									fontSize: 24,
+									"&:hover": { color: "#FF8614" }
+								}}
+							/>
+						</Button>
+
 						<LanguageSwitcher />
-						<IconButton onClick={toggleTheme} sx={{ ml: 2, color: textColor }}>
-							{mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
+
+						<IconButton onClick={toggleTheme} color="inherit">
+							{mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
 						</IconButton>
 					</Box>
-				) : (
+
+
 					<IconButton
 						color="inherit"
 						edge="end"
-						onClick={handleDrawerToggle}
-						sx={{ color: textColor }}
+						onClick={toggleDrawer}
+						sx={{ display: { md: "none" } }}
 					>
-						<MenuIcon />
+						{drawerOpen ? <CloseIcon /> : <MenuIcon />}
 					</IconButton>
-				)}
-			</Toolbar>
+				</Toolbar>
+			</AppBar>
+
 
 			<Drawer
-				anchor="right"
-				open={mobileOpen}
-				onClose={handleDrawerToggle}
-				PaperProps={{ sx: { backgroundColor } }}
+				anchor={isFarsi ? "left" : "right"}
+				open={drawerOpen}
+				onClose={toggleDrawer}
+				PaperProps={{
+					sx: {
+						width: 260,
+						backgroundColor: mode === "light" ? "#f9f9f9" : "#10143bff",
+						color: mode === "light" ? "#000" : "#fff",
+						p: 2,
+						height: "60vh",
+						overflow: "auto",
+						top: "60px"
+					}
+				}}
 			>
-				{drawer}
+				<Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+					<Box
+						sx={{
+							display: "flex",
+							justifyContent: isFarsi ? "flex-end" : "flex-start",
+							mb: 2
+						}}
+					>
+						<img
+							src={mode === "light" ? "/SWOB-Default.png" : "/SWOB-White.png"}
+							alt="SMSWithoutBorders"
+							style={{ height: 30 }}
+						/>
+					</Box>
+
+					<Divider sx={{ mb: 2, borderColor: mode === "light" ? "#ccc" : "#555" }} />
+
+					<List>
+						{links.map((link, i) => (
+							<ListItem key={i} disablePadding>
+								<ListItemButton
+									component="a"
+									href={link.href || link.path}
+									onClick={handleLinkClick}
+									sx={{
+										borderRadius: 1,
+										mb: 1,
+										"&:hover": { bgcolor: mode === "light" ? "#e6e6e6" : "#333" },
+										px: 2
+									}}
+								>
+									<ListItemText
+										primary={link.label}
+										primaryTypographyProps={{
+											fontFamily: "'Unbounded'",
+											fontSize: "1rem",
+											fontWeight: 400,
+											textAlign: isFarsi ? "right" : "left",
+											color: mode === "light" ? "#000158" : "#fff"
+										}}
+									/>
+								</ListItemButton>
+							</ListItem>
+						))}
+					</List>
+
+					<Divider sx={{ my: 2, borderColor: mode === "light" ? "#ccc" : "#555" }} />
+
+					<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+						<Button
+							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							sx={{
+								minWidth: "auto",
+								p: 1,
+								bgcolor: "#000158",
+								color: "#fff",
+								"&:hover": { bgcolor: "#FF8614" },
+								borderRadius: 1
+							}}
+						>
+							<GitHubIcon />
+						</Button>
+
+						<LanguageSwitcher />
+
+						<IconButton onClick={toggleTheme} color="inherit">
+							{mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+						</IconButton>
+					</Box>
+				</Box>
 			</Drawer>
-		</AppBar>
+		</>
 	);
 };
 
-export default DocsNavbar;
+export default Navbar;
