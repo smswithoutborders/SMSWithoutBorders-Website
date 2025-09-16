@@ -104,7 +104,7 @@ const Navbar = () => {
 						))}
 
 						<Button
-							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							href="https://github.com/smswithoutborders"
 							color="inherit"
 							sx={{ minWidth: "auto", p: 0 }}
 							aria-label="GitHub"
@@ -169,7 +169,7 @@ const Navbar = () => {
 						}}
 					>
 						<img
-							src="/SWOB-Default.png"
+							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
 							alt="SMSWithoutBorders"
 							style={{ height: 30, width: "auto" }}
 						/>
@@ -218,7 +218,7 @@ const Navbar = () => {
 						}}
 					>
 						<Button
-							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							href="https://github.com/smswithoutborders"
 							sx={{
 								minWidth: "auto",
 								p: 1,

@@ -44,12 +44,8 @@ export default function FixedContainer() {
 
 	const links = [
 		{ label: t("navbar.link"), href: "/" },
-		{ label: t("navbar.link6"), href: "/Features" },
 		{ label: t("navbar.link1"), href: "https://blog.smswithoutborders.com/" },
-		{ label: t("navbar.link5"), href: "https://docs.smswithoutborders.com/" },
-		{ label: t("navbar.link2"), href: "https://relay.smswithoutborders.com/" },
-		{ label: t("navbar.link3"), href: "https://Dekusms.com/" },
-		{ label: t("navbar.link4"), href: "/privacy-policy" }
+		{ label: t("navbar.link5"), href: "https://docs.smswithoutborders.com/" }
 	];
 
 	useEffect(() => {
@@ -136,7 +132,7 @@ export default function FixedContainer() {
 								sx={{
 									fontFamily: "'Unbounded'",
 									textTransform: "none",
-									fontWeight: 320,
+									fontWeight: 300,
 									fontSize: { xs: "0.9rem", sm: "0.75rem", md: "0.90rem" },
 									transition: "all 0.1s ease",
 									"&:hover": { borderBottom: "3px solid #FF8614" },
@@ -148,7 +144,7 @@ export default function FixedContainer() {
 						))}
 
 						<Button
-							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							href="https://github.com/smswithoutborders"
 							color="inherit"
 							sx={{ minWidth: "auto", p: 0 }}
 							aria-label="GitHub"
@@ -202,7 +198,7 @@ export default function FixedContainer() {
 				>
 					<Box sx={{ display: "flex", justifyContent: isFarsi ? "flex-end" : "flex-start", mb: 2 }}>
 						<img
-							src="/SWOB-Default.png"
+							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
 							alt="SMSWithoutBorders"
 							style={{ height: 30, width: "auto" }}
 						/>
@@ -229,7 +225,7 @@ export default function FixedContainer() {
 										primaryTypographyProps={{
 											fontFamily: "'Unbounded'",
 											fontSize: "1rem",
-											fontWeight: 500,
+											fontWeight: 300,
 											textAlign: isFarsi ? "right" : "left",
 											color: drawerTextColor
 										}}
@@ -243,7 +239,7 @@ export default function FixedContainer() {
 
 					<Box sx={{ display: "flex", flexDirection: "column", alignItems: "start", gap: 2, mb: 1 }}>
 						<Button
-							href="https://github.com/deku-messaging/Deku-SMS-Android"
+							href="https://github.com/smswithoutborders"
 							sx={{
 								minWidth: "auto",
 								p: 1,
