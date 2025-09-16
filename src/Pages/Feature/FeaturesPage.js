@@ -77,7 +77,7 @@ const FeaturesPage = () => {
 								<a
 									{...props}
 									style={{
-										color: mode === "light" ? "#1a0dab" : "#87CEFA",
+										color: mode === "light" ? "#0935c4da" : "#87CEFA",
 										textDecoration: "underline",
 										transition: "color 0.3s",
 									}}
