@@ -18,7 +18,7 @@ const Landing = () => {
 			id="home"
 			sx={{
 				direction: isFarsi ? "rtl" : "ltr",
-				height: { xs: "60vh", sm: "70vh", md: "80vh" },
+				height: { xs: "50vh", sm: "60vh", md: "80vh" },
 				display: "flex",
 				flexDirection: "column",
 				bgcolor: backgroundColor,
