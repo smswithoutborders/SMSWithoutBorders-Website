@@ -10,7 +10,8 @@ import {
 	ListItem,
 	ListItemButton,
 	ListItemText,
-	Divider
+	Divider,
+	Tooltip
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -71,7 +72,7 @@ const Navbar = () => {
 						display: "flex",
 						justifyContent: "space-between",
 						alignItems: "center",
-						px: { xs: 2, sm: 4, md: 6 },
+						px: { xs: 2, sm: 4, md: 4 },
 						minHeight: { xs: 46, sm: 54, md: 64 }
 					}}
 				>
@@ -92,7 +93,7 @@ const Navbar = () => {
 								sx={{
 									fontFamily: "'Unbounded'",
 									textTransform: "none",
-									fontWeight: 320,
+									fontWeight: 300,
 									fontSize: { xs: "0.9rem", sm: "0.75rem", md: "0.90rem" },
 									transition: "all 0.1s ease",
 									"&:hover": { borderBottom: "3px solid #FF8614" },
@@ -146,21 +147,14 @@ const Navbar = () => {
 						backgroundColor: mode === "light" ? "#f9f9f9" : "#10143bff",
 						color: mode === "light" ? "#000" : "#fff",
 						p: 2,
-						height: "80vh",
+						height: "65vh",
 						overflow: "auto",
-						top: "60px"
+						top: "60px",
+						borderRadius: 3
 					}
 				}}
 			>
-				<Box
-					sx={{
-						display: "flex",
-						flexDirection: "column",
-						justifyContent: "space-between",
-						height: "80%",
-						alignItems: "stretch"
-					}}
-				>
+				<Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
 					<Box
 						sx={{
 							display: "flex",
@@ -168,25 +162,25 @@ const Navbar = () => {
 							mb: 2
 						}}
 					>
+
 						<img
 							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
 							alt="SMSWithoutBorders"
-							style={{ height: 30, width: "auto" }}
+							style={{ height: 30 }}
 						/>
 					</Box>
 
-					<Divider sx={{ my: 1, borderColor: "#000158" }} />
+					<Divider sx={{ mb: 2, borderColor: mode === "light" ? "#ccc" : "#555" }} />
 
 					<List>
 						{links.map((link, i) => (
 							<ListItem key={i} disablePadding>
 								<ListItemButton
 									component="a"
-									href={link.href}
+									href={link.href || link.path}
 									onClick={handleLinkClick}
 									sx={{
-										borderRadius: 1,
-										mb: 1,
+										borderRadius: 2,
 										"&:hover": { bgcolor: mode === "light" ? "#e6e6e6" : "#333" },
 										px: 2
 									}}
@@ -206,32 +200,33 @@ const Navbar = () => {
 						))}
 					</List>
 
-					<Divider sx={{ my: 1, borderColor: "#000158" }} />
+					<Divider sx={{ my: 2, borderColor: mode === "light" ? "#ccc" : "#555" }} />
 
-					<Box
-						sx={{
-							display: "flex",
-							flexDirection: "column",
-							alignItems: "start",
-							gap: 2,
-							mb: 1
-						}}
-					>
-						<Button
-							href="https://github.com/smswithoutborders"
-							sx={{
-								minWidth: "auto",
-								p: 1,
-								bgcolor: "#000158",
-								color: "#fff",
-								"&:hover": { bgcolor: "#FF8614" },
-								borderRadius: 1
-							}}
-						>
-							<GitHubIcon />
-						</Button>
+					<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+						<Tooltip title="GitHub" arrow>
+							<Button
+								href="https://github.com/smswithoutborders"
+								sx={{
+									minWidth: "auto",
+									p: 1,
+									bgcolor: "#000158",
+									color: "#fff",
+									"&:hover": { bgcolor: "#FF8614" },
+									borderRadius: 1,
+								}}
+							>
+								<GitHubIcon />
+							</Button>
+						</Tooltip>
 
 						<LanguageSwitcher />
+
+
+						<Tooltip title="Toggle Theme" arrow>
+							<IconButton onClick={toggleTheme} color="inherit">
+								{mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+							</IconButton>
+						</Tooltip>
 					</Box>
 				</Box>
 			</Drawer>
