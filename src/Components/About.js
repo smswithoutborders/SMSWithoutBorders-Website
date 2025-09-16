@@ -17,7 +17,7 @@ export default function FlexRowTwoColumns() {
 	return (
 		<Box
 			sx={{
-				fontFamily: "'Roboto', 'Ubuntu', 'Unbounded'",
+				fontFamily: "'Roboto', 'Ubuntu'",
 				p: { xs: 2, sm: 4 },
 				background: "linear-gradient(135deg, #071f74f0 2%, #071f74ff 100%)",
 			}}
@@ -33,12 +33,12 @@ export default function FlexRowTwoColumns() {
 					variant="h2"
 					sx={{
 						fontWeight: 300,
-						fontSize: { xs: "1.3rem", sm: "1.5rem", md: "2.1rem" },
+						fontSize: { xs: "1rem", sm: "1.3rem", md: "2rem" },
 						lineHeight: 1.3,
 						mt: 2,
 						color: textColor,
 						textAlign: "center",
-						fontFamily: "'Unbounded'"
+						fontFamily: "'Ubuntu', 'Roboto'"
 					}}
 				>
 					{t("header")}
@@ -51,7 +51,6 @@ export default function FlexRowTwoColumns() {
 					flexDirection: { xs: "column", sm: "row" },
 					gap: { xs: 2, sm: 4 },
 					mb: 4,
-					fontFamily: "'Unbounded'",
 					fontWeight: 300,
 				}}
 			>
@@ -62,7 +61,7 @@ export default function FlexRowTwoColumns() {
 						textAlign: isFarsi ? "right" : "justify",
 					}}
 				>
-					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "'Ubuntu', 'Roboto', 'Unbounded'", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
+					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "'Ubuntu', 'Roboto'", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
 						<p>{t("About.description")}</p>
 					</Typography>
 				</Box>
@@ -74,7 +73,7 @@ export default function FlexRowTwoColumns() {
 						textAlign: isFarsi ? "right" : "justify",
 					}}
 				>
-					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "'Ubuntu', 'Roboto', 'Unbounded'", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
+					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "'Ubuntu', 'Roboto'", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
 						<p>{t("About.description1")}</p>
 						<p>{t("About.description2")}</p>
 					</Typography>
@@ -90,7 +89,7 @@ export default function FlexRowTwoColumns() {
 					sx={{
 						color: Sub,
 						lineHeight: 1.6,
-						fontFamily: "'Ubuntu', 'Roboto', 'Unbounded'",
+						fontFamily: "'Ubuntu', 'Roboto'",
 						fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
 						"& a": {
 							color: "inherit",

@@ -27,44 +27,45 @@ const Projects = () => {
 	return (
 		<Box sx={{ py: 8, display: "flex", justifyContent: "center", bgcolor: backgroundColor }}>
 			<Box sx={{ width: "100%", px: { xs: 2, md: 4 } }}>
+
 				<Box
 					sx={{
 						textAlign: "center",
 						pb: 6,
 						px: { xs: 2, sm: 4, md: 6 },
-						fontFamily: "'Unbounded', 'Ubuntu', Roboto",
 					}}
 				>
 					<Typography
 						variant="h2"
 						sx={{
 							fontWeight: 300,
-							fontFamily: "'Unbounded', 'Ubuntu', Roboto",
-							fontSize: { xs: "1.6rem", sm: "2rem", md: "2.6rem" },
-							lineHeight: 1.2,
-							color: textSub,
-							mb: 2,
-							position: "relative",
+							fontSize: { xs: "1.3rem", sm: "1.2rem", md: "2rem" },
+							lineHeight: 1.3,
+							mt: 2,
+							color: textColor,
+							textAlign: "center",
+							fontFamily: "'Roboto', 'Ubuntu'"
 						}}
 					>
 						{t("projects_title")}
 					</Typography>
 
-					<Box
-						component="span"
+					<Typography
+						variant="body1"
+						component="p"
 						sx={{
-							fontFamily: "'Unbounded'",
+							fontFamily: "'Roboto', 'Ubuntu'",
 							display: "inline-block",
 							fontWeight: 300,
-							fontSize: { xs: "1rem", sm: "1.1rem", md: "1.15rem" },
+							fontSize: { xs: "1rem", sm: "1rem", md: "1.1rem" },
 							color: Sub,
-							position: "relative"
+							position: "relative",
+							mt: 1,
 						}}
 					>
 						{t("projects_subtitle")}
-					</Box>
+					</Typography>
 				</Box>
-
 
 				<Box
 					sx={{
@@ -274,7 +275,7 @@ const Projects = () => {
 									position: "relative",
 									zIndex: 1,
 									px: { xs: 3, sm: 4 },
-									fontFamily: "'Unbounded'",
+									fontFamily: "'Roboto', 'Ubuntu'",
 									bgcolor: backgroundColor,
 									width: "100%"
 								}}

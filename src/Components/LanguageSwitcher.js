@@ -40,7 +40,7 @@ const LanguageSwitcher = () => {
 				borderRadius: "0.5rem",
 				px: 1,
 				py: 0.5,
-				fontFamily: "'Unbounded', 'Montserrat', Ubuntu",
+				fontFamily: "'Roboto', 'Ubuntu'",
 				fontWeight: 300,
 			}}
 		>
@@ -60,7 +60,7 @@ const LanguageSwitcher = () => {
 					<Typography
 						sx={{
 							fontSize: { xs: "0.75rem", sm: "0.85rem" },
-							fontFamily: "'Unbounded', 'Montserrat', Ubuntu",
+							fontFamily: "'Roboto', 'Ubuntu'",
 							fontWeight: 300,
 						}}
 					>
@@ -92,7 +92,7 @@ const LanguageSwitcher = () => {
 								gap: 1.5,
 								px: 2,
 								py: 1,
-								fontFamily: "'Unbounded', 'Montserrat', Ubuntu",
+								fontFamily: "'Roboto', 'Ubuntu'",
 								transition: "all 0.2s ease",
 								"&:hover": { backgroundColor: "#f5f5f5", transform: "translateX(4px)" },
 							}}
@@ -101,7 +101,7 @@ const LanguageSwitcher = () => {
 							<Typography
 								sx={{
 									fontSize: "0.85rem",
-									fontFamily: "'Unbounded', 'Montserrat', Ubuntu",
+									fontFamily: "'Roboto', 'Ubuntu'",
 									fontWeight: 350,
 									color: "#333",
 								}}

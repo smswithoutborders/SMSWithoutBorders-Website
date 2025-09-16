@@ -19,7 +19,6 @@ const Landing = () => {
 			sx={{
 				direction: isFarsi ? "rtl" : "ltr",
 				height: { xs: "60vh", sm: "70vh", md: "80vh" },
-				fontFamily: "'Unbounded'",
 				display: "flex",
 				flexDirection: "column",
 				bgcolor: backgroundColor,
@@ -58,7 +57,7 @@ const Landing = () => {
 					color: textColor,
 					width: "100%",
 					textAlign: isFarsi ? "right" : "left",
-					fontFamily: "'Unbounded'"
+					fontFamily: "'Roboto', 'Ubuntu'"
 				}}
 			>
 				{t("About.About-title", "Open Source | Research")}
