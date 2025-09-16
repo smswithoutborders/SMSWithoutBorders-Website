@@ -38,7 +38,7 @@ const Projects = () => {
 					<Typography
 						variant="h2"
 						sx={{
-							fontWeight: 300,
+							fontWeight: 400,
 							fontSize: { xs: "1.3rem", sm: "1.2rem", md: "2rem" },
 							lineHeight: 1.3,
 							mt: 2,

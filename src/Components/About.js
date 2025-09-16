@@ -32,8 +32,8 @@ export default function FlexRowTwoColumns() {
 				<Typography
 					variant="h2"
 					sx={{
-						fontWeight: 300,
-						fontSize: { xs: "1rem", sm: "1.3rem", md: "2rem" },
+						fontWeight: 400,
+						fontSize: { xs: "1.3rem", sm: "1.3rem", md: "2rem" },
 						lineHeight: 1.3,
 						mt: 2,
 						color: textColor,
