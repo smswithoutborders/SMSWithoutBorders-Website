@@ -170,8 +170,9 @@ const Navbar = () => {
 							mb: 2
 						}}
 					>
+
 						<img
-							src={mode === "light" ? "/SWOB-Default.png" : "/SWOB-White.png"}
+							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
 							alt="SMSWithoutBorders"
 							style={{ height: 30 }}
 						/>
