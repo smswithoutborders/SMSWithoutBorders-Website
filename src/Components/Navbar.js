@@ -146,7 +146,7 @@ const Navbar = () => {
 						backgroundColor: mode === "light" ? "#f9f9f9" : "#10143bff",
 						color: mode === "light" ? "#000" : "#fff",
 						p: 2,
-						height: "60vh",
+						height: "80vh",
 						overflow: "auto",
 						top: "60px"
 					}
@@ -196,7 +196,7 @@ const Navbar = () => {
 										primaryTypographyProps={{
 											fontFamily: "'Unbounded'",
 											fontSize: "1rem",
-											fontWeight: 500,
+											fontWeight: 300,
 											textAlign: isFarsi ? "right" : "left",
 											color: mode === "light" ? "#000158" : "#fff"
 										}}
