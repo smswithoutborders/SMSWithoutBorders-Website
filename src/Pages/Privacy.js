@@ -77,7 +77,7 @@ export default function FixedContainer() {
 	const drawerBg = mode === "light" ? "#f9f9f9" : "#1b1a5a";
 	const drawerTextColor = mode === "light" ? "#000158" : "#ffffff";
 	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
-	const textColor = mode === "light" ? "#003a71ff" : "#5dd6d0ff";
+	const textColor = mode === "light" ? "#0d3b66" : "#00d4ff";
 	const subTextColor = mode === "light" ? "#505e85" : "#D1D1D6";
 
 	return (
@@ -274,7 +274,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									marginBottom: { xs: "40px", sm: "60px", md: "60px" },
@@ -289,7 +290,9 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: subTextColor,
 									lineHeight: 2,
-									textAlign: "justify"
+									textAlign: "justify",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 								}}
 							>
 								{t("Privacy-Policy.policySubheader")}
@@ -300,7 +303,9 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: subTextColor,
 									lineHeight: 2,
-									textAlign: "justify"
+									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 								}}
 							>
 								{t("Privacy-Policy.policyBody1")}
@@ -311,6 +316,8 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: subTextColor,
 									lineHeight: 2,
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									textAlign: "justify"
 								}}
 							>
@@ -325,6 +332,8 @@ export default function FixedContainer() {
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
 								}}
@@ -338,7 +347,9 @@ export default function FixedContainer() {
 									textAlign: "justify",
 									fontWeight: 500,
 									color: textColor,
-									letterSpacing: 1.5
+									letterSpacing: 1.5,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300
 								}}
 							>
 								{t("Privacy-Policy2.policySubheader2")}
@@ -351,6 +362,8 @@ export default function FixedContainer() {
 									lineHeight: 2,
 									textAlign: "justify",
 									mb: 3,
+									fontFamily: " Ubuntu, Roboto",
+									fontWeight: 300,
 									px: { xs: 2, sm: 3 }
 								}}
 							>
@@ -361,7 +374,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -378,6 +392,8 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -393,7 +409,9 @@ export default function FixedContainer() {
 									lineHeight: 2,
 									mb: 3,
 									listStyleType: "disc",
-									textAlign: "left"
+									textAlign: "left",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 								}}
 							>
 								<Box component="li" sx={{ mb: 2 }}>
@@ -438,7 +456,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -453,7 +472,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -471,6 +491,8 @@ export default function FixedContainer() {
 									lineHeight: 2,
 									textAlign: "justify",
 									mb: 3,
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									px: { xs: 2, sm: 3 }
 								}}
 							>
@@ -483,6 +505,8 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -494,7 +518,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -511,6 +536,8 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -523,6 +550,8 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: subTextColor,
 									lineHeight: 2,
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									textAlign: "justify",
 									mb: 3,
 									px: { xs: 2, sm: 3 }
@@ -535,7 +564,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -552,6 +582,8 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -563,7 +595,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -580,6 +613,8 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -593,6 +628,8 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -604,7 +641,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -621,6 +659,8 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -632,7 +672,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -649,6 +690,8 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -660,7 +703,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -676,6 +720,8 @@ export default function FixedContainer() {
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
 									color: subTextColor,
 									lineHeight: 2,
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									textAlign: "justify",
 									mb: 3,
 									px: { xs: 2, sm: 3 }
@@ -688,7 +734,8 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
+									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
@@ -705,6 +752,8 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
+									fontFamily: "Ubuntu, Roboto",
+									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
 								}}

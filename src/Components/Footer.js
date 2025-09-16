@@ -1,14 +1,17 @@
 import React from "react";
 import { Box, Typography, Link } from "@mui/material";
+import { useTheme } from "../Context/ThemeContext";
 
 const Footer = () => {
+	const { mode, toggleTheme } = useTheme();
+
 	return (
 		<Box
 			sx={{
 				textAlign: "center",
 				width: "100%",
-				bgcolor: "#001871",
-				color: "#fff",
+				background: "linear-gradient(135deg, #071f74f0 2%, #071f74ff 100%)",
+				color: mode === "light" ? "#e2ebf7e3" : "#ffffffff",
 				py: { xs: 3, sm: 4 },
 				fontFamily: "'Unbounded'"
 			}}
