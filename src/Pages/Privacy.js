@@ -31,7 +31,7 @@ import { useTheme } from "../Context/ThemeContext";
 
 const theme = createTheme({
 	typography: {
-		fontFamily: "'Mona Sans'"
+		fontFamily: "'Roboto', 'Ubuntu'"
 	}
 });
 
@@ -82,7 +82,7 @@ export default function FixedContainer() {
 			id="home"
 			sx={{
 				minHeight: "100vh",
-				fontFamily: "'Unbounded'",
+				fontFamily: "'Roboto', 'Ubuntu'",
 				display: "flex",
 				flexDirection: "column",
 				justifyContent: "center",
@@ -105,7 +105,7 @@ export default function FixedContainer() {
 					direction: isFarsi ? "rtl" : "ltr",
 					transition: "background-color 0.3s ease, box-shadow 0.3s ease",
 					zIndex: 1400,
-					fontFamily: "'Unbounded'"
+					fontFamily: "'Roboto', 'Ubuntu'"
 				}}
 			>
 				<Toolbar
@@ -147,7 +147,7 @@ export default function FixedContainer() {
 								href={link.href}
 								color="inherit"
 								sx={{
-									fontFamily: "'Unbounded'",
+									fontFamily: "'Roboto', 'Ubuntu'",
 									textTransform: "none",
 									fontWeight: 300,
 									fontSize: { xs: "0.9rem", sm: "0.75rem", md: "0.90rem" },
@@ -241,7 +241,7 @@ export default function FixedContainer() {
 									<ListItemText
 										primary={link.label}
 										primaryTypographyProps={{
-											fontFamily: "'Unbounded'",
+											fontFamily: "'Roboto', 'Ubuntu'",
 											fontSize: "1rem",
 											fontWeight: 300,
 											textAlign: isFarsi ? "right" : "left",
@@ -297,7 +297,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -314,7 +314,7 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 								}}
 							>
@@ -355,7 +355,7 @@ export default function FixedContainer() {
 									color: textColor,
 									letterSpacing: 1.5,
 									textAlign: "justify",
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
 									marginTop: { xs: "20px", sm: "30px", md: "30px" }
@@ -371,7 +371,7 @@ export default function FixedContainer() {
 									fontWeight: 500,
 									color: textColor,
 									letterSpacing: 1.5,
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300
 								}}
 							>
@@ -385,7 +385,7 @@ export default function FixedContainer() {
 									lineHeight: 2,
 									textAlign: "justify",
 									mb: 3,
-									fontFamily: " Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									px: { xs: 2, sm: 3 }
 								}}
@@ -397,7 +397,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -415,7 +415,7 @@ export default function FixedContainer() {
 									color: subTextColor,
 									lineHeight: 2,
 									textAlign: "justify",
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									mb: 3,
 									px: { xs: 2, sm: 3 }
@@ -479,7 +479,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -495,7 +495,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -541,7 +541,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -587,7 +587,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -618,7 +618,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -664,7 +664,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -695,7 +695,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -726,7 +726,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,
@@ -757,7 +757,7 @@ export default function FixedContainer() {
 							<Box
 								sx={{
 									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "'Unbounded', Ubuntu, Roboto",
+									fontFamily: "Ubuntu, Roboto",
 									fontWeight: 300,
 									color: textColor,
 									letterSpacing: 1.5,

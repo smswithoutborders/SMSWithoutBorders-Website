@@ -51,7 +51,7 @@ export const ThemeProvider = ({ children }) => {
 						})
 				},
 				typography: {
-					fontFamily: "Unbounded, Ubuntu"
+					fontFamily: "'Roboto', 'Ubuntu'"
 				}
 			}),
 		[mode]

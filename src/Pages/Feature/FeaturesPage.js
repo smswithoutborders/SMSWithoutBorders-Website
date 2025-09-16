@@ -46,7 +46,7 @@ const FeaturesPage = () => {
 		marginBottom: level === 1 ? "1rem" : "0.8rem",
 		marginTop: level === 1 ? "2rem" : "1rem",
 		direction: isFarsi ? "rtl" : "ltr",
-		fontFamily: "'Unbounded', 'Ubuntu', 'Roboto'",
+		fontFamily: "'Roboto', 'Ubuntu'",
 		fontWeight: 300,
 	});
 
@@ -84,7 +84,7 @@ const FeaturesPage = () => {
 							/>
 							<Typography
 								sx={{
-									fontFamily: "'Unbounded', 'Ubuntu'",
+									fontFamily: "'Roboto', 'Ubuntu'",
 									color: mode === "light" ? "#0d3b66" : "#00d4ff",
 									fontWeight: 400,
 									fontSize: "1.1rem",

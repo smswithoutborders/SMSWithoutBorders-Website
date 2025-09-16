@@ -61,7 +61,7 @@ const Navbar = () => {
 					direction: isFarsi ? "rtl" : "ltr",
 					transition: "background-color 0.3s ease",
 					zIndex: 1200,
-					fontFamily: "'Unbounded'",
+					fontFamily: "'Roboto', 'Ubuntu'",
 					boxShadow: "none"
 				}}
 			>
@@ -100,7 +100,7 @@ const Navbar = () => {
 								href={link.href || link.path}
 								color="inherit"
 								sx={{
-									fontFamily: "'Unbounded'",
+									fontFamily: "'Roboto', 'Ubuntu'",
 									textTransform: "none",
 									fontWeight: 300,
 									fontSize: "0.95rem",
@@ -198,7 +198,7 @@ const Navbar = () => {
 									<ListItemText
 										primary={link.label}
 										primaryTypographyProps={{
-											fontFamily: "'Unbounded'",
+											fontFamily: "'Roboto', 'Ubuntu'",
 											fontSize: "1rem",
 											fontWeight: 300,
 											textAlign: isFarsi ? "right" : "left",

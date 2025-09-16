@@ -13,13 +13,13 @@ export default function FlexRowTwoColumns() {
 	const textSub = mode === "light" ? "#D1D1D6" : "#E4E4E7";
 	const Sub = mode === "light" ? "#F4F4F5" : "#D1D1D6";
 
-
 	return (
 		<Box
 			sx={{
-				fontFamily: "'Roboto', 'Ubuntu', 'Unbounded'",
+				fontFamily: "'Ubuntu', 'Roboto'",
 				p: { xs: 2, sm: 4 },
 				background: "linear-gradient(135deg, #071f74f0 2%, #071f74ff 100%)",
+				direction: isFarsi ? "rtl" : "ltr",
 			}}
 		>
 			<Box
@@ -33,12 +33,12 @@ export default function FlexRowTwoColumns() {
 					variant="h2"
 					sx={{
 						fontWeight: 300,
-						fontSize: { xs: "1.3rem", sm: "1.5rem", md: "2.1rem" },
+						fontSize: { xs: "1rem", sm: "1.3rem", md: "2rem" },
 						lineHeight: 1.3,
 						mt: 2,
 						color: textColor,
 						textAlign: "center",
-						fontFamily: "'Unbounded'"
+						fontFamily: "'Ubuntu', 'Roboto'",
 					}}
 				>
 					{t("header")}
@@ -51,8 +51,7 @@ export default function FlexRowTwoColumns() {
 					flexDirection: { xs: "column", sm: "row" },
 					gap: { xs: 2, sm: 4 },
 					mb: 4,
-					fontFamily: "'Unbounded'",
-					fontWeight: 300,
+					fontWeight: 200,
 				}}
 			>
 				<Box
@@ -62,7 +61,19 @@ export default function FlexRowTwoColumns() {
 						textAlign: isFarsi ? "right" : "justify",
 					}}
 				>
-					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "'Ubuntu', 'Roboto', 'Unbounded'", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
+					<Typography
+						variant="body1"
+						component="p"
+						sx={{
+							fontFamily: "'Roboto', 'Ubuntu'",
+							display: "inline-block",
+							fontWeight: 300,
+							fontSize: { xs: "1rem", sm: "1rem", md: "1.2rem" },
+							color: Sub,
+							position: "relative",
+							mt: 1,
+						}}
+					>
 						<p>{t("About.description")}</p>
 					</Typography>
 				</Box>
@@ -74,24 +85,38 @@ export default function FlexRowTwoColumns() {
 						textAlign: isFarsi ? "right" : "justify",
 					}}
 				>
-					<Typography sx={{ color: Sub, lineHeight: 1.6, fontFamily: "'Ubuntu', 'Roboto', 'Unbounded'", fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" } }}>
+					<Typography
+						variant="body1"
+						component="p"
+						sx={{
+							fontFamily: "'Roboto', 'Ubuntu'",
+							display: "inline-block",
+							fontWeight: 300,
+							fontSize: { xs: "1rem", sm: "1rem", md: "1.2rem" },
+							color: Sub,
+							position: "relative",
+							mt: 1,
+						}}
+					>
 						<p>{t("About.description1")}</p>
 						<p>{t("About.description2")}</p>
 					</Typography>
 				</Box>
 			</Box>
 
-			<Box
-				sx={{
-					p: 2
-				}}
-			>
+			<Box sx={{ p: 2 }}>
 				<Typography
+					variant="body1"
+					component="p"
 					sx={{
+						display: "inline-block",
+						fontWeight: 300,
+						fontSize: { xs: "1rem", sm: "1rem", md: "1.2rem" },
 						color: Sub,
+						position: "relative",
+						mt: 1,
 						lineHeight: 1.6,
-						fontFamily: "'Ubuntu', 'Roboto', 'Unbounded'",
-						fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
+						fontFamily: "'Ubuntu', 'Roboto'",
 						"& a": {
 							color: "inherit",
 							textDecoration: "underline",
