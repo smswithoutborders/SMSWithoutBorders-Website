@@ -47,7 +47,7 @@ const Projects = () => {
 							fontFamily: "'Roboto', 'Ubuntu'"
 						}}
 					>
-						{t("projects_title", { defaultValue: "Innovative Projects Under SWOB" })}
+						{t("projects_title", { defaultValue: "Innovative Projects Under SMSWithoutBorders(SWOB)" })}
 					</Typography>
 
 					<Typography
