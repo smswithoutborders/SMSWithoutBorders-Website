@@ -28,9 +28,10 @@ const Navbar = () => {
 	const isFarsi = i18n.language === "fa";
 
 	const links = [
-		{ label: t("navbar.link"), path: "/" },
-		{ label: t("navbar.link4"), path: "/privacy-policy" },
-		{ label: t("navbar.link5"), href: "https://docs.smswithoutborders.com/" }
+		{ label: t("navbar.link", "Home"), path: "/" },
+		{ label: t("navbar.link4", "Privacy Policy"), path: "/privacy-policy" },
+		{ label: t("navbar.link5", "Documentation"), href: "https://docs.smswithoutborders.com/" }
+
 	];
 
 	const [drawerOpen, setDrawerOpen] = useState(false);

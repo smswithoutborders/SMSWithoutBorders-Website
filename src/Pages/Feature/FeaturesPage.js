@@ -7,11 +7,12 @@ import { Box, CircularProgress, Typography } from "@mui/material";
 import DocsNavbar from "../../Components/DocsNavbar";
 import { useTheme } from "../../Context/ThemeContext";
 import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 
 const FeaturesPage = () => {
 	const [content, setContent] = useState(null);
 	const { mode } = useTheme();
-	const { i18n } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
 	useEffect(() => {
@@ -90,7 +91,7 @@ const FeaturesPage = () => {
 									fontSize: "1.1rem",
 								}}
 							>
-								Loading Please Wait
+								{t("loader", { defaultValue: "Loading Please Wait" })}
 							</Typography>
 						</Box>
 					) : (
