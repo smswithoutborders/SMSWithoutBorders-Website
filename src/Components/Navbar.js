@@ -28,12 +28,12 @@ const Navbar = () => {
 	const isFarsi = i18n.language === "fa";
 
 	const links = [
-		{ label: t("navbar.link1"), href: "https://blog.smswithoutborders.com/" },
-		{ label: t("navbar.link6"), href: "/Features" },
-		{ label: t("navbar.link5"), href: "https://docs.smswithoutborders.com/" },
-		{ label: t("navbar.link2"), href: "https://relay.smswithoutborders.com/" },
-		{ label: t("navbar.link3"), href: "https://Dekusms.com/" },
-		{ label: t("navbar.link4"), href: "/privacy-policy" }
+		{ label: t("navbar.link1", "Blog"), href: "https://blog.smswithoutborders.com/" },
+		{ label: t("navbar.link6", "Features"), href: "/Features" },
+		{ label: t("navbar.link5", "Documentation"), href: "https://docs.smswithoutborders.com/" },
+		{ label: t("navbar.link2", "RelaySMS"), href: "https://relay.smswithoutborders.com/" },
+		{ label: t("navbar.link3", "DekuSMS"), href: "https://Dekusms.com/" },
+		{ label: t("navbar.link4", "Privacy Policy"), href: "/privacy-policy" }
 	];
 
 	const [drawerOpen, setDrawerOpen] = useState(false);
