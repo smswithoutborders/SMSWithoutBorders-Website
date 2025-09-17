@@ -1,0 +1,65 @@
+import React, { createContext, useState, useMemo, useContext, useEffect } from "react";
+import { createTheme, ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
+
+const ThemeContext = createContext();
+
+export const useTheme = () => useContext(ThemeContext);
+
+export const ThemeProvider = ({ children }) => {
+	const getInitialMode = () => {
+		const savedMode = localStorage.getItem("theme");
+		if (savedMode) return savedMode;
+
+		const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+		return prefersDark ? "dark" : "light";
+	};
+
+	const [mode, setMode] = useState(getInitialMode);
+
+	useEffect(() => {
+		localStorage.setItem("theme", mode);
+	}, [mode]);
+
+	const toggleTheme = () => {
+		setMode((prev) => (prev === "light" ? "dark" : "light"));
+	};
+
+	const theme = useMemo(
+		() =>
+			createTheme({
+				palette: {
+					mode,
+					...(mode === "light"
+						? {
+							primary: { main: "#1976d2" },
+							background: { default: "#f5f5f5", paper: "#fff" },
+							text: {
+								primary: "#0c0833",
+								secondary: "#555555",
+								darkBlue: "#0d1b2a"
+							}
+						}
+						: {
+							primary: { main: "#90caf9" },
+							background: { default: "#000824", paper: "#000a40" },
+							text: {
+								primary: "#ffffff",
+								secondary: "#90caf9",
+								darkBlue: "#0d1b2a",
+								another: "#025c72ff"
+							}
+						})
+				},
+				typography: {
+					fontFamily: "'Roboto', 'Ubuntu'"
+				}
+			}),
+		[mode]
+	);
+
+	return (
+		<ThemeContext.Provider value={{ mode, toggleTheme }}>
+			<MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+		</ThemeContext.Provider>
+	);
+};

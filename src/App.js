@@ -1,10 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Landing from "./Pages/Landing";
+import HomePage from "./Pages/HomePage";
+
+import FeaturesPage from "./Pages/Feature/FeaturesPage";
 import PageNotFound from "./Pages/PageNotFound";
-import Footer from "./Components/Footer";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Privacy from "./Pages/Privacy";
+import Footer from "./Components/Footer";
 
 const theme = createTheme();
 
@@ -15,12 +17,13 @@ function App() {
 				<CssBaseline />
 				<div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
 					<Routes>
-						<Route path="/" element={<Landing />} />
+						<Route path="/" element={<HomePage />} />
+						<Route path="/features" element={<FeaturesPage />} />
 						<Route path="*" element={<PageNotFound />} />
 						<Route path="/privacy-policy/" element={<Privacy />} />
 					</Routes>
-					<Footer />
 				</div>
+				<Footer />
 			</ThemeProvider>
 		</Router>
 	);

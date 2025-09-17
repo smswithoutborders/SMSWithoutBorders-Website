@@ -13,7 +13,8 @@ export default function PageNotFound() {
 					px: { md: 25, xs: 2 },
 					textAlign: "center",
 					fontWeight: 700,
-					fontSize: { md: "80px", xs: "55px" }
+					fontSize: { md: "80px", xs: "55px" },
+					fontFamily: "'Roboto', 'Ubuntu'"
 				}}
 			>
 				Oops you got lost

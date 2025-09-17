@@ -1,44 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+
 html,
 body {
 	overflow-x: hidden;
-	font-family: "Roboto flex";
-}
-
-@media only screen and (max-width: 575.98px) {
-	.cards {
-		display: block;
-	}
-}
-
-@media only screen and (min-width: 576px) and (max-width: 767.98px) {
-	.cards {
-		display: block;
-	}
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991.98px) {
-	.cards {
-		display: block;
-	}
-	.cards {
-		display: block;
-	}
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-	.cards {
-		display: flex;
-	}
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1399.98px) {
-	.cards {
-		display: flex;
-	}
-}
-
-@media only screen and (min-width: 1400px) {
-	.cards {
-		display: flex;
-	}
+	font-family: "'Ubuntu', 'Roboto'";
 }

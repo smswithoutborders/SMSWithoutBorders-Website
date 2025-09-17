@@ -1,93 +1,116 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { IconButton, Menu, MenuItem, Box, Tooltip, Typography } from "@mui/material";
-import LanguageIcon from "@mui/icons-material/Language";
+import { IconButton, Menu, MenuItem, Box, Tooltip, Typography, Divider, CircularProgress } from "@mui/material";
 import Flag from "react-world-flags";
 
 const LanguageSwitcher = () => {
-	const { i18n } = useTranslation();
+	const { t, i18n, ready } = useTranslation();
 	const [anchorEl, setAnchorEl] = useState(null);
 
-	const handleMenuOpen = (event) => {
-		setAnchorEl(event.currentTarget);
+	const supportedLanguages = ["en", "es", "fr", "fa"];
+	const languageLabels = {
+		en: { flag: "US", label: "English" },
+		es: { flag: "ES", label: "Español" },
+		fr: { flag: "FR", label: "Français" },
+		fa: { flag: "IR", label: "فارسی" },
 	};
 
-	const handleMenuClose = () => {
-		setAnchorEl(null);
-	};
+	const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
+	const handleMenuClose = () => setAnchorEl(null);
 
 	const handleLanguageChange = (lang) => {
 		i18n.changeLanguage(lang);
+		localStorage.setItem("i18nextLng", lang);
 		setAnchorEl(null);
 	};
 
-	const currentLang = i18n.language;
+	if (!ready) return <CircularProgress size={20} />;
 
-	const languageLabels = {
-		en: { label: "English", flag: "US" },
-		es: { label: "Español", flag: "ES" },
-		fr: { label: "Français", flag: "FR" },
-		fa: { label: "فارسی", flag: "IR" }
-	};
+	const currentLangRaw = i18n.language || "en";
+	const currentLang = supportedLanguages.includes(currentLangRaw.slice(0, 2))
+		? currentLangRaw.slice(0, 2)
+		: "en";
 
 	return (
-		<Box sx={{ display: "flex", alignItems: "center" }}>
-			<Tooltip title="Change Language" arrow>
+		<Box
+			sx={{
+				backgroundColor: "#04228e",
+				display: "flex",
+				alignItems: "center",
+				borderRadius: "0.5rem",
+				px: 1,
+				py: 0.5,
+				fontFamily: "'Roboto', 'Ubuntu'",
+				fontWeight: 300,
+			}}
+		>
+			<Tooltip title={t("changeLanguage")} arrow>
 				<IconButton
 					onClick={handleMenuOpen}
+					disableRipple
 					sx={{
-						backgroundColor: "#000158",
 						color: "#FFFFFF",
-						padding: "8px 12px",
-						borderRadius: "8px",
+						borderRadius: "1rem",
 						display: "flex",
 						alignItems: "center",
-						gap: "8px"
+						gap: 1,
+						"&:hover": { backgroundColor: "rgba(255,255,255,0.08)" },
 					}}
 				>
-					<LanguageIcon />
-					<Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
+					<Typography
+						sx={{
+							fontSize: { xs: "0.75rem", sm: "0.85rem" },
+							fontFamily: "'Roboto', 'Ubuntu'",
+							fontWeight: 300,
+						}}
+					>
 						{languageLabels[currentLang]?.label || "Language"}
 					</Typography>
+					<Flag
+						code={languageLabels[currentLang]?.flag || "US"}
+						style={{ width: 22, height: 16, borderRadius: 3 }}
+					/>
 				</IconButton>
 			</Tooltip>
+
 			<Menu
 				anchorEl={anchorEl}
 				open={Boolean(anchorEl)}
 				onClose={handleMenuClose}
 				PaperProps={{
-					elevation: 3,
-					sx: {
-						minWidth: "160px",
-						borderRadius: "8px",
-						padding: "4px 0",
-						backgroundColor: "#FFFFFF"
-					}
+					elevation: 4,
+					sx: { minWidth: 180, borderRadius: "1rem", bgcolor: "#fff", overflow: "hidden" },
 				}}
 			>
-				{Object.keys(languageLabels).map((lang) => (
-					<MenuItem
-						key={lang}
-						onClick={() => handleLanguageChange(lang)}
-						sx={{
-							display: "flex",
-							alignItems: "center",
-							gap: "12px",
-							padding: "8px 16px"
-						}}
-					>
-						<Flag
-							code={languageLabels[lang].flag}
-							style={{
-								width: 24,
-								height: 16,
-								borderRadius: "4px"
+				{supportedLanguages.map((lang, index) => (
+					<Box key={lang}>
+						<MenuItem
+							onClick={() => handleLanguageChange(lang)}
+							sx={{
+								display: "flex",
+								alignItems: "center",
+								gap: 1.5,
+								px: 2,
+								py: 1,
+								fontFamily: "'Roboto', 'Ubuntu'",
+								transition: "all 0.2s ease",
+								"&:hover": { backgroundColor: "#f5f5f5", transform: "translateX(4px)" },
 							}}
-						/>
-						<Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
-							{languageLabels[lang].label}
-						</Typography>
-					</MenuItem>
+						>
+							<Flag code={languageLabels[lang].flag} style={{ width: 22, height: 16, borderRadius: 3 }} />
+							<Typography
+								sx={{
+									fontSize: "0.85rem",
+									fontFamily: "'Roboto', 'Ubuntu'",
+									fontWeight: 350,
+									color: "#333",
+								}}
+							>
+								{languageLabels[lang].label}
+							</Typography>
+						</MenuItem>
+						{index < supportedLanguages.length - 1 && <Divider sx={{ my: 0.5 }} />}
+					</Box>
 				))}
 			</Menu>
 		</Box>

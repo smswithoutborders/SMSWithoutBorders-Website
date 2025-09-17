@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+
 html {
 	scroll-behavior: smooth;
 }
@@ -9,7 +11,7 @@ html {
 }
 
 .prose {
-	font-family: "Roboto", sans-serif;
+	font-family: "'Ubuntu', 'Roboto'";
 }
 
 .privacy-policy-container .prose h1,
