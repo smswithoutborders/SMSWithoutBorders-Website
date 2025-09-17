@@ -6,44 +6,45 @@
 		"link2": "RelaySMS",
 		"link3": "DekuSMS",
 		"link4": "Política de privacidad",
-		"link5": "Documentación"
+		"link5": "Documentación",
+		"link6": "Características"
 	},
 	"header": "Explorar SMSWithoutBorders",
 	"About": {
-		"About-title": "Código Abierto | Investigación",
-		"description": "SMSSinFronteras (SWOB) se dedica a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionan incluso sin conexión a Internet.",
-		"description1": "El desarrollo incluye aplicaciones móviles para varias plataformas como Android, iOS y sistemas Linux. Parte del trabajo también incluye artículos científicos sobre criptografía, comunicaciones y libertad en Internet.",
-		"description2": "Nuestro camino hacia la misión comenzó en 2021 con el desarrollo de la primera versión de Android de RelaySMS. Desde entonces, hemos avanzado con soporte para más plataformas y más aplicaciones.",
-		"description3": "Publicamos nuestras investigaciones con la mayor frecuencia posible en nuestro blog y hacemos anuncios a través de nuestras redes sociales. SMSSinFronteras es un proyecto iniciado por el equipo de <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
+		"About-title": "Código abierto | Investigación",
+		"description": "SMSWithoutBorders (SWOB) se dedica a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionen incluso sin conexión a Internet.",
+		"description1": "El desarrollo incluye aplicaciones móviles para varias plataformas como Android, iOS y sistemas Linux. Parte del trabajo también incluye documentos técnicos sobre temas como criptografía, comunicaciones y libertad en Internet.",
+		"description2": "Nuestro camino hacia el cumplimiento de nuestra misión comenzó en 2021 con el desarrollo de la primera versión de RelaySMS para Android. Desde entonces, hemos avanzado mucho, con soporte para más plataformas y muchas más aplicaciones.",
+		"description3": "Publicamos nuestras investigaciones con la mayor frecuencia posible en nuestro blog y hacemos anuncios a través de nuestras redes sociales. SMSWithoutBorders es un proyecto iniciado por el equipo de <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
 	"projects_title": "Proyectos innovadores bajo SWOB",
-	"projects_subtitle": "SMSSinFronteras se compromete a crear herramientas de código abierto que apoyen la libertad de expresión y la comunicación",
+	"projects_subtitle": "SMSWithoutBorders se compromete a construir herramientas de código abierto que promuevan la libertad de expresión y la comunicación",
 	"project1": {
 		"title": "RelaySMS",
-		"description": "RelaySMS utiliza mensajes SMS para comunicarse con plataformas en línea sin necesidad de conexión a Internet. Los usuarios pueden otorgar acceso a sus plataformas para actuar en su nombre mediante SMS. Los accesos, mensajes y publicaciones están protegidos por prácticas de seguridad y criptografía modernas.",
+		"description": "RelaySMS utiliza la mensajería SMS para comunicarse con plataformas en línea sin necesidad de conexión a Internet. Los usuarios pueden otorgar acceso a sus plataformas en línea, el cual se utilizará para actuar en su nombre mediante mensajes SMS. El acceso concedido, los mensajes enviados desde la aplicación y cómo se publican en línea están asegurados con prácticas criptográficas y de seguridad modernas y sólidas.",
 		"website": "Sitio web",
-		"read_more": "Sitio web",
+		"read_more": "Visitar sitio web",
 		"keyPoint1": "SMS",
 		"keyPoint2": "Libertad en Internet"
 	},
 	"project2": {
 		"title": "DekuSMS",
-		"description": "DekuSMS es una aplicación de mensajería SMS para Android. Permite que dos usuarios se comuniquen mediante cifrado de extremo a extremo a través de SMS. La aplicación también admite reenvío de mensajes mediante SMTP, FTP y AMQP e integra RabbitMQ para solicitudes de comunicación remota.",
-		"read_more": "Sitio web",
+		"description": "DekuSMS es una aplicación de mensajería SMS para Android. Permite que 2 usuarios de la aplicación se comuniquen utilizando cifrado de extremo a extremo sobre mensajes SMS. La aplicación también incluye capacidades de reenvío de mensajes que admiten protocolos como SMTP, FTP y AMQP. Está diseñada para integrarse con RabbitMQ, lo que permite a los usuarios con colas de mensajes configurar y realizar solicitudes de comunicación remota a sus aplicaciones.",
+		"read_more": "Visitar sitio web",
 		"website": "Sitio web",
 		"keyPoint1": "SMS",
 		"keyPoint2": "Privacidad"
 	},
 	"Sponsor": {
-		"SponsorT": "Organizaciones patrocinadoras",
-		"Sponsor-subheader": "Estas organizaciones ayudan a mantener SMSSinFronteras"
+		"SponsorT": "Organizaciones de apoyo",
+		"Sponsor-subheader": "Estas organizaciones ayudan a mantener SMSWithoutBorders en funcionamiento"
 	},
 	"footer": {
 		"copyright": "© Afkanerd."
 	},
 	"social": {
 		"x": "Síguenos en X",
-		"bluesky": "Visítanos en Bluesky",
+		"bluesky": "Échanos un vistazo en Bluesky",
 		"github": "Ver nuestro GitHub"
 	},
 	"Privacy-Policy": {
