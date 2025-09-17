@@ -47,7 +47,7 @@ const Projects = () => {
 							fontFamily: "'Roboto', 'Ubuntu'"
 						}}
 					>
-						{t("projects_title")}
+						{t("projects_title", { defaultValue: "Innovative Projects Under SWOB" })}
 					</Typography>
 
 					<Typography
@@ -63,7 +63,7 @@ const Projects = () => {
 							mt: 1,
 						}}
 					>
-						{t("projects_subtitle")}
+						{t("projects_subtitle", { defaultValue: "SMSWithoutBorders Commits to buiding OpenSource Tools That Aid Free speech and Communication" })}
 					</Typography>
 				</Box>
 
@@ -108,7 +108,7 @@ const Projects = () => {
 								}}
 							>
 								<Chip
-									label={t("project1.keyPoint1")}
+									label={t("project1.keyPoint1", { defaultValue: "SMS" })}
 									sx={{
 										backgroundColor: "#FF8614",
 										color: "#02334bff",
@@ -117,7 +117,7 @@ const Projects = () => {
 									}}
 								/>
 								<Chip
-									label={t("project1.keyPoint2")}
+									label={t("project1.keyPoint2", { defaultValue: "Internet Freedom" })}
 									sx={{
 										backgroundColor: "#FF8614",
 										color: "#02334bff",
@@ -175,7 +175,7 @@ const Projects = () => {
 										mt: 1,
 									}}
 								>
-									{t("project1.description")}
+									{t("project1.description", { defaultValue: "RelaySMS uses SMS messaging to communicate with online platforms without needing an internet connection. The users can grant access to their online platforms which would be used to act on their behalf using SMS messaging. The access granted, messages being sent from the app, and how they get published online are secured with strong up-to-date cryptographic and security practices." })}
 								</Typography>
 							</CardContent>
 							<CardActions sx={{
@@ -195,7 +195,7 @@ const Projects = () => {
 										}
 									}}
 								>
-									{t("project1.read_more")}
+									{t("project1.read_more", { defaultValue: "Visit Website" })}
 									<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
 								</Button>
 							</CardActions>
@@ -233,7 +233,7 @@ const Projects = () => {
 								}}
 							>
 								<Chip
-									label={t("project2.keyPoint1")}
+									label={t("project2.keyPoint1", { defaultValue: "SMS" })}
 									sx={{
 										backgroundColor: "#2ED3B7",
 										color: "#02334bff",
@@ -242,7 +242,7 @@ const Projects = () => {
 									}}
 								/>
 								<Chip
-									label={t("project2.keyPoint2")}
+									label={t("project2.keyPoint2", { defaultValue: "Privacy" })}
 									sx={{
 										backgroundColor: "#2ED3B7",
 										color: "#02334bff",
@@ -301,7 +301,7 @@ const Projects = () => {
 										mt: 1,
 									}}
 								>
-									{t("project2.description")}
+									{t("project2.description", { defaultValue: "DekuSMS is an Android SMS messaging app. It enables 2 users of the app to communicate using end-to-end encryption over SMS messages. The app also contains message forwarding abilities supporting protocols such as SMTP, FTP, and AMQP. The app is built to integrate with RabbitMQ allowing users with messaging queues to set up and make remote communication requests to their apps." })}
 								</Typography>
 							</CardContent>
 							<CardActions sx={{
@@ -321,7 +321,7 @@ const Projects = () => {
 										}
 									}}
 								>
-									{t("project2.read_more")}
+									{t("project2.read_more", { defaultValue: "Visit Website" })}
 									<ArrowOutwardIcon fontSize="small" sx={{ ml: 0.5 }} />
 								</Button>
 							</CardActions>

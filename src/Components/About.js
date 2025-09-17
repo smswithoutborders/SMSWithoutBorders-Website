@@ -41,7 +41,7 @@ export default function FlexRowTwoColumns() {
 						fontFamily: "'Ubuntu', 'Roboto'",
 					}}
 				>
-					{t("header")}
+					{t("header", { defaultValue: "Explore SMSWithoutBorders" })}
 				</Typography>
 			</Box>
 
@@ -74,7 +74,7 @@ export default function FlexRowTwoColumns() {
 							mt: 1,
 						}}
 					>
-						<p>{t("About.description")}</p>
+						<p>{t("About.description", { defaultValue: "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection." })}</p>
 					</Typography>
 				</Box>
 
@@ -98,8 +98,8 @@ export default function FlexRowTwoColumns() {
 							mt: 1,
 						}}
 					>
-						<p>{t("About.description1")}</p>
-						<p>{t("About.description2")}</p>
+						<p>{t("About.description1", { defaultValue: "The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom." })}</p>
+						<p>{t("About.description2", { defaultValue: "Our journey toward achieving our mission began in 2021 with the development of the first Android version of RelaySMS. We have come far since then, with support for more platforms and many more apps." })}</p>
 					</Typography>
 				</Box>
 			</Box>
@@ -128,7 +128,12 @@ export default function FlexRowTwoColumns() {
 						},
 					}}
 				>
-					<p>{parse(t("About.description3"))}</p>
+					{parse(
+						t("About.description3", {
+							defaultValue:
+								"We publish our research as frequently as possible on our blog and make announcements via our social media outlets. SMSWithoutBorders is a project started by the team at <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
+						})
+					)}
 				</Typography>
 			</Box>
 		</Box>

@@ -84,7 +84,7 @@ function Partner() {
 							fontFamily: "'Roboto', 'Ubuntu'"
 						}}
 					>
-						{t("Sponsor.SponsorT")}
+						{t("Sponsor.SponsorT", { defaultValue: " Supporting Organizations" })}
 					</Typography>
 
 					<Typography
@@ -100,7 +100,7 @@ function Partner() {
 							mt: 1,
 						}}
 					>
-						{t("Sponsor.Sponsor-subheader")}
+						{t("Sponsor.Sponsor-subheader", { defaultValue: "This Organizations helps keep SMSWithoutBorders Afloat" })}
 					</Typography>
 				</Box>
 
