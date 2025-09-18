@@ -10,16 +10,16 @@
 		"link6": "Fonctionnalités"
 	},
 	"loader": "Chargement, veuillez patienter",
-	"header": "Explorer SMSWithoutBorders",
+	"LandingHeader": "Open Source | Recherche",
 	"About": {
-		"About-title": "Open Source | Recherche",
+		"AboutHeader": "Explorer SMSWithoutBorders",
 		"description": "SMSWithoutBorders (SWOB) est dédié à la recherche, au développement et à la promotion d’outils de communication sécurisés et accessibles qui fonctionnent même sans connexion Internet.",
 		"description1": "Le développement inclut des applications mobiles pour diverses plateformes telles qu’Android, iOS et les systèmes Linux. Une partie du travail inclut également des livres blancs sur des sujets tels que la cryptographie, les communications et la liberté sur Internet.",
 		"description2": "Notre parcours vers la réalisation de notre mission a commencé en 2021 avec le développement de la première version Android de RelaySMS. Depuis, nous avons fait beaucoup de progrès, avec un support pour plus de plateformes et beaucoup plus d’applications.",
 		"description3": "Nous publions nos recherches aussi souvent que possible sur notre blog et faisons des annonces via nos réseaux sociaux. SMSWithoutBorders est un projet lancé par l’équipe d’<a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
-	"projects_title": "Projets innovants sous SMSWithoutBorders(SWOB)",
-	"projects_subtitle": "SMSWithoutBorders s'engage à créer des outils open source qui favorisent la liberté d'expression et la communication",
+	"projectHeader": "Projets innovants sous SMSWithoutBorders(SWOB)",
+	"projectSubHeader": "SMSWithoutBorders s'engage à créer des outils open source qui favorisent la liberté d'expression et la communication",
 	"project1": {
 		"title": "RelaySMS",
 		"description": "RelaySMS utilise la messagerie SMS pour communiquer avec des plateformes en ligne sans nécessiter de connexion Internet. Les utilisateurs peuvent accorder l’accès à leurs plateformes en ligne, qui sera utilisé pour agir en leur nom via la messagerie SMS. L’accès accordé, les messages envoyés depuis l’application et leur publication en ligne sont sécurisés grâce à des pratiques cryptographiques et de sécurité modernes et solides.",

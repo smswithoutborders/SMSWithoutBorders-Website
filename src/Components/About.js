@@ -41,7 +41,7 @@ export default function FlexRowTwoColumns() {
 						fontFamily: "'Ubuntu', 'Roboto'",
 					}}
 				>
-					{t("header", { defaultValue: "Explore SMSWithoutBorders" })}
+					{t("About.AboutHeader", { defaultValue: "Explore SMSWithoutBorders" })}
 				</Typography>
 			</Box>
 
