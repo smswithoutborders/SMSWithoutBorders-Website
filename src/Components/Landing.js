@@ -60,7 +60,7 @@ const Landing = () => {
 					fontFamily: "'Roboto', 'Ubuntu'"
 				}}
 			>
-				{t("About.About-title", { defaultValue: "Open Source | Research" })}
+				{t("LandingHeader", { defaultValue: "Open Source | Research" })}
 			</Typography>
 		</Box>
 	);
