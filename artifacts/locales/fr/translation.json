@@ -1,0 +1,119 @@
+{
+	"changeLanguage": "Changer de langue",
+	"navbar": {
+		"link": "Accueil",
+		"link1": "Blog",
+		"link2": "RelaySMS",
+		"link3": "DekuSMS",
+		"link4": "Politique de confidentialité",
+		"link5": "Documentation",
+		"link6": "Fonctionnalités"
+	},
+	"loader": "Chargement, veuillez patienter",
+	"LandingHeader": "Open Source | Recherche",
+	"About": {
+		"AboutHeader": "Explorer SMSWithoutBorders",
+		"description": "SMSWithoutBorders (SWOB) est dédié à la recherche, au développement et à la promotion d’outils de communication sécurisés et accessibles qui fonctionnent même sans connexion Internet.",
+		"description1": "Le développement inclut des applications mobiles pour diverses plateformes telles qu’Android, iOS et les systèmes Linux. Une partie du travail inclut également des livres blancs sur des sujets tels que la cryptographie, les communications et la liberté sur Internet.",
+		"description2": "Notre parcours vers la réalisation de notre mission a commencé en 2021 avec le développement de la première version Android de RelaySMS. Depuis, nous avons fait beaucoup de progrès, avec un support pour plus de plateformes et beaucoup plus d’applications.",
+		"description3": "Nous publions nos recherches aussi souvent que possible sur notre blog et faisons des annonces via nos réseaux sociaux. SMSWithoutBorders est un projet lancé par l’équipe d’<a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
+	},
+	"projectHeader": "Projets innovants sous SMSWithoutBorders(SWOB)",
+	"projectSubHeader": "SMSWithoutBorders s'engage à créer des outils open source qui favorisent la liberté d'expression et la communication",
+	"project1": {
+		"title": "RelaySMS",
+		"description": "RelaySMS utilise la messagerie SMS pour communiquer avec des plateformes en ligne sans nécessiter de connexion Internet. Les utilisateurs peuvent accorder l’accès à leurs plateformes en ligne, qui sera utilisé pour agir en leur nom via la messagerie SMS. L’accès accordé, les messages envoyés depuis l’application et leur publication en ligne sont sécurisés grâce à des pratiques cryptographiques et de sécurité modernes et solides.",
+		"website": "Site Web",
+		"read_more": "Visiter le site",
+		"keyPoint1": "SMS",
+		"keyPoint2": "Liberté sur Internet"
+	},
+	"project2": {
+		"title": "DekuSMS",
+		"description": "DekuSMS est une application de messagerie SMS pour Android. Elle permet à 2 utilisateurs de l’application de communiquer en utilisant un chiffrement de bout en bout sur les messages SMS. L’application dispose également de capacités de transfert de messages prenant en charge des protocoles tels que SMTP, FTP et AMQP. L’application est conçue pour s’intégrer avec RabbitMQ, permettant aux utilisateurs ayant des files d’attente de messages de configurer et de faire des demandes de communication à distance vers leurs applications.",
+		"read_more": "Visiter le site",
+		"website": "Site Web",
+		"keyPoint1": "SMS",
+		"keyPoint2": "Confidentialité"
+	},
+	"Sponsor": {
+		"SponsorT": "Organisations de soutien",
+		"Sponsor-subheader": "Ces organisations aident à maintenir SMSWithoutBorders à flot"
+	},
+	"footer": {
+		"copyright": "© Afkanerd."
+	},
+	"social": {
+		"x": "Suivez-nous sur X",
+		"bluesky": "Découvrez-nous sur Bluesky",
+		"github": "Voir notre GitHub"
+	},
+	"Privacy-Policy": {
+		"policyHeader": "Politique de confidentialité",
+		"policySubheader": "Dernière mise à jour : 14 juillet 2022",
+		"policyBody1": "Cette Politique de confidentialité décrit nos politiques et procédures concernant la collecte, l'utilisation et la divulgation de vos informations lorsque vous utilisez notre Service et explique vos droits en matière de confidentialité et comment la loi vous protège.",
+		"policyBody2": "Nous utilisons vos données personnelles pour fournir et améliorer le Service. En utilisant le Service, vous acceptez la collecte et l'utilisation des informations conformément à cette Politique de confidentialité."
+	},
+	"Privacy-Policy2": {
+		"policyHeader2": "Interprétation et Définitions",
+		"policySubheader2": "Interprétation",
+		"policyBody2": "Les mots dont la première lettre est en majuscule ont des significations définies dans les conditions suivantes. Les définitions suivantes auront la même signification qu'elles apparaissent au singulier ou au pluriel."
+	},
+	"Privacy-Policy3": {
+		"policyHeader3": "Définitions",
+		"policyBody3": "Aux fins de cette Politique de confidentialité :",
+		"privacyUlheader": "Définitions",
+		"definitionAccount": "<strong>Compte</strong> désigne un compte unique créé pour vous permettre d'accéder à notre Service ou à des parties de notre Service.",
+		"definitionCompany": "<strong>Entreprise</strong> (appelée soit 'l'Entreprise', 'Nous', 'Notre' ou 'Nos' dans cet Accord) fait référence à Afkanerd Ltd, Bamenda.",
+		"definitionCookies": "<strong>Cookies</strong> sont de petits fichiers placés sur votre ordinateur, appareil mobile ou tout autre appareil par un site web, contenant votre historique de navigation et d'autres informations.",
+		"definitionCountry": "<strong>Pays</strong> fait référence au Cameroun.",
+		"definitionDevice": "<strong>Appareil</strong> désigne tout appareil pouvant accéder au Service, tel qu'un ordinateur, un téléphone portable ou une tablette numérique.",
+		"definitionPersonalData": "<strong>Données personnelles</strong> sont toutes les informations qui se rapportent à une personne identifiée ou identifiable.",
+		"definitionService": "<strong>Service</strong> fait référence au Site Web.",
+		"definitionServiceProvider": "<strong>Fournisseur de services</strong> désigne toute personne physique ou morale qui traite les données pour le compte de l'Entreprise.",
+		"definitionThirdParty": "<strong>Service de médias sociaux tiers</strong> désigne tout réseau social ou site Web par lequel un Utilisateur peut se connecter ou créer un compte pour utiliser le Service.",
+		"definitionUsageData": "<strong>Données d'utilisation</strong> désigne les données collectées automatiquement, générées par l'utilisation du Service ou par l'infrastructure même du Service (par exemple, la durée d'une visite de page).",
+		"definitionWebsite": "<strong>Site Web</strong> fait référence à SMSwithoutborders, accessible depuis <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>.",
+		"definitionYou": "<strong>Vous</strong> désigne l'individu accédant ou utilisant le Service, ou la société ou autre entité juridique pour le compte de laquelle l'individu accède ou utilise le Service."
+	},
+	"Privacy-Policy4": {
+		"policyHeader4": "Collecte et Utilisation de Vos Données Personnelles",
+		"policySubheader4": "Types de Données Collectées"
+	},
+	"Privacy-Policy5": {
+		"policyHeader5": "Données Personnelles",
+		"policyBody5": "Pour utiliser les plateformes tierces, le site web demandera l'accès à ces plateformes. Le site web stocke l'accès que vous accordez mais ne collecte pas d'informations supplémentaires sur le profil.",
+		"policyBody6": "Pour fournir des informations sur les passerelles locales pour l'envoi de SMS, nous nécessitons le pays du numéro de téléphone, bien que nous ne collectons pas de données sur le pays de l'utilisateur."
+	},
+	"Privacy-Policy6": {
+		"policyHeader6": "Informations Provenant de Services de Médias Sociaux Tiers",
+		"policyBody7": "Pour utiliser les plateformes tierces, le site web demandera l'accès à ces plateformes. Le site web stocke l'accès que vous accordez mais ne collecte pas d'informations supplémentaires sur le profil.",
+		"policyBody8": "Nous stockons des identifiants de profil uniques par plateforme pour vous aider à identifier quel compte vous utilisez. Nous n'utilisons pas les informations identifiables des tiers pour suivre, identifier ou catégoriser les utilisateurs."
+	},
+	"Privacy-Policy7": {
+		"policyHeader7": "Sécurité de Vos Données Personnelles",
+		"policyBody9": "Nous priorisons la sécurité de vos données personnelles. Cependant, aucune méthode de transmission sur Internet ou de stockage électronique n'est 100% sécurisée. Bien que nous nous efforçons de protéger vos données, nous ne pouvons garantir une sécurité absolue."
+	},
+	"Privacy-Policy8": {
+		"policyHeader8": "Désactivation et Suppression des Données",
+		"policyBody10": "Vous pouvez vous désinscrire de notre service à tout moment. Cela entraînera la suppression immédiate de vos données personnelles de notre système. Nous révoquerons tous les accès que vous nous avez accordés pour utiliser le produit.",
+		"policyBody11": "Nous supprimons uniquement les données personnelles stockées dans notre base de données. La suppression des données des plateformes tierces (même si liées depuis notre service) doit être demandée directement auprès de ces plateformes."
+	},
+	"Privacy-Policy9": {
+		"policyHeader9": "Confidentialité des Enfants",
+		"policyBody12": "Notre Service ne s'adresse pas aux personnes de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnellement identifiables auprès de quiconque âgé de moins de 13 ans.",
+		"policyBody13": "Si nous découvrons que nous avons collecté des Données Personnelles auprès de quelqu'un de moins de 13 ans sans vérification du consentement parental, nous prenons des mesures pour supprimer ces informations de nos serveurs."
+	},
+	"Privacy-Policy10": {
+		"policyHeader10": "Liens vers d'Autres Sites Web",
+		"policyBody14": "Notre Service peut contenir des liens vers d'autres sites Web qui ne sont pas opérés par nous. Nous n'avons aucun contrôle sur et n'assumons aucune responsabilité quant au contenu, aux politiques de confidentialité ou aux pratiques des sites ou services tiers."
+	},
+	"Privacy-Policy11": {
+		"policyHeader11": "Modifications de cette Politique de Confidentialité",
+		"policyBody15": "Nous pouvons mettre à jour notre Politique de confidentialité de temps à autre. Vous êtes conseillé de revoir cette Politique de confidentialité périodiquement pour toute modification."
+	},
+	"Privacy-Policy12": {
+		"policyHeader12": "Contactez-Nous",
+		"policyBody16": "Si vous avez des questions sur cette Politique de confidentialité, vous pouvez nous contacter en visitant cette page sur notre site Web <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>"
+	}
+}
