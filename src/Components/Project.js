@@ -47,7 +47,7 @@ const Projects = () => {
 							fontFamily: "'Roboto', 'Ubuntu'"
 						}}
 					>
-						{t("projects_title", { defaultValue: "Innovative Projects Under SMSWithoutBorders(SWOB)" })}
+						{t("projectHeader", { defaultValue: "Innovative Projects Under SMSWithoutBorders(SWOB)" })}
 					</Typography>
 
 					<Typography
@@ -63,7 +63,7 @@ const Projects = () => {
 							mt: 1,
 						}}
 					>
-						{t("projects_subtitle", { defaultValue: "SMSWithoutBorders Commits to buiding OpenSource Tools That Aid Free speech and Communication" })}
+						{t("projectSubHeader", { defaultValue: "SMSWithoutBorders Commits to buiding OpenSource Tools That Aid Free speech and Communication" })}
 					</Typography>
 				</Box>
 
