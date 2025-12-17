@@ -1,0 +1,119 @@
+{
+	"changeLanguage": "Change Languege",
+	"navbar": {
+		"link": "Home",
+		"link1": "Blog",
+		"link2": "RelaySMS",
+		"link3": "DekuSMS",
+		"link4": "Privacy Policy",
+		"link5": "Documentation",
+		"link6": "Features"
+	},
+	"loader": "Loading Please Wait",
+	"LandingHeader": "Open Source | Research",
+	"About": {
+		"AboutHeader": "Explore SMSWithoutBorders",
+		"description": "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
+		"description1": "The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom.",
+		"description2": " Our journey toward achieving our mission began in 2021 with the development of the first Android version of RelaySMS. We have come far since then, with support for more platforms and many more apps.",
+		"description3": "We publish our research as frequently as possible on our blog and make announcements via our social media outlets. SMSWithoutBorders is a project started by the team at <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
+	},
+	"projectHeader": "Innovative Projects Under SMSWithoutBorders(SWOB)",
+	"projectSubHeader": "SMSWithoutBorders Commits to buiding OpenSource Tools That Aid Free speech and Communication",
+	"project1": {
+		"title": "RelaySMS",
+		"description": "RelaySMS uses SMS messaging to communicate with online platforms without needing an internet connection. The users can grant access to their online platforms which would be used to act on their behalf using SMS messaging. The access granted, messages being sent from the app, and how they get published online are secured with strong up-to-date cryptographic and security practices.",
+		"website": "Website",
+		"read_more": "Visit Website",
+		"keyPoint1": "SMS",
+		"keyPoint2": "Internet Freedom"
+	},
+	"project2": {
+		"title": "DekuSMS",
+		"description": "DekuSMS is an Android SMS messaging app. It enables 2 users of the app to communicate using end-to-end encryption over SMS messages. The app also contains message forwarding abilities supporting protocols such as SMTP, FTP, and AMQP. The app is built to integrate with RabbitMQ allowing users with messaging queues to set up and make remote communication requests to their apps.",
+		"read_more": "Visit Website",
+		"website": "Website",
+		"keyPoint1": "SMS",
+		"keyPoint2": "Privacy"
+	},
+	"Sponsor": {
+		"SponsorT": "Supporting Organizations",
+		"Sponsor-subheader": "This Organizations helps keep SMSWithoutBorders afloat"
+	},
+	"footer": {
+		"copyright": "© Afkanerd."
+	},
+	"social": {
+		"x": "Follow us on X",
+		"bluesky": "Check us out on Bluesky",
+		"github": "View our GitHub"
+	},
+	"Privacy-Policy": {
+		"policyHeader": "Privacy Policy",
+		"policySubheader": "Last updated: July 14th, 2022",
+		"policyBody1": "This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of your information when you use our Service and explains your privacy rights and how the law protects you.",
+		"policyBody2": " We use your personal data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this Privacy Policy."
+	},
+	"Privacy-Policy2": {
+		"policyHeader2": "Interpretation and Definitions",
+		"policySubheader2": "Interpretation",
+		"policyBody2": "The words with the initial letter capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or plural."
+	},
+	"Privacy-Policy3": {
+		"policyHeader3": "Definitions",
+		"policyBody3": "For the purposes of this Privacy Policy:",
+		"privacyUlheader": "Definitions",
+		"definitionAccount": "<strong>Account</strong> means a unique account created for you to access our Service or parts of our Service.",
+		"definitionCompany": "<strong>Company</strong> (referred to as either 'the Company', 'We', 'Us' or 'Our' in this Agreement) refers to Afkanerd Ltd, Bamenda.",
+		"definitionCookies": "<strong>Cookies</strong> are small files placed on your computer, mobile device, or any other device by a website, containing your browsing history and other information.",
+		"definitionCountry": "<strong>Country</strong> refers to Cameroon.",
+		"definitionDevice": "<strong>Device</strong> means any device that can access the Service, such as a computer, cellphone, or digital tablet.",
+		"definitionPersonalData": "<strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.",
+		"definitionService": "<strong>Service</strong> refers to the Website.",
+		"definitionServiceProvider": "<strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the Company.",
+		"definitionThirdParty": "<strong>Third-party Social Media Service</strong> refers to any social network or website through which a User can log in or create an account to use the Service.",
+		"definitionUsageData": "<strong>Usage Data</strong> refers to data collected automatically, generated by the use of the Service or from the Service infrastructure itself (e.g., the duration of a page visit).",
+		"definitionWebsite": "<strong>Website</strong> refers to SMSwithoutborders, accessible from <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>.",
+		"definitionYou": "<strong>You</strong> means the individual accessing or using the Service, or the company or other legal entity on behalf of which the individual is accessing or using the Service."
+	},
+	"Privacy-Policy4": {
+		"policyHeader4": "Collecting and Using Your Personal Data",
+		"policySubheader4": "Types of Data Collected"
+	},
+	"Privacy-Policy5": {
+		"policyHeader5": "Personal Data",
+		"policyBody5": " For using third-party platforms, the website will request access to these platforms. The website stores the access you grant but does not collect further profile information.",
+		"policyBody6": "To provide information on local gateways for sending SMS, we require the country of the phone number, though we do not collect data on the country of the user."
+	},
+	"Privacy-Policy6": {
+		"policyHeader6": "Information from Third-Party Social Media Services",
+		"policyBody7": "For using third-party platforms, the website will request access to these platforms. The website stores the access you grant but does not collect further profile information.",
+		"policyBody8": "We store unique profile handles per platform to help you identify which account you're using. We do not use third-party identifiable information for tracking, identifying, or categorizing users."
+	},
+	"Privacy-Policy7": {
+		"policyHeader7": "Security of Your Personal Data",
+		"policyBody9": "We prioritize the security of your personal data. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your data, we cannot guarantee absolute security."
+	},
+	"Privacy-Policy8": {
+		"policyHeader8": "Opting Out and Data Deletion",
+		"policyBody10": "You can opt out of our service at any time. This will trigger the immediate deletion of your personal data from our system. We will revoke all access you granted us to use the product.",
+		"policyBody11": "We only delete personal data stored in our database. Deleting data from third-party platforms (even if linked from our service) must be requested directly from those platforms."
+	},
+	"Privacy-Policy9": {
+		"policyHeader9": "Children's Privacy",
+		"policyBody12": "Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13.",
+		"policyBody13": "If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers."
+	},
+	"Privacy-Policy10": {
+		"policyHeader10": "Links to Other Websites",
+		"policyBody14": "Our Service may contain links to other websites that are not operated by Us. We have no control over and assume no responsibility for the content, privacy policies or practices of any third-party sites or services."
+	},
+	"Privacy-Policy11": {
+		"policyHeader11": "Changes to this Privacy Policy",
+		"policyBody15": "We may update Our Privacy Policy from time to time. You are advised to review this Privacy Policy periodically for any changes."
+	},
+	"Privacy-Policy12": {
+		"policyHeader12": "Contact Us",
+		"policyBody16": "If you have any questions about this Privacy Policy, you can contact us by visiting this page on our website <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>"
+	}
+}
