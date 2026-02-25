@@ -1,13 +1,14 @@
 {
 	"changeLanguage": "Changer de langue",
 	"navbar": {
-		"link": "Accueil",
-		"link1": "Blog",
-		"link2": "RelaySMS",
-		"link3": "DekuSMS",
-		"link4": "Politique de confidentialité",
-		"link5": "Documentation",
-		"link6": "Fonctionnalités"
+		 "link": "Accueil",
+    "link1": "Blog",
+    "link2": "RelaySMS",
+    "link3": "DekuSMS",
+    "link4": "Politique de confidentialité",
+    "link5": "Documentation",
+    "link6": "Fonctionnalités",
+    "link7": "Documents"
 	},
 	"loader": "Chargement, veuillez patienter",
 	"LandingHeader": "Open Source | Recherche",

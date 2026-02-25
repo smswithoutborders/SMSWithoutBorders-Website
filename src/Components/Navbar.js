@@ -33,7 +33,8 @@ const Navbar = () => {
 		{ label: t("navbar.link5", "Documentation"), href: "https://docs.smswithoutborders.com/" },
 		{ label: t("navbar.link2", "RelaySMS"), href: "https://relay.smswithoutborders.com/" },
 		{ label: t("navbar.link3", "DekuSMS"), href: "https://Dekusms.com/" },
-		{ label: t("navbar.link4", "Privacy Policy"), href: "/privacy-policy" }
+		{ label: t("navbar.link4", "Privacy Policy"), href: "/privacy-policy" },
+		{ label: t("navbar.link7", "Papers"), href: "https://drive.google.com/drive/u/1/folders/1njL9EHV1-nh3oHW9a-2IMuNdSmUIMggC" }
 	];
 
 	const [drawerOpen, setDrawerOpen] = useState(false);

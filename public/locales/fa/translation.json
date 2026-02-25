@@ -1,13 +1,14 @@
 {
 	"changeLanguage": "تغییر زبان",
 	"navbar": {
-		"link": "خانه",
-		"link1": "بلاگ",
-		"link2": "RelaySMS",
-		"link3": "DekuSMS",
-		"link4": "سیاست حفظ حریم خصوصی",
-		"link5": "مستندات",
-		"link6": "ویژگی‌ها"
+		 "link": "خانه",
+    "link1": "وبلاگ",
+    "link2": "RelaySMS",
+    "link3": "DekuSMS",
+    "link4": "سیاست حفظ حریم خصوصی",
+    "link5": "مستندات",
+    "link6": "ویژگی‌ها",
+    "link7": "مقالات"
 	},
 	"loader": "در حال بارگذاری، لطفاً صبر کنید",
 	"LandingHeader": "منبع باز | پژوهش",
