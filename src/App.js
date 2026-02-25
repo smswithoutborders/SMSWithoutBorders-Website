@@ -7,6 +7,7 @@ import PageNotFound from "./Pages/PageNotFound";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Privacy from "./Pages/Privacy";
 import Footer from "./Components/Footer";
+import ThreatModel from "./Pages/ThreatModel";
 
 const theme = createTheme();
 
@@ -21,6 +22,7 @@ function App() {
 						<Route path="/features" element={<FeaturesPage />} />
 						<Route path="*" element={<PageNotFound />} />
 						<Route path="/privacy-policy/" element={<Privacy />} />
+						<Route path="/threat-model" element={<ThreatModel />} />
 					</Routes>
 				</div>
 				<Footer />
