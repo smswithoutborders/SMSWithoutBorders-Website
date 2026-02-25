@@ -63,12 +63,13 @@ const Navbar = () => {
 			subLinks: [
 				{
 					label: t("papers.whitepaper", "Whitepaper"),
-					href: "https://drive.google.com/drive/u/1/folders/1njL9EHV1-nh3oHW9a-2IMuNdSmUIMggC"
+					href: "https://drive.google.com/file/d/1MobJrt1HkyZa956sdN2a3ux3B1vzIQ3Z/view"
 				},
-				{
-					label: t("papers.threatModel", "Threat Model"),
-					href: "/files/threat-model.pdf"
-				}
+				   {
+        label: t("papers.threatModel", "Threat Model"),
+        href: "/threat-model",
+        comingSoon: true
+      }
 			]
 		}
 	];
