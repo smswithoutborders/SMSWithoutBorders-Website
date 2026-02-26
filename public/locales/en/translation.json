@@ -1,13 +1,18 @@
 {
 	"changeLanguage": "Change Languege",
 	"navbar": {
-		"link": "Home",
-		"link1": "Blog",
-		"link2": "RelaySMS",
-		"link3": "DekuSMS",
-		"link4": "Privacy Policy",
-		"link5": "Documentation",
-		"link6": "Features"
+		   "link": "Home",
+    "link1": "Blog",
+    "link2": "RelaySMS",
+    "link3": "DekuSMS",
+    "link4": "Privacy Policy",
+    "link5": "Documentation",
+    "link6": "Features",
+    "link7": "Papers",
+    "papers": {
+      "whitepaper": "Whitepaper",
+      "threatModel": "Threat Model"
+    }
 	},
 	"loader": "Loading Please Wait",
 	"LandingHeader": "Open Source | Research",
