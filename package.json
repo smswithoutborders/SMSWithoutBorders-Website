@@ -67,7 +67,7 @@
 		"baseline-browser-mapping": "^2.9.8",
 		"source-map-explorer": "^2.5.3",
 		"source-map-loader": "^5.0.0",
-		"webpack": "^5.94.0",
+		"webpack": "^5.104.1",
 		"webpack-cli": "^5.1.4"
 	},
 	"resolutions": {
