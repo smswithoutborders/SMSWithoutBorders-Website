@@ -231,12 +231,12 @@ export default function Navbar() {
 							"&:hover img": { opacity: 0.85, transition: "opacity 0.2s" },
 						}}
 					>
-						<Box
+						{/* <Box
 							component="img"
 							src={isLight ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
 							alt="SMSWithoutBorders"
 							sx={{ height: { xs: 26, md: 30 }, display: "block", transition: "opacity 0.2s" }}
-						/>
+						/> */}
 					</Box>
 
 					<Box
