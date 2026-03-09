@@ -1,0 +1,13 @@
+[
+  {
+    "id": "1",
+    "title": "RelaySMS Technical Paper",
+    "authors": ["Afkanerd"],
+    "abstract": "A technical deep-dive into RelaySMS — a transport layer bridging SMS with online platforms. Covers architecture, encryption using Signal's Double Ratchet protocol, authentication, key exchange, bridges, and threat modeling.",
+    "topics": ["Offline Communication", "SMS", "Encryption", "Architecture", "Security"],
+    "type": "whitepaper",
+    "year": 2026,
+    "version": "1.1",
+    "pdfUrl": "https://drive.google.com/file/d/1MobJrt1HkyZa956sdN2a3ux3B1vzIQ3Z/view"
+  }
+]
