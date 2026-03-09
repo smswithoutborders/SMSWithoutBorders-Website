@@ -22,6 +22,7 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../Context/ThemeContext";
+import { FiFileText } from 'react-icons/fi';
 
 
 const GlobalStyles = () => (
@@ -296,7 +297,7 @@ export default function Navbar() {
 						"&:hover": { color: hoverColor }
 						}}
 					>
-						📄 {t("navbar.researchFull", "Research Papers")}
+					<FiFileText size={24} color="" />  {t("navbar.researchFull", "Research Papers")}
 					</Box>
 			
 
@@ -402,7 +403,6 @@ export default function Navbar() {
 							p: "5px",
 						}}
 					>
-						<CloseIcon sx={{ fontSize: 17 }} />
 					</IconButton>
 				</Box>
 
