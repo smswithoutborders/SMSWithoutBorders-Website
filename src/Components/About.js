@@ -97,7 +97,7 @@ export default function FlexRowTwoColumns() {
 				fontFamily: "'Ubuntu', 'Roboto'",
 			  }}
 			>
-			 Our Projects
+		SWOB
 			</Typography>
 			<Box
 			  sx={{

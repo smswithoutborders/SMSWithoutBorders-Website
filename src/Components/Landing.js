@@ -19,8 +19,8 @@ export default function Landing() {
       sx={{
         direction: isFarsi ? "rtl" : "ltr",
        minHeight: {
-  xs: "40svh",  
-  sm: "60svh", 
+  xs: "60svh",  
+  sm: "70svh", 
   md: "80vh",   
   lg: "60vh",   
 },

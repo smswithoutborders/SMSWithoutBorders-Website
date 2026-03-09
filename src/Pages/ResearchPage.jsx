@@ -11,11 +11,11 @@ import ArticleIcon from "@mui/icons-material/Article";
 import ForumIcon from "@mui/icons-material/Forum";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../Context/ThemeContext";
 import papers from "../data/papers.json";
 
 const TYPE_ICONS  = { whitepaper: <ArticleIcon fontSize="small" />, research: <MenuBookIcon fontSize="small" />, thread: <ForumIcon fontSize="small" /> };
-const TYPE_LABELS = { whitepaper: "White Paper", research: "Research", thread: "Thread" };
 const TYPE_COLORS = { whitepaper: "#1565C0", research: "#2E7D32", thread: "#6A1B9A" };
 
 const ALL_TOPICS = [...new Set(papers.flatMap((p) => p.topics))].sort();
@@ -25,6 +25,7 @@ const ALL_TYPES  = [...new Set(papers.map((p) => p.type))];
 export default function ResearchPage() {
   const navigate = useNavigate();
   const { mode } = useTheme();
+  const { t } = useTranslation();
   const dark = mode === "dark";
 
   const [search,         setSearch]         = useState("");
@@ -65,7 +66,7 @@ export default function ResearchPage() {
     body:        "#475569",
     muted:       "#94a3b8",
     faint:       "#f1f5f9",
-  input:       "rgba(2, 5, 48, 0.1)",
+    input:       "rgba(2, 5, 48, 0.1)",
     inputBorder: "rgba(3, 2, 17, 0.94)",
     inputText:   "#0a0a10",
     inputPh:     "rgba(18, 14, 14, 0.5)",
@@ -80,24 +81,22 @@ export default function ResearchPage() {
     const q = search.toLowerCase();
     return (
       (!q || p.title.toLowerCase().includes(q) || p.abstract.toLowerCase().includes(q) ||
-       p.authors.some((a) => a.toLowerCase().includes(q)) || p.topics.some((t) => t.toLowerCase().includes(q))) &&
-      (selectedTopics.length === 0 || selectedTopics.every((t) => p.topics.includes(t))) &&
+       p.authors.some((a) => a.toLowerCase().includes(q)) || p.topics.some((tp) => tp.toLowerCase().includes(q))) &&
+      (selectedTopics.length === 0 || selectedTopics.every((tp) => p.topics.includes(tp))) &&
       (selectedType === "all" || p.type === selectedType) &&
       (selectedYear === "all" || p.year === Number(selectedYear))
     );
   }), [search, selectedTopics, selectedType, selectedYear]);
 
-  const toggleTopic = (t) =>
-    setSelectedTopics((prev) => prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]);
+  const toggleTopic = (tp) =>
+    setSelectedTopics((prev) => prev.includes(tp) ? prev.filter((x) => x !== tp) : [...prev, tp]);
 
   return (
     <Box sx={{ bgcolor: c.page, minHeight: "100vh", pb: 10, transition: "background 0.3s" }}>
 
-
+      {/* ── HERO ── */}
       <Box sx={{ bgcolor: c.hero, borderBottom: `1px solid ${c.heroBorder}`, py: { xs: 6, md: 9 }, px: 3 }}>
         <Container maxWidth="lg">
-
-      
           <Button
             component="a" href="/#home"
             startIcon={<ArrowBackIcon sx={{ fontSize: "0.85rem !important" }} />}
@@ -107,19 +106,16 @@ export default function ResearchPage() {
           </Button>
 
           <Typography sx={{ color: "#1565C0", fontSize: "0.7rem", fontWeight: 700, letterSpacing: 3, textTransform: "uppercase", mb: 1.5 }}>
-            Knowledge Base
+            {t("researchPage.knowledgeBase", { defaultValue: "Knowledge Base" })}
           </Typography>
 
           <Typography sx={{ fontFamily: "'Roboto', 'Ubuntu'", fontWeight: 700, fontSize: { xs: "2rem", md: "2.8rem" }, color: "#ffffff", lineHeight: 1.2, mb: 2 }}>
-            Research & Publications
+            {t("researchPage.title", { defaultValue: "Research & Publications" })}
           </Typography>
 
           <Typography sx={{ color: "rgba(203,213,225,0.75)", fontSize: "0.95rem", maxWidth: 520, lineHeight: 1.8, mb: 5, fontWeight: 300 }}>
-            White papers, research findings, and community threads on offline communication, privacy, and digital inclusion.
+            {t("researchPage.subtitle", { defaultValue: "White papers, research findings, and community threads on offline communication, privacy, and digital inclusion." })}
           </Typography>
-
-        
-    
         </Container>
       </Box>
 
@@ -127,7 +123,8 @@ export default function ResearchPage() {
       <Box sx={{ py: 2, px: 3, transition: "background 0.3s" }}>
         <Container maxWidth="lg">
           <Stack direction={{ xs: "column", sm: "row" }} spacing={2} alignItems={{ xs: "flex-start", sm: "center" }} flexWrap="wrap" gap={1}>
-        
+
+            {/* Type pills */}
             <Stack direction="row" spacing={1} flexWrap="wrap" gap={1}>
               {["all", ...ALL_TYPES].map((tp) => {
                 const active = selectedType === tp;
@@ -147,67 +144,46 @@ export default function ResearchPage() {
                       "&:hover": { borderColor: col, color: col },
                     }}
                   >
-                    {tp === "all" ? "All" : TYPE_LABELS[tp]}
+                    {tp === "all"
+                      ? t("researchPage.filterAll", { defaultValue: "All" })
+                      : t(`paperReader.type.${tp}`, { defaultValue: tp })}
                   </Box>
                 );
               })}
             </Stack>
 
-
-
+            {/* Search */}
             <TextField
-            fullWidth
-            placeholder="Search by title, topic or author…"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          sx={{
-    maxWidth: 540,
+              fullWidth
+              placeholder={t("researchPage.searchPlaceholder", { defaultValue: "Search by title, topic or author…" })}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              sx={{
+                maxWidth: 540,
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "700px",
+                  backgroundColor: c.input,
+                  paddingLeft: "6px",
+                  transition: "all 0.25s ease",
+                  boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
+                  "& fieldset": { borderColor: "transparent" },
+                  "&:hover": { boxShadow: "0 4px 10px rgba(0,0,0,0.08)" },
+                  "&.Mui-focused": { boxShadow: "0 6px 18px rgba(0,0,0,0.12)" },
+                  "&.Mui-focused fieldset": { borderColor: "#2563eb" },
+                },
+                "& input": { color: c.inputText, fontSize: "0.95rem", padding: "12px 8px" },
+                "& input::placeholder": { color: c.inputPh, opacity: 1 },
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon sx={{ color: c.inputPh, fontSize: 18 }} />
+                  </InputAdornment>
+                ),
+              }}
+            />
 
-    "& .MuiOutlinedInput-root": {
-      borderRadius: "700px",
-      backgroundColor: c.input,
-      paddingLeft: "6px",
-      transition: "all 0.25s ease",
-      boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
-
-      "& fieldset": {
-        borderColor: "transparent",
-      },
-
-      "&:hover": {
-        boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
-      },
-
-      "&.Mui-focused": {
-        boxShadow: "0 6px 18px rgba(0,0,0,0.12)",
-      },
-
-      "&.Mui-focused fieldset": {
-        borderColor: "#2563eb",
-      },
-    },
-
-    "& input": {
-      color: c.inputText,
-      fontSize: "0.95rem",
-      padding: "12px 8px",
-    },
-
-    "& input::placeholder": {
-      color: c.inputPh,
-      opacity: 1,
-    },
-  }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon sx={{ color: c.inputPh, fontSize: 18 }} />
-                </InputAdornment>
-              ),
-            }}
-          /> 
-
-     
+            {/* Year filter */}
             <FormControl size="small" sx={{ minWidth: 100 }}>
               <Select
                 value={selectedYear}
@@ -221,26 +197,29 @@ export default function ResearchPage() {
                   "& .MuiSvgIcon-root": { color: c.muted },
                 }}
               >
-                <MenuItem value="all">All Years</MenuItem>
+                <MenuItem value="all">{t("researchPage.filterAll", { defaultValue: "All" })}</MenuItem>
                 {ALL_YEARS.map((y) => <MenuItem key={y} value={y}>{y}</MenuItem>)}
               </Select>
             </FormControl>
 
+            {/* Clear tags */}
             {selectedTopics.length > 0 && (
               <Button size="small" onClick={() => setSelectedTopics([])}
                 sx={{ color: "#6A1B9A", textTransform: "none", fontSize: "0.75rem" }}>
-                ✕ Clear tags
+                {t("researchPage.clearTags", { defaultValue: "✕ Clear tags" })}
               </Button>
             )}
 
             <Box sx={{ flex: 1 }} />
+
+            {/* Results count */}
             <Typography sx={{ color: c.muted, fontSize: "0.78rem" }}>
               <Box component="span" sx={{ color: dark ? "#90caf9" : "#1565C0", fontWeight: 600 }}>{filtered.length}</Box>
-              {" of "}{papers.length}
+              {" "}{t("researchPage.of", { defaultValue: "of" })}{" "}{papers.length}
             </Typography>
           </Stack>
 
-        
+          {/* Topic pills */}
           {ALL_TOPICS.length > 0 && (
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.8, mt: 2 }}>
               {ALL_TOPICS.map((topic) => {
@@ -268,17 +247,19 @@ export default function ResearchPage() {
         </Container>
       </Box>
 
-    
+      {/* ── CARDS ── */}
       <Container maxWidth="lg" sx={{ mt: 5 }}>
         {filtered.length === 0 ? (
           <Box sx={{ textAlign: "center", py: 14 }}>
-            <Typography sx={{ color: c.muted, fontSize: "1rem" }}>No results found. Try adjusting your filters.</Typography>
+            <Typography sx={{ color: c.muted, fontSize: "1rem" }}>
+              {t("researchPage.noResults", { defaultValue: "No results found. Try adjusting your filters." })}
+            </Typography>
           </Box>
         ) : (
           <Grid container spacing={2.5}>
             {filtered.map((paper) => (
               <Grid item xs={12} md={6} key={paper.id}>
-                <PaperCard paper={paper} c={c} dark={dark} onRead={() => navigate(`/research/${paper.id}`)} />
+                <PaperCard paper={paper} c={c} dark={dark} t={t} onRead={() => navigate(`/research/${paper.id}`)} />
               </Grid>
             ))}
           </Grid>
@@ -288,10 +269,10 @@ export default function ResearchPage() {
   );
 }
 
-function PaperCard({ paper, c, dark, onRead }) {
+function PaperCard({ paper, c, dark, t, onRead }) {
   const color      = TYPE_COLORS[paper.type] || "#1565C0";
   const icon       = TYPE_ICONS[paper.type];
-  const label      = TYPE_LABELS[paper.type] || paper.type;
+  const label      = t(`paperReader.type.${paper.type}`, { defaultValue: paper.type });
   const hasContent = Boolean(paper.pdfUrl);
   const [hovered, setHovered] = useState(false);
 
@@ -316,12 +297,9 @@ function PaperCard({ paper, c, dark, onRead }) {
           : "none",
       }}
     >
-   
       <Box sx={{ height: 3, bgcolor: color, borderRadius: "12px 12px 0 0", opacity: hovered ? 1 : 0.5, transition: "opacity 0.2s" }} />
 
       <CardContent sx={{ flexGrow: 1, p: 3 }}>
-
-      
         <Stack direction="row" justifyContent="space-between" alignItems="center" mb={2}>
           <Stack direction="row" alignItems="center" spacing={0.6}
             sx={{ px: 1.2, py: 0.4, borderRadius: "6px", bgcolor: `${color}12`, border: `1px solid ${color}25` }}>
@@ -342,12 +320,7 @@ function PaperCard({ paper, c, dark, onRead }) {
           </Stack>
         </Stack>
 
-      
-        <Typography sx={{
-          fontWeight: 700, fontSize: "1rem", lineHeight: 1.4, mb: 0.8,
-          color: dark ? "#ffffff" : c.heading,
-          fontFamily: "'Roboto', 'Ubuntu'",
-        }}>
+        <Typography sx={{ fontWeight: 700, fontSize: "1rem", lineHeight: 1.4, mb: 0.8, color: dark ? "#ffffff" : c.heading, fontFamily: "'Roboto', 'Ubuntu'" }}>
           {paper.title}
         </Typography>
 
@@ -355,22 +328,14 @@ function PaperCard({ paper, c, dark, onRead }) {
           {paper.authors.join(", ")}
         </Typography>
 
-     
         <Typography sx={{
-          fontSize: "0.84rem",
-          color: dark ? "#cbd5e1" : c.body,
-          lineHeight: 1.75,
-          display: "-webkit-box",
-          WebkitLineClamp: 4,
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
-          mb: 2,
-          fontWeight: 300,
+          fontSize: "0.84rem", color: dark ? "#cbd5e1" : c.body, lineHeight: 1.75,
+          display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical",
+          overflow: "hidden", mb: 2, fontWeight: 300,
         }}>
           {paper.abstract}
         </Typography>
 
-     
         {paper.topics.length > 0 && (
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.6 }}>
             {paper.topics.map((tp) => (
@@ -399,12 +364,11 @@ function PaperCard({ paper, c, dark, onRead }) {
             onClick={(e) => { e.stopPropagation(); onRead(); }}
             sx={{
               bgcolor: color, textTransform: "none", fontWeight: 600,
-              fontSize: "0.8rem", borderRadius: "8px", px: 2,
-              boxShadow: "none",
+              fontSize: "0.8rem", borderRadius: "8px", px: 2, boxShadow: "none",
               "&:hover": { bgcolor: color, filter: "brightness(1.1)", boxShadow: "none" },
             }}
           >
-            Read Paper
+            {t("researchPage.readPaper", { defaultValue: "Read Paper" })}
           </Button>
         ) : (
           <Stack direction="row" spacing={0.8} alignItems="center">
@@ -412,13 +376,15 @@ function PaperCard({ paper, c, dark, onRead }) {
               animation: "pulse 2s ease-in-out infinite",
               "@keyframes pulse": { "0%,100%": { opacity: 1 }, "50%": { opacity: 0.3 } }
             }} />
-            <Typography sx={{ color: c.muted, fontSize: "0.78rem" }}>Coming Soon</Typography>
+            <Typography sx={{ color: c.muted, fontSize: "0.78rem" }}>
+              {t("researchPage.comingSoon", { defaultValue: "Coming Soon" })}
+            </Typography>
           </Stack>
         )}
 
         {hasContent && (
           <Typography sx={{ color: c.muted, fontSize: "0.7rem" }}>
-            View full document →
+            {t("researchPage.viewFullDocument", { defaultValue: "View full document →" })}
           </Typography>
         )}
       </CardActions>

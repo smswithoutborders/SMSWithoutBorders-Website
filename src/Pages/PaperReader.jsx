@@ -5,63 +5,49 @@ import {
   CircularProgress, Alert
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import DownloadIcon from "@mui/icons-material/Download";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import papers from "../data/papers.json";
+import { useTranslation } from "react-i18next";
 
 const TYPE_CONFIG = {
-  whitepaper: { label: "White Paper", color: "#1565C0" },
-  research:   { label: "Research",    color: "#2E7D32" },
-  thread:     { label: "Thread",      color: "#6A1B9A" },
+  whitepaper: { labelKey: "paperReader.type.whitepaper", defaultLabel: "White Paper", color: "#1565C0" },
+  research:   { labelKey: "paperReader.type.research",   defaultLabel: "Research",    color: "#2E7D32" },
+  thread:     { labelKey: "paperReader.type.thread",     defaultLabel: "Thread",      color: "#6A1B9A" },
 };
-
-
-function toEmbedUrl(url) {
-  if (!url) return null;
-
-  if (url.includes("/preview")) return url;
-
-  const driveMatch = url.match(/drive\.google\.com\/file\/d\/([^/?\s]+)/);
-  if (driveMatch) {
-    return `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
-  }
-
-  const openMatch = url.match(/[?&]id=([^&\s]+)/);
-  if (openMatch) {
-    return `https://drive.google.com/file/d/${openMatch[1]}/preview`;
-  }
-
-  return `https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true`;
-}
 
 export default function PaperReader() {
   const { id } = useParams();
   const navigate = useNavigate();
+ const { t, i18n } = useTranslation();
   const paper = papers.find((p) => p.id === id);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+
   if (!paper) {
     return (
       <Container sx={{ py: 10, textAlign: "center" }}>
-        <Typography variant="h5" color="text.secondary">Paper not found.</Typography>
+        <Typography variant="h5" color="text.secondary">
+          {t("paperReader.notFound", { defaultValue: "Paper not found." })}
+        </Typography>
         <Button startIcon={<ArrowBackIcon />} onClick={() => navigate("/research")} sx={{ mt: 2 }}>
-          Back to Research
+          {t("paperReader.backToResearch", { defaultValue: "Back to Research" })}
         </Button>
       </Container>
     );
   }
 
+
   if (!paper.pdfUrl) {
     return (
       <Box sx={{ bgcolor: "#F8FAFC", minHeight: "100vh" }}>
-        <PaperHeader paper={paper} navigate={navigate} />
+        <PaperHeader paper={paper} navigate={navigate} t={t} />
         <Container maxWidth="md" sx={{ py: 10, textAlign: "center" }}>
           <Typography variant="h5" color="text.secondary" gutterBottom>
-            Full text coming soon
+            {t("paperReader.comingSoon", { defaultValue: "Full text coming soon" })}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            This paper has not been published yet. Check back later.
+            {t("paperReader.comingSoonSub", { defaultValue: "This paper has not been published yet. Check back later." })}
           </Typography>
           <Button
             startIcon={<ArrowBackIcon />}
@@ -69,17 +55,17 @@ export default function PaperReader() {
             variant="outlined"
             sx={{ mt: 3, textTransform: "none", borderRadius: 2 }}
           >
-            Back to Research
+            {t("paperReader.backToResearch", { defaultValue: "Back to Research" })}
           </Button>
         </Container>
       </Box>
     );
   }
 
-  const embedUrl = toEmbedUrl(paper.pdfUrl);
-
   return (
     <Box sx={{ bgcolor: "#0D1B2A", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+
+
       <Box
         sx={{
           background: "linear-gradient(135deg, #0D1B2A 0%, #1B3A5C 70%, #155FA0 100%)",
@@ -106,7 +92,7 @@ export default function PaperReader() {
               "&:hover": { color: "white" },
             }}
           >
-            Research
+            {t("paperReader.research", { defaultValue: "Research" })}
           </Button>
 
           <Box sx={{ width: "1px", height: 24, bgcolor: "rgba(255,255,255,0.15)" }} />
@@ -127,7 +113,10 @@ export default function PaperReader() {
             </Typography>
             <Stack direction="row" spacing={1} mt={0.3} flexWrap="wrap">
               <Chip
-                label={TYPE_CONFIG[paper.type]?.label || paper.type}
+                label={t(
+                  TYPE_CONFIG[paper.type]?.labelKey,
+                  { defaultValue: TYPE_CONFIG[paper.type]?.defaultLabel || paper.type }
+                )}
                 size="small"
                 sx={{
                   height: 18,
@@ -145,7 +134,6 @@ export default function PaperReader() {
           </Box>
         </Stack>
 
-       
         <Stack direction="row" spacing={1}>
           <Button
             href={paper.pdfUrl}
@@ -161,15 +149,13 @@ export default function PaperReader() {
               "&:hover": { bgcolor: "rgba(255,255,255,0.08)", borderColor: "rgba(255,255,255,0.3)" },
             }}
           >
-            Open in Drive
+            {t("paperReader.openPdf", { defaultValue: "Open PDF" })}
           </Button>
-       
         </Stack>
       </Box>
 
-  
       <Box sx={{ flex: 1, position: "relative", minHeight: "85vh" }}>
-   
+
         {loading && !error && (
           <Box
             sx={{
@@ -186,12 +172,11 @@ export default function PaperReader() {
           >
             <CircularProgress sx={{ color: "#1565C0" }} size={48} />
             <Typography variant="body2" sx={{ color: "#64748B" }}>
-              Loading document…
+              {t("paperReader.loading", { defaultValue: "Loading document…" })}
             </Typography>
           </Box>
         )}
 
-    
         {error && (
           <Box
             sx={{
@@ -209,10 +194,17 @@ export default function PaperReader() {
           >
             <Alert
               severity="warning"
-              sx={{ maxWidth: 500, bgcolor: "#1E293B", color: "#F8FAFC", "& .MuiAlert-icon": { color: "#FBBF24" } }}
+              sx={{
+                maxWidth: 500,
+                bgcolor: "#1E293B",
+                color: "#F8FAFC",
+                "& .MuiAlert-icon": { color: "#FBBF24" },
+              }}
             >
-              The document could not be embedded. This can happen if the Google Drive file is not set to
-              "Anyone with the link can view". Try opening it directly.
+              {t("paperReader.errorMessage", {
+                defaultValue:
+                  "The document could not be loaded. Make sure the PDF file exists in public/papers/ and the filename matches exactly.",
+              })}
             </Alert>
             <Stack direction="row" spacing={2}>
               <Button
@@ -222,21 +214,26 @@ export default function PaperReader() {
                 endIcon={<OpenInNewIcon />}
                 sx={{ textTransform: "none", bgcolor: "#1565C0", borderRadius: 2 }}
               >
-                Open in Google Drive
+                {t("paperReader.openPdfDirectly", { defaultValue: "Open PDF directly" })}
               </Button>
               <Button
                 onClick={() => navigate("/research")}
                 variant="outlined"
-                sx={{ textTransform: "none", borderRadius: 2, color: "#CBD5E1", borderColor: "rgba(255,255,255,0.2)" }}
+                sx={{
+                  textTransform: "none",
+                  borderRadius: 2,
+                  color: "#CBD5E1",
+                  borderColor: "rgba(255,255,255,0.2)",
+                }}
               >
-                ← Back
+                {t("paperReader.back", { defaultValue: "← Back" })}
               </Button>
             </Stack>
           </Box>
         )}
 
         <iframe
-          src={embedUrl}
+          src={paper.pdfUrl}
           title={paper.title}
           onLoad={() => setLoading(false)}
           onError={() => { setLoading(false); setError(true); }}
@@ -256,17 +253,34 @@ export default function PaperReader() {
   );
 }
 
-function PaperHeader({ paper, navigate }) {
+function PaperHeader({ paper, navigate, t }) {
   const cfg = TYPE_CONFIG[paper.type] || {};
   return (
-    <Box sx={{ background: "linear-gradient(135deg, #0D1B2A 0%, #1B3A5C 70%, #155FA0 100%)", color: "white", py: 5, px: 3 }}>
+    <Box
+      sx={{
+        background: "linear-gradient(135deg, #0D1B2A 0%, #1B3A5C 70%, #155FA0 100%)",
+        color: "white",
+        py: 5,
+        px: 3,
+      }}
+    >
       <Container maxWidth="lg">
-        <Button startIcon={<ArrowBackIcon />} onClick={() => navigate("/research")} sx={{ color: "#90CAF9", mb: 2, textTransform: "none" }}>
-          Research & Publications
+        <Button
+          startIcon={<ArrowBackIcon />}
+          onClick={() => navigate("/research")}
+          sx={{ color: "#90CAF9", mb: 2, textTransform: "none" }}
+        >
+          {t("paperReader.researchAndPublications", { defaultValue: "Research Papers" })}
         </Button>
-        <Chip label={cfg.label} size="small" sx={{ bgcolor: `${cfg.color}30`, color: "#90CAF9", fontWeight: 700, mb: 2 }} />
+        <Chip
+          label={t(cfg.labelKey, { defaultValue: cfg.defaultLabel })}
+          size="small"
+          sx={{ bgcolor: `${cfg.color}30`, color: "#90CAF9", fontWeight: 700, mb: 2 }}
+        />
         <Typography variant="h4" fontWeight={800}>{paper.title}</Typography>
-        <Typography variant="body2" sx={{ color: "#94A3B8", mt: 1 }}>{paper.authors.join(", ")} · {paper.year}</Typography>
+        <Typography variant="body2" sx={{ color: "#94A3B8", mt: 1 }}>
+          {paper.authors.join(", ")} · {paper.year}
+        </Typography>
       </Container>
     </Box>
   );

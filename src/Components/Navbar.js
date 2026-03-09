@@ -430,7 +430,7 @@ export default function Navbar() {
 							"&:hover": { opacity: 0.9, transform: "translateY(-1px)" },
 						}}
 					>
-						📄 {t("navbar.researchFull", "Research & Publications")}
+						<FiFileText size={24} color="white" />  {t("navbar.researchFull", "Research Papers")}
 					</Box>
 				</Box>
 
