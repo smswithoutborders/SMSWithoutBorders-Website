@@ -145,7 +145,11 @@ export default function Projects() {
 				fontFamily: "'Ubuntu', 'Roboto'",
 			  }}
 			>
-			 Our Projects
+        	{t("projectsub", {
+            defaultValue:
+              "Our Projects",
+          })}
+	
 			</Typography>
 			<Box
 			  sx={{

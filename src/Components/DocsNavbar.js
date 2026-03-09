@@ -292,7 +292,6 @@ export default function Navbar() {
 					>
 					<FiFileText size={24} color="white" />  {t("navbar.researchFull", "Research Papers")}
 					</Box>
-			
 
 						<Box sx={{ width: "1px", height: 20, bgcolor: isLight ? "rgba(0,0,0,0.12)" : "rgba(255,255,255,0.12)", mx: 0.5 }} />
 

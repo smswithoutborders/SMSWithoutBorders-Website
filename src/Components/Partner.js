@@ -243,7 +243,8 @@ export default function Partner() {
                 fontFamily: "'Ubuntu', 'Roboto'",
               }}
             >
-              Partners
+               {t("Sponsor.Sponsorsub", { defaultValue: "Partners" })}
+          
             </Typography>
             <Box
               sx={{
@@ -327,7 +328,8 @@ export default function Partner() {
               letterSpacing: "0.04em",
             }}
           >
-            Proudly supported by organizations committed to a free and open internet.
+                          {t("Sponsor.sponsorfooter", { defaultValue: "Proudly supported by organizations committed to a free and open internet." })}
+
           </Typography>
         </Box>
       </Box>
