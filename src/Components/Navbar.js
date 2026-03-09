@@ -28,11 +28,10 @@ const GlobalStyles = () => (
 	<style>{`
 		@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Syne:wght@600;700;800&display=swap');
 
-		/* ─ nav link underline ─ */
 		.swob-link {
 			position: relative;
 			font-family: 'DM Sans', sans-serif;
-			font-size: 0.875rem;
+			font-size: 0.975rem;
 			font-weight: 400;
 			letter-spacing: 0.01em;
 			text-decoration: none;
@@ -58,7 +57,6 @@ const GlobalStyles = () => (
 		.swob-link.swob-active::after { width: 100%; }
 		.swob-link.swob-active { font-weight: 600; }
 
-		/* ─ dropdown ─ */
 		.swob-has-dropdown { position: relative; }
 		.swob-dropdown-panel {
 			position: absolute;
@@ -93,44 +91,6 @@ const GlobalStyles = () => (
 			white-space: nowrap;
 		}
 
-		/* ─ Research pill CTA ─ */
-		.swob-research-btn {
-			font-family: 'DM Sans', sans-serif;
-			font-size: 0.82rem;
-			font-weight: 600;
-			letter-spacing: 0.02em;
-			text-decoration: none;
-			display: inline-flex;
-			align-items: center;
-			gap: 5px;
-			padding: 7px 16px;
-			border-radius: 100px;
-			background: linear-gradient(135deg, #FF8614 0%, #e85d00 100%);
-			color: #fff;
-			border: none;
-			cursor: pointer;
-			box-shadow: 0 2px 14px rgba(255,134,20,0.38);
-			transition: box-shadow 0.2s ease, transform 0.15s ease, opacity 0.15s;
-			white-space: nowrap;
-		}
-		.swob-research-btn:hover {
-			box-shadow: 0 4px 22px rgba(255,134,20,0.52);
-			transform: translateY(-1px);
-		}
-
-		/* ─ drawer item stagger ─ */
-		@keyframes swobFadeUp {
-			from { opacity: 0; transform: translateY(8px); }
-			to   { opacity: 1; transform: translateY(0); }
-		}
-		.swob-drawer-row {
-			animation: swobFadeUp 0.22s ease both;
-		}
-
-		/* ─ icon button ring on hover ─ */
-		.swob-icon-btn {
-			transition: color 0.2s, background 0.2s !important;
-		}
 	`}</style>
 );
 
@@ -164,8 +124,8 @@ export default function Navbar() {
 				{ label: t("navbar.link3", "DekuSMS"),  href: "https://Dekusms.com/" },
 			],
 		},
-		{ label: t("navbar.link7", "Research"),           href: "/research" },
 		{ label: t("navbar.link4", "Privacy Policy"),     href: "/privacy-policy" },
+		{ label: t("navbar.link7", "Research"),           href: "/research" },
 	];
 
 	const bg = scrolled
@@ -259,7 +219,7 @@ export default function Navbar() {
 												px: "14px",
 												display: "flex",
 												alignItems: "center",
-												gap: "2px",
+												gap: "12px",
 												"&:hover": { color: hoverColor },
 											}}
 										>
@@ -315,13 +275,30 @@ export default function Navbar() {
 							flexShrink: 0,
 						}}
 					>
-						<Box
-							component="a"
-							href="/research"
-							className="swob-research-btn"
-						>
-							📄 {t("navbar.link7", "Research")}
-						</Box>
+						
+					<Box
+						component="a"
+						href="/research"
+						onClick={() => setDrawerOpen(false)}
+						sx={{
+							display: "flex",
+								color: textColor,
+							alignItems: "center",
+							justifyContent: "center",
+							gap: 1,
+							py: 1.3,
+							borderRadius: "12px",
+							fontFamily: "'DM Sans', sans-serif",
+							fontSize: "0.88rem",
+							fontWeight: 600,
+							textDecoration: "none",
+							transition: "opacity 0.2s, transform 0.15s",
+						"&:hover": { color: hoverColor }
+						}}
+					>
+						📄 {t("navbar.researchFull", "Research Papers")}
+					</Box>
+			
 
 						<Box sx={{ width: "1px", height: 20, bgcolor: isLight ? "rgba(0,0,0,0.12)" : "rgba(255,255,255,0.12)", mx: 0.5 }} />
 
@@ -442,7 +419,7 @@ export default function Navbar() {
 							gap: 1,
 							py: 1.3,
 							borderRadius: "12px",
-							background: "linear-gradient(135deg, #FF8614 0%, #e05900 100%)",
+							background: "linear-gradient(135deg, #bc5b00 0%, #e05a00d1 100%)",
 							color: "#fff",
 							fontFamily: "'DM Sans', sans-serif",
 							fontSize: "0.88rem",
