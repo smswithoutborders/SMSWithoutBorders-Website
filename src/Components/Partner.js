@@ -270,23 +270,6 @@ export default function Partner() {
             {t("Sponsor.SponsorT", { defaultValue: "Supporting Organizations" })}
           </Typography>
 
-          <Typography
-            variant="body1"
-            sx={{
-              fontFamily: "'Ubuntu', 'Roboto'",
-              fontWeight: 300,
-              fontSize: { xs: "1rem", md: "1.1rem" },
-              color: subColor,
-              lineHeight: 1.8,
-              maxWidth: 520,
-              mx: "auto",
-            }}
-          >
-            {t("Sponsor.Sponsor-subheader", {
-              defaultValue:
-                "These organizations help keep SMSWithoutBorders afloat and our mission moving forward.",
-            })}
-          </Typography>
         </Box>
 
         <Box
