@@ -180,25 +180,29 @@ export default function Navbar() {
 						transition: "all 0.4s cubic-bezier(.4,0,.2,1)",
 					}}
 				>
-					<Box
-						component="a"
-						href="/"
-						sx={{
-							display: "flex",
-							alignItems: "center",
-							gap: 1,
-							textDecoration: "none",
-							flexShrink: 0,
-							"&:hover img": { opacity: 0.85, transition: "opacity 0.2s" },
-						}}
-					>
-						{/* <Box
-							component="img"
-							src={isLight ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
-							alt="SMSWithoutBorders"
-							sx={{ height: { xs: 26, md: 30 }, display: "block", transition: "opacity 0.2s" }}
-						/> */}
-					</Box>
+			<Box
+  component="a"
+  href="/"
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    gap: 1,
+    textDecoration: "none",
+    flexShrink: 0,
+    opacity: scrolled ? 1 : 0,
+    pointerEvents: scrolled ? "auto" : "none",
+    transform: scrolled ? "translateY(0)" : "translateY(-6px)",
+    transition: "opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1)",
+    "&:hover img": { opacity: 0.85, transition: "opacity 0.2s" },
+  }}
+>
+  <Box
+    component="img"
+    src={isLight ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
+    alt="SMSWithoutBorders"
+    sx={{ height: { xs: 26, md: 30 }, display: "block", transition: "opacity 0.2s" }}
+  />
+</Box>
 
 					<Box
 						component="nav"
