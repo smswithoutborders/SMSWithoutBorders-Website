@@ -12,19 +12,21 @@
     "papers": {
       "whitepaper": "Libro blanco",
       "threatModel": "Modelo de amenazas"
-    }
+    },
+	"researchFull": "Artículos de investigación"
 	},
 	"loader": "Cargando, por favor espere",
 	"LandingHeader": "Código abierto | Investigación",
 	"About": {
-		"AboutHeader": "Explorar SMSWithoutBorders",
+		"AboutHeader": "Explora SMSWithoutBorders",
 		"description": "SMSWithoutBorders (SWOB) se dedica a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionen incluso sin conexión a Internet.",
 		"description1": "El desarrollo incluye aplicaciones móviles para varias plataformas como Android, iOS y sistemas Linux. Parte del trabajo también incluye documentos técnicos sobre temas como criptografía, comunicaciones y libertad en Internet.",
 		"description2": "Nuestro camino hacia el cumplimiento de nuestra misión comenzó en 2021 con el desarrollo de la primera versión de RelaySMS para Android. Desde entonces, hemos avanzado mucho, con soporte para más plataformas y muchas más aplicaciones.",
 		"description3": "Publicamos nuestras investigaciones con la mayor frecuencia posible en nuestro blog y hacemos anuncios a través de nuestras redes sociales. SMSWithoutBorders es un proyecto iniciado por el equipo de <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
-	"projectHeader": "Proyectos innovadores bajo SMSWithoutBorders(SWOB)",
+	"projectHeader": "Proyectos innovadores bajo SMSWithoutBorders",
 	"projectSubHeader": "SMSWithoutBorders se compromete a construir herramientas de código abierto que promuevan la libertad de expresión y la comunicación",
+	"projectsub": "Nuestros proyectos",
 	"project1": {
 		"title": "RelaySMS",
 		"description": "RelaySMS utiliza la mensajería SMS para comunicarse con plataformas en línea sin necesidad de conexión a Internet. Los usuarios pueden otorgar acceso a sus plataformas en línea, el cual se utilizará para actuar en su nombre mediante mensajes SMS. El acceso concedido, los mensajes enviados desde la aplicación y cómo se publican en línea están asegurados con prácticas criptográficas y de seguridad modernas y sólidas.",
@@ -42,8 +44,9 @@
 		"keyPoint2": "Privacidad"
 	},
 	"Sponsor": {
+		"Sponsorsub": "Socios",
 		"SponsorT": "Organizaciones de apoyo",
-		"Sponsor-subheader": "Estas organizaciones ayudan a mantener SMSWithoutBorders en funcionamiento"
+		"sponsorfooter": "Orgullosamente respaldado por organizaciones comprometidas con un internet libre y abierto."
 	},
 	"footer": {
 		"copyright": "© Afkanerd."
@@ -120,5 +123,36 @@
 	"Privacy-Policy12": {
 		"policyHeader12": "Contáctanos",
 		"policyBody16": "Si tiene alguna pregunta sobre esta Política de Privacidad, puede contactarnos visitando esta página en nuestro sitio web. <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>"
-	}
+	},
+	"paperReader": {
+  "notFound": "Documento no encontrado.",
+  "backToResearch": "Volver a investigación",
+  "researchAndPublications": "Investigación y publicaciones",
+  "research": "Investigación",
+  "comingSoon": "Texto completo próximamente",
+  "comingSoonSub": "Este documento aún no ha sido publicado. Vuelve más tarde.",
+  "openPdf": "Abrir PDF",
+  "openPdfDirectly": "Abrir PDF directamente",
+  "loading": "Cargando documento…",
+  "errorMessage": "No se pudo cargar el documento. Asegúrate de que el archivo PDF exista en public/papers/ y que el nombre del archivo coincida exactamente.",
+  "back": "← Volver",
+  "type": {
+    "whitepaper": "Libro blanco",
+    "research": "Investigación",
+    "thread": "Hilo"
+  }
+},
+"researchPage": {
+  "knowledgeBase": "Base de conocimiento",
+  "title": "Investigación y publicaciones",
+  "subtitle": "Libros blancos, hallazgos de investigación y debates comunitarios sobre comunicación offline, privacidad e inclusión digital.",
+  "searchPlaceholder": "Buscar por título, tema o autor…",
+  "filterAll": "Todos",
+  "clearTags": "✕ Limpiar etiquetas",
+  "of": "de",
+  "noResults": "No se encontraron resultados. Intenta ajustar tus filtros.",
+  "readPaper": "Leer documento",
+  "comingSoon": "Próximamente",
+  "viewFullDocument": "Ver documento completo →"
+}
 }
