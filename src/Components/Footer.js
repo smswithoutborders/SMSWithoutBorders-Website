@@ -1,101 +1,206 @@
 import React from "react";
-import { Box, Typography, Link } from "@mui/material";
-import { useTheme } from "../Context/ThemeContext";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { Box, Divider, Link, Typography, Container } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { Link as RouterLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-const Footer = () => {
-  const { mode } = useTheme();
-  const isLight = mode === "light";
+function FooterNavLink({ item }) {
+  const commonSx = {
+    color: "text.secondary",
+    textDecoration: "none",
+    fontSize: "0.95rem",
+    lineHeight: 1.55,
+    "&:hover": { color: "text.primary" },
+  };
+
+  if (item.external) {
+    return (
+      <Link
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={commonSx}
+      >
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <Link component={RouterLink} to={item.href} sx={commonSx}>
+      {item.label}
+    </Link>
+  );
+}
+
+export default function Footer() {
+  const theme = useTheme();
+  const { t } = useTranslation();
+
+  const linkGroups = [
+    {
+      key: "projects",
+      title: t("footerNav.projects", { defaultValue: "Projects" }),
+      links: [
+        {
+          label: t("footerNav.relay", {
+            defaultValue: "RelaySMS",
+          }),
+          href: "https://relay.smswithoutborders.com/",
+          external: true,
+        },
+        {
+          label: t("footerNav.deku", { defaultValue: "DekuSMS" }),
+          href: "https://dekusms.com/",
+          external: true,
+        },
+      ],
+    },
+    {
+      key: "resources",
+      title: t("footerNav.resources", { defaultValue: "Resources" }),
+      links: [
+        {
+          label: t("navbar.link5", { defaultValue: "Documentation" }),
+          href: "https://docs.smswithoutborders.com/",
+          external: true,
+        },
+        {
+          label: t("navbar.link1", { defaultValue: "Blog" }),
+          href: "https://blog.smswithoutborders.com/",
+          external: true,
+        },
+        {
+          label: t("navbar.researchFull", { defaultValue: "Research Papers" }),
+          href: "/research",
+        },
+        {
+          label: t("navbar.link4", { defaultValue: "Privacy Policy" }),
+          href: "/privacy-policy/",
+        },
+      ],
+    },
+    {
+      key: "community",
+      title: t("footerNav.community", { defaultValue: "Community" }),
+      links: [
+        {
+          label: t("footerNav.githubOrg", {
+            defaultValue: "GitHub Organization",
+          }),
+          href: "https://github.com/smswithoutborders",
+          external: true,
+        },
+        {
+          label: t("footerNav.twitterX", {
+            defaultValue: "Twitter / X @smswithoutborders",
+          }),
+          href: "https://x.com/smswithoutborders",
+          external: true,
+        },
+        {
+          label: t("footerNav.contactDevelopers", {
+            defaultValue: "Contact developers",
+          }),
+          href: "mailto:developers@smswithoutborders.com",
+          external: true,
+        },
+        {
+          label: t("footerNav.reportIssue", {
+            defaultValue: "Report an issue",
+          }),
+          href: "https://github.com/smswithoutborders/RelaySMS-Android/issues",
+          external: true,
+        },
+      ],
+    },
+  ];
 
   return (
     <Box
       sx={{
         width: "100%",
-        background: isLight
-          ? "linear-gradient(135deg, #071f74f0 2%, #071f74ff 100%)"
-          : "linear-gradient(135deg, #050f3a 2%, #071f74ff 100%)",
-        fontFamily: "'Ubuntu', 'Roboto'",
+        bgcolor: "background.default",
+        borderTop: `1px solid ${theme.palette.divider}`,
       }}
     >
-      <Box
-        sx={{
-          height: "1px",
-          background:
-            "linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent)",
-        }}
-      />
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: { xs: 2, sm: 0 },
-          px: { xs: 3, sm: 6, md: 10 },
-          py: { xs: 3, sm: 3.5 },
-        }}
-      >
-        <Typography
-          variant="body2"
+      <Container maxWidth="xl" sx={{ position: "relative" }}>
+        <Box
           sx={{
-            fontSize: "0.8rem",
-            color: "rgba(255,255,255,0.55)",
-            fontFamily: "'Ubuntu', 'Roboto'",
+            // px: { xs: 3, md: 6, lg: 10 },
+            py: { xs: 4, md: 5 },
           }}
         >
-          © {new Date().getFullYear()}{" "}
-          <Link
-            href="https://www.Afkanerd.com"
-            target="_blank"
-            rel="noopener"
+          <Box
             sx={{
-              color: "#FF8614",
-              textDecoration: "none",
-              fontFamily: "'Ubuntu', 'Roboto'",
-              transition: "color 0.2s",
-              "&:hover": { color: "#ffaa55" },
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr",
+                md: "repeat(3, minmax(0, 1fr))",
+              },
+              gap: 0,
             }}
           >
-            Afkanerd
-          </Link>
-        </Typography>
+            {linkGroups.map((group, index) => (
+              <Box
+                key={group.key}
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  borderTop: {
+                    xs:
+                      index > 0 ? `1px solid ${theme.palette.divider}` : "none",
+                    md: "none",
+                  },
+                  borderInlineStart: {
+                    xs: "none",
+                    md:
+                      index > 0 ? `1px solid ${theme.palette.divider}` : "none",
+                  },
+                }}
+              >
+                <Typography
+                variant="h6"
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: "text.primary",
+                    mb: 1.75,
+                  }}
+                >
+                  {group.title}
+                </Typography>
 
-        <Typography
-          sx={{
-            fontSize: "0.72rem",
-            fontWeight: 700,
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.30)",
-            fontFamily: "'Ubuntu', 'Roboto'",
-          }}
-        >
-          SMSWithoutBorders
-        </Typography>
+                <Box component="p" sx={{ display: "grid", gap: 1 }}>
+                  {group.links.map((item) => (
+                    <FooterNavLink key={item.label} item={item} />
+                  ))}
+                </Box>
+              </Box>
+            ))}
+          </Box>
 
-        <Link
-          href="https://github.com/smswithoutborders"
-          target="_blank"
-          rel="noopener"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: 0.8,
-            color: "rgba(255,255,255,0.45)",
-            textDecoration: "none",
-            fontSize: "0.78rem",
-            fontFamily: "'Ubuntu', 'Roboto'",
-            transition: "color 0.2s",
-            "&:hover": { color: "#ffffff" },
-          }}
-        >
-          <GitHubIcon sx={{ fontSize: 16 }} />
-          GitHub
-        </Link>
-      </Box>
+          <Divider sx={{ mt: { xs: 2.5, md: 3 } }} />
+          <Typography
+          variant="body2"
+            sx={{
+              mt: { xs: 1.25, md: 1.5 },
+              textAlign: "center",
+              fontSize: "0.82rem",
+              fontWeight: 500,
+              letterSpacing: "0.04em",
+              color: "text.secondary",
+              opacity: 0.7,
+            }}
+          >
+            {t("footer.copyrightYear", {
+              year: new Date().getFullYear(),
+              defaultValue: "© {{year}} Afkanerd",
+            })}
+          </Typography>
+        </Box>
+      </Container>
     </Box>
   );
-};
-
-export default Footer;
+}

@@ -1,65 +1,82 @@
-import React, { createContext, useState, useMemo, useContext, useEffect } from "react";
-import { createTheme, ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
+import React, {
+  createContext,
+  useState,
+  useMemo,
+  useContext,
+  useEffect,
+} from "react";
+import {
+  createTheme,
+  ThemeProvider as MuiThemeProvider,
+} from "@mui/material/styles";
 
 const ThemeContext = createContext();
 
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
-	const getInitialMode = () => {
-		const savedMode = localStorage.getItem("theme");
-		if (savedMode) return savedMode;
+  const getInitialMode = () => {
+    const savedMode = localStorage.getItem("theme");
+    if (savedMode) return savedMode;
 
-		const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-		return prefersDark ? "dark" : "light";
-	};
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    return prefersDark ? "dark" : "light";
+  };
 
-	const [mode, setMode] = useState(getInitialMode);
+  const [mode, setMode] = useState(getInitialMode);
 
-	useEffect(() => {
-		localStorage.setItem("theme", mode);
-	}, [mode]);
+  useEffect(() => {
+    localStorage.setItem("theme", mode);
+  }, [mode]);
 
-	const toggleTheme = () => {
-		setMode((prev) => (prev === "light" ? "dark" : "light"));
-	};
+  const toggleTheme = () => {
+    setMode((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
-	const theme = useMemo(
-		() =>
-			createTheme({
-				palette: {
-					mode,
-					...(mode === "light"
-						? {
-							primary: { main: "#1976d2" },
-							background: { default: "#f5f5f5", paper: "#fff" },
-							text: {
-								primary: "#0c0833",
-								secondary: "#555555",
-								darkBlue: "#0d1b2a"
-							}
-						}
-						: {
-							primary: { main: "#90caf9" },
-							background: { default: "#000824", paper: "#000a40" },
-							text: {
-								primary: "#ffffff",
-								secondary: "#90caf9",
-								darkBlue: "#0d1b2a",
-								another: "#025c72ff"
-							}
-						})
-				},
-				typography: {
-					fontFamily: "'Roboto', 'Ubuntu'"
-				}
-			}),
-		[mode]
-	);
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+          primary: {
+            main: mode === "light" ? "#1A1A1A" : "#F5F0E4",
+            contrastText: mode === "light" ? "#FAF6EE" : "#0E0C07",
+          },
+          secondary: {
+            main: mode === "light" ? "#FF8614" : "#FFB800",
+          },
+          background: {
+            default: mode === "light" ? "#F5F0E4" : "#0E0C07",
+            paper: mode === "light" ? "#FAF6EE" : "#171410",
+          },
+          text: {
+            primary: mode === "light" ? "#1A1A1A" : "#F0EBE0",
+            secondary: mode === "light" ? "#504A42" : "#9E9285",
+          },
+          divider:
+            mode === "light" ? "rgba(26,26,26,0.15)" : "rgba(240,235,224,0.10)",
+        },
+        typography: {
+          fontFamily: "'Ubuntu', sans-serif",
+          h1: { fontFamily: "'Unbounded', sans-serif", fontWeight: 700, letterSpacing: "-0.02em", color: mode === "light" ? "#071f74ff" : "#ffffff" },
+          h2: { fontFamily: "'Unbounded', sans-serif" },
+          h3: { fontFamily: "'Unbounded', sans-serif" },
+          h4: { fontFamily: "'Unbounded', sans-serif" },
+          h5: { fontFamily: "'Unbounded', sans-serif" },
+          h6: { fontFamily: "'Unbounded', sans-serif" },
+        },
+        // shape: {
+        // 	borderRadius: 8,
+        // },
+      }),
+    [mode],
+  );
 
-	return (
-		<ThemeContext.Provider value={{ mode, toggleTheme }}>
-			<MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
-		</ThemeContext.Provider>
-	);
+  return (
+    <ThemeContext.Provider value={{ mode, toggleTheme }}>
+      <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+    </ThemeContext.Provider>
+  );
 };

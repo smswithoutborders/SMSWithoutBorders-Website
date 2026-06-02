@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../Context/ThemeContext";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { useTheme } from "@mui/material/styles";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 function useReveal(delay = 0) {
   const ref = useRef(null);
@@ -19,7 +19,7 @@ function useReveal(delay = 0) {
           observer.disconnect();
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.12 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -46,22 +46,20 @@ const sponsors = [
   },
 ];
 
-function SponsorCard({ sponsor, isLight, subColor }) {
+function SponsorCard({ sponsor, index }) {
+  const theme = useTheme();
   const ref = useReveal(sponsor.delay);
-
-  const cardBg = isLight ? "#ffffff" : "#070f2b";
-  const borderColor = isLight ? "rgba(7,31,116,0.09)" : "rgba(238,242,255,0.07)";
-  const hoverBorder = isLight ? "rgba(7,31,116,0.22)" : "rgba(238,242,255,0.18)";
+  const isLight = theme.palette.mode === "light";
 
   return (
     <Box
       ref={ref}
-      style={{
-        opacity: 0,
-        transform: "translateY(36px)",
-        transition:
-          "opacity 0.72s cubic-bezier(.4,0,.2,1), transform 0.72s cubic-bezier(.4,0,.2,1)",
-      }}
+      // style={{
+      //   opacity: 0,
+      //   transform: "translateY(36px)",
+      //   transition:
+      //     "opacity 0.72s cubic-bezier(.4,0,.2,1), transform 0.72s cubic-bezier(.4,0,.2,1)",
+      // }}
       component="a"
       href={sponsor.href}
       target="_blank"
@@ -69,49 +67,51 @@ function SponsorCard({ sponsor, isLight, subColor }) {
       aria-label={sponsor.alt}
       sx={{
         flex: 1,
-        minWidth: { xs: "100%", sm: 260 },
-        maxWidth: { xs: "100%", sm: 420 },
+        minWidth: { xs: "100%", sm: 240 },
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "flex-start",
         justifyContent: "center",
-        gap: 3,
+        gap: 2,
         textDecoration: "none",
-        bgcolor: cardBg,
-        border: `1px solid ${borderColor}`,
-        borderRadius: 3,
-        px: { xs: 4, md: 6 },
-        py: { xs: 5, md: 7 },
+        px: { xs: 3.5, md: 5 },
+        py: { xs: 4, md: 5 },
         position: "relative",
-        overflow: "hidden",
-        transition:
-          "border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease",
+        borderTop: {
+          xs: index > 0 ? `1px solid ${theme.palette.divider}` : "none",
+          sm: "none",
+        },
+        borderInlineStart: {
+          xs: "none",
+          sm: index > 0 ? `1px solid ${theme.palette.divider}` : "none",
+        },
+        transition: "background-color 0.2s ease",
+        "& .sponsor-link": {
+          opacity: 0,
+          transform: "translate(-2px, 2px)",
+          transition: "opacity 0.18s ease, transform 0.18s ease",
+        },
         "&:hover": {
-          borderColor: hoverBorder,
-          transform: "translateY(-6px)",
-          boxShadow: isLight
-            ? "0 20px 50px rgba(7,31,116,0.09)"
-            : "0 20px 50px rgba(0,0,0,0.35)",
-          "& .sponsor-icon": { opacity: 1, transform: "translate(-50%, -50%) scale(1)" },
-          "& .sponsor-link": { opacity: 1 },
+          bgcolor: "action.hover",
+          "& .sponsor-link": {
+            opacity: 1,
+            transform: "translate(0, 0)",
+          },
         },
       }}
     >
-
       <Box
         className="sponsor-link"
         sx={{
           position: "absolute",
           top: 16,
           right: 16,
-          opacity: 0,
-          transition: "opacity 0.25s ease",
-          color: subColor,
+          color: "text.primary",
         }}
       >
-        <OpenInNewIcon sx={{ fontSize: 16 }} />
+        <ArrowOutwardIcon sx={{ fontSize: 18 }} />
       </Box>
-
+      {/* 
       <Box
         sx={{
           position: "absolute",
@@ -121,8 +121,7 @@ function SponsorCard({ sponsor, isLight, subColor }) {
             : "radial-gradient(ellipse at 50% 60%, rgba(255,184,0,0.04) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
-      />
-
+      /> */}
 
       <Box
         component="img"
@@ -130,7 +129,7 @@ function SponsorCard({ sponsor, isLight, subColor }) {
         alt={sponsor.alt}
         sx={{
           width: "100%",
-          maxWidth: 260,
+          maxWidth: 240,
           height: 100,
           objectFit: "contain",
           filter: isLight ? "none" : "brightness(0.92)",
@@ -141,72 +140,53 @@ function SponsorCard({ sponsor, isLight, subColor }) {
         }}
       />
 
-  
-      <Box
+      {/* <Box
         sx={{
           width: 40,
           height: "1.5px",
           bgcolor: isLight ? "rgba(7,31,116,0.12)" : "rgba(255,255,255,0.10)",
           borderRadius: 1,
         }}
-      />
-
+      /> */}
+      {/* 
       <Typography
         sx={{
-          fontFamily: "'Ubuntu', 'Roboto'",
           fontSize: "0.72rem",
           fontWeight: 700,
           letterSpacing: "0.16em",
           textTransform: "uppercase",
-          color: subColor,
+          color: "text.secondary",
           opacity: 0.7,
           position: "relative",
           zIndex: 1,
         }}
       >
         {sponsor.description}
-      </Typography>
+      </Typography> */}
     </Box>
   );
 }
 
 export default function Partner() {
+  const theme = useTheme();
   const { t, i18n } = useTranslation();
   const isFarsi = i18n.language === "fa";
-  const { mode } = useTheme();
-
-  const isLight = mode === "light";
-  const bg = isLight ? "#f7f9ff" : "#000824";
-  const textColor = isLight ? "#071f74ef" : "#ffffff";
-  const subColor = isLight ? "#505e85ff" : "#cbd7e2ff";
+  const isLight = theme.palette.mode === "light";
 
   const headerRef = useReveal(0);
+  const accent = theme.palette.secondary.main;
 
   return (
     <Box
       sx={{
-        bgcolor: bg,
+        // bgcolor: "background.default",
         py: { xs: 8, md: 14 },
-        px: { xs: 3, sm: 6, md: 10 },
         direction: isFarsi ? "rtl" : "ltr",
-        position: "relative",
+        // position: "relative",
         overflow: "hidden",
       }}
     >
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: isLight
-            ? "radial-gradient(rgba(7,31,116,0.04) 1px, transparent 1px)"
-            : "radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px)",
-          backgroundSize: "36px 36px",
-          pointerEvents: "none",
-        }}
-      />
-
-      <Box sx={{ maxWidth: 1100, mx: "auto", position: "relative" }}>
-
+      <Container maxWidth="xl" sx={{ position: "relative" }}>
         <Box
           ref={headerRef}
           style={{
@@ -215,107 +195,55 @@ export default function Partner() {
             transition:
               "opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1)",
           }}
-          sx={{ mb: { xs: 8, md: 10 }, textAlign: "center" }}
+          sx={{ mb: { xs: 6, md: 8 }, textAlign: isFarsi ? "right" : "left" }}
         >
-       
           <Box
             sx={{
               display: "inline-flex",
               alignItems: "center",
               gap: 1.5,
-              mb: 2.5,
+              // mb: 2.5,
             }}
           >
-            <Box
-              sx={{
-                width: 28,
-                height: "1.5px",
-                bgcolor: isLight ? "#071f74" : "#FFB800",
-              }}
-            />
             <Typography
               sx={{
                 fontSize: "0.72rem",
                 fontWeight: 700,
-                letterSpacing: "0.18em",
+                letterSpacing: "0.16em",
                 textTransform: "uppercase",
-                color: isLight ? "#071f74" : "#FFB800",
-                fontFamily: "'Ubuntu', 'Roboto'",
+                color: accent,
+                mb: 1.5,
               }}
             >
-               {t("Sponsor.Sponsorsub", { defaultValue: "Partners" })}
-          
+              {t("Sponsor.Sponsorsub", { defaultValue: "Partners" })}
             </Typography>
-            <Box
-              sx={{
-                width: 28,
-                height: "1.5px",
-                bgcolor: isLight ? "#071f74" : "#FFB800",
-              }}
-            />
           </Box>
 
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 700,
-              fontSize: { xs: "1.9rem", sm: "2.4rem", md: "3rem" },
-              lineHeight: 1.12,
-              color: textColor,
-              fontFamily: "'Ubuntu', 'Roboto'",
-              letterSpacing: "-0.02em",
-              mb: 2,
-            }}
-          >
-            {t("Sponsor.SponsorT", { defaultValue: "Supporting Organizations" })}
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+            {t("Sponsor.SponsorT", {
+              defaultValue: "Supporting Organizations",
+            })}
           </Typography>
-
         </Box>
 
         <Box
           sx={{
+            border: `1px solid ${theme.palette.divider}`,
+            borderRadius: 0,
+            // bgcolor: "action.hover",
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
-            gap: { xs: 3, md: 5 },
-            justifyContent: "center",
+            gap: 0,
+            justifyContent: "flex-start",
             alignItems: "stretch",
+            overflow: "hidden",
           }}
         >
-          {sponsors.map((sponsor) => (
-            <SponsorCard
-              key={sponsor.alt}
-              sponsor={sponsor}
-              isLight={isLight}
-              subColor={subColor}
-            />
+          {sponsors.map((sponsor, index) => (
+            <SponsorCard key={sponsor.alt} sponsor={sponsor} index={index} />
           ))}
         </Box>
-
-        <Box
-          sx={{
-            mt: { xs: 8, md: 10 },
-            pt: 4,
-            borderTop: `1px solid ${
-              isLight ? "rgba(7,31,116,0.08)" : "rgba(255,255,255,0.07)"
-            }`,
-            textAlign: "center",
-          }}
-        >
-          <Typography
-            sx={{
-              fontFamily: "'Ubuntu', 'Roboto'",
-              fontSize: "0.82rem",
-              fontWeight: 300,
-              color: subColor,
-              opacity: 0.6,
-              letterSpacing: "0.04em",
-            }}
-          >
-                          {t("Sponsor.sponsorfooter", { defaultValue: "Proudly supported by organizations committed to a free and open internet." })}
-
-          </Typography>
-        </Box>
-      </Box>
+      </Container>
     </Box>
   );
 }

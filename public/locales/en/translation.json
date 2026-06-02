@@ -1,5 +1,5 @@
 {
-	"changeLanguage": "Change Languege",
+	"changeLanguage": "Change Language",
 	"navbar": {
 		   "link": "Home",
     "link1": "Blog",
@@ -8,7 +8,9 @@
     "link4": "Privacy Policy",
     "link5": "Documentation",
     "link6": "Features",
-    "link7": "Papers",
+		"link7": "Papers",
+		"products": "Products",
+		"tagline": "Open Source · Privacy · Freedom",
     "papers": {
       "whitepaper": "Whitepaper",
       "threatModel": "Threat Model"
@@ -16,17 +18,52 @@
 	"researchFull": "Research Papers"
 	},
 	"loader": "Loading Please Wait",
+	"features": {
+		"loadError": "Failed to load features."
+	},
 	"LandingHeader": "Open Source | Research",
+	"landingHeroSub": "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
+	"landing": {
+		"goToProjects": "Go to projects"
+	},
 	"About": {
 		"AboutHeader": "Explore SMSWithoutBorders",
 		"description": "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
 		"description1": "The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom.",
-		"description2": " Our journey toward achieving our mission began in 2021 with the development of the first Android version of RelaySMS. We have come far since then, with support for more platforms and many more apps.",
+		"description2": " The journey toward achieving our mission began in 2021 with the development of the first Android version of RelaySMS. We have come far since then, with support for more platforms and many more apps.",
 		"description3": "We publish our research as frequently as possible on our blog and make announcements via our social media outlets. SMSWithoutBorders is a project started by the team at <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
-	"projectHeader": "Innovative Projects Under SMSWithoutBorders",
+	"projectHeader": "Projects",
+	"projectHeadline": "Everything we build, open and free",
 	"projectSubHeader": "SMSWithoutBorders Commits to buiding OpenSource Tools That Aid Free speech and Communication",
+	"papersEyebrow": "Papers",
+	"papersTitle": "Research and publications",
+	"papersBody": "The team publishes research papers and notes behind the stack, from architecture and encryption to threat modeling.",
+	"projectsResilienceEyebrow": "Built on SMS",
+	"projectsResilienceTitle": "Built on SMS - the most resilient layer",
+	"projectsResilienceBody": "SMS works when data doesn't. We built an entire secure relay infrastructure on top of it, so people can stay connected regardless of what the network - or a government - does.",
+	"developerLibrariesEyebrow": "Developer Libraries",
+	"developerLibrariesTitle": "Build on the stack",
+	"developerLibrariesBody": "All core components are open-source and reusable.",
 	"projectsub": "Our Projects",
+	"projectDescriptions": {
+		"relaysms": "The flagship user app. Store OAuth2 tokens for Gmail, Twitter, and Telegram in an encrypted Vault. Send messages to those platforms via any SMS connection - even during internet shutdowns.",
+		"dekusms": "An open-source, end-to-end encrypted SMS app for Android. Powers RelaySMS's SMS-handling layer, and can also be used standalone as a secure replacement for your default SMS app. Supports MMS image sending.",
+		"vault": "Secure access token management system for message publishing. Protects OAuth2 credentials with an additional encryption layer.",
+		"gateway": "Enables users to synchronize and communicate with the publisher module. The backbone relay infrastructure between devices and the backend.",
+		"bridge": "Allows users to communicate with online platforms via SMS entirely, without needing any internet. Enables a secure handshake and encrypted exchange over SMS only.",
+		"publisher": "Middleware sitting between Gateway and backend. Pluggable PNBA adapters for Telegram and other platforms. Handles decryption and routing."
+	},
+	"libraryDescriptions": {
+		"smsmms-library": "Android SMS and MMS transport library used by RelaySMS and DekuSMS. Handles carrier messaging flows, runtime permissions, MMS sending, and default-SMS integration.",
+		"double-ratchet-java": "Android encryption helper library implementing Signal Double Ratchet primitives for mobile apps in the RelaySMS stack.",
+		"double-ratchet-python": "Python cryptography library implementing Signal Double Ratchet and supporting helpers for secure exchange across backend services.",
+		"double-ratchet-ios": "Swift implementation of SMSWithoutBorders' Signal Double Ratchet cryptography helpers for secure message exchange on iOS.",
+		"image-android": "Android image helper library used for MMS and media processing in the mobile messaging stack.",
+		"image-ios": "Swift image-processing helper library for RelaySMS iOS media workflows and attachment handling.",
+		"gateway-client": "Remote Python client for interacting with the Gateway layer from external tools and services.",
+		"adapter-interface": "Pluggable interface for adding new platform bridges. Telegram is the reference PNBA adapter and the same publisher layer supports additional platform adapters."
+	},
 	"project1": {
 		"title": "RelaySMS",
 		"description": "RelaySMS uses SMS messaging to communicate with online platforms without needing an internet connection. The users can grant access to their online platforms which would be used to act on their behalf using SMS messaging. The access granted, messages being sent from the app, and how they get published online are secured with strong up-to-date cryptographic and security practices.",
@@ -46,11 +83,33 @@
 	"Sponsor": {
 		"Sponsorsub": "Partners",
 		"SponsorT": "Supporting Organizations",
+		"Sponsor-subheader": "These organizations help keep SMSWithoutBorders afloat",
 		"sponsorfooter": "Proudly supported by organizations committed to a free and open internet."
 	},
 	"footer": {
 		"copyright": "© Afkanerd.",
+		"copyrightYear": "© {{year}} Afkanerd",
 		"github": "GitHub"
+	},
+	"footerNav": {
+		"projects": "Projects",
+		"resources": "Resources",
+		"community": "Community",
+		"relay": "RelaySMS",
+		"deku": "DekuSMS",
+		"githubOrg": "GitHub Organization",
+		"twitterX": "Twitter / X @smswithoutborders",
+		"contactDevelopers": "Contact developers",
+		"reportIssue": "Report an issue"
+	},
+	"theme": {
+		"switchToDark": "Switch to dark",
+		"switchToLight": "Switch to light"
+	},
+	"notFound": {
+		"title": "Oops you got lost",
+		"subtitle": "It seems the page you are looking for does not exist",
+		"backHome": "Let's get you back home"
 	},
 	"social": {
 		"x": "Follow us on X",

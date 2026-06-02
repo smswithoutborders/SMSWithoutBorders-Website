@@ -1,15 +1,234 @@
 import React, { useRef } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { useTheme } from "../Context/ThemeContext";
+import SouthRoundedIcon from "@mui/icons-material/SouthRounded";
+
+const USE_LEGACY_HERO = false;
+
+function LegacyHero({ t }) {
+  return (
+    <Container maxWidth="lg">
+      <Box
+        component={motion.div}
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.9, ease: "easeOut", delay: 0.5 }}
+      >
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: 600,
+            pt: 35,
+            color: "text.primary",
+            letterSpacing: "-0.02em",
+            lineHeight: 1.6,
+            textAlign: "center",
+          }}
+        >
+          SMSWithoutBorders - Afkanerd for Offline communications.
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            color: "text.secondary",
+            mt: 4,
+            textAlign: "center",
+            fontSize: { xs: "1.05rem", md: "1.3rem" },
+          }}
+        >
+          SMSWithoutBorders explores and builds new ways to communicate using
+          SMS.
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            color: "text.secondary",
+            mt: 4,
+            textAlign: "center",
+            fontSize: { xs: "1.05rem", md: "1.3rem" },
+          }}
+        >
+          {t("About.description", {
+            defaultValue:
+              "SMSWithoutBorders (SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
+          })}
+          {t("About.description1", {
+            defaultValue:
+              "The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom.",
+          })}
+          {t("About.description2", {
+            defaultValue:
+              "Our journey toward achieving our mission began in 2021 with the development of the first Android version of RelaySMS. We have come far since then, with support for more platforms and many more apps.",
+          })}
+        </Typography>
+      </Box>
+    </Container>
+  );
+}
+
+function NewHero({ t, isFarsi }) {
+  return (
+    <Container
+      maxWidth="xl"
+      sx={{
+        minHeight: "100svh",
+        py: { xs: 2, md: 0 },
+        px: { xs: 2, sm: 3, md: 0 },
+        display: "grid",
+        alignItems: "center",
+        alignContent: "center",
+      }}
+    >
+      <Box
+        component={motion.div}
+        initial={{ y: 22, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.85, ease: "easeOut", delay: 0.2 }}
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          gap: { xs: 2.5, sm: 3, md: 4.5 },
+        }}
+      >
+        <Box>
+          <Typography
+            variant="h1"
+            sx={{
+              fontWeight: 800,
+              fontSize: {
+                xs: "1.85rem",
+                sm: "2.6rem",
+                md: "4.3rem",
+                lg: "5.5rem",
+              },
+              lineHeight: { xs: 1.1, md: 0.98 },
+              letterSpacing: "-0.03em",
+              color: "text.primary",
+              textTransform: "uppercase",
+              textAlign: { xs: "left", md: isFarsi ? "right" : "left" },
+              maxWidth: { xs: "100%", md: "18ch" },
+              pt: { xs: 0, md: 8, lg: 15 },
+            }}
+          >
+            <Box
+              component="span"
+              sx={{
+                position: "relative",
+                display: "inline-block",
+                color: "secondary.contrastText",
+                px: { xs: 0.75, md: 1.1 },
+                py: { xs: 0.2, md: 0.25 },
+                mr: isFarsi ? 0 : 0.8,
+                ml: isFarsi ? 0.8 : 0,
+                borderRadius: 1,
+                zIndex: 0,
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  inset: 0,
+                  bgcolor: "#8FA7FF",
+                  borderRadius: 1,
+                  transform: "skewX(-10deg) rotate(-1deg)",
+                  transformOrigin: "center",
+                  zIndex: -1,
+                },
+              }}
+            >
+              SMS
+            </Box>
+            WITHOUTBORDERS
+          </Typography>
+
+          <Typography
+            sx={{
+              mt: { xs: 2, md: 3 },
+              maxWidth: 760,
+              color: "text.secondary",
+              fontSize: { xs: "0.94rem", sm: "1rem", md: "1.2rem" },
+              lineHeight: { xs: 1.65, md: 1.75 },
+              textAlign: { xs: "left", md: isFarsi ? "right" : "left" },
+              mx: { xs: "auto", md: 0 },
+            }}
+          >
+            {t("landingHeroSub", {
+              defaultValue:
+                "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
+            })}
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: {
+              xs: "flex-end",
+              md: "flex-end",
+            },
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: { xs: "center", md: "flex-end" },
+              gap: { xs: 1.5, md: 2 },
+              mt: { xs: 0.5, md: 0 },
+            }}
+          >
+            {/* <Typography
+              sx={{
+                maxWidth: { xs: "24ch", md: "26ch" },
+                textAlign: "right",
+                fontSize: { xs: "1.02rem", md: "1.2rem" },
+                // lineHeight: 1.45,
+                // letterSpacing: "0.03em",
+                // textTransform: "uppercase",
+                color: "text.secondary",
+                opacity: 0.9,
+              }}
+            >
+              Projects built on SMS - the most resilient layer
+            </Typography> */}
+            <Box
+              component={motion.a}
+              href="#projects"
+              whileHover={{ y: 4, rotate: 24 }}
+              whileTap={{ scale: 0.96 }}
+              sx={{
+                width: { xs: 60, sm: 68, md: 106 },
+                height: { xs: 60, sm: 68, md: 106 },
+                border: "1px solid",
+                borderColor: "divider",
+                borderRadius: "999px",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "text.primary",
+                textDecoration: "none",
+                bgcolor: "background.paper",
+                transform: { xs: "rotate(12deg)", md: "rotate(18deg)" },
+                transition: "background-color 0.2s ease, transform 0.2s ease",
+                "&:hover": {
+                  bgcolor: "action.hover",
+                },
+              }}
+              aria-label={t("landing.goToProjects", {
+                defaultValue: "Go to projects",
+              })}
+            >
+              <SouthRoundedIcon sx={{ fontSize: { xs: 28, sm: 32, md: 56 } }} />
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </Container>
+  );
+}
 
 export default function Landing() {
   const { t, i18n } = useTranslation();
   const isFarsi = i18n.language === "fa";
-  const { mode } = useTheme();
-
-  const isLight = mode === "light";
   const containerRef = useRef(null);
 
   return (
@@ -17,123 +236,18 @@ export default function Landing() {
       id="home"
       ref={containerRef}
       sx={{
-        direction: isFarsi ? "rtl" : "ltr",
-       minHeight: {
-  xs: "60svh",  
-  sm: "70svh", 
-  md: "80vh",   
-  lg: "60vh",   
-},
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-end",
-        position: "relative",
+        minHeight: "100svh",
+        my: 0,
         overflow: "hidden",
         width: "100%",
-        background: isLight
-          ? "linear-gradient(160deg, #eef2ff 0%, #dce7ff 40%, #f0f4ff 100%)"
-          : "linear-gradient(135deg, #050f3a 2%, #071f74ff 100%)",
-        borderBottom: isLight
-          ? "1px solid rgba(7,31,116,0.08)"
-          : "none",
       }}
     >
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: isLight
-            ? "radial-gradient(rgba(7,31,116,0.07) 1px, transparent 1px)"
-            : "radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-          zIndex: 1,
-          pointerEvents: "none",
-        }}
-      />
-
-      <Box
-        sx={{
-          position: "absolute",
-          top: { xs: -120, md: -180 },
-          left: { xs: -120, md: -160 },
-          width: { xs: 380, md: 600 },
-          height: { xs: 380, md: 600 },
-          borderRadius: "50%",
-          border: `1px solid ${isLight ? "rgba(7,31,116,0.08)" : "rgba(255,255,255,0.05)"}`,
-          zIndex: 1,
-          pointerEvents: "none",
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          top: { xs: -60, md: -80 },
-          left: { xs: -60, md: -80 },
-          width: { xs: 220, md: 360 },
-          height: { xs: 220, md: 360 },
-          borderRadius: "50%",
-          border: `1px solid ${isLight ? "rgba(7,31,116,0.06)" : "rgba(255,184,0,0.08)"}`,
-          zIndex: 1,
-          pointerEvents: "none",
-        }}
-      />
-
-  
       <Box sx={{ position: "relative", zIndex: 2 }}>
-        <Box
-          sx={{
-            px: { xs: 3, sm: 5, md: 10 },
-            pb: { xs: 6, sm: 8, md: 10 },
-            pt: { xs: 16, sm: 14, md: 0 },
-            display: "flex",
-            flexDirection: "column",
-            alignItems: isFarsi ? "flex-end" : "flex-start",
-            gap: { xs: 3, md: 4 },
-          }}
-        >
-       
-          <Box
-            component={motion.img}
-            src={isLight ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
-            alt="SMS Without Borders"
-            initial={{ y: -40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-            sx={{
-              width: { xs: "62%", sm: "44%", md: "36%", lg: "28%", xl: "24%" },
-              maxWidth: 460,
-              height: "auto",
-              objectFit: "contain",
-              transform: isFarsi ? "scaleX(-1) !important" : "scaleX(1) !important",
-              filter: isLight
-                ? "drop-shadow(0 4px 24px rgba(7,31,116,0.12))"
-                : "drop-shadow(0 4px 32px rgba(0,0,0,0.4))",
-            }}
-          />
-
-          
-          <Box
-            component={motion.div}
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.5 }}
-          >
-            <Typography
-              sx={{
-                fontSize: { xs: "1.6rem", sm: "2rem", md: "2.8rem", lg: "3.4rem" },
-                fontWeight: 700,
-                color: isLight ? "#071f74ef" : "#ffffff",
-                textAlign: isFarsi ? "right" : "left",
-                fontFamily: "'Ubuntu', 'Roboto'",
-                letterSpacing: "-0.02em",
-                lineHeight: 1.15,
-                maxWidth: "100%",
-              }}
-            >
-              {t("LandingHeader", { defaultValue: "Open Source | Research" })}
-            </Typography>
-          </Box>
-        </Box>
+        {USE_LEGACY_HERO ? (
+          <LegacyHero t={t} />
+        ) : (
+          <NewHero t={t} isFarsi={isFarsi} />
+        )}
       </Box>
     </Box>
   );
