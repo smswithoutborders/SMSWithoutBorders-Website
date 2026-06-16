@@ -23,6 +23,10 @@ const featuredProjects = [
     ],
     links: [
       {
+        label: "Website",
+        href: "https://relay.smswithoutborders.com",
+      },
+      {
         label: "Play Store",
         href: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b",
       },
@@ -51,6 +55,18 @@ const featuredProjects = [
       "Default SMS app",
     ],
     links: [
+      {
+        label: "Website",
+        href: "https://dekusms.com",
+      },
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.afkanerd.deku",
+      },
+      {
+        label: "F-Droid",
+        href: "https://f-droid.org/packages/com.afkanerd.deku/",
+      },
       {
         label: "GitHub",
         href: "https://github.com/dekusms/DekuSMS-Android",
@@ -131,64 +147,58 @@ const developerLibraries = [
     description:
       "Android SMS and MMS transport library used by RelaySMS and DekuSMS. Handles carrier messaging flows, runtime permissions, MMS sending, and default-SMS integration.",
     meta: "Kotlin · MIT",
-    href: "https://github.com/smswithoutborders/lib_smsmms_android",
-    cta: "GitHub",
-    icon: "github",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/smswithoutborders/lib_smsmms_android",
+        icon: "github",
+      },
+    ],
   },
   {
-    key: "double-ratchet-java",
+    key: "double-ratchet",
     label: "lib",
-    title: "lib_signal_double_ratchet_java",
+    title: "lib_signal_double_ratchet",
     description:
-      "Android encryption helper library implementing Signal Double Ratchet primitives for mobile apps in the RelaySMS stack.",
-    meta: "Kotlin · MIT",
-    href: "https://github.com/smswithoutborders/lib_signal_double_ratchet_java",
-    cta: "GitHub",
-    icon: "github",
+      "Cryptography library implementing Signal Double Ratchet and supporting helpers for secure exchange in the RelaySMS stack.",
+    meta: "Kotlin · Python · Swift",
+    links: [
+      {
+        label: "Java",
+        href: "https://github.com/smswithoutborders/lib_signal_double_ratchet_java",
+        icon: "github",
+      },
+      {
+        label: "Python",
+        href: "https://github.com/smswithoutborders/lib_signal_double_ratchet_python",
+        icon: "github",
+      },
+      {
+        label: "iOS",
+        href: "https://github.com/smswithoutborders/lib_signal_double_ratchet_ios",
+        icon: "github",
+      },
+    ],
   },
   {
-    key: "double-ratchet-python",
+    key: "lib-image",
     label: "lib",
-    title: "lib_signal_double_ratchet_python",
+    title: "lib_image",
     description:
-      "Python cryptography library implementing Signal Double Ratchet and supporting helpers for secure exchange across backend services.",
-    meta: "Python · MIT",
-    href: "https://github.com/smswithoutborders/lib_signal_double_ratchet_python",
-    cta: "GitHub",
-    icon: "github",
-  },
-  {
-    key: "double-ratchet-ios",
-    label: "lib",
-    title: "lib_signal_double_ratchet_ios",
-    description:
-      "Swift implementation of SMSWithoutBorders' Signal Double Ratchet cryptography helpers for secure message exchange on iOS.",
-    meta: "Swift",
-    href: "https://github.com/smswithoutborders/lib_signal_double_ratchet_ios",
-    cta: "GitHub",
-    icon: "github",
-  },
-  {
-    key: "image-android",
-    label: "lib",
-    title: "lib_image_android",
-    description:
-      "Android image helper library used for MMS and media processing in the mobile messaging stack.",
-    meta: "Kotlin · MIT",
-    href: "https://github.com/smswithoutborders/lib_image_android",
-    cta: "GitHub",
-    icon: "github",
-  },
-  {
-    key: "image-ios",
-    label: "lib",
-    title: "lib_image_ios",
-    description:
-      "Swift image-processing helper library for RelaySMS iOS media workflows and attachment handling.",
-    meta: "Swift · MIT",
-    href: "https://github.com/smswithoutborders/lib_image_ios",
-    cta: "GitHub",
-    icon: "github",
+      "Image helper library for MMS and media processing in the mobile messaging stack. Used by both RelaySMS Android and iOS.",
+    meta: "Kotlin · Swift · MIT",
+    links: [
+      {
+        label: "Android",
+        href: "https://github.com/smswithoutborders/lib_image_android",
+        icon: "github",
+      },
+      {
+        label: "iOS",
+        href: "https://github.com/smswithoutborders/lib_image_ios",
+        icon: "github",
+      },
+    ],
   },
   {
     key: "gateway-client",
@@ -197,9 +207,13 @@ const developerLibraries = [
     description:
       "Remote Python client for interacting with the Gateway layer from external tools and services.",
     meta: "Python · GPL-3.0",
-    href: "https://github.com/smswithoutborders/RelaySMS-GatewayClient-Remote",
-    cta: "GitHub",
-    icon: "github",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/smswithoutborders/RelaySMS-GatewayClient-Remote",
+        icon: "github",
+      },
+    ],
   },
   {
     key: "adapter-interface",
@@ -208,9 +222,13 @@ const developerLibraries = [
     description:
       "Pluggable interface for adding new platform bridges. Telegram is the reference PNBA adapter and the same publisher layer supports additional platform adapters.",
     meta: "Python · GPL-3.0",
-    href: "https://github.com/smswithoutborders/telegram-pnba-adapter",
-    cta: "GitHub",
-    icon: "github",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/smswithoutborders/telegram-pnba-adapter",
+        icon: "github",
+      },
+    ],
   },
 ];
 
@@ -393,8 +411,6 @@ function LibraryCardCell({ item, index }) {
 
   return (
     <Box
-      component="a"
-      href={item.href}
       target="_blank"
       rel="noopener noreferrer"
       sx={{
@@ -487,17 +503,9 @@ function LibraryCardCell({ item, index }) {
       >
         {item.meta}
       </Typography>
-      <Typography
-        sx={{
-          fontSize: { xs: "0.86rem", md: "0.92rem" },
-          fontWeight: 600,
-          color: "text.primary",
-          overflowWrap: "anywhere",
-          wordBreak: "break-word",
-        }}
-      >
-        {item.cta}
-      </Typography>
+      <Box sx={{ pt: 1 }}>
+        <ProjectLinks links={item.links} />
+      </Box>
     </Box>
   );
 }
@@ -773,24 +781,6 @@ export default function Projects() {
               })(),
             )}
           </Box>
-          {/* <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-              gap: 0,
-            }}
-          >
-            {infrastructureProjects.map((project, index) => (
-              <ProjectHeroCell
-                key={project.key}
-                project={project}
-                showTopBorder={index > 0}
-                mdTopBorder={index > 1}
-                addMdColumnDivider
-                isRightColumn={index % 2 === 1}
-              />
-            ))}
-          </Box> */}
         </Box>
       </Container>
     </Box>

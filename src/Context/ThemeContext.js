@@ -41,7 +41,7 @@ export const ThemeProvider = ({ children }) => {
         palette: {
           mode,
           primary: {
-            main: mode === "light" ? "#1A1A1A" : "#F5F0E4",
+            main: mode === "light" ? "#1A1A1A" : "#faf6ee",
             contrastText: mode === "light" ? "#FAF6EE" : "#0E0C07",
           },
           secondary: {
@@ -52,7 +52,7 @@ export const ThemeProvider = ({ children }) => {
             paper: mode === "light" ? "#FAF6EE" : "#171410",
           },
           text: {
-            primary: mode === "light" ? "#1A1A1A" : "#F0EBE0",
+            primary: mode === "light" ? "#1A1A1A" : "#faf6ee",
             secondary: mode === "light" ? "#504A42" : "#9E9285",
           },
           divider:
