@@ -21,6 +21,16 @@ import ForumIcon from "@mui/icons-material/Forum";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Navbar from "../Components/Navbar";
 import papers from "../data/papers.json";
+import { Helmet } from "react-helmet-async";
+
+<Helmet>
+  <title>SMSWithoutBorders | Papers</title>
+
+  <meta
+    name="description"
+    content="SMSWithoutBorders (SWOB) is dedicated to researching, developing and promoting secure and open-source communication tools that function even without an internet connection."
+  />
+</Helmet>;
 
 const TYPE_ICONS = {
   whitepaper: <ArticleIcon sx={{ fontSize: 16 }} />,
@@ -134,13 +144,18 @@ export default function ResearchPage() {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <SearchIcon sx={{ fontSize: 18, color: "text.secondary" }} />
+                        <SearchIcon
+                          sx={{ fontSize: 18, color: "text.secondary" }}
+                        />
                       </InputAdornment>
                     ),
                   }}
                 />
 
-                <FormControl size="small" sx={{ minWidth: { xs: "100%", md: 120 } }}>
+                <FormControl
+                  size="small"
+                  sx={{ minWidth: { xs: "100%", md: 120 } }}
+                >
                   <Select
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(e.target.value)}
@@ -154,9 +169,18 @@ export default function ResearchPage() {
                 </FormControl>
               </Stack>
 
-              <Stack direction="row" justifyContent="space-between" alignItems="center">
-                <Typography sx={{ color: "text.secondary", fontSize: "0.8rem" }}>
-                  <Box component="span" sx={{ fontWeight: 700, color: "text.primary" }}>
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <Typography
+                  sx={{ color: "text.secondary", fontSize: "0.8rem" }}
+                >
+                  <Box
+                    component="span"
+                    sx={{ fontWeight: 700, color: "text.primary" }}
+                  >
                     {filtered.length}
                   </Box>{" "}
                   {t("researchPage.of", { defaultValue: "of" })} {papers.length}
@@ -168,7 +192,8 @@ export default function ResearchPage() {
               <Box sx={{ py: 8, textAlign: "center" }}>
                 <Typography sx={{ color: "text.secondary" }}>
                   {t("researchPage.noResults", {
-                    defaultValue: "No results found. Try adjusting your filters.",
+                    defaultValue:
+                      "No results found. Try adjusting your filters.",
                   })}
                 </Typography>
               </Box>
@@ -216,7 +241,12 @@ function PaperCard({ paper, onRead, t }) {
         },
       }}
     >
-      <Stack direction="row" justifyContent="space-between" alignItems="flex-start" sx={{ mb: 1.5 }}>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="flex-start"
+        sx={{ mb: 1.5 }}
+      >
         <Stack
           direction="row"
           spacing={0.7}
@@ -272,7 +302,13 @@ function PaperCard({ paper, onRead, t }) {
         {paper.abstract}
       </Typography>
 
-      <Stack direction="row" spacing={0.8} flexWrap="wrap" useFlexGap sx={{ mb: 2 }}>
+      <Stack
+        direction="row"
+        spacing={0.8}
+        flexWrap="wrap"
+        useFlexGap
+        sx={{ mb: 2 }}
+      >
         {paper.topics.map((topic) => (
           <Typography
             key={topic}

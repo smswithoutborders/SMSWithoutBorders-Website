@@ -92,13 +92,6 @@ export default function Footer() {
           external: true,
         },
         {
-          label: t("footerNav.twitterX", {
-            defaultValue: "Twitter / X @smswithoutborders",
-          }),
-          href: "https://x.com/smswithoutborders",
-          external: true,
-        },
-        {
           label: t("footerNav.contactDevelopers", {
             defaultValue: "Contact developers",
           }),
@@ -127,7 +120,6 @@ export default function Footer() {
       <Container maxWidth="xl" sx={{ position: "relative" }}>
         <Box
           sx={{
-            // px: { xs: 3, md: 6, lg: 10 },
             py: { xs: 4, md: 5 },
           }}
         >
@@ -159,7 +151,7 @@ export default function Footer() {
                 }}
               >
                 <Typography
-                variant="h6"
+                  variant="h6"
                   sx={{
                     fontSize: "0.8rem",
                     fontWeight: 700,
@@ -182,23 +174,28 @@ export default function Footer() {
           </Box>
 
           <Divider sx={{ mt: { xs: 2.5, md: 3 } }} />
-          <Typography
-          variant="body2"
-            sx={{
-              mt: { xs: 1.25, md: 1.5 },
-              textAlign: "center",
-              fontSize: "0.82rem",
-              fontWeight: 500,
-              letterSpacing: "0.04em",
-              color: "text.secondary",
-              opacity: 0.7,
-            }}
+          <Link
+            href="https://afkanerd.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="body2"
+            sx={{ textDecoration: "none" }}
           >
-            {t("footer.copyrightYear", {
-              year: new Date().getFullYear(),
-              defaultValue: "© {{year}} Afkanerd",
-            })}
-          </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                mt: { xs: 1.25, md: 1.5 },
+                textAlign: "center",
+                fontWeight: 500,
+                textDecoration: "none",
+              }}
+            >
+              {t("footer.copyrightYear", {
+                year: new Date().getFullYear(),
+                defaultValue: "© {{year}} Afkanerd",
+              })}
+            </Typography>
+          </Link>
         </Box>
       </Container>
     </Box>

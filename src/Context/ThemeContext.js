@@ -66,6 +66,7 @@ export const ThemeProvider = ({ children }) => {
           h4: { fontFamily: "'Unbounded', sans-serif" },
           h5: { fontFamily: "'Unbounded', sans-serif" },
           h6: { fontFamily: "'Unbounded', sans-serif" },
+          p: { fontFamily: "'Ubuntu', sans-serif" },
         },
         // shape: {
         // 	borderRadius: 8,

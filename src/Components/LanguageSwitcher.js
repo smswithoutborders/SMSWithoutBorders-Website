@@ -53,7 +53,7 @@ const LanguageSwitcher = () => {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={() => setAnchorEl(null)}
-        PaperProps={{ sx: { minWidth: 160, borderRadius: 1 } }}
+        PaperProps={{ sx: { minWidth: 160, borderRadius: 0 } }}
       >
         {languages.map((lang) => (
           <MenuItem
