@@ -46,11 +46,11 @@ export default function Navbar() {
     typeof window !== "undefined" && window.location.pathname === href;
 
   const links = [
-    {
-      label: t("navbar.link6", "Features"),
-      href: "/Features",
-      external: false,
-    },
+    // {
+    //   label: t("navbar.link6", "Features"),
+    //   href: "/Features",
+    //   external: false,
+    // },
     {
       label: t("navbar.link5", "Documentation"),
       href: "https://docs.smswithoutborders.com/",

@@ -76,73 +76,10 @@ const featuredProjects = [
   },
 ];
 
-const infrastructureProjects = [
-  {
-    key: "vault",
-    kind: "pluggable component",
-    title: "RelaySMS-Vault",
-    description:
-      "Secure access token management system for message publishing. Protects OAuth2 credentials with an additional encryption layer.",
-    tags: ["Python", "GPL-3.0", "OAuth2", "Vault"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/smswithoutborders/RelaySMS-Vault",
-        icon: "github",
-      },
-    ],
-  },
-  {
-    key: "gateway",
-    kind: "pluggable component",
-    title: "Gateway Server",
-    description:
-      "Enables users to synchronize and communicate with the publisher module. The backbone relay infrastructure between devices and the backend.",
-    tags: ["Python", "GPL-3.0", "Gateway", "Sync"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/smswithoutborders/RelaySMS-Gateway-Server",
-        icon: "github",
-      },
-    ],
-  },
-  {
-    key: "bridge",
-    kind: "pluggable component",
-    title: "Bridge Server",
-    description:
-      "Allows users to communicate with online platforms via SMS entirely, without needing any internet. Enables a secure handshake and encrypted exchange over SMS only.",
-    tags: ["Python", "GPL-3.0", "SMS only", "Encrypted"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/smswithoutborders/RelaySMS-Bridge-Server",
-        icon: "github",
-      },
-    ],
-  },
-  {
-    key: "publisher",
-    kind: "pluggable component",
-    title: "Publisher + Adapters",
-    description:
-      "Middleware sitting between Gateway and backend. Pluggable PNBA adapters for Telegram and other platforms. Handles decryption and routing.",
-    tags: ["Python", "Pluggable", "Telegram", "PNBA"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/smswithoutborders/RelaySMS-Publisher",
-        icon: "github",
-      },
-    ],
-  },
-];
-
 const developerLibraries = [
   {
     key: "smsmms-library",
-    label: "lib",
+    label: "lib-mobile",
     title: "lib_smsmms_android",
     description:
       "Android SMS and MMS transport library used by RelaySMS and DekuSMS. Handles carrier messaging flows, runtime permissions, MMS sending, and default-SMS integration.",
@@ -151,38 +88,13 @@ const developerLibraries = [
       {
         label: "GitHub",
         href: "https://github.com/smswithoutborders/lib_smsmms_android",
-        icon: "github",
-      },
-    ],
-  },
-  {
-    key: "double-ratchet",
-    label: "lib",
-    title: "lib_signal_double_ratchet",
-    description:
-      "Cryptography library implementing Signal Double Ratchet and supporting helpers for secure exchange in the RelaySMS stack.",
-    meta: "Kotlin · Python · Swift",
-    links: [
-      {
-        label: "Java",
-        href: "https://github.com/smswithoutborders/lib_signal_double_ratchet_java",
-        icon: "github",
-      },
-      {
-        label: "Python",
-        href: "https://github.com/smswithoutborders/lib_signal_double_ratchet_python",
-        icon: "github",
-      },
-      {
-        label: "iOS",
-        href: "https://github.com/smswithoutborders/lib_signal_double_ratchet_ios",
-        icon: "github",
+        // icon: "github",
       },
     ],
   },
   {
     key: "lib-image",
-    label: "lib",
+    label: "lib-mobile",
     title: "lib_image",
     description:
       "Image helper library for MMS and media processing in the mobile messaging stack. Used by both RelaySMS Android and iOS.",
@@ -191,42 +103,42 @@ const developerLibraries = [
       {
         label: "Android",
         href: "https://github.com/smswithoutborders/lib_image_android",
-        icon: "github",
+        // icon: "github",
       },
       {
         label: "iOS",
         href: "https://github.com/smswithoutborders/lib_image_ios",
-        icon: "github",
-      },
-    ],
-  },
-  {
-    key: "gateway-client",
-    label: "pluggable component",
-    title: "RelaySMS-GatewayClient-Remote",
-    description:
-      "Remote Python client for interacting with the Gateway layer from external tools and services.",
-    meta: "Python · GPL-3.0",
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/smswithoutborders/RelaySMS-GatewayClient-Remote",
-        icon: "github",
+        // icon: "github",
       },
     ],
   },
   {
     key: "adapter-interface",
-    label: "pluggable component",
-    title: "PNBA Adapter interface",
+    label: "pluggable",
+    title: "Publisher Adapters",
     description:
-      "Pluggable interface for adding new platform bridges. Telegram is the reference PNBA adapter and the same publisher layer supports additional platform adapters.",
+      "Publisher platform adapters are specialized plugins that handle authentication and message delivery for specific online services (Gmail, Twitter, Telegram, etc.).",
     meta: "Python · GPL-3.0",
     links: [
       {
         label: "GitHub",
-        href: "https://github.com/smswithoutborders/telegram-pnba-adapter",
-        icon: "github",
+        href: "https://github.com/smswithoutborders/RelaySMS-Publisher/blob/main/platforms/README.md",
+        // icon: "github",
+      },
+    ],
+  },
+  {
+    key: "rusty_relaysms_payload_specs",
+    label: "protocol",
+    title: "rusty_specs",
+    description:
+      " implementation of the RelaySMS specifications paper and some security implementation of the technical paper.",
+    meta: "Rust · MIT",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/smswithoutborders/rusty_relaysms_payload_specs",
+        // icon: "github",
       },
     ],
   },
@@ -696,39 +608,6 @@ export default function Projects() {
           </Box>
         </Box>
 
-        {/* 
-        <Box
-          sx={{
-            borderTop: "1px solid",
-            borderBottom: "1px solid",
-            borderColor: "divider",
-            py: { xs: 5, md: 7 },
-            mb: { xs: 8, md: 10 },
-          }}
-        >
-          <SectionEyebrow accent={accent}>
-            {t("projectsResilienceEyebrow", { defaultValue: "Built on SMS" })}
-          </SectionEyebrow>
-          <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
-            {t("projectsResilienceTitle", {
-              defaultValue: "Built on SMS - the most resilient layer",
-            })}
-          </Typography>
-          <Typography
-            sx={{
-              maxWidth: 860,
-              color: "text.secondary",
-              lineHeight: 1.9,
-              fontSize: { xs: "1rem", md: "1.06rem" },
-            }}
-          >
-            {t("projectsResilienceBody", {
-              defaultValue:
-                "SMS works when data doesn't. We built an entire secure relay infrastructure on top of it, so people can stay connected regardless of what the network - or a government - does.",
-            })}
-          </Typography>
-        </Box> */}
-
         <Box>
           <SectionEyebrow accent={accent}>
             {t("developerLibrariesEyebrow", {
@@ -765,21 +644,6 @@ export default function Projects() {
             {developerLibraries.map((item, index) => (
               <LibraryCardCell key={item.key} item={item} index={index} />
             ))}
-            {infrastructureProjects.map((project, index) =>
-              (() => {
-                const mergedIndex = developerLibraries.length + index;
-                return (
-                  <ProjectHeroCell
-                    key={project.key}
-                    project={project}
-                    showTopBorder={mergedIndex > 0}
-                    mdTopBorder={mergedIndex > 1}
-                    addMdColumnDivider
-                    isRightColumn={mergedIndex % 2 === 1}
-                  />
-                );
-              })(),
-            )}
           </Box>
         </Box>
       </Container>
