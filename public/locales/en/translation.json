@@ -54,8 +54,16 @@
 		"bridge": "Allows users to communicate with online platforms via SMS entirely, without needing any internet. Enables a secure handshake and encrypted exchange over SMS only.",
 		"publisher": "Middleware sitting between Gateway and backend. Pluggable PNBA adapters for Telegram and other platforms. Handles decryption and routing."
 	},
+	"libraryTitles": {
+		"smsmms-library": "lib_smsmms_android",
+		"lib-image": "Lib Image",
+		"adapter-interface": "Publisher Adapters",
+		"rusty_relaysms_payload_specs": "Rusty Specs"
+	},
 	"libraryDescriptions": {
 		"smsmms-library": "Android SMS and MMS transport library used by RelaySMS and DekuSMS. Handles carrier messaging flows, runtime permissions, MMS sending, and default-SMS integration.",
+		"lib-image": "Image helper library for MMS and media processing in the mobile messaging stack. Used by both RelaySMS Android and iOS.",
+		"rusty_relaysms_payload_specs": "Implementation of the RelaySMS specifications paper and security implementation details from the technical paper.",
 		"double-ratchet-java": "Android encryption helper library implementing Signal Double Ratchet primitives for mobile apps in the RelaySMS stack.",
 		"double-ratchet-python": "Python cryptography library implementing Signal Double Ratchet and supporting helpers for secure exchange across backend services.",
 		"double-ratchet-ios": "Swift implementation of SMSWithoutBorders' Signal Double Ratchet cryptography helpers for secure message exchange on iOS.",

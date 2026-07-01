@@ -386,7 +386,9 @@ function LibraryCardCell({ item, index }) {
           wordBreak: "break-word",
         }}
       >
-        {item.title}
+        {t(`libraryTitles.${item.key}`, {
+          defaultValue: item.title,
+        })}
       </Typography>
 
       <Typography
@@ -542,7 +544,7 @@ export default function Projects() {
           >
             {t("projectSubHeader", {
               defaultValue:
-                "RelaySMS and DekuSMS sit at the front, with the relay infrastructure and shared libraries underneath them. Everything here is public, outlined, and easy to inspect.",
+                "SMSWithoutBorders Commits to buiding OpenSource Tools That Aid Free speech and Communication",
             })}
           </Typography>
         </Box>

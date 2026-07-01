@@ -73,8 +73,8 @@ function NewHero({ t, isFarsi }) {
       maxWidth="xl"
       sx={{
         minHeight: "100svh",
-        py: { xs: 2, md: 0 },
-        px: { xs: 2, sm: 3, md: 0 },
+        py: { xs: 2 },
+        px: { xs: 2, sm: 3 },
         display: "grid",
         alignItems: "center",
         alignContent: "center",
