@@ -10,7 +10,7 @@ function HomePage() {
 		<>
 			<Navbar />
 			<Landing />
-			<About />
+			{/* <About /> */}
 			<Project />
 			<Partner />
 		</>

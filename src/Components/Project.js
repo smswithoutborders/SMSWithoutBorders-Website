@@ -1,427 +1,652 @@
-import React, { useEffect, useRef } from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Chip,
-  Stack,
-} from "@mui/material";
-import { useTheme } from "../Context/ThemeContext";
+import React from "react";
+import { Box, Button, Container, Typography } from "@mui/material";
+import { alpha, useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import papers from "../data/papers.json";
 
-function useReveal(delay = 0) {
-  const ref = useRef(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-          }, delay);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.12 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [delay]);
-  return ref;
-}
-
-const projects = [
+const featuredProjects = [
   {
-    key: "project1",
-    accentColor: "#FF8614",
-    accentColorDim: "rgba(255,134,20,0.12)",
-    accentBorder: "rgba(255,134,20,0.25)",
-    image: "/Images/relaysms.png",
-    logoLight: "/Images/RelaySms.png",
-    logoDark: "/Images/RelaySMS-White.png",
-    href: "https://relay.smswithoutborders.com",
-    chips: ["project1.keyPoint1", "project1.keyPoint2"],
-    chipDefaults: ["SMS", "Internet Freedom"],
-    descKey: "project1.description",
-    descDefault:
-      "RelaySMS uses SMS messaging to communicate with online platforms without needing an internet connection. The users can grant access to their online platforms which would be used to act on their behalf using SMS messaging. The access granted, messages being sent from the app, and how they get published online are secured with strong up-to-date cryptographic and security practices.",
-    readMoreKey: "project1.read_more",
-    readMoreDefault: "Visit Website",
-    number: "01",
+    key: "relaysms",
+    kind: "app",
+    title: "RelaySMS",
+    description:
+      "The flagship user app. Store OAuth2 tokens for Gmail, Twitter, and Telegram in an encrypted Vault. Send messages to those platforms via any SMS connection - even during internet shutdowns.",
+    tags: [
+      "Android",
+      "iOS",
+      "Kotlin",
+      "Swift",
+      "E2E encrypted",
+      "OAuth2 vault",
+    ],
+    links: [
+      {
+        label: "Website",
+        href: "https://relay.smswithoutborders.com",
+      },
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b",
+      },
+      {
+        label: "App Store",
+        href: "https://apps.apple.com/us/app/relaysms/id6630382970",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/smswithoutborders/RelaySMS-Android",
+        icon: "github",
+      },
+    ],
   },
   {
-    key: "project2",
-    accentColor: "#2ED3B7",
-    accentColorDim: "rgba(46,211,183,0.10)",
-    accentBorder: "rgba(46,211,183,0.25)",
-    image: "/Images/dekusms.png",
-    logoLight: "/Images/DekuSms.png",
-    logoDark: "/Images/DekuSMS-Dark Theme.png",
-    href: "https://dekusms.com",
-    chips: ["project2.keyPoint1", "project2.keyPoint2"],
-    chipDefaults: ["SMS", "Privacy"],
-    descKey: "project2.description",
-    descDefault:
-      "DekuSMS is an Android SMS messaging app. It enables 2 users of the app to communicate using end-to-end encryption over SMS messages. The app also contains message forwarding abilities supporting protocols such as SMTP, FTP, and AMQP. The app is built to integrate with RabbitMQ allowing users with messaging queues to set up and make remote communication requests to their apps.",
-    readMoreKey: "project2.read_more",
-    readMoreDefault: "Visit Website",
-    number: "02",
+    key: "dekusms",
+    kind: "app",
+    title: "DekuSMS",
+    description:
+      "An open-source, end-to-end encrypted SMS app for Android. Powers RelaySMS's SMS-handling layer, and can also be used standalone as a secure replacement for your default SMS app. Supports MMS image sending.",
+    tags: [
+      "Android",
+      "Kotlin",
+      "E2E encrypted",
+      "MMS support",
+      "Default SMS app",
+    ],
+    links: [
+      {
+        label: "Website",
+        href: "https://dekusms.com",
+      },
+      {
+        label: "Play Store",
+        href: "https://play.google.com/store/apps/details?id=com.afkanerd.deku",
+      },
+      {
+        label: "F-Droid",
+        href: "https://f-droid.org/packages/com.afkanerd.deku/",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/dekusms/DekuSMS-Android",
+        icon: "github",
+      },
+    ],
   },
 ];
 
-export default function Projects() {
-  const { mode } = useTheme();
-  const { t, i18n } = useTranslation();
-  const isFarsi = i18n.language === "fa";
+const developerLibraries = [
+  {
+    key: "smsmms-library",
+    label: "lib-mobile",
+    title: "lib_smsmms_android",
+    description:
+      "Android SMS and MMS transport library used by RelaySMS and DekuSMS. Handles carrier messaging flows, runtime permissions, MMS sending, and default-SMS integration.",
+    meta: "Kotlin · MIT",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/smswithoutborders/lib_smsmms_android",
+        // icon: "github",
+      },
+    ],
+  },
+  {
+    key: "lib-image",
+    label: "lib-mobile",
+    title: "lib_image",
+    description:
+      "Image helper library for MMS and media processing in the mobile messaging stack. Used by both RelaySMS Android and iOS.",
+    meta: "Kotlin · Swift · MIT",
+    links: [
+      {
+        label: "Android",
+        href: "https://github.com/smswithoutborders/lib_image_android",
+        // icon: "github",
+      },
+      {
+        label: "iOS",
+        href: "https://github.com/smswithoutborders/lib_image_ios",
+        // icon: "github",
+      },
+    ],
+  },
+  {
+    key: "adapter-interface",
+    label: "pluggable",
+    title: "Publisher Adapters",
+    description:
+      "Publisher platform adapters are specialized plugins that handle authentication and message delivery for specific online services (Gmail, Twitter, Telegram, etc.).",
+    meta: "Python · GPL-3.0",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/smswithoutborders/RelaySMS-Publisher/blob/main/platforms/README.md",
+        // icon: "github",
+      },
+    ],
+  },
+  {
+    key: "rusty_relaysms_payload_specs",
+    label: "protocol",
+    title: "rusty_specs",
+    description:
+      " implementation of the RelaySMS specifications paper and some security implementation of the technical paper.",
+    meta: "Rust · MIT",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/smswithoutborders/rusty_relaysms_payload_specs",
+        // icon: "github",
+      },
+    ],
+  },
+];
 
-  const isLight = mode === "light";
-  const bg = isLight ? "#f7f9ff" : "#000824";
-  const textColor = isLight ? "#071f74ef" : "#ffffff";
-  const subColor = isLight ? "#505e85ff" : "#cbd7e2ff";
+function SectionEyebrow({ children, accent }) {
+  return (
+    <Typography
+      sx={{
+        fontSize: "0.72rem",
+        fontWeight: 700,
+        letterSpacing: "0.16em",
+        textTransform: "uppercase",
+        color: accent,
+        mb: 1.5,
+      }}
+    >
+      {children}
+    </Typography>
+  );
+}
 
-  const headerRef = useReveal(0);
+function TagList({ tags }) {
+  return (
+    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.25 }}>
+      {tags.map((tag) => (
+        <Typography
+          key={tag}
+          sx={{
+            fontSize: "0.76rem",
+            fontWeight: 600,
+            color: "text.secondary",
+            border: "1px solid",
+            borderColor: "divider",
+            px: 1.25,
+            py: 0.65,
+            borderRadius: "999px",
+          }}
+        >
+          {tag}
+        </Typography>
+      ))}
+    </Box>
+  );
+}
+
+function ProjectLinks({ links }) {
+  return (
+    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.5 }}>
+      {links.map((link) => (
+        <Button
+          key={link.label}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="text"
+          size="small"
+          endIcon={
+            link.icon === "github" ? (
+              <GitHubIcon fontSize="small" />
+            ) : (
+              <ArrowOutwardIcon fontSize="small" />
+            )
+          }
+          sx={{
+            px: 0,
+            minWidth: 0,
+            textTransform: "none",
+            fontSize: "0.92rem",
+            fontWeight: 600,
+            color: "text.primary",
+            justifyContent: "flex-start",
+            "&:hover": { color: "secondary.main", bgcolor: "transparent" },
+          }}
+        >
+          {link.label}
+        </Button>
+      ))}
+    </Box>
+  );
+}
+
+function ProjectHeroCell({
+  project,
+  showTopBorder,
+  mdTopBorder = false,
+  addMdColumnDivider = false,
+  isRightColumn = false,
+}) {
+  const { t } = useTranslation();
 
   return (
     <Box
       sx={{
-        bgcolor: bg,
-        py: { xs: 8, md: 14 },
-        px: { xs: 3, sm: 5, md: 8 },
-        direction: isFarsi ? "rtl" : "ltr",
         position: "relative",
-        overflow: "hidden",
+        p: { xs: 2.2, md: 4 },
+        borderTopWidth: {
+          xs: showTopBorder ? "1px" : 0,
+          md: mdTopBorder ? "1px" : 0,
+        },
+        borderTopStyle: "solid",
+        borderTopColor: "divider",
+        transition: "background-color 0.2s ease",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          insetBlock: 0,
+          insetInlineStart: 0,
+          width: "1px",
+          bgcolor: "divider",
+          display: {
+            xs: "none",
+            md: addMdColumnDivider && isRightColumn ? "block" : "none",
+          },
+        },
+        "&:hover": {
+          bgcolor: "action.hover",
+        },
       }}
     >
-
-      <Box
+      {project.kind && (
+        <Typography
+          sx={(theme) => ({
+            display: "inline-block",
+            fontSize: "0.72rem",
+            fontWeight: 700,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: "text.secondary",
+            bgcolor: "action.hover",
+            border: "1px solid",
+            borderColor: "divider",
+            px: 1,
+            py: 0.35,
+            mb: 1.5,
+            borderRadius: 1,
+          })}
+        >
+          {project.kind}
+        </Typography>
+      )}
+      <Typography
+        variant="h6"
         sx={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: isLight
-            ? "radial-gradient(rgba(7,31,116,0.04) 1px, transparent 1px)"
-            : "radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)",
-          backgroundSize: "36px 36px",
-          pointerEvents: "none",
-        }}
-      />
-
-
-	  <Box
-		  ref={headerRef}
-		  style={{
-			opacity: 0,
-			transform: "translateY(28px)",
-			transition:
-			  "opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1)",
-		  }}
-		  sx={{ mb: { xs: 8, md: 10 }, textAlign: "center" }}
-		>
-	   
-		  <Box
-			sx={{
-			  display: "inline-flex",
-			  alignItems: "center",
-			  gap: 1.5,
-			  mb: 2.5,
-			}}
-		  >
-			<Box
-			  sx={{
-				width: 28,
-				height: "1.5px",
-				bgcolor: isLight ? "#071f74" : "#FFB800",
-			  }}
-			/>
-			<Typography
-			  sx={{
-				fontSize: "0.72rem",
-				fontWeight: 700,
-				letterSpacing: "0.18em",
-				textTransform: "uppercase",
-				color: isLight ? "#071f74" : "#FFB800",
-				fontFamily: "'Ubuntu', 'Roboto'",
-			  }}
-			>
-        	{t("projectsub", {
-            defaultValue:
-              "Our Projects",
-          })}
-	
-			</Typography>
-			<Box
-			  sx={{
-				width: 28,
-				height: "1.5px",
-				bgcolor: isLight ? "#071f74" : "#FFB800",
-			  }}
-			/>
-		  </Box>
-
-		  <Typography
-			variant="h2"
-			sx={{
-			  fontWeight: 700,
-			  fontSize: { xs: "1.9rem", sm: "2.4rem", md: "3rem" },
-			  lineHeight: 1.12,
-			  color: textColor,
-			  fontFamily: "'Ubuntu', 'Roboto'",
-			  letterSpacing: "-0.02em",
-			  mb: 2,
-			}}
-		  >
-			      {t("projectHeader", {
-            defaultValue: "Innovative Projects Under SMSWithoutBorders",
-          })}
-		  </Typography>
-
-		  <Typography
-			variant="body1"
-			sx={{
-			  fontFamily: "'Ubuntu', 'Roboto'",
-			  fontWeight: 300,
-			  fontSize: { xs: "1rem", md: "1.1rem" },
-			  color: subColor,
-			  lineHeight: 1.8,
-			  maxWidth: 550,
-			  mx: "auto",
-			}}
-		  >
-		{t("projectSubHeader", {
-            defaultValue:
-              "SMSWithoutBorders commits to building open source tools that aid free speech and communication.",
-          })}
-		  </Typography>
-		</Box>
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          gap: { xs: 4, md: 5 },
-          alignItems: "stretch",
+          fontWeight: 700,
+          mb: 2,
+          fontSize: { xs: "1.02rem", md: "1.25rem" },
+          overflowWrap: "anywhere",
+          wordBreak: "break-word",
         }}
       >
-        {projects.map((project, idx) => (
-          <ProjectCard
-            key={project.key}
-            project={project}
-            idx={idx}
-            t={t}
-            mode={mode}
-            isLight={isLight}
-            isFarsi={isFarsi}
-            subColor={subColor}
-            textColor={textColor}
-          />
-        ))}
+        {project.title}
+      </Typography>
+      <Typography
+        sx={{
+          color: "text.secondary",
+          lineHeight: 1.8,
+          fontSize: { xs: "0.92rem", md: "1rem" },
+          mb: 3,
+          overflowWrap: "anywhere",
+          wordBreak: "break-word",
+        }}
+      >
+        {t(`projectDescriptions.${project.key}`, {
+          defaultValue: project.description,
+        })}
+      </Typography>
+      <Box sx={{ mb: 3 }}>
+        <TagList tags={project.tags} />
+      </Box>
+      <Box sx={{ pt: 2.5 }}>
+        <ProjectLinks links={project.links} />
       </Box>
     </Box>
   );
 }
 
-function ProjectCard({ project, idx, t, mode, isLight, isFarsi, subColor, textColor }) {
-  const ref = useReveal(idx * 160);
-
-  const cardBg = isLight ? "#ffffff" : "#070f2b";
-  const borderColor = isLight ? "rgba(7,31,116,0.10)" : "rgba(238,242,255,0.08)";
+function LibraryCardCell({ item, index }) {
+  const { t } = useTranslation();
+  const isRightColumn = index % 2 === 1;
+  const isAfterFirstRow = index >= 2;
 
   return (
     <Box
-      ref={ref}
-      style={{
-        opacity: 0,
-        transform: "translateY(40px)",
-        transition: "opacity 0.75s cubic-bezier(.4,0,.2,1), transform 0.75s cubic-bezier(.4,0,.2,1)",
-      }}
-      sx={{ flex: 1 }}
-    >
-      <Box
-        sx={{
-          bgcolor: cardBg,
-          border: `1px solid ${borderColor}`,
-          borderRadius: 3,
-          overflow: "hidden",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          position: "relative",
-          transition: "box-shadow 0.3s ease, transform 0.3s ease",
-          "&:hover": {
-            transform: "translateY(-8px)",
-            boxShadow: isLight
-              ? `0 24px 60px rgba(7,31,116,0.10)`
-              : `0 24px 60px rgba(0,0,0,0.40)`,
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{
+        position: "relative",
+        p: { xs: 2.2, md: 4 },
+        borderTopWidth: {
+          xs: index > 0 ? "1px" : 0,
+          md: isAfterFirstRow ? "1px" : 0,
+        },
+        borderTopStyle: "solid",
+        borderTopColor: "divider",
+        textDecoration: "none",
+        color: "inherit",
+        display: "block",
+        transition: "background-color 0.2s ease",
+        overflow: "hidden",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          insetBlock: 0,
+          insetInlineStart: 0,
+          width: "1px",
+          bgcolor: "divider",
+          display: {
+            xs: "none",
+            md: isRightColumn ? "block" : "none",
           },
+        },
+        "&:hover": {
+          bgcolor: "action.hover",
+        },
+      }}
+    >
+      <Typography
+        sx={{
+          display: "inline-block",
+          fontSize: "0.72rem",
+          fontWeight: 700,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          color: "text.secondary",
+          bgcolor: "action.hover",
+          border: "1px solid",
+          borderColor: "divider",
+          px: 1,
+          py: 0.35,
+          borderRadius: 1,
+          mb: 1.5,
         }}
       >
-     
-        <Box
-          sx={{
-            height: 3,
-            background: `linear-gradient(90deg, ${project.accentColor}, transparent)`,
-          }}
-        />
+        {item.label}
+      </Typography>
 
+      <Typography
+        variant="h6"
+        sx={{
+          fontWeight: 700,
+          mb: 1.25,
+          fontSize: { xs: "0.98rem", md: "1.25rem" },
+          overflowWrap: "anywhere",
+          wordBreak: "break-word",
+        }}
+      >
+        {item.title}
+      </Typography>
 
-        <Box
+      <Typography
+        sx={{
+          color: "text.secondary",
+          lineHeight: 1.75,
+          mb: 2.5,
+          fontSize: { xs: "0.9rem", md: "1rem" },
+          overflowWrap: "anywhere",
+          wordBreak: "break-word",
+        }}
+      >
+        {t(`libraryDescriptions.${item.key}`, {
+          defaultValue: item.description,
+        })}
+      </Typography>
+
+      <Typography
+        sx={{
+          color: "text.secondary",
+          mb: 1.75,
+          fontSize: { xs: "0.86rem", md: "1rem" },
+          overflowWrap: "anywhere",
+          wordBreak: "break-word",
+        }}
+      >
+        {item.meta}
+      </Typography>
+      <Box sx={{ pt: 1 }}>
+        <ProjectLinks links={item.links} />
+      </Box>
+    </Box>
+  );
+}
+
+function PaperRowCard({ paper, showTopBorder = false }) {
+  return (
+    <Box
+      component="a"
+      href={`/research/${paper.id}`}
+      sx={{
+        display: "grid",
+        gridTemplateColumns: {
+          xs: "1fr auto",
+          md: "120px minmax(0, 1fr) auto",
+        },
+        columnGap: { xs: 1.5, md: 3 },
+        rowGap: { xs: 0.75, md: 0 },
+        alignItems: "start",
+        textDecoration: "none",
+        color: "inherit",
+        p: { xs: 2.2, md: 3 },
+        borderTopWidth: showTopBorder ? "1px" : 0,
+        borderTopStyle: "solid",
+        borderTopColor: "divider",
+        transition: "background-color 0.2s ease",
+        "& .paper-arrow": {
+          opacity: 0,
+          transform: "translate(-2px, 2px)",
+          transition: "opacity 0.18s ease, transform 0.18s ease",
+        },
+        "&:hover": {
+          bgcolor: "action.hover",
+        },
+        "&:hover .paper-arrow": {
+          opacity: 1,
+          transform: "translate(0, 0)",
+        },
+      }}
+    >
+      <Typography
+        sx={{
+          fontSize: "0.82rem",
+          fontWeight: 700,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          color: "text.secondary",
+          gridColumn: { xs: "1 / 2", md: "1 / 2" },
+        }}
+      >
+        {paper.year}
+      </Typography>
+
+      <Box sx={{ gridColumn: { xs: "1 / -1", md: "2 / 3" } }}>
+        <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.65 }}>
+          {paper.title}
+        </Typography>
+        <Typography
           sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            px: 3,
-            pt: 3,
-            pb: 1,
+            color: "text.secondary",
+            lineHeight: 1.75,
+            fontSize: { xs: "0.94rem", md: "0.98rem" },
           }}
         >
+          {paper.abstract}
+        </Typography>
+      </Box>
+
+      <Box
+        className="paper-arrow"
+        sx={{
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          mt: 0.2,
+          color: "text.primary",
+          gridColumn: { xs: "2 / 3", md: "3 / 4" },
+        }}
+      >
+        <ArrowOutwardIcon sx={{ fontSize: 18 }} />
+      </Box>
+    </Box>
+  );
+}
+
+export default function Projects() {
+  const theme = useTheme();
+  const { t, i18n } = useTranslation();
+  const isFarsi = i18n.language === "fa";
+  const accent = theme.palette.secondary.main;
+  const featuredPapers = [...papers]
+    .sort((a, b) => b.year - a.year)
+    .slice(0, 4);
+
+  return (
+    <Box
+      id="projects"
+      sx={{
+        scrollMarginTop: { xs: "72px", md: "96px" },
+        py: { xs: 8, md: 14 },
+        // mt: 18,
+        bgcolor: "background.default",
+        direction: isFarsi ? "rtl" : "ltr",
+      }}
+    >
+      <Container maxWidth="xl">
+        <Box sx={{ mb: { xs: 6, md: 8 } }}>
+          <SectionEyebrow accent={accent}>
+            {t("projectHeader", { defaultValue: "Projects" })}
+          </SectionEyebrow>
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+            {t("projectHeadline", {
+              defaultValue: "Everything we build, open and free",
+            })}
+          </Typography>
           <Typography
             sx={{
-              fontFamily: "'Ubuntu', 'Roboto'",
-              fontSize: "2.8rem",
-              fontWeight: 800,
-              lineHeight: 1,
-              color: project.accentColor,
-              opacity: 0.18,
-              letterSpacing: "-0.04em",
-              userSelect: "none",
+              fontSize: { xs: "1rem", md: "1.08rem" },
+              color: "text.secondary",
+              maxWidth: 760,
+              lineHeight: 1.85,
             }}
           >
-            {project.number}
+            {t("projectSubHeader", {
+              defaultValue:
+                "RelaySMS and DekuSMS sit at the front, with the relay infrastructure and shared libraries underneath them. Everything here is public, outlined, and easy to inspect.",
+            })}
           </Typography>
+        </Box>
 
-          <Stack direction="row" spacing={1} flexWrap="wrap" justifyContent="flex-end" gap={0.5}>
-            {project.chips.map((chipKey, i) => (
-              <Chip
-                key={chipKey}
-                label={t(chipKey, { defaultValue: project.chipDefaults[i] })}
-                size="small"
-                sx={{
-                  bgcolor: project.accentColorDim,
-                  border: `1px solid ${project.accentBorder}`,
-                  color: project.accentColor,
-                  fontWeight: 600,
-                  fontFamily: "'Ubuntu', 'Roboto'",
-                  fontSize: "0.7rem",
-                  letterSpacing: "0.04em",
-                }}
+        <Box
+          sx={{
+            border: "1px solid",
+            borderColor: "divider",
+            mb: { xs: 8, md: 25 },
+          }}
+        >
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+              gap: 0,
+              borderBottomWidth: "1px",
+              borderBottomStyle: "solid",
+              borderBottomColor: "divider",
+            }}
+          >
+            {featuredProjects.map((project, index) => (
+              <ProjectHeroCell
+                key={project.key}
+                project={project}
+                showTopBorder={index > 0}
               />
             ))}
-          </Stack>
+          </Box>
         </Box>
 
-    
-        <Box
-          sx={{
-            px: 4,
-            py: 2,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: 180,
-            position: "relative",
-          }}
-        >
-   
-          <Box
-            sx={{
-              position: "absolute",
-              width: 180,
-              height: 180,
-              borderRadius: "50%",
-              background: `radial-gradient(circle, ${project.accentColor}22 0%, transparent 70%)`,
-              pointerEvents: "none",
-            }}
-          />
-          <Box
-            component="img"
-            src={project.image}
-            alt={project.key}
-            sx={{
-              width: { xs: "55%", sm: "45%", md: "55%" },
-              maxWidth: 200,
-              height: "auto",
-              position: "relative",
-              zIndex: 1,
-              filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.15))",
-            }}
-          />
-        </Box>
-
-   
-        <Box sx={{ mx: 3, height: "1px", bgcolor: borderColor }} />
-
-   
-        <Box
-          sx={{
-            px: { xs: 3, sm: 4 },
-            pt: 3,
-            pb: 2,
-            flexGrow: 1,
-            display: "flex",
-            flexDirection: "column",
-            textAlign: isFarsi ? "right" : "left",
-          }}
-        >
-       
-          <Box
-            component="img"
-            src={isLight ? project.logoLight : project.logoDark}
-            alt={`${project.key} logo`}
-            sx={{ width: 140, height: "auto", mb: 2.5 }}
-          />
-
-          <Typography
-            variant="body1"
-            sx={{
-              fontFamily: "'Ubuntu', 'Roboto'",
-              fontWeight: 300,
-              fontSize: { xs: "0.95rem", md: "1rem" },
-              color: subColor,
-              lineHeight: 1.85,
-              flexGrow: 1,
-            }}
-          >
-            {t(project.descKey, { defaultValue: project.descDefault })}
+        <Box sx={{ mb: { xs: 8, md: 25 } }}>
+          <SectionEyebrow accent={accent}>
+            {t("papersEyebrow", { defaultValue: "Papers" })}
+          </SectionEyebrow>
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+            {t("papersTitle", {
+              defaultValue: "Research and publications",
+            })}
           </Typography>
-        </Box>
-
-      
-        <Box sx={{ px: { xs: 3, sm: 4 }, pb: 3.5 }}>
-          <Button
-            href={project.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            size="small"
-            endIcon={<ArrowOutwardIcon fontSize="small" />}
+          <Typography
             sx={{
-              color: project.accentColor,
-              fontFamily: "'Ubuntu', 'Roboto'",
-              fontWeight: 600,
-              fontSize: "0.85rem",
-              textTransform: "none",
-              px: 0,
-              letterSpacing: "0.02em",
-              position: "relative",
-              "&::after": {
-                content: '""',
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                width: "0%",
-                height: "1.5px",
-                bgcolor: project.accentColor,
-                transition: "width 0.25s ease",
-              },
-              "&:hover::after": { width: "100%" },
-              "&:hover": { bgcolor: "transparent" },
+              maxWidth: 760,
+              color: "text.secondary",
+              lineHeight: 1.85,
+              mb: { xs: 3, md: 4 },
             }}
           >
-            {t(project.readMoreKey, { defaultValue: project.readMoreDefault })}
-          </Button>
+            {t("papersBody", {
+              defaultValue:
+                "The team publishes research papers and notes behind the stack, from architecture and encryption to threat modeling.",
+            })}
+          </Typography>
+
+          <Box sx={{ border: "1px solid", borderColor: "divider" }}>
+            {featuredPapers.map((paper, index) => (
+              <PaperRowCard
+                key={paper.id}
+                paper={paper}
+                showTopBorder={index > 0}
+              />
+            ))}
+          </Box>
         </Box>
-      </Box>
+
+        <Box>
+          <SectionEyebrow accent={accent}>
+            {t("developerLibrariesEyebrow", {
+              defaultValue: "Developer Libraries",
+            })}
+          </SectionEyebrow>
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+            {t("developerLibrariesTitle", {
+              defaultValue: "Build on the stack",
+            })}
+          </Typography>
+          <Typography
+            sx={{
+              maxWidth: 760,
+              color: "text.secondary",
+              lineHeight: 1.85,
+              mb: { xs: 4, md: 5 },
+            }}
+          >
+            {t("developerLibrariesBody", {
+              defaultValue: "All core components are open-source and reusable.",
+            })}
+          </Typography>
+
+          <Box
+            sx={{
+              border: "1px solid",
+              borderColor: "divider",
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+              gap: 0,
+            }}
+          >
+            {developerLibraries.map((item, index) => (
+              <LibraryCardCell key={item.key} item={item} index={index} />
+            ))}
+          </Box>
+        </Box>
+      </Container>
     </Box>
   );
 }

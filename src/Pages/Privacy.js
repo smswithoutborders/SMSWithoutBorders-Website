@@ -1,792 +1,226 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Box, Container, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
-import { createTheme } from "@mui/material/styles";
-import {
-	AppBar,
-	Toolbar,
-	Button,
-	Box,
-	IconButton,
-	Drawer,
-	List,
-	ListItem,
-	ListItemButton,
-	ListItemText,
-	Divider,
-	Container,
-	Tooltip
-} from "@mui/material";
 import ReactHtmlParser from "react-html-parser";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import LanguageSwitcher from "../Components/LanguageSwitcher";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "../App.css";
-import { useTheme } from "../Context/ThemeContext";
+import Navbar from "../Components/Navbar";
+import { Helmet } from "react-helmet-async";
 
-const theme = createTheme({
-	typography: {
-		fontFamily: "'Roboto', 'Ubuntu'"
-	}
-});
+<Helmet>
+  <title>SMSWithoutBorders | Privacy Policy</title>
 
-export default function FixedContainer() {
-	const { t, i18n } = useTranslation();
-	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-	const isFarsi = i18n.language === "fa";
-	const [scroll, setScroll] = useState(false);
-	const [drawerOpen, setDrawerOpen] = useState(false);
-	const { mode, toggleTheme } = useTheme();
+  <meta
+    name="description"
+    content="SMSWithoutBorders (SWOB) is dedicated to researching, developing and promoting secure and open-source communication tools that function even without an internet connection."
+  />
+</Helmet>;
 
-	const links = [
-		{ label: t("navbar.link"), href: "/" },
-		{ label: t("navbar.link1"), href: "https://blog.smswithoutborders.com/" },
-		{ label: t("navbar.link5"), href: "https://docs.smswithoutborders.com/" }
-	];
+const definitionKeys = [
+  "Privacy-Policy3.definitionAccount",
+  "Privacy-Policy3.definitionCompany",
+  "Privacy-Policy3.definitionCookies",
+  "Privacy-Policy3.definitionCountry",
+  "Privacy-Policy3.definitionDevice",
+  "Privacy-Policy3.definitionPersonalData",
+  "Privacy-Policy3.definitionService",
+  "Privacy-Policy3.definitionServiceProvider",
+  "Privacy-Policy3.definitionThirdParty",
+  "Privacy-Policy3.definitionUsageData",
+  "Privacy-Policy3.definitionWebsite",
+  "Privacy-Policy3.definitionYou",
+];
 
-	useEffect(() => {
-		const handleScroll = () => setScroll(window.scrollY > 10);
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+const policySections = [
+  {
+    title: "Privacy-Policy2.policyHeader2",
+    lead: "Privacy-Policy2.policySubheader2",
+    paragraphs: ["Privacy-Policy2.policyBody2"],
+  },
+  {
+    title: "Privacy-Policy3.policyHeader3",
+    paragraphs: ["Privacy-Policy3.policyBody3"],
+    list: definitionKeys,
+  },
+  { title: "Privacy-Policy4.policyHeader4" },
+  {
+    title: "Privacy-Policy5.policyHeader5",
+    paragraphs: ["Privacy-Policy5.policyBody5", "Privacy-Policy5.policyBody6"],
+  },
+  {
+    title: "Privacy-Policy6.policyHeader6",
+    paragraphs: ["Privacy-Policy6.policyBody7", "Privacy-Policy6.policyBody8"],
+  },
+  {
+    title: "Privacy-Policy7.policyHeader7",
+    paragraphs: ["Privacy-Policy7.policyBody9"],
+  },
+  {
+    title: "Privacy-Policy8.policyHeader8",
+    paragraphs: [
+      "Privacy-Policy8.policyBody10",
+      "Privacy-Policy8.policyBody11",
+    ],
+  },
+  {
+    title: "Privacy-Policy9.policyHeader9",
+    paragraphs: ["Privacy-Policy9.policyBody12"],
+  },
+  {
+    title: "Privacy-Policy10.policyHeader10",
+    paragraphs: ["Privacy-Policy10.policyBody14"],
+  },
+  {
+    title: "Privacy-Policy11.policyHeader11",
+    paragraphs: ["Privacy-Policy11.policyBody15"],
+  },
+];
 
-	useEffect(() => {
-		AOS.init({ duration: 1200, once: true });
-	}, []);
+export default function Privacy() {
+  const { t, i18n } = useTranslation();
+  const theme = useTheme();
+  const isFarsi = i18n.language === "fa";
 
-	const toggleDrawer = () => setDrawerOpen(!drawerOpen);
+  return (
+    <>
+      <Navbar />
+      <Box
+        sx={{
+          minHeight: "100vh",
+          bgcolor: "background.default",
+          direction: isFarsi ? "rtl" : "ltr",
+          pt: { xs: 14, md: 18 },
+          pb: { xs: 8, md: 10 },
+        }}
+      >
+        <Container maxWidth="lg">
+          <Box
+            sx={{
+              //   border: `1px solid ${theme.palette.divider}`,
+              p: { xs: 3, md: 5 },
+            }}
+          >
+            {/* <Typography
+              sx={{
+                fontSize: "0.72rem",
+                fontWeight: 700,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: theme.palette.secondary.main,
+                mb: 1.5,
+              }}
+            >
+              Legal
+            </Typography> */}
 
-	const handleLinkClick = () => {
-		if (isMobile) setDrawerOpen(false);
-	};
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+              {t("Privacy-Policy.policyHeader")}
+            </Typography>
 
-	const navbarColor = scroll
-		? mode === "light"
-			? "#f7fbfff5"
-			: "#1b1a5aff"
-		: "transparent";
-	const linkColor = mode === "light" ? "#02397ce3" : "#ffffff";
-	const drawerBg = mode === "light" ? "#f9f9f9" : "#1b1a5a";
-	const drawerTextColor = mode === "light" ? "#000158" : "#ffffff";
-	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
-	const textColor = mode === "light" ? "#0d3b66" : "#00d4ff";
-	const subTextColor = mode === "light" ? "#505e85" : "#D1D1D6";
+            <Typography
+              sx={{
+                color: "text.secondary",
+                lineHeight: 1.9,
+                fontSize: { xs: "1rem", md: "1.06rem" },
+                mb: 2.5,
+              }}
+            >
+              {t("Privacy-Policy.policySubheader")}
+            </Typography>
 
-	return (
-		<Box
-			id="home"
-			sx={{
-				minHeight: "100vh",
-				fontFamily: "'Roboto', 'Ubuntu'",
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "center",
-				alignItems: { xs: "center", md: "flex-start" },
-				px: { xs: 3, sm: 6, md: 12 },
-				pt: { xs: 4, sm: 6, md: 8 },
-				pb: { xs: 4, sm: 6, md: 8 },
-				bgcolor: backgroundColor,
-				color: textColor
-			}}
-		>
-			{/* ================= Navbar ================= */}
-			<AppBar
-				position="fixed"
-				sx={{
-					bgcolor: navbarColor,
-					color: linkColor,
-					boxShadow: scroll ? 4 : 0,
-					py: { xs: 0.2, sm: 0.5 },
-					direction: isFarsi ? "rtl" : "ltr",
-					transition: "background-color 0.3s ease, box-shadow 0.3s ease",
-					zIndex: 1400,
-					fontFamily: "'Roboto', 'Ubuntu'"
-				}}
-			>
-				<Toolbar
-					sx={{
-						display: "flex",
-						justifyContent: "space-between",
-						px: { xs: 2, sm: 4, md: 6 },
-						minHeight: { xs: 48, sm: 56, md: 66 }
-					}}
-				>
-					<Box
-						sx={{
-							display: "flex",
-							alignItems: "center",
-							gap: 1,
-							cursor: "pointer"
-						}}
-						component="a"
-						href="/"
-					>
-						<img
-							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
-							alt="Logo"
-							style={{ height: 40, marginRight: 10 }}
-						/>
-					</Box>
-					<Box sx={{ width: { xs: "0", md: "100px" } }} />
+            <Typography
+              sx={{
+                color: "text.secondary",
+                lineHeight: 1.9,
+                fontSize: { xs: "1rem", md: "1.06rem" },
+                mb: 2.5,
+              }}
+            >
+              {t("Privacy-Policy.policyBody1")}
+            </Typography>
 
-					<Box
-						sx={{
-							display: { xs: "none", md: "flex" },
-							alignItems: "center",
-							gap: { xs: 1, sm: 2, md: 3 }
-						}}
-					>
-						{links.map((link, i) => (
-							<Button
-								key={i}
-								href={link.href}
-								color="inherit"
-								sx={{
-									fontFamily: "'Roboto', 'Ubuntu'",
-									textTransform: "none",
-									fontWeight: 300,
-									fontSize: { xs: "0.9rem", sm: "0.75rem", md: "0.90rem" },
-									transition: "all 0.1s ease",
-									"&:hover": { borderBottom: "3px solid #FF8614" },
-									borderBottom: "none"
-								}}
-							>
-								{link.label}
-							</Button>
-						))}
+            <Typography
+              sx={{
+                color: "text.secondary",
+                lineHeight: 1.9,
+                fontSize: { xs: "1rem", md: "1.06rem" },
+                mb: 4,
+              }}
+            >
+              {t("Privacy-Policy.policyBody2")}
+            </Typography>
 
-						<Button
-							href="https://github.com/smswithoutborders"
-							color="inherit"
-							sx={{ minWidth: "auto", p: 0 }}
-							aria-label="GitHub"
-						>
-							<GitHubIcon
-								sx={{ fontSize: { xs: 20, sm: 24, md: 26 }, "&:hover": { color: "#FF8614" } }}
-							/>
-						</Button>
+            {policySections.map((section) => (
+              <Box key={section.title} sx={{ mt: 4 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1.5 }}>
+                  {t(section.title)}
+                </Typography>
 
-						<LanguageSwitcher />
-						<IconButton onClick={toggleTheme} color="inherit">
-							{mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
-						</IconButton>
-					</Box>
+                {section.lead ? (
+                  <Typography
+                    sx={{
+                      color: "text.primary",
+                      lineHeight: 1.85,
+                      fontSize: { xs: "1rem", md: "1.02rem" },
+                      mb: 1.5,
+                    }}
+                  >
+                    {t(section.lead)}
+                  </Typography>
+                ) : null}
 
-					<IconButton
-						color="inherit"
-						edge="end"
-						onClick={toggleDrawer}
-						sx={{ display: { md: "none" } }}
-					>
-						{drawerOpen ? <CloseIcon /> : <MenuIcon />}
-					</IconButton>
-				</Toolbar>
-			</AppBar>
+                {section.paragraphs?.map((key) => (
+                  <Typography
+                    key={key}
+                    sx={{
+                      color: "text.secondary",
+                      lineHeight: 1.9,
+                      fontSize: { xs: "1rem", md: "1.06rem" },
+                      mb: 2,
+                    }}
+                  >
+                    {t(key)}
+                  </Typography>
+                ))}
 
-			{/* ================= Mobile Drawer ================= */}
-			<Drawer
-				anchor={isFarsi ? "left" : "right"}
-				open={drawerOpen}
-				onClose={toggleDrawer}
-				PaperProps={{
-					sx: {
-						width: 240,
-						backgroundColor: mode === "light" ? "#f9f9f9" : "#10143bff",
-						color: mode === "light" ? "#000" : "#fff",
-						p: 2,
-						height: "50vh",
-						overflow: "auto",
-						top: "60px",
-						borderRadius: 3
-					}
-				}}
-			>
-				<Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-					<Box
-						sx={{
-							display: "flex",
-							justifyContent: isFarsi ? "flex-end" : "flex-start",
-							mb: 2
-						}}
-					>
+                {section.list ? (
+                  <Box
+                    component="ul"
+                    sx={{
+                      pl: isFarsi ? 0 : 3,
+                      pr: isFarsi ? 3 : 0,
+                      color: "text.secondary",
+                      lineHeight: 1.9,
+                      fontSize: { xs: "1rem", md: "1.06rem" },
+                      mb: 1,
+                    }}
+                  >
+                    {section.list.map((key) => (
+                      <Box component="li" key={key} sx={{ mb: 1.2 }}>
+                        {ReactHtmlParser(t(key))}
+                      </Box>
+                    ))}
+                  </Box>
+                ) : null}
+              </Box>
+            ))}
 
-						<img
-							src={mode === "light" ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"}
-							alt="SMSWithoutBorders"
-							style={{ height: 30 }}
-						/>
-					</Box>
-
-					<Divider sx={{ mb: 2, borderColor: mode === "light" ? "#ccc" : "#555" }} />
-
-					<List>
-						{links.map((link, i) => (
-							<ListItem key={i} disablePadding>
-								<ListItemButton
-									component="a"
-									href={link.href || link.path}
-									onClick={handleLinkClick}
-									sx={{
-										borderRadius: 2,
-										mb: 1,
-										"&:hover": { bgcolor: mode === "light" ? "#e6e6e6" : "#333" },
-										px: 2
-									}}
-								>
-									<ListItemText
-										primary={link.label}
-										primaryTypographyProps={{
-											fontFamily: "'Roboto', 'Ubuntu'",
-											fontSize: "1rem",
-											fontWeight: 300,
-											textAlign: isFarsi ? "right" : "left",
-											color: mode === "light" ? "#000158" : "#fff"
-										}}
-									/>
-								</ListItemButton>
-							</ListItem>
-						))}
-					</List>
-
-					<Divider sx={{ my: 2, borderColor: mode === "light" ? "#ccc" : "#555" }} />
-
-					<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-						<Tooltip title="GitHub" arrow>
-							<Button
-								href="https://github.com/smswithoutborders"
-								sx={{
-									minWidth: "auto",
-									p: 1,
-									bgcolor: "#000158",
-									color: "#fff",
-									"&:hover": { bgcolor: "#FF8614" },
-									borderRadius: 1,
-								}}
-							>
-								<GitHubIcon />
-							</Button>
-						</Tooltip>
-
-						<LanguageSwitcher />
-
-
-						<Tooltip title="Toggle Theme" arrow>
-							<IconButton onClick={toggleTheme} color="inherit">
-								{mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
-							</IconButton>
-						</Tooltip>
-					</Box>
-				</Box>
-			</Drawer>
-			{/* ================= Main Content ================= */}
-			<Box>
-				<Container maxWidth={false} disableGutters>
-					<Box
-						sx={{
-							minHeight: "100vh",
-							direction: isFarsi ? "rtl" : "ltr"
-						}}
-					>
-						<Box sx={{ mt: 6, px: { xs: 1, sm: 2, md: 3 }, color: textColor }}>
-
-							<Box
-								sx={{
-									fontSize: { xs: "2em", sm: "2em", md: "2.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									marginBottom: { xs: "40px", sm: "60px", md: "60px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy.policyHeader")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-								}}
-							>
-								{t("Privacy-Policy.policySubheader")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-								}}
-							>
-								{t("Privacy-Policy.policyBody1")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									textAlign: "justify"
-								}}
-							>
-								{t("Privacy-Policy.policyBody2")}
-							</Box>
-
-							{/* =========== policy body 2 ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontWeight: 500,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy2.policyHeader2")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.25rem", md: "1.3rem" },
-									textAlign: "justify",
-									fontWeight: 500,
-									color: textColor,
-									letterSpacing: 1.5,
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300
-								}}
-							>
-								{t("Privacy-Policy2.policySubheader2")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									mb: 3,
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy2.policyBody2")}
-							</Box>
-
-							{/* =========== policy body 3 ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy3.policyHeader3")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy3.policyBody3")}
-							</Box>
-
-							<Box
-								component="ul"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									mb: 3,
-									listStyleType: "disc",
-									textAlign: "left",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-								}}
-							>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionAccount"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionCompany"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionCookies"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionCountry"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionDevice"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionPersonalData"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionService"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionServiceProvider"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionThirdParty"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionUsageData"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionWebsite"))}
-								</Box>
-								<Box component="li" sx={{ mb: 2 }}>
-									{ReactHtmlParser(t("Privacy-Policy3.definitionYou"))}
-								</Box>
-							</Box>
-
-							{/* =========== Policy Body 4 Section ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy4.policyHeader4")}
-							</Box>
-
-							{/* =========== Policy Body 5 Section ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy5.policyHeader5")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									mb: 3,
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy5.policyBody5")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy5.policyBody6")}
-							</Box>
-
-							{/* =========== Policy Body 6 Section ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy6.policyHeader6")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy6.policyBody7")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									textAlign: "justify",
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy6.policyBody8")}
-							</Box>
-
-							{/* =========== Policy Body 7 Section ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy7.policyHeader7")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy7.policyBody9")}
-							</Box>
-
-							{/* =========== Policy Body 8 Section ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy8.policyHeader8")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy8.policyBody10")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy8.policyBody11")}
-							</Box>
-
-							{/* =========== Policy Body 9 Section ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy9.policyHeader9")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy9.policyBody12")}
-							</Box>
-
-							{/* =========== Policy Body 10 Section ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy10.policyHeader10")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy10.policyBody14")}
-							</Box>
-
-							{/* =========== Policy Body 11 Section ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy11.policyHeader11")}
-							</Box>
-							<Box
-								component="p"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									textAlign: "justify",
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{t("Privacy-Policy11.policyBody15")}
-							</Box>
-
-							{/* =========== Policy Body 12 Section ======== */}
-							<Box
-								sx={{
-									fontSize: { xs: "1em", sm: "1em", md: "1.5em" },
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									color: textColor,
-									letterSpacing: 1.5,
-									textAlign: "justify",
-									marginBottom: { xs: "20px", sm: "30px", md: "30px" },
-									marginTop: { xs: "20px", sm: "30px", md: "30px" }
-								}}
-							>
-								{t("Privacy-Policy12.policyHeader12")}
-							</Box>
-							<Box
-								component="h6"
-								sx={{
-									fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-									color: subTextColor,
-									lineHeight: 2,
-									textAlign: "justify",
-									fontFamily: "Ubuntu, Roboto",
-									fontWeight: 300,
-									mb: 3,
-									px: { xs: 2, sm: 3 }
-								}}
-							>
-								{ReactHtmlParser(t("Privacy-Policy12.policyBody16") || "")}
-							</Box>
-						</Box>
-					</Box>
-				</Container>
-			</Box>
-		</Box>
-	);
+            <Box sx={{ mt: 4 }}>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1.5 }}>
+                {t("Privacy-Policy12.policyHeader12")}
+              </Typography>
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  lineHeight: 1.9,
+                  fontSize: { xs: "1rem", md: "1.06rem" },
+                }}
+              >
+                {ReactHtmlParser(t("Privacy-Policy12.policyBody16") || "")}
+              </Typography>
+            </Box>
+          </Box>
+        </Container>
+      </Box>
+    </>
+  );
 }

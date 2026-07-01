@@ -21,7 +21,8 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../Context/ThemeContext";
+import { useTheme as useAppTheme } from "../Context/ThemeContext";
+import { useTheme } from "@mui/material/styles";
 import { FiFileText } from 'react-icons/fi';
 
 
@@ -97,9 +98,10 @@ const GlobalStyles = () => (
 
 export default function Navbar() {
 	const { t, i18n } = useTranslation();
-	const { mode, toggleTheme } = useTheme();
+	const { toggleTheme } = useAppTheme();
+	const theme = useTheme();
 	const isFarsi = i18n.language === "fa";
-	const isLight = mode === "light";
+	const isLight = theme.palette.mode === "light";
 
 	const [drawerOpen, setDrawerOpen]   = useState(false);
 	const [scrolled, setScrolled]       = useState(false);
@@ -130,10 +132,10 @@ export default function Navbar() {
 		? isLight ? "1px solid rgba(0,0,0,0.08)" : "1px solid rgba(255,255,255,0.07)"
 		: "1px solid transparent";
 
-	const textColor   = isLight ? "#071f74" : "#dde6ff";
-	const hoverColor  = "#FF8614";
-	const dropBg      = isLight ? "#ffffff"  : "#0b1340";
-	const dropHover   = isLight ? "#f0f5ff"  : "#17236b";
+	const textColor   = theme.palette.text.primary;
+	const hoverColor  = theme.palette.secondary.main;
+	const dropBg      = theme.palette.background.paper;
+	const dropHover   = isLight ? "#f0f5ff" : "#17236b";
 	const iconHoverBg = isLight ? "rgba(255,134,20,0.09)" : "rgba(255,134,20,0.13)";
 
 	return (
@@ -295,7 +297,7 @@ export default function Navbar() {
 
 						<Box sx={{ width: "1px", height: 20, bgcolor: isLight ? "rgba(0,0,0,0.12)" : "rgba(255,255,255,0.12)", mx: 0.5 }} />
 
-						<Tooltip title="GitHub" arrow>
+						<Tooltip title={t("footer.github", "GitHub")} arrow>
 							<IconButton
 								component="a"
 								href="https://github.com/smswithoutborders"
@@ -311,7 +313,14 @@ export default function Navbar() {
 
 						<LanguageSwitcher />
 
-						<Tooltip title={isLight ? "Switch to dark" : "Switch to light"} arrow>
+						<Tooltip
+							title={
+								isLight
+									? t("theme.switchToDark", "Switch to dark")
+									: t("theme.switchToLight", "Switch to light")
+							}
+							arrow
+						>
 							<IconButton
 								onClick={toggleTheme}
 								size="small"
@@ -423,7 +432,7 @@ export default function Navbar() {
 							"&:hover": { opacity: 0.9, transform: "translateY(-1px)" },
 						}}
 					>
-					<FiFileText size={24} color="white" />  {t("navbar.researchFull", "Research & Publications")}
+					<FiFileText size={24} color="white" />  {t("navbar.researchFull", "Research Papers")}
 					</Box>
 				</Box>
 
@@ -526,7 +535,7 @@ export default function Navbar() {
 					justifyContent: "space-between",
 					px: 2.5, py: 1.5,
 				}}>
-					<Tooltip title="GitHub" arrow>
+					<Tooltip title={t("footer.github", "GitHub")} arrow>
 						<IconButton
 							component="a"
 							href="https://github.com/smswithoutborders"

@@ -8,7 +8,9 @@
     "link4": "Política de privacidad",
     "link5": "Documentación",
     "link6": "Funciones",
-    "link7": "Artículos",
+		"link7": "Artículos",
+		"products": "Productos",
+		"tagline": "Código abierto · Privacidad · Libertad",
     "papers": {
       "whitepaper": "Libro blanco",
       "threatModel": "Modelo de amenazas"
@@ -16,7 +18,14 @@
 	"researchFull": "Artículos de investigación"
 	},
 	"loader": "Cargando, por favor espere",
+	"features": {
+		"loadError": "No se pudieron cargar las funciones."
+	},
 	"LandingHeader": "Código abierto | Investigación",
+	"landingHeroSub": "SMSWithoutBorders (SWOB) se dedica a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionen incluso sin conexión a Internet.",
+	"landing": {
+		"goToProjects": "Ir a proyectos"
+	},
 	"About": {
 		"AboutHeader": "Explora SMSWithoutBorders",
 		"description": "SMSWithoutBorders (SWOB) se dedica a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionen incluso sin conexión a Internet.",
@@ -25,8 +34,36 @@
 		"description3": "Publicamos nuestras investigaciones con la mayor frecuencia posible en nuestro blog y hacemos anuncios a través de nuestras redes sociales. SMSWithoutBorders es un proyecto iniciado por el equipo de <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
 	"projectHeader": "Proyectos innovadores bajo SMSWithoutBorders",
+	"projectHeadline": "Todo lo que construimos es abierto y libre",
 	"projectSubHeader": "SMSWithoutBorders se compromete a construir herramientas de código abierto que promuevan la libertad de expresión y la comunicación",
+	"papersEyebrow": "Artículos",
+	"papersTitle": "Investigación y publicaciones",
+	"papersBody": "El equipo publica artículos de investigación y notas sobre la base tecnológica, desde arquitectura y cifrado hasta modelado de amenazas.",
+	"projectsResilienceEyebrow": "Construido sobre SMS",
+	"projectsResilienceTitle": "Construido sobre SMS: la capa más resiliente",
+	"projectsResilienceBody": "SMS funciona cuando los datos no. Construimos una infraestructura de retransmisión segura completa sobre esta base para que las personas puedan mantenerse conectadas sin importar lo que haga la red, o un gobierno.",
+	"developerLibrariesEyebrow": "Bibliotecas para desarrolladores",
+	"developerLibrariesTitle": "Construye sobre la plataforma",
+	"developerLibrariesBody": "Todos los componentes principales son de código abierto y reutilizables.",
 	"projectsub": "Nuestros proyectos",
+	"projectDescriptions": {
+		"relaysms": "La aplicación principal para usuarios. Guarda tokens OAuth2 de Gmail, Twitter y Telegram en una bóveda cifrada. Envía mensajes a esas plataformas mediante cualquier conexión SMS, incluso durante apagones de internet.",
+		"dekusms": "Una app de SMS para Android, de código abierto y cifrada de extremo a extremo. Impulsa la capa de gestión SMS de RelaySMS y también puede usarse de forma independiente como reemplazo seguro de tu app SMS predeterminada. Admite envío de imágenes MMS.",
+		"vault": "Sistema seguro de gestión de tokens de acceso para publicación de mensajes. Protege las credenciales OAuth2 con una capa adicional de cifrado.",
+		"gateway": "Permite a los usuarios sincronizarse y comunicarse con el módulo publicador. Es la infraestructura central de retransmisión entre dispositivos y backend.",
+		"bridge": "Permite a los usuarios comunicarse con plataformas en línea totalmente por SMS, sin necesidad de internet. Habilita un intercambio seguro y cifrado solo por SMS.",
+		"publisher": "Middleware entre Gateway y backend. Adaptadores PNBA conectables para Telegram y otras plataformas. Gestiona descifrado y enrutamiento."
+	},
+	"libraryDescriptions": {
+		"smsmms-library": "Biblioteca Android de transporte SMS y MMS utilizada por RelaySMS y DekuSMS. Gestiona flujos de mensajería del operador, permisos en tiempo de ejecución, envío MMS e integración como app SMS predeterminada.",
+		"double-ratchet-java": "Biblioteca auxiliar de cifrado para Android que implementa primitivas Signal Double Ratchet para apps móviles de la pila RelaySMS.",
+		"double-ratchet-python": "Biblioteca criptográfica en Python que implementa Signal Double Ratchet y utilidades de apoyo para intercambio seguro entre servicios backend.",
+		"double-ratchet-ios": "Implementación en Swift de utilidades criptográficas Signal Double Ratchet de SMSWithoutBorders para intercambio seguro de mensajes en iOS.",
+		"image-android": "Biblioteca auxiliar de imágenes para Android usada en procesamiento MMS y multimedia dentro de la pila de mensajería móvil.",
+		"image-ios": "Biblioteca auxiliar en Swift para procesamiento de imágenes en flujos multimedia y manejo de adjuntos de RelaySMS en iOS.",
+		"gateway-client": "Cliente remoto en Python para interactuar con la capa Gateway desde herramientas y servicios externos.",
+		"adapter-interface": "Interfaz conectable para añadir nuevos puentes de plataforma. Telegram es el adaptador PNBA de referencia y la misma capa publicadora admite adaptadores adicionales."
+	},
 	"project1": {
 		"title": "RelaySMS",
 		"description": "RelaySMS utiliza la mensajería SMS para comunicarse con plataformas en línea sin necesidad de conexión a Internet. Los usuarios pueden otorgar acceso a sus plataformas en línea, el cual se utilizará para actuar en su nombre mediante mensajes SMS. El acceso concedido, los mensajes enviados desde la aplicación y cómo se publican en línea están asegurados con prácticas criptográficas y de seguridad modernas y sólidas.",
@@ -46,10 +83,33 @@
 	"Sponsor": {
 		"Sponsorsub": "Socios",
 		"SponsorT": "Organizaciones de apoyo",
+		"Sponsor-subheader": "Estas organizaciones ayudan a mantener a flote SMSWithoutBorders",
 		"sponsorfooter": "Orgullosamente respaldado por organizaciones comprometidas con un internet libre y abierto."
 	},
 	"footer": {
-		"copyright": "© Afkanerd."
+		"copyright": "© Afkanerd.",
+		"copyrightYear": "© {{year}} Afkanerd",
+		"github": "GitHub"
+	},
+	"footerNav": {
+		"projects": "Proyectos",
+		"resources": "Recursos",
+		"community": "Comunidad",
+		"relay": "RelaySMS",
+		"deku": "DekuSMS",
+		"githubOrg": "Organización en GitHub",
+		"twitterX": "Twitter / X @smswithoutborders",
+		"contactDevelopers": "Contactar a los desarrolladores",
+		"reportIssue": "Reportar un problema"
+	},
+	"theme": {
+		"switchToDark": "Cambiar a modo oscuro",
+		"switchToLight": "Cambiar a modo claro"
+	},
+	"notFound": {
+		"title": "Ups, te has perdido",
+		"subtitle": "Parece que la página que buscas no existe",
+		"backHome": "Volvamos al inicio"
 	},
 	"social": {
 		"x": "Síguenos en X",

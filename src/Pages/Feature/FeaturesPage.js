@@ -3,147 +3,162 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { Box, CircularProgress, Typography } from "@mui/material";
-import DocsNavbar from "../../Components/DocsNavbar";
-import { useTheme } from "../../Context/ThemeContext";
+import { Box, CircularProgress, Container, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
-import { t } from "i18next";
+import Navbar from "../../Components/Navbar";
 
 const FeaturesPage = () => {
-	const [content, setContent] = useState(null);
-	const { mode } = useTheme();
-	const { t, i18n } = useTranslation();
-	const isFarsi = i18n.language === "fa";
+  const [content, setContent] = useState(null);
+  const { t, i18n } = useTranslation();
+  const theme = useTheme();
+  const isFarsi = i18n.language === "fa";
+  const isLight = theme.palette.mode === "light";
 
-	useEffect(() => {
-		const lang = i18n.language;
-		const file = `/features.${lang}.md`;
+  useEffect(() => {
+    const lang = i18n.language;
+    const file = `/features.${lang}.md`;
 
-		fetch(file)
-			.then((res) => {
-				if (!res.ok) throw new Error("File not found");
-				return res.text();
-			})
-			.then((text) => setContent(text))
-			.catch(() => setContent("Failed to load features."));
-	}, [i18n.language]);
+    fetch(file)
+      .then((res) => {
+        if (!res.ok) throw new Error("File not found");
+        return res.text();
+      })
+      .then((text) => setContent(text))
+      .catch(() =>
+        setContent(
+          t("features.loadError", {
+            defaultValue: "Failed to load features.",
+          }),
+        ),
+      );
+  }, [i18n.language, t]);
 
-	const backgroundColor = mode === "light" ? "#ffffff" : "#000824";
-	const textColor = mode === "light" ? "#0c0833" : "#ffffff";
-	const subTextColor = mode === "light" ? "#4b575aff" : "#D1D1D6";
+  const headingStyle = (level) => ({
+    marginTop: level === 1 ? "1.6rem" : "1.2rem",
+    marginBottom: level === 1 ? "0.9rem" : "0.75rem",
+    color: "text.primary",
+    fontWeight: 700,
+    letterSpacing: level === 1 ? "-0.01em" : 0,
+    lineHeight: 1.25,
+    textAlign: isFarsi ? "right" : "left",
+  });
 
-	const headingColors = {
-		h1: mode === "light" ? "#0d3b66" : "#00d4ff",
-		h2: mode === "light" ? "#174f8f" : "#00bfff",
-		h3: mode === "light" ? "#1e6091" : "#00aaff",
-		h4: mode === "light" ? "#2176ae" : "#33ccff",
-		h5: mode === "light" ? "#2a9df4" : "#66e0ff",
-		h6: mode === "light" ? "#3ca0f0" : "#99f0ff",
-	};
+  return (
+    <>
+      <Navbar />
+      <Box
+        sx={{
+          minHeight: "100vh",
+          bgcolor: "background.default",
+          direction: isFarsi ? "rtl" : "ltr",
+          pt: { xs: 14, md: 18 },
+          pb: { xs: 8, md: 10 },
+        }}
+      >
+        <Container maxWidth="lg">
+          <Box
+            sx={{
+            //   border: `1px solid ${theme.palette.divider}`,
+              p: { xs: 3, md: 5 },
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "0.72rem",
+                fontWeight: 700,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: theme.palette.secondary.main,
+                mb: 1.5,
+              }}
+            >
+              {t("navbar.link6", { defaultValue: "Features" })}
+            </Typography>
 
-	const headingStyle = (level) => ({
-		textAlign: "start",
-		color: headingColors[`h${level}`],
-		marginBottom: level === 1 ? "1rem" : "0.8rem",
-		marginTop: level === 1 ? "2rem" : "1rem",
-		direction: isFarsi ? "rtl" : "ltr",
-		fontFamily: "'Roboto', 'Ubuntu'",
-		fontWeight: 300,
-	});
-
-	return (
-		<>
-			<DocsNavbar />
-			<Box
-				sx={{
-					bgcolor: backgroundColor,
-					color: textColor,
-					minHeight: "100vh",
-					pt: { xs: 6, sm: 8, md: 10 },
-					px: { xs: 3, sm: 6, md: 4 },
-					scrollBehavior: "smooth",
-					direction: isFarsi ? "rtl" : "ltr",
-					textAlign: isFarsi ? "right" : "left",
-				}}
-			>
-				<Box sx={{ maxWidth: 850, mx: "auto", minHeight: "50vh" }}>
-					{content === null ? (
-						<Box
-							sx={{
-								display: "flex",
-								flexDirection: "column",
-								justifyContent: "center",
-								alignItems: "center",
-								height: "100%",
-								gap: 2,
-							}}
-						>
-							<CircularProgress
-								size={50}
-								thickness={4}
-								sx={{ color: mode === "light" ? "#0d3b66" : "#00d4ff" }}
-							/>
-							<Typography
-								sx={{
-									fontFamily: "'Roboto', 'Ubuntu'",
-									color: mode === "light" ? "#0d3b66" : "#00d4ff",
-									fontWeight: 400,
-									fontSize: "1.1rem",
-								}}
-							>
-								{t("loader", { defaultValue: "Loading Please Wait" })}
-							</Typography>
-						</Box>
-					) : (
-						<ReactMarkdown
-							children={content}
-							remarkPlugins={[remarkGfm]}
-							rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
-							components={{
-								a: (props) => (
-									<a
-										{...props}
-										style={{
-											color: mode === "light" ? "#0935c4da" : "#87CEFA",
-											textDecoration: "underline",
-											transition: "color 0.3s",
-										}}
-										onMouseEnter={(e) =>
-											(e.target.style.color = mode === "light" ? "#ff6600a8" : "#ff9100ff")
-										}
-										onMouseLeave={(e) =>
-											(e.target.style.color = mode === "light" ? "#1a0dab" : "#87CEFA")
-										}
-									/>
-								),
-								h1: (props) => <h1 style={headingStyle(1)} {...props} />,
-								h2: (props) => <h2 style={headingStyle(2)} {...props} />,
-								h3: (props) => <h3 style={headingStyle(3)} {...props} />,
-								h4: (props) => <h4 style={headingStyle(4)} {...props} />,
-								h5: (props) => <h5 style={headingStyle(5)} {...props} />,
-								h6: (props) => <h6 style={headingStyle(6)} {...props} />,
-								p: (props) => (
-									<p
-										style={{
-											fontFamily: "'Roboto', 'Ubuntu'",
-											lineHeight: 1.8,
-											marginBottom: "1rem",
-											color: subTextColor,
-											fontSize: { xs: "1rem", sm: "1.10rem", md: "1.2rem" },
-										}}
-										{...props}
-									/>
-								),
-								ul: (props) => <ul style={{ marginBottom: "1rem", color: subTextColor }} {...props} />,
-								ol: (props) => <ol style={{ marginBottom: "1rem", color: subTextColor }} {...props} />,
-							}}
-						/>
-					)}
-				</Box>
-
-			</Box>
-		</>
-	);
+            {content === null ? (
+              <Box
+                sx={{
+                  minHeight: "40vh",
+                  display: "grid",
+                  placeItems: "center",
+                  gap: 2,
+                }}
+              >
+                <CircularProgress
+                  size={50}
+                  thickness={4}
+                  sx={{ color: isLight ? "#0d3b66" : "#00d4ff" }}
+                />
+                <Typography
+                  sx={{
+                    color: isLight ? "#0d3b66" : "#00d4ff",
+                    fontWeight: 500,
+                    fontSize: "1.05rem",
+                  }}
+                >
+                  {t("loader", { defaultValue: "Loading Please Wait" })}
+                </Typography>
+              </Box>
+            ) : (
+              <Box
+                sx={{
+                  color: "text.secondary",
+                  lineHeight: 1.8,
+                  "& a": {
+                    color: isLight ? "#0935c4da" : "#87CEFA",
+                    textDecoration: "underline",
+                    transition: "color 0.2s ease",
+                  },
+                  "& a:hover": {
+                    color: isLight ? "#ff6600a8" : "#ff9100ff",
+                  },
+                  "& p": {
+                    marginBottom: "1rem",
+                    fontSize: { xs: "1rem", md: "1.04rem" },
+                    textAlign: isFarsi ? "right" : "left",
+                  },
+                  "& ul, & ol": {
+                    marginBottom: "1rem",
+                    paddingInlineStart: isFarsi ? "1rem" : "1.5rem",
+                  },
+                  "& li": {
+                    marginBottom: "0.45rem",
+                  },
+                }}
+              >
+                <ReactMarkdown
+                  children={content}
+                  remarkPlugins={[remarkGfm]}
+                  rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
+                  components={{
+                    h1: (props) => (
+                      <Typography variant="h4" sx={headingStyle(1)} {...props} />
+                    ),
+                    h2: (props) => (
+                      <Typography variant="h5" sx={headingStyle(2)} {...props} />
+                    ),
+                    h3: (props) => (
+                      <Typography variant="h6" sx={headingStyle(3)} {...props} />
+                    ),
+                    h4: (props) => (
+                      <Typography sx={headingStyle(4)} {...props} />
+                    ),
+                    h5: (props) => (
+                      <Typography sx={headingStyle(5)} {...props} />
+                    ),
+                    h6: (props) => (
+                      <Typography sx={headingStyle(6)} {...props} />
+                    ),
+                  }}
+                />
+              </Box>
+            )}
+          </Box>
+        </Container>
+      </Box>
+    </>
+  );
 };
 
 export default FeaturesPage;

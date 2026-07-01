@@ -1,7 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 html,
 body {
-	overflow-x: hidden;
-	font-family: "'Ubuntu', 'Roboto'";
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Unbounded", sans-serif !important;
 }
