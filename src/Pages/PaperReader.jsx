@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   Alert,
@@ -42,6 +42,46 @@ export default function PaperReader() {
   const paper = papers.find((p) => p.id === id);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
+  // If a paper has no pdfUrl, it's almost always because the REACT_APP_*
+  // env var it reads from wasn't set when this build was created (CRA
+  // inlines REACT_APP_* vars at build time, not at runtime) — e.g. CI
+  // building without the corresponding secret. Log it so that's obvious
+  // instead of silently falling back to the "coming soon" UI.
+  useEffect(() => {
+    if (paper && !paper.pdfUrl) {
+      console.warn(
+        `[PaperReader] "${paper.id}" has no pdfUrl — the REACT_APP_* env var ` +
+          "it reads from was empty/undefined in this build. Showing the " +
+          "'not published yet' fallback instead of the document.",
+      );
+    }
+  }, [paper]);
+
+  // The <iframe>'s onError never fires for a CSP block — the browser just
+  // silently refuses the frame-src and the frame sits blank. The only
+  // reliable signal for that is the securitypolicyviolation event, so log
+  // it explicitly whenever it's this paper's PDF being blocked.
+  useEffect(() => {
+    if (!paper?.pdfUrl) return undefined;
+
+    const handleCspViolation = (event) => {
+      if (event.blockedURI && paper.pdfUrl.startsWith(event.blockedURI)) {
+        console.error(
+          `[PaperReader] Content-Security-Policy blocked "${paper.pdfUrl}" ` +
+            `(violated directive: ${event.violatedDirective}). Add its origin ` +
+            "to frame-src in the CSP (see nginx/nginx.conf.template) to allow it.",
+          event,
+        );
+        setLoading(false);
+        setError(true);
+      }
+    };
+
+    document.addEventListener("securitypolicyviolation", handleCspViolation);
+    return () =>
+      document.removeEventListener("securitypolicyviolation", handleCspViolation);
+  }, [paper?.pdfUrl]);
 
   if (!paper) {
     return (
@@ -205,7 +245,11 @@ export default function PaperReader() {
                     src={paper.pdfUrl}
                     title={paper.title}
                     onLoad={() => setLoading(false)}
-                    onError={() => {
+                    onError={(event) => {
+                      console.error(
+                        `[PaperReader] Failed to load "${paper.pdfUrl}" in the iframe.`,
+                        event,
+                      );
                       setLoading(false);
                       setError(true);
                     }}
