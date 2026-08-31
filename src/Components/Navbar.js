@@ -5,7 +5,6 @@ import {
   IconButton,
   Drawer,
   Divider,
-  Tooltip,
   Collapse,
   List,
   ListItem,
@@ -76,11 +75,11 @@ export default function Navbar() {
         },
       ],
     },
-    {
-      label: t("navbar.link4", "Privacy Policy"),
-      href: "/privacy-policy",
-      external: false,
-    },
+    // {
+    //   label: t("navbar.link4", "Privacy Policy"),
+    //   href: "/privacy-policy",
+    //   external: false,
+    // },
     {
       label: t("navbar.link7", "Research"),
       href: "/research",

@@ -74,10 +74,10 @@ export default function Footer() {
           label: t("navbar.researchFull", { defaultValue: "Research Papers" }),
           href: "/research",
         },
-        {
-          label: t("navbar.link4", { defaultValue: "Privacy Policy" }),
-          href: "/privacy-policy/",
-        },
+        // {
+        //   label: t("navbar.link4", { defaultValue: "Privacy Policy" }),
+        //   href: "/privacy-policy/",
+        // },
       ],
     },
     {

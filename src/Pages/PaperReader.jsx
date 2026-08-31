@@ -14,7 +14,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useTranslation } from "react-i18next";
 import Navbar from "../Components/Navbar";
-import papers from "../data/papers.json";
+import papers from "../data/papers";
 
 const TYPE_CONFIG = {
   whitepaper: {
@@ -52,7 +52,7 @@ export default function PaperReader() {
             minHeight: "100vh",
             bgcolor: "background.default",
             direction: isFarsi ? "rtl" : "ltr",
-            pt: { xs: 14, md: 18 },
+            pt: { xs: 14, md: 8 },
             pb: { xs: 8, md: 10 },
           }}
         >
@@ -84,7 +84,7 @@ export default function PaperReader() {
           minHeight: "100vh",
           bgcolor: "background.default",
           direction: isFarsi ? "rtl" : "ltr",
-          pt: { xs: 14, md: 18 },
+          pt: { xs: 14, md: 10 },
           pb: { xs: 8, md: 10 },
         }}
       >
