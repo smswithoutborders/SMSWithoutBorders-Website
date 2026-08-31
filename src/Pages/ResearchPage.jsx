@@ -15,28 +15,10 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import SearchIcon from "@mui/icons-material/Search";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
-import ArticleIcon from "@mui/icons-material/Article";
-import ForumIcon from "@mui/icons-material/Forum";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Navbar from "../Components/Navbar";
-import papers from "../data/papers.json";
+import papers from "../data/papers";
 import { Helmet } from "react-helmet-async";
-
-<Helmet>
-  <title>SMSWithoutBorders | Papers</title>
-
-  <meta
-    name="description"
-    content="SMSWithoutBorders (SWOB) is dedicated to researching, developing and promoting secure and open-source communication tools that function even without an internet connection."
-  />
-</Helmet>;
-
-const TYPE_ICONS = {
-  whitepaper: <ArticleIcon sx={{ fontSize: 16 }} />,
-  research: <MenuBookIcon sx={{ fontSize: 16 }} />,
-  thread: <ForumIcon sx={{ fontSize: 16 }} />,
-};
 
 const TYPE_COLORS = {
   whitepaper: "#1565C0",
@@ -74,6 +56,13 @@ export default function ResearchPage() {
   return (
     <>
       <Navbar />
+      <Helmet>
+        <title>SMSWithoutBorders | Papers</title>
+        <meta
+          name="description"
+          content="SMSWithoutBorders (SWOB) papers and publications on offline communication, privacy, and digital inclusion."
+        />
+      </Helmet>
       <Box
         sx={{
           minHeight: "100vh",
@@ -224,7 +213,6 @@ export default function ResearchPage() {
 
 function PaperCard({ paper, onRead, t }) {
   const accent = TYPE_COLORS[paper.type] || "#1565C0";
-  const icon = TYPE_ICONS[paper.type] || TYPE_ICONS.research;
   const hasContent = Boolean(paper.pdfUrl);
 
   return (
@@ -259,7 +247,6 @@ function PaperCard({ paper, onRead, t }) {
             bgcolor: "action.hover",
           }}
         >
-          {/* <Box sx={{ color: accent, display: "flex" }}>{icon}</Box> */}
           <Typography
             sx={{
               fontSize: "0.66rem",

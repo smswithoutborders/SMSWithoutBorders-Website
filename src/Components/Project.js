@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Button, Container, Typography } from "@mui/material";
-import { alpha, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import papers from "../data/papers.json";
+import papers from "../data/papers";
 
 const featuredProjects = [
   {

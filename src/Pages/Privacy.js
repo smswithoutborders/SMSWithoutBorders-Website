@@ -1,19 +1,8 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import ReactHtmlParser from "react-html-parser";
 import Navbar from "../Components/Navbar";
-import { Helmet } from "react-helmet-async";
-
-<Helmet>
-  <title>SMSWithoutBorders | Privacy Policy</title>
-
-  <meta
-    name="description"
-    content="SMSWithoutBorders (SWOB) is dedicated to researching, developing and promoting secure and open-source communication tools that function even without an internet connection."
-  />
-</Helmet>;
 
 const definitionKeys = [
   "Privacy-Policy3.definitionAccount",
@@ -77,7 +66,6 @@ const policySections = [
 
 export default function Privacy() {
   const { t, i18n } = useTranslation();
-  const theme = useTheme();
   const isFarsi = i18n.language === "fa";
 
   return (
