@@ -22,6 +22,8 @@ jobs:
           yarn install
 
       - name: Build project
+        env:
+          REACT_APP_PAYLOAD_SPECS_PAPER: ${{ vars.PAYLOAD_SPECS_PAPER_URL }}
         run: |
           yarn build
 
