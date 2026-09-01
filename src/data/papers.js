@@ -40,6 +40,18 @@ const papers = [
     topics: ["relaysms", "payload", "specification"],
     pdfUrl: toRawGithubUrl(process.env.REACT_APP_PAYLOAD_SPECS_PAPER),
   },
+  {
+    id: "relaysms-technical-whitepaper",
+    title: "RelaySMS - Technical Whitepaper",
+    authors: ["SMSWithoutBorders"],
+    year: 2026,
+    version: "2",
+    type: "whitepaper",
+    abstract:
+      "Technical details and design considerations of the RelaySMS system, including its architecture, protocols, and implementation.",
+    topics: ["relaysms", "technical", "whitepaper"],
+    pdfUrl: toRawGithubUrl(process.env.REACT_APP_TECHNICAL_WHITEPAPER),
+  },
 ];
 
 export default papers;
