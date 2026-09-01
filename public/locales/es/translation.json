@@ -47,7 +47,7 @@
 	"developerLibrariesBody": "Todos los componentes principales son de código abierto y reutilizables.",
 	"projectsub": "Nuestros proyectos",
 	"projectDescriptions": {
-		"relaysms": "La aplicación principal para usuarios. Guarda tokens OAuth2 de Gmail, Twitter y Telegram en una bóveda cifrada. Envía mensajes a esas plataformas mediante cualquier conexión SMS, incluso durante apagones de internet.",
+		"relaysms": "Una aplicación móvil que conecta redes SMS con servicios de mensajería basados en internet. Las credenciales de las plataformas conectadas se almacenan de forma segura en tu dispositivo, lo que permite entregar mensajes por SMS cuando el acceso a internet no está disponible.",
 		"dekusms": "Una app de SMS para Android, de código abierto y cifrada de extremo a extremo. Impulsa la capa de gestión SMS de RelaySMS y también puede usarse de forma independiente como reemplazo seguro de tu app SMS predeterminada. Admite envío de imágenes MMS.",
 		"vault": "Sistema seguro de gestión de tokens de acceso para publicación de mensajes. Protege las credenciales OAuth2 con una capa adicional de cifrado.",
 		"gateway": "Permite a los usuarios sincronizarse y comunicarse con el módulo publicador. Es la infraestructura central de retransmisión entre dispositivos y backend.",

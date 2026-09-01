@@ -47,7 +47,7 @@
 	"developerLibrariesBody": "Tous les composants principaux sont open source et réutilisables.",
 	"projectsub": "Nos projets",
 	"projectDescriptions": {
-		"relaysms": "L'application phare pour les utilisateurs. Stocke les jetons OAuth2 de Gmail, Twitter et Telegram dans un Vault chiffré. Permet d'envoyer des messages vers ces plateformes via toute connexion SMS, même pendant les coupures d'internet.",
+		"relaysms": "Une application mobile qui relie les réseaux SMS à des services de messagerie basés sur Internet. Les identifiants des plateformes connectées sont stockés de manière sécurisée sur votre appareil, ce qui permet d'envoyer des messages par SMS lorsque l'accès à Internet n'est pas disponible.",
 		"dekusms": "Une application SMS Android open source avec chiffrement de bout en bout. Elle alimente la couche de gestion SMS de RelaySMS et peut aussi être utilisée seule comme remplacement sécurisé de votre application SMS par défaut. Prend en charge l'envoi d'images MMS.",
 		"vault": "Système sécurisé de gestion des jetons d'accès pour la publication de messages. Protège les identifiants OAuth2 avec une couche de chiffrement supplémentaire.",
 		"gateway": "Permet aux utilisateurs de se synchroniser et de communiquer avec le module Publisher. C'est l'infrastructure de relais centrale entre les appareils et le backend.",

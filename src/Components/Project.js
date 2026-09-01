@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Button, Container, Typography } from "@mui/material";
-import { alpha, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import papers from "../data/papers.json";
+import papers from "../data/papers";
 
 const featuredProjects = [
   {
@@ -19,7 +19,6 @@ const featuredProjects = [
       "Kotlin",
       "Swift",
       "E2E encrypted",
-      "OAuth2 vault",
     ],
     links: [
       {
@@ -169,7 +168,6 @@ function TagList({ tags }) {
           key={tag}
           sx={{
             fontSize: "0.76rem",
-            fontWeight: 600,
             color: "text.secondary",
             border: "1px solid",
             borderColor: "divider",
@@ -208,7 +206,8 @@ function ProjectLinks({ links }) {
             minWidth: 0,
             textTransform: "none",
             fontSize: "0.92rem",
-            fontWeight: 600,
+            fontWeight: 400,
+            fontFamily: "'Ubuntu', sans-serif",
             color: "text.primary",
             justifyContent: "flex-start",
             "&:hover": { color: "secondary.main", bgcolor: "transparent" },
@@ -259,7 +258,7 @@ function ProjectHeroCell({
         },
       }}
     >
-      {project.kind && (
+      {/* {project.kind && (
         <Typography
           sx={(theme) => ({
             display: "inline-block",
@@ -274,12 +273,12 @@ function ProjectHeroCell({
             px: 1,
             py: 0.35,
             mb: 1.5,
-            borderRadius: 1,
+            borderRadius: 6,
           })}
         >
           {project.kind}
         </Typography>
-      )}
+      )} */}
       <Typography
         variant="h6"
         sx={{

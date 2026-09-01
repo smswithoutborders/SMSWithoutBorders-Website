@@ -53,7 +53,7 @@ export const ThemeProvider = ({ children }) => {
           },
           text: {
             primary: mode === "light" ? "#1A1A1A" : "#faf6ee",
-            secondary: mode === "light" ? "#504A42" : "#9E9285",
+            secondary: mode === "light" ? "#504A42" : "#a49f9b",
           },
           divider:
             mode === "light" ? "rgba(26,26,26,0.15)" : "rgba(240,235,224,0.10)",

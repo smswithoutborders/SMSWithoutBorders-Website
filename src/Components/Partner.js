@@ -171,7 +171,6 @@ export default function Partner() {
   const theme = useTheme();
   const { t, i18n } = useTranslation();
   const isFarsi = i18n.language === "fa";
-  const isLight = theme.palette.mode === "light";
 
   const headerRef = useReveal(0);
   const accent = theme.palette.secondary.main;

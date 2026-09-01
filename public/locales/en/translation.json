@@ -22,20 +22,20 @@
 		"loadError": "Failed to load features."
 	},
 	"LandingHeader": "Open Source | Research",
-	"landingHeroSub": "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
+	"landingHeroSub": "SMSWithoutBorders (SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
 	"landing": {
 		"goToProjects": "Go to projects"
 	},
 	"About": {
 		"AboutHeader": "Explore SMSWithoutBorders",
-		"description": "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
+		"description": "SMSWithoutBorders (SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
 		"description1": "The development includes mobile apps for various platforms such as Android, iOS and Linux systems. Some of the work also includes white papers on topics such as cryptography, communications and internet freedom.",
 		"description2": " The journey toward achieving our mission began in 2021 with the development of the first Android version of RelaySMS. We have come far since then, with support for more platforms and many more apps.",
 		"description3": "We publish our research as frequently as possible on our blog and make announcements via our social media outlets. SMSWithoutBorders is a project started by the team at <a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
 	"projectHeader": "Projects",
 	"projectHeadline": "Everything we build, open and free",
-	"projectSubHeader": "SMSWithoutBorders Commits to buiding OpenSource Tools That Aid Free speech and Communication",
+	"projectSubHeader": "SMSWithoutBorders commits to building open-source tools that aid free speech and communication",
 	"papersEyebrow": "Papers",
 	"papersTitle": "Research and publications",
 	"papersBody": "The team publishes research papers and notes behind the stack, from architecture and encryption to threat modeling.",
@@ -47,7 +47,7 @@
 	"developerLibrariesBody": "All core components are open-source and reusable.",
 	"projectsub": "Our Projects",
 	"projectDescriptions": {
-		"relaysms": "The flagship user app. Store OAuth2 tokens for Gmail, Twitter, and Telegram in an encrypted Vault. Send messages to those platforms via any SMS connection - even during internet shutdowns.",
+		"relaysms": "A mobile application that bridges SMS networks with internet-based messaging services. Connected platform credentials are stored securely on your device, allowing messages to be delivered through SMS when internet access is unavailable.",
 		"dekusms": "An open-source, end-to-end encrypted SMS app for Android. Powers RelaySMS's SMS-handling layer, and can also be used standalone as a secure replacement for your default SMS app. Supports MMS image sending.",
 		"vault": "Secure access token management system for message publishing. Protects OAuth2 credentials with an additional encryption layer.",
 		"gateway": "Enables users to synchronize and communicate with the publisher module. The backbone relay infrastructure between devices and the backend.",
