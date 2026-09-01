@@ -1,24 +1,24 @@
-name: Deploy SMSWithoutBorders Website on Server (preview)
+name: Deploy SMSWithoutBorders Website on Server (production)
 
 on:
   push:
     branches:
-      - preview
+      - main
 
 permissions:
   contents: read
 
 concurrency:
-  group: preview-deploy
-  cancel-in-progress: true
+  group: production-deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
     environment:
-      name: preview
-      url: https://preview-4.relaysms.afkanerd.de
+      name: production
+      url: https://smswithoutborders.com
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -71,7 +71,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             set -e
-            echo "::group::Deploying preview build"
+            echo "::group::Deploying production build"
             ${{ secrets.BUILD_CMD }}
             echo "Deploy command finished successfully."
             echo "::endgroup::"
