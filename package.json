@@ -26,7 +26,7 @@
 		"react-i18next": "^15.0.1",
 		"react-icons": "^5.2.1",
 		"react-markdown": "^9.0.1",
-		"react-router-dom": "^6.30.5",
+		"react-router-dom": "^6.30.6",
 		"react-scripts": "^5.0.1",
 		"react-world-flags": "^1.6.0",
 		"rehype-autolink-headings": "^7.1.0",
@@ -57,7 +57,7 @@
 	"devDependencies": {
 		"@babel/plugin-proposal-private-property-in-object": "^7.0.0",
 		"@craco/craco": "^7.1.0",
-		"baseline-browser-mapping": "^2.9.8",
+		"baseline-browser-mapping": "^2.11.25",
 		"source-map-explorer": "^2.5.3",
 		"source-map-loader": "^5.0.0",
 		"webpack": "^5.94.0",
@@ -68,10 +68,15 @@
 		"nth-check": "^2.1.1",
 		"glob": "^11.0.0",
 		"webpack-dev-server": "^5.2.2",
-		"postcss": "^8.4.49",
+		"postcss": "^8.5.28",
 		"js-yaml": "^4.3.2",
 		"mdast-util-to-hast": "^13.2.1",
-		"node-forge": "^1.3.2"
+		"node-forge": "^1.3.2",
+		"qs@npm:~6.14.0": "6.16.0",
+		"qs@npm:~6.15.1": "6.16.0",
+		"serialize-javascript@npm:^6.0.0": "7.1.1",
+		"serialize-javascript@npm:^6.0.2": "7.1.1",
+		"underscore@npm:1.13.6": "1.13.8"
 	},
 	"packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
 }
