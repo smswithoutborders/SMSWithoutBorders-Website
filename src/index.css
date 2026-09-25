@@ -1,7 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+:root {
+	--font-body: "Ubuntu", sans-serif;
+	--font-heading: "Unbounded", sans-serif;
+	--bs-body-font-family: var(--font-body);
+}
 
 html {
 	scroll-behavior: smooth;
+	font-size: 100%;
+}
+
+@media (min-width: 1440px) {
+	html {
+		font-size: 106.25%; /* 17px */
+	}
+}
+
+@media (min-width: 1920px) {
+	html {
+		font-size: 112.5%; /* 18px */
+	}
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-heading);
 }
 
 
@@ -12,7 +46,7 @@ html {
 }
 
 .prose {
-	font-family: 'Ubuntu', sans-serif;
+	font-family: var(--font-body);
 }
 
 .privacy-policy-container .prose h1,

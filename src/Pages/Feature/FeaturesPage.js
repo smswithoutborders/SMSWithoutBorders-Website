@@ -7,6 +7,7 @@ import { Box, CircularProgress, Container, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import Navbar from "../../Components/Navbar";
+import Seo from "../../Components/Seo";
 
 const FeaturesPage = () => {
   const [content, setContent] = useState(null);
@@ -46,6 +47,11 @@ const FeaturesPage = () => {
 
   return (
     <>
+      <Seo
+        title="Features | RelaySMS Internet Freedom App - SMSWithoutBorders"
+        description="How RelaySMS keeps you online during internet shutdowns and censorship"
+        path="/features"
+      />
       <Navbar />
       <Box
         sx={{
@@ -115,7 +121,7 @@ const FeaturesPage = () => {
                   },
                   "& p": {
                     marginBottom: "1rem",
-                    fontSize: { xs: "1rem", md: "1.04rem" },
+                    fontSize: { xs: "1rem", md: "1.06rem" },
                     textAlign: isFarsi ? "right" : "left",
                   },
                   "& ul, & ol": {

@@ -31,11 +31,11 @@
 		"description": "SMSWithoutBorders (SWOB) est dédié à la recherche, au développement et à la promotion d’outils de communication sécurisés et accessibles qui fonctionnent même sans connexion Internet.",
 		"description1": "Le développement inclut des applications mobiles pour diverses plateformes telles qu’Android, iOS et les systèmes Linux. Une partie du travail inclut également des livres blancs sur des sujets tels que la cryptographie, les communications et la liberté sur Internet.",
 		"description2": "Notre parcours vers la réalisation de notre mission a commencé en 2021 avec le développement de la première version Android de RelaySMS. Depuis, nous avons fait beaucoup de progrès, avec un support pour plus de plateformes et beaucoup plus d’applications.",
-		"description3": "Nous publions nos recherches aussi souvent que possible sur notre blog et faisons des annonces via nos réseaux sociaux. SMSWithoutBorders est un projet lancé par l’équipe d’<a href='https://Afkanerd.com' class='afkanerd'>Afkanerd</a>."
+		"description3": "Nous publions nos recherches aussi souvent que possible sur notre blog et faisons des annonces via nos réseaux sociaux. SMSWithoutBorders est un projet lancé par l’équipe d’<a href='https://afkanerd.com' class='afkanerd'>Afkanerd</a>."
 	},
 	"projectHeader": "Projets innovants sous SMSWithoutBorders",
 	"projectHeadline": "Tout ce que nous construisons est ouvert et libre",
-	"projectSubHeader": "SMSWithoutBorders s'engage à créer des outils open source qui favorisent la liberté d'expression et la communication",
+	"projectSubHeader": "SMSWithoutBorders crée des outils open source pour la liberté sur Internet qui protègent la liberté d'expression et aident les gens à contourner la censure et les coupures d'Internet.",
 	"papersEyebrow": "Papiers",
 	"papersTitle": "Recherche et publications",
 	"papersBody": "L’équipe publie des articles de recherche et des notes sur la pile technique, de l’architecture et du chiffrement jusqu’à la modélisation des menaces.",

@@ -3,6 +3,7 @@ import { Box, Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import ReactHtmlParser from "react-html-parser";
 import Navbar from "../Components/Navbar";
+import Seo from "../Components/Seo";
 
 const definitionKeys = [
   "Privacy-Policy3.definitionAccount",
@@ -70,6 +71,11 @@ export default function Privacy() {
 
   return (
     <>
+      <Seo
+        title="Privacy Policy | SMSWithoutBorders"
+        description="How SMSWithoutBorders and RelaySMS collect, store and protect your data."
+        path="/privacy-policy/"
+      />
       <Navbar />
       <Box
         sx={{
@@ -148,7 +154,7 @@ export default function Privacy() {
                     sx={{
                       color: "text.primary",
                       lineHeight: 1.85,
-                      fontSize: { xs: "1rem", md: "1.02rem" },
+                      fontSize: { xs: "1rem", md: "1.06rem" },
                       mb: 1.5,
                     }}
                   >
