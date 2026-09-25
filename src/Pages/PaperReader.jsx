@@ -14,6 +14,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useTranslation } from "react-i18next";
 import Navbar from "../Components/Navbar";
+import Seo from "../Components/Seo";
 import papers from "../data/papers";
 
 const TYPE_CONFIG = {
@@ -43,11 +44,6 @@ export default function PaperReader() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  // If a paper has no pdfUrl, it's almost always because the REACT_APP_*
-  // env var it reads from wasn't set when this build was created (CRA
-  // inlines REACT_APP_* vars at build time, not at runtime) — e.g. CI
-  // building without the corresponding secret. Log it so that's obvious
-  // instead of silently falling back to the "coming soon" UI.
   useEffect(() => {
     if (paper && !paper.pdfUrl) {
       console.warn(
@@ -58,10 +54,6 @@ export default function PaperReader() {
     }
   }, [paper]);
 
-  // The <iframe>'s onError never fires for a CSP block — the browser just
-  // silently refuses the frame-src and the frame sits blank. The only
-  // reliable signal for that is the securitypolicyviolation event, so log
-  // it explicitly whenever it's this paper's PDF being blocked.
   useEffect(() => {
     if (!paper?.pdfUrl) return undefined;
 
@@ -80,12 +72,20 @@ export default function PaperReader() {
 
     document.addEventListener("securitypolicyviolation", handleCspViolation);
     return () =>
-      document.removeEventListener("securitypolicyviolation", handleCspViolation);
+      document.removeEventListener(
+        "securitypolicyviolation",
+        handleCspViolation,
+      );
   }, [paper?.pdfUrl]);
 
   if (!paper) {
     return (
       <>
+        <Seo
+          title="Paper Not Found | SMSWithoutBorders"
+          description="This paper does not exist or has not been published yet."
+          noindex
+        />
         <Navbar />
         <Box
           sx={{
@@ -106,7 +106,9 @@ export default function PaperReader() {
               variant="outlined"
               sx={{ textTransform: "none" }}
             >
-              {t("paperReader.backToResearch", { defaultValue: "Back to Research" })}
+              {t("paperReader.backToResearch", {
+                defaultValue: "Back to Research",
+              })}
             </Button>
           </Container>
         </Box>
@@ -118,6 +120,26 @@ export default function PaperReader() {
 
   return (
     <>
+      <Seo
+        title={`${paper.title} | SMSWithoutBorders Research`}
+        description={paper.abstract}
+        path={`/research/${paper.id}`}
+        type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          headline: paper.title,
+          description: paper.abstract,
+          datePublished: String(paper.year),
+          author: paper.authors.map((name) => ({
+            "@type": "Organization",
+            name,
+          })),
+          publisher: { "@type": "Organization", name: "SMSWithoutBorders" },
+          keywords: paper.topics.join(", "),
+          url: `https://smswithoutborders.com/research/${paper.id}`,
+        }}
+      />
       <Navbar />
       <Box
         sx={{
@@ -130,13 +152,21 @@ export default function PaperReader() {
       >
         <Container maxWidth="lg">
           <Box sx={{ p: { xs: 3, md: 5 } }}>
-            <Stack direction="row" justifyContent="space-between" alignItems="flex-start" spacing={1.5} sx={{ mb: 2 }}>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="flex-start"
+              spacing={1.5}
+              sx={{ mb: 2 }}
+            >
               <Button
                 startIcon={<ArrowBackIcon />}
                 onClick={() => navigate("/research")}
                 sx={{ textTransform: "none", px: 0, minWidth: 0 }}
               >
-                {t("paperReader.backToResearch", { defaultValue: "Back to Research" })}
+                {t("paperReader.backToResearch", {
+                  defaultValue: "Back to Research",
+                })}
               </Button>
 
               {paper.pdfUrl ? (
@@ -205,8 +235,12 @@ export default function PaperReader() {
                     }}
                   >
                     <CircularProgress size={42} thickness={4} />
-                    <Typography sx={{ color: "text.secondary", fontSize: "0.92rem" }}>
-                      {t("paperReader.loading", { defaultValue: "Loading document..." })}
+                    <Typography
+                      sx={{ color: "text.secondary", fontSize: "0.92rem" }}
+                    >
+                      {t("paperReader.loading", {
+                        defaultValue: "Loading document...",
+                      })}
                     </Typography>
                   </Box>
                 ) : null}

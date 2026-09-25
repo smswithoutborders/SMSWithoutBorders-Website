@@ -2,12 +2,18 @@ import { Box, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { FaCircleChevronRight } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+import Seo from "../Components/Seo";
 
 export default function PageNotFound() {
 	const { t } = useTranslation();
 
 	return (
 		<Box sx={{ px: { md: 17, xs: 2 }, py: { md: 15, xs: 10 } }}>
+			<Seo
+				title="Page Not Found | SMSWithoutBorders"
+				description="The page you are looking for does not exist."
+				noindex
+			/>
 			<Typography
 				variant="h2"
 				className="banner-text"
@@ -16,8 +22,7 @@ export default function PageNotFound() {
 					px: { md: 25, xs: 2 },
 					textAlign: "center",
 					fontWeight: 700,
-					fontSize: { md: "80px", xs: "55px" },
-					fontFamily: "'Roboto', 'Ubuntu'"
+					fontSize: { md: "5rem", xs: "3.4rem" },
 				}}
 			>
 				{t("notFound.title", { defaultValue: "Oops you got lost" })}

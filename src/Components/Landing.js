@@ -34,7 +34,7 @@ function LegacyHero({ t }) {
             color: "text.secondary",
             mt: 4,
             textAlign: "center",
-            fontSize: { xs: "1.05rem", md: "1.3rem" },
+            fontSize: { xs: "1rem", md: "1.2rem" },
           }}
         >
           SMSWithoutBorders explores and builds new ways to communicate using
@@ -46,7 +46,7 @@ function LegacyHero({ t }) {
             color: "text.secondary",
             mt: 4,
             textAlign: "center",
-            fontSize: { xs: "1.05rem", md: "1.3rem" },
+            fontSize: { xs: "1rem", md: "1.2rem" },
           }}
         >
           {t("About.description", {
@@ -97,7 +97,7 @@ function NewHero({ t, isFarsi }) {
             sx={{
               fontWeight: 800,
               fontSize: {
-                xs: "1.85rem",
+                xs: "1.9rem",
                 sm: "2.6rem",
                 md: "4.3rem",
                 lg: "5.5rem",
@@ -143,9 +143,9 @@ function NewHero({ t, isFarsi }) {
           <Typography
             sx={{
               mt: { xs: 2, md: 3 },
-              maxWidth: 760,
+              maxWidth: 860,
               color: "text.secondary",
-              fontSize: { xs: "0.94rem", sm: "1rem", md: "1.2rem" },
+              fontSize: { xs: "1rem", md: "1.2rem" },
               lineHeight: { xs: 1.65, md: 1.75 },
               textAlign: { xs: "left", md: isFarsi ? "right" : "left" },
               mx: { xs: "auto", md: 0 },
@@ -153,7 +153,7 @@ function NewHero({ t, isFarsi }) {
           >
             {t("landingHeroSub", {
               defaultValue:
-                "SMSWithoutBorders(SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
+                "SMSWithoutBorders (SWOB) builds open-source internet freedom and anti-censorship tools: secure, accessible communication that keeps working during internet shutdowns and even without an internet connection.",
             })}
           </Typography>
         </Box>
@@ -176,20 +176,7 @@ function NewHero({ t, isFarsi }) {
               mt: { xs: 0.5, md: 0 },
             }}
           >
-            {/* <Typography
-              sx={{
-                maxWidth: { xs: "24ch", md: "26ch" },
-                textAlign: "right",
-                fontSize: { xs: "1.02rem", md: "1.2rem" },
-                // lineHeight: 1.45,
-                // letterSpacing: "0.03em",
-                // textTransform: "uppercase",
-                color: "text.secondary",
-                opacity: 0.9,
-              }}
-            >
-              Projects built on SMS - the most resilient layer
-            </Typography> */}
+          
             <Box
               component={motion.a}
               href="#projects"

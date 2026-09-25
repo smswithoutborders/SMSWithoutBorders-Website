@@ -97,7 +97,7 @@ export default function Navbar() {
   const navLinkSx = (active) => ({
     position: "relative",
     fontSize: "0.78rem",
-    fontWeight: active ? 700 : 400,
+    fontWeight: active ? 700 : 500,
     letterSpacing: "0.1em",
     textTransform: "uppercase",
     textDecoration: "none",
@@ -157,6 +157,7 @@ export default function Navbar() {
               fontSize: "0.72rem",
               letterSpacing: "0.05em",
               color: isLight ? "#FAF6EE" : "#0E0C07",
+              textTransform: "uppercase",
             }}
           >
             {new Date().toLocaleDateString(currentLocale, {
@@ -193,9 +194,9 @@ export default function Navbar() {
             <Typography
               sx={{
                 fontSize: "0.72rem",
-                // letterSpacing: "0.08em",
-                // fontStyle: "italic",
+
                 color: isLight ? "#FAF6EE" : "#0E0C07",
+                textTransform: "uppercase",
               }}
             >
               {t("navbar.tagline", {
@@ -207,7 +208,7 @@ export default function Navbar() {
 
         {/* Main masthead nav */}
         <Box
-          maxWidth="xl"
+          // maxWidth="xl"
           sx={{
             display: "flex",
             alignItems: "center",
@@ -231,7 +232,7 @@ export default function Navbar() {
             <Box
               component="img"
               src={
-                isLight ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"
+                isLight ? "/Images/SWOB-Black.png" : "/Images/SWOB-White.png"
               }
               alt="SMSWithoutBorders"
               sx={{ height: { xs: 26, md: 30 }, display: "block" }}
@@ -376,8 +377,8 @@ export default function Navbar() {
                 display: "flex",
                 alignItems: "center",
                 gap: "4px",
+                fontWeight: 500,
                 fontSize: "0.78rem",
-                fontFamily: "'Ubuntu', sans-serif",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
                 textDecoration: "none",
@@ -483,6 +484,7 @@ export default function Navbar() {
                         primaryTypographyProps={{
                           fontSize: "0.95rem",
                           color: textColor,
+                          fontWeight: 500,
                         }}
                       />
                       {drawerSubOpen ? (
@@ -516,6 +518,7 @@ export default function Navbar() {
                                 primaryTypographyProps={{
                                   fontSize: "0.88rem",
                                   color: textColor,
+                                  fontWeight: 500,
                                 }}
                               />
                             </ListItemButton>
@@ -544,7 +547,7 @@ export default function Navbar() {
                         primary={link.label}
                         primaryTypographyProps={{
                           fontSize: "0.95rem",
-                          fontWeight: isActive(link.href) ? 600 : 400,
+                          fontWeight: isActive(link.href) ? 600 : 500,
                           color: isActive(link.href) ? hoverColor : textColor,
                         }}
                       />
@@ -587,6 +590,7 @@ export default function Navbar() {
               alignItems: "center",
               gap: "4px",
               fontSize: "0.82rem",
+              fontWeight: 500,
               textDecoration: "none",
               color: textColor,
               "&:hover": { color: hoverColor },
