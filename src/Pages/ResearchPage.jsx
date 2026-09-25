@@ -18,7 +18,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Navbar from "../Components/Navbar";
 import papers from "../data/papers";
-import { Helmet } from "react-helmet-async";
+import Seo from "../Components/Seo";
 
 const TYPE_COLORS = {
   whitepaper: "#1565C0",
@@ -56,13 +56,11 @@ export default function ResearchPage() {
   return (
     <>
       <Navbar />
-      <Helmet>
-        <title>SMSWithoutBorders | Papers</title>
-        <meta
-          name="description"
-          content="SMSWithoutBorders (SWOB) papers and publications on offline communication, privacy, and digital inclusion."
-        />
-      </Helmet>
+      <Seo
+        title="Research Papers on Internet Freedom & Censorship | SMSWithoutBorders"
+        description="Whitepapers and specifications from SMSWithoutBorders on offline communication, internet shutdowns, architecture, encryption and threat modeling."
+        path="/research"
+      />
       <Box
         sx={{
           minHeight: "100vh",
@@ -249,7 +247,7 @@ function PaperCard({ paper, onRead, t }) {
         >
           <Typography
             sx={{
-              fontSize: "0.66rem",
+              fontSize: "0.72rem",
               fontWeight: 700,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
@@ -260,7 +258,7 @@ function PaperCard({ paper, onRead, t }) {
           </Typography>
         </Stack>
 
-        <Typography sx={{ fontSize: "0.74rem", color: "text.secondary" }}>
+        <Typography sx={{ fontSize: "0.8rem", color: "text.secondary" }}>
           {paper.year}
           {paper.version ? ` · v${paper.version}` : ""}
         </Typography>
@@ -278,7 +276,7 @@ function PaperCard({ paper, onRead, t }) {
         sx={{
           color: "text.secondary",
           lineHeight: 1.8,
-          fontSize: "0.92rem",
+          fontSize: { xs: "0.94rem", md: "1rem" },
           display: "-webkit-box",
           WebkitLineClamp: 4,
           WebkitBoxOrient: "vertical",
@@ -305,7 +303,7 @@ function PaperCard({ paper, onRead, t }) {
               border: "1px solid",
               borderColor: "divider",
               bgcolor: "action.hover",
-              fontSize: "0.68rem",
+              fontSize: "0.72rem",
               color: "text.secondary",
             }}
           >

@@ -4,14 +4,55 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favico.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#0E0C07" />
+
+    <title data-rh="true">
+      SMSWithoutBorders | Open-Source Internet Freedom &amp; Anti-Censorship Tools
+    </title>
     <meta
+      data-rh="true"
       name="description"
-      content="SMSWithoutBorders(SWOB) is dedicated to researching, developing and
-      promoting secure and open-source communication tools that function even
-      without an internet connection."
+      content="Free, open-source internet freedom and anti-censorship tools. Send email, Telegram and X Bluesky messages over SMS during internet shutdowns, with end-to-end encryption. Built by SMSWithoutBorders."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta
+      data-rh="true"
+      name="keywords"
+      content="internet freedom tool, internet censorship tool, anti-censorship app, bypass internet shutdown, internet shutdown app, offline messaging, communicate without internet, SMS gateway, encrypted SMS, censorship circumvention, digital rights, RelaySMS, DekuSMS"
+    />
+    <meta data-rh="true" name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="SMSWithoutBorders" />
+    <link data-rh="true" rel="canonical" href="https://smswithoutborders.com/" />
+
+    <meta data-rh="true" property="og:site_name" content="SMSWithoutBorders" />
+    <meta data-rh="true" property="og:type" content="website" />
+    <meta
+      data-rh="true"
+      property="og:title"
+      content="SMSWithoutBorders | Open-Source Internet Freedom &amp; Anti-Censorship Tools"
+    />
+    <meta
+      data-rh="true"
+      property="og:description"
+      content="Open-source tools that keep people communicating through internet shutdowns and censorship, using SMS."
+    />
+    <meta data-rh="true" property="og:image" content="https://smswithoutborders.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta data-rh="true" property="og:url" content="https://smswithoutborders.com/" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+    <meta
+      data-rh="true"
+      name="twitter:title"
+      content="SMSWithoutBorders | Open-Source Internet Freedom &amp; Anti-Censorship Tools"
+    />
+    <meta
+      data-rh="true"
+      name="twitter:description"
+      content="Open-source tools that keep people communicating through internet shutdowns and censorship, using SMS."
+    />
+    <meta data-rh="true" name="twitter:image" content="https://smswithoutborders.com/og-image.png" />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,47 +62,98 @@
       rel="stylesheet"
     />
 
-    <meta property="og:type" content="website" />
-
-    <meta property="og:title" content="SMSWithoutBorders" />
-
-    <meta
-      property="og:description"
-      content="Open-source communication tools designed for low-connectivity environments."
-    />
-
-    <meta
-      property="og:image"
-      content="https://smswithoutborders.com/og-image.png"
-    />
-
-    <meta property="og:url" content="https://smswithoutborders.com" />
-
-    <link rel="canonical" href="https://smswithoutborders.com/" />
-
-    <meta name="robots" content="index, follow" />
-
-    <meta name="author" content="SMSWithoutBorders" />
-
-    <title>
-      SMSWithoutBorders | Communication Beyond Internet Connectivity
-    </title>
-  </head>
-
-  <body>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "SMSWithoutBorders",
-        "url": "https://smswithoutborders.com",
-        "logo": "https://smswithoutborders.com/logo.png",
-        "sameAs": [
-          "https://github.com/smswithoutborders",
-          "https://docs.smswithoutborders.com",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://smswithoutborders.com/#organization",
+            "name": "SMSWithoutBorders",
+            "alternateName": "SWOB",
+            "url": "https://smswithoutborders.com/",
+            "logo": "https://smswithoutborders.com/logo.png",
+            "description": "SMSWithoutBorders researches, develops and promotes open-source internet freedom and anti-censorship communication tools that work without an internet connection.",
+            "knowsAbout": [
+              "Internet freedom",
+              "Internet censorship circumvention",
+              "Internet shutdowns",
+              "SMS communication",
+              "End-to-end encryption"
+            ],
+            "sameAs": [
+              "https://github.com/smswithoutborders",
+              "https://docs.smswithoutborders.com"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://smswithoutborders.com/#website",
+            "url": "https://smswithoutborders.com/",
+            "name": "SMSWithoutBorders",
+            "publisher": { "@id": "https://smswithoutborders.com/#organization" },
+            "inLanguage": ["en", "fr", "es", "fa"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "RelaySMS",
+            "applicationCategory": "CommunicationApplication",
+            "operatingSystem": "Android, iOS",
+            "url": "https://relay.smswithoutborders.com",
+            "description": "Internet freedom app that sends email, Telegram and Bluesky messages over SMS, so you can keep communicating during internet shutdowns and censorship.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "publisher": { "@id": "https://smswithoutborders.com/#organization" },
+            "sameAs": [
+              "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b",
+              "https://apps.apple.com/us/app/relaysms/id6630382970",
+              "https://github.com/smswithoutborders/RelaySMS-Android"
+            ]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "DekuSMS",
+            "applicationCategory": "CommunicationApplication",
+            "operatingSystem": "Android",
+            "url": "https://dekusms.com",
+            "description": "Open-source, end-to-end encrypted SMS app for Android.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "publisher": { "@id": "https://smswithoutborders.com/#organization" },
+            "sameAs": [
+              "https://play.google.com/store/apps/details?id=com.afkanerd.deku",
+              "https://f-droid.org/packages/com.afkanerd.deku/",
+              "https://github.com/dekusms/DekuSMS-Android"
+            ]
+          }
         ]
       }
     </script>
+  </head>
+
+  <body>
+    <noscript>
+      <h1>SMSWithoutBorders: open-source internet freedom and anti-censorship tools</h1>
+      <p>
+        SMSWithoutBorders (SWOB) researches, develops and promotes secure,
+        open-source communication tools that work without an internet
+        connection. Our apps help people stay connected during internet
+        shutdowns and censorship.
+      </p>
+      <ul>
+        <li>
+          <a href="https://relay.smswithoutborders.com">RelaySMS</a>: send
+          email, Telegram and Bluesky messages over SMS when the internet
+          is down or blocked.
+        </li>
+        <li>
+          <a href="https://dekusms.com">DekuSMS</a>: an open-source,
+          end-to-end encrypted SMS app for Android.
+        </li>
+      </ul>
+      <p>
+        <a href="/research">Research papers</a> ·
+        <a href="https://github.com/smswithoutborders">GitHub</a>
+      </p>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>

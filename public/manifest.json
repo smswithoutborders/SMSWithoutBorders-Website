@@ -1,6 +1,7 @@
 {
-	"short_name": "React App",
-	"name": "Create React App Sample",
+	"short_name": "SMSWithoutBorders",
+	"name": "SMSWithoutBorders - Internet Freedom & Anti-Censorship Tools",
+	"description": "Open-source tools that keep people communicating through internet shutdowns and censorship, using SMS.",
 	"icons": [
 		{
 			"src": "favico.ico",
@@ -8,18 +9,13 @@
 			"type": "image/x-icon"
 		},
 		{
-			"src": "logo192.png",
+			"src": "logo.png",
 			"type": "image/png",
-			"sizes": "192x192"
-		},
-		{
-			"src": "logo512.png",
-			"type": "image/png",
-			"sizes": "512x512"
+			"sizes": "222x222"
 		}
 	],
 	"start_url": ".",
 	"display": "standalone",
-	"theme_color": "#000000",
-	"background_color": "#ffffff"
+	"theme_color": "#0E0C07",
+	"background_color": "#F5F0E4"
 }

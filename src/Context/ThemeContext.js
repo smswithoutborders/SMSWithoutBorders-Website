@@ -45,10 +45,10 @@ export const ThemeProvider = ({ children }) => {
             contrastText: mode === "light" ? "#FAF6EE" : "#0E0C07",
           },
           secondary: {
-            main: mode === "light" ? "#FF8614" : "#FFB800",
+            main: mode === "light" ? "#FF8614" : "#FF9E43",
           },
           background: {
-            default: mode === "light" ? "#F5F0E4" : "#0E0C07",
+            default: mode === "light" ? "#f3f0e8" : "#0E0C07",
             paper: mode === "light" ? "#FAF6EE" : "#171410",
           },
           text: {
@@ -66,7 +66,6 @@ export const ThemeProvider = ({ children }) => {
           h4: { fontFamily: "'Unbounded', sans-serif" },
           h5: { fontFamily: "'Unbounded', sans-serif" },
           h6: { fontFamily: "'Unbounded', sans-serif" },
-          p: { fontFamily: "'Ubuntu', sans-serif" },
         },
         // shape: {
         // 	borderRadius: 8,

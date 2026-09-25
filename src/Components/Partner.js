@@ -54,12 +54,7 @@ function SponsorCard({ sponsor, index }) {
   return (
     <Box
       ref={ref}
-      // style={{
-      //   opacity: 0,
-      //   transform: "translateY(36px)",
-      //   transition:
-      //     "opacity 0.72s cubic-bezier(.4,0,.2,1), transform 0.72s cubic-bezier(.4,0,.2,1)",
-      // }}
+    
       component="a"
       href={sponsor.href}
       target="_blank"
@@ -111,17 +106,7 @@ function SponsorCard({ sponsor, index }) {
       >
         <ArrowOutwardIcon sx={{ fontSize: 18 }} />
       </Box>
-      {/* 
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          background: isLight
-            ? "radial-gradient(ellipse at 50% 60%, rgba(7,31,116,0.04) 0%, transparent 70%)"
-            : "radial-gradient(ellipse at 50% 60%, rgba(255,184,0,0.04) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      /> */}
+      
 
       <Box
         component="img"
@@ -139,30 +124,6 @@ function SponsorCard({ sponsor, index }) {
           "&:hover": { transform: "scale(1.04)" },
         }}
       />
-
-      {/* <Box
-        sx={{
-          width: 40,
-          height: "1.5px",
-          bgcolor: isLight ? "rgba(7,31,116,0.12)" : "rgba(255,255,255,0.10)",
-          borderRadius: 1,
-        }}
-      /> */}
-      {/* 
-      <Typography
-        sx={{
-          fontSize: "0.72rem",
-          fontWeight: 700,
-          letterSpacing: "0.16em",
-          textTransform: "uppercase",
-          color: "text.secondary",
-          opacity: 0.7,
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        {sponsor.description}
-      </Typography> */}
     </Box>
   );
 }
@@ -181,7 +142,6 @@ export default function Partner() {
         // bgcolor: "background.default",
         py: { xs: 8, md: 14 },
         direction: isFarsi ? "rtl" : "ltr",
-        // position: "relative",
         overflow: "hidden",
       }}
     >
@@ -205,9 +165,9 @@ export default function Partner() {
             }}
           >
             <Typography
+              variant="overline"
               sx={{
-                fontSize: "0.72rem",
-                fontWeight: 700,
+                fontWeight: 500,
                 letterSpacing: "0.16em",
                 textTransform: "uppercase",
                 color: accent,

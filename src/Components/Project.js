@@ -13,13 +13,7 @@ const featuredProjects = [
     title: "RelaySMS",
     description:
       "The flagship user app. Store OAuth2 tokens for Gmail, Twitter, and Telegram in an encrypted Vault. Send messages to those platforms via any SMS connection - even during internet shutdowns.",
-    tags: [
-      "Android",
-      "iOS",
-      "Kotlin",
-      "Swift",
-      "E2E encrypted",
-    ],
+    tags: ["Android", "iOS", "Kotlin", "Swift", "E2E encrypted"],
     links: [
       {
         label: "Website",
@@ -146,9 +140,10 @@ const developerLibraries = [
 function SectionEyebrow({ children, accent }) {
   return (
     <Typography
+      variant="overline"
       sx={{
-        fontSize: "0.72rem",
-        fontWeight: 700,
+        // fontSize: "0.72rem",
+        fontWeight: 500,
         letterSpacing: "0.16em",
         textTransform: "uppercase",
         color: accent,
@@ -160,28 +155,28 @@ function SectionEyebrow({ children, accent }) {
   );
 }
 
-function TagList({ tags }) {
-  return (
-    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.25 }}>
-      {tags.map((tag) => (
-        <Typography
-          key={tag}
-          sx={{
-            fontSize: "0.76rem",
-            color: "text.secondary",
-            border: "1px solid",
-            borderColor: "divider",
-            px: 1.25,
-            py: 0.65,
-            borderRadius: "999px",
-          }}
-        >
-          {tag}
-        </Typography>
-      ))}
-    </Box>
-  );
-}
+// function TagList({ tags }) {
+//   return (
+//     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.25 }}>
+//       {tags.map((tag) => (
+//         <Typography
+//           key={tag}
+//           sx={{
+//             fontSize: "0.72rem",
+//             color: "text.secondary",
+//             border: "1px solid",
+//             borderColor: "divider",
+//             px: 1.25,
+//             py: 0.65,
+//             borderRadius: "999px",
+//           }}
+//         >
+//           {tag}
+//         </Typography>
+//       ))}
+//     </Box>
+//   );
+// }
 
 function ProjectLinks({ links }) {
   return (
@@ -207,7 +202,6 @@ function ProjectLinks({ links }) {
             textTransform: "none",
             fontSize: "0.92rem",
             fontWeight: 400,
-            fontFamily: "'Ubuntu', sans-serif",
             color: "text.primary",
             justifyContent: "flex-start",
             "&:hover": { color: "secondary.main", bgcolor: "transparent" },
@@ -233,7 +227,7 @@ function ProjectHeroCell({
     <Box
       sx={{
         position: "relative",
-        p: { xs: 2.2, md: 4 },
+        p: { xs: 2.2, md: 4.5 },
         borderTopWidth: {
           xs: showTopBorder ? "1px" : 0,
           md: mdTopBorder ? "1px" : 0,
@@ -258,27 +252,6 @@ function ProjectHeroCell({
         },
       }}
     >
-      {/* {project.kind && (
-        <Typography
-          sx={(theme) => ({
-            display: "inline-block",
-            fontSize: "0.72rem",
-            fontWeight: 700,
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: "text.secondary",
-            bgcolor: "action.hover",
-            border: "1px solid",
-            borderColor: "divider",
-            px: 1,
-            py: 0.35,
-            mb: 1.5,
-            borderRadius: 6,
-          })}
-        >
-          {project.kind}
-        </Typography>
-      )} */}
       <Typography
         variant="h6"
         sx={{
@@ -295,7 +268,7 @@ function ProjectHeroCell({
         sx={{
           color: "text.secondary",
           lineHeight: 1.8,
-          fontSize: { xs: "0.92rem", md: "1rem" },
+          fontSize: { xs: "0.94rem", md: "1rem" },
           mb: 3,
           overflowWrap: "anywhere",
           wordBreak: "break-word",
@@ -305,9 +278,7 @@ function ProjectHeroCell({
           defaultValue: project.description,
         })}
       </Typography>
-      <Box sx={{ mb: 3 }}>
-        <TagList tags={project.tags} />
-      </Box>
+      <Box sx={{ mb: 3 }}></Box>
       <Box sx={{ pt: 2.5 }}>
         <ProjectLinks links={project.links} />
       </Box>
@@ -380,7 +351,7 @@ function LibraryCardCell({ item, index }) {
         sx={{
           fontWeight: 700,
           mb: 1.25,
-          fontSize: { xs: "0.98rem", md: "1.25rem" },
+          fontSize: { xs: "1.02rem", md: "1.25rem" },
           overflowWrap: "anywhere",
           wordBreak: "break-word",
         }}
@@ -395,7 +366,7 @@ function LibraryCardCell({ item, index }) {
           color: "text.secondary",
           lineHeight: 1.75,
           mb: 2.5,
-          fontSize: { xs: "0.9rem", md: "1rem" },
+          fontSize: { xs: "0.94rem", md: "1rem" },
           overflowWrap: "anywhere",
           wordBreak: "break-word",
         }}
@@ -409,7 +380,7 @@ function LibraryCardCell({ item, index }) {
         sx={{
           color: "text.secondary",
           mb: 1.75,
-          fontSize: { xs: "0.86rem", md: "1rem" },
+          fontSize: { xs: "0.94rem", md: "1rem" },
           overflowWrap: "anywhere",
           wordBreak: "break-word",
         }}
@@ -479,7 +450,7 @@ function PaperRowCard({ paper, showTopBorder = false }) {
           sx={{
             color: "text.secondary",
             lineHeight: 1.75,
-            fontSize: { xs: "0.94rem", md: "0.98rem" },
+            fontSize: { xs: "0.94rem", md: "1rem" },
           }}
         >
           {paper.abstract}
@@ -535,15 +506,14 @@ export default function Projects() {
           </Typography>
           <Typography
             sx={{
-              fontSize: { xs: "1rem", md: "1.08rem" },
+              fontSize: { xs: "1rem", md: "1.06rem" },
               color: "text.secondary",
-              maxWidth: 760,
               lineHeight: 1.85,
             }}
           >
             {t("projectSubHeader", {
               defaultValue:
-                "SMSWithoutBorders Commits to buiding OpenSource Tools That Aid Free speech and Communication",
+                "SMSWithoutBorders builds open-source internet freedom tools that protect free speech and help people bypass internet censorship and shutdowns.",
             })}
           </Typography>
         </Box>
@@ -552,7 +522,7 @@ export default function Projects() {
           sx={{
             border: "1px solid",
             borderColor: "divider",
-            mb: { xs: 8, md: 25 },
+            mb: { xs: 16, md: 25 },
           }}
         >
           <Box
@@ -575,7 +545,7 @@ export default function Projects() {
           </Box>
         </Box>
 
-        <Box sx={{ mb: { xs: 8, md: 25 } }}>
+        <Box sx={{ mb: { xs: 16, md: 25 } }}>
           <SectionEyebrow accent={accent}>
             {t("papersEyebrow", { defaultValue: "Papers" })}
           </SectionEyebrow>
@@ -586,7 +556,7 @@ export default function Projects() {
           </Typography>
           <Typography
             sx={{
-              maxWidth: 760,
+              // maxWidth: 760,
               color: "text.secondary",
               lineHeight: 1.85,
               mb: { xs: 3, md: 4 },
