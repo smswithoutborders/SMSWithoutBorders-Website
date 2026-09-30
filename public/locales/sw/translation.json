@@ -1,0 +1,263 @@
+{
+	"changeLanguage": "Badilisha Lugha",
+	"navbar": {
+		"link": "Nyumbani",
+		"link1": "Blogu",
+		"link2": "RelaySMS",
+		"link3": "DekuSMS",
+		"link4": "Sera ya Faragha",
+		"link5": "Nyaraka",
+		"link6": "Vipengele",
+		"link7": "Machapisho",
+		"products": "Bidhaa",
+		"tagline": "Chanzo Huria · Faragha · Uhuru",
+		"papers": {
+			"whitepaper": "Waraka wa Kiufundi",
+			"threatModel": "Mfumo wa Vitisho"
+		},
+		"researchFull": "Machapisho ya Utafiti"
+	},
+	"loader": "Inapakia, tafadhali subiri",
+	"features": {
+		"loadError": "Imeshindwa kupakia vipengele."
+	},
+	"LandingHeader": "Chanzo Huria | Utafiti",
+	"landingHeroSub": "SMSWithoutBorders (SWOB) imejitolea kutafiti, kuendeleza na kukuza zana za mawasiliano zilizo salama na zinazofikika, zinazofanya kazi hata bila muunganisho wa intaneti.",
+	"landing": {
+		"goToProjects": "Nenda kwenye miradi"
+	},
+	"About": {
+		"AboutHeader": "Gundua SMSWithoutBorders",
+		"description": "SMSWithoutBorders (SWOB) imejitolea kutafiti, kuendeleza na kukuza zana za mawasiliano zilizo salama na zinazofikika, zinazofanya kazi hata bila muunganisho wa intaneti.",
+		"description1": "Kazi yetu ya uundaji inajumuisha programu za simu kwa mifumo mbalimbali kama Android, iOS na Linux. Sehemu ya kazi yetu pia inajumuisha nyaraka za kiufundi kuhusu mada kama kriptografia, mawasiliano na uhuru wa intaneti.",
+		"description2": " Safari ya kufikia dhamira yetu ilianza mwaka 2021 kwa kuunda toleo la kwanza la Android la RelaySMS. Tumepiga hatua kubwa tangu wakati huo, tukiunga mkono mifumo zaidi na programu nyingi zaidi.",
+		"description3": "Tunachapisha utafiti wetu mara kwa mara kadiri iwezekanavyo kwenye blogu yetu na kutoa matangazo kupitia mitandao yetu ya kijamii. SMSWithoutBorders ni mradi ulioanzishwa na timu ya <a href='https://afkanerd.com' class='afkanerd'>Afkanerd</a>."
+	},
+	"projectHeader": "Miradi",
+	"projectHeadline": "Kila tunachokiunda, ni huria na bure",
+	"projectSubHeader": "SMSWithoutBorders huunda zana huria za uhuru wa intaneti zinazolinda uhuru wa kujieleza na kusaidia watu kukwepa udhibiti na uzimaji wa intaneti.",
+	"papersEyebrow": "Machapisho",
+	"papersTitle": "Utafiti na machapisho",
+	"papersBody": "Timu huchapisha makala za utafiti na maelezo kuhusu teknolojia tunayotumia, kuanzia muundo wa mfumo na usimbaji fiche hadi uchambuzi wa vitisho.",
+	"projectsResilienceEyebrow": "Imejengwa juu ya SMS",
+	"projectsResilienceTitle": "Imejengwa juu ya SMS – safu imara zaidi",
+	"projectsResilienceBody": "SMS hufanya kazi hata pale data inaposhindwa. Tumejenga miundombinu kamili na salama ya kupitisha ujumbe juu yake, ili watu waendelee kuwasiliana bila kujali mtandao – au serikali – inafanya nini.",
+	"developerLibrariesEyebrow": "Maktaba za Wasanidi",
+	"developerLibrariesTitle": "Jenga juu ya teknolojia yetu",
+	"developerLibrariesBody": "Vipengele vyote vya msingi ni huria na vinaweza kutumika tena.",
+	"projectsub": "Miradi Yetu",
+	"projectDescriptions": {
+		"relaysms": "Programu ya simu inayounganisha mitandao ya SMS na huduma za ujumbe zinazotumia intaneti. Taarifa za kuingia kwenye mifumo uliyounganisha huhifadhiwa kwa usalama kwenye kifaa chako, hivyo ujumbe unaweza kutumwa kwa SMS wakati intaneti haipatikani.",
+		"dekusms": "Programu huria ya SMS kwa Android yenye usimbaji fiche wa mwisho hadi mwisho. Inaendesha safu ya SMS ya RelaySMS, na pia inaweza kutumika peke yake kama mbadala salama wa programu yako ya kawaida ya SMS. Inaweza kutuma picha kwa MMS.",
+		"vault": "Mfumo salama wa kusimamia tokeni za ufikiaji kwa ajili ya kuchapisha ujumbe. Hulinda taarifa za OAuth2 kwa safu ya ziada ya usimbaji fiche.",
+		"gateway": "Huwawezesha watumiaji kusawazisha na kuwasiliana na moduli ya uchapishaji. Ndio uti wa mgongo wa kupitisha ujumbe kati ya vifaa na seva.",
+		"bridge": "Huwawezesha watumiaji kuwasiliana na mifumo ya mtandaoni kwa SMS pekee, bila kuhitaji intaneti kabisa. Huwezesha makubaliano salama ya awali na ubadilishanaji wa ujumbe uliosimbwa kupitia SMS pekee.",
+		"publisher": "Programu ya kati iliyo kati ya Gateway na seva. Ina adapta za PNBA zinazoweza kuchomekwa kwa Telegram na mifumo mingine. Hushughulikia ufumbuaji wa usimbaji na uelekezaji wa ujumbe."
+	},
+	"libraryTitles": {
+		"smsmms-library": "lib_smsmms_android",
+		"lib-image": "Lib Image",
+		"adapter-interface": "Adapta za Uchapishaji",
+		"rusty_relaysms_payload_specs": "Rusty Specs"
+	},
+	"libraryDescriptions": {
+		"smsmms-library": "Maktaba ya Android ya kusafirisha SMS na MMS inayotumiwa na RelaySMS na DekuSMS. Hushughulikia michakato ya ujumbe ya watoa huduma, ruhusa za programu, utumaji wa MMS na kufanya kazi kama programu kuu ya SMS.",
+		"lib-image": "Maktaba saidizi ya picha kwa ajili ya MMS na uchakataji wa midia katika mfumo wa ujumbe wa simu. Inatumiwa na RelaySMS ya Android na iOS.",
+		"rusty_relaysms_payload_specs": "Utekelezaji wa waraka wa vipimo vya RelaySMS na maelezo ya usalama kutoka kwenye waraka wa kiufundi.",
+		"double-ratchet-java": "Maktaba saidizi ya usimbaji fiche ya Android inayotekeleza misingi ya Signal Double Ratchet kwa programu za simu katika mfumo wa RelaySMS.",
+		"double-ratchet-python": "Maktaba ya kriptografia ya Python inayotekeleza Signal Double Ratchet pamoja na zana saidizi kwa ubadilishanaji salama kati ya huduma za seva.",
+		"double-ratchet-ios": "Utekelezaji wa Swift wa zana saidizi za kriptografia za Signal Double Ratchet za SMSWithoutBorders kwa ubadilishanaji salama wa ujumbe kwenye iOS.",
+		"image-android": "Maktaba saidizi ya picha ya Android inayotumika kwa MMS na uchakataji wa midia katika mfumo wa ujumbe wa simu.",
+		"image-ios": "Maktaba saidizi ya Swift ya kuchakata picha kwa michakato ya midia na viambatisho katika RelaySMS ya iOS.",
+		"gateway-client": "Mteja wa Python wa mbali wa kuwasiliana na safu ya Gateway kutoka kwa zana na huduma za nje.",
+		"adapter-interface": "Kiolesura kinachoweza kuchomekwa kwa ajili ya kuongeza madaraja mapya ya mifumo. Telegram ndiyo adapta ya mfano ya PNBA, na safu hiyo hiyo ya uchapishaji inaunga mkono adapta za mifumo mingine."
+	},
+	"project1": {
+		"title": "RelaySMS",
+		"description": "RelaySMS hutumia ujumbe wa SMS kuwasiliana na mifumo ya mtandaoni bila kuhitaji muunganisho wa intaneti. Watumiaji wanaweza kutoa ruhusa ya kufikia mifumo yao ya mtandaoni, ambayo hutumika kuchukua hatua kwa niaba yao kupitia SMS. Ruhusa iliyotolewa, ujumbe unaotumwa kutoka kwenye programu, na jinsi unavyochapishwa mtandaoni vinalindwa kwa mbinu imara na za kisasa za kriptografia na usalama.",
+		"website": "Tovuti",
+		"read_more": "Tembelea Tovuti",
+		"keyPoint1": "SMS",
+		"keyPoint2": "Uhuru wa Intaneti"
+	},
+	"project2": {
+		"title": "DekuSMS",
+		"description": "DekuSMS ni programu ya ujumbe wa SMS kwa Android. Inawawezesha watumiaji wawili wa programu kuwasiliana kwa usimbaji fiche wa mwisho hadi mwisho kupitia SMS. Programu pia ina uwezo wa kusambaza ujumbe kwa itifaki kama SMTP, FTP na AMQP. Imeundwa kuunganishwa na RabbitMQ, hivyo watumiaji wenye foleni za ujumbe wanaweza kuweka na kutuma maombi ya mawasiliano ya mbali kwa programu zao.",
+		"read_more": "Tembelea Tovuti",
+		"website": "Tovuti",
+		"keyPoint1": "SMS",
+		"keyPoint2": "Faragha"
+	},
+	"Sponsor": {
+		"Sponsorsub": "Washirika",
+		"SponsorT": "Mashirika Yanayotuunga Mkono",
+		"Sponsor-subheader": "Mashirika haya yanasaidia SMSWithoutBorders kuendelea kufanya kazi",
+		"sponsorfooter": "Tunajivunia kuungwa mkono na mashirika yaliyojitolea kwa intaneti huru na wazi."
+	},
+	"footer": {
+		"copyright": "© Afkanerd.",
+		"copyrightYear": "© {{year}} Afkanerd",
+		"github": "GitHub"
+	},
+	"footerNav": {
+		"projects": "Miradi",
+		"resources": "Rasilimali",
+		"community": "Jumuiya",
+		"relay": "RelaySMS",
+		"deku": "DekuSMS",
+		"githubOrg": "Shirika la GitHub",
+		"twitterX": "Twitter / X @smswithoutborders",
+		"contactDevelopers": "Wasiliana na wasanidi",
+		"reportIssue": "Ripoti tatizo",
+		"brandResources": "Rasilimali za Chapa"
+	},
+	"theme": {
+		"switchToDark": "Badili kwenda giza",
+		"switchToLight": "Badili kwenda mwanga"
+	},
+	"notFound": {
+		"title": "Samahani, umepotea",
+		"subtitle": "Inaonekana ukurasa unaoutafuta haupo",
+		"backHome": "Tukurudishe nyumbani"
+	},
+	"social": {
+		"x": "Tufuate kwenye X",
+		"bluesky": "Tutembelee kwenye Bluesky",
+		"github": "Tazama GitHub yetu"
+	},
+	"Privacy-Policy": {
+		"policyHeader": "Sera ya Faragha",
+		"policySubheader": "Ilisasishwa mwisho: 14 Julai 2022",
+		"policyBody1": "Sera hii ya Faragha inaeleza sera na taratibu zetu kuhusu ukusanyaji, matumizi na ufichuaji wa taarifa zako unapotumia Huduma yetu, na inaeleza haki zako za faragha na jinsi sheria inavyokulinda.",
+		"policyBody2": " Tunatumia data yako binafsi kutoa na kuboresha Huduma. Kwa kutumia Huduma, unakubali ukusanyaji na matumizi ya taarifa kwa mujibu wa Sera hii ya Faragha."
+	},
+	"Privacy-Policy2": {
+		"policyHeader2": "Tafsiri na Ufafanuzi",
+		"policySubheader2": "Tafsiri",
+		"policyBody2": "Maneno yanayoanza kwa herufi kubwa yana maana zilizofafanuliwa chini ya masharti yafuatayo. Ufafanuzi ufuatao una maana ile ile iwe umetumika kwa umoja au wingi."
+	},
+	"Privacy-Policy3": {
+		"policyHeader3": "Ufafanuzi",
+		"policyBody3": "Kwa madhumuni ya Sera hii ya Faragha:",
+		"privacyUlheader": "Ufafanuzi",
+		"definitionAccount": "<strong>Akaunti</strong> maana yake ni akaunti ya kipekee iliyoundwa kwa ajili yako ili kufikia Huduma yetu au sehemu za Huduma yetu.",
+		"definitionCompany": "<strong>Kampuni</strong> (inayojulikana kama 'Kampuni', 'Sisi', 'Kwetu' au 'Yetu' katika Makubaliano haya) inamaanisha Afkanerd Ltd, Bamenda.",
+		"definitionCookies": "<strong>Vidakuzi</strong> ni faili ndogo zinazowekwa kwenye kompyuta yako, kifaa cha mkononi au kifaa kingine chochote na tovuti, zikiwa na historia yako ya kuvinjari na taarifa nyingine.",
+		"definitionCountry": "<strong>Nchi</strong> inamaanisha Kamerun.",
+		"definitionDevice": "<strong>Kifaa</strong> maana yake ni kifaa chochote kinachoweza kufikia Huduma, kama kompyuta, simu ya mkononi au kishikwambi.",
+		"definitionPersonalData": "<strong>Data Binafsi</strong> ni taarifa yoyote inayohusiana na mtu aliyetambuliwa au anayeweza kutambuliwa.",
+		"definitionService": "<strong>Huduma</strong> inamaanisha Tovuti.",
+		"definitionServiceProvider": "<strong>Mtoa Huduma</strong> maana yake ni mtu yeyote halisi au wa kisheria anayechakata data kwa niaba ya Kampuni.",
+		"definitionThirdParty": "<strong>Huduma ya Mitandao ya Kijamii ya Mtu wa Tatu</strong> inamaanisha mtandao wowote wa kijamii au tovuti ambayo Mtumiaji anaweza kuingia au kufungua akaunti kupitia kwayo ili kutumia Huduma.",
+		"definitionUsageData": "<strong>Data ya Matumizi</strong> inamaanisha data inayokusanywa kiotomatiki, inayotokana na matumizi ya Huduma au kutoka kwenye miundombinu ya Huduma yenyewe (kwa mfano, muda wa kutembelea ukurasa).",
+		"definitionWebsite": "<strong>Tovuti</strong> inamaanisha SMSwithoutborders, inayopatikana kupitia <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>.",
+		"definitionYou": "<strong>Wewe</strong> maana yake ni mtu anayefikia au kutumia Huduma, au kampuni au taasisi nyingine ya kisheria ambayo kwa niaba yake mtu huyo anafikia au kutumia Huduma."
+	},
+	"Privacy-Policy4": {
+		"policyHeader4": "Kukusanya na Kutumia Data Yako Binafsi",
+		"policySubheader4": "Aina za Data Zinazokusanywa"
+	},
+	"Privacy-Policy5": {
+		"policyHeader5": "Data Binafsi",
+		"policyBody5": " Ili kutumia mifumo ya watu wa tatu, tovuti itaomba ruhusa ya kufikia mifumo hiyo. Tovuti huhifadhi ruhusa unayotoa lakini haikusanyi taarifa nyingine za wasifu.",
+		"policyBody6": "Ili kutoa taarifa kuhusu lango za ndani za kutuma SMS, tunahitaji nchi ya namba ya simu, ingawa hatukusanyi data kuhusu nchi aliyopo mtumiaji."
+	},
+	"Privacy-Policy6": {
+		"policyHeader6": "Taarifa kutoka kwa Huduma za Mitandao ya Kijamii za Watu wa Tatu",
+		"policyBody7": "Ili kutumia mifumo ya watu wa tatu, tovuti itaomba ruhusa ya kufikia mifumo hiyo. Tovuti huhifadhi ruhusa unayotoa lakini haikusanyi taarifa nyingine za wasifu.",
+		"policyBody8": "Tunahifadhi majina ya kipekee ya wasifu kwa kila mfumo ili kukusaidia kutambua akaunti unayotumia. Hatutumii taarifa zinazoweza kutambulisha kutoka kwa watu wa tatu kufuatilia, kutambua au kuainisha watumiaji."
+	},
+	"Privacy-Policy7": {
+		"policyHeader7": "Usalama wa Data Yako Binafsi",
+		"policyBody9": "Tunatanguliza usalama wa data yako binafsi. Hata hivyo, hakuna njia ya kusafirisha data kupitia intaneti au kuhifadhi kielektroniki iliyo salama kwa asilimia 100. Ingawa tunajitahidi kulinda data yako, hatuwezi kuhakikisha usalama kamili."
+	},
+	"Privacy-Policy8": {
+		"policyHeader8": "Kujiondoa na Kufuta Data",
+		"policyBody10": "Unaweza kujiondoa kwenye huduma yetu wakati wowote. Hii itasababisha data yako binafsi kufutwa mara moja kutoka kwenye mfumo wetu. Tutabatilisha ruhusa zote ulizotupa za kutumia bidhaa.",
+		"policyBody11": "Tunafuta tu data binafsi iliyohifadhiwa kwenye hifadhidata yetu. Kufuta data kutoka kwenye mifumo ya watu wa tatu (hata ikiwa imeunganishwa na huduma yetu) lazima kuombwe moja kwa moja kutoka kwenye mifumo hiyo."
+	},
+	"Privacy-Policy9": {
+		"policyHeader9": "Faragha ya Watoto",
+		"policyBody12": "Huduma yetu haimlengi mtu yeyote aliye chini ya umri wa miaka 13. Hatukusanyi kwa kujua taarifa zinazoweza kumtambulisha mtu yeyote aliye chini ya umri wa miaka 13.",
+		"policyBody13": "Tukigundua kuwa tumekusanya Data Binafsi kutoka kwa mtu aliye chini ya umri wa miaka 13 bila uthibitisho wa idhini ya mzazi, tunachukua hatua za kuondoa taarifa hizo kutoka kwenye seva zetu."
+	},
+	"Privacy-Policy10": {
+		"policyHeader10": "Viungo vya Tovuti Nyingine",
+		"policyBody14": "Huduma yetu inaweza kuwa na viungo vya tovuti nyingine ambazo haziendeshwi na Sisi. Hatuna udhibiti wala hatuwajibiki kwa maudhui, sera za faragha au taratibu za tovuti au huduma zozote za watu wa tatu."
+	},
+	"Privacy-Policy11": {
+		"policyHeader11": "Mabadiliko ya Sera hii ya Faragha",
+		"policyBody15": "Tunaweza kusasisha Sera yetu ya Faragha mara kwa mara. Unashauriwa kupitia Sera hii ya Faragha mara kwa mara ili kuona mabadiliko yoyote."
+	},
+	"Privacy-Policy12": {
+		"policyHeader12": "Wasiliana Nasi",
+		"policyBody16": "Ikiwa una maswali yoyote kuhusu Sera hii ya Faragha, unaweza kuwasiliana nasi kwa kutembelea ukurasa huu kwenye tovuti yetu <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>"
+	},
+	"paperReader": {
+		"notFound": "Chapisho halikupatikana.",
+		"backToResearch": "Rudi kwenye Utafiti",
+		"researchAndPublications": "Machapisho ya Utafiti",
+		"research": "Utafiti",
+		"comingSoon": "Maandishi kamili yanakuja hivi karibuni",
+		"comingSoonSub": "Chapisho hili bado halijatolewa. Tafadhali angalia tena baadaye.",
+		"openPdf": "Fungua PDF",
+		"openPdfDirectly": "Fungua PDF moja kwa moja",
+		"loading": "Inapakia hati…",
+		"errorMessage": "Hati haikuweza kupakiwa. Hakikisha faili ya PDF ipo kwenye public/papers/ na jina la faili linalingana kikamilifu.",
+		"back": "← Rudi",
+		"type": {
+			"whitepaper": "Waraka wa Kiufundi",
+			"research": "Utafiti",
+			"thread": "Mjadala"
+		}
+	},
+	"researchPage": {
+		"knowledgeBase": "Hazina ya Maarifa",
+		"title": "Utafiti na Machapisho",
+		"subtitle": "Nyaraka za kiufundi, matokeo ya utafiti na mijadala ya jumuiya kuhusu mawasiliano bila intaneti, faragha na ujumuishaji wa kidijitali.",
+		"searchPlaceholder": "Tafuta kwa kichwa, mada au mwandishi…",
+		"filterAll": "Zote",
+		"clearTags": "✕ Futa lebo",
+		"of": "kati ya",
+		"noResults": "Hakuna matokeo. Jaribu kubadilisha vichujio vyako.",
+		"readPaper": "Soma Chapisho",
+		"comingSoon": "Inakuja Hivi Karibuni",
+		"viewFullDocument": "Tazama hati kamili →"
+	},
+	"brandPage": {
+		"eyebrow": "Vyombo vya Habari",
+		"title": "Rasilimali za Chapa",
+		"subtitle": "Nembo rasmi za SMSWithoutBorders kwa ajili ya makala, mawasilisho na nyenzo za washirika. Tafadhali usibadilishe, usipake rangi upya wala usiharibu umbo la nembo. Tumia SVG kila inapowezekana na PNG pale ambapo faili za vekta hazitumiki.",
+		"fullLogo": {
+			"title": "Nembo Kamili",
+			"description": "Nembo kuu yenye alama na jina. Itumie popote palipo na nafasi ya kutosha ya mlalo."
+		},
+		"logoIcon": {
+			"title": "Alama ya Nembo",
+			"description": "Alama peke yake. Itumie kwa picha za wasifu, aikoni za programu na nafasi ndogo ambapo jina lisingesomeka."
+		},
+		"logoOnBackground": {
+			"title": "Nembo yenye Mandharinyuma",
+			"description": "Nembo iliyowekwa juu ya mandharinyuma ya rangi moja, tayari kwa mitandao ya kijamii, mabango na mawasilisho."
+		},
+		"variant": {
+			"Default": "Chaguomsingi",
+			"Black": "Nyeusi",
+			"White": "Nyeupe",
+			"Blue": "Bluu",
+			"Dark Theme": "Mandhari Meusi"
+		},
+		"preview": "Hakiki",
+		"close": "Funga",
+		"copyImage": "Nakili picha",
+		"copyPngLink": "Nakili kiungo cha PNG",
+		"copySvgLink": "Nakili kiungo cha SVG",
+		"copyEmailHtml": "Nakili HTML ya barua pepe",
+		"openFullSize": "Fungua kwa ukubwa kamili",
+		"linkCopied": "Kiungo kimenakiliwa",
+		"htmlCopied": "HTML imenakiliwa",
+		"copyFailed": "Imeshindwa kunakili kwenye ubao wa kunakili",
+		"imageCopied": "Picha imenakiliwa. Ibandike kwenye barua pepe au hati yako.",
+		"imageCopyUnsupported": "Kivinjari chako hakiwezi kunakili picha. Badala yake nakili kiungo cha picha au pakua PNG."
+	}
+}

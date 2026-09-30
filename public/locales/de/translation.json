@@ -1,0 +1,263 @@
+{
+	"changeLanguage": "Sprache ändern",
+	"navbar": {
+		"link": "Startseite",
+		"link1": "Blog",
+		"link2": "RelaySMS",
+		"link3": "DekuSMS",
+		"link4": "Datenschutzerklärung",
+		"link5": "Dokumentation",
+		"link6": "Funktionen",
+		"link7": "Publikationen",
+		"products": "Produkte",
+		"tagline": "Open Source · Privatsphäre · Freiheit",
+		"papers": {
+			"whitepaper": "Whitepaper",
+			"threatModel": "Bedrohungsmodell"
+		},
+		"researchFull": "Forschungsarbeiten"
+	},
+	"loader": "Wird geladen, bitte warten",
+	"features": {
+		"loadError": "Funktionen konnten nicht geladen werden."
+	},
+	"LandingHeader": "Open Source | Forschung",
+	"landingHeroSub": "SMSWithoutBorders (SWOB) erforscht, entwickelt und fördert sichere und zugängliche Kommunikationswerkzeuge, die auch ohne Internetverbindung funktionieren.",
+	"landing": {
+		"goToProjects": "Zu den Projekten"
+	},
+	"About": {
+		"AboutHeader": "SMSWithoutBorders entdecken",
+		"description": "SMSWithoutBorders (SWOB) erforscht, entwickelt und fördert sichere und zugängliche Kommunikationswerkzeuge, die auch ohne Internetverbindung funktionieren.",
+		"description1": "Die Entwicklung umfasst mobile Apps für verschiedene Plattformen wie Android, iOS und Linux. Zu unserer Arbeit gehören außerdem Whitepaper zu Themen wie Kryptografie, Kommunikation und Internetfreiheit.",
+		"description2": " Der Weg zu unserer Mission begann 2021 mit der Entwicklung der ersten Android-Version von RelaySMS. Seitdem sind wir weit gekommen und unterstützen mehr Plattformen und viele weitere Apps.",
+		"description3": "Wir veröffentlichen unsere Forschung so oft wie möglich in unserem Blog und machen Ankündigungen über unsere Social-Media-Kanäle. SMSWithoutBorders ist ein Projekt, das vom Team von <a href='https://afkanerd.com' class='afkanerd'>Afkanerd</a> ins Leben gerufen wurde."
+	},
+	"projectHeader": "Projekte",
+	"projectHeadline": "Alles, was wir bauen – offen und kostenlos",
+	"projectSubHeader": "SMSWithoutBorders entwickelt Open-Source-Werkzeuge für Internetfreiheit, die die Meinungsfreiheit schützen und Menschen helfen, Internetzensur und -abschaltungen zu umgehen.",
+	"papersEyebrow": "Publikationen",
+	"papersTitle": "Forschung und Publikationen",
+	"papersBody": "Das Team veröffentlicht Forschungsarbeiten und Notizen zu unserem Technologie-Stack – von Architektur und Verschlüsselung bis zur Bedrohungsmodellierung.",
+	"projectsResilienceEyebrow": "Basiert auf SMS",
+	"projectsResilienceTitle": "Basiert auf SMS – der widerstandsfähigsten Ebene",
+	"projectsResilienceBody": "SMS funktioniert, wenn mobile Daten es nicht tun. Wir haben darauf eine komplette sichere Relay-Infrastruktur aufgebaut, damit Menschen verbunden bleiben – egal, was das Netz oder eine Regierung tut.",
+	"developerLibrariesEyebrow": "Entwicklerbibliotheken",
+	"developerLibrariesTitle": "Auf unserem Stack aufbauen",
+	"developerLibrariesBody": "Alle Kernkomponenten sind Open Source und wiederverwendbar.",
+	"projectsub": "Unsere Projekte",
+	"projectDescriptions": {
+		"relaysms": "Eine mobile App, die SMS-Netze mit internetbasierten Messaging-Diensten verbindet. Die Zugangsdaten verbundener Plattformen werden sicher auf deinem Gerät gespeichert, sodass Nachrichten per SMS zugestellt werden können, wenn kein Internet verfügbar ist.",
+		"dekusms": "Eine quelloffene, Ende-zu-Ende-verschlüsselte SMS-App für Android. Sie bildet die SMS-Ebene von RelaySMS und kann auch eigenständig als sicherer Ersatz für deine Standard-SMS-App genutzt werden. Unterstützt das Senden von MMS-Bildern.",
+		"vault": "Sicheres Verwaltungssystem für Zugriffstoken zur Veröffentlichung von Nachrichten. Schützt OAuth2-Zugangsdaten mit einer zusätzlichen Verschlüsselungsebene.",
+		"gateway": "Ermöglicht es Nutzern, sich mit dem Publisher-Modul zu synchronisieren und zu kommunizieren. Die zentrale Relay-Infrastruktur zwischen Geräten und dem Backend.",
+		"bridge": "Ermöglicht die Kommunikation mit Online-Plattformen ausschließlich per SMS, ganz ohne Internet. Bietet einen sicheren Handshake und verschlüsselten Austausch nur über SMS.",
+		"publisher": "Middleware zwischen Gateway und Backend. Austauschbare PNBA-Adapter für Telegram und andere Plattformen. Übernimmt Entschlüsselung und Weiterleitung."
+	},
+	"libraryTitles": {
+		"smsmms-library": "lib_smsmms_android",
+		"lib-image": "Lib Image",
+		"adapter-interface": "Publisher-Adapter",
+		"rusty_relaysms_payload_specs": "Rusty Specs"
+	},
+	"libraryDescriptions": {
+		"smsmms-library": "Android-Bibliothek für den SMS- und MMS-Transport, die von RelaySMS und DekuSMS genutzt wird. Verarbeitet Messaging-Abläufe der Netzbetreiber, Laufzeitberechtigungen, den MMS-Versand und die Integration als Standard-SMS-App.",
+		"lib-image": "Hilfsbibliothek für Bilder zur MMS- und Medienverarbeitung im mobilen Messaging-Stack. Wird von RelaySMS für Android und iOS genutzt.",
+		"rusty_relaysms_payload_specs": "Implementierung der RelaySMS-Spezifikation sowie der Sicherheitsdetails aus dem technischen Whitepaper.",
+		"double-ratchet-java": "Android-Verschlüsselungsbibliothek, die die Signal-Double-Ratchet-Primitive für mobile Apps im RelaySMS-Stack implementiert.",
+		"double-ratchet-python": "Python-Kryptografiebibliothek, die Signal Double Ratchet und unterstützende Hilfsfunktionen für den sicheren Austausch zwischen Backend-Diensten implementiert.",
+		"double-ratchet-ios": "Swift-Implementierung der Signal-Double-Ratchet-Kryptografiehilfen von SMSWithoutBorders für den sicheren Nachrichtenaustausch unter iOS.",
+		"image-android": "Android-Hilfsbibliothek für Bilder, die für MMS und Medienverarbeitung im mobilen Messaging-Stack verwendet wird.",
+		"image-ios": "Swift-Hilfsbibliothek zur Bildverarbeitung für Medienabläufe und Anhänge in RelaySMS für iOS.",
+		"gateway-client": "Python-Client für den Fernzugriff auf die Gateway-Ebene aus externen Werkzeugen und Diensten.",
+		"adapter-interface": "Austauschbare Schnittstelle zum Hinzufügen neuer Plattform-Bridges. Telegram ist der Referenz-PNBA-Adapter, und dieselbe Publisher-Ebene unterstützt weitere Plattform-Adapter."
+	},
+	"project1": {
+		"title": "RelaySMS",
+		"description": "RelaySMS nutzt SMS, um ohne Internetverbindung mit Online-Plattformen zu kommunizieren. Nutzer können Zugriff auf ihre Online-Plattformen gewähren, über den dann per SMS in ihrem Namen gehandelt wird. Der gewährte Zugriff, die aus der App gesendeten Nachrichten und deren Veröffentlichung sind mit aktuellen, starken Kryptografie- und Sicherheitsverfahren geschützt.",
+		"website": "Website",
+		"read_more": "Website besuchen",
+		"keyPoint1": "SMS",
+		"keyPoint2": "Internetfreiheit"
+	},
+	"project2": {
+		"title": "DekuSMS",
+		"description": "DekuSMS ist eine SMS-App für Android. Sie ermöglicht zwei Nutzern der App, per SMS mit Ende-zu-Ende-Verschlüsselung zu kommunizieren. Die App kann Nachrichten außerdem über Protokolle wie SMTP, FTP und AMQP weiterleiten. Sie ist für die Integration mit RabbitMQ gebaut, sodass Nutzer mit Message-Queues Fernkommunikationsanfragen an ihre Apps einrichten und senden können.",
+		"read_more": "Website besuchen",
+		"website": "Website",
+		"keyPoint1": "SMS",
+		"keyPoint2": "Privatsphäre"
+	},
+	"Sponsor": {
+		"Sponsorsub": "Partner",
+		"SponsorT": "Unterstützende Organisationen",
+		"Sponsor-subheader": "Diese Organisationen halten SMSWithoutBorders am Laufen",
+		"sponsorfooter": "Stolz unterstützt von Organisationen, die sich für ein freies und offenes Internet einsetzen."
+	},
+	"footer": {
+		"copyright": "© Afkanerd.",
+		"copyrightYear": "© {{year}} Afkanerd",
+		"github": "GitHub"
+	},
+	"footerNav": {
+		"projects": "Projekte",
+		"resources": "Ressourcen",
+		"community": "Community",
+		"relay": "RelaySMS",
+		"deku": "DekuSMS",
+		"githubOrg": "GitHub-Organisation",
+		"twitterX": "Twitter / X @smswithoutborders",
+		"contactDevelopers": "Entwickler kontaktieren",
+		"reportIssue": "Problem melden",
+		"brandResources": "Markenressourcen"
+	},
+	"theme": {
+		"switchToDark": "Dunkles Design",
+		"switchToLight": "Helles Design"
+	},
+	"notFound": {
+		"title": "Hoppla, du hast dich verlaufen",
+		"subtitle": "Die gesuchte Seite scheint nicht zu existieren",
+		"backHome": "Zurück zur Startseite"
+	},
+	"social": {
+		"x": "Folge uns auf X",
+		"bluesky": "Besuche uns auf Bluesky",
+		"github": "Unser GitHub ansehen"
+	},
+	"Privacy-Policy": {
+		"policyHeader": "Datenschutzerklärung",
+		"policySubheader": "Zuletzt aktualisiert: 14. Juli 2022",
+		"policyBody1": "Diese Datenschutzerklärung beschreibt unsere Richtlinien und Verfahren zur Erhebung, Nutzung und Offenlegung deiner Daten, wenn du unseren Dienst nutzt, und erklärt deine Datenschutzrechte und wie das Gesetz dich schützt.",
+		"policyBody2": " Wir verwenden deine personenbezogenen Daten, um den Dienst bereitzustellen und zu verbessern. Durch die Nutzung des Dienstes stimmst du der Erhebung und Nutzung von Informationen gemäß dieser Datenschutzerklärung zu."
+	},
+	"Privacy-Policy2": {
+		"policyHeader2": "Auslegung und Begriffsbestimmungen",
+		"policySubheader2": "Auslegung",
+		"policyBody2": "Wörter mit großgeschriebenem Anfangsbuchstaben haben die unter den folgenden Bedingungen definierte Bedeutung. Die folgenden Definitionen haben dieselbe Bedeutung, unabhängig davon, ob sie im Singular oder Plural stehen."
+	},
+	"Privacy-Policy3": {
+		"policyHeader3": "Begriffsbestimmungen",
+		"policyBody3": "Im Sinne dieser Datenschutzerklärung gilt:",
+		"privacyUlheader": "Begriffsbestimmungen",
+		"definitionAccount": "<strong>Konto</strong> bezeichnet ein eindeutiges Konto, das für dich erstellt wurde, um auf unseren Dienst oder Teile davon zuzugreifen.",
+		"definitionCompany": "<strong>Unternehmen</strong> (in dieser Vereinbarung als „das Unternehmen“, „wir“, „uns“ oder „unser“ bezeichnet) bezieht sich auf Afkanerd Ltd, Bamenda.",
+		"definitionCookies": "<strong>Cookies</strong> sind kleine Dateien, die von einer Website auf deinem Computer, Mobilgerät oder einem anderen Gerät abgelegt werden und deinen Browserverlauf sowie weitere Informationen enthalten.",
+		"definitionCountry": "<strong>Land</strong> bezieht sich auf Kamerun.",
+		"definitionDevice": "<strong>Gerät</strong> bezeichnet jedes Gerät, das auf den Dienst zugreifen kann, z. B. ein Computer, Mobiltelefon oder Tablet.",
+		"definitionPersonalData": "<strong>Personenbezogene Daten</strong> sind alle Informationen, die sich auf eine identifizierte oder identifizierbare Person beziehen.",
+		"definitionService": "<strong>Dienst</strong> bezieht sich auf die Website.",
+		"definitionServiceProvider": "<strong>Dienstleister</strong> bezeichnet jede natürliche oder juristische Person, die Daten im Auftrag des Unternehmens verarbeitet.",
+		"definitionThirdParty": "<strong>Social-Media-Dienst eines Drittanbieters</strong> bezeichnet jedes soziale Netzwerk und jede Website, über die sich ein Nutzer anmelden oder ein Konto erstellen kann, um den Dienst zu nutzen.",
+		"definitionUsageData": "<strong>Nutzungsdaten</strong> sind automatisch erhobene Daten, die durch die Nutzung des Dienstes oder durch die Infrastruktur des Dienstes selbst entstehen (z. B. die Dauer eines Seitenbesuchs).",
+		"definitionWebsite": "<strong>Website</strong> bezieht sich auf SMSwithoutborders, erreichbar unter <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>.",
+		"definitionYou": "<strong>Du</strong> bezeichnet die Person, die auf den Dienst zugreift oder ihn nutzt, bzw. das Unternehmen oder die sonstige juristische Person, in deren Namen diese Person den Dienst nutzt."
+	},
+	"Privacy-Policy4": {
+		"policyHeader4": "Erhebung und Nutzung deiner personenbezogenen Daten",
+		"policySubheader4": "Arten der erhobenen Daten"
+	},
+	"Privacy-Policy5": {
+		"policyHeader5": "Personenbezogene Daten",
+		"policyBody5": " Zur Nutzung von Drittanbieterplattformen fordert die Website Zugriff auf diese Plattformen an. Die Website speichert den von dir gewährten Zugriff, erhebt aber keine weiteren Profilinformationen.",
+		"policyBody6": "Um Informationen über lokale Gateways zum Senden von SMS bereitzustellen, benötigen wir das Land der Telefonnummer. Wir erheben jedoch keine Daten über das Land des Nutzers."
+	},
+	"Privacy-Policy6": {
+		"policyHeader6": "Informationen aus Social-Media-Diensten von Drittanbietern",
+		"policyBody7": "Zur Nutzung von Drittanbieterplattformen fordert die Website Zugriff auf diese Plattformen an. Die Website speichert den von dir gewährten Zugriff, erhebt aber keine weiteren Profilinformationen.",
+		"policyBody8": "Wir speichern eindeutige Profilnamen pro Plattform, damit du erkennen kannst, welches Konto du verwendest. Wir verwenden identifizierbare Informationen von Drittanbietern nicht, um Nutzer zu verfolgen, zu identifizieren oder zu kategorisieren."
+	},
+	"Privacy-Policy7": {
+		"policyHeader7": "Sicherheit deiner personenbezogenen Daten",
+		"policyBody9": "Die Sicherheit deiner personenbezogenen Daten hat für uns Priorität. Allerdings ist keine Übertragungsmethode über das Internet und keine elektronische Speicherung zu 100 % sicher. Wir bemühen uns, deine Daten zu schützen, können aber keine absolute Sicherheit garantieren."
+	},
+	"Privacy-Policy8": {
+		"policyHeader8": "Abmeldung und Datenlöschung",
+		"policyBody10": "Du kannst dich jederzeit von unserem Dienst abmelden. Dadurch werden deine personenbezogenen Daten sofort aus unserem System gelöscht. Wir widerrufen alle Zugriffe, die du uns zur Nutzung des Produkts gewährt hast.",
+		"policyBody11": "Wir löschen nur personenbezogene Daten, die in unserer Datenbank gespeichert sind. Die Löschung von Daten auf Drittanbieterplattformen (auch wenn sie mit unserem Dienst verknüpft sind) muss direkt bei diesen Plattformen beantragt werden."
+	},
+	"Privacy-Policy9": {
+		"policyHeader9": "Datenschutz von Kindern",
+		"policyBody12": "Unser Dienst richtet sich nicht an Personen unter 13 Jahren. Wir erheben wissentlich keine personenbezogenen Daten von Personen unter 13 Jahren.",
+		"policyBody13": "Wenn wir feststellen, dass wir personenbezogene Daten von einer Person unter 13 Jahren ohne nachgewiesene Zustimmung der Eltern erhoben haben, ergreifen wir Maßnahmen, um diese Informationen von unseren Servern zu entfernen."
+	},
+	"Privacy-Policy10": {
+		"policyHeader10": "Links zu anderen Websites",
+		"policyBody14": "Unser Dienst kann Links zu anderen Websites enthalten, die nicht von uns betrieben werden. Wir haben keine Kontrolle über die Inhalte, Datenschutzrichtlinien oder Praktiken von Websites oder Diensten Dritter und übernehmen dafür keine Verantwortung."
+	},
+	"Privacy-Policy11": {
+		"policyHeader11": "Änderungen dieser Datenschutzerklärung",
+		"policyBody15": "Wir können unsere Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir empfehlen dir, diese Datenschutzerklärung regelmäßig auf Änderungen zu überprüfen."
+	},
+	"Privacy-Policy12": {
+		"policyHeader12": "Kontakt",
+		"policyBody16": "Wenn du Fragen zu dieser Datenschutzerklärung hast, kannst du uns über diese Seite auf unserer Website kontaktieren: <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>"
+	},
+	"paperReader": {
+		"notFound": "Publikation nicht gefunden.",
+		"backToResearch": "Zurück zur Forschung",
+		"researchAndPublications": "Forschungsarbeiten",
+		"research": "Forschung",
+		"comingSoon": "Volltext folgt in Kürze",
+		"comingSoonSub": "Diese Arbeit wurde noch nicht veröffentlicht. Schau später wieder vorbei.",
+		"openPdf": "PDF öffnen",
+		"openPdfDirectly": "PDF direkt öffnen",
+		"loading": "Dokument wird geladen …",
+		"errorMessage": "Das Dokument konnte nicht geladen werden. Stelle sicher, dass die PDF-Datei in public/papers/ existiert und der Dateiname genau übereinstimmt.",
+		"back": "← Zurück",
+		"type": {
+			"whitepaper": "Whitepaper",
+			"research": "Forschung",
+			"thread": "Thread"
+		}
+	},
+	"researchPage": {
+		"knowledgeBase": "Wissensdatenbank",
+		"title": "Forschung & Publikationen",
+		"subtitle": "Whitepaper, Forschungsergebnisse und Community-Threads zu Offline-Kommunikation, Privatsphäre und digitaler Teilhabe.",
+		"searchPlaceholder": "Nach Titel, Thema oder Autor suchen …",
+		"filterAll": "Alle",
+		"clearTags": "✕ Tags entfernen",
+		"of": "von",
+		"noResults": "Keine Ergebnisse gefunden. Passe deine Filter an.",
+		"readPaper": "Publikation lesen",
+		"comingSoon": "Demnächst",
+		"viewFullDocument": "Vollständiges Dokument ansehen →"
+	},
+	"brandPage": {
+		"eyebrow": "Presse & Medien",
+		"title": "Markenressourcen",
+		"subtitle": "Offizielle SMSWithoutBorders-Logos für Artikel, Präsentationen und Partnermaterialien. Bitte verändere, verfärbe oder verzerre die Logos nicht. Verwende nach Möglichkeit SVG und PNG dort, wo Vektordateien nicht unterstützt werden.",
+		"fullLogo": {
+			"title": "Vollständiges Logo",
+			"description": "Das Hauptlogo mit Symbol und Schriftzug. Verwende es überall dort, wo genug horizontaler Platz vorhanden ist."
+		},
+		"logoIcon": {
+			"title": "Logo-Symbol",
+			"description": "Das Symbol allein. Verwende es für Avatare, App-Symbole und kleine Flächen, auf denen der Schriftzug nicht lesbar wäre."
+		},
+		"logoOnBackground": {
+			"title": "Logo auf Hintergrund",
+			"description": "Das Logo auf einem einfarbigen Hintergrund – bereit für soziale Medien, Banner und Präsentationen."
+		},
+		"variant": {
+			"Default": "Standard",
+			"Black": "Schwarz",
+			"White": "Weiß",
+			"Blue": "Blau",
+			"Dark Theme": "Dunkles Design"
+		},
+		"preview": "Vorschau",
+		"close": "Schließen",
+		"copyImage": "Bild kopieren",
+		"copyPngLink": "PNG-Link kopieren",
+		"copySvgLink": "SVG-Link kopieren",
+		"copyEmailHtml": "E-Mail-HTML kopieren",
+		"openFullSize": "In voller Größe öffnen",
+		"linkCopied": "Link kopiert",
+		"htmlCopied": "HTML kopiert",
+		"copyFailed": "Kopieren in die Zwischenablage fehlgeschlagen",
+		"imageCopied": "Bild kopiert. Füge es in deine E-Mail oder dein Dokument ein.",
+		"imageCopyUnsupported": "Dein Browser kann keine Bilder kopieren. Kopiere stattdessen den Bildlink oder lade das PNG herunter."
+	}
+}

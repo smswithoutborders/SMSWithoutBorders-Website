@@ -108,7 +108,8 @@
 		"githubOrg": "Organisation GitHub",
 		"twitterX": "Twitter / X @smswithoutborders",
 		"contactDevelopers": "Contacter les développeurs",
-		"reportIssue": "Signaler un problème"
+		"reportIssue": "Signaler un problème",
+		"brandResources": "Ressources de marque"
 	},
 	"theme": {
 		"switchToDark": "Passer en mode sombre",
@@ -222,5 +223,41 @@
   "readPaper": "Lire le document",
   "comingSoon": "Bientôt disponible",
   "viewFullDocument": "Voir le document complet →"
+},
+"brandPage": {
+	"eyebrow": "Presse et médias",
+	"title": "Ressources de marque",
+	"subtitle": "Logos officiels de SMSWithoutBorders pour les articles, présentations et supports de partenaires. Merci de ne pas modifier, recolorer ou déformer les logos. Utilisez le SVG autant que possible et le PNG lorsque les fichiers vectoriels ne sont pas pris en charge.",
+	"fullLogo": {
+		"title": "Logo complet",
+		"description": "Le logo principal, avec l'icône et le logotype. Utilisez-le partout où l'espace horizontal est suffisant."
+	},
+	"logoIcon": {
+		"title": "Icône du logo",
+		"description": "L'icône seule. Utilisez-la pour les avatars, les icônes d'application et les petits espaces où le logotype ne serait pas lisible."
+	},
+	"logoOnBackground": {
+		"title": "Logo sur fond",
+		"description": "Le logo sur un fond uni, prêt pour les réseaux sociaux, les bannières et les présentations."
+	},
+	"variant": {
+		"Default": "Par défaut",
+		"Black": "Noir",
+		"White": "Blanc",
+		"Blue": "Bleu",
+		"Dark Theme": "Thème sombre"
+	},
+	"preview": "Aperçu",
+	"close": "Fermer",
+	"copyImage": "Copier l'image",
+	"copyPngLink": "Copier le lien PNG",
+	"copySvgLink": "Copier le lien SVG",
+	"copyEmailHtml": "Copier le HTML pour e-mail",
+	"openFullSize": "Ouvrir en taille réelle",
+	"linkCopied": "Lien copié",
+	"htmlCopied": "HTML copié",
+	"copyFailed": "Impossible de copier dans le presse-papiers",
+	"imageCopied": "Image copiée. Collez-la dans votre e-mail ou votre document.",
+	"imageCopyUnsupported": "Votre navigateur ne peut pas copier d'images. Copiez plutôt le lien de l'image ou téléchargez le PNG."
 }
 }
