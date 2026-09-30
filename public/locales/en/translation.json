@@ -108,7 +108,8 @@
 		"githubOrg": "GitHub Organization",
 		"twitterX": "Twitter / X @smswithoutborders",
 		"contactDevelopers": "Contact developers",
-		"reportIssue": "Report an issue"
+		"reportIssue": "Report an issue",
+		"brandResources": "Brand Resources"
 	},
 	"theme": {
 		"switchToDark": "Switch to dark",
@@ -223,5 +224,41 @@
   "readPaper": "Read Paper",
   "comingSoon": "Coming Soon",
   "viewFullDocument": "View full document →"
+},
+"brandPage": {
+	"eyebrow": "Press & Media",
+	"title": "Brand Resources",
+	"subtitle": "Official SMSWithoutBorders logos for articles, presentations and partner materials. Please don't alter, recolor or distort the logos. Use SVG wherever possible and PNG where vector files aren't supported.",
+	"fullLogo": {
+		"title": "Full Logo",
+		"description": "The primary logo with the icon and wordmark. Use it wherever there is enough horizontal space."
+	},
+	"logoIcon": {
+		"title": "Logo Icon",
+		"description": "The standalone icon. Use it for avatars, app icons and small spaces where the wordmark would not be legible."
+	},
+	"logoOnBackground": {
+		"title": "Logo on Background",
+		"description": "The logo placed on a solid background, ready for social media, banners and presentations."
+	},
+	"variant": {
+		"Default": "Default",
+		"Black": "Black",
+		"White": "White",
+		"Blue": "Blue",
+		"Dark Theme": "Dark Theme"
+	},
+	"preview": "Preview",
+	"close": "Close",
+	"copyImage": "Copy image",
+	"copyPngLink": "Copy PNG link",
+	"copySvgLink": "Copy SVG link",
+	"copyEmailHtml": "Copy email HTML",
+	"openFullSize": "Open full size",
+	"linkCopied": "Link copied",
+	"htmlCopied": "HTML copied",
+	"copyFailed": "Couldn't copy to clipboard",
+	"imageCopied": "Image copied. Paste it into your email or document.",
+	"imageCopyUnsupported": "Your browser can't copy images. Copy the image link or download the PNG instead."
 }
 }

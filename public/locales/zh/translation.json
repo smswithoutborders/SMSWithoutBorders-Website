@@ -1,0 +1,263 @@
+{
+	"changeLanguage": "切换语言",
+	"navbar": {
+		"link": "首页",
+		"link1": "博客",
+		"link2": "RelaySMS",
+		"link3": "DekuSMS",
+		"link4": "隐私政策",
+		"link5": "文档",
+		"link6": "功能",
+		"link7": "论文",
+		"products": "产品",
+		"tagline": "开源 · 隐私 · 自由",
+		"papers": {
+			"whitepaper": "白皮书",
+			"threatModel": "威胁模型"
+		},
+		"researchFull": "研究论文"
+	},
+	"loader": "正在加载，请稍候",
+	"features": {
+		"loadError": "功能介绍加载失败。"
+	},
+	"LandingHeader": "开源 | 研究",
+	"landingHeroSub": "SMSWithoutBorders（SWOB）致力于研究、开发和推广安全、易用的通信工具，即使没有互联网连接也能正常使用。",
+	"landing": {
+		"goToProjects": "查看项目"
+	},
+	"About": {
+		"AboutHeader": "了解 SMSWithoutBorders",
+		"description": "SMSWithoutBorders（SWOB）致力于研究、开发和推广安全、易用的通信工具，即使没有互联网连接也能正常使用。",
+		"description1": "我们的开发工作包括适用于 Android、iOS 和 Linux 等多个平台的移动应用，还包括关于密码学、通信和互联网自由等主题的白皮书。",
+		"description2": "我们的使命之旅始于 2021 年，当时我们开发了 RelaySMS 的第一个 Android 版本。从那以后，我们已走过很长的路，支持了更多平台，也推出了更多应用。",
+		"description3": "我们会尽可能频繁地在博客上发布研究成果，并通过社交媒体发布公告。SMSWithoutBorders 是由 <a href='https://afkanerd.com' class='afkanerd'>Afkanerd</a> 团队发起的项目。"
+	},
+	"projectHeader": "项目",
+	"projectHeadline": "我们构建的一切，都开放且免费",
+	"projectSubHeader": "SMSWithoutBorders 开发开源的互联网自由工具，保护言论自由，帮助人们绕过网络审查和断网。",
+	"papersEyebrow": "论文",
+	"papersTitle": "研究与出版物",
+	"papersBody": "团队发布有关我们技术栈的研究论文和笔记，内容涵盖架构、加密和威胁建模等。",
+	"projectsResilienceEyebrow": "基于短信构建",
+	"projectsResilienceTitle": "基于短信构建——最具韧性的通信层",
+	"projectsResilienceBody": "移动数据不可用时，短信依然可用。我们在短信之上构建了一整套安全中继基础设施，无论网络或政府采取什么措施，人们都能保持联系。",
+	"developerLibrariesEyebrow": "开发者库",
+	"developerLibrariesTitle": "基于我们的技术栈进行开发",
+	"developerLibrariesBody": "所有核心组件均为开源且可复用。",
+	"projectsub": "我们的项目",
+	"projectDescriptions": {
+		"relaysms": "一款将短信网络与基于互联网的消息服务连接起来的移动应用。已连接平台的凭据安全地存储在你的设备上，在无法上网时也能通过短信发送消息。",
+		"dekusms": "一款开源、端到端加密的 Android 短信应用。它为 RelaySMS 的短信处理层提供支持，也可以单独使用，作为默认短信应用的安全替代品。支持通过彩信发送图片。",
+		"vault": "用于消息发布的安全访问令牌管理系统。通过额外的加密层保护 OAuth2 凭据。",
+		"gateway": "让用户与发布模块同步并进行通信。它是设备与后端之间的核心中继基础设施。",
+		"bridge": "让用户完全通过短信与在线平台通信，无需任何互联网连接。仅通过短信即可完成安全握手和加密交换。",
+		"publisher": "位于 Gateway 与后端之间的中间件。为 Telegram 等平台提供可插拔的 PNBA 适配器，负责解密和路由。"
+	},
+	"libraryTitles": {
+		"smsmms-library": "lib_smsmms_android",
+		"lib-image": "Lib Image",
+		"adapter-interface": "发布适配器",
+		"rusty_relaysms_payload_specs": "Rusty Specs"
+	},
+	"libraryDescriptions": {
+		"smsmms-library": "RelaySMS 和 DekuSMS 使用的 Android 短信与彩信传输库。负责处理运营商消息流程、运行时权限、彩信发送以及默认短信应用集成。",
+		"lib-image": "移动消息技术栈中用于彩信和媒体处理的图片辅助库。RelaySMS 的 Android 和 iOS 版本均在使用。",
+		"rusty_relaysms_payload_specs": "RelaySMS 规范论文以及技术白皮书中安全实现细节的具体实现。",
+		"double-ratchet-java": "为 RelaySMS 技术栈中的移动应用实现 Signal 双棘轮（Double Ratchet）基础算法的 Android 加密辅助库。",
+		"double-ratchet-python": "实现 Signal 双棘轮算法及相关辅助功能的 Python 密码学库，用于后端服务之间的安全交换。",
+		"double-ratchet-ios": "SMSWithoutBorders 的 Signal 双棘轮密码学辅助工具的 Swift 实现，用于 iOS 上的安全消息交换。",
+		"image-android": "移动消息技术栈中用于彩信和媒体处理的 Android 图片辅助库。",
+		"image-ios": "用于 RelaySMS iOS 媒体流程和附件处理的 Swift 图片处理辅助库。",
+		"gateway-client": "用于从外部工具和服务与 Gateway 层交互的远程 Python 客户端。",
+		"adapter-interface": "用于添加新平台桥接的可插拔接口。Telegram 是参考 PNBA 适配器，同一发布层还支持更多平台适配器。"
+	},
+	"project1": {
+		"title": "RelaySMS",
+		"description": "RelaySMS 通过短信与在线平台通信，无需互联网连接。用户可以授权访问自己的在线平台，RelaySMS 将通过短信代表用户执行操作。所授予的访问权限、应用发送的消息以及消息在线发布的方式，都受到最新、强大的密码学和安全措施的保护。",
+		"website": "网站",
+		"read_more": "访问网站",
+		"keyPoint1": "短信",
+		"keyPoint2": "互联网自由"
+	},
+	"project2": {
+		"title": "DekuSMS",
+		"description": "DekuSMS 是一款 Android 短信应用。它让两位应用用户能够通过短信进行端到端加密通信。该应用还支持通过 SMTP、FTP 和 AMQP 等协议转发消息，并可与 RabbitMQ 集成，让使用消息队列的用户能够设置并向其应用发送远程通信请求。",
+		"read_more": "访问网站",
+		"website": "网站",
+		"keyPoint1": "短信",
+		"keyPoint2": "隐私"
+	},
+	"Sponsor": {
+		"Sponsorsub": "合作伙伴",
+		"SponsorT": "支持机构",
+		"Sponsor-subheader": "这些机构帮助 SMSWithoutBorders 持续运行",
+		"sponsorfooter": "感谢致力于自由开放互联网的各机构的大力支持。"
+	},
+	"footer": {
+		"copyright": "© Afkanerd.",
+		"copyrightYear": "© {{year}} Afkanerd",
+		"github": "GitHub"
+	},
+	"footerNav": {
+		"projects": "项目",
+		"resources": "资源",
+		"community": "社区",
+		"relay": "RelaySMS",
+		"deku": "DekuSMS",
+		"githubOrg": "GitHub 组织",
+		"twitterX": "Twitter / X @smswithoutborders",
+		"contactDevelopers": "联系开发者",
+		"reportIssue": "报告问题",
+		"brandResources": "品牌资源"
+	},
+	"theme": {
+		"switchToDark": "切换到深色模式",
+		"switchToLight": "切换到浅色模式"
+	},
+	"notFound": {
+		"title": "哎呀，你迷路了",
+		"subtitle": "你要找的页面似乎不存在",
+		"backHome": "带你回到首页"
+	},
+	"social": {
+		"x": "在 X 上关注我们",
+		"bluesky": "在 Bluesky 上关注我们",
+		"github": "查看我们的 GitHub"
+	},
+	"Privacy-Policy": {
+		"policyHeader": "隐私政策",
+		"policySubheader": "最后更新：2022 年 7 月 14 日",
+		"policyBody1": "本隐私政策说明了你使用我们的服务时，我们收集、使用和披露你的信息的政策和程序，并说明了你的隐私权利以及法律如何保护你。",
+		"policyBody2": "我们使用你的个人数据来提供和改进服务。使用本服务即表示你同意我们按照本隐私政策收集和使用信息。"
+	},
+	"Privacy-Policy2": {
+		"policyHeader2": "解释与定义",
+		"policySubheader2": "解释",
+		"policyBody2": "首字母大写的词语具有以下条件中所定义的含义。无论以单数还是复数形式出现，以下定义均具有相同含义。"
+	},
+	"Privacy-Policy3": {
+		"policyHeader3": "定义",
+		"policyBody3": "就本隐私政策而言：",
+		"privacyUlheader": "定义",
+		"definitionAccount": "<strong>账户</strong>是指为你创建的、用于访问我们的服务或其部分功能的唯一账户。",
+		"definitionCompany": "<strong>公司</strong>（在本协议中称为“公司”“我们”或“我们的”）指 Afkanerd Ltd, Bamenda。",
+		"definitionCookies": "<strong>Cookie</strong> 是网站放置在你的计算机、移动设备或其他设备上的小型文件，其中包含你的浏览记录和其他信息。",
+		"definitionCountry": "<strong>国家</strong>指喀麦隆。",
+		"definitionDevice": "<strong>设备</strong>指任何可以访问本服务的设备，例如计算机、手机或平板电脑。",
+		"definitionPersonalData": "<strong>个人数据</strong>指与已识别或可识别的个人相关的任何信息。",
+		"definitionService": "<strong>服务</strong>指本网站。",
+		"definitionServiceProvider": "<strong>服务提供商</strong>指代表公司处理数据的任何自然人或法人。",
+		"definitionThirdParty": "<strong>第三方社交媒体服务</strong>指用户可通过其登录或创建账户以使用本服务的任何社交网络或网站。",
+		"definitionUsageData": "<strong>使用数据</strong>指因使用本服务或由服务基础设施本身自动生成和收集的数据（例如页面访问时长）。",
+		"definitionWebsite": "<strong>网站</strong>指 SMSwithoutborders，可通过 <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a> 访问。",
+		"definitionYou": "<strong>你</strong>指访问或使用本服务的个人，或该个人代表其访问或使用本服务的公司或其他法律实体。"
+	},
+	"Privacy-Policy4": {
+		"policyHeader4": "收集和使用你的个人数据",
+		"policySubheader4": "收集的数据类型"
+	},
+	"Privacy-Policy5": {
+		"policyHeader5": "个人数据",
+		"policyBody5": "为使用第三方平台，网站会请求访问这些平台的权限。网站会存储你授予的访问权限，但不会收集更多的个人资料信息。",
+		"policyBody6": "为提供用于发送短信的本地网关信息，我们需要知道电话号码所属的国家，但我们不会收集用户所在国家的数据。"
+	},
+	"Privacy-Policy6": {
+		"policyHeader6": "来自第三方社交媒体服务的信息",
+		"policyBody7": "为使用第三方平台，网站会请求访问这些平台的权限。网站会存储你授予的访问权限，但不会收集更多的个人资料信息。",
+		"policyBody8": "我们会存储你在每个平台上的唯一用户名，以帮助你识别正在使用的账户。我们不会使用第三方的可识别信息来追踪、识别或分类用户。"
+	},
+	"Privacy-Policy7": {
+		"policyHeader7": "个人数据的安全",
+		"policyBody9": "我们高度重视你的个人数据安全。但是，任何互联网传输或电子存储方式都不是百分之百安全的。我们会尽力保护你的数据，但无法保证绝对安全。"
+	},
+	"Privacy-Policy8": {
+		"policyHeader8": "退出服务与数据删除",
+		"policyBody10": "你可以随时退出我们的服务。这将立即从我们的系统中删除你的个人数据，我们也会撤销你为使用本产品而授予我们的所有访问权限。",
+		"policyBody11": "我们只删除存储在我们数据库中的个人数据。删除第三方平台上的数据（即使与我们的服务相关联）必须直接向这些平台提出请求。"
+	},
+	"Privacy-Policy9": {
+		"policyHeader9": "儿童隐私",
+		"policyBody12": "我们的服务不面向 13 岁以下的任何人。我们不会故意收集 13 岁以下任何人的个人身份信息。",
+		"policyBody13": "如果我们发现在未经家长同意验证的情况下收集了 13 岁以下任何人的个人数据，我们将采取措施从服务器上删除这些信息。"
+	},
+	"Privacy-Policy10": {
+		"policyHeader10": "指向其他网站的链接",
+		"policyBody14": "我们的服务可能包含指向非我们运营的其他网站的链接。我们无法控制任何第三方网站或服务的内容、隐私政策或做法，也不对此承担任何责任。"
+	},
+	"Privacy-Policy11": {
+		"policyHeader11": "本隐私政策的变更",
+		"policyBody15": "我们可能会不时更新隐私政策。建议你定期查看本隐私政策，了解是否有任何变更。"
+	},
+	"Privacy-Policy12": {
+		"policyHeader12": "联系我们",
+		"policyBody16": "如果你对本隐私政策有任何疑问，可以访问我们网站上的此页面联系我们：<a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>"
+	},
+	"paperReader": {
+		"notFound": "未找到该论文。",
+		"backToResearch": "返回研究",
+		"researchAndPublications": "研究论文",
+		"research": "研究",
+		"comingSoon": "全文即将发布",
+		"comingSoonSub": "这篇论文尚未发布，请稍后再来查看。",
+		"openPdf": "打开 PDF",
+		"openPdfDirectly": "直接打开 PDF",
+		"loading": "正在加载文档…",
+		"errorMessage": "无法加载文档。请确认 PDF 文件位于 public/papers/ 中，且文件名完全一致。",
+		"back": "← 返回",
+		"type": {
+			"whitepaper": "白皮书",
+			"research": "研究",
+			"thread": "讨论"
+		}
+	},
+	"researchPage": {
+		"knowledgeBase": "知识库",
+		"title": "研究与出版物",
+		"subtitle": "关于离线通信、隐私和数字包容的白皮书、研究成果和社区讨论。",
+		"searchPlaceholder": "按标题、主题或作者搜索…",
+		"filterAll": "全部",
+		"clearTags": "✕ 清除标签",
+		"of": "/",
+		"noResults": "未找到结果。请尝试调整筛选条件。",
+		"readPaper": "阅读论文",
+		"comingSoon": "即将推出",
+		"viewFullDocument": "查看完整文档 →"
+	},
+	"brandPage": {
+		"eyebrow": "媒体资料",
+		"title": "品牌资源",
+		"subtitle": "SMSWithoutBorders 官方标志，可用于文章、演示文稿和合作伙伴材料。请勿修改标志、更改其颜色或使其变形。请尽量使用 SVG 格式，在不支持矢量文件的地方使用 PNG 格式。",
+		"fullLogo": {
+			"title": "完整标志",
+			"description": "包含图标和文字标识的主标志。在水平空间充足的地方使用。"
+		},
+		"logoIcon": {
+			"title": "标志图标",
+			"description": "单独的图标。适用于头像、应用图标以及文字标识难以辨认的小尺寸空间。"
+		},
+		"logoOnBackground": {
+			"title": "带背景的标志",
+			"description": "置于纯色背景上的标志，可直接用于社交媒体、横幅和演示文稿。"
+		},
+		"variant": {
+			"Default": "默认",
+			"Black": "黑色",
+			"White": "白色",
+			"Blue": "蓝色",
+			"Dark Theme": "深色主题"
+		},
+		"preview": "预览",
+		"close": "关闭",
+		"copyImage": "复制图片",
+		"copyPngLink": "复制 PNG 链接",
+		"copySvgLink": "复制 SVG 链接",
+		"copyEmailHtml": "复制邮件 HTML",
+		"openFullSize": "查看原图",
+		"linkCopied": "链接已复制",
+		"htmlCopied": "HTML 已复制",
+		"copyFailed": "无法复制到剪贴板",
+		"imageCopied": "图片已复制。可以粘贴到你的邮件或文档中。",
+		"imageCopyUnsupported": "你的浏览器不支持复制图片。请改为复制图片链接或下载 PNG。"
+	}
+}

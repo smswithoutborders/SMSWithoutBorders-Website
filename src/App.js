@@ -9,6 +9,7 @@ import Privacy from "./Pages/Privacy";
 import Footer from "./Components/Footer";
 import ResearchPage from "./Pages/ResearchPage";
 import PaperReader from "./Pages/PaperReader";
+import BrandResources from "./Pages/BrandResources";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 					<Route path="/privacy-policy/" element={<Privacy />} />
 					<Route path="/research" element={<ResearchPage />} />
 					<Route path="/research/:id" element={<PaperReader />} />
+					<Route path="/brand" element={<BrandResources />} />
 				</Routes>
 			</div>
 			<Footer />
