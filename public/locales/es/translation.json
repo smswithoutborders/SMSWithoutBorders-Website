@@ -108,7 +108,8 @@
 		"githubOrg": "Organización en GitHub",
 		"twitterX": "Twitter / X @smswithoutborders",
 		"contactDevelopers": "Contactar a los desarrolladores",
-		"reportIssue": "Reportar un problema"
+		"reportIssue": "Reportar un problema",
+		"brandResources": "Recursos de marca"
 	},
 	"theme": {
 		"switchToDark": "Cambiar a modo oscuro",
@@ -222,5 +223,41 @@
   "readPaper": "Leer documento",
   "comingSoon": "Próximamente",
   "viewFullDocument": "Ver documento completo →"
+},
+"brandPage": {
+	"eyebrow": "Prensa y medios",
+	"title": "Recursos de marca",
+	"subtitle": "Logotipos oficiales de SMSWithoutBorders para artículos, presentaciones y materiales de socios. Por favor, no modifiques, cambies el color ni deformes los logotipos. Usa SVG siempre que sea posible y PNG cuando no se admitan archivos vectoriales.",
+	"fullLogo": {
+		"title": "Logotipo completo",
+		"description": "El logotipo principal, con el icono y el nombre. Úsalo siempre que haya suficiente espacio horizontal."
+	},
+	"logoIcon": {
+		"title": "Icono del logotipo",
+		"description": "El icono por sí solo. Úsalo para avatares, iconos de aplicaciones y espacios pequeños donde el nombre no sería legible."
+	},
+	"logoOnBackground": {
+		"title": "Logotipo con fondo",
+		"description": "El logotipo sobre un fondo sólido, listo para redes sociales, banners y presentaciones."
+	},
+	"variant": {
+		"Default": "Predeterminado",
+		"Black": "Negro",
+		"White": "Blanco",
+		"Blue": "Azul",
+		"Dark Theme": "Tema oscuro"
+	},
+	"preview": "Vista previa",
+	"close": "Cerrar",
+	"copyImage": "Copiar imagen",
+	"copyPngLink": "Copiar enlace PNG",
+	"copySvgLink": "Copiar enlace SVG",
+	"copyEmailHtml": "Copiar HTML para correo",
+	"openFullSize": "Abrir a tamaño completo",
+	"linkCopied": "Enlace copiado",
+	"htmlCopied": "HTML copiado",
+	"copyFailed": "No se pudo copiar al portapapeles",
+	"imageCopied": "Imagen copiada. Pégala en tu correo o documento.",
+	"imageCopyUnsupported": "Tu navegador no puede copiar imágenes. Copia el enlace de la imagen o descarga el PNG."
 }
 }

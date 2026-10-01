@@ -74,6 +74,12 @@ export default function Footer() {
           label: t("navbar.researchFull", { defaultValue: "Research Papers" }),
           href: "/research",
         },
+        {
+          label: t("footerNav.brandResources", {
+            defaultValue: "Brand Resources",
+          }),
+          href: "/brand",
+        },
         // {
         //   label: t("navbar.link4", { defaultValue: "Privacy Policy" }),
         //   href: "/privacy-policy/",

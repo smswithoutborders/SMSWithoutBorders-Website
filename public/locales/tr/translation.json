@@ -1,0 +1,263 @@
+{
+	"changeLanguage": "Dili Değiştir",
+	"navbar": {
+		"link": "Ana Sayfa",
+		"link1": "Blog",
+		"link2": "RelaySMS",
+		"link3": "DekuSMS",
+		"link4": "Gizlilik Politikası",
+		"link5": "Belgeler",
+		"link6": "Özellikler",
+		"link7": "Makaleler",
+		"products": "Ürünler",
+		"tagline": "Açık Kaynak · Gizlilik · Özgürlük",
+		"papers": {
+			"whitepaper": "Teknik Rapor",
+			"threatModel": "Tehdit Modeli"
+		},
+		"researchFull": "Araştırma Makaleleri"
+	},
+	"loader": "Yükleniyor, lütfen bekleyin",
+	"features": {
+		"loadError": "Özellikler yüklenemedi."
+	},
+	"LandingHeader": "Açık Kaynak | Araştırma",
+	"landingHeroSub": "SMSWithoutBorders (SWOB), internet bağlantısı olmadan da çalışan güvenli ve erişilebilir iletişim araçlarını araştırmaya, geliştirmeye ve yaygınlaştırmaya kendini adamıştır.",
+	"landing": {
+		"goToProjects": "Projelere git"
+	},
+	"About": {
+		"AboutHeader": "SMSWithoutBorders'ı Keşfedin",
+		"description": "SMSWithoutBorders (SWOB), internet bağlantısı olmadan da çalışan güvenli ve erişilebilir iletişim araçlarını araştırmaya, geliştirmeye ve yaygınlaştırmaya kendini adamıştır.",
+		"description1": "Geliştirme çalışmaları Android, iOS ve Linux gibi çeşitli platformlar için mobil uygulamaları kapsar. Çalışmalarımızın bir kısmı kriptografi, iletişim ve internet özgürlüğü gibi konularda teknik raporlardan oluşur.",
+		"description2": " Misyonumuza ulaşma yolculuğumuz 2021'de RelaySMS'in ilk Android sürümünün geliştirilmesiyle başladı. O günden bu yana daha fazla platform desteği ve çok daha fazla uygulamayla uzun bir yol kat ettik.",
+		"description3": "Araştırmalarımızı olabildiğince sık blogumuzda yayımlıyor ve duyurularımızı sosyal medya hesaplarımızdan yapıyoruz. SMSWithoutBorders, <a href='https://afkanerd.com' class='afkanerd'>Afkanerd</a> ekibi tarafından başlatılmış bir projedir."
+	},
+	"projectHeader": "Projeler",
+	"projectHeadline": "Geliştirdiğimiz her şey açık ve ücretsiz",
+	"projectSubHeader": "SMSWithoutBorders, ifade özgürlüğünü koruyan ve insanların internet sansürünü ve kesintilerini aşmasına yardımcı olan açık kaynaklı internet özgürlüğü araçları geliştirir.",
+	"papersEyebrow": "Makaleler",
+	"papersTitle": "Araştırmalar ve yayınlar",
+	"papersBody": "Ekip, mimariden şifrelemeye ve tehdit modellemeye kadar teknoloji yığınımızın ardındaki araştırma makalelerini ve notları yayımlar.",
+	"projectsResilienceEyebrow": "SMS üzerine kurulu",
+	"projectsResilienceTitle": "SMS üzerine kurulu – en dayanıklı katman",
+	"projectsResilienceBody": "Mobil veri çalışmadığında SMS çalışır. Bunun üzerine eksiksiz ve güvenli bir aktarım altyapısı kurduk; böylece ağ ya da bir hükümet ne yaparsa yapsın insanlar bağlantıda kalabilir.",
+	"developerLibrariesEyebrow": "Geliştirici Kütüphaneleri",
+	"developerLibrariesTitle": "Teknoloji yığınımız üzerine inşa edin",
+	"developerLibrariesBody": "Tüm temel bileşenler açık kaynaklı ve yeniden kullanılabilir.",
+	"projectsub": "Projelerimiz",
+	"projectDescriptions": {
+		"relaysms": "SMS ağlarını internet tabanlı mesajlaşma hizmetlerine bağlayan bir mobil uygulama. Bağlı platformların kimlik bilgileri cihazınızda güvenle saklanır; böylece internet erişimi olmadığında mesajlar SMS ile iletilebilir.",
+		"dekusms": "Android için açık kaynaklı, uçtan uca şifreli bir SMS uygulaması. RelaySMS'in SMS işleme katmanına güç verir ve varsayılan SMS uygulamanızın güvenli bir alternatifi olarak tek başına da kullanılabilir. MMS ile resim göndermeyi destekler.",
+		"vault": "Mesaj yayımlama için güvenli erişim belirteci yönetim sistemi. OAuth2 kimlik bilgilerini ek bir şifreleme katmanıyla korur.",
+		"gateway": "Kullanıcıların yayımlama modülüyle senkronize olmasını ve iletişim kurmasını sağlar. Cihazlar ile arka uç arasındaki temel aktarım altyapısıdır.",
+		"bridge": "Kullanıcıların çevrimiçi platformlarla tamamen SMS üzerinden, hiç internet gerekmeden iletişim kurmasını sağlar. Yalnızca SMS üzerinden güvenli bir el sıkışma ve şifreli veri alışverişi sunar.",
+		"publisher": "Gateway ile arka uç arasında yer alan ara yazılım. Telegram ve diğer platformlar için takılabilir PNBA bağdaştırıcıları içerir. Şifre çözme ve yönlendirme işlemlerini yürütür."
+	},
+	"libraryTitles": {
+		"smsmms-library": "lib_smsmms_android",
+		"lib-image": "Lib Image",
+		"adapter-interface": "Yayımlayıcı Bağdaştırıcıları",
+		"rusty_relaysms_payload_specs": "Rusty Specs"
+	},
+	"libraryDescriptions": {
+		"smsmms-library": "RelaySMS ve DekuSMS tarafından kullanılan Android SMS ve MMS aktarım kütüphanesi. Operatör mesajlaşma akışlarını, çalışma zamanı izinlerini, MMS gönderimini ve varsayılan SMS uygulaması entegrasyonunu yönetir.",
+		"lib-image": "Mobil mesajlaşma yığınında MMS ve medya işleme için görsel yardımcı kütüphanesi. Hem RelaySMS Android hem de iOS tarafından kullanılır.",
+		"rusty_relaysms_payload_specs": "RelaySMS spesifikasyon makalesinin ve teknik rapordaki güvenlik uygulama ayrıntılarının gerçeklemesi.",
+		"double-ratchet-java": "RelaySMS yığınındaki mobil uygulamalar için Signal Double Ratchet temel yapılarını uygulayan Android şifreleme yardımcı kütüphanesi.",
+		"double-ratchet-python": "Arka uç hizmetleri arasında güvenli veri alışverişi için Signal Double Ratchet'i ve yardımcı işlevleri uygulayan Python kriptografi kütüphanesi.",
+		"double-ratchet-ios": "iOS'ta güvenli mesaj alışverişi için SMSWithoutBorders'ın Signal Double Ratchet kriptografi yardımcılarının Swift uygulaması.",
+		"image-android": "Mobil mesajlaşma yığınında MMS ve medya işleme için kullanılan Android görsel yardımcı kütüphanesi.",
+		"image-ios": "RelaySMS iOS medya iş akışları ve ek dosya işleme için Swift görsel işleme yardımcı kütüphanesi.",
+		"gateway-client": "Harici araç ve hizmetlerden Gateway katmanıyla etkileşim kurmak için uzak Python istemcisi.",
+		"adapter-interface": "Yeni platform köprüleri eklemek için takılabilir arayüz. Telegram referans PNBA bağdaştırıcısıdır ve aynı yayımlayıcı katmanı ek platform bağdaştırıcılarını destekler."
+	},
+	"project1": {
+		"title": "RelaySMS",
+		"description": "RelaySMS, internet bağlantısına ihtiyaç duymadan çevrimiçi platformlarla iletişim kurmak için SMS mesajlaşmasını kullanır. Kullanıcılar çevrimiçi platformlarına erişim izni verebilir; bu erişim, SMS mesajlarıyla kullanıcı adına işlem yapmak için kullanılır. Verilen erişim, uygulamadan gönderilen mesajlar ve bunların çevrimiçi olarak nasıl yayımlandığı, güncel ve güçlü kriptografi ve güvenlik uygulamalarıyla korunur.",
+		"website": "Web sitesi",
+		"read_more": "Web Sitesini Ziyaret Et",
+		"keyPoint1": "SMS",
+		"keyPoint2": "İnternet Özgürlüğü"
+	},
+	"project2": {
+		"title": "DekuSMS",
+		"description": "DekuSMS, Android için bir SMS mesajlaşma uygulamasıdır. Uygulamayı kullanan iki kişinin SMS üzerinden uçtan uca şifreleme ile iletişim kurmasını sağlar. Uygulama ayrıca SMTP, FTP ve AMQP gibi protokolleri destekleyen mesaj iletme özelliklerine sahiptir. RabbitMQ ile entegre olacak şekilde geliştirilmiştir; böylece mesaj kuyruğu kullanan kullanıcılar uygulamalarına uzaktan iletişim istekleri kurup gönderebilir.",
+		"read_more": "Web Sitesini Ziyaret Et",
+		"website": "Web sitesi",
+		"keyPoint1": "SMS",
+		"keyPoint2": "Gizlilik"
+	},
+	"Sponsor": {
+		"Sponsorsub": "Ortaklar",
+		"SponsorT": "Destekçi Kuruluşlar",
+		"Sponsor-subheader": "Bu kuruluşlar SMSWithoutBorders'ın ayakta kalmasına yardımcı oluyor",
+		"sponsorfooter": "Özgür ve açık bir internete bağlı kuruluşlar tarafından gururla desteklenmektedir."
+	},
+	"footer": {
+		"copyright": "© Afkanerd.",
+		"copyrightYear": "© {{year}} Afkanerd",
+		"github": "GitHub"
+	},
+	"footerNav": {
+		"projects": "Projeler",
+		"resources": "Kaynaklar",
+		"community": "Topluluk",
+		"relay": "RelaySMS",
+		"deku": "DekuSMS",
+		"githubOrg": "GitHub Organizasyonu",
+		"twitterX": "Twitter / X @smswithoutborders",
+		"contactDevelopers": "Geliştiricilerle iletişime geç",
+		"reportIssue": "Sorun bildir",
+		"brandResources": "Marka Kaynakları"
+	},
+	"theme": {
+		"switchToDark": "Koyu temaya geç",
+		"switchToLight": "Açık temaya geç"
+	},
+	"notFound": {
+		"title": "Hay aksi, kayboldunuz",
+		"subtitle": "Aradığınız sayfa mevcut değil gibi görünüyor",
+		"backHome": "Sizi ana sayfaya geri götürelim"
+	},
+	"social": {
+		"x": "Bizi X'te takip edin",
+		"bluesky": "Bluesky'da bize göz atın",
+		"github": "GitHub sayfamızı görüntüleyin"
+	},
+	"Privacy-Policy": {
+		"policyHeader": "Gizlilik Politikası",
+		"policySubheader": "Son güncelleme: 14 Temmuz 2022",
+		"policyBody1": "Bu Gizlilik Politikası, Hizmetimizi kullandığınızda bilgilerinizin toplanması, kullanılması ve açıklanmasına ilişkin politika ve prosedürlerimizi açıklar; ayrıca gizlilik haklarınızı ve yasanın sizi nasıl koruduğunu anlatır.",
+		"policyBody2": " Kişisel verilerinizi Hizmeti sağlamak ve geliştirmek için kullanırız. Hizmeti kullanarak, bilgilerin bu Gizlilik Politikası'na uygun şekilde toplanmasını ve kullanılmasını kabul etmiş olursunuz."
+	},
+	"Privacy-Policy2": {
+		"policyHeader2": "Yorum ve Tanımlar",
+		"policySubheader2": "Yorum",
+		"policyBody2": "Baş harfi büyük yazılan kelimeler, aşağıdaki koşullar altında tanımlanan anlamlara sahiptir. Aşağıdaki tanımlar tekil veya çoğul olarak geçmelerinden bağımsız olarak aynı anlamı taşır."
+	},
+	"Privacy-Policy3": {
+		"policyHeader3": "Tanımlar",
+		"policyBody3": "Bu Gizlilik Politikası'nın amaçları doğrultusunda:",
+		"privacyUlheader": "Tanımlar",
+		"definitionAccount": "<strong>Hesap</strong>, Hizmetimize veya Hizmetimizin bölümlerine erişmeniz için oluşturulan benzersiz bir hesap anlamına gelir.",
+		"definitionCompany": "<strong>Şirket</strong> (bu Sözleşmede 'Şirket', 'Biz', 'Bize' veya 'Bizim' olarak anılır), Afkanerd Ltd, Bamenda'yı ifade eder.",
+		"definitionCookies": "<strong>Çerezler</strong>, bir web sitesi tarafından bilgisayarınıza, mobil cihazınıza veya başka bir cihaza yerleştirilen ve tarama geçmişinizi ve diğer bilgileri içeren küçük dosyalardır.",
+		"definitionCountry": "<strong>Ülke</strong>, Kamerun'u ifade eder.",
+		"definitionDevice": "<strong>Cihaz</strong>, bilgisayar, cep telefonu veya dijital tablet gibi Hizmete erişebilen herhangi bir cihaz anlamına gelir.",
+		"definitionPersonalData": "<strong>Kişisel Veri</strong>, kimliği belirli veya belirlenebilir bir kişiyle ilgili her türlü bilgidir.",
+		"definitionService": "<strong>Hizmet</strong>, Web Sitesini ifade eder.",
+		"definitionServiceProvider": "<strong>Hizmet Sağlayıcı</strong>, verileri Şirket adına işleyen herhangi bir gerçek veya tüzel kişi anlamına gelir.",
+		"definitionThirdParty": "<strong>Üçüncü Taraf Sosyal Medya Hizmeti</strong>, bir Kullanıcının Hizmeti kullanmak için oturum açabildiği veya hesap oluşturabildiği herhangi bir sosyal ağı veya web sitesini ifade eder.",
+		"definitionUsageData": "<strong>Kullanım Verileri</strong>, Hizmetin kullanımıyla veya Hizmet altyapısının kendisinden otomatik olarak toplanan verileri ifade eder (örneğin bir sayfa ziyaretinin süresi).",
+		"definitionWebsite": "<strong>Web Sitesi</strong>, <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a> adresinden erişilebilen SMSwithoutborders'ı ifade eder.",
+		"definitionYou": "<strong>Siz</strong>, Hizmete erişen veya Hizmeti kullanan kişiyi ya da bu kişinin adına Hizmete eriştiği veya Hizmeti kullandığı şirketi veya diğer tüzel kişiliği ifade eder."
+	},
+	"Privacy-Policy4": {
+		"policyHeader4": "Kişisel Verilerinizin Toplanması ve Kullanılması",
+		"policySubheader4": "Toplanan Veri Türleri"
+	},
+	"Privacy-Policy5": {
+		"policyHeader5": "Kişisel Veriler",
+		"policyBody5": " Üçüncü taraf platformları kullanmak için web sitesi bu platformlara erişim izni ister. Web sitesi verdiğiniz erişimi saklar ancak başka profil bilgisi toplamaz.",
+		"policyBody6": "SMS göndermek için yerel ağ geçitleri hakkında bilgi sağlayabilmek amacıyla telefon numarasının ülkesine ihtiyaç duyarız; ancak kullanıcının bulunduğu ülkeye ilişkin veri toplamayız."
+	},
+	"Privacy-Policy6": {
+		"policyHeader6": "Üçüncü Taraf Sosyal Medya Hizmetlerinden Alınan Bilgiler",
+		"policyBody7": "Üçüncü taraf platformları kullanmak için web sitesi bu platformlara erişim izni ister. Web sitesi verdiğiniz erişimi saklar ancak başka profil bilgisi toplamaz.",
+		"policyBody8": "Hangi hesabı kullandığınızı ayırt edebilmeniz için her platformdaki benzersiz profil adlarınızı saklarız. Üçüncü taraflardan gelen kimlik belirleyici bilgileri kullanıcıları izlemek, tanımlamak veya sınıflandırmak için kullanmayız."
+	},
+	"Privacy-Policy7": {
+		"policyHeader7": "Kişisel Verilerinizin Güvenliği",
+		"policyBody9": "Kişisel verilerinizin güvenliğine öncelik veririz. Ancak internet üzerinden hiçbir iletim yöntemi veya elektronik depolama %100 güvenli değildir. Verilerinizi korumaya çalışsak da mutlak güvenliği garanti edemeyiz."
+	},
+	"Privacy-Policy8": {
+		"policyHeader8": "Hizmetten Ayrılma ve Verilerin Silinmesi",
+		"policyBody10": "Hizmetimizden istediğiniz zaman ayrılabilirsiniz. Bu, kişisel verilerinizin sistemimizden derhal silinmesini tetikler. Ürünü kullanmamız için bize verdiğiniz tüm erişimleri iptal ederiz.",
+		"policyBody11": "Yalnızca veri tabanımızda saklanan kişisel verileri sileriz. Üçüncü taraf platformlardaki verilerin silinmesi (hizmetimizle bağlantılı olsa bile) doğrudan bu platformlardan talep edilmelidir."
+	},
+	"Privacy-Policy9": {
+		"policyHeader9": "Çocukların Gizliliği",
+		"policyBody12": "Hizmetimiz 13 yaşın altındaki kişilere yönelik değildir. 13 yaşın altındaki kişilerden bilerek kişisel olarak tanımlanabilir bilgi toplamayız.",
+		"policyBody13": "13 yaşın altındaki birinden ebeveyn onayı doğrulanmadan Kişisel Veri topladığımızı fark edersek, bu bilgileri sunucularımızdan kaldırmak için gerekli adımları atarız."
+	},
+	"Privacy-Policy10": {
+		"policyHeader10": "Diğer Web Sitelerine Bağlantılar",
+		"policyBody14": "Hizmetimiz, tarafımızca işletilmeyen diğer web sitelerine bağlantılar içerebilir. Üçüncü taraf sitelerin veya hizmetlerin içeriği, gizlilik politikaları ya da uygulamaları üzerinde hiçbir kontrolümüz yoktur ve bunlar için sorumluluk kabul etmeyiz."
+	},
+	"Privacy-Policy11": {
+		"policyHeader11": "Bu Gizlilik Politikasındaki Değişiklikler",
+		"policyBody15": "Gizlilik Politikamızı zaman zaman güncelleyebiliriz. Değişiklikler için bu Gizlilik Politikası'nı düzenli olarak incelemeniz önerilir."
+	},
+	"Privacy-Policy12": {
+		"policyHeader12": "Bize Ulaşın",
+		"policyBody16": "Bu Gizlilik Politikası hakkında sorularınız varsa, web sitemizdeki şu sayfayı ziyaret ederek bizimle iletişime geçebilirsiniz: <a href=\"https://smswithoutborders.com\">smswithoutborders.com</a>"
+	},
+	"paperReader": {
+		"notFound": "Makale bulunamadı.",
+		"backToResearch": "Araştırmalara Dön",
+		"researchAndPublications": "Araştırma Makaleleri",
+		"research": "Araştırma",
+		"comingSoon": "Tam metin yakında",
+		"comingSoonSub": "Bu makale henüz yayımlanmadı. Daha sonra tekrar kontrol edin.",
+		"openPdf": "PDF'yi Aç",
+		"openPdfDirectly": "PDF'yi doğrudan aç",
+		"loading": "Belge yükleniyor…",
+		"errorMessage": "Belge yüklenemedi. PDF dosyasının public/papers/ klasöründe bulunduğundan ve dosya adının tam olarak eşleştiğinden emin olun.",
+		"back": "← Geri",
+		"type": {
+			"whitepaper": "Teknik Rapor",
+			"research": "Araştırma",
+			"thread": "Tartışma"
+		}
+	},
+	"researchPage": {
+		"knowledgeBase": "Bilgi Bankası",
+		"title": "Araştırmalar ve Yayınlar",
+		"subtitle": "Çevrimdışı iletişim, gizlilik ve dijital kapsayıcılık üzerine teknik raporlar, araştırma bulguları ve topluluk tartışmaları.",
+		"searchPlaceholder": "Başlık, konu veya yazara göre ara…",
+		"filterAll": "Tümü",
+		"clearTags": "✕ Etiketleri temizle",
+		"of": "/",
+		"noResults": "Sonuç bulunamadı. Filtrelerinizi değiştirmeyi deneyin.",
+		"readPaper": "Makaleyi Oku",
+		"comingSoon": "Yakında",
+		"viewFullDocument": "Belgenin tamamını görüntüle →"
+	},
+	"brandPage": {
+		"eyebrow": "Basın ve Medya",
+		"title": "Marka Kaynakları",
+		"subtitle": "Makaleler, sunumlar ve ortak materyalleri için resmî SMSWithoutBorders logoları. Lütfen logoları değiştirmeyin, yeniden renklendirmeyin veya bozmayın. Mümkün olduğunca SVG, vektör dosyalarının desteklenmediği yerlerde ise PNG kullanın.",
+		"fullLogo": {
+			"title": "Tam Logo",
+			"description": "Simge ve yazıyı birlikte içeren ana logo. Yeterli yatay alan olan her yerde kullanın."
+		},
+		"logoIcon": {
+			"title": "Logo Simgesi",
+			"description": "Tek başına simge. Profil resimleri, uygulama simgeleri ve yazının okunamayacağı küçük alanlar için kullanın."
+		},
+		"logoOnBackground": {
+			"title": "Arka Planlı Logo",
+			"description": "Düz bir arka plan üzerindeki logo; sosyal medya, afişler ve sunumlar için hazır."
+		},
+		"variant": {
+			"Default": "Varsayılan",
+			"Black": "Siyah",
+			"White": "Beyaz",
+			"Blue": "Mavi",
+			"Dark Theme": "Koyu Tema"
+		},
+		"preview": "Önizleme",
+		"close": "Kapat",
+		"copyImage": "Görseli kopyala",
+		"copyPngLink": "PNG bağlantısını kopyala",
+		"copySvgLink": "SVG bağlantısını kopyala",
+		"copyEmailHtml": "E-posta HTML'sini kopyala",
+		"openFullSize": "Tam boyutta aç",
+		"linkCopied": "Bağlantı kopyalandı",
+		"htmlCopied": "HTML kopyalandı",
+		"copyFailed": "Panoya kopyalanamadı",
+		"imageCopied": "Görsel kopyalandı. E-postanıza veya belgenize yapıştırın.",
+		"imageCopyUnsupported": "Tarayıcınız görsel kopyalayamıyor. Bunun yerine görsel bağlantısını kopyalayın veya PNG'yi indirin."
+	}
+}

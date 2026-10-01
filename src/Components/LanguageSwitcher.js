@@ -9,6 +9,10 @@ const languages = [
   { code: "es", flag: "ES", label: "Español" },
   { code: "fr", flag: "FR", label: "Français" },
   { code: "fa", flag: "IR", label: "فارسی" },
+  { code: "de", flag: "DE", label: "Deutsch" },
+  { code: "tr", flag: "TR", label: "Türkçe" },
+  { code: "zh", flag: "CN", label: "简体中文" },
+  { code: "sw", flag: "TZ", label: "Kiswahili" },
 ];
 
 const LanguageSwitcher = () => {
