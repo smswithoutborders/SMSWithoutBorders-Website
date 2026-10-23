@@ -318,5 +318,13 @@
 	"unsubscribedBody": "Artık bu bültenden e-posta almayacaksınız. Fikrinizi mi değiştirdiniz? Aşağıdan tekrar abone olabilirsiniz.",
 	"backHome": "Ana sayfaya dön",
 	"readResearch": "Araştırmalarımızı okuyun"
+},
+"community": {
+	"eyebrow": "Topluluk",
+	"title": "Topluluğa yakın kalın",
+	"subtitle": "SMSWithoutBorders, onu kullanan, test eden ve yaygınlaştıran insanlar tarafından şekilleniyor. Güncel kalmak ve haberleri ilk siz almak için bültenimize katılın.",
+	"formTitle": "Bültene katılın",
+	"formBody": "Sürüm haberleri, topluluk güncellemeleri ve araştırmalar doğrudan e-posta kutunuzda.",
+	"chatPrompt": "Sohbet etmeyi mi tercih edersiniz? Telegram'da bize katılın:"
 }
 }

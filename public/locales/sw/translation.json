@@ -318,5 +318,13 @@
 	"unsubscribedBody": "Hutapokea tena barua pepe kutoka kwa jarida hili. Umebadili nia? Unaweza kujiandikisha tena hapa chini.",
 	"backHome": "Rudi nyumbani",
 	"readResearch": "Soma utafiti wetu"
+},
+"community": {
+	"eyebrow": "Jumuiya",
+	"title": "Kaa karibu na jumuiya",
+	"subtitle": "SMSWithoutBorders inaundwa na watu wanaoitumia, kuijaribu na kuieneza. Jiunge na jarida ili uendelee kupata taarifa mpya na uwe wa kwanza kusikia habari.",
+	"formTitle": "Jiunge na jarida",
+	"formBody": "Habari za matoleo, taarifa za jumuiya na utafiti, moja kwa moja kwenye barua pepe yako.",
+	"chatPrompt": "Unapendelea kuzungumza? Jiunge nasi kwenye Telegram:"
 }
 }
