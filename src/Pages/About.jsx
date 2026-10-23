@@ -125,7 +125,17 @@ export default function About() {
               {t("aboutPage.eyebrow", { defaultValue: "About" })}
             </Typography>
 
-            <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+            <Typography
+              variant="h4"
+              component="h1"
+              sx={{
+                fontWeight: 700,
+                mb: 2,
+                fontSize: { xs: "1.45rem", sm: "1.85rem", md: "2.125rem" },
+                lineHeight: 1.25,
+                overflowWrap: "anywhere",
+              }}
+            >
               {t("aboutPage.title", { defaultValue: "About SMSWithoutBorders" })}
             </Typography>
 
