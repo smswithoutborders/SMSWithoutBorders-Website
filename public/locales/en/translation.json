@@ -319,5 +319,13 @@
 	"unsubscribedBody": "You will no longer receive emails from this newsletter. Changed your mind? You can subscribe again below.",
 	"backHome": "Back to home",
 	"readResearch": "Read our research"
+},
+"community": {
+	"eyebrow": "Community",
+	"title": "Stay close to the community",
+	"subtitle": "SMSWithoutBorders is shaped by the people who use it, test it and spread the word. Join the newsletter to stay up to date and get the news first.",
+	"formTitle": "Join the newsletter",
+	"formBody": "Release news, community updates and research, straight to your inbox.",
+	"chatPrompt": "Prefer to chat? Join us on Telegram:"
 }
 }

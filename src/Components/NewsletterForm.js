@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import { Alert, Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
-  NEWSLETTER_HONEYPOT_NAME,
-  NEWSLETTER_SUBMIT_URL,
+  NEWSLETTER_HONEYPOT_NAME as CONFIGURED_HONEYPOT_NAME,
+  NEWSLETTER_SUBMIT_URL as CONFIGURED_SUBMIT_URL,
 } from "../config/newsletter";
+
+const FALLBACK_SUBMIT_URL = "https://newsletter.afkanerd.com/forms/nfrm_BzLMaLXv";
+const FALLBACK_HONEYPOT_NAME = "h[url]";
+
+const NEWSLETTER_SUBMIT_URL = /^https:\/\/\S+$/.test(CONFIGURED_SUBMIT_URL || "")
+  ? CONFIGURED_SUBMIT_URL
+  : FALLBACK_SUBMIT_URL;
+const NEWSLETTER_HONEYPOT_NAME =
+  CONFIGURED_HONEYPOT_NAME || FALLBACK_HONEYPOT_NAME;
 
 export default function NewsletterForm({
   showHeading = true,

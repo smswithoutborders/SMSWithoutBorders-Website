@@ -318,5 +318,13 @@
 	"unsubscribedBody": "Ya no recibirás correos de este boletín. ¿Has cambiado de opinión? Puedes volver a suscribirte a continuación.",
 	"backHome": "Volver al inicio",
 	"readResearch": "Lee nuestras investigaciones"
+},
+"community": {
+	"eyebrow": "Comunidad",
+	"title": "Mantente cerca de la comunidad",
+	"subtitle": "SMSWithoutBorders se construye con las personas que lo usan, lo prueban y lo dan a conocer. Únete al boletín para estar al día y enterarte antes que nadie.",
+	"formTitle": "Únete al boletín",
+	"formBody": "Novedades de versiones, noticias de la comunidad e investigación, directo a tu correo.",
+	"chatPrompt": "¿Prefieres chatear? Únete a nosotros en Telegram:"
 }
 }
