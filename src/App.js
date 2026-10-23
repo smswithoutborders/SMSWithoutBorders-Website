@@ -10,6 +10,9 @@ import Footer from "./Components/Footer";
 import ResearchPage from "./Pages/ResearchPage";
 import PaperReader from "./Pages/PaperReader";
 import BrandResources from "./Pages/BrandResources";
+import About from "./Pages/About";
+import NewsletterStatus from "./Pages/NewsletterStatus";
+import { NEWSLETTER_ROUTES } from "./config/newsletter";
 
 function App() {
 	return (
@@ -24,6 +27,19 @@ function App() {
 					<Route path="/research" element={<ResearchPage />} />
 					<Route path="/research/:id" element={<PaperReader />} />
 					<Route path="/brand" element={<BrandResources />} />
+					<Route path="/about" element={<About />} />
+					<Route
+						path={NEWSLETTER_ROUTES.subscribed}
+						element={<NewsletterStatus variant="subscribed" />}
+					/>
+					<Route
+						path={NEWSLETTER_ROUTES.confirmationError}
+						element={<NewsletterStatus variant="confirmationError" />}
+					/>
+					<Route
+						path={NEWSLETTER_ROUTES.unsubscribed}
+						element={<NewsletterStatus variant="unsubscribed" />}
+					/>
 				</Routes>
 			</div>
 			<Footer />

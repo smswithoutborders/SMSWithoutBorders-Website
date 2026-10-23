@@ -15,7 +15,8 @@
 			"whitepaper": "Teknik Rapor",
 			"threatModel": "Tehdit Modeli"
 		},
-		"researchFull": "Araştırma Makaleleri"
+		"researchFull": "Araştırma Makaleleri",
+		"about": "Hakkımızda"
 	},
 	"loader": "Yükleniyor, lütfen bekleyin",
 	"features": {
@@ -109,7 +110,8 @@
 		"twitterX": "Twitter / X @smswithoutborders",
 		"contactDevelopers": "Geliştiricilerle iletişime geç",
 		"reportIssue": "Sorun bildir",
-		"brandResources": "Marka Kaynakları"
+		"brandResources": "Marka Kaynakları",
+		"about": "Hakkımızda"
 	},
 	"theme": {
 		"switchToDark": "Koyu temaya geç",
@@ -203,8 +205,14 @@
 		"openPdf": "PDF'yi Aç",
 		"openPdfDirectly": "PDF'yi doğrudan aç",
 		"loading": "Belge yükleniyor…",
-		"errorMessage": "Belge yüklenemedi. PDF dosyasının public/papers/ klasöründe bulunduğundan ve dosya adının tam olarak eşleştiğinden emin olun.",
 		"back": "← Geri",
+		"notFoundBody": "Bu makale taşınmış ya da bağlantı yanlış yazılmış olabilir. Yayımladığımız her şey araştırma sayfasında listelenir.",
+		"errorTitle": "Bu makaleyi yükleyemedik",
+		"errorBody": "Bu sizin hatanız değil. Bizim tarafımızda bir sorun oluştu ve üzerinde çalışıyoruz. Bu arada şunları yapabilirsiniz:",
+		"tryAgain": "Tekrar dene",
+		"browseResearch": "Tüm makalelere göz at",
+		"abstractWhileWaiting": "Beklerken özeti okuyabilirsiniz",
+		"errorContact": "Hâlâ çalışmıyor mu? Bize yazın:",
 		"type": {
 			"whitepaper": "Teknik Rapor",
 			"research": "Araştırma",
@@ -222,7 +230,8 @@
 		"noResults": "Sonuç bulunamadı. Filtrelerinizi değiştirmeyi deneyin.",
 		"readPaper": "Makaleyi Oku",
 		"comingSoon": "Yakında",
-		"viewFullDocument": "Belgenin tamamını görüntüle →"
+		"viewFullDocument": "Belgenin tamamını görüntüle →",
+		"author": "Yazar"
 	},
 	"brandPage": {
 		"eyebrow": "Basın ve Medya",
@@ -259,5 +268,55 @@
 		"copyFailed": "Panoya kopyalanamadı",
 		"imageCopied": "Görsel kopyalandı. E-postanıza veya belgenize yapıştırın.",
 		"imageCopyUnsupported": "Tarayıcınız görsel kopyalayamıyor. Bunun yerine görsel bağlantısını kopyalayın veya PNG'yi indirin."
-	}
+	},
+"aboutPage": {
+	"eyebrow": "Hakkımızda",
+	"title": "SMSWithoutBorders Hakkında",
+	"intro": "SMSWithoutBorders (SWOB), internet bağlantısı olmadan da çalışan güvenli ve erişilebilir iletişim araçlarını araştırmaya, geliştirmeye ve yaygınlaştırmaya kendini adamıştır.",
+	"builtBy": "SMSWithoutBorders, Afkanerd tarafından geliştirilmektedir.",
+	"visitAfkanerd": "afkanerd.com'u ziyaret et",
+	"historyTitle": "Tarihçe",
+	"history": [
+		"SMSWithoutBorders projesi 2021'de başladı ve 2022'de Internews'ten alınan bir hibe ile ardından Open Technology Fund'ın (OTF) sürekli desteği sayesinde internet kesintileriyle mücadele eden bir araca dönüştü.",
+		"SMSWithoutBorders, SWOB (SMSWithoutBorders'ın kısaltması) adlı tek bir Android istemcisiyle başladı; bu istemcinin adı daha sonra RelaySMS olarak değiştirildi. Takip eden yıllarda, 2023'ten itibaren uçtan uca şifreleme desteğine sahip bir SMS mesajlaşma uygulaması olan DekuSMS'i geliştirmeye başladık.",
+		"O dönemde RelaySMS için SMS iletimini Raspberry Pi ve USB modemlerle yapıyorduk; bu yöntem güç ve diğer lojistik sorunlar nedeniyle verimsizdi. Hizmetin kesinti süresi son derece yüksekti ve bu da hizmetin düşük ve sürekli yavaş benimsenmesine yol açtı.",
+		"Daha sonra iletimi DekuSMS'e taşıdık; bu daha iyi performans sağladı ve kesinti süresini %90'ın üzerinde azalttı. Bu da ilk kez kullananlar için daha iyi bir deneyim ve hizmetin bir miktar benimsenmesini sağladı.",
+		"RelaySMS'i geliştirme deneyimimiz, siyasi nedenlerle internet kesintisi yaşanan bir ortamda yaşamış olmamızdan kaynaklanıyor. Kesinti, ülkenin 2 bölgesinde 90 günden fazla sürdü ve bir Afrika rekoru kırdı. Bu, 2016'da Kamerun'da yaşandı."
+	],
+	"useCasesTitle": "Kullanım alanları",
+	"useCases": [
+		"RelaySMS, SMS mesajlarını kullanarak internet üzerinden mesajlaşmayı mümkün kılmayı amaçlayan açık kaynaklı bir iletişim platformudur. Bu, özellikle aktif internet bağlantısı olmayan bölgelerde işe yarar; bu durum hem uzak bölgelerde hem de huzursuzluk dönemlerinde yaygındır.",
+		"Hükümetlerin interneti tamamen (bazı durumlarda kısmen) kapatarak kendi halkına karşı bir silah olarak kullandığı iyi bilinmektedir. Bu, insanların haberlere ve hayat kurtarıcı bilgilere ulaşmasını engeller. Ayrıca ticareti ve güvenli iletişimi de sekteye uğratır. Bu koşullarda VPN'ler gibi araçlar ve başlıca sansür aşma teknikleri çalışmaz, çünkü işlemek için bir miktar internet erişimine ihtiyaç duyarlar.",
+		"RelaySMS'i tam da bu koşullar için geliştiriyoruz. SMS mesajlarının da huzursuzluk dönemlerinde zaman zaman engellendiğini biliyoruz; ancak genellikle internet bağlantılarından daha hızlı yeniden açılır. Bunun nedeni, karşı tarafın SMS mesajlaşmasını (yerel olarak kişiden kişiye iletişimin ötesinde) henüz bir tehdit olarak görmemesi olabilir."
+	],
+	"involvedTitle": "Katkıda bulunun",
+	"contactTitle": "Geliştiricilere ulaşın",
+	"contactBody": "Sorularınız, iş birliği önerileriniz veya güvenlik bildirimleriniz mi var? Ekibe doğrudan e-posta gönderin.",
+	"contributeTitle": "Katkı sağlayın",
+	"contributeBody": "SMSWithoutBorders açık kaynaklıdır ve sürekli olarak gelişmenin yollarını arıyoruz. Kod, çeviri, test ve hata bildirimlerinin hepsine açığız.",
+	"githubLink": "Kodu GitHub'da inceleyin",
+	"feedbackTitle": "Geri bildirim verin",
+	"feedbackBody": "Soru sormak, sorun bildirmek ve yeni sürümlerden ilk siz haberdar olmak için Telegram'daki topluluk kanallarımıza katılın.",
+	"relaysmsTelegram": "Telegram'da RelaySMS",
+	"dekusmsTelegram": "Telegram'da DekuSMS"
+},
+"Newsletter": {
+	"title": "Bültenimize abone olun",
+	"description": "SMSWithoutBorders güncellemelerini, sürüm öne çıkanlarını ve araştırmaları e-posta kutunuzda alın.",
+	"emailPlaceholder": "E-posta adresi",
+	"submit": "Abone ol",
+	"subscribing": "Abone olunuyor…",
+	"doubleOptInTitle": "Gelen kutunuzu kontrol edin.",
+	"doubleOptInHint": "Aboneliğinizi tamamlamak için size gönderdiğimiz onay bağlantısına tıklayın.",
+	"error": "Bir şeyler ters gitti, sizin hatanız değil. Lütfen daha sonra tekrar deneyin.",
+	"privacyHint": "Spam yok. İstediğiniz zaman abonelikten çıkabilirsiniz.",
+	"successTitle": "Abone oldunuz!",
+	"successHint": "E-posta adresinizi onayladığınız için teşekkürler. Bir hoş geldin e-postası gelen kutunuza doğru yolda.",
+	"confirmationErrorTitle": "Bu onay bağlantısının süresi dolmuş veya bağlantı daha önce kullanılmış.",
+	"confirmationErrorBody": "Aşağıdan tekrar abone olun, size yeni bir onay e-postası gönderelim.",
+	"unsubscribedTitle": "Abonelikten çıktınız.",
+	"unsubscribedBody": "Artık bu bültenden e-posta almayacaksınız. Fikrinizi mi değiştirdiniz? Aşağıdan tekrar abone olabilirsiniz.",
+	"backHome": "Ana sayfaya dön",
+	"readResearch": "Araştırmalarımızı okuyun"
+}
 }

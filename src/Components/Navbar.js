@@ -51,14 +51,9 @@ export default function Navbar() {
     //   external: false,
     // },
     {
-      label: t("navbar.link5", "Documentation"),
-      href: "https://docs.smswithoutborders.com/",
-      external: true,
-    },
-    {
-      label: t("navbar.link1", "Blog"),
-      href: "https://blog.smswithoutborders.com/",
-      external: true,
+      label: t("navbar.about", "About"),
+      href: "/about",
+      external: false,
     },
     {
       label: t("navbar.products", "Products"),
@@ -84,6 +79,16 @@ export default function Navbar() {
       label: t("navbar.link7", "Research"),
       href: "/research",
       external: false,
+    },
+    {
+      label: t("navbar.link1", "Blog"),
+      href: "https://blog.smswithoutborders.com/",
+      external: true,
+    },
+    {
+      label: t("navbar.link5", "Documentation"),
+      href: "https://docs.smswithoutborders.com/",
+      external: true,
     },
   ];
 

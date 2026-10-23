@@ -72,7 +72,7 @@ export default function ResearchPage() {
       >
         <Container maxWidth="lg">
           <Box sx={{ p: { xs: 3, md: 5 } }}>
-            <Typography
+            {/* <Typography
               sx={{
                 fontSize: "0.72rem",
                 fontWeight: 700,
@@ -85,7 +85,7 @@ export default function ResearchPage() {
               {t("researchPage.knowledgeBase", {
                 defaultValue: "Knowledge Base",
               })}
-            </Typography>
+            </Typography> */}
 
             <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
               {t("researchPage.title", {
@@ -108,7 +108,7 @@ export default function ResearchPage() {
               })}
             </Typography>
 
-            <Stack spacing={2.2} sx={{ mb: 5.5 }}>
+            <Stack spacing={2.2} sx={{ mb: 10 }}>
               <Stack
                 direction={{ xs: "column", md: "row" }}
                 spacing={1.5}
@@ -217,6 +217,9 @@ function PaperCard({ paper, onRead, t }) {
     <Box
       onClick={hasContent ? onRead : undefined}
       sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
         border: "1px solid",
         borderColor: "divider",
         p: { xs: 2.5, md: 3 },
@@ -225,13 +228,17 @@ function PaperCard({ paper, onRead, t }) {
         "&:hover": {
           bgcolor: hasContent ? "action.hover" : "transparent",
         },
+        "&:hover .read-arrow": {
+          transform: hasContent ? "translate(2px, -2px)" : "none",
+        },
       }}
     >
       <Stack
         direction="row"
         justifyContent="space-between"
-        alignItems="flex-start"
-        sx={{ mb: 1.5 }}
+        alignItems="center"
+        spacing={1.5}
+        sx={{ mb: 2 }}
       >
         <Stack
           direction="row"
@@ -258,17 +265,46 @@ function PaperCard({ paper, onRead, t }) {
           </Typography>
         </Stack>
 
-        <Typography sx={{ fontSize: "0.8rem", color: "text.secondary" }}>
+        <Typography
+          sx={{
+            fontSize: "0.8rem",
+            color: "text.secondary",
+            whiteSpace: "nowrap",
+          }}
+        >
           {paper.year}
           {paper.version ? ` · v${paper.version}` : ""}
         </Typography>
       </Stack>
 
-      <Typography variant="h6" sx={{ fontWeight: 700, mb: 1.1 }}>
+      <Typography
+        variant="h6"
+        title={paper.title}
+        sx={{
+          fontWeight: 700,
+          lineHeight: 1.35,
+          minHeight: "2.7em",
+          display: "-webkit-box",
+          WebkitLineClamp: 2,
+          WebkitBoxOrient: "vertical",
+          overflow: "hidden",
+          mb: 1,
+        }}
+      >
         {paper.title}
       </Typography>
 
-      <Typography sx={{ fontSize: "0.8rem", color: "text.secondary", mb: 1.4 }}>
+      <Typography
+        sx={{
+          fontSize: "0.8rem",
+          color: "text.secondary",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          mb: 1.5,
+        }}
+      >
+        {t("researchPage.author", { defaultValue: "Author" })} -{" "}
         {paper.authors.join(", ")}
       </Typography>
 
@@ -281,13 +317,13 @@ function PaperCard({ paper, onRead, t }) {
           WebkitLineClamp: 4,
           WebkitBoxOrient: "vertical",
           overflow: "hidden",
-          mb: 1.8,
+          mb: 2.5,
         }}
       >
         {paper.abstract}
       </Typography>
 
-      <Stack
+      {/* <Stack
         direction="row"
         spacing={0.8}
         flexWrap="wrap"
@@ -310,23 +346,42 @@ function PaperCard({ paper, onRead, t }) {
             {topic}
           </Typography>
         ))}
-      </Stack>
+      </Stack> */}
 
-      <Button
-        variant="text"
-        endIcon={<ArrowOutwardIcon sx={{ fontSize: 16 }} />}
+      <Box
         sx={{
-          px: 0,
-          minWidth: 0,
-          textTransform: "none",
-          fontWeight: 600,
-          color: hasContent ? "text.primary" : "text.secondary",
+          mt: "auto",
+          pt: 1.5,
+          borderTop: "1px solid",
+          borderColor: "divider",
         }}
       >
-        {hasContent
-          ? t("researchPage.readPaper", { defaultValue: "Read paper" })
-          : t("paperReader.comingSoon", { defaultValue: "Coming soon" })}
-      </Button>
+        <Button
+          variant="text"
+          disabled={!hasContent}
+          endIcon={
+            hasContent ? (
+              <ArrowOutwardIcon
+                className="read-arrow"
+                sx={{ fontSize: 16, transition: "transform 0.2s ease" }}
+              />
+            ) : null
+          }
+          sx={{
+            px: 0,
+            minWidth: 0,
+            textTransform: "none",
+            fontWeight: 600,
+            color: "text.primary",
+            "&:hover": { bgcolor: "transparent" },
+            "&.Mui-disabled": { color: "text.secondary" },
+          }}
+        >
+          {hasContent
+            ? t("researchPage.readPaper", { defaultValue: "Read paper" })
+            : t("paperReader.comingSoon", { defaultValue: "Coming soon" })}
+        </Button>
+      </Box>
     </Box>
   );
 }

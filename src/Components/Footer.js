@@ -91,6 +91,10 @@ export default function Footer() {
       title: t("footerNav.community", { defaultValue: "Community" }),
       links: [
         {
+          label: t("footerNav.about", { defaultValue: "About" }),
+          href: "/about",
+        },
+        {
           label: t("footerNav.githubOrg", {
             defaultValue: "GitHub Organization",
           }),
