@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import Landing from "../Components/Landing";
 import Project from "../Components/Project";
 import Partner from "../Components/Partner";
+import Community from "../Components/Community";
 import Seo from "../Components/Seo";
 
 function HomePage() {
@@ -17,6 +18,7 @@ function HomePage() {
 			<Landing />
 			<Project />
 			<Partner />
+			<Community />
 		</>
 	);
 }

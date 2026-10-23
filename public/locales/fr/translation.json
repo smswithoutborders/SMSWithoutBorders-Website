@@ -318,5 +318,13 @@
 	"unsubscribedBody": "Vous ne recevrez plus d'e-mails de cette newsletter. Vous avez changé d'avis ? Vous pouvez vous réabonner ci-dessous.",
 	"backHome": "Retour à l'accueil",
 	"readResearch": "Lire nos recherches"
+},
+"community": {
+	"eyebrow": "Communauté",
+	"title": "Restez proche de la communauté",
+	"subtitle": "SMSWithoutBorders est façonné par celles et ceux qui l'utilisent, le testent et le font connaître. Abonnez-vous à la newsletter pour rester informé et être le premier au courant.",
+	"formTitle": "Rejoindre la newsletter",
+	"formBody": "Nouvelles versions, actualités de la communauté et recherche, directement dans votre boîte mail.",
+	"chatPrompt": "Vous préférez discuter ? Rejoignez-nous sur Telegram :"
 }
 }

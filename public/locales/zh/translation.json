@@ -318,5 +318,13 @@
 	"unsubscribedBody": "你将不会再收到此新闻通讯的邮件。改变主意了？可以在下方重新订阅。",
 	"backHome": "返回首页",
 	"readResearch": "阅读我们的研究"
+},
+"community": {
+	"eyebrow": "社区",
+	"title": "与社区保持联系",
+	"subtitle": "SMSWithoutBorders 由使用它、测试它并帮助传播它的人们共同塑造。订阅新闻通讯，随时了解最新动态，第一时间获取消息。",
+	"formTitle": "订阅新闻通讯",
+	"formBody": "版本消息、社区动态和研究成果，直接发送到你的邮箱。",
+	"chatPrompt": "更喜欢聊天？欢迎加入我们的 Telegram："
 }
 }

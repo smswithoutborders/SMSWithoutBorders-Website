@@ -318,5 +318,13 @@
 	"unsubscribedBody": "Du erhältst keine E-Mails mehr von diesem Newsletter. Du hast es dir anders überlegt? Unten kannst du dich erneut anmelden.",
 	"backHome": "Zurück zur Startseite",
 	"readResearch": "Unsere Forschung lesen"
+},
+"community": {
+	"eyebrow": "Community",
+	"title": "Bleib nah an der Community",
+	"subtitle": "SMSWithoutBorders wird von den Menschen geprägt, die es nutzen, testen und weiterempfehlen. Abonniere den Newsletter, um auf dem Laufenden zu bleiben und Neuigkeiten als Erste zu erfahren.",
+	"formTitle": "Newsletter abonnieren",
+	"formBody": "Neue Versionen, Community-Neuigkeiten und Forschung direkt in dein Postfach.",
+	"chatPrompt": "Lieber chatten? Komm zu uns auf Telegram:"
 }
 }
