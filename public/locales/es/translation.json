@@ -15,7 +15,8 @@
       "whitepaper": "Libro blanco",
       "threatModel": "Modelo de amenazas"
     },
-	"researchFull": "Artículos de investigación"
+	"researchFull": "Artículos de investigación",
+	"about": "Acerca de"
 	},
 	"loader": "Cargando, por favor espere",
 	"features": {
@@ -109,7 +110,8 @@
 		"twitterX": "Twitter / X @smswithoutborders",
 		"contactDevelopers": "Contactar a los desarrolladores",
 		"reportIssue": "Reportar un problema",
-		"brandResources": "Recursos de marca"
+		"brandResources": "Recursos de marca",
+		"about": "Acerca de"
 	},
 	"theme": {
 		"switchToDark": "Cambiar a modo oscuro",
@@ -203,8 +205,14 @@
   "openPdf": "Abrir PDF",
   "openPdfDirectly": "Abrir PDF directamente",
   "loading": "Cargando documento…",
-  "errorMessage": "No se pudo cargar el documento. Asegúrate de que el archivo PDF exista en public/papers/ y que el nombre del archivo coincida exactamente.",
   "back": "← Volver",
+  "notFoundBody": "Es posible que este artículo se haya movido o que el enlace esté mal escrito. Todo lo que hemos publicado aparece en la página de investigación.",
+  "errorTitle": "No pudimos cargar este artículo",
+  "errorBody": "No es culpa tuya. Algo falló por nuestra parte y estamos trabajando en ello. Mientras tanto, esto es lo que puedes hacer:",
+  "tryAgain": "Intentar de nuevo",
+  "browseResearch": "Ver todos los artículos",
+  "abstractWhileWaiting": "Mientras esperas, aquí tienes el resumen",
+  "errorContact": "¿Sigue sin funcionar? Escríbenos a",
   "type": {
     "whitepaper": "Libro blanco",
     "research": "Investigación",
@@ -222,7 +230,8 @@
   "noResults": "No se encontraron resultados. Intenta ajustar tus filtros.",
   "readPaper": "Leer documento",
   "comingSoon": "Próximamente",
-  "viewFullDocument": "Ver documento completo →"
+  "viewFullDocument": "Ver documento completo →",
+  "author": "Autor"
 },
 "brandPage": {
 	"eyebrow": "Prensa y medios",
@@ -259,5 +268,55 @@
 	"copyFailed": "No se pudo copiar al portapapeles",
 	"imageCopied": "Imagen copiada. Pégala en tu correo o documento.",
 	"imageCopyUnsupported": "Tu navegador no puede copiar imágenes. Copia el enlace de la imagen o descarga el PNG."
+},
+"aboutPage": {
+	"eyebrow": "Acerca de",
+	"title": "Acerca de SMSWithoutBorders",
+	"intro": "SMSWithoutBorders (SWOB) se dedica a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionan incluso sin conexión a Internet.",
+	"builtBy": "SMSWithoutBorders está desarrollado por Afkanerd.",
+	"visitAfkanerd": "Visitar afkanerd.com",
+	"historyTitle": "Historia",
+	"history": [
+		"El proyecto SMSWithoutBorders comenzó en 2021 y más tarde se convirtió en una herramienta para combatir los cortes de Internet en 2022 gracias a una subvención de Internews y financiamiento posterior del Open Technology Fund (OTF).",
+		"SMSWithoutBorders comenzó con un único cliente Android llamado SWOB (por SMSWithoutBorders), que más tarde se renombró a RelaySMS. A partir de 2023, comenzamos a desarrollar DekuSMS, una aplicación de mensajería SMS con soporte para cifrado de extremo a extremo.",
+		"En ese momento, utilizábamos Raspberry Pi y llaves USB para el reenvío de SMS de RelaySMS; esto era ineficiente debido a problemas de energía y logísticos. El tiempo de inactividad del servicio era extremadamente alto, lo que provocaba una adopción baja y lenta.",
+		"Posteriormente trasladamos el reenvío a DekuSMS, que ofrecía un mejor rendimiento y reducía el tiempo de inactividad en más del 90 %. Esto mejoró la experiencia para los nuevos usuarios y aumentó la adopción del servicio.",
+		"Nuestra experiencia en el desarrollo de RelaySMS proviene de haber vivido en un entorno con cortes de Internet por razones políticas. El apagón duró más de 90 días en 2 regiones del país, estableciendo un récord africano. Esto fue en Camerún en 2016."
+	],
+	"useCasesTitle": "Casos de uso",
+	"useCases": [
+		"RelaySMS es una plataforma de comunicación de código abierto que permite enviar mensajes a través de Internet usando SMS. Esto es especialmente útil en áreas sin conexión activa a Internet; común en zonas remotas y durante periodos de conflictos.",
+		"Está bien establecido que los gobiernos utilizan Internet como arma contra su población, apagándolo completamente (parcialmente en algunos casos). Esto dificulta que las personas accedan a noticias e información vital. También limita el comercio y las comunicaciones seguras. En estas circunstancias, herramientas como VPNs y algunas técnicas de evasión importantes no funcionan, porque requieren acceso a Internet para operar.",
+		"Es en estas circunstancias que desarrollamos RelaySMS. Aunque sabemos que los SMS a veces se bloquean durante periodos de conflictos, generalmente se desbloquean más rápido que las conexiones a Internet; esto puede deberse a que los adversarios aún no consideran los SMS como un modelo de amenaza (más allá de la comunicación persona a persona local)."
+	],
+	"involvedTitle": "Participa",
+	"contactTitle": "Contacta con los desarrolladores",
+	"contactBody": "¿Preguntas, alianzas o informes de seguridad? Escribe directamente al equipo.",
+	"contributeTitle": "Contribuye",
+	"contributeBody": "SMSWithoutBorders es de código abierto y siempre buscamos formas de mejorar. Código, traducciones, pruebas e informes de errores: todo es bienvenido.",
+	"githubLink": "Explora el código en GitHub",
+	"feedbackTitle": "Comparte tu opinión",
+	"feedbackBody": "Únete a nuestros canales de la comunidad en Telegram para hacer preguntas, informar de problemas y enterarte antes que nadie de las nuevas versiones.",
+	"relaysmsTelegram": "RelaySMS en Telegram",
+	"dekusmsTelegram": "DekuSMS en Telegram"
+},
+"Newsletter": {
+	"title": "Suscríbete a nuestro boletín",
+	"description": "Recibe en tu correo novedades de SMSWithoutBorders, lo más destacado de cada versión e investigaciones.",
+	"emailPlaceholder": "Correo electrónico",
+	"submit": "Suscribirse",
+	"subscribing": "Suscribiendo…",
+	"doubleOptInTitle": "Revisa tu bandeja de entrada.",
+	"doubleOptInHint": "Haz clic en el enlace de confirmación que te enviamos para completar la suscripción.",
+	"error": "Algo salió mal, no es culpa tuya. Inténtalo de nuevo más tarde.",
+	"privacyHint": "Sin spam. Cancela cuando quieras.",
+	"successTitle": "¡Te has suscrito!",
+	"successHint": "Gracias por confirmar tu correo. Un correo de bienvenida va camino de tu bandeja de entrada.",
+	"confirmationErrorTitle": "Este enlace de confirmación ha caducado o ya se ha utilizado.",
+	"confirmationErrorBody": "Suscríbete de nuevo a continuación y te enviaremos un nuevo correo de confirmación.",
+	"unsubscribedTitle": "Te has dado de baja.",
+	"unsubscribedBody": "Ya no recibirás correos de este boletín. ¿Has cambiado de opinión? Puedes volver a suscribirte a continuación.",
+	"backHome": "Volver al inicio",
+	"readResearch": "Lee nuestras investigaciones"
 }
 }

@@ -54,7 +54,6 @@ function SponsorCard({ sponsor, index }) {
   return (
     <Box
       ref={ref}
-    
       component="a"
       href={sponsor.href}
       target="_blank"
@@ -106,7 +105,6 @@ function SponsorCard({ sponsor, index }) {
       >
         <ArrowOutwardIcon sx={{ fontSize: 18 }} />
       </Box>
-      
 
       <Box
         component="img"

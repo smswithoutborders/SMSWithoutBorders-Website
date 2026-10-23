@@ -15,7 +15,8 @@
       "whitepaper": "Livre blanc",
       "threatModel": "Modèle de menace"
     },
-	"researchFull": "Articles de recherche"
+	"researchFull": "Articles de recherche",
+	"about": "À propos"
 	},
 	"loader": "Chargement, veuillez patienter",
 	"features": {
@@ -109,7 +110,8 @@
 		"twitterX": "Twitter / X @smswithoutborders",
 		"contactDevelopers": "Contacter les développeurs",
 		"reportIssue": "Signaler un problème",
-		"brandResources": "Ressources de marque"
+		"brandResources": "Ressources de marque",
+		"about": "À propos"
 	},
 	"theme": {
 		"switchToDark": "Passer en mode sombre",
@@ -203,8 +205,14 @@
   "openPdf": "Ouvrir le PDF",
   "openPdfDirectly": "Ouvrir le PDF directement",
   "loading": "Chargement du document…",
-  "errorMessage": "Le document n'a pas pu être chargé. Assurez-vous que le fichier PDF existe dans public/papers/ et que le nom du fichier correspond exactement.",
   "back": "← Retour",
+  "notFoundBody": "Cet article a peut-être été déplacé ou le lien est mal saisi. Tout ce que nous avons publié figure sur la page Recherche.",
+  "errorTitle": "Nous n'avons pas pu charger cet article",
+  "errorBody": "Ce n'est pas de votre faute. Un problème est survenu de notre côté et nous travaillons à le résoudre. En attendant, voici ce que vous pouvez faire :",
+  "tryAgain": "Réessayer",
+  "browseResearch": "Voir tous les articles",
+  "abstractWhileWaiting": "En attendant, voici le résumé",
+  "errorContact": "Toujours un problème ? Écrivez-nous à",
   "type": {
     "whitepaper": "Livre blanc",
     "research": "Recherche",
@@ -222,7 +230,8 @@
   "noResults": "Aucun résultat trouvé. Essayez d'ajuster vos filtres.",
   "readPaper": "Lire le document",
   "comingSoon": "Bientôt disponible",
-  "viewFullDocument": "Voir le document complet →"
+  "viewFullDocument": "Voir le document complet →",
+  "author": "Auteur"
 },
 "brandPage": {
 	"eyebrow": "Presse et médias",
@@ -259,5 +268,55 @@
 	"copyFailed": "Impossible de copier dans le presse-papiers",
 	"imageCopied": "Image copiée. Collez-la dans votre e-mail ou votre document.",
 	"imageCopyUnsupported": "Votre navigateur ne peut pas copier d'images. Copiez plutôt le lien de l'image ou téléchargez le PNG."
+},
+"aboutPage": {
+	"eyebrow": "À propos",
+	"title": "À propos de SMSWithoutBorders",
+	"intro": "SMSWithoutBorders (SWOB) se consacre à la recherche, au développement et à la promotion d'outils de communication sécurisés et accessibles qui fonctionnent même sans connexion Internet.",
+	"builtBy": "SMSWithoutBorders est développé par Afkanerd.",
+	"visitAfkanerd": "Visiter afkanerd.com",
+	"historyTitle": "Historique",
+	"history": [
+		"Le projet SMSWithoutBorders a commencé en 2021 et est devenu plus tard un outil pour lutter contre les coupures d'Internet en 2022 grâce à une subvention d'Internews et un financement ultérieur du Open Technology Fund (OTF).",
+		"SMSWithoutBorders a commencé avec un seul client Android appelé SWOB (pour SMSWithoutBorders), qui a ensuite été renommé RelaySMS. À partir de 2023, nous avons commencé à développer DekuSMS - une application de messagerie SMS avec prise en charge du chiffrement de bout en bout.",
+		"À ce moment-là, nous utilisions des Raspberry Pi et des clés USB pour le transfert de SMS pour RelaySMS ; cela était inefficace en raison de problèmes d'alimentation et logistiques. Le temps d'arrêt du service était extrêmement élevé, entraînant une adoption faible et continue.",
+		"Nous avons ensuite transféré le relais vers DekuSMS, qui offrait de meilleures performances et réduisait le temps d'arrêt de plus de 90 %. Cela a permis une meilleure expérience pour les nouveaux utilisateurs et une certaine adoption du service.",
+		"Notre expérience dans le développement de RelaySMS provient du fait que nous avons vécu dans un environnement soumis à des coupures d'Internet pour des raisons politiques. La coupure a duré plus de 90 jours dans 2 régions du pays, établissant un record africain. Il s'agissait du Cameroun en 2016."
+	],
+	"useCasesTitle": "Cas d'utilisation",
+	"useCases": [
+		"RelaySMS est une plateforme de communication open source visant à permettre l'envoi de messages via Internet en utilisant des SMS. Cela est particulièrement utile dans les zones sans connexion Internet active ; généralement dans les zones reculées et pendant les périodes de troubles.",
+		"Il est bien établi que les gouvernements utilisent Internet comme une arme contre leur population en le coupant complètement (ou partiellement dans certains cas). Cela entrave l'accès des gens aux informations vitales et aux nouvelles. Cela limite également le commerce et les communications sûres et sécurisées. Dans ces circonstances, les outils comme les VPN et certaines techniques de contournement majeures ne fonctionnent pas, car ils nécessitent un accès à Internet pour fonctionner.",
+		"C’est dans ces circonstances que nous développons RelaySMS. Bien que nous sachions que les SMS sont parfois bloqués pendant les périodes de troubles, ils sont généralement débloqués plus rapidement que les connexions Internet ; cela peut être dû au fait que les adversaires ne considèrent pas encore les SMS comme un vecteur de menace (au-delà de la communication locale de personne à personne)."
+	],
+	"involvedTitle": "Participer",
+	"contactTitle": "Contacter les développeurs",
+	"contactBody": "Des questions, un partenariat ou un problème de sécurité à signaler ? Écrivez directement à l'équipe.",
+	"contributeTitle": "Contribuer",
+	"contributeBody": "SMSWithoutBorders est open source et nous cherchons constamment à nous améliorer. Code, traductions, tests et signalements de bugs : toutes les contributions sont les bienvenues.",
+	"githubLink": "Parcourir le code sur GitHub",
+	"feedbackTitle": "Donner votre avis",
+	"feedbackBody": "Rejoignez nos canaux communautaires sur Telegram pour poser des questions, signaler des problèmes et découvrir les nouvelles versions en avant-première.",
+	"relaysmsTelegram": "RelaySMS sur Telegram",
+	"dekusmsTelegram": "DekuSMS sur Telegram"
+},
+"Newsletter": {
+	"title": "Abonnez-vous à notre newsletter",
+	"description": "Recevez les actualités de SMSWithoutBorders, les nouveautés de chaque version et nos recherches dans votre boîte mail.",
+	"emailPlaceholder": "Adresse e-mail",
+	"submit": "S'abonner",
+	"subscribing": "Abonnement…",
+	"doubleOptInTitle": "Consultez votre boîte mail.",
+	"doubleOptInHint": "Cliquez sur le lien de confirmation que nous vous avons envoyé pour finaliser votre abonnement.",
+	"error": "Une erreur s'est produite, ce n'est pas de votre faute. Veuillez réessayer plus tard.",
+	"privacyHint": "Pas de spam. Désabonnement à tout moment.",
+	"successTitle": "Vous êtes abonné !",
+	"successHint": "Merci d'avoir confirmé votre adresse e-mail. Un e-mail de bienvenue est en route vers votre boîte de réception.",
+	"confirmationErrorTitle": "Ce lien de confirmation a expiré ou a déjà été utilisé.",
+	"confirmationErrorBody": "Abonnez-vous à nouveau ci-dessous et nous vous enverrons un nouvel e-mail de confirmation.",
+	"unsubscribedTitle": "Vous êtes désabonné.",
+	"unsubscribedBody": "Vous ne recevrez plus d'e-mails de cette newsletter. Vous avez changé d'avis ? Vous pouvez vous réabonner ci-dessous.",
+	"backHome": "Retour à l'accueil",
+	"readResearch": "Lire nos recherches"
 }
 }
