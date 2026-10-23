@@ -15,7 +15,8 @@
       "whitepaper": "Whitepaper",
       "threatModel": "Threat Model"
     },
-	"researchFull": "Research Papers"
+	"researchFull": "Research Papers",
+	"about": "About"
 	},
 	"loader": "Loading Please Wait",
 	"features": {
@@ -109,7 +110,8 @@
 		"twitterX": "Twitter / X @smswithoutborders",
 		"contactDevelopers": "Contact developers",
 		"reportIssue": "Report an issue",
-		"brandResources": "Brand Resources"
+		"brandResources": "Brand Resources",
+		"about": "About"
 	},
 	"theme": {
 		"switchToDark": "Switch to dark",
@@ -204,8 +206,14 @@
   "openPdf": "Open PDF",
   "openPdfDirectly": "Open PDF directly",
   "loading": "Loading document…",
-  "errorMessage": "The document could not be loaded. Make sure the PDF file exists in public/papers/ and the filename matches exactly.",
   "back": "← Back",
+  "notFoundBody": "This paper may have moved or the link may be mistyped. Everything we have published is listed on the research page.",
+  "errorTitle": "We couldn't load this paper",
+  "errorBody": "This isn't your fault. Something went wrong on our side and we're working on it. In the meantime, here's what you can do:",
+  "tryAgain": "Try again",
+  "browseResearch": "Browse all papers",
+  "abstractWhileWaiting": "While you wait, here's the abstract",
+  "errorContact": "Still not working? Let us know at",
   "type": {
     "whitepaper": "White Paper",
     "research": "Research",
@@ -223,7 +231,8 @@
   "noResults": "No results found. Try adjusting your filters.",
   "readPaper": "Read Paper",
   "comingSoon": "Coming Soon",
-  "viewFullDocument": "View full document →"
+  "viewFullDocument": "View full document →",
+  "author": "Author"
 },
 "brandPage": {
 	"eyebrow": "Press & Media",
@@ -260,5 +269,55 @@
 	"copyFailed": "Couldn't copy to clipboard",
 	"imageCopied": "Image copied. Paste it into your email or document.",
 	"imageCopyUnsupported": "Your browser can't copy images. Copy the image link or download the PNG instead."
+},
+"aboutPage": {
+	"eyebrow": "About",
+	"title": "About SMSWithoutBorders",
+	"intro": "SMSWithoutBorders (SWOB) is dedicated to researching, developing and promoting secure and accessible communication tools that function even without an internet connection.",
+	"builtBy": "SMSWithoutBorders is built by Afkanerd.",
+	"visitAfkanerd": "Visit afkanerd.com",
+	"historyTitle": "History",
+	"history": [
+		"The SMSWithoutBorders project began in 2021 and became a tool for fighting internet shutdowns in 2022, thanks to a grant from Internews and continued funding from the Open Technology Fund (OTF).",
+		"SMSWithoutBorders began with a single Android client called SWOB (short for SMSWithoutBorders), which was later renamed RelaySMS. In 2023, we began developing DekuSMS, an SMS messaging app with support for end-to-end encryption.",
+		"At that point, we had been using a Raspberry Pi and USB dongles to forward SMS messages for RelaySMS. This was inefficient due to power and other logistical issues. The service's downtime was extremely high, which led to low and continuously slow uptake.",
+		"We later moved the forwarding to DekuSMS, which performed better and reduced downtime by more than 90%. This improved the experience for first-time users and brought some uptake to the service.",
+		"Our experience in developing RelaySMS stems from having lived through internet shutdowns imposed for political reasons. One shutdown lasted more than 90 days in two regions of the country, setting an African record. This was in Cameroon in 2016."
+	],
+	"useCasesTitle": "Use cases",
+	"useCases": [
+		"RelaySMS is an open-source communication platform that aims to enable messaging across the internet using SMS messages. This is most useful in places without an active internet connection, which is common both in remote areas and during periods of unrest.",
+		"It is well established that governments weaponize the internet against their own people by shutting it down, completely or in some cases partially. This hinders people's ability to get news and life-saving information. It also hinders commerce and safe, secure communication. In these circumstances, tools like VPNs and other major circumvention techniques do not work, because they need some internet access to function.",
+		"It is for these circumstances that we are developing RelaySMS. While we know SMS messages are sometimes blocked during periods of unrest, SMS is usually restored faster than internet connections. This could be because adversaries may not yet consider SMS messaging a threat (beyond local person-to-person communication)."
+	],
+	"involvedTitle": "Get involved",
+	"contactTitle": "Reach the developers",
+	"contactBody": "Questions, partnerships or security reports? Email the team directly.",
+	"contributeTitle": "Contribute",
+	"contributeBody": "SMSWithoutBorders is open source, and we are constantly looking for ways to improve. Code, translations, testing and bug reports are all welcome.",
+	"githubLink": "Browse the code on GitHub",
+	"feedbackTitle": "Share feedback",
+	"feedbackBody": "Join our community channels on Telegram to ask questions, report problems and hear about new releases first.",
+	"relaysmsTelegram": "RelaySMS on Telegram",
+	"dekusmsTelegram": "DekuSMS on Telegram"
+},
+"Newsletter": {
+	"title": "Subscribe to our newsletter",
+	"description": "Get SMSWithoutBorders updates, release highlights and research in your inbox.",
+	"emailPlaceholder": "Email address",
+	"submit": "Subscribe",
+	"subscribing": "Subscribing…",
+	"doubleOptInTitle": "Check your inbox.",
+	"doubleOptInHint": "Click the confirmation link we sent you to finish subscribing.",
+	"error": "Something went wrong, not your fault. Please try again later.",
+	"privacyHint": "No spam. Unsubscribe anytime.",
+	"successTitle": "You're subscribed!",
+	"successHint": "Thanks for confirming your email. A welcome email is on its way to your inbox.",
+	"confirmationErrorTitle": "This confirmation link has expired or has already been used.",
+	"confirmationErrorBody": "Subscribe again below and we will send you a fresh confirmation email.",
+	"unsubscribedTitle": "You have unsubscribed.",
+	"unsubscribedBody": "You will no longer receive emails from this newsletter. Changed your mind? You can subscribe again below.",
+	"backHome": "Back to home",
+	"readResearch": "Read our research"
 }
 }

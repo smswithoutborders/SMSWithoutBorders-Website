@@ -15,7 +15,8 @@
 			"whitepaper": "白皮书",
 			"threatModel": "威胁模型"
 		},
-		"researchFull": "研究论文"
+		"researchFull": "研究论文",
+		"about": "关于"
 	},
 	"loader": "正在加载，请稍候",
 	"features": {
@@ -109,7 +110,8 @@
 		"twitterX": "Twitter / X @smswithoutborders",
 		"contactDevelopers": "联系开发者",
 		"reportIssue": "报告问题",
-		"brandResources": "品牌资源"
+		"brandResources": "品牌资源",
+		"about": "关于"
 	},
 	"theme": {
 		"switchToDark": "切换到深色模式",
@@ -203,8 +205,14 @@
 		"openPdf": "打开 PDF",
 		"openPdfDirectly": "直接打开 PDF",
 		"loading": "正在加载文档…",
-		"errorMessage": "无法加载文档。请确认 PDF 文件位于 public/papers/ 中，且文件名完全一致。",
 		"back": "← 返回",
+		"notFoundBody": "这篇论文可能已被移动，或链接输入有误。我们发布的所有内容都列在研究页面上。",
+		"errorTitle": "无法加载这篇论文",
+		"errorBody": "这不是你的问题。我们这边出了点故障，正在修复中。在此期间，你可以：",
+		"tryAgain": "重试",
+		"browseResearch": "浏览所有论文",
+		"abstractWhileWaiting": "等待期间，先看看摘要",
+		"errorContact": "仍然无法打开？请联系我们：",
 		"type": {
 			"whitepaper": "白皮书",
 			"research": "研究",
@@ -222,7 +230,8 @@
 		"noResults": "未找到结果。请尝试调整筛选条件。",
 		"readPaper": "阅读论文",
 		"comingSoon": "即将推出",
-		"viewFullDocument": "查看完整文档 →"
+		"viewFullDocument": "查看完整文档 →",
+		"author": "作者"
 	},
 	"brandPage": {
 		"eyebrow": "媒体资料",
@@ -259,5 +268,55 @@
 		"copyFailed": "无法复制到剪贴板",
 		"imageCopied": "图片已复制。可以粘贴到你的邮件或文档中。",
 		"imageCopyUnsupported": "你的浏览器不支持复制图片。请改为复制图片链接或下载 PNG。"
-	}
+	},
+"aboutPage": {
+	"eyebrow": "关于",
+	"title": "关于 SMSWithoutBorders",
+	"intro": "SMSWithoutBorders（SWOB）致力于研究、开发和推广安全、易用的通信工具，即使没有互联网连接也能正常使用。",
+	"builtBy": "SMSWithoutBorders 由 Afkanerd 打造。",
+	"visitAfkanerd": "访问 afkanerd.com",
+	"historyTitle": "历史",
+	"history": [
+		"SMSWithoutBorders 项目始于 2021 年。2022 年，在 Internews 的资助以及开放技术基金（OTF）后续的持续资助下，它成为了对抗断网的工具。",
+		"SMSWithoutBorders 最初只有一个名为 SWOB（SMSWithoutBorders 的缩写）的 Android 客户端，后来更名为 RelaySMS。此后，从 2023 年开始，我们着手开发 DekuSMS——一款支持端到端加密的短信应用。",
+		"当时，我们使用树莓派和 USB 上网卡为 RelaySMS 转发短信；由于供电和其他后勤问题，这种方式效率很低。服务的停机时间极长，导致用户增长缓慢且一直低迷。",
+		"后来，我们将转发工作迁移到 DekuSMS 上，性能得到提升，停机时间减少了 90% 以上。这为首次使用的用户带来了更好的体验，服务也获得了一定的用户增长。",
+		"我们开发 RelaySMS 的经验，源于曾经生活在因政治原因而断网的环境中。那次断网在该国的 2 个地区持续了 90 多天，创下了非洲纪录。那是 2016 年的喀麦隆。"
+	],
+	"useCasesTitle": "使用场景",
+	"useCases": [
+		"RelaySMS 是一个开源通信平台，旨在通过短信实现跨互联网的消息传递。这在没有有效互联网连接的地区最为有用——偏远地区和社会动荡时期通常都会出现这种情况。",
+		"众所周知，一些政府会通过完全（有时是部分）切断互联网，将其当作对付本国人民的武器。这阻碍了人们获取新闻和救命信息，也妨碍了商业活动和安全通信。在这种情况下，VPN 等工具和一些主要的翻墙技术都无法使用，因为它们需要一定的互联网连接才能运行。",
+		"我们正是为这些情况而开发 RelaySMS。我们知道，在动荡时期短信有时也会被封锁，但通常会比互联网连接更早恢复；这可能是因为对手尚未将短信（除本地点对点通信外）视为威胁。"
+	],
+	"involvedTitle": "参与其中",
+	"contactTitle": "联系开发者",
+	"contactBody": "有问题、合作意向或安全问题要报告？请直接发邮件给团队。",
+	"contributeTitle": "贡献",
+	"contributeBody": "SMSWithoutBorders 是开源项目，我们一直在寻找改进的方法。欢迎贡献代码、翻译、测试和错误报告。",
+	"githubLink": "在 GitHub 上浏览代码",
+	"feedbackTitle": "反馈意见",
+	"feedbackBody": "加入我们的 Telegram 社区频道，提出问题、报告故障，并第一时间获知新版本发布。",
+	"relaysmsTelegram": "RelaySMS Telegram 频道",
+	"dekusmsTelegram": "DekuSMS Telegram 频道"
+},
+"Newsletter": {
+	"title": "订阅我们的新闻通讯",
+	"description": "在邮箱中接收 SMSWithoutBorders 的最新动态、版本亮点和研究成果。",
+	"emailPlaceholder": "电子邮件地址",
+	"submit": "订阅",
+	"subscribing": "正在订阅…",
+	"doubleOptInTitle": "请查看你的收件箱。",
+	"doubleOptInHint": "点击我们发送给你的确认链接即可完成订阅。",
+	"error": "出了点问题，不是你的错。请稍后再试。",
+	"privacyHint": "绝无垃圾邮件，可随时退订。",
+	"successTitle": "订阅成功！",
+	"successHint": "感谢你确认邮箱地址。欢迎邮件正在发往你的收件箱。",
+	"confirmationErrorTitle": "此确认链接已过期或已被使用。",
+	"confirmationErrorBody": "请在下方重新订阅，我们会给你发送一封新的确认邮件。",
+	"unsubscribedTitle": "你已退订。",
+	"unsubscribedBody": "你将不会再收到此新闻通讯的邮件。改变主意了？可以在下方重新订阅。",
+	"backHome": "返回首页",
+	"readResearch": "阅读我们的研究"
+}
 }

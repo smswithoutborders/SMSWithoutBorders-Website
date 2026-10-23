@@ -23,23 +23,23 @@
 
 ### History
 
-The SMSWithoutBorders project began in 2021 and later became a tool for fighting internet shutdowns in 2022 thanks to a grant from Internews and later continued funding from the Open Technology Fund (OTF).
+The SMSWithoutBorders project began in 2021 and became a tool for fighting internet shutdowns in 2022, thanks to a grant from Internews and continued funding from the Open Technology Fund (OTF).
 
-SMSWithoutBorders began with a single Android client called SWOB (for SMSWithoutBorders) which was later renamed to RelaySMS. From the years that follow in 2023, we began developing DekuSMS - an SMS messaging app with support for end-to-end encryption.
+SMSWithoutBorders began with a single Android client called SWOB (short for SMSWithoutBorders), which was later renamed RelaySMS. In 2023, we began developing DekuSMS, an SMS messaging app with support for end-to-end encryption.
 
-At this point we had been using Raspberry Pi and USB dongles for SMS forwarding for RelaySMS; this was inefficient due to power and other logistical issues. The downtime for the service was extremely high, leading to a low and continuously slow uptake.
+At that point, we had been using a Raspberry Pi and USB dongles to forward SMS messages for RelaySMS. This was inefficient due to power and other logistical issues. The service's downtime was extremely high, which led to low and continuously slow uptake.
 
-We later moved the forwarding to DekuSMS which had a better performance and lessened the down time by > 90%. This gave some better performance for first time users and some uptake to the service.
+We later moved the forwarding to DekuSMS, which performed better and reduced downtime by more than 90%. This improved the experience for first-time users and brought some uptake to the service.
 
-Our experience in developing RelaySMS stems from having lived in an environment undergoing internet shutdowns due to political reasons. The shutdown lasted more than 90 days in 2 regions of the country; setting an African record. This was Cameroon back in 2016.
+Our experience in developing RelaySMS stems from having lived through internet shutdowns imposed for political reasons. One shutdown lasted more than 90 days in two regions of the country, setting an African record. This was in Cameroon in 2016.
 
 ### Use cases
 
-RelaySMS is an open source communication platform that aims to enable messaging across the Internet using SMS messages. This is most useful in areas without an active Internet connection; usually common in both remote areas and during periods of unrest.
+RelaySMS is an open-source communication platform that aims to enable messaging across the internet using SMS messages. This is most useful in places without an active internet connection, which is common both in remote areas and during periods of unrest.
 
-It is well established that governments weaponize the internet against its people by shutting it down completely (partially in some cases). This hinders people's ability to get news and live saving information. Also hinders people's abilities for commerce and for safe and secure communications. In these circumstances, tools like VPNs and some major circumvention techniques do not work because they require some access to the Internet to function.
+It is well established that governments weaponize the internet against their own people by shutting it down, completely or in some cases partially. This hinders people's ability to get news and life-saving information. It also hinders commerce and safe, secure communication. In these circumstances, tools like VPNs and other major circumvention techniques do not work, because they need some internet access to function.
 
-It is in these circumstances we are developing RelaySMS. While we know SMS messages are blocked sometimes during periods of unrest, it usually is unblocked faster than Internet connections; this could be because the adversaries may not consider SMS messaging a threat model yet (beyond person to person communication locally).
+It is for these circumstances that we are developing RelaySMS. While we know SMS messages are sometimes blocked during periods of unrest, SMS is usually restored faster than internet connections. This could be because adversaries may not yet consider SMS messaging a threat (beyond local person-to-person communication).
 
 ---
 

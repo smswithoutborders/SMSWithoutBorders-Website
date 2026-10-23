@@ -15,7 +15,8 @@
 			"whitepaper": "Waraka wa Kiufundi",
 			"threatModel": "Mfumo wa Vitisho"
 		},
-		"researchFull": "Machapisho ya Utafiti"
+		"researchFull": "Machapisho ya Utafiti",
+		"about": "Kuhusu"
 	},
 	"loader": "Inapakia, tafadhali subiri",
 	"features": {
@@ -109,7 +110,8 @@
 		"twitterX": "Twitter / X @smswithoutborders",
 		"contactDevelopers": "Wasiliana na wasanidi",
 		"reportIssue": "Ripoti tatizo",
-		"brandResources": "Rasilimali za Chapa"
+		"brandResources": "Rasilimali za Chapa",
+		"about": "Kuhusu"
 	},
 	"theme": {
 		"switchToDark": "Badili kwenda giza",
@@ -203,8 +205,14 @@
 		"openPdf": "Fungua PDF",
 		"openPdfDirectly": "Fungua PDF moja kwa moja",
 		"loading": "Inapakia hati…",
-		"errorMessage": "Hati haikuweza kupakiwa. Hakikisha faili ya PDF ipo kwenye public/papers/ na jina la faili linalingana kikamilifu.",
 		"back": "← Rudi",
+		"notFoundBody": "Huenda chapisho hili limehamishwa au kiungo kimeandikwa vibaya. Kila tulichochapisha kimeorodheshwa kwenye ukurasa wa utafiti.",
+		"errorTitle": "Hatukuweza kupakia chapisho hili",
+		"errorBody": "Si kosa lako. Kuna hitilafu imetokea upande wetu na tunaishughulikia. Kwa sasa, unaweza kufanya yafuatayo:",
+		"tryAgain": "Jaribu tena",
+		"browseResearch": "Tazama machapisho yote",
+		"abstractWhileWaiting": "Unaposubiri, hiki hapa ni muhtasari",
+		"errorContact": "Bado haifanyi kazi? Tujulishe kupitia",
 		"type": {
 			"whitepaper": "Waraka wa Kiufundi",
 			"research": "Utafiti",
@@ -222,7 +230,8 @@
 		"noResults": "Hakuna matokeo. Jaribu kubadilisha vichujio vyako.",
 		"readPaper": "Soma Chapisho",
 		"comingSoon": "Inakuja Hivi Karibuni",
-		"viewFullDocument": "Tazama hati kamili →"
+		"viewFullDocument": "Tazama hati kamili →",
+		"author": "Mwandishi"
 	},
 	"brandPage": {
 		"eyebrow": "Vyombo vya Habari",
@@ -259,5 +268,55 @@
 		"copyFailed": "Imeshindwa kunakili kwenye ubao wa kunakili",
 		"imageCopied": "Picha imenakiliwa. Ibandike kwenye barua pepe au hati yako.",
 		"imageCopyUnsupported": "Kivinjari chako hakiwezi kunakili picha. Badala yake nakili kiungo cha picha au pakua PNG."
-	}
+	},
+"aboutPage": {
+	"eyebrow": "Kuhusu",
+	"title": "Kuhusu SMSWithoutBorders",
+	"intro": "SMSWithoutBorders (SWOB) imejitolea kutafiti, kuendeleza na kukuza zana za mawasiliano zilizo salama na zinazofikika, zinazofanya kazi hata bila muunganisho wa intaneti.",
+	"builtBy": "SMSWithoutBorders imeundwa na Afkanerd.",
+	"visitAfkanerd": "Tembelea afkanerd.com",
+	"historyTitle": "Historia",
+	"history": [
+		"Mradi wa SMSWithoutBorders ulianza mwaka 2021 na baadaye, mwaka 2022, ukawa zana ya kupambana na uzimaji wa intaneti kutokana na ruzuku kutoka Internews na baadaye ufadhili endelevu kutoka Open Technology Fund (OTF).",
+		"SMSWithoutBorders ilianza na programu moja ya Android iitwayo SWOB (kifupi cha SMSWithoutBorders), ambayo baadaye ilibadilishwa jina kuwa RelaySMS. Katika miaka iliyofuata, kuanzia 2023, tulianza kuunda DekuSMS – programu ya ujumbe wa SMS yenye usimbaji fiche wa mwisho hadi mwisho.",
+		"Wakati huo tulikuwa tukitumia Raspberry Pi na modemu za USB kusambaza SMS kwa ajili ya RelaySMS; njia hii haikuwa na ufanisi kutokana na changamoto za umeme na za kiutendaji. Muda ambao huduma haikupatikana ulikuwa mrefu sana, na hivyo watu wachache waliitumia na ukuaji ulikuwa wa polepole.",
+		"Baadaye tulihamishia usambazaji kwenye DekuSMS, iliyofanya kazi vizuri zaidi na kupunguza muda wa huduma kukatika kwa zaidi ya 90%. Hii iliboresha uzoefu wa watumiaji wapya na kuongeza kiasi fulani cha matumizi ya huduma.",
+		"Uzoefu wetu wa kuunda RelaySMS unatokana na kuishi katika mazingira ambapo intaneti ilizimwa kwa sababu za kisiasa. Uzimaji huo ulidumu zaidi ya siku 90 katika mikoa 2 ya nchi, na kuweka rekodi barani Afrika. Hii ilikuwa Kamerun mwaka 2016."
+	],
+	"useCasesTitle": "Matumizi",
+	"useCases": [
+		"RelaySMS ni jukwaa huria la mawasiliano linalolenga kuwezesha kutuma ujumbe kupitia intaneti kwa kutumia SMS. Hili ni muhimu zaidi katika maeneo yasiyo na muunganisho wa intaneti; hali ambayo ni ya kawaida katika maeneo ya mbali na wakati wa machafuko.",
+		"Inajulikana wazi kwamba serikali hutumia intaneti kama silaha dhidi ya watu wake kwa kuizima kabisa (au kwa sehemu katika baadhi ya matukio). Hii huzuia watu kupata habari na taarifa za kuokoa maisha. Pia huzuia biashara na mawasiliano salama. Katika hali hizi, zana kama VPN na mbinu nyingi kuu za kukwepa udhibiti hazifanyi kazi kwa sababu zinahitaji kiasi fulani cha intaneti ili kufanya kazi.",
+		"Ni kwa hali hizi ndipo tunaunda RelaySMS. Ingawa tunajua kwamba SMS pia huzuiwa wakati mwingine wakati wa machafuko, kwa kawaida hufunguliwa haraka kuliko intaneti; huenda ni kwa sababu wapinzani bado hawaichukulii SMS kama tishio (zaidi ya mawasiliano ya mtu kwa mtu ndani ya nchi)."
+	],
+	"involvedTitle": "Shiriki",
+	"contactTitle": "Wasiliana na wasanidi",
+	"contactBody": "Una maswali, ushirikiano au ripoti ya usalama? Tuma barua pepe moja kwa moja kwa timu.",
+	"contributeTitle": "Changia",
+	"contributeBody": "SMSWithoutBorders ni chanzo huria, na daima tunatafuta njia za kuboresha. Msimbo, tafsiri, majaribio na ripoti za hitilafu zote zinakaribishwa.",
+	"githubLink": "Tazama msimbo kwenye GitHub",
+	"feedbackTitle": "Toa maoni",
+	"feedbackBody": "Jiunge na chaneli zetu za jumuiya kwenye Telegram ili kuuliza maswali, kuripoti matatizo na kuwa wa kwanza kusikia kuhusu matoleo mapya.",
+	"relaysmsTelegram": "RelaySMS kwenye Telegram",
+	"dekusmsTelegram": "DekuSMS kwenye Telegram"
+},
+"Newsletter": {
+	"title": "Jiandikishe kwa jarida letu",
+	"description": "Pokea habari za SMSWithoutBorders, mambo muhimu ya kila toleo na utafiti kwenye barua pepe yako.",
+	"emailPlaceholder": "Anwani ya barua pepe",
+	"submit": "Jiandikishe",
+	"subscribing": "Inajiandikisha…",
+	"doubleOptInTitle": "Angalia kikasha chako.",
+	"doubleOptInHint": "Bofya kiungo cha uthibitisho tulichokutumia ili kukamilisha usajili.",
+	"error": "Kuna hitilafu imetokea, si kosa lako. Tafadhali jaribu tena baadaye.",
+	"privacyHint": "Hakuna barua taka. Jiondoe wakati wowote.",
+	"successTitle": "Umejiandikisha!",
+	"successHint": "Asante kwa kuthibitisha barua pepe yako. Barua pepe ya kukukaribisha iko njiani kwenda kwenye kikasha chako.",
+	"confirmationErrorTitle": "Kiungo hiki cha uthibitisho kimeisha muda wake au tayari kimetumika.",
+	"confirmationErrorBody": "Jiandikishe tena hapa chini nasi tutakutumia barua pepe mpya ya uthibitisho.",
+	"unsubscribedTitle": "Umejiondoa.",
+	"unsubscribedBody": "Hutapokea tena barua pepe kutoka kwa jarida hili. Umebadili nia? Unaweza kujiandikisha tena hapa chini.",
+	"backHome": "Rudi nyumbani",
+	"readResearch": "Soma utafiti wetu"
+}
 }
