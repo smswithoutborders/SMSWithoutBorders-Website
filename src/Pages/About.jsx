@@ -13,7 +13,8 @@ import NewsletterForm from "../Components/NewsletterForm";
 const AFKANERD_URL = "https://afkanerd.com";
 const DEVELOPERS_EMAIL = "developers@smswithoutborders.com";
 const GITHUB_URL = "https://github.com/smswithoutborders";
-const ISSUES_URL = "https://github.com/smswithoutborders/RelaySMS-Android/issues";
+const ISSUES_URL =
+  "https://github.com/smswithoutborders/RelaySMS-Android/issues";
 const RELAYSMS_TELEGRAM_URL = "https://t.me/+IPYp6q06dWsyZjY0";
 const DEKUSMS_TELEGRAM_URL = "https://t.me/deku_sms";
 
@@ -32,7 +33,9 @@ export default function About() {
   const involvement = [
     {
       key: "contact",
-      title: t("aboutPage.contactTitle", { defaultValue: "Reach the developers" }),
+      title: t("aboutPage.contactTitle", {
+        defaultValue: "Reach the developers",
+      }),
       body: t("aboutPage.contactBody", {
         defaultValue:
           "Questions, partnerships or security reports? Email the team directly.",
@@ -55,13 +58,15 @@ export default function About() {
       links: [
         {
           icon: <GitHubIcon sx={{ fontSize: 18 }} />,
-          label: t("aboutPage.githubLink", { defaultValue: "Browse the code on GitHub" }),
+          label: t("footer.github", { defaultValue: "GitHub" }),
           href: GITHUB_URL,
           external: true,
         },
         {
           icon: <ArrowOutwardIcon sx={{ fontSize: 18 }} />,
-          label: t("footerNav.reportIssue", { defaultValue: "Report an issue" }),
+          label: t("footerNav.reportIssue", {
+            defaultValue: "Report an issue",
+          }),
           href: ISSUES_URL,
           external: true,
         },
@@ -77,14 +82,18 @@ export default function About() {
       links: [
         {
           icon: <TelegramIcon sx={{ fontSize: 18 }} />,
-          label: t("aboutPage.relaysmsTelegram", { defaultValue: "RelaySMS on Telegram" }),
+          label: t("aboutPage.relaysmsTelegram", {
+            defaultValue: "RelaySMS on Telegram",
+          }),
           href: RELAYSMS_TELEGRAM_URL,
           external: true,
           highlight: true,
         },
         {
           icon: <TelegramIcon sx={{ fontSize: 18 }} />,
-          label: t("aboutPage.dekusmsTelegram", { defaultValue: "DekuSMS on Telegram" }),
+          label: t("aboutPage.dekusmsTelegram", {
+            defaultValue: "DekuSMS on Telegram",
+          }),
           href: DEKUSMS_TELEGRAM_URL,
           external: true,
           highlight: true,
@@ -112,7 +121,7 @@ export default function About() {
       >
         <Container maxWidth="lg">
           <Box sx={{ p: { xs: 3, md: 5 } }}>
-            <Typography
+            {/* <Typography
               sx={{
                 fontSize: "0.72rem",
                 fontWeight: 700,
@@ -123,7 +132,7 @@ export default function About() {
               }}
             >
               {t("aboutPage.eyebrow", { defaultValue: "About" })}
-            </Typography>
+            </Typography> */}
 
             <Typography
               variant="h4"
@@ -136,7 +145,9 @@ export default function About() {
                 overflowWrap: "anywhere",
               }}
             >
-              {t("aboutPage.title", { defaultValue: "About SMSWithoutBorders" })}
+              {t("aboutPage.title", {
+                defaultValue: "About SMSWithoutBorders",
+              })}
             </Typography>
 
             <Typography
@@ -162,7 +173,7 @@ export default function About() {
               sx={{
                 border: "1px solid",
                 borderColor: "divider",
-                borderInlineStart: `3px solid ${theme.palette.secondary.main}`,
+                // borderInlineStart: `3px solid ${theme.palette.secondary.main}`,
                 bgcolor: "background.paper",
                 px: { xs: 2.5, md: 3 },
                 py: 2.5,
@@ -192,7 +203,9 @@ export default function About() {
                   "&:hover": { borderColor: "text.primary" },
                 }}
               >
-                {t("aboutPage.visitAfkanerd", { defaultValue: "Visit afkanerd.com" })}
+                {t("aboutPage.visitAfkanerd", {
+                  defaultValue: "Visit afkanerd.com",
+                })}
               </Button>
             </Stack>
 
@@ -202,13 +215,17 @@ export default function About() {
                 paragraphs={history}
               />
               <TextSection
-                title={t("aboutPage.useCasesTitle", { defaultValue: "Use cases" })}
+                title={t("aboutPage.useCasesTitle", {
+                  defaultValue: "Use cases",
+                })}
                 paragraphs={useCases}
               />
 
               <Box component="section">
                 <SectionHeading>
-                  {t("aboutPage.involvedTitle", { defaultValue: "Get involved" })}
+                  {t("aboutPage.involvedTitle", {
+                    defaultValue: "Get involved",
+                  })}
                 </SectionHeading>
                 <Box sx={{ border: "1px solid", borderColor: "divider" }}>
                   {involvement.map((item, index) => (

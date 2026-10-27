@@ -37,9 +37,9 @@ const LanguageSwitcher = () => {
         endIcon={<KeyboardArrowDownIcon sx={{ fontSize: 14 }} />}
         sx={{
           color: "text.primary",
-          textTransform: "none",
+          textTransform: "uppercase",
           fontSize: "0.9rem",
-		  fontWeight: 400,
+          fontWeight: 400,
           gap: 0.5,
           "&:hover": { bgcolor: "action.hover" },
         }}

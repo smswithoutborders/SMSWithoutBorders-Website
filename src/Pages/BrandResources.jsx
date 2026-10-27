@@ -99,7 +99,7 @@ export default function BrandResources() {
       >
         <Container maxWidth="lg">
           <Box sx={{ p: { xs: 3, md: 5 } }}>
-            <Typography
+            {/* <Typography
               sx={{
                 fontSize: "0.72rem",
                 fontWeight: 700,
@@ -110,7 +110,7 @@ export default function BrandResources() {
               }}
             >
               {t("brandPage.eyebrow", { defaultValue: "Press & Media" })}
-            </Typography>
+            </Typography> */}
 
             <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
               {t("brandPage.title", { defaultValue: "Brand Resources" })}
