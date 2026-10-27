@@ -61,25 +61,17 @@ export default function NewsletterStatus({ variant }) {
       <Box
         sx={{
           flex: 1,
-          minHeight: "100vh",
           display: "flex",
           alignItems: "center",
-          bgcolor: "background.default",
           direction: isFarsi ? "rtl" : "ltr",
-          pt: { xs: 14, md: 16 },
-          pb: { xs: 8, md: 10 },
         }}
       >
-        <Container maxWidth="sm">
+        <Container maxWidth="md">
           <Stack
             alignItems="center"
             textAlign="center"
             spacing={2.5}
             sx={{
-              border: "1px solid",
-              borderColor: "divider",
-              borderTop: `3px solid ${theme.palette.secondary.main}`,
-              bgcolor: "background.paper",
               px: { xs: 3, md: 5 },
               py: { xs: 5, md: 7 },
             }}
@@ -90,30 +82,41 @@ export default function NewsletterStatus({ variant }) {
                 height: 64,
                 display: "grid",
                 placeItems: "center",
-                border: "1px solid",
-                borderColor: "divider",
-                color: "secondary.main",
+
+                color: "primary.light",
               }}
             >
-              <Icon sx={{ fontSize: 32 }} />
+              <Icon sx={{ fontSize: 42 }} />
             </Box>
 
             <Typography
               variant="h4"
               component="h1"
-              sx={{ fontWeight: 700, fontSize: { xs: "1.35rem", md: "1.75rem" } }}
+              sx={{
+                fontWeight: 700,
+                fontSize: { xs: "1.35rem", md: "2rem" },
+              }}
             >
               {titleText}
             </Typography>
 
             <Typography
-              sx={{ color: "text.secondary", lineHeight: 1.8, maxWidth: 440 }}
+              sx={{
+                color: "text.secondary",
+                lineHeight: 1.8,
+                maxWidth: 600,
+                fontSize: { xs: "0.95rem", md: "1.4rem" },
+              }}
             >
               {t(bodyKey, { defaultValue: body })}
             </Typography>
 
             {showForm && (
-              <NewsletterForm showHeading={false} centered sx={{ width: "100%", pt: 1 }} />
+              <NewsletterForm
+                showHeading={false}
+                centered
+                sx={{ width: "100%", pt: 1 }}
+              />
             )}
 
             <Stack
@@ -155,7 +158,9 @@ export default function NewsletterStatus({ variant }) {
                     "&:hover": { borderColor: "text.primary" },
                   }}
                 >
-                  {t("Newsletter.readResearch", { defaultValue: "Read our research" })}
+                  {t("Newsletter.readResearch", {
+                    defaultValue: "Read our research",
+                  })}
                 </Button>
               )}
             </Stack>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
+import { Box, Chip, Container, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import TelegramIcon from "@mui/icons-material/Telegram";
@@ -70,16 +70,16 @@ export default function Community() {
         >
           <Box
             sx={{
-              // display: "flex",
-              alignItems: "start",
+              display: "flex",
+              alignItems: "center",
               justifyContent: "flex-start",
               textAlign: "start",
               px: { xs: 3, md: 5 },
               py: { xs: 4, md: 5 },
             }}
           >
-            <FavoriteBorder sx={{ fontSize: { xs: 25, md: 35 }, mb: 2 }} />
-            <br/>
+            {/* <FavoriteBorder sx={{ fontSize: { xs: 25, md: 35 }, mb: 2 }} />
+            <br/> */}
             <Typography
               sx={{
                 fontSize: { xs: "1.05rem", md: "1.2rem" },
@@ -130,13 +130,7 @@ export default function Community() {
 
             <NewsletterForm showHeading={false} sx={{ width: "100%" }} />
 
-            <Stack
-              direction="row"
-              flexWrap="wrap"
-              useFlexGap
-              spacing={1.5}
-              alignItems="center"
-              justifyContent="flex-start"
+            <Box
               sx={{
                 width: "100%",
                 mt: 3,
@@ -144,36 +138,41 @@ export default function Community() {
                 borderTop: `1px solid ${theme.palette.divider}`,
               }}
             >
-              <Typography sx={{ color: "text.secondary", fontSize: "0.9rem" }}>
+              <Typography
+                sx={{ color: "text.secondary", fontSize: "0.9rem", mb: 1.25 }}
+              >
                 {t("community.chatPrompt", {
                   defaultValue: "Prefer to chat? Join us on Telegram:",
                 })}
               </Typography>
-              {[
-                { label: "RelaySMS", href: RELAYSMS_TELEGRAM_URL },
-                { label: "DekuSMS", href: DEKUSMS_TELEGRAM_URL },
-              ].map((channel) => (
-                <Link
-                  key={channel.href}
-                  href={channel.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 0.5,
-                    fontSize: "0.9rem",
-                    fontWeight: 600,
-                    color: "text.primary",
-                    textDecoration: "none",
-                    "&:hover": { color: accent },
-                  }}
-                >
-                  <TelegramIcon sx={{ fontSize: 18, color: "#229ED9" }} />
-                  {channel.label}
-                </Link>
-              ))}
-            </Stack>
+              <Stack direction="row" flexWrap="wrap" useFlexGap spacing={1}>
+                {[
+                  { label: "RelaySMS", href: RELAYSMS_TELEGRAM_URL },
+                  { label: "DekuSMS", href: DEKUSMS_TELEGRAM_URL },
+                ].map((channel) => (
+                  <Chip
+                    key={channel.href}
+                    component="a"
+                    href={channel.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    clickable
+                    variant="outlined"
+                    icon={<TelegramIcon />}
+                    label={channel.label}
+                    sx={{
+                      borderRadius: "20px",
+                      fontWeight: 600,
+                      fontSize: "0.88rem",
+                      borderColor: "divider",
+                      color: "text.primary",
+                      "& .MuiChip-icon": { color: "#229ED9", fontSize: 18 },
+                      "&:hover": { borderColor: "#229ED9" },
+                    }}
+                  />
+                ))}
+              </Stack>
+            </Box>
           </Box>
         </Box>
       </Container>

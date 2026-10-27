@@ -1,15 +1,25 @@
 import React, { useState } from "react";
-import { Alert, Box, Button, Stack, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
   NEWSLETTER_HONEYPOT_NAME as CONFIGURED_HONEYPOT_NAME,
   NEWSLETTER_SUBMIT_URL as CONFIGURED_SUBMIT_URL,
 } from "../config/newsletter";
 
-const FALLBACK_SUBMIT_URL = "https://newsletter.afkanerd.com/forms/nfrm_BzLMaLXv";
+const FALLBACK_SUBMIT_URL =
+  "https://newsletter.afkanerd.com/forms/nfrm_BzLMaLXv";
 const FALLBACK_HONEYPOT_NAME = "h[url]";
 
-const NEWSLETTER_SUBMIT_URL = /^https:\/\/\S+$/.test(CONFIGURED_SUBMIT_URL || "")
+const NEWSLETTER_SUBMIT_URL = /^https:\/\/\S+$/.test(
+  CONFIGURED_SUBMIT_URL || "",
+)
   ? CONFIGURED_SUBMIT_URL
   : FALLBACK_SUBMIT_URL;
 const NEWSLETTER_HONEYPOT_NAME =
@@ -73,7 +83,9 @@ export default function NewsletterForm({
       {showHeading && (
         <Box sx={{ mb: 2.5 }}>
           <Typography variant="h6" sx={{ fontWeight: 700, mb: 0.75 }}>
-            {t("Newsletter.title", { defaultValue: "Subscribe to our newsletter" })}
+            {t("Newsletter.title", {
+              defaultValue: "Subscribe to our newsletter",
+            })}
           </Typography>
           <Typography sx={{ color: "text.secondary", lineHeight: 1.8 }}>
             {t("Newsletter.description", {
@@ -85,12 +97,11 @@ export default function NewsletterForm({
       )}
 
       {status === "doubleOptIn" ? (
-        <Alert
-          severity="info"
-          sx={{ borderRadius: "2px", textAlign: "start" }}
-        >
+        <Alert severity="info" sx={{ borderRadius: "2px", textAlign: "start" }}>
           <Box component="span" sx={{ fontWeight: 700, display: "block" }}>
-            {t("Newsletter.doubleOptInTitle", { defaultValue: "Check your inbox." })}
+            {t("Newsletter.doubleOptInTitle", {
+              defaultValue: "Check your inbox.",
+            })}
           </Box>
           {t("Newsletter.doubleOptInHint", {
             defaultValue:
@@ -188,14 +199,7 @@ export default function NewsletterForm({
               })}
             </Typography>
           ) : (
-            <Typography
-              variant="caption"
-              sx={{ display: "block", mt: 1, color: "text.secondary" }}
-            >
-              {t("Newsletter.privacyHint", {
-                defaultValue: "No spam. Unsubscribe anytime.",
-              })}
-            </Typography>
+            <Box> </Box>
           )}
         </Box>
       )}

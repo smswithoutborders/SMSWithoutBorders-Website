@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Box,
   Typography,
   IconButton,
-  Drawer,
+  Popover,
   Divider,
   Collapse,
   List,
@@ -34,6 +34,7 @@ export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [drawerSubOpen, setDrawerSubOpen] = useState(false);
+  const menuButtonRef = useRef(null);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 36);
@@ -102,8 +103,8 @@ export default function Navbar() {
   const navLinkSx = (active) => ({
     position: "relative",
     fontSize: "0.78rem",
-    fontWeight: active ? 700 : 500,
-    letterSpacing: "0.1em",
+    fontWeight: active ? 500 : 500,
+    letterSpacing: "0.08em",
     textTransform: "uppercase",
     textDecoration: "none",
     px: "14px",
@@ -160,7 +161,7 @@ export default function Navbar() {
           <Typography
             sx={{
               fontSize: "0.72rem",
-              letterSpacing: "0.05em",
+              letterSpacing: "0.08em",
               color: isLight ? "#FAF6EE" : "#0E0C07",
               textTransform: "uppercase",
             }}
@@ -219,7 +220,7 @@ export default function Navbar() {
             alignItems: "center",
             justifyContent: "space-between",
             px: { xs: 2, md: "32px" },
-            py: "12px",
+            py: "14px",
             mx: "auto",
           }}
         >
@@ -240,7 +241,7 @@ export default function Navbar() {
                 isLight ? "/Images/SWOB-Black.png" : "/Images/SWOB-White.png"
               }
               alt="SMSWithoutBorders"
-              sx={{ height: { xs: 26, md: 30 }, display: "block" }}
+              sx={{ height: { xs: 26, md: 38 }, display: "block" }}
             />
           </Box>
           <Box
@@ -404,7 +405,10 @@ export default function Navbar() {
             }}
           >
             <IconButton
+              ref={menuButtonRef}
               onClick={() => setDrawerOpen((p) => !p)}
+              aria-label="menu"
+              aria-expanded={drawerOpen}
               size="small"
               sx={{
                 color: textColor,
@@ -427,49 +431,39 @@ export default function Navbar() {
         </Box>
       </Box>
 
-      {/* Mobile drawer */}
-      <Drawer
-        anchor={isFarsi ? "left" : "right"}
+      {/* Mobile dropdown menu */}
+      <Popover
         open={drawerOpen}
+        anchorEl={menuButtonRef.current}
         onClose={() => setDrawerOpen(false)}
-        PaperProps={{
-          sx: {
-            width: 275,
-            bgcolor: "background.paper",
-            borderLeft: `1px solid ${theme.palette.divider}`,
-            display: "flex",
-            flexDirection: "column",
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: isFarsi ? "left" : "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: isFarsi ? "left" : "right",
+        }}
+        marginThreshold={12}
+        slotProps={{
+          paper: {
+            sx: {
+              mt: 1.5,
+              width: 260,
+              maxWidth: "calc(100vw - 24px)",
+              maxHeight: "calc(100vh - 96px)",
+              borderRadius: "2px",
+              bgcolor: "background.paper",
+              border: `1px solid ${theme.palette.divider}`,
+              boxShadow: theme.shadows[8],
+              display: "flex",
+              flexDirection: "column",
+              direction: isFarsi ? "rtl" : "ltr",
+            },
           },
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            px: 2.5,
-            py: 2,
-            borderBottom: `1px solid ${theme.palette.divider}`,
-          }}
-        >
-          <Box
-            component="img"
-            src={
-              isLight ? "/Images/SWOB-Default.png" : "/Images/SWOB-White.png"
-            }
-            alt="SMSWithoutBorders"
-            sx={{ height: 26 }}
-          />
-          <IconButton
-            onClick={() => setDrawerOpen(false)}
-            size="small"
-            sx={{ color: textColor, p: "5px" }}
-          >
-            <CloseIcon sx={{ fontSize: 17 }} />
-          </IconButton>
-        </Box>
-
-        <Box sx={{ px: 1.5, pt: 1, pb: 1, flex: 1, overflowY: "auto" }}>
+        <Box sx={{ px: 1, pt: 1, pb: 1, flex: 1, overflowY: "auto" }}>
           <List disablePadding>
             {links.map((link, i) => (
               <React.Fragment key={i}>
@@ -619,7 +613,7 @@ export default function Navbar() {
             )}
           </IconButton>
         </Box>
-      </Drawer>
+      </Popover>
     </>
   );
 }

@@ -59,7 +59,7 @@ export const ThemeProvider = ({ children }) => {
             mode === "light" ? "rgba(26,26,26,0.15)" : "rgba(240,235,224,0.10)",
         },
         typography: {
-          fontFamily: "'Ubuntu', sans-serif",
+          fontFamily: "'Mona Sans', sans-serif",
           h1: { fontFamily: "'Unbounded', sans-serif", fontWeight: 700, letterSpacing: "-0.02em", color: mode === "light" ? "#071f74ff" : "#ffffff" },
           h2: { fontFamily: "'Unbounded', sans-serif" },
           h3: { fontFamily: "'Unbounded', sans-serif" },
