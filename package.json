@@ -18,7 +18,7 @@
 		"html-react-parser": "^5.1.12",
 		"i18next": "^23.14.0",
 		"i18next-browser-languagedetector": "^8.0.0",
-		"i18next-http-backend": "^3.0.5",
+		"i18next-http-backend": "^4.0.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-helmet-async": "^3.0.0",
