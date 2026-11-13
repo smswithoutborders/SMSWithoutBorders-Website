@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import {
   Box,
-  Button,
+  Chip,
   Container,
   FormControl,
   InputAdornment,
@@ -16,6 +16,7 @@ import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import NorthEastIcon from "@mui/icons-material/NorthEast";
 import Navbar from "../Components/Navbar";
 import papers from "../data/papers";
 import Seo from "../Components/Seo";
@@ -29,7 +30,6 @@ const TYPE_COLORS = {
 const ALL_YEARS = [...new Set(papers.map((p) => p.year))].sort((a, b) => b - a);
 
 export default function ResearchPage() {
-  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   const isFarsi = i18n.language === "fa";
@@ -87,93 +87,109 @@ export default function ResearchPage() {
               })}
             </Typography> */}
 
-            <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
-              {t("researchPage.title", {
-                defaultValue: "Research & Publications",
-              })}
-            </Typography>
-
-            <Typography
+            <Box
               sx={{
-                color: "text.secondary",
-                lineHeight: 1.85,
-                fontSize: { xs: "1rem", md: "1.06rem" },
-                maxWidth: 860,
-                mb: 4,
+                display: "grid",
+                gridTemplateColumns: {
+                  xs: "1fr",
+                  md: "minmax(0, 1fr) minmax(320px, 420px)",
+                },
+                gap: { xs: 3, md: 6 },
+                alignItems: "end",
+                mb: { xs: 6, md: 8 },
               }}
             >
-              {t("researchPage.subtitle", {
-                defaultValue:
-                  "White papers, research findings, and community threads on offline communication, privacy, and digital inclusion.",
-              })}
-            </Typography>
-
-            <Stack spacing={2.2} sx={{ mb: 10 }}>
-              <Stack
-                direction={{ xs: "column", md: "row" }}
-                spacing={1.5}
-                alignItems={{ xs: "stretch", md: "center" }}
-              >
-                <TextField
-                  size="small"
-                  fullWidth
-                  placeholder={t("researchPage.searchPlaceholder", {
-                    defaultValue: "Search by title, topic or author...",
+              <Box>
+                <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+                  {t("researchPage.title", {
+                    defaultValue: "Research & Publications",
                   })}
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "2px",
-                      height: 40,
-                    },
-                  }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <SearchIcon
-                          sx={{ fontSize: 18, color: "text.secondary" }}
-                        />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-
-                <FormControl
-                  size="small"
-                  sx={{ minWidth: { xs: "100%", md: 120 } }}
-                >
-                  <Select
-                    value={selectedYear}
-                    onChange={(e) => setSelectedYear(e.target.value)}
-                  >
-                    {ALL_YEARS.map((year) => (
-                      <MenuItem key={year} value={String(year)}>
-                        {year}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </Stack>
-
-              <Stack
-                direction="row"
-                justifyContent="space-between"
-                alignItems="center"
-              >
-                <Typography
-                  sx={{ color: "text.secondary", fontSize: "0.8rem" }}
-                >
-                  <Box
-                    component="span"
-                    sx={{ fontWeight: 700, color: "text.primary" }}
-                  >
-                    {filtered.length}
-                  </Box>{" "}
-                  {t("researchPage.of", { defaultValue: "of" })} {papers.length}
                 </Typography>
+
+                <Typography
+                  sx={{
+                    color: "text.secondary",
+                    lineHeight: 1.85,
+                    fontSize: { xs: "1rem", md: "1.06rem" },
+                    maxWidth: 860,
+                    mb: 0,
+                  }}
+                >
+                  {t("researchPage.subtitle", {
+                    defaultValue:
+                      "White papers, research findings, and community threads on offline communication, privacy, and digital inclusion.",
+                  })}
+                </Typography>
+              </Box>
+
+              <Stack spacing={1.5}>
+                <Stack
+                  direction={{ xs: "column", sm: "row" }}
+                  spacing={1.5}
+                  alignItems={{ xs: "stretch", sm: "center" }}
+                >
+                  <TextField
+                    size="small"
+                    fullWidth
+                    placeholder={t("researchPage.searchPlaceholder", {
+                      defaultValue: "Search by title, topic or author...",
+                    })}
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        borderRadius: "2px",
+                        height: 40,
+                      },
+                    }}
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <SearchIcon
+                            sx={{ fontSize: 18, color: "text.secondary" }}
+                          />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+
+                  <FormControl
+                    size="small"
+                    sx={{ minWidth: { xs: "100%", sm: 110 } }}
+                  >
+                    <Select
+                      value={selectedYear}
+                      onChange={(e) => setSelectedYear(e.target.value)}
+                    >
+                      {ALL_YEARS.map((year) => (
+                        <MenuItem key={year} value={String(year)}>
+                          {year}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Stack>
+
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <Typography
+                    sx={{ color: "text.secondary", fontSize: "0.8rem" }}
+                  >
+                    <Box
+                      component="span"
+                      sx={{ fontWeight: 700, color: "text.primary" }}
+                    >
+                      {filtered.length}
+                    </Box>{" "}
+                    {t("researchPage.of", { defaultValue: "of" })}{" "}
+                    {papers.length}
+                  </Typography>
+                </Stack>
               </Stack>
-            </Stack>
+            </Box>
 
             {filtered.length === 0 ? (
               <Box sx={{ py: 8, textAlign: "center" }}>
@@ -186,19 +202,15 @@ export default function ResearchPage() {
               </Box>
             ) : (
               <Box
+                component="ol"
                 sx={{
-                  display: "grid",
-                  gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-                  gap: 2,
+                  listStyle: "none",
+                  m: 0,
+                  p: 0,
                 }}
               >
                 {filtered.map((paper) => (
-                  <PaperCard
-                    key={paper.id}
-                    paper={paper}
-                    onRead={() => navigate(`/research/${paper.id}`)}
-                    t={t}
-                  />
+                  <PaperEntry key={paper.id} paper={paper} t={t} />
                 ))}
               </Box>
             )}
@@ -209,179 +221,220 @@ export default function ResearchPage() {
   );
 }
 
-function PaperCard({ paper, onRead, t }) {
+function PaperEntry({ paper, t }) {
   const accent = TYPE_COLORS[paper.type] || "#1565C0";
   const hasContent = Boolean(paper.pdfUrl);
+  const readPath = `/research/${paper.id}`;
+
+  const actionSx = {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 0.5,
+    fontSize: "0.85rem",
+    fontWeight: 600,
+    color: "text.primary",
+    textDecoration: "none",
+    borderBottom: "1px solid",
+    borderColor: "divider",
+    transition: "color 0.2s ease, border-color 0.2s ease",
+    "&:hover": { color: "secondary.main", borderColor: "secondary.main" },
+  };
 
   return (
     <Box
-      onClick={hasContent ? onRead : undefined}
+      component="li"
       sx={{
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        border: "1px solid",
+        display: "grid",
+        gridTemplateColumns: {
+          xs: "1fr",
+          sm: "88px minmax(0, 1fr)",
+          md: "88px minmax(0, 1fr) 200px",
+        },
+        columnGap: { sm: 3, md: 4 },
+        rowGap: 1,
+        py: { xs: 3, md: 6.5 },
+        borderBottom: "1px solid",
         borderColor: "divider",
-        p: { xs: 2.5, md: 3 },
-        cursor: hasContent ? "pointer" : "default",
-        transition: "background-color 0.2s ease",
-        "&:hover": {
-          bgcolor: hasContent ? "action.hover" : "transparent",
-        },
-        "&:hover .read-arrow": {
-          transform: hasContent ? "translate(2px, -2px)" : "none",
-        },
       }}
     >
+      {/* Dateline column */}
       <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        spacing={1.5}
-        sx={{ mb: 2 }}
+        direction={{ xs: "row", sm: "column" }}
+        spacing={{ xs: 1, sm: 0.25 }}
+        alignItems={{ xs: "baseline", sm: "flex-start" }}
       >
-        <Stack
-          direction="row"
-          spacing={0.7}
-          alignItems="center"
-          sx={{
-            px: 1,
-            py: 0.4,
-            border: "1px solid",
-            borderColor: "divider",
-            bgcolor: "action.hover",
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: "0.72rem",
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: accent,
-            }}
-          >
-            {t(`paperReader.type.${paper.type}`, { defaultValue: paper.type })}
-          </Typography>
-        </Stack>
-
         <Typography
           sx={{
-            fontSize: "0.8rem",
-            color: "text.secondary",
-            whiteSpace: "nowrap",
+            fontFamily: "Unbounded, sans-serif",
+            fontWeight: 700,
+            fontSize: { xs: "0.95rem", sm: "1.25rem" },
+            lineHeight: 1.1,
           }}
         >
           {paper.year}
-          {paper.version ? ` · v${paper.version}` : ""}
         </Typography>
-      </Stack>
-
-      <Typography
-        variant="h6"
-        title={paper.title}
-        sx={{
-          fontWeight: 700,
-          lineHeight: 1.35,
-          minHeight: "2.7em",
-          display: "-webkit-box",
-          WebkitLineClamp: 2,
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
-          mb: 1,
-        }}
-      >
-        {paper.title}
-      </Typography>
-
-      <Typography
-        sx={{
-          fontSize: "0.8rem",
-          color: "text.secondary",
-          whiteSpace: "nowrap",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          mb: 1.5,
-        }}
-      >
-        {t("researchPage.author", { defaultValue: "Author" })} -{" "}
-        {paper.authors.join(", ")}
-      </Typography>
-
-      <Typography
-        sx={{
-          color: "text.secondary",
-          lineHeight: 1.8,
-          fontSize: { xs: "0.94rem", md: "1rem" },
-          display: "-webkit-box",
-          WebkitLineClamp: 4,
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
-          mb: 2.5,
-        }}
-      >
-        {paper.abstract}
-      </Typography>
-
-      {/* <Stack
-        direction="row"
-        spacing={0.8}
-        flexWrap="wrap"
-        useFlexGap
-        sx={{ mb: 2 }}
-      >
-        {paper.topics.map((topic) => (
+        {paper.version && (
           <Typography
-            key={topic}
             sx={{
-              px: 0.95,
-              py: 0.35,
-              border: "1px solid",
-              borderColor: "divider",
-              bgcolor: "action.hover",
-              fontSize: "0.72rem",
+              fontSize: "0.75rem",
               color: "text.secondary",
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
             }}
           >
-            {topic}
+            v{paper.version}
           </Typography>
-        ))}
-      </Stack> */}
+        )}
+      </Stack>
 
-      <Box
-        sx={{
-          mt: "auto",
-          pt: 1.5,
-          borderTop: "1px solid",
-          borderColor: "divider",
-        }}
-      >
-        <Button
-          variant="text"
-          disabled={!hasContent}
-          endIcon={
-            hasContent ? (
-              <ArrowOutwardIcon
-                className="read-arrow"
-                sx={{ fontSize: 16, transition: "transform 0.2s ease" }}
-              />
-            ) : null
-          }
+      <Box sx={{ minWidth: 0 }}>
+        <Typography
           sx={{
-            px: 0,
-            minWidth: 0,
-            textTransform: "none",
-            fontWeight: 600,
-            color: "text.primary",
-            "&:hover": { bgcolor: "transparent" },
-            "&.Mui-disabled": { color: "text.secondary" },
+            fontSize: "0.7rem",
+            fontWeight: 700,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "grey.600",
+            mb: 0.75,
           }}
         >
-          {hasContent
-            ? t("researchPage.readPaper", { defaultValue: "Read paper" })
-            : t("paperReader.comingSoon", { defaultValue: "Coming soon" })}
-        </Button>
+          {t(`paperReader.type.${paper.type}`, { defaultValue: paper.type })}
+        </Typography>
+
+        <Typography
+          variant="h6"
+          component="h2"
+          sx={{ fontWeight: 700, lineHeight: 1.35, mb: 0.75 }}
+        >
+          {hasContent ? (
+            <Box
+              component={RouterLink}
+              to={readPath}
+              sx={{
+                color: "inherit",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "secondary.main",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "4px",
+                  textDecorationThickness: "1px",
+                },
+              }}
+            >
+              {paper.title}
+            </Box>
+          ) : (
+            paper.title
+          )}
+        </Typography>
+
+        <Typography
+          sx={{
+            fontSize: "0.88rem",
+            fontStyle: "italic",
+            color: "text.secondary",
+            mb: 1.25,
+          }}
+        >
+         Author: {paper.authors.join(", ")}
+        </Typography>
+
+        <Typography
+          sx={{
+            color: "text.secondary",
+            lineHeight: 1.75,
+            fontSize: { xs: "0.94rem", md: "0.98rem" },
+            maxWidth: 820,
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            mb: 1.5,
+          }}
+        >
+          {paper.abstract}
+        </Typography>
+
+        <Stack direction="row" spacing={2.5} alignItems="center">
+          {hasContent ? (
+            <>
+              <Box component={RouterLink} to={readPath} sx={actionSx}>
+                {t("researchPage.readPaper", { defaultValue: "Read paper" })}
+                <ArrowOutwardIcon sx={{ fontSize: 14 }} />
+              </Box>
+              <Box
+                component="a"
+                href={paper.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={actionSx}
+              >
+                PDF
+                <NorthEastIcon sx={{ fontSize: 11, opacity: 0.6 }} />
+              </Box>
+            </>
+          ) : (
+            <Typography
+              sx={{
+                fontSize: "0.8rem",
+                fontWeight: 600,
+                color: "text.secondary",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+              }}
+            >
+              {t("paperReader.comingSoon", { defaultValue: "Coming soon" })}
+            </Typography>
+          )}
+        </Stack>
       </Box>
+
+      {paper.topics?.length > 0 && (
+        <Box
+          sx={{
+            gridColumn: { xs: "1", sm: "2", md: "3" },
+            pt: { md: 0.25 },
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: "0.7rem",
+              fontWeight: 700,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "text.secondary",
+              mb: 1,
+            }}
+          >
+            {t("researchPage.keywords", { defaultValue: "Keywords" })}
+          </Typography>
+          <Stack
+            direction="row"
+            flexWrap="wrap"
+            useFlexGap
+            spacing={0.75}
+            component="ul"
+            sx={{ listStyle: "none", m: 0, p: 0 }}
+          >
+            {paper.topics.map((topic) => (
+              <Chip
+                key={topic}
+                component="li"
+                label={topic}
+                size="small"
+                sx={{
+                  borderRadius: "2px",
+                  bgcolor: "action.selected",
+                  color: "text.primary",
+                  fontSize: "0.75rem",
+                  fontWeight: 500,
+                  height: 24,
+                }}
+              />
+            ))}
+          </Stack>
+        </Box>
+      )}
     </Box>
   );
 }

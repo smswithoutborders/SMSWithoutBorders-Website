@@ -37,7 +37,7 @@ export default function Community() {
     >
       <Container maxWidth="xl">
         <Box ref={headerRef} style={revealStyle} sx={{ mb: { xs: 6, md: 8 } }}>
-          <Typography
+          {/* <Typography
             variant="overline"
             sx={{
               fontWeight: 500,
@@ -48,7 +48,7 @@ export default function Community() {
             }}
           >
             {t("community.eyebrow", { defaultValue: "Community" })}
-          </Typography>
+          </Typography> */}
           <Typography variant="h4" sx={{ fontWeight: 700 }}>
             {t("community.title", {
               defaultValue: "Stay close to the community",

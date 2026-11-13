@@ -496,9 +496,9 @@ export default function Projects() {
     >
       <Container maxWidth="xl">
         <Box sx={{ mb: { xs: 6, md: 8 } }}>
-          <SectionEyebrow accent={accent}>
+          {/* <SectionEyebrow accent={accent}>
             {t("projectHeader", { defaultValue: "Projects" })}
-          </SectionEyebrow>
+          </SectionEyebrow> */}
           <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
             {t("projectHeadline", {
               defaultValue: "Everything we build, open and free",
@@ -546,9 +546,9 @@ export default function Projects() {
         </Box>
 
         <Box sx={{ mb: { xs: 16, md: 25 } }}>
-          <SectionEyebrow accent={accent}>
+          {/* <SectionEyebrow accent={accent}>
             {t("papersEyebrow", { defaultValue: "Papers" })}
-          </SectionEyebrow>
+          </SectionEyebrow> */}
           <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
             {t("papersTitle", {
               defaultValue: "Research and publications",
@@ -580,11 +580,11 @@ export default function Projects() {
         </Box>
 
         <Box>
-          <SectionEyebrow accent={accent}>
+          {/* <SectionEyebrow accent={accent}>
             {t("developerLibrariesEyebrow", {
               defaultValue: "Developer Libraries",
             })}
-          </SectionEyebrow>
+          </SectionEyebrow> */}
           <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
             {t("developerLibrariesTitle", {
               defaultValue: "Build on the stack",

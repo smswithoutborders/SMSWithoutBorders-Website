@@ -140,7 +140,7 @@ export default function Partner() {
               // mb: 2.5,
             }}
           >
-            <Typography
+            {/* <Typography
               variant="overline"
               sx={{
                 fontWeight: 500,
@@ -151,7 +151,7 @@ export default function Partner() {
               }}
             >
               {t("Sponsor.Sponsorsub", { defaultValue: "Partners" })}
-            </Typography>
+            </Typography> */}
           </Box>
 
           <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>

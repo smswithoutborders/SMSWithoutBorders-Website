@@ -231,7 +231,8 @@
   "readPaper": "Lire le document",
   "comingSoon": "Bientôt disponible",
   "viewFullDocument": "Voir le document complet →",
-  "author": "Auteur"
+  "author": "Auteur",
+  "keywords": "Mots-clés"
 },
 "brandPage": {
 	"eyebrow": "Presse et médias",

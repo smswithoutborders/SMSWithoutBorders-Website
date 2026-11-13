@@ -231,7 +231,8 @@
 		"readPaper": "阅读论文",
 		"comingSoon": "即将推出",
 		"viewFullDocument": "查看完整文档 →",
-		"author": "作者"
+		"author": "作者",
+		"keywords": "关键词"
 	},
 	"brandPage": {
 		"eyebrow": "媒体资料",

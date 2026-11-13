@@ -231,7 +231,8 @@
 		"readPaper": "Makaleyi Oku",
 		"comingSoon": "Yakında",
 		"viewFullDocument": "Belgenin tamamını görüntüle →",
-		"author": "Yazar"
+		"author": "Yazar",
+		"keywords": "Anahtar kelimeler"
 	},
 	"brandPage": {
 		"eyebrow": "Basın ve Medya",
