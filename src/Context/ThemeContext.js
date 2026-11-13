@@ -45,7 +45,7 @@ export const ThemeProvider = ({ children }) => {
             contrastText: mode === "light" ? "#FAF6EE" : "#0E0C07",
           },
           secondary: {
-            main: mode === "light" ? "#FF8614" : "#FF9E43",
+            main: mode === "light" ? "#FF8614" : "#8FA7FF",
           },
           background: {
             default: mode === "light" ? "#f3f0e8" : "#0E0C07",
