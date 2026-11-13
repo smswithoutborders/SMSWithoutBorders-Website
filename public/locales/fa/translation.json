@@ -231,7 +231,8 @@
   "readPaper": "خواندن مقاله",
   "comingSoon": "به‌زودی",
   "viewFullDocument": "مشاهده سند کامل →",
-  "author": "نویسنده"
+  "author": "نویسنده",
+  "keywords": "کلیدواژه‌ها"
 },
 "brandPage": {
 	"eyebrow": "مطبوعات و رسانه",
