@@ -8853,12 +8853,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^23.14.0":
-  version: 23.16.8
-  resolution: "i18next@npm:23.16.8"
-  dependencies:
-    "@babel/runtime": "npm:^7.23.2"
-  checksum: 10c0/57d249191e8a39bbbbe190cfa2e2bb651d0198e14444fe80453d3df8d02927de3c147c77724e9ae6c72fa241898cd761e3fdcd55d053db373471f1ac084bf345
+"i18next@npm:^26.3.4":
+  version: 26.3.4
+  resolution: "i18next@npm:26.3.4"
+  peerDependencies:
+    typescript: ^5 || ^6
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10c0/09b2e578660b1cdcb284ed00e1f1c8559871fa66cbf85e58f9b78bf782e3b575341f0668ca7230fc80d30104bec42f8ac3ac221096d0f6e6bfbf18255dcccc94
   languageName: node
   linkType: hard
 
@@ -14443,7 +14446,7 @@ __metadata:
     events: "npm:^3.3.0"
     framer-motion: "npm:^11.0.28"
     html-react-parser: "npm:^5.1.12"
-    i18next: "npm:^23.14.0"
+    i18next: "npm:^26.3.4"
     i18next-browser-languagedetector: "npm:^8.0.0"
     i18next-http-backend: "npm:^4.0.10"
     react: "npm:^18.2.0"
